@@ -1301,7 +1301,7 @@ function renderDictionary(){
 }
 
 /* ===== OLAYLAR ===== */
-app.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]"); if(!el) return; const a=el.dataset.act, d=el.dataset;
+document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]"); if(!el) return; const a=el.dataset.act, d=el.dataset;
   switch(a){
     case "goHome": goHome(); break;
     case "goSettings": renderSettings(); break;
@@ -1343,7 +1343,7 @@ app.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]"); if(
     case "resetAll": if(confirm("Tüm ilerleme silinsin mi? Geri alınamaz.")){ state=defaultState(); saveState(); applySettings(); showToast("Sıfırlandı."); goHome(); } break;
   }
 });
-app.addEventListener("input",(e)=>{ if(e.target && e.target.id==="dictSearch"){ dictState.q=e.target.value; updateDictList(); } });
+document.addEventListener("input",(e)=>{ if(e.target && e.target.id==="dictSearch"){ dictState.q=e.target.value; updateDictList(); } });
 
 /* ===== BAŞLAT ===== */
 if(state.lang){ setLanguage(state.lang, {skipSaveOld:true}); }
@@ -1352,5 +1352,4 @@ state.streak=computeStreak(); saveState();
 applySettings();
 if(state.lang){ renderHome(); } else { renderLangPicker(); }
 </script>
-</body>
-</html>
+</body
