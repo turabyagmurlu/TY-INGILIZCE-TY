@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>İngilizce Öğreniyorum</title>
+<title>Dil Öğreniyorum</title>
 <style>
   :root{
     --bg:#F7F4EF; --primary:#4F7CAC; --primary-dark:#3c5f87;
@@ -156,8 +156,9 @@
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>📘 İngilizce Öğreniyorum</h1>
+    <h1>📘 Dil Öğreniyorum</h1>
     <div class="top-actions">
+      <button class="icon-btn" data-act="langPicker" title="Dil">🌐</button>
       <button class="icon-btn" data-act="openDict" title="Sözlük">📖</button>
       <button class="icon-btn" data-act="goSettings" title="Ayarlar">⚙️</button>
       <button class="icon-btn" data-act="goHome" title="Ana Sayfa">🏠</button>
@@ -171,8 +172,8 @@
 <script>
 "use strict";
 
-/* ===== MÜFREDAT ===== */
-const LEVELS = [
+/* ===== İNGİLİZCE MÜFREDAT ===== */
+const EN_LEVELS = [
 {
   id:1, cefr:"A1", name:"Seviye 1 — Başlangıç", desc:"Sıfırdan başlayanlar için: temel kelimeler ve en basit gramer.",
   units:[
@@ -420,8 +421,8 @@ const LEVELS = [
 }
 ];
 
-/* ===== EK SÖZLÜK KELİMELERİ ===== */
-const DICTIONARY_EXTRA = [
+/* ===== İNGİLİZCE EK SÖZLÜK ===== */
+const EN_DICT_EXTRA = [
   // Sayılar & Renkler
   {en:"Four",tr:"Dört",ex:"I have four books.",exTr:"Dört kitabım var.",cat:"Sayılar & Renkler"},
   {en:"Five",tr:"Beş",ex:"Five minutes, please.",exTr:"Beş dakika, lütfen.",cat:"Sayılar & Renkler"},
@@ -542,6 +543,308 @@ const DICTIONARY_EXTRA = [
   {en:"School",tr:"Okul",ex:"I go to school.",exTr:"Okula giderim.",cat:"Şehir"}
 ];
 
+/* ===== İTALYANCA MÜFREDAT (başlangıç iskeleti — kaynaklarla genişletilecek) ===== */
+const IT_LEVELS = [
+{ id:1, cefr:"A1", name:"Seviye 1 — Başlangıç", desc:"İtalyancaya ilk adım: temel kelimeler ve gramer. (Kaynaklarınla genişletilecek.)", units:[
+  {uid:"it1-1", type:"vocab", icon:"👋", title:"Selamlaşma", desc:"Günlük selamlaşma.", words:[
+    {en:"Ciao", tr:"Merhaba / Selam", ex:"Ciao, come stai?", exTr:"Merhaba, nasılsın?"},
+    {en:"Buongiorno", tr:"Günaydın / İyi günler", ex:"Buongiorno!", exTr:"Günaydın!"},
+    {en:"Buonasera", tr:"İyi akşamlar", ex:"Buonasera a tutti.", exTr:"Herkese iyi akşamlar."},
+    {en:"Arrivederci", tr:"Hoşça kal / Görüşürüz", ex:"Arrivederci!", exTr:"Görüşürüz!"},
+    {en:"Come stai?", tr:"Nasılsın?", ex:"Ciao, come stai?", exTr:"Merhaba, nasılsın?"},
+    {en:"Sto bene", tr:"İyiyim", ex:"Sto bene, grazie.", exTr:"İyiyim, teşekkürler."}
+  ]},
+  {uid:"it1-2", type:"grammar", icon:"📖", title:"Gramer: essere (olmak)",
+    intro:"İtalyancada 'olmak' fiili essere'dir. Özneye göre değişir.",
+    rule:"io <b>sono</b>, tu <b>sei</b>, lui/lei <b>è</b>, noi <b>siamo</b>, voi <b>siete</b>, loro <b>sono</b>. Örnek: \"Io <b>sono</b> felice\" = \"Ben mutluyum\".",
+    structure:[["Özne","Fiil","Örnek"],["io (ben)","sono","Io sono Deniz"],["tu (sen)","sei","Tu sei gentile"],["lui/lei (o)","è","Lei è felice"],["noi (biz)","siamo","Noi siamo qui"],["voi (siz)","siete","Voi siete pronti"],["loro (onlar)","sono","Loro sono qui"]],
+    examples:[{en:"Io sono Deniz.",tr:"Ben Deniz'im."},{en:"Tu sei gentile.",tr:"Sen naziksin."},{en:"Lei è felice.",tr:"O mutlu."},{en:"Noi siamo qui.",tr:"Biz buradayız."}],
+    exercises:[
+      {q:"Io ___ Deniz.", options:["sono","sei","è"], answer:"sono", explain:"io ile 'sono'."},
+      {q:"Tu ___ gentile.", options:["sei","sono","è"], answer:"sei", explain:"tu ile 'sei'."},
+      {q:"Lei ___ felice.", options:["è","sei","sono"], answer:"è", explain:"lui/lei ile 'è'."},
+      {q:"Noi ___ qui.", options:["siamo","siete","sono"], answer:"siamo", explain:"noi ile 'siamo'."}
+    ]},
+  {uid:"it1-3", type:"vocab", icon:"🤝", title:"Tanışma", desc:"Kendini tanıtma.", words:[
+    {en:"Mi chiamo Deniz", tr:"Benim adım Deniz", ex:"Ciao, mi chiamo Deniz.", exTr:"Merhaba, benim adım Deniz."},
+    {en:"Come ti chiami?", tr:"Adın ne?", ex:"Come ti chiami?", exTr:"Adın ne?"},
+    {en:"Piacere", tr:"Memnun oldum", ex:"Piacere!", exTr:"Memnun oldum!"},
+    {en:"Sono della Turchia", tr:"Türkiye'denim", ex:"Sono della Turchia.", exTr:"Türkiye'denim."},
+    {en:"Grazie", tr:"Teşekkür ederim", ex:"Grazie mille!", exTr:"Çok teşekkürler!"},
+    {en:"Prego", tr:"Rica ederim / Buyurun", ex:"Prego!", exTr:"Rica ederim!"}
+  ]},
+  {uid:"it1-4", type:"grammar", icon:"📖", title:"Gramer: Belirli artikeller (il / la)",
+    intro:"İtalyancada isimlerin cinsiyeti vardır: eril ve dişil. Artikel buna göre değişir.",
+    rule:"Eril tekil: genelde <b>il</b> (il libro = kitap). Dişil tekil: <b>la</b> (la casa = ev). Sesli harfle başlayan isimden önce <b>l'</b> (l'amico).",
+    structure:[["Tür","Artikel","Örnek"],["Eril","il","il libro (kitap)"],["Dişil","la","la casa (ev)"],["Sesli ile başlayan","l'","l'amico (arkadaş)"]],
+    examples:[{en:"il libro",tr:"kitap"},{en:"la casa",tr:"ev"},{en:"la pizza",tr:"pizza"},{en:"il caffè",tr:"kahve"}],
+    exercises:[
+      {q:"___ libro (eril)", options:["il","la","lo"], answer:"il", explain:"Eril tekil: il."},
+      {q:"___ casa (dişil)", options:["la","il","lo"], answer:"la", explain:"Dişil tekil: la."},
+      {q:"___ pizza (dişil)", options:["la","il","le"], answer:"la", explain:"pizza dişil: la pizza."},
+      {q:"___ caffè (eril)", options:["il","la","le"], answer:"il", explain:"caffè eril: il caffè."}
+    ]},
+  {uid:"it1-5", type:"vocab", icon:"🔢", title:"Sayılar", desc:"1-10 arası sayılar.", words:[
+    {en:"Uno", tr:"Bir", ex:"Ho un libro.", exTr:"Bir kitabım var."},
+    {en:"Due", tr:"İki", ex:"Due caffè, per favore.", exTr:"İki kahve, lütfen."},
+    {en:"Tre", tr:"Üç", ex:"Tre amici.", exTr:"Üç arkadaş."},
+    {en:"Quattro", tr:"Dört", ex:"Quattro giorni.", exTr:"Dört gün."},
+    {en:"Cinque", tr:"Beş", ex:"Cinque minuti.", exTr:"Beş dakika."},
+    {en:"Dieci", tr:"On", ex:"Dieci euro.", exTr:"On euro."}
+  ]},
+  {uid:"it1-6", type:"vocab", icon:"🎨", title:"Renkler", desc:"Temel renkler.", words:[
+    {en:"Rosso",tr:"Kırmızı",ex:"Il libro è rosso.",exTr:"Kitap kırmızı."},
+    {en:"Blu",tr:"Mavi",ex:"Il cielo è blu.",exTr:"Gökyüzü mavi."},
+    {en:"Verde",tr:"Yeşil",ex:"L'erba è verde.",exTr:"Çimen yeşil."},
+    {en:"Giallo",tr:"Sarı",ex:"Il sole è giallo.",exTr:"Güneş sarı."},
+    {en:"Bianco",tr:"Beyaz",ex:"Il latte è bianco.",exTr:"Süt beyaz."},
+    {en:"Nero",tr:"Siyah",ex:"Il caffè è nero.",exTr:"Kahve siyah."}
+  ]},
+  {uid:"it1-7", type:"grammar", icon:"📖", title:"Gramer: avere (sahip olmak)",
+    intro:"'Sahip olmak' fiili: avere. 'Bir ...'m var' demek için kullanılır.",
+    rule:"io <b>ho</b>, tu <b>hai</b>, lui/lei <b>ha</b>, noi <b>abbiamo</b>, voi <b>avete</b>, loro <b>hanno</b>. Örnek: \"Io <b>ho</b> un cane\" = \"Bir köpeğim var\".",
+    structure:[["Özne","Fiil","Örnek"],["io","ho","Io ho un libro"],["tu","hai","Tu hai una casa"],["lui/lei","ha","Lei ha un gatto"],["noi","abbiamo","Noi abbiamo tempo"],["voi","avete","Voi avete ragione"],["loro","hanno","Loro hanno fame"]],
+    examples:[{en:"Io ho un cane.",tr:"Bir köpeğim var."},{en:"Lei ha un gatto.",tr:"Onun bir kedisi var."},{en:"Noi abbiamo tempo.",tr:"Zamanımız var."},{en:"Loro hanno fame.",tr:"Onlar aç."}],
+    exercises:[
+      {q:"Io ___ un libro.", options:["ho","hai","ha"], answer:"ho", explain:"io ile 'ho'."},
+      {q:"Tu ___ una casa.", options:["hai","ho","ha"], answer:"hai", explain:"tu ile 'hai'."},
+      {q:"Lei ___ un gatto.", options:["ha","hai","ho"], answer:"ha", explain:"lui/lei ile 'ha'."},
+      {q:"Noi ___ tempo.", options:["abbiamo","avete","hanno"], answer:"abbiamo", explain:"noi ile 'abbiamo'."}
+    ]},
+  {uid:"it1-8", type:"vocab", icon:"👨‍👩‍👧", title:"Aile", desc:"Aile bireyleri.", words:[
+    {en:"Madre",tr:"Anne",ex:"Mia madre è qui.",exTr:"Annem burada."},
+    {en:"Padre",tr:"Baba",ex:"Mio padre lavora.",exTr:"Babam çalışıyor."},
+    {en:"Sorella",tr:"Kız kardeş",ex:"Ho una sorella.",exTr:"Bir kız kardeşim var."},
+    {en:"Fratello",tr:"Erkek kardeş",ex:"Ho un fratello.",exTr:"Bir erkek kardeşim var."},
+    {en:"Figlio",tr:"Oğul",ex:"Mio figlio è piccolo.",exTr:"Oğlum küçük."},
+    {en:"Figlia",tr:"Kız evlat",ex:"Mia figlia è felice.",exTr:"Kızım mutlu."}
+  ]},
+  {uid:"it1-9", type:"vocab", icon:"💬", title:"Temel İfadeler", desc:"Günlük hayatta çok kullanılan kalıplar.", words:[
+    {en:"Grazie mille",tr:"Çok teşekkürler",ex:"Grazie mille!",exTr:"Çok teşekkürler!"},
+    {en:"Prego",tr:"Rica ederim",ex:"Prego!",exTr:"Rica ederim!"},
+    {en:"Mi scusi",tr:"Affedersiniz",ex:"Mi scusi, dov'è il bagno?",exTr:"Affedersiniz, tuvalet nerede?"},
+    {en:"Non capisco",tr:"Anlamıyorum",ex:"Scusa, non capisco.",exTr:"Pardon, anlamıyorum."},
+    {en:"Ho capito",tr:"Anladım",ex:"Sì, ho capito.",exTr:"Evet, anladım."},
+    {en:"Quanto costa?",tr:"Ne kadar? / Kaç para?",ex:"Quanto costa questo?",exTr:"Bu ne kadar?"},
+    {en:"Va bene",tr:"Tamam / Olur",ex:"Va bene, grazie.",exTr:"Tamam, teşekkürler."}
+  ]}
+]},
+{ id:2, cefr:"A2", name:"Seviye 2 — Temel", desc:"Cümle kurmaya başla: fiiller, çoğullar, edatlar ve günlük yaşam.", units:[
+  {uid:"it2-1", type:"grammar", icon:"📖", title:"Gramer: Çoğullar",
+    intro:"İtalyancada çoğul, ismin son harfine göre değişir.",
+    rule:"Eril <b>-o → -i</b>: libro → libri. Dişil <b>-a → -e</b>: casa → case. <b>-e</b> ile bitenler → <b>-i</b>: cane → cani.",
+    structure:[["Tekil","Çoğul"],["libro (kitap)","libri"],["casa (ev)","case"],["cane (köpek)","cani"],["mela (elma)","mele"]],
+    examples:[{en:"due libri",tr:"iki kitap"},{en:"tre case",tr:"üç ev"},{en:"due cani",tr:"iki köpek"}],
+    exercises:[
+      {q:"un libro, due ___", options:["libri","libro","libre"], answer:"libri", explain:"Eril -o → -i."},
+      {q:"una casa, due ___", options:["case","casi","casa"], answer:"case", explain:"Dişil -a → -e."},
+      {q:"un cane, due ___", options:["cani","cane","canes"], answer:"cani", explain:"-e → -i."},
+      {q:"una mela, due ___", options:["mele","meli","mela"], answer:"mele", explain:"Dişil -a → -e."}
+    ]},
+  {uid:"it2-2", type:"vocab", icon:"🍎", title:"Yiyecek & İçecek", desc:"Sofradaki temel kelimeler.", words:[
+    {en:"Pane",tr:"Ekmek",ex:"Il pane è buono.",exTr:"Ekmek güzel."},
+    {en:"Acqua",tr:"Su",ex:"Un'acqua, per favore.",exTr:"Bir su, lütfen."},
+    {en:"Caffè",tr:"Kahve",ex:"Un caffè, per favore.",exTr:"Bir kahve, lütfen."},
+    {en:"Latte",tr:"Süt",ex:"Il latte è freddo.",exTr:"Süt soğuk."},
+    {en:"Formaggio",tr:"Peynir",ex:"Mi piace il formaggio.",exTr:"Peyniri severim."},
+    {en:"Mela",tr:"Elma",ex:"Mangio una mela.",exTr:"Bir elma yerim."}
+  ]},
+  {uid:"it2-3", type:"grammar", icon:"📖", title:"Gramer: Şimdiki zaman (-are fiilleri)",
+    intro:"-are ile biten fiiller düzenli çekilir. Örnek: parlare (konuşmak).",
+    rule:"Kök + <b>-o, -i, -a, -iamo, -ate, -ano</b>. parlare → io parlo, tu parli, lui/lei parla, noi parliamo, voi parlate, loro parlano.",
+    structure:[["Özne","parlare"],["io","parlo"],["tu","parli"],["lui/lei","parla"],["noi","parliamo"],["voi","parlate"],["loro","parlano"]],
+    examples:[{en:"Io parlo italiano.",tr:"İtalyanca konuşurum."},{en:"Lei parla bene.",tr:"O iyi konuşur."},{en:"Noi mangiamo la pizza.",tr:"Pizza yeriz."}],
+    exercises:[
+      {q:"Io ___ italiano. (parlare)", options:["parlo","parli","parla"], answer:"parlo", explain:"io → -o: parlo."},
+      {q:"Tu ___ bene. (parlare)", options:["parli","parlo","parla"], answer:"parli", explain:"tu → -i: parli."},
+      {q:"Lui ___ italiano. (parlare)", options:["parla","parlo","parli"], answer:"parla", explain:"lui → -a: parla."},
+      {q:"Noi ___ la pizza. (mangiare)", options:["mangiamo","mangiate","mangiano"], answer:"mangiamo", explain:"noi → -iamo."}
+    ]},
+  {uid:"it2-4", type:"grammar", icon:"📖", title:"Gramer: Olumsuz (non)",
+    intro:"Olumsuz cümle için fiilden önce 'non' konur.",
+    rule:"Özne + <b>non</b> + fiil. \"Non parlo inglese\" = \"İngilizce konuşmam\". \"Non ho tempo\" = \"Zamanım yok\".",
+    structure:[["Olumlu","Olumsuz"],["Parlo italiano","Non parlo italiano"],["Ho tempo","Non ho tempo"]],
+    examples:[{en:"Non parlo inglese.",tr:"İngilizce konuşmam."},{en:"Non ho tempo.",tr:"Zamanım yok."},{en:"Non capisco.",tr:"Anlamıyorum."}],
+    exercises:[
+      {q:"İngilizce konuşmam: ___ parlo inglese.", options:["Non","No","Ne"], answer:"Non", explain:"Olumsuzluk: non."},
+      {q:"Zamanım yok: Non ___ tempo.", options:["ho","hai","ha"], answer:"ho", explain:"io ile ho."},
+      {q:"O et yemez: Lei non ___ carne. (mangiare)", options:["mangia","mangio","mangi"], answer:"mangia", explain:"lui/lei → mangia."}
+    ]},
+  {uid:"it2-5", type:"vocab", icon:"🏠", title:"Ev & Eşyalar", desc:"Evdeki eşyalar.", words:[
+    {en:"Casa",tr:"Ev",ex:"La mia casa è grande.",exTr:"Evim büyük."},
+    {en:"Tavolo",tr:"Masa",ex:"Il libro è sul tavolo.",exTr:"Kitap masanın üstünde."},
+    {en:"Sedia",tr:"Sandalye",ex:"Una sedia rossa.",exTr:"Kırmızı bir sandalye."},
+    {en:"Porta",tr:"Kapı",ex:"Apri la porta.",exTr:"Kapıyı aç."},
+    {en:"Finestra",tr:"Pencere",ex:"Chiudi la finestra.",exTr:"Pencereyi kapat."},
+    {en:"Letto",tr:"Yatak",ex:"Il gatto è sul letto.",exTr:"Kedi yatağın üstünde."}
+  ]},
+  {uid:"it2-6", type:"grammar", icon:"📖", title:"Gramer: Edatlar (in, a, su, con)",
+    intro:"Yer ve durum bildiren küçük kelimeler.",
+    rule:"<b>in</b> = içinde/-de (in casa), <b>a</b> = -e/-a, belirli yer (a Roma), <b>su</b> = üstünde (sul tavolo), <b>con</b> = ile (con me).",
+    structure:[["Edat","Anlam","Örnek"],["in","içinde/-de","in casa"],["a","-e / belirli yer","a Roma"],["su","üstünde","sul tavolo"],["con","ile","con me"]],
+    examples:[{en:"Sono a Roma.",tr:"Roma'dayım."},{en:"Il libro è sul tavolo.",tr:"Kitap masanın üstünde."},{en:"Vengo con te.",tr:"Seninle geliyorum."}],
+    exercises:[
+      {q:"Seninle geliyorum: Vengo ___ te.", options:["con","su","in"], answer:"con", explain:"ile = con."},
+      {q:"Roma'dayım: Sono ___ Roma.", options:["a","su","con"], answer:"a", explain:"Belirli yer/şehir: a."},
+      {q:"Kitap masanın üstünde: Il libro è ___ tavolo.", options:["sul","con","in"], answer:"sul", explain:"üstünde: su + il = sul."},
+      {q:"Evin içinde: ___ casa.", options:["in","con","su"], answer:"in", explain:"içinde: in."}
+    ]},
+  {uid:"it2-7", type:"grammar", icon:"📖", title:"Gramer: Soru sözcükleri",
+    intro:"Soru sormak için kullanılan kelimeler.",
+    rule:"<b>Dove</b> = nerede, <b>Cosa</b> = ne, <b>Quando</b> = ne zaman, <b>Chi</b> = kim, <b>Perché</b> = neden.",
+    structure:[["Soru","Anlam","Örnek"],["Dove?","nerede","Dove sei?"],["Cosa?","ne","Cosa fai?"],["Quando?","ne zaman","Quando vieni?"],["Chi?","kim","Chi è?"]],
+    examples:[{en:"Dove sei?",tr:"Neredesin?"},{en:"Cosa fai?",tr:"Ne yapıyorsun?"},{en:"Chi è?",tr:"Kim o?"},{en:"Di dove sei?",tr:"Nerelisin?"}],
+    exercises:[
+      {q:"Neredesin? ___ sei?", options:["Dove","Chi","Quando"], answer:"Dove", explain:"nerede = Dove."},
+      {q:"Ne yapıyorsun? ___ fai?", options:["Cosa","Dove","Chi"], answer:"Cosa", explain:"ne = Cosa."},
+      {q:"Kim o? ___ è?", options:["Chi","Cosa","Dove"], answer:"Chi", explain:"kim = Chi."},
+      {q:"Ne zaman geliyorsun? ___ vieni?", options:["Quando","Dove","Chi"], answer:"Quando", explain:"ne zaman = Quando."}
+    ]},
+  {uid:"it2-8", type:"vocab", icon:"📅", title:"Günler & Zaman", desc:"Haftanın günleri ve zaman.", words:[
+    {en:"Oggi",tr:"Bugün",ex:"Oggi è lunedì.",exTr:"Bugün pazartesi."},
+    {en:"Domani",tr:"Yarın",ex:"A domani!",exTr:"Yarın görüşürüz!"},
+    {en:"Ieri",tr:"Dün",ex:"Ieri ero a casa.",exTr:"Dün evdeydim."},
+    {en:"Lunedì",tr:"Pazartesi",ex:"Lavoro di lunedì.",exTr:"Pazartesi çalışırım."},
+    {en:"Sabato",tr:"Cumartesi",ex:"Sabato non lavoro.",exTr:"Cumartesi çalışmam."},
+    {en:"Domenica",tr:"Pazar",ex:"Domenica dormo.",exTr:"Pazar uyurum."}
+  ]},
+  {uid:"it2-9", type:"vocab", icon:"⏰", title:"Günlük Rutin", desc:"Carlo'nun günü metninden günlük eylemler.", words:[
+    {en:"Mi alzo",tr:"Kalkarım",ex:"Mi alzo alle 7:00.",exTr:"Saat 7'de kalkarım."},
+    {en:"La colazione",tr:"Kahvaltı",ex:"Faccio colazione con tè.",exTr:"Çayla kahvaltı yaparım."},
+    {en:"La scuola",tr:"Okul",ex:"Vado a scuola.",exTr:"Okula giderim."},
+    {en:"La lezione",tr:"Ders",ex:"Ho sei ore di lezione.",exTr:"Altı saat dersim var."},
+    {en:"I compiti",tr:"Ödevler",ex:"Faccio i compiti.",exTr:"Ödevlerimi yaparım."},
+    {en:"La cena",tr:"Akşam yemeği",ex:"Ceno alle 19:00.",exTr:"Saat 19'da akşam yemeği yerim."},
+    {en:"Vado a letto",tr:"Yatağa giderim",ex:"Vado a letto alle 22:30.",exTr:"22:30'da yatağa giderim."}
+  ]}
+]},
+{ id:3, cefr:"B1", name:"Seviye 3 — Orta", desc:"Zamanlar: geçmiş, gelecek, modal fiiller ve karşılaştırma.", units:[
+  {uid:"it3-1", type:"grammar", icon:"📖", title:"Gramer: Geçmiş zaman — avere ile (passato prossimo)",
+    intro:"Geçmişte biten işler için passato prossimo. Çoğu fiil 'avere' + geçmiş ortaç ile kurulur.",
+    rule:"avere (ho/hai/ha/abbiamo/avete/hanno) + geçmiş ortaç. Ortaç: <b>-are→-ato</b>, <b>-ere→-uto</b>, <b>-ire→-ito</b>. \"Ho mangiato\" = \"yedim\".",
+    structure:[["Mastar","Ortaç"],["parlare","parlato"],["mangiare","mangiato"],["credere","creduto"],["dormire","dormito"]],
+    examples:[{en:"Ho mangiato la pizza.",tr:"Pizza yedim."},{en:"Hai parlato con Deniz?",tr:"Deniz'le konuştun mu?"},{en:"Abbiamo dormito bene.",tr:"İyi uyuduk."}],
+    exercises:[
+      {q:"Yedim: Ho ___ (mangiare).", options:["mangiato","mangiare","mangio"], answer:"mangiato", explain:"-are → -ato: mangiato."},
+      {q:"Konuştun mu? Hai ___? (parlare)", options:["parlato","parlare","parli"], answer:"parlato", explain:"-are → -ato: parlato."},
+      {q:"Uyuduk: Abbiamo ___ (dormire).", options:["dormito","dormire","dormo"], answer:"dormito", explain:"-ire → -ito: dormito."},
+      {q:"-are fiilinin geçmiş ortacı hangi ekle biter?", options:["-ato","-uto","-ito"], answer:"-ato", explain:"-are → -ato."}
+    ]},
+  {uid:"it3-2", type:"grammar", icon:"📖", title:"Gramer: Geçmiş zaman — essere ile",
+    intro:"Bazı fiiller (gitmek, gelmek gibi hareket) 'essere' ile kurulur ve özneye göre uyum sağlar.",
+    rule:"essere (sono/sei/è/siamo/siete/sono) + ortaç. Erkek: <b>-o</b>, kadın: <b>-a</b>. \"Sono andato\" (erkek), \"Sono andata\" (kadın) = \"gittim\".",
+    structure:[["Özne","Örnek"],["io (kadın)","Sono andata"],["io (erkek)","Sono andato"],["lei","È andata"],["noi","Siamo andati"]],
+    examples:[{en:"Sono andata a casa.",tr:"Eve gittim (kadın)."},{en:"Lei è arrivata.",tr:"O geldi (kadın)."},{en:"Siamo andati al bar.",tr:"Bara gittik."}],
+    exercises:[
+      {q:"Eve gittim (kadın): Sono ___ a casa. (andare)", options:["andata","andato","andare"], answer:"andata", explain:"Kadın için -a: andata."},
+      {q:"Hareket fiilleri passato prossimo'da hangi yardımcıyı alır?", options:["essere","avere","fare"], answer:"essere", explain:"Hareket/durum: essere."},
+      {q:"O geldi (kadın): Lei ___ arrivata.", options:["è","ha","hai"], answer:"è", explain:"essere: è."},
+      {q:"Bara gittik: ___ andati al bar.", options:["Siamo","Abbiamo","Avete"], answer:"Siamo", explain:"noi + essere: siamo."}
+    ]},
+  {uid:"it3-3", type:"grammar", icon:"📖", title:"Gramer: Gelecek zaman (futuro)",
+    intro:"Gelecekte olacak işler için futuro semplice.",
+    rule:"parlare → io <b>parlerò</b>, tu <b>parlerai</b>, lui/lei <b>parlerà</b>, noi <b>parleremo</b>, voi <b>parlerete</b>, loro <b>parleranno</b>.",
+    structure:[["Özne","parlare"],["io","parlerò"],["tu","parlerai"],["lui/lei","parlerà"],["noi","parleremo"]],
+    examples:[{en:"Domani parlerò con lei.",tr:"Yarın onunla konuşacağım."},{en:"Andremo a Roma.",tr:"Roma'ya gideceğiz."},{en:"Sarà felice.",tr:"Mutlu olacak."}],
+    exercises:[
+      {q:"Yarın konuşacağım: Domani ___ (parlare, io).", options:["parlerò","parlo","parlato"], answer:"parlerò", explain:"io gelecek: parlerò."},
+      {q:"Konuşacaksın: Tu ___ (parlare).", options:["parlerai","parlerò","parla"], answer:"parlerai", explain:"tu gelecek: parlerai."},
+      {q:"Mutlu olacak: ___ felice. (essere)", options:["Sarà","È","Era"], answer:"Sarà", explain:"essere gelecek 3.tekil: sarà."},
+      {q:"Gideceğiz: ___ a Roma. (andare)", options:["Andremo","Andiamo","Andato"], answer:"Andremo", explain:"noi gelecek: andremo."}
+    ]},
+  {uid:"it3-4", type:"grammar", icon:"📖", title:"Gramer: Modal fiiller (potere / volere)",
+    intro:"'-ebilmek' ve 'istemek' anlamı: potere (yapabilmek) ve volere (istemek). Sonrasında fiil yalın (mastar) gelir.",
+    rule:"potere: <b>posso, puoi, può, possiamo, potete, possono</b>. volere: <b>voglio, vuoi, vuole, vogliamo, volete, vogliono</b>. \"Voglio un caffè\" = \"Bir kahve istiyorum\".",
+    structure:[["Özne","potere","volere"],["io","posso","voglio"],["tu","puoi","vuoi"],["lui/lei","può","vuole"],["noi","possiamo","vogliamo"]],
+    examples:[{en:"Voglio un caffè.",tr:"Bir kahve istiyorum."},{en:"Posso aiutare.",tr:"Yardım edebilirim."},{en:"Puoi ripetere?",tr:"Tekrar eder misin?"}],
+    exercises:[
+      {q:"Bir kahve istiyorum: ___ un caffè.", options:["Voglio","Posso","Vuoi"], answer:"Voglio", explain:"io istemek: voglio."},
+      {q:"Yardım edebilirim: ___ aiutare.", options:["Posso","Voglio","Puoi"], answer:"Posso", explain:"io yapabilmek: posso."},
+      {q:"Tekrar eder misin? ___ ripetere?", options:["Puoi","Posso","Vuole"], answer:"Puoi", explain:"tu yapabilmek: puoi."},
+      {q:"İstiyoruz: ___ (volere, noi)", options:["vogliamo","volete","vogliono"], answer:"vogliamo", explain:"noi: vogliamo."}
+    ]},
+  {uid:"it3-5", type:"grammar", icon:"📖", title:"Gramer: Sıfat uyumu (bello/bella)",
+    intro:"Sıfatlar, tanımladıkları ismin cinsiyet ve sayısına uyar.",
+    rule:"Eril tekil <b>-o</b>, dişil tekil <b>-a</b>, eril çoğul <b>-i</b>, dişil çoğul <b>-e</b>: bello, bella, belli, belle.",
+    structure:[["","Tekil","Çoğul"],["Eril","bello","belli"],["Dişil","bella","belle"]],
+    examples:[{en:"un ragazzo bello",tr:"yakışıklı bir çocuk"},{en:"una casa bella",tr:"güzel bir ev"},{en:"case belle",tr:"güzel evler"}],
+    exercises:[
+      {q:"güzel bir ev (dişil tekil): una casa ___", options:["bella","bello","belle"], answer:"bella", explain:"Dişil tekil: -a."},
+      {q:"yakışıklı çocuk (eril tekil): un ragazzo ___", options:["bello","bella","belli"], answer:"bello", explain:"Eril tekil: -o."},
+      {q:"güzel evler (dişil çoğul): case ___", options:["belle","belli","bella"], answer:"belle", explain:"Dişil çoğul: -e."},
+      {q:"güzel çocuklar (eril çoğul): ragazzi ___", options:["belli","belle","bello"], answer:"belli", explain:"Eril çoğul: -i."}
+    ]},
+  {uid:"it3-6", type:"grammar", icon:"📖", title:"Gramer: Karşılaştırma (più ... di)",
+    intro:"İki şeyi karşılaştırırken 'più ... di' (daha ... -den) kullanılır.",
+    rule:"<b>più</b> + sıfat + <b>di</b>: \"Roma è più grande di Pisa\" = \"Roma Pisa'dan daha büyük\". Daha az için <b>meno</b>.",
+    structure:[["Yapı","Örnek"],["più ... di","più grande di"],["meno ... di","meno caro di"]],
+    examples:[{en:"Roma è più grande di Pisa.",tr:"Roma Pisa'dan daha büyük."},{en:"Il caffè è più forte del tè.",tr:"Kahve çaydan daha güçlü."}],
+    exercises:[
+      {q:"daha büyük: ___ grande", options:["più","meno","molto"], answer:"più", explain:"daha = più."},
+      {q:"Roma Pisa'dan daha büyük: Roma è più grande ___ Pisa.", options:["di","da","a"], answer:"di", explain:"karşılaştırmada -den = di."},
+      {q:"daha az pahalı: ___ caro", options:["meno","più","tanto"], answer:"meno", explain:"daha az = meno."}
+    ]},
+  {uid:"it3-7", type:"vocab", icon:"✈️", title:"Seyahat", desc:"Seyahatte işe yarar kelimeler.", words:[
+    {en:"Aeroporto",tr:"Havalimanı",ex:"Sono all'aeroporto.",exTr:"Havalimanındayım."},
+    {en:"Biglietto",tr:"Bilet",ex:"Ho un biglietto.",exTr:"Bir biletim var."},
+    {en:"Albergo",tr:"Otel",ex:"L'albergo è bello.",exTr:"Otel güzel."},
+    {en:"Treno",tr:"Tren",ex:"Il treno è veloce.",exTr:"Tren hızlı."},
+    {en:"Dov'è...?",tr:"... nerede?",ex:"Dov'è l'albergo?",exTr:"Otel nerede?"},
+    {en:"Scusi",tr:"Affedersiniz",ex:"Scusi, dov'è il bagno?",exTr:"Affedersiniz, tuvalet nerede?"}
+  ]},
+  {uid:"it3-8", type:"vocab", icon:"😊", title:"Duygular & Sıfatlar", desc:"Nasıl hissettiğini anlat.", words:[
+    {en:"Felice",tr:"Mutlu",ex:"Sono felice.",exTr:"Mutluyum."},
+    {en:"Triste",tr:"Üzgün",ex:"Lei è triste.",exTr:"O üzgün."},
+    {en:"Stanco",tr:"Yorgun",ex:"Sono stanco.",exTr:"Yorgunum."},
+    {en:"Contento",tr:"Memnun",ex:"Sono contento.",exTr:"Memnunum."},
+    {en:"Bello",tr:"Güzel",ex:"Che bella giornata!",exTr:"Ne güzel bir gün!"},
+    {en:"Grande",tr:"Büyük",ex:"Una casa grande.",exTr:"Büyük bir ev."}
+  ]}
+]}
+];
+const IT_DICT_EXTRA = [
+  {en:"Sì",tr:"Evet",ex:"Sì, grazie.",exTr:"Evet, teşekkürler.",cat:"Diğer"},
+  {en:"No",tr:"Hayır",ex:"No, grazie.",exTr:"Hayır, teşekkürler.",cat:"Diğer"},
+  {en:"Per favore",tr:"Lütfen",ex:"Un caffè, per favore.",exTr:"Bir kahve, lütfen.",cat:"Diğer"},
+  {en:"Grazie mille",tr:"Çok teşekkürler",ex:"Grazie mille!",exTr:"Çok teşekkürler!",cat:"Diğer"},
+  {en:"Acqua",tr:"Su",ex:"Un'acqua, per favore.",exTr:"Bir su, lütfen.",cat:"Yiyecek"},
+  {en:"Pane",tr:"Ekmek",ex:"Il pane è buono.",exTr:"Ekmek güzel.",cat:"Yiyecek"},
+  {en:"Pizza",tr:"Pizza",ex:"La pizza è buona.",exTr:"Pizza güzel.",cat:"Yiyecek"},
+  {en:"Caffè",tr:"Kahve",ex:"Un caffè, per favore.",exTr:"Bir kahve, lütfen.",cat:"Yiyecek"},
+  {en:"Casa",tr:"Ev",ex:"La mia casa.",exTr:"Benim evim.",cat:"Ev"},
+  {en:"Amico",tr:"Arkadaş",ex:"Il mio amico.",exTr:"Benim arkadaşım.",cat:"Diğer"},
+  {en:"Rosso",tr:"Kırmızı",ex:"Il libro è rosso.",exTr:"Kitap kırmızı.",cat:"Sayılar & Renkler"},
+  {en:"Bianco",tr:"Beyaz",ex:"Il latte è bianco.",exTr:"Süt beyaz.",cat:"Sayılar & Renkler"},
+  {en:"Buono",tr:"Güzel / iyi (tat)",ex:"È molto buono.",exTr:"Çok güzel.",cat:"Sıfatlar"},
+  {en:"Grande",tr:"Büyük",ex:"Una casa grande.",exTr:"Büyük bir ev.",cat:"Sıfatlar"},
+  {en:"Piccolo",tr:"Küçük",ex:"Un caffè piccolo.",exTr:"Küçük bir kahve.",cat:"Sıfatlar"},
+  {en:"Parlare",tr:"Konuşmak",ex:"Parlare italiano.",exTr:"İtalyanca konuşmak.",cat:"Fiiller"},
+  {en:"Mangiare",tr:"Yemek",ex:"Mangiare la pizza.",exTr:"Pizza yemek.",cat:"Fiiller"},
+  {en:"Bere",tr:"İçmek",ex:"Bere acqua.",exTr:"Su içmek.",cat:"Fiiller"},
+  {en:"Andare",tr:"Gitmek",ex:"Andare a casa.",exTr:"Eve gitmek.",cat:"Fiiller"},
+  {en:"Venire",tr:"Gelmek",ex:"Venire qui.",exTr:"Buraya gelmek.",cat:"Fiiller"},
+  {en:"Fare",tr:"Yapmak",ex:"Fare i compiti.",exTr:"Ödev yapmak.",cat:"Fiiller"},
+  {en:"Volere",tr:"İstemek",ex:"Voglio un caffè.",exTr:"Bir kahve istiyorum.",cat:"Fiiller"},
+  {en:"Capire",tr:"Anlamak",ex:"Non capisco.",exTr:"Anlamıyorum.",cat:"Fiiller"},
+  {en:"Testa",tr:"Baş",ex:"Mi fa male la testa.",exTr:"Başım ağrıyor.",cat:"Vücut"},
+  {en:"Occhio",tr:"Göz",ex:"Ho gli occhi verdi.",exTr:"Yeşil gözlerim var.",cat:"Vücut"},
+  {en:"Mano",tr:"El",ex:"Lavati le mani.",exTr:"Ellerini yıka.",cat:"Vücut"},
+  {en:"Piede",tr:"Ayak",ex:"Mi fa male il piede.",exTr:"Ayağım ağrıyor.",cat:"Vücut"},
+  {en:"Sei",tr:"Altı",ex:"Sei euro.",exTr:"Altı euro.",cat:"Sayılar & Renkler"},
+  {en:"Sette",tr:"Yedi",ex:"Sette giorni.",exTr:"Yedi gün.",cat:"Sayılar & Renkler"},
+  {en:"Otto",tr:"Sekiz",ex:"Otto ore.",exTr:"Sekiz saat.",cat:"Sayılar & Renkler"},
+  {en:"Nove",tr:"Dokuz",ex:"Nove anni.",exTr:"Dokuz yıl.",cat:"Sayılar & Renkler"}
+];
+
+/* ===== DİLLER ===== */
+const LANGS = {
+  en:{ code:"en", name:"İngilizce", flag:"🇬🇧", levels:EN_LEVELS, dictExtra:EN_DICT_EXTRA },
+  it:{ code:"it", name:"İtalyanca", flag:"🇮🇹", levels:IT_LEVELS, dictExtra:IT_DICT_EXTRA }
+};
+let LEVELS = EN_LEVELS;
+let DICTIONARY_EXTRA = EN_DICT_EXTRA;
+let SPEAK_LANG = "en-US";
+
 /* ===== İNDEKSLEME ===== */
 let ALL_UNITS = [];
 let VOCAB_POOL = [];
@@ -581,19 +884,42 @@ const BADGES = [
 ];
 
 /* ===== DURUM ===== */
-const STORE_KEY="ingilizceOgren_v3";
+const STORE_KEY="dilOgren_v4";
+const OLD_KEY_V3="ingilizceOgren_v3";
+function defaultLangData(){ return {completedLessons:[], wordsLearned:0, grammarLearned:0, reviewWords:[], bestScores:{}, unlocks:{}, dictLearned:[], earnedBadges:[], perfectQuiz:false}; }
 function defaultState(){
-  return {completedLessons:[], wordsLearned:0, grammarLearned:0, reviewWords:[], bestScores:{},
-    studyDates:[], streak:0, perfectQuiz:false, earnedBadges:[], unlocks:{}, dictLearned:[],
-    settings:{fontScale:1, rate:0.85, voiceURI:null}};
+  return Object.assign({}, defaultLangData(), {
+    lang:null, langStore:{en:defaultLangData(), it:defaultLangData()},
+    studyDates:[], streak:0, settings:{fontScale:1, rate:0.85, voiceURI:null}
+  });
 }
 function loadState(){
-  try{ const raw=localStorage.getItem(STORE_KEY); if(!raw) return defaultState();
-    const s=JSON.parse(raw); const d=defaultState(); const m=Object.assign(d,s);
-    m.settings=Object.assign(d.settings, s.settings||{}); m.unlocks=Object.assign({}, s.unlocks||{}); return m;
+  try{
+    const raw=localStorage.getItem(STORE_KEY);
+    if(raw){ const s=JSON.parse(raw); const d=defaultState(); const m=Object.assign(d,s);
+      m.settings=Object.assign(defaultState().settings, s.settings||{});
+      m.langStore=Object.assign({en:defaultLangData(), it:defaultLangData()}, s.langStore||{});
+      return m; }
+    // Eski sürümden (yalnızca İngilizce) göç
+    const old=localStorage.getItem(OLD_KEY_V3);
+    if(old){ const s=JSON.parse(old); const d=defaultState();
+      d.langStore.en=Object.assign(defaultLangData(), {completedLessons:s.completedLessons||[], wordsLearned:s.wordsLearned||0, grammarLearned:s.grammarLearned||0, reviewWords:s.reviewWords||[], bestScores:s.bestScores||{}, unlocks:s.unlocks||{}, dictLearned:s.dictLearned||[], earnedBadges:s.earnedBadges||[], perfectQuiz:!!s.perfectQuiz});
+      d.studyDates=s.studyDates||[]; d.streak=s.streak||0; if(s.settings) d.settings=Object.assign(d.settings, s.settings);
+      d.lang="en"; return d; }
+    return defaultState();
   }catch(e){ return defaultState(); }
 }
-function saveState(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){} }
+function snapshotActive(){ return {completedLessons:state.completedLessons, wordsLearned:state.wordsLearned, grammarLearned:state.grammarLearned, reviewWords:state.reviewWords, bestScores:state.bestScores, unlocks:state.unlocks, dictLearned:state.dictLearned, earnedBadges:state.earnedBadges, perfectQuiz:state.perfectQuiz}; }
+function applyLangData(o){ o=o||defaultLangData(); state.completedLessons=o.completedLessons||[]; state.wordsLearned=o.wordsLearned||0; state.grammarLearned=o.grammarLearned||0; state.reviewWords=o.reviewWords||[]; state.bestScores=o.bestScores||{}; state.unlocks=o.unlocks||{}; state.dictLearned=o.dictLearned||[]; state.earnedBadges=o.earnedBadges||[]; state.perfectQuiz=!!o.perfectQuiz; }
+function saveState(){ try{ if(state.lang){ state.langStore[state.lang]=snapshotActive(); } localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){} }
+function setLanguage(lang, opts){ opts=opts||{};
+  if(state.lang && !opts.skipSaveOld){ state.langStore[state.lang]=snapshotActive(); }
+  state.lang=lang;
+  LEVELS=LANGS[lang].levels; DICTIONARY_EXTRA=LANGS[lang].dictExtra;
+  SPEAK_LANG = (lang==="it") ? "it-IT" : "en-US";
+  applyLangData(state.langStore[lang]);
+  indexCurriculum(); saveState();
+}
 let state = loadState();
 
 function dateKey(d){ d=d||new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
@@ -609,12 +935,12 @@ function checkBadges(){ const n=[]; BADGES.forEach(b=>{ if(b.test(state)&&!state
 let VOICES=[];
 function refreshVoices(){ if("speechSynthesis" in window){ VOICES=window.speechSynthesis.getVoices()||[]; } }
 if("speechSynthesis" in window){ refreshVoices(); window.speechSynthesis.onvoiceschanged=refreshVoices; }
-function englishVoices(){ return VOICES.filter(v=>/^en/i.test(v.lang)); }
-function pickVoice(){ const en=englishVoices();
-  if(state.settings.voiceURI){ const v=en.find(x=>x.voiceURI===state.settings.voiceURI); if(v) return v; }
-  return en.find(v=>/en[-_]?US/i.test(v.lang))||en[0]||null; }
+function langVoices(){ const p=SPEAK_LANG.slice(0,2); return VOICES.filter(v=>new RegExp("^"+p,"i").test(v.lang)); }
+function pickVoice(){ const vs=langVoices();
+  if(state.settings.voiceURI){ const v=vs.find(x=>x.voiceURI===state.settings.voiceURI); if(v) return v; }
+  return vs.find(v=>v.lang && v.lang.replace("_","-").toLowerCase()===SPEAK_LANG.toLowerCase())||vs[0]||null; }
 function speak(text){ if(!("speechSynthesis" in window)){ showToast("Bu cihazda sesli okuma yok."); return; }
-  window.speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang="en-US"; u.rate=state.settings.rate||0.85;
+  window.speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang=SPEAK_LANG; u.rate=state.settings.rate||0.85;
   const v=pickVoice(); if(v) u.voice=v; window.speechSynthesis.speak(u); }
 
 /* ===== TEST MOTORU ===== */
@@ -681,6 +1007,7 @@ function renderHome(){
         <div class="streak-badge">🔥 ${state.streak} gün seri</div>
         <div class="muted">${studiedToday?"Bugün çalıştın! ✅":"Bugünün dersini henüz yapmadın."}</div>
       </div>
+      <button class="btn btn-soft" data-act="langPicker">🌐 Dil: ${LANGS[state.lang].flag} ${esc(LANGS[state.lang].name)} — Değiştir</button>
     </div>`;
 
   if(nextU){
@@ -815,7 +1142,7 @@ function fcAdvance(){ if(ctx.fcIndex<ctx.unit.words.length-1){ ctx.fcIndex++; ct
 /* ----- TELAFFUZ ----- */
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 function renderPractice(uid){ const u=findUnit(uid); ctx={unit:u, prIndex:0}; drawPractice(); }
-function normalize(s){ return String(s).toLowerCase().replace(/[^a-zçğıöşü ]/gi,"").replace(/\s+/g," ").trim(); }
+function normalize(s){ return String(s).toLowerCase().replace(/[^a-zàáâäèéêëìíîïòóôöùúûüçğıöşü ]/gi,"").replace(/\s+/g," ").trim(); }
 function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.length, mic=!!SR;
   app.innerHTML=`
     <div class="card center"><div class="counter">Telaffuz ${ctx.prIndex+1} / ${n}</div>
@@ -831,7 +1158,7 @@ function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.len
 }
 function prNext(){ if(ctx.prIndex<ctx.unit.words.length-1){ ctx.prIndex++; drawPractice(); } else { showToast("Harika pratik! 🎉"); renderQuizIntro(ctx.unit.uid,"vocab"); } }
 function micCheck(){ if(!SR){ prNext(); return; } const w=ctx.unit.words[ctx.prIndex]; const box=document.getElementById("micState"); const target=normalize(w.en);
-  const rec=new SR(); rec.lang="en-US"; rec.interimResults=false; rec.maxAlternatives=5;
+  const rec=new SR(); rec.lang=SPEAK_LANG; rec.interimResults=false; rec.maxAlternatives=5;
   box.className="mic-state listening"; box.innerHTML="🎤 <span class='pulse'>Dinliyorum... şimdi söyle</span>"; let done=false;
   rec.onresult=(e)=>{ done=true; const alts=[]; for(let i=0;i<e.results[0].length;i++) alts.push(normalize(e.results[0][i].transcript));
     const ok=alts.some(a=>a===target||a.includes(target)||target.includes(a));
@@ -905,8 +1232,20 @@ function renderAchievements(){ app.innerHTML=`<div class="card"><h2>🏅 Rozetle
   <div class="badges">${BADGES.map(b=>{ const on=state.earnedBadges.includes(b.id); return `<div class="badge ${on?"on":""}"><div class="b-ico">${b.ico}</div><div class="b-name">${esc(b.name)}</div><div class="b-desc">${esc(b.desc)}</div></div>`; }).join("")}</div>
   <button class="btn btn-soft" style="margin-top:14px;" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,0); }
 
+/* ----- DİL SEÇİMİ ----- */
+function renderLangPicker(){
+  app.innerHTML=`<div class="card center">
+    <h2>🌐 Hangi dili çalışacaksın?</h2>
+    <p class="muted">İstediğin an üstteki 🌐 düğmesinden değiştirebilirsin. İlerlemen her dil için ayrı tutulur.</p>
+    <button class="btn btn-primary" data-act="chooseLang" data-lang="en">🇬🇧 İngilizce</button>
+    <button class="btn btn-accent" data-act="chooseLang" data-lang="it">🇮🇹 İtalyanca</button>
+    ${state.lang?`<button class="btn btn-soft" data-act="goHome">Vazgeç</button>`:""}
+  </div>`;
+  window.scrollTo(0,0);
+}
+
 /* ----- AYARLAR ----- */
-function renderSettings(){ const fs=state.settings.fontScale, rt=state.settings.rate, env=englishVoices();
+function renderSettings(){ const fs=state.settings.fontScale, rt=state.settings.rate, env=langVoices();
   app.innerHTML=`<div class="card"><h2>⚙️ Ayarlar</h2>
     <label class="set-lbl">Yazı Boyutu</label>
     <div class="seg"><button data-act="setFont" data-v="1" class="${fs===1?"active":""}">Normal</button>
@@ -916,8 +1255,8 @@ function renderSettings(){ const fs=state.settings.fontScale, rt=state.settings.
     <div class="seg"><button data-act="setRate" data-v="0.7" class="${rt===0.7?"active":""}">Çok Yavaş</button>
       <button data-act="setRate" data-v="0.85" class="${rt===0.85?"active":""}">Yavaş</button>
       <button data-act="setRate" data-v="1" class="${rt===1?"active":""}">Normal</button></div>
-    <label class="set-lbl">İngilizce Ses</label>
-    ${env.length?`<div class="seg" style="flex-direction:column;">${env.slice(0,6).map(v=>`<button data-act="setVoice" data-uri="${esc(v.voiceURI)}" class="${state.settings.voiceURI===v.voiceURI?"active":""}">${esc(v.name)}</button>`).join("")}</div>`:`<p class="muted">İngilizce ses bulunamadı; varsayılan kullanılacak.</p>`}
+    <label class="set-lbl">${esc(LANGS[state.lang].name)} Sesi</label>
+    ${env.length?`<div class="seg" style="flex-direction:column;">${env.slice(0,6).map(v=>`<button data-act="setVoice" data-uri="${esc(v.voiceURI)}" class="${state.settings.voiceURI===v.voiceURI?"active":""}">${esc(v.name)}</button>`).join("")}</div>`:`<p class="muted">Bu dil için ses bulunamadı; varsayılan kullanılacak.</p>`}
     <button class="btn btn-accent" data-act="testVoice">🔊 Sesi Dene</button>
     <hr style="border:none;border-top:1px solid var(--line);margin:18px 0;">
     <label class="set-lbl" style="color:var(--bad);">İlerlemeyi Sıfırla</label>
@@ -966,6 +1305,8 @@ app.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]"); if(
   switch(a){
     case "goHome": goHome(); break;
     case "goSettings": renderSettings(); break;
+    case "langPicker": renderLangPicker(); break;
+    case "chooseLang": setLanguage(d.lang); goHome(); break;
     case "openUnit": openUnit(d.uid); break;
     case "flash": renderFlash(d.uid); break;
     case "practice": renderPractice(d.uid); break;
@@ -998,17 +1339,18 @@ app.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]"); if(
     case "setFont": state.settings.fontScale=+d.v; saveState(); applySettings(); renderSettings(); break;
     case "setRate": state.settings.rate=+d.v; saveState(); renderSettings(); break;
     case "setVoice": state.settings.voiceURI=d.uri; saveState(); renderSettings(); break;
-    case "testVoice": speak("Hello, good morning. How are you? I am learning English."); break;
+    case "testVoice": speak(state.lang==="it"?"Ciao, buongiorno. Come stai? Sto imparando l'italiano.":"Hello, good morning. How are you? I am learning English."); break;
     case "resetAll": if(confirm("Tüm ilerleme silinsin mi? Geri alınamaz.")){ state=defaultState(); saveState(); applySettings(); showToast("Sıfırlandı."); goHome(); } break;
   }
 });
 app.addEventListener("input",(e)=>{ if(e.target && e.target.id==="dictSearch"){ dictState.q=e.target.value; updateDictList(); } });
 
 /* ===== BAŞLAT ===== */
-indexCurriculum();
+if(state.lang){ setLanguage(state.lang, {skipSaveOld:true}); }
+else { LEVELS=LANGS.en.levels; DICTIONARY_EXTRA=LANGS.en.dictExtra; indexCurriculum(); }
 state.streak=computeStreak(); saveState();
 applySettings();
-renderHome();
+if(state.lang){ renderHome(); } else { renderLangPicker(); }
 </script>
 </body>
 </html>
