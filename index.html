@@ -265,7 +265,16 @@ const EN_LEVELS = [
         {q:"___ are my friends. (yakın, çoğul)", options:["These","This","That"], answer:"These", explain:"Yakın + çoğul = these."},
         {q:"___ is his house. (uzak, tekil)", options:["That","This","Those"], answer:"That", explain:"Uzak + tekil = that."},
         {q:"___ are her shoes. (uzak, çoğul)", options:["Those","These","That"], answer:"Those", explain:"Uzak + çoğul = those."}
-      ]}
+      ]},
+    {uid:"1-9", type:"vocab", icon:"💬", title:"Günlük Konuşma Kalıpları", desc:"Her gün işine yarayacak pratik kalıplar.", words:[
+      {en:"See you later", tr:"Sonra görüşürüz", ex:"Bye! See you later.", exTr:"Hoşça kal! Sonra görüşürüz."},
+      {en:"Please", tr:"Lütfen", ex:"Water, please.", exTr:"Su, lütfen."},
+      {en:"You're welcome", tr:"Bir şey değil / Rica ederim", ex:"Thanks! — You're welcome.", exTr:"Teşekkürler! — Rica ederim."},
+      {en:"Can you help me?", tr:"Bana yardım edebilir misin?", ex:"Excuse me, can you help me?", exTr:"Affedersiniz, bana yardım edebilir misin?"},
+      {en:"I don't understand", tr:"Anlamıyorum", ex:"Sorry, I don't understand.", exTr:"Pardon, anlamıyorum."},
+      {en:"Don't worry!", tr:"Merak etme! / Endişe etme!", ex:"Don't worry, it's okay.", exTr:"Merak etme, sorun yok."},
+      {en:"Congratulations!", tr:"Tebrikler!", ex:"Congratulations! Well done.", exTr:"Tebrikler! Aferin."}
+    ]}
   ]
 },
 {
@@ -639,6 +648,15 @@ const IT_LEVELS = [
     {en:"Ho capito",tr:"Anladım",ex:"Sì, ho capito.",exTr:"Evet, anladım."},
     {en:"Quanto costa?",tr:"Ne kadar? / Kaç para?",ex:"Quanto costa questo?",exTr:"Bu ne kadar?"},
     {en:"Va bene",tr:"Tamam / Olur",ex:"Va bene, grazie.",exTr:"Tamam, teşekkürler."}
+  ]},
+  {uid:"it1-10", type:"vocab", icon:"🗣️", title:"Günlük Konuşma Kalıpları", desc:"Sohbette işine yarayacak ek kalıplar.", words:[
+    {en:"A dopo", tr:"Sonra görüşürüz", ex:"Ciao, a dopo!", exTr:"Hoşça kal, sonra görüşürüz!"},
+    {en:"Per favore", tr:"Lütfen", ex:"Un caffè, per favore.", exTr:"Bir kahve, lütfen."},
+    {en:"Puoi aiutarmi?", tr:"Bana yardım edebilir misin?", ex:"Scusa, puoi aiutarmi?", exTr:"Pardon, bana yardım edebilir misin?"},
+    {en:"Non lo so", tr:"Bilmiyorum", ex:"Mi dispiace, non lo so.", exTr:"Üzgünüm, bilmiyorum."},
+    {en:"Molto bene", tr:"Çok iyi", ex:"Sto molto bene, grazie.", exTr:"Çok iyiyim, teşekkürler."},
+    {en:"Di dove sei?", tr:"Nerelisin?", ex:"Ciao! Di dove sei?", exTr:"Merhaba! Nerelisin?"},
+    {en:"Sono turco", tr:"Türküm", ex:"Sono turco, di Istanbul.", exTr:"Türküm, İstanbulluyum."}
   ]}
 ]},
 { id:2, cefr:"A2", name:"Seviye 2 — Temel", desc:"Cümle kurmaya başla: fiiller, çoğullar, edatlar ve günlük yaşam.", units:[
@@ -1000,6 +1018,7 @@ const UNIT_INFO={
   "1-3":"Kendini tanıtırken 'My name is ...' ya da kısaca 'I'm ...' denir. İsim sormak için 'What is your name?'; tanışınca 'Nice to meet you'.",
   "1-5":"Temel sayılar (one, two, three) ve renkler. Renk, ismin önüne gelir: 'a red apple' = kırmızı bir elma.",
   "1-7":"Aile bireyleri ve ev kelimeleri. Sahiplik için 'my' kullanılır: 'my mother' = annem.",
+  "1-9":"Nezaket ve sohbet kalıpları. 'Please' (lütfen), 'You're welcome' (bir şey değil), 'Can you help me?' (yardım isterken), 'Don't worry!' (merak etme).",
   "2-2":"Temel yiyecekler ve günlük fiiller (eat, drink, like). Örnek: 'I like tea' = çayı severim.",
   "2-5":"Evdeki eşyalar. Yerini belirtmek için edatlarla kullanılır: 'on the table' = masanın üstünde.",
   "2-8":"Gün ve zaman kelimeleri: 'today' bugün, 'tomorrow' yarın, 'yesterday' dün.",
@@ -1011,6 +1030,7 @@ const UNIT_INFO={
   "it1-6":"Temel renkler. İtalyanca'da renk genelde ismin sonuna gelir ve cinsiyete uyar: 'libro rosso' = kırmızı kitap.",
   "it1-8":"Aile bireyleri: madre (anne), padre (baba), sorella (kız kardeş), fratello (erkek kardeş), figlio/figlia (oğul/kız).",
   "it1-9":"Günlük kalıplar: Grazie (teşekkür), Prego (rica ederim), Mi scusi (affedersiniz), Quanto costa? (ne kadar?), Va bene (tamam).",
+  "it1-10":"Sohbette çok geçen kalıplar. 'A dopo' (sonra görüşürüz), 'Per favore' (lütfen), 'Di dove sei?' (nerelisin?), 'Non lo so' (bilmiyorum), 'Sono turco' (Türküm).",
   "it2-2":"Temel yiyecek ve içecekler: pane (ekmek), acqua (su), caffè (kahve), latte (süt), formaggio (peynir).",
   "it2-5":"Evdeki eşyalar: tavolo (masa), sedia (sandalye), porta (kapı), finestra (pencere), letto (yatak).",
   "it2-8":"Gün ve zaman: oggi (bugün), domani (yarın), ieri (dün), lunedì (pazartesi), sabato, domenica.",
