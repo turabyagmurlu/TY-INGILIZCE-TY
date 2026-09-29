@@ -1029,7 +1029,7 @@ const BADGES = [
 /* ===== DURUM ===== */
 const STORE_KEY="dilOgren_v4";
 const OLD_KEY_V3="ingilizceOgren_v3";
-function defaultLangData(){ return {completedLessons:[], wordsLearned:0, grammarLearned:0, reviewWords:[], bestScores:{}, unlocks:{}, dictLearned:[], earnedBadges:[], perfectQuiz:false, unitProgress:{}, lastUid:null}; }
+function defaultLangData(){ return {completedLessons:[], wordsLearned:0, grammarLearned:0, reviewWords:[], bestScores:{}, unlocks:{}, dictLearned:[], earnedBadges:[], perfectQuiz:false, unitProgress:{}, lastUid:null, quizSave:null}; }
 function defaultState(){
   return Object.assign({}, defaultLangData(), {
     lang:null, langStore:{en:defaultLangData(), it:defaultLangData()},
@@ -1053,10 +1053,11 @@ function loadState(){
     return defaultState();
   }catch(e){ return defaultState(); }
 }
-function snapshotActive(){ return {completedLessons:state.completedLessons, wordsLearned:state.wordsLearned, grammarLearned:state.grammarLearned, reviewWords:state.reviewWords, bestScores:state.bestScores, unlocks:state.unlocks, dictLearned:state.dictLearned, earnedBadges:state.earnedBadges, perfectQuiz:state.perfectQuiz, unitProgress:state.unitProgress, lastUid:state.lastUid}; }
+function snapshotActive(){ return {completedLessons:state.completedLessons, wordsLearned:state.wordsLearned, grammarLearned:state.grammarLearned, reviewWords:state.reviewWords, bestScores:state.bestScores, unlocks:state.unlocks, dictLearned:state.dictLearned, earnedBadges:state.earnedBadges, perfectQuiz:state.perfectQuiz, unitProgress:state.unitProgress, lastUid:state.lastUid, quizSave:state.quizSave||null}; }
 function applyLangData(o){ o=o||defaultLangData(); state.completedLessons=o.completedLessons||[]; state.wordsLearned=o.wordsLearned||0; state.grammarLearned=o.grammarLearned||0; state.reviewWords=o.reviewWords||[]; state.bestScores=o.bestScores||{}; state.unlocks=o.unlocks||{}; state.dictLearned=o.dictLearned||[]; state.earnedBadges=o.earnedBadges||[]; state.perfectQuiz=!!o.perfectQuiz;
   // Ünite adım takibi (eski kayıtlarda yok → boş başlar; bitmiş üniteler completedLessons'tan anlaşılır)
-  const up=o.unitProgress; state.unitProgress=(up&&typeof up==="object"&&!Array.isArray(up))?up:{}; state.lastUid=typeof o.lastUid==="string"?o.lastUid:null; }
+  const up=o.unitProgress; state.unitProgress=(up&&typeof up==="object"&&!Array.isArray(up))?up:{}; state.lastUid=typeof o.lastUid==="string"?o.lastUid:null;
+  const qs=o.quizSave; state.quizSave=(qs&&typeof qs==="object"&&typeof qs.key==="string"&&Array.isArray(qs.questions)&&qs.questions.length&&qs.questions.every(q=>q&&Array.isArray(q.options)&&typeof q.answer==="string")&&qs.qIndex>=0&&qs.qIndex<qs.questions.length)?qs:null; }
 function saveState(){ try{ if(state.lang){ state.langStore[state.lang]=snapshotActive(); } localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){} }
 function setLanguage(lang, opts){ opts=opts||{}; if(!LANGS[lang]) lang="en";
   if(state.lang && !opts.skipSaveOld){ state.langStore[state.lang]=snapshotActive(); }
@@ -1220,6 +1221,7 @@ function nextStepFor(u){ if(isDone(u.uid)) return null; if(failedAttempt(u)) ret
   const r=upGet(u.uid); if(r.cur && stepIdx(u,r.cur)>=0 && !stepDone(u,r.cur)) return r.cur;
   const s=unitSteps(u).find(x=>!stepDone(u,x.k)); return s?s.k:"quiz"; }
 function resumeLabel(u){ const k=nextStepFor(u); if(!k) return "📖 Dersi aç";
+  { const ri=resumeInfo(quizKey(u.type==="grammar"?"grammar":"vocab",u.uid)); if(ri) return `⏸ ${u.type==="grammar"?"Alıştırmaya":"Teste"} devam et (${ri.done}/${ri.total})`; }
   if(failedAttempt(u)) return u.type==="grammar"?"🔁 Alıştırmayı tekrar çöz":"🔁 Testi tekrar çöz";
   if(!unitStarted(u)) return "▶️ Derse başla";
   const s=unitSteps(u)[stepIdx(u,k)];
@@ -1511,27 +1513,50 @@ function micCheck(){ if(!SR||MIC_OFF){ prNext(); return; } const w=ctx.unit.word
 
 /* ----- TEST ----- */
 function renderQuizIntro(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; } leaveLesson(uid); nav("quizIntro"); setCur(u,"quiz");
-  const tot=quizTotal(u), need=passMark(tot), la=lastAttempt(u), failed=failedAttempt(u);
+  const tot=quizTotal(u), need=passMark(tot), la=lastAttempt(u), failed=failedAttempt(u), ri=resumeInfo(quizKey(kind,uid));
   app.innerHTML=`${unitBarHtml(u,"quiz")}<div class="card center"><h2>📝 ${kind==="grammar"?"Alıştırma":"Mini Test"}</h2>
     <p>“${esc(u.title)}” için ${tot} kısa soru.</p>
     ${failed&&la?`<p class="st-line">Son denemen: <b>${la.score}/${la.total||tot}</b>. Bu sefer en az <b>${need}</b> doğru yeter. 💪</p>`:""}
     ${isDone(u.uid)?`<p class="st-line">Bu üniteyi zaten geçtin ✓ İstersen tekrar çözebilirsin.</p>`:""}
     <p class="muted">Korkma! Yanlışta açıklama gelir. Amaç öğrenmek. 💛<br>Üniteyi geçmek için ${tot} sorudan en az <b>${need}</b> doğru gerekli.</p>
-    <button class="btn btn-primary" data-act="startQuiz" data-uid="${uid}" data-kind="${kind}">Başla</button>
+    ${ri?`<div class="daily" style="text-align:left;">⏸ Bu testi yarıda bırakmıştın: <b>${ri.done} / ${ri.total}</b> soru cevaplandı, <b>${ri.q.correct||0}</b> doğru.</div>
+      <button class="btn btn-primary" data-act="startQuiz" data-uid="${uid}" data-kind="${kind}">▶️ Kaldığın yerden devam et</button>
+      <button class="btn btn-soft" data-act="startQuiz" data-uid="${uid}" data-kind="${kind}" data-fresh="1">↺ Baştan başla</button>`
+     :`<button class="btn btn-primary" data-act="startQuiz" data-uid="${uid}" data-kind="${kind}">Başla</button>`}
     ${failed?`<button class="btn btn-accent" data-act="openUnit" data-uid="${uid}">📖 Önce dersi tekrar gözden geçir</button>`:""}
     <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,0); }
-function startQuiz(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; } leaveLesson(uid);
+/* ----- YARIM KALAN TEST ----- */
+function quizKey(mode,id){ return mode+":"+(id==null?"":id); }
+function ctxKey(){ return quizKey(ctx.mode, ctx.unit?ctx.unit.uid:(ctx.level?ctx.level.id:(ctx.fromReview?"review":"all"))); }
+function saveQuizProgress(){ try{ if(!ctx||!ctx.questions) return; state.quizSave={key:ctxKey(), mode:ctx.mode, questions:ctx.questions, qIndex:ctx.qIndex, correct:ctx.correct, answered:!!ctx.answered, savedAt:Date.now()}; saveState(); }catch(e){} }
+function clearQuizProgress(){ if(state.quizSave){ state.quizSave=null; saveState(); } }
+function savedQuiz(key){ const q=state.quizSave; return (q && q.key===key)?q:null; }
+function resumeInfo(key){ const q=savedQuiz(key); if(!q) return null; const done=q.qIndex+(q.answered?1:0); return {q, done, total:q.questions.length}; }
+// Kayıt varsa ctx'i oradan kur; cevaplanmış son soruda kaldıysa bir sonrakine geç
+function tryResume(key, base){ const q=savedQuiz(key); if(!q) return false;
+  ctx=Object.assign(base,{questions:q.questions, qIndex:q.qIndex, correct:q.correct||0, answered:false, resumed:true});
+  if(q.answered){ if(ctx.qIndex>=ctx.questions.length-1){ finishQuiz(); return true; } ctx.qIndex++; }
+  saveQuizProgress(); drawQuiz(); showToast("Kaldığın yerden devam: Soru "+(ctx.qIndex+1)+" / "+ctx.questions.length); return true; }
+function restartQuiz(){ const m=ctx.mode; clearQuizProgress();
+  if(m==="vocab"||m==="grammar") startQuiz(ctx.unit.uid, m, true); else if(m==="leveltest") startLevelTest(ctx.level.id, true); else startMixReview(ctx.fromReview, true); }
+function startQuiz(uid,kind,fresh){ const u=findUnit(uid); if(!u){ goHome(); return; } leaveLesson(uid);
+  if(fresh) { if(savedQuiz(quizKey(kind,uid))) clearQuizProgress(); }
+  else { setCur(u,"quiz"); if(tryResume(quizKey(kind,uid), {unit:u, mode:kind})) return; }
   const questions = kind==="grammar" ? buildGrammarQuiz(u) : ((u.words&&u.words.length)?buildVocabQuiz(u.words):[]);
   if(!questions.length){ showToast("Bu ders için soru yok."); return; }
-  setCur(u,"quiz"); ctx={unit:u, mode:kind, questions, qIndex:0, correct:0, answered:false}; drawQuiz(); }
-function startLevelTest(id){ const lv=levelById(id); if(!lv) return; const qs=buildLevelTest(lv);
+  setCur(u,"quiz"); ctx={unit:u, mode:kind, questions, qIndex:0, correct:0, answered:false}; saveQuizProgress(); drawQuiz(); }
+function startLevelTest(id,fresh){ const lv=levelById(id); if(!lv) return;
+  if(!fresh && tryResume(quizKey("leveltest",lv.id), {unit:null, level:lv, mode:"leveltest"})) return;
+  const qs=buildLevelTest(lv);
   if(!qs.length){ showToast("Bu seviye için soru yok."); return; }
-  ctx={unit:null, level:lv, mode:"leveltest", questions:qs, qIndex:0, correct:0, answered:false}; drawQuiz(); }
-function startMixReview(fromReview){ let pool=[];
+  ctx={unit:null, level:lv, mode:"leveltest", questions:qs, qIndex:0, correct:0, answered:false}; saveQuizProgress(); drawQuiz(); }
+function startMixReview(fromReview,fresh){ fromReview=!!fromReview;
+  if(!fresh && tryResume(quizKey("mix",fromReview?"review":"all"), {unit:null, mode:"mix", fromReview})) return;
+  let pool=[];
   if(fromReview) pool=state.reviewWords.filter(w=>w && w.en && w.tr);
   else { ALL_UNITS.forEach(u=>{ if(u.type==="vocab" && isDone(u.uid) && u.words) pool=pool.concat(u.words); }); if(pool.length<4) pool=VOCAB_POOL; }
   if(!pool.length){ showToast("Test için kelime yok."); return; }
-  ctx={unit:null, mode:"mix", questions:buildVocabQuiz(pool, Math.min(8,Math.max(4,pool.length))), qIndex:0, correct:0, answered:false}; drawQuiz(); }
+  ctx={unit:null, mode:"mix", fromReview, questions:buildVocabQuiz(pool, Math.min(8,Math.max(4,pool.length))), qIndex:0, correct:0, answered:false}; saveQuizProgress(); drawQuiz(); }
 function drawQuiz(){ const q=ctx.questions[ctx.qIndex], n=ctx.questions.length, pct=Math.round(ctx.qIndex/n*100); nav("quiz");
   const unitQ=(ctx.mode==="vocab"||ctx.mode==="grammar") && ctx.unit;
   app.innerHTML=`${unitQ?unitBarHtml(ctx.unit,"quiz"):""}<div class="card"><div class="counter">Soru ${ctx.qIndex+1} / ${n}</div>
@@ -1539,11 +1564,12 @@ function drawQuiz(){ const q=ctx.questions[ctx.qIndex], n=ctx.questions.length, 
     ${q.kind==="listen"?`<button class="btn btn-accent" data-act="replayAudio">🔊 Tekrar Dinle</button>`:""}
     <div id="opts" style="margin-top:10px;">${q.options.map((o,i)=>`<button class="opt" data-act="answer" data-i="${i}"><span>${esc(o)}</span></button>`).join("")}</div>
     <div id="qfeedback"></div><div id="qnext"></div></div>
-    <div class="card quiz-exit"><button class="btn btn-soft" data-act="goHome">Testi bırak, Ana Sayfa</button></div>`;
+    <div class="card quiz-exit"><button class="btn btn-soft" data-act="goHome">Ara ver, Ana Sayfa</button><p class="muted center" style="margin:6px 0 0;">Cevapların kaydediliyor. Döndüğünde kaldığın sorudan devam edersin.</p>${ctx.resumed?`<button class="btn btn-ghost" data-act="restartQuiz">↺ Testi baştan başlat</button>`:""}</div>`;
   if(q.kind==="listen"){ const myQ=q; setTimeout(()=>{ if(currentScreen==="quiz" && ctx.questions && ctx.questions[ctx.qIndex]===myQ && !ctx.answered) speak(myQ.audio); },350); } window.scrollTo(0,0); }
 function answerQuiz(i){ if(ctx.answered) return; ctx.answered=true; const q=ctx.questions[ctx.qIndex]; const correct=q.options[i]===q.answer;
   document.querySelectorAll("#opts .opt").forEach((b,idx)=>{ b.disabled=true; if(q.options[idx]===q.answer) b.classList.add("correct"); else if(idx===i) b.classList.add("wrong"); });
   if(correct) ctx.correct++;
+  saveQuizProgress();
   let addedRev=false; if(!correct && q.word && q.word.en && !state.reviewWords.some(x=>x.en===q.word.en)){ const w=q.word; state.reviewWords.push({en:w.en,tr:w.tr,ex:w.ex,exTr:w.exTr}); saveState(); addedRev=true; }
   const fb=document.getElementById("qfeedback"); fb.className="feedback "+(correct?"good":"bad");
   fb.innerHTML=correct?"✓ Doğru! Aferin. 👏":"✗ Doğru cevap: <b>"+esc(q.answer)+"</b>."+(q.explain?"<br>"+esc(q.explain):"")+(addedRev?"<br><small>🔁 Bu kelime tekrar listene eklendi.</small>":"");
@@ -1551,9 +1577,9 @@ function answerQuiz(i){ if(ctx.answered) return; ctx.answered=true; const q=ctx.
   const nx=document.getElementById("qnext"); nx.innerHTML=`<button class="btn btn-primary" data-act="nextQuiz">${last?"Sonucu Gör":"Sonraki Soru ➡️"}</button>`;
   // Açıklama ve "Sonraki" düğmesi ekranın altında kalmasın
   try{ nx.scrollIntoView({block:"nearest",behavior:"smooth"}); }catch(e){ nx.scrollIntoView(false); } }
-function nextQuiz(){ if(ctx.qIndex<ctx.questions.length-1){ ctx.qIndex++; ctx.answered=false; drawQuiz(); } else finishQuiz(); }
+function nextQuiz(){ if(ctx.qIndex<ctx.questions.length-1){ ctx.qIndex++; ctx.answered=false; saveQuizProgress(); drawQuiz(); } else finishQuiz(); }
 function passMark(n){ return Math.max(1, Math.ceil(n*0.67)); }
-function finishQuiz(){ const n=ctx.questions.length, score=ctx.correct, perfect=score===n; registerStudyToday(); nav("result");
+function finishQuiz(){ const n=ctx.questions.length, score=ctx.correct, perfect=score===n; if(savedQuiz(ctxKey())) state.quizSave=null; registerStudyToday(); nav("result");
   let firstTime=false, levelJustDone=false; const u=ctx.unit;
   const unitQuiz=(ctx.mode==="vocab"||ctx.mode==="grammar") && !!u, need=passMark(n), passed=score>=need;
   if(unitQuiz){ const r=upRec(u.uid); r.last={score, total:n, passed}; r.cur="quiz"; state.lastUid=u.uid; }
@@ -1824,7 +1850,8 @@ document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]")
     case "flash": renderFlash(d.uid); break;
     case "practice": renderPractice(d.uid); break;
     case "quizIntro": renderQuizIntro(d.uid, d.kind); break;
-    case "startQuiz": startQuiz(d.uid, d.kind); break;
+    case "startQuiz": startQuiz(d.uid, d.kind, d.fresh==="1"); break;
+    case "restartQuiz": restartQuiz(); break;
     case "levelTest": startLevelTest(+d.id); break;
     case "mixReview": startMixReview(); break;
     case "reviewQuiz": startMixReview(true); break;
