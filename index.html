@@ -2,8 +2,16 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dil Öğreniyorum</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#4F7CAC" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="TY İngilizce" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<title>TY İngilizce</title>
 <style>
   :root{
     --bg:#F7F4EF; --primary:#4F7CAC; --primary-dark:#3c5f87;
@@ -19,7 +27,7 @@
     background:var(--bg);color:var(--text);font-size:var(--fs);line-height:1.55;-webkit-text-size-adjust:100%;}
   .wrap{max-width:720px;margin:0 auto;padding:14px 16px 80px;}
   header.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px;
-    position:sticky;top:0;background:var(--bg);z-index:20;padding:8px 0;border-bottom:1px solid var(--line);}
+    position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:20;padding:8px 0;border-bottom:1px solid var(--line);}
   header.top h1{font-size:20px;margin:0;color:var(--primary-dark);white-space:nowrap;}
   .top-actions{display:flex;gap:8px;}
   .icon-btn{background:#fff;border:2px solid var(--line);color:var(--primary-dark);border-radius:12px;
@@ -1451,5 +1459,6 @@ state.streak=computeStreak(); saveState();
 applySettings();
 if(state.lang){ renderHome(); } else { renderLangPicker(); }
 </script>
+<script>if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 </body>
 </html>

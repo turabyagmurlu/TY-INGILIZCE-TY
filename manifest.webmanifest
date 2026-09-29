@@ -1,0 +1,17 @@
+{
+  "name": "TY İngilizce",
+  "short_name": "TY İngilizce",
+  "description": "İngilizce kelime ve tekrar uygulaması",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F7F4EF",
+  "theme_color": "#4F7CAC",
+  "lang": "tr",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
