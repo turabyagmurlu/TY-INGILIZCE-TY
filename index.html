@@ -171,6 +171,16 @@
   .tip b{color:#7a5a00;}
   .goal{background:#eef5ff;border-left:5px solid var(--primary);border-radius:10px;padding:10px 14px;margin:6px 0;font-size:calc(16px*var(--k));}
   .stepper{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+  button.step{border:2px solid transparent;cursor:pointer;min-height:44px;font-family:inherit;line-height:1.3;}
+  button.step:hover,button.step:focus-visible{border-color:var(--primary);outline:none;}
+  .stepper-hint{font-size:calc(13px*var(--k));color:var(--muted);margin-top:6px;text-align:center;}
+  .dict-item{flex-direction:column;align-items:stretch;gap:8px;}
+  .dict-actions{display:flex;gap:6px;}
+  .dict-actions button{flex:1 1 0;min-width:0;line-height:1.2;min-height:44px;border-radius:12px;border:2px solid var(--line);background:#fff;color:var(--primary-dark);font-weight:700;font-size:calc(14px*var(--k));cursor:pointer;font-family:inherit;padding:6px 2px;}
+  .dict-actions button.on{background:var(--good-bg);border-color:var(--good);color:#1d7a42;}
+  .dict-actions button:focus-visible,.unit-item:focus-visible{outline:3px solid var(--primary);outline-offset:2px;}
+  .daily{background:#fff8e6;border:2px solid var(--accent);border-radius:14px;padding:12px 14px;margin-top:10px;}
+  .daily b{color:#7a5a00;}
   .step{flex:1;min-width:64px;background:#eef2f6;border-radius:12px;padding:8px 4px;text-align:center;font-size:calc(13px*var(--k));color:var(--primary-dark);font-weight:700;}
   .step .n{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;align-items:center;justify-content:center;font-size:calc(13px*var(--k));margin-bottom:3px;}
   .ezber{background:#f5f9fc;border:2px dashed var(--primary);border-radius:14px;padding:14px;margin-bottom:11px;}
@@ -1028,9 +1038,9 @@ function buildVocabQuiz(words, count){
   const chosen=sample(words,Math.min(n,words.length)); while(chosen.length<n){ chosen.push(words[Math.floor(Math.random()*words.length)]); }
   const types=["en2tr","tr2en","listen"];
   return chosen.map(w=>{ const t=types[Math.floor(Math.random()*types.length)];
-    if(t==="tr2en"){ const o=shuffle([w.en,...distractors("en",w.en,2,w)]); return {kind:"text",prompt:"\""+w.tr+"\" "+(state.lang==="it"?"İtalyancası":"İngilizcesi")+" nedir?",options:o,answer:w.en,explain:"\""+w.tr+"\" = \""+w.en+"\"."}; }
-    if(t==="listen"){ const o=shuffle([w.tr,...distractors("tr",w.tr,2,w)]); return {kind:"listen",audio:w.en,prompt:"🔊 Dinle ve Türkçesini seç:",options:o,answer:w.tr,explain:"Duyduğun: \""+w.en+"\" = \""+w.tr+"\"."}; }
-    const o=shuffle([w.tr,...distractors("tr",w.tr,2,w)]); return {kind:"text",prompt:"\""+w.en+"\" ne demek?",options:o,answer:w.tr,explain:"\""+w.en+"\" = \""+w.tr+"\"."};
+    if(t==="tr2en"){ const o=shuffle([w.en,...distractors("en",w.en,2,w)]); return {kind:"text",prompt:"\""+w.tr+"\" "+(state.lang==="it"?"İtalyancası":"İngilizcesi")+" nedir?",options:o,answer:w.en,explain:"\""+w.tr+"\" = \""+w.en+"\".",word:w}; }
+    if(t==="listen"){ const o=shuffle([w.tr,...distractors("tr",w.tr,2,w)]); return {kind:"listen",audio:w.en,prompt:"🔊 Dinle ve Türkçesini seç:",options:o,answer:w.tr,explain:"Duyduğun: \""+w.en+"\" = \""+w.tr+"\".",word:w}; }
+    const o=shuffle([w.tr,...distractors("tr",w.tr,2,w)]); return {kind:"text",prompt:"\""+w.en+"\" ne demek?",options:o,answer:w.tr,explain:"\""+w.en+"\" = \""+w.tr+"\".",word:w};
   });
 }
 function buildGrammarQuiz(unit){ return (unit.exercises||[]).filter(e=>e && e.options && e.options.length).map(e=>({kind:"text",prompt:e.q,options:shuffle(e.options.slice()),answer:e.answer,explain:e.explain||""})); }
@@ -1121,6 +1131,8 @@ function renderHome(){ currentScreen="home";
         <div class="streak-badge">🔥 ${state.streak} gün seri</div>
         <div class="muted">${studiedToday?"Bugün çalıştın! ✅":"Bugünün dersini henüz yapmadın."}</div>
       </div>
+      ${studiedToday?"":`<div class="daily">⏰ <b>Bugünün 10 dakikası seni bekliyor.</b> ${state.reviewWords.length?`Önce tekrar listendeki ${state.reviewWords.length} kelimeye bak, sonra kaldığın dersten devam et.`:"Aşağıdan kaldığın dersten devam et."}
+        ${state.reviewWords.length?`<button class="btn btn-accent" data-act="review">🔁 ${state.reviewWords.length} kelimeyi tekrar et</button>`:""}</div>`}
       <button class="btn btn-soft" data-act="langPicker">🌐 Dil: ${LANGS[state.lang].flag} ${esc(LANGS[state.lang].name)} — Değiştir</button>
     </div>`;
 
@@ -1156,7 +1168,7 @@ function renderHome(){ currentScreen="home";
       lv.units.forEach(u=>{
         const best=state.bestScores[u.uid], tot=quizTotal(u);
         const tag = u.type==="grammar"?`<span class="type-tag g">📖 Gramer</span>`:`<span class="type-tag v">🔤 Kelime</span>`;
-        html+=`<li class="unit-item" data-act="openUnit" data-uid="${u.uid}">
+        html+=`<li class="unit-item" data-act="openUnit" data-uid="${u.uid}" role="button" tabindex="0">
           <div class="unit-ico">${u.icon}</div>
           <div class="unit-meta"><div class="t">${esc(u.title)}</div><div>${tag}${best!=null?`<span class="badge-score">En iyi: ${tot?Math.min(best,tot)+"/"+tot:best}</span>`:""}</div></div>
           <div class="check ${isDone(u.uid)?"done":""}">${isDone(u.uid)?"✓":""}</div>
@@ -1200,13 +1212,13 @@ function renderVocab(u){
       <div class="goal">🎯 <b>Hedef:</b> Bu derste ${u.words.length} kelime/ifade var. Önce aşağıdaki <b>5 kelimeyi ezberle</b>, sonra kartlar ve testle pekiştir.</div>
       <div class="tip">💡 <b>Bilgi:</b> ${infoFor(u)}</div>
       <div class="stepper">
-        <div class="step"><span class="n">1</span><br>Ezberle</div>
-        <div class="step"><span class="n">2</span><br>Kartlar</div>
-        <div class="step"><span class="n">3</span><br>Telaffuz</div>
-        <div class="step"><span class="n">4</span><br>Test</div>
-      </div>
+        <button class="step" data-act="jump" data-target="ezberCard"><span class="n">1</span><br>Ezberle</button>
+        <button class="step" data-act="flash" data-uid="${u.uid}"><span class="n">2</span><br>Kartlar</button>
+        <button class="step" data-act="practice" data-uid="${u.uid}"><span class="n">3</span><br>Telaffuz</button>
+        <button class="step" data-act="quizIntro" data-uid="${u.uid}" data-kind="vocab"><span class="n">4</span><br>Test</button>
+      </div><div class="stepper-hint">Bir adıma dokunarak doğrudan oraya geçebilirsin.</div>
     </div>
-    <div class="card">
+    <div class="card" id="ezberCard">
       <h3>🧠 Ezberlenecek 5 Kelime</h3>
       <p class="muted">Önce Türkçesini içinden tahmin et, sonra “Göster”e bas. 🔊 ile doğru okunuşu dinle.</p>
       ${five.map((w,i)=>`
@@ -1255,15 +1267,15 @@ function renderGrammar(u){
   app.innerHTML=`
     <div class="card"><div class="muted">${u._level.name} · 📖 Gramer dersi</div><h2>${u.icon} ${esc(u.title)}</h2>
       <p>${esc(u.intro)}</p>
-      <div class="rule-box">${u.rule}</div>
+      <div class="rule-box" id="ruleBox">${u.rule}</div>
       ${tbl}
       <div class="stepper">
-        <div class="step"><span class="n">1</span><br>Kural</div>
-        <div class="step"><span class="n">2</span><br>Örnekler</div>
-        <div class="step"><span class="n">3</span><br>Alıştırma</div>
+        <button class="step" data-act="jump" data-target="ruleBox"><span class="n">1</span><br>Kural</button>
+        <button class="step" data-act="jump" data-target="exCard"><span class="n">2</span><br>Örnekler</button>
+        <button class="step" data-act="startQuiz" data-uid="${u.uid}" data-kind="grammar"><span class="n">3</span><br>Alıştırma</button>
       </div>
     </div>
-    ${exs?`<div class="card">${exs}</div>`:""}
+    ${exs?`<div class="card" id="exCard">${exs}</div>`:""}
     <div class="card"><h3>Anladın mı? 💪</h3><p class="muted">Şimdi kısa alıştırmalarla pekiştir.</p>
       <button class="btn btn-primary" data-act="startQuiz" data-uid="${u.uid}" data-kind="grammar">📝 Alıştırmalara Başla</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`;
@@ -1292,9 +1304,11 @@ function fcAdvance(){ if(ctx.fcIndex<ctx.unit.words.length-1){ ctx.fcIndex++; ct
 
 /* ----- TELAFFUZ ----- */
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+// iPhone'da ana ekrana kurulan uygulamada ses tanıma genelde çalışmaz → baştan "Ben söyledim" akışı
+let MIC_OFF=(()=>{ try{ return /iP(hone|ad|od)/.test(navigator.userAgent) && (navigator.standalone===true || matchMedia("(display-mode: standalone)").matches); }catch(e){ return false; } })();
 function renderPractice(uid){ const u=findUnit(uid); ctx={unit:u, prIndex:0}; drawPractice(); }
 function normalize(s){ return String(s).toLowerCase().replace(/[^a-zàáâäèéêëìíîïòóôöùúûüçğıöşü ]/gi,"").replace(/\s+/g," ").trim(); }
-function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.length, mic=!!SR; nav("practice");
+function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.length, mic=!!SR && !MIC_OFF; nav("practice");
   app.innerHTML=`
     <div class="card center"><div class="counter">Telaffuz ${ctx.prIndex+1} / ${n}</div>
       <h2>${esc(w.en)}</h2><p class="word-tr">${esc(w.tr)}</p>
@@ -1308,14 +1322,16 @@ function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.len
   window.scrollTo(0,0);
 }
 function prNext(){ if(ctx.prIndex<ctx.unit.words.length-1){ ctx.prIndex++; drawPractice(); } else { showToast("Harika pratik! 🎉"); renderQuizIntro(ctx.unit.uid,"vocab"); } }
-function micCheck(){ if(!SR){ prNext(); return; } const w=ctx.unit.words[ctx.prIndex]; const box=document.getElementById("micState"); const target=normalize(w.en);
+function micCheck(){ if(!SR||MIC_OFF){ prNext(); return; } const w=ctx.unit.words[ctx.prIndex]; const box=document.getElementById("micState"); const target=normalize(w.en);
   const rec=new SR(); rec.lang=SPEAK_LANG; rec.interimResults=false; rec.maxAlternatives=5;
   box.className="mic-state listening"; box.innerHTML="🎤 <span class='pulse'>Dinliyorum... şimdi söyle</span>"; let done=false;
   rec.onresult=(e)=>{ done=true; const alts=[]; for(let i=0;i<e.results[0].length;i++) alts.push(normalize(e.results[0][i].transcript));
     const ok=alts.some(a=>a===target||a.includes(target)||target.includes(a));
     if(ok){ box.className="mic-state"; box.style.background="var(--good-bg)"; box.style.color="#1d7a42"; box.innerHTML="✓ Çok iyi! Doğru söyledin: <b>"+esc(w.en)+"</b>"; }
     else { box.className="mic-state"; box.style.background="var(--bad-bg)"; box.style.color="#a8312d"; box.innerHTML="Duyduğum: <b>"+esc(alts[0]||"-")+"</b><br>Hedef: <b>"+esc(w.en)+"</b> — dinleyip yavaşça tekrar dene. 💪"; } };
-  rec.onerror=()=>{ if(!done){ box.className="mic-state"; box.textContent="Mikrofon çalışmadı. İzin ver veya “Ben söyledim” ile devam et."; } };
+  rec.onerror=(ev)=>{ if(done) return; done=true; const hard=ev&&["not-allowed","service-not-allowed","audio-capture","network"].includes(ev.error);
+    if(hard){ MIC_OFF=true; drawPractice(); const b2=document.getElementById("micState"); if(b2){ b2.classList.remove("hidden"); b2.className="mic-state"; b2.textContent="Bu cihazda mikrofon kontrolü kullanılamıyor. Kelimeyi dinle, sesli söyle ve “Ben Söyledim, Devam”a bas."; } }
+    else { box.className="mic-state"; box.textContent="Sesini duyamadım. Tekrar dene veya “Sonraki Kelime” ile devam et."; } };
   rec.onend=()=>{ if(!done){ box.className="mic-state"; box.textContent="Sesini duyamadım. Tekrar dene. 🎤"; } };
   try{ rec.start(); }catch(e){ box.textContent="Mikrofon başlatılamadı."; } }
 
@@ -1347,8 +1363,10 @@ function drawQuiz(){ const q=ctx.questions[ctx.qIndex], n=ctx.questions.length, 
   if(q.kind==="listen"){ const myQ=q; setTimeout(()=>{ if(currentScreen==="quiz" && ctx.questions && ctx.questions[ctx.qIndex]===myQ && !ctx.answered) speak(myQ.audio); },350); } window.scrollTo(0,0); }
 function answerQuiz(i){ if(ctx.answered) return; ctx.answered=true; const q=ctx.questions[ctx.qIndex]; const correct=q.options[i]===q.answer;
   document.querySelectorAll("#opts .opt").forEach((b,idx)=>{ b.disabled=true; if(q.options[idx]===q.answer) b.classList.add("correct"); else if(idx===i) b.classList.add("wrong"); });
-  if(correct) ctx.correct++; const fb=document.getElementById("qfeedback"); fb.className="feedback "+(correct?"good":"bad");
-  fb.innerHTML=correct?"✓ Doğru! Aferin. 👏":"✗ Doğru cevap: <b>"+esc(q.answer)+"</b>."+(q.explain?"<br>"+esc(q.explain):"");
+  if(correct) ctx.correct++;
+  let addedRev=false; if(!correct && q.word && q.word.en && !state.reviewWords.some(x=>x.en===q.word.en)){ const w=q.word; state.reviewWords.push({en:w.en,tr:w.tr,ex:w.ex,exTr:w.exTr}); saveState(); addedRev=true; }
+  const fb=document.getElementById("qfeedback"); fb.className="feedback "+(correct?"good":"bad");
+  fb.innerHTML=correct?"✓ Doğru! Aferin. 👏":"✗ Doğru cevap: <b>"+esc(q.answer)+"</b>."+(q.explain?"<br>"+esc(q.explain):"")+(addedRev?"<br><small>🔁 Bu kelime tekrar listene eklendi.</small>":"");
   const last=ctx.qIndex>=ctx.questions.length-1;
   const nx=document.getElementById("qnext"); nx.innerHTML=`<button class="btn btn-primary" data-act="nextQuiz">${last?"Sonucu Gör":"Sonraki Soru ➡️"}</button>`;
   // Açıklama ve "Sonraki" düğmesi ekranın altında kalmasın
@@ -1581,12 +1599,14 @@ function dictFiltered(){ let a=DICT.slice();
 function dictListHtml(){ const a=dictFiltered();
   if(!a.length) return `<p class="empty">Kelime bulunamadı. Aramayı veya kategoriyi değiştir.</p>`;
   return a.map(w=>{ const L=state.dictLearned.includes(w.en);
-    return `<div class="review-item">
+    return `<div class="review-item dict-item">
       <div class="word-main"><div class="word-en">${esc(w.en)}${L?" <span style='color:var(--good)'>✓</span>":""}</div>
         <div class="word-tr">${esc(w.tr)}</div>${w.ex?`<div class="word-ex">“${esc(w.ex)}” — ${esc(w.exTr)}</div>`:""}</div>
-      <button class="speak sm" data-act="dictSpeak" data-en="${esc(w.en)}" title="Dinle">🔊</button>
-      <button class="icon-btn" data-act="dictLearned" data-en="${esc(w.en)}" title="${L?"Öğrendim işaretini kaldır":"Öğrendim"}" aria-label="${L?"Öğrendim işaretini kaldır":"Öğrendim"}">${L?"↩️":"✓"}</button>
-      <button class="icon-btn" data-act="dictAddReview" data-en="${esc(w.en)}" title="Tekrar listesine ekle" aria-label="Tekrar listesine ekle">🔁</button>
+      <div class="dict-actions">
+        <button data-act="dictSpeak" data-en="${esc(w.en)}" aria-label="Dinle">🔊 Dinle</button>
+        <button class="${L?"on":""}" data-act="dictLearned" data-en="${esc(w.en)}" aria-label="${L?"Öğrendim işaretini kaldır":"Öğrendim"}">${L?"✓ Öğrendim":"Öğrendim"}</button>
+        <button data-act="dictAddReview" data-en="${esc(w.en)}" aria-label="Tekrar listesine ekle">🔁 Tekrar</button>
+      </div>
     </div>`; }).join(""); }
 function updateDictList(){ const el=document.getElementById("dictList"); if(el) el.innerHTML=dictListHtml(); }
 function dictCountHtml(){ return `Toplam ${DICT.length} kelime · Öğrendiğin: ${state.dictLearned.length}`; }
@@ -1595,7 +1615,7 @@ function renderDictionary(){ nav("dict");
   const chips=cats.map(c=>`<button data-act="dictCat" data-cat="${esc(c)}" class="${dictState.cat===c?"active":""}">${esc(c)}</button>`).join("");
   app.innerHTML=`<div class="card">
     <h2>📖 Sözlük</h2>
-    <p class="muted">Test çözmeden de kelime öğrenebilirsin. Ara, 🔊 ile dinle, öğrendiklerini ✓ ile işaretle veya 🔁 ile tekrar listesine ekle.</p>
+    <p class="muted">Test çözmeden de kelime öğrenebilirsin. Kelimeyi ara, “Dinle” ile okunuşunu duy, bildiklerini “Öğrendim” ile işaretle, zorlandıklarını “Tekrar” ile listene ekle.</p>
     <p class="muted" id="dictCount">${dictCountHtml()}</p>
     <input id="dictSearch" type="search" placeholder="🔍 Türkçe veya ${esc(LANGS[state.lang].name)} ara..." value="${esc(dictState.q)}" autocomplete="off"
       style="width:100%;padding:14px;font-size:18px;border:2px solid var(--line);border-radius:14px;margin:6px 0 12px;" />
@@ -1614,6 +1634,7 @@ document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]")
     case "langPicker": renderLangPicker(); break;
     case "chooseLang": setLanguage(d.lang); goHome(); break;
     case "openUnit": openUnit(d.uid); break;
+    case "jump": { const t=document.getElementById(d.target); if(t){ try{ t.scrollIntoView({behavior:"smooth",block:"start"}); }catch(_){ t.scrollIntoView(); } } break; }
     case "flash": renderFlash(d.uid); break;
     case "practice": renderPractice(d.uid); break;
     case "quizIntro": renderQuizIntro(d.uid, d.kind); break;
@@ -1657,6 +1678,7 @@ document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]")
     case "resetAll": if(confirm("Tüm ilerleme silinsin mi? Geri alınamaz.")){ const keepLang=state.lang||"en", keepSet=state.settings; state=defaultState(); state.settings=keepSet; setLanguage(keepLang,{skipSaveOld:true}); state.streak=0; saveState(); applySettings(); showToast("Sıfırlandı."); goHome(); } break;
   }
 });
+document.addEventListener("keydown",(e)=>{ if((e.key==="Enter"||e.key===" ") && e.target && e.target.matches && e.target.matches('[role="button"][data-act]')){ e.preventDefault(); e.target.click(); } });
 document.addEventListener("input",(e)=>{ if(e.target && e.target.id==="dictSearch"){ dictState.q=e.target.value; updateDictList(); } });
 document.addEventListener("change",(e)=>{ if(e.target && e.target.id==="bkFile") bkReadFile(e.target); });
 
