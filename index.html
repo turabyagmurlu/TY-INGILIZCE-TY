@@ -1359,7 +1359,7 @@ const IT_LEVELS = [
   ]},
   {uid:"it1-9", type:"vocab", icon:"💬", title:"Temel İfadeler", desc:"Günlük hayatta çok kullanılan kalıplar.", words:[
     {en:"Grazie mille",tr:"Çok teşekkürler",ex:"Grazie mille!",exTr:"Çok teşekkürler!"},
-    {en:"Prego",tr:"Rica ederim / Buyurun",ex:"Prego!",exTr:"Rica ederim!"},
+    {en:"Un attimo",tr:"Bir saniye / Bir dakika",ex:"Un attimo, per favore.",exTr:"Bir saniye, lütfen."},
     {en:"Mi scusi",tr:"Affedersiniz",ex:"Mi scusi, dov'è il bagno?",exTr:"Affedersiniz, tuvalet nerede?"},
     {en:"Non capisco",tr:"Anlamıyorum",ex:"Scusa, non capisco.",exTr:"Pardon, anlamıyorum."},
     {en:"Ho capito",tr:"Anladım",ex:"Sì, ho capito.",exTr:"Evet, anladım."},
@@ -2279,7 +2279,7 @@ const UNIT_INFO={
   "it1-5":"1'den 10'a sayılar: uno, due, tre, quattro, cinque ... dieci.",
   "it1-6":"Temel renkler. İtalyanca'da renk genelde ismin sonuna gelir ve cinsiyete uyar: 'libro rosso' = kırmızı kitap.",
   "it1-8":"Aile bireyleri: madre (anne), padre (baba), sorella (kız kardeş), fratello (erkek kardeş), figlio/figlia (oğul/kız).",
-  "it1-9":"Günlük kalıplar: Grazie (teşekkür), Prego (rica ederim), Mi scusi (affedersiniz), Quanto costa? (ne kadar?), Va bene (tamam).",
+  "it1-9":"Günlük kalıplar: Grazie (teşekkür), Un attimo (bir saniye), Mi scusi (affedersiniz), Quanto costa? (ne kadar?), Va bene (tamam).",
   "it1-10":"Sohbette çok geçen kalıplar. 'A dopo' (sonra görüşürüz), 'Per favore' (lütfen), 'Di dove sei?' (nerelisin?), 'Non lo so' (bilmiyorum), 'Sono turco' (Türküm).",
   "it2-2":"Temel yiyecek ve içecekler: pane (ekmek), acqua (su), caffè (kahve), latte (süt), formaggio (peynir).",
   "it2-5":"Evdeki eşyalar: tavolo (masa), sedia (sandalye), porta (kapı), finestra (pencere), letto (yatak).",
@@ -2710,8 +2710,9 @@ function prBegin(s){ if(PRS!==s) return; let rec;
     if(fin.length && allFinal){ try{ rec.stop(); }catch(_){} } };
   rec.onerror=(ev)=>{ if(PRS!==s) return; s.err=(ev&&ev.error)||"unknown"; };
   rec.onend=()=>{ if(PRS!==s) return; prFinish(s); };
+  s.begunAt=Date.now();
   try{ rec.start(); }catch(e){ prFinish(s,"start-failed"); return; }
-  s.timer=setTimeout(()=>{ if(PRS!==s) return; s.timedOut=true; try{ rec.stop(); }catch(_){}
+  clearTimeout(s.timer); s.timer=setTimeout(()=>{ if(PRS!==s) return; s.timedOut=true; try{ rec.stop(); }catch(_){}
     s.killer=setTimeout(()=>{ if(PRS===s){ try{ rec.abort(); }catch(_){} prFinish(s); } },1500); },PR_TIMEOUT); }
 function prStopUser(){ const s=PRS; if(!s) return; s.userStop=true;
   if(!s.rec){ prAbort(); return; }
@@ -2722,7 +2723,14 @@ function prCandidates(s){ const f=s.finals;
     for(let j=0;j<n;j++) out.push(f.map(r=>((r[j]||r[0]).transcript)||"").join(" ").trim());
     return out.filter(Boolean); }
   return s.interim?[s.interim]:[]; }
-function prFinish(s,forcedErr){ if(PRS!==s) return; PRS=null; clearTimeout(s.timer); clearTimeout(s.killer); prBtnIdle(s);
+function prFinish(s,forcedErr){ if(PRS!==s) return;
+  // Bazı tarayıcılar (özellikle Edge) hiçbir şey duymadan ~1 sn içinde boş sonuçla kapanıyor → sessizce yeniden dinle
+  if(!forcedErr && !s.userStop && !s.timedOut && (s.retries||0)<2 && s.begunAt && (Date.now()-s.begunAt)<3000
+     && !prCandidates(s).length && (!s.err || s.err==="no-speech" || s.err==="aborted") && s.box && s.box.isConnected){
+    s.retries=(s.retries||0)+1; s.err=null; s.finals=null; s.interim=""; clearTimeout(s.killer);
+    try{ if(s.rec){ s.rec.onend=null; s.rec.onerror=null; s.rec.onresult=null; s.rec.onstart=null; } }catch(_){}
+    setTimeout(()=>prBegin(s),150); return; }
+  PRS=null; clearTimeout(s.timer); clearTimeout(s.killer); prBtnIdle(s);
   const box=s.box, o=s.opts; if(!box||!box.isConnected) return;
   const cands=forcedErr?[]:prCandidates(s);
   if(cands.length){ prShowResult(s,pronScore(o.target,cands,s.lang)); return; }
