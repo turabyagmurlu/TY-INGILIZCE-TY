@@ -18,32 +18,40 @@
     --accent:#F2C14E; --accent-dark:#d9a52f; --text:#222222; --card:#ffffff;
     --good:#2e9e5b; --good-bg:#e7f6ec; --bad:#d9534f; --bad-bg:#fbe9e8;
     --muted:#6b6b6b; --line:#ece6dc; --shadow:0 6px 18px rgba(60,50,30,.10);
-    --radius:18px; --fs:19px;
+    --radius:18px; --fs:19px; --k:1;
     --l1:#4F7CAC; --l2:#2e9e5b; --l3:#9b59b6;
+    --l1d:#3c5f87; --l2d:#237a46; --l3d:#7d3f9a;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{margin:0;padding:0;}
+  html{background:var(--bg);}
   body{font-family:"Segoe UI",-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
-    background:var(--bg);color:var(--text);font-size:var(--fs);line-height:1.55;-webkit-text-size-adjust:100%;}
-  .wrap{max-width:720px;margin:0 auto;padding:14px 16px 80px;}
-  header.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px;
-    position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:20;padding:8px 0;border-bottom:1px solid var(--line);}
-  header.top h1{font-size:20px;margin:0;color:var(--primary-dark);white-space:nowrap;}
-  .top-actions{display:flex;gap:8px;}
+    background:var(--bg);color:var(--text);font-size:var(--fs);line-height:1.55;-webkit-text-size-adjust:100%;overflow-x:hidden;}
+  button,input,[data-act]{touch-action:manipulation;}
+  button{font-family:inherit;}
+  .wrap{max-width:720px;margin:0 auto;
+    padding:14px max(16px,env(safe-area-inset-right)) calc(80px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));}
+  /* Başlık çentiğin altında kalmasın: yapışınca durum çubuğu alanını da kaplar */
+  header.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:-14px 0 14px;
+    position:sticky;top:0;background:var(--bg);z-index:20;padding:calc(10px + env(safe-area-inset-top,0px)) 0 8px;border-bottom:1px solid var(--line);}
+  header.top h1{font-size:20px;margin:0;color:var(--primary-dark);min-width:0;line-height:1.2;}
+  .top-actions{display:flex;gap:6px;flex:0 0 auto;}
   .icon-btn{background:#fff;border:2px solid var(--line);color:var(--primary-dark);border-radius:12px;
-    padding:8px 12px;font-size:16px;cursor:pointer;font-weight:600;}
+    padding:8px 12px;font-size:16px;cursor:pointer;font-weight:600;min-width:44px;min-height:44px;}
+  .top-actions .icon-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 6px;min-width:52px;line-height:1.1;}
+  .top-actions .icon-btn .ib-lbl{font-size:11px;font-weight:700;white-space:nowrap;}
   .icon-btn:hover{border-color:var(--primary);}
   .hidden{display:none !important;}
 
   .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:16px;}
-  h2{font-size:25px;margin:0 0 12px;color:var(--primary-dark);}
-  h3{font-size:20px;margin:0 0 8px;}
+  h2{font-size:calc(25px*var(--k));margin:0 0 12px;color:var(--primary-dark);}
+  h3{font-size:calc(20px*var(--k));margin:0 0 8px;}
   p{margin:0 0 12px;}
   .muted{color:var(--muted);font-size:.88em;}
   .center{text-align:center;}
 
   .btn{display:flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:14px;
-    padding:16px 20px;font-size:20px;font-weight:700;cursor:pointer;width:100%;margin-top:8px;transition:transform .06s ease, filter .15s;}
+    padding:16px 20px;font-size:calc(20px*var(--k));font-weight:700;cursor:pointer;width:100%;margin-top:8px;transition:transform .06s ease, filter .15s;}
   .btn:active{transform:scale(.98);}
   .btn-primary{background:var(--primary);color:#fff;}
   .btn-primary:hover{background:var(--primary-dark);}
@@ -57,79 +65,81 @@
 
   .stats{display:flex;gap:10px;flex-wrap:wrap;}
   .stat{flex:1;min-width:84px;background:#fff;border-radius:14px;padding:14px;text-align:center;box-shadow:var(--shadow);}
-  .stat .num{font-size:28px;font-weight:800;color:var(--primary);}
-  .stat .lbl{font-size:13px;color:var(--muted);}
-  .streak-badge{background:var(--accent);color:#3a2e00;border-radius:12px;padding:10px 16px;display:inline-block;font-weight:800;font-size:18px;}
+  .stat .num{font-size:calc(28px*var(--k));font-weight:800;color:var(--primary);}
+  .stat .lbl{font-size:calc(13px*var(--k));color:var(--muted);}
+  .streak-badge{background:var(--accent);color:#3a2e00;border-radius:12px;padding:10px 16px;display:inline-block;font-weight:800;font-size:calc(18px*var(--k));}
 
   .week{display:flex;gap:6px;justify-content:space-between;margin-top:6px;}
   .day{flex:1;text-align:center;}
-  .day .dot{width:38px;height:38px;border-radius:50%;margin:4px auto 2px;display:flex;align-items:center;justify-content:center;background:#eef2f6;color:var(--muted);font-size:18px;font-weight:700;}
+  .day .dot{width:38px;height:38px;border-radius:50%;margin:4px auto 2px;display:flex;align-items:center;justify-content:center;background:#eef2f6;color:var(--muted);font-size:calc(18px*var(--k));font-weight:700;}
   .day .dot.on{background:var(--good);color:#fff;}
   .day .dot.today{outline:3px solid var(--accent);}
-  .day .lbl{font-size:12px;color:var(--muted);}
+  .day .lbl{font-size:calc(12px*var(--k));color:var(--muted);}
 
   /* level card */
   .level-card{border-radius:var(--radius);padding:18px;margin-bottom:16px;box-shadow:var(--shadow);background:#fff;border-top:6px solid var(--primary);}
   .level-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  .level-head .lv-title{font-size:21px;font-weight:800;color:var(--primary-dark);}
-  .cefr{font-size:13px;font-weight:800;color:#fff;background:var(--primary);border-radius:999px;padding:3px 10px;}
-  .lv-prog{font-size:14px;color:var(--muted);margin-left:auto;}
-  .locked-note{background:#fff7e6;border:1px solid var(--accent);border-radius:12px;padding:10px 12px;margin-top:10px;font-size:15px;color:#7a5a00;}
+  .level-head .lv-title{font-size:calc(21px*var(--k));font-weight:800;color:var(--primary-dark);}
+  .cefr{font-size:calc(13px*var(--k));font-weight:800;color:#fff;background:var(--primary);border-radius:999px;padding:3px 10px;}
+  .lv-prog{font-size:calc(14px*var(--k));color:var(--muted);margin-left:auto;}
+  .locked-note{background:#fff7e6;border:1px solid var(--accent);border-radius:12px;padding:10px 12px;margin-top:10px;font-size:calc(15px*var(--k));color:#7a5a00;}
 
   .unit-list{list-style:none;padding:0;margin:10px 0 0;}
   .unit-item{display:flex;align-items:center;gap:12px;background:#fbf9f5;border-radius:14px;padding:12px 14px;margin-bottom:9px;cursor:pointer;border:2px solid transparent;}
   .unit-item:hover{border-color:var(--primary);}
-  .unit-ico{font-size:24px;flex:0 0 auto;width:38px;text-align:center;}
-  .unit-meta{flex:1;}
-  .unit-meta .t{font-weight:700;font-size:17px;}
-  .type-tag{font-size:12px;font-weight:700;border-radius:999px;padding:2px 8px;margin-right:6px;}
+  .unit-ico{font-size:calc(24px*var(--k));flex:0 0 auto;width:38px;text-align:center;}
+  .unit-meta{flex:1;min-width:0;overflow-wrap:break-word;}
+  .unit-meta .t{font-weight:700;font-size:calc(17px*var(--k));}
+  .type-tag{font-size:calc(12px*var(--k));font-weight:700;border-radius:999px;padding:2px 8px;margin-right:6px;}
   .type-tag.g{background:#efe6f7;color:#6f3fa0;}
   .type-tag.v{background:#e6eef7;color:#34618c;}
-  .badge-score{font-size:12px;background:var(--good-bg);color:#1d7a42;border-radius:999px;padding:2px 8px;font-weight:700;}
-  .check{width:32px;height:32px;border-radius:50%;flex:0 0 32px;display:flex;align-items:center;justify-content:center;background:#eef2f6;color:var(--muted);font-size:16px;font-weight:700;}
+  .badge-score{font-size:calc(12px*var(--k));background:var(--good-bg);color:#1d7a42;border-radius:999px;padding:2px 8px;font-weight:700;}
+  .check{width:32px;height:32px;border-radius:50%;flex:0 0 32px;display:flex;align-items:center;justify-content:center;background:#eef2f6;color:var(--muted);font-size:calc(16px*var(--k));font-weight:700;}
   .check.done{background:var(--good);color:#fff;}
 
   /* grammar */
-  .gtable{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:17px;}
+  .gtable{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:calc(17px*var(--k));}
   .gtable th,.gtable td{border:1px solid var(--line);padding:9px 10px;text-align:left;}
   .gtable th{background:#eef2f6;color:var(--primary-dark);}
-  .rule-box{background:#f3f7fb;border-left:5px solid var(--primary);border-radius:10px;padding:12px 14px;margin:8px 0 12px;font-size:17px;}
+  .rule-box{background:#f3f7fb;border-left:5px solid var(--primary);border-radius:10px;padding:12px 14px;margin:8px 0 12px;font-size:calc(17px*var(--k));}
   .ex-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);}
   .ex-row:last-child{border-bottom:none;}
-  .ex-main{flex:1;}
-  .ex-en{font-weight:700;font-size:18px;}
-  .ex-tr{color:var(--primary-dark);font-size:15px;}
+  .ex-main{flex:1;min-width:0;overflow-wrap:break-word;}
+  .ex-en{font-weight:700;font-size:calc(18px*var(--k));}
+  .ex-tr{color:var(--primary-dark);font-size:calc(15px*var(--k));}
 
   /* word rows */
   .word-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);}
   .word-row:last-child{border-bottom:none;}
-  .word-main{flex:1;}
-  .word-en{font-size:21px;font-weight:700;}
-  .word-tr{font-size:17px;color:var(--primary-dark);}
-  .word-ex{font-size:15px;color:var(--muted);margin-top:2px;}
-  .speak{flex:0 0 auto;width:56px;height:56px;border-radius:50%;border:none;background:var(--accent);font-size:24px;cursor:pointer;}
+  .word-main{flex:1;min-width:0;overflow-wrap:break-word;}
+  .word-en{font-size:calc(21px*var(--k));font-weight:700;}
+  .word-tr{font-size:calc(17px*var(--k));color:var(--primary-dark);}
+  .word-ex{font-size:calc(15px*var(--k));color:var(--muted);margin-top:2px;}
+  .speak{flex:0 0 auto;width:56px;height:56px;border-radius:50%;border:none;background:var(--accent);font-size:calc(24px*var(--k));cursor:pointer;}
   .speak:active{transform:scale(.94);}
-  .speak.sm{width:46px;height:46px;font-size:20px;}
+  .speak.sm{width:46px;height:46px;font-size:calc(20px*var(--k));}
 
   /* flashcard */
   .flash{perspective:1200px;margin:10px 0 4px;}
-  .flash-inner{position:relative;width:100%;min-height:220px;cursor:pointer;transition:transform .55s;transform-style:preserve-3d;}
+  .flash-inner{position:relative;display:grid;width:100%;min-height:220px;cursor:pointer;transition:transform .55s;transform-style:preserve-3d;}
   .flash.flipped .flash-inner{transform:rotateY(180deg);}
-  .flash-face{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:var(--radius);padding:20px;text-align:center;}
+  .flash-face{grid-area:1/1;position:relative;min-height:220px;-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow-wrap:break-word;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:var(--radius);padding:20px;text-align:center;}
   .flash-front{background:var(--primary);color:#fff;}
   .flash-back{background:var(--accent);color:#3a2e00;transform:rotateY(180deg);}
-  .flash-face .big{font-size:34px;font-weight:800;}
-  .flash-face .sub{font-size:17px;margin-top:12px;opacity:.96;}
-  .flash-hint{text-align:center;color:var(--muted);font-size:15px;margin:8px 0 12px;}
-  .counter{text-align:center;color:var(--muted);font-size:16px;margin-bottom:8px;}
+  .flash-face .big{font-size:calc(34px*var(--k));font-weight:800;}
+  .flash-face .sub{font-size:calc(17px*var(--k));margin-top:12px;opacity:.96;}
+  .flash-hint{text-align:center;color:var(--muted);font-size:calc(15px*var(--k));margin:8px 0 12px;}
+  .counter{text-align:center;color:var(--muted);font-size:calc(16px*var(--k));margin-bottom:8px;}
 
   /* quiz */
-  .opt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:#fff;border:2px solid #dfe5ec;border-radius:14px;padding:15px 16px;font-size:19px;margin-bottom:11px;cursor:pointer;}
+  .opt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:#fff;border:2px solid #dfe5ec;border-radius:14px;padding:15px 16px;font-size:calc(19px*var(--k));margin-bottom:11px;cursor:pointer;}
   .opt:hover{border-color:var(--primary);}
   .opt.correct{background:var(--good-bg);border-color:var(--good);}
   .opt.wrong{background:var(--bad-bg);border-color:var(--bad);}
-  .opt:disabled{cursor:default;}
-  .feedback{border-radius:14px;padding:14px;margin-top:6px;font-size:17px;}
+  .opt{color:var(--text);}
+  .opt:disabled{cursor:default;color:var(--text);opacity:1;}
+  .opt:disabled:not(.correct):not(.wrong){opacity:.7;}
+  .feedback{border-radius:14px;padding:14px;margin-top:6px;font-size:calc(17px*var(--k));}
   .feedback.good{background:var(--good-bg);color:#1d7a42;}
   .feedback.bad{background:var(--bad-bg);color:#a8312d;}
   .progressbar{background:#e7e1d7;border-radius:999px;height:14px;overflow:hidden;margin:10px 0;}
@@ -141,47 +151,54 @@
   .badges{display:flex;flex-wrap:wrap;gap:10px;}
   .badge{flex:1 1 140px;background:#fff;border-radius:14px;padding:14px;text-align:center;box-shadow:var(--shadow);opacity:.45;filter:grayscale(1);}
   .badge.on{opacity:1;filter:none;border:2px solid var(--accent);}
-  .badge .b-ico{font-size:34px;}
-  .badge .b-name{font-weight:700;font-size:15px;margin-top:4px;}
-  .badge .b-desc{font-size:13px;color:var(--muted);}
+  .badge .b-ico{font-size:calc(34px*var(--k));}
+  .badge .b-name{font-weight:700;font-size:calc(15px*var(--k));margin-top:4px;}
+  .badge .b-desc{font-size:calc(13px*var(--k));color:var(--muted);}
 
   .seg{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px;}
-  .seg button{flex:1;min-width:90px;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px;font-size:16px;cursor:pointer;font-weight:600;}
+  .seg button{flex:1;min-width:90px;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px;font-size:calc(16px*var(--k));cursor:pointer;font-weight:600;}
   .seg button.active{background:var(--primary);color:#fff;border-color:var(--primary);}
   label.set-lbl{font-weight:700;display:block;margin-top:8px;}
 
-  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--primary-dark);color:#fff;padding:14px 20px;border-radius:14px;box-shadow:var(--shadow);font-size:17px;opacity:0;pointer-events:none;transition:opacity .25s;z-index:60;max-width:92%;text-align:center;}
+  .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--primary-dark);color:#fff;padding:14px 20px;border-radius:14px;box-shadow:var(--shadow);font-size:calc(17px*var(--k));opacity:0;pointer-events:none;transition:opacity .25s;z-index:60;max-width:92%;text-align:center;}
   .toast.show{opacity:1;}
-  .mic-state{border-radius:14px;padding:14px;margin-top:8px;font-size:17px;background:#eef2f6;color:var(--primary-dark);}
+  .mic-state{border-radius:14px;padding:14px;margin-top:8px;font-size:calc(17px*var(--k));background:#eef2f6;color:var(--primary-dark);}
   .mic-state.listening{background:#fff4d6;color:#7a5a00;}
   .pulse{animation:pulse 1s infinite;}
   @keyframes pulse{0%{opacity:1}50%{opacity:.4}100%{opacity:1}}
   .confetti{position:fixed;top:-12px;width:10px;height:16px;z-index:70;border-radius:2px;pointer-events:none;}
-  .tip{background:#fff8e6;border:1px solid var(--accent);border-radius:12px;padding:12px 14px;margin:12px 0 4px;font-size:16px;color:#6b5300;}
+  .tip{background:#fff8e6;border:1px solid var(--accent);border-radius:12px;padding:12px 14px;margin:12px 0 4px;font-size:calc(16px*var(--k));color:#6b5300;}
   .tip b{color:#7a5a00;}
-  .goal{background:#eef5ff;border-left:5px solid var(--primary);border-radius:10px;padding:10px 14px;margin:6px 0;font-size:16px;}
+  .goal{background:#eef5ff;border-left:5px solid var(--primary);border-radius:10px;padding:10px 14px;margin:6px 0;font-size:calc(16px*var(--k));}
   .stepper{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
-  .step{flex:1;min-width:64px;background:#eef2f6;border-radius:12px;padding:8px 4px;text-align:center;font-size:13px;color:var(--primary-dark);font-weight:700;}
-  .step .n{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;align-items:center;justify-content:center;font-size:13px;margin-bottom:3px;}
+  .step{flex:1;min-width:64px;background:#eef2f6;border-radius:12px;padding:8px 4px;text-align:center;font-size:calc(13px*var(--k));color:var(--primary-dark);font-weight:700;}
+  .step .n{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;align-items:center;justify-content:center;font-size:calc(13px*var(--k));margin-bottom:3px;}
   .ezber{background:#f5f9fc;border:2px dashed var(--primary);border-radius:14px;padding:14px;margin-bottom:11px;}
   .ezber .ez-top{display:flex;align-items:center;gap:10px;}
-  .ezber .en{font-size:23px;font-weight:800;flex:1;}
-  .reveal-btn{background:var(--primary);color:#fff;border:none;border-radius:10px;padding:10px 14px;font-size:15px;cursor:pointer;font-weight:700;white-space:nowrap;}
+  .ezber .en{font-size:calc(23px*var(--k));font-weight:800;flex:1;min-width:0;overflow-wrap:break-word;line-height:1.25;}
+  .reveal-btn{background:var(--primary);color:#fff;border:none;border-radius:10px;padding:10px 14px;font-size:calc(15px*var(--k));cursor:pointer;font-weight:700;white-space:nowrap;min-height:44px;flex:0 0 auto;}
   .reveal-btn:active{transform:scale(.97);}
   .reveal-box{margin-top:10px;}
-  footer{text-align:center;color:var(--muted);font-size:14px;margin-top:24px;}
-  @media (max-width:480px){ header.top h1{font-size:17px;} .flash-face .big{font-size:30px;} .icon-btn{padding:8px 10px;font-size:15px;} }
+  footer{text-align:center;color:var(--muted);font-size:calc(14px*var(--k));margin-top:24px;}
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 12px;}
+  .table-scroll .gtable{margin:0;}
+  .seg.chips{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
+  .seg.chips button{flex:0 0 auto;min-width:0;white-space:nowrap;}
+  .review-item .icon-btn{flex:0 0 auto;}
+  .quiz-exit{margin-top:4px;}
+  @media (max-width:480px){ header.top h1{font-size:15px;} .flash-face .big{font-size:calc(30px*var(--k));} .icon-btn{padding:8px 10px;font-size:15px;} .top-actions .icon-btn{padding:4px 4px;min-width:48px;} }
+  @media (max-width:350px){ header.top h1 .h1-txt{display:none;} }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>📘 Dil Öğreniyorum</h1>
+    <h1>📘 <span class="h1-txt">Dil Öğreniyorum</span></h1>
     <div class="top-actions">
-      <button class="icon-btn" data-act="langPicker" title="Dil">🌐</button>
-      <button class="icon-btn" data-act="openDict" title="Sözlük">📖</button>
-      <button class="icon-btn" data-act="goSettings" title="Ayarlar">⚙️</button>
-      <button class="icon-btn" data-act="goHome" title="Ana Sayfa">🏠</button>
+      <button class="icon-btn" data-act="langPicker" title="Dil" aria-label="Dil seç"><span aria-hidden="true">🌐</span><span class="ib-lbl">Dil</span></button>
+      <button class="icon-btn" data-act="openDict" title="Sözlük" aria-label="Sözlük"><span aria-hidden="true">📖</span><span class="ib-lbl">Sözlük</span></button>
+      <button class="icon-btn" data-act="goSettings" title="Ayarlar" aria-label="Ayarlar"><span aria-hidden="true">⚙️</span><span class="ib-lbl">Ayarlar</span></button>
+      <button class="icon-btn" data-act="goHome" title="Ana Sayfa" aria-label="Ana Sayfa"><span aria-hidden="true">🏠</span><span class="ib-lbl">Ana Sayfa</span></button>
     </div>
   </header>
   <div id="app"></div>
@@ -208,7 +225,7 @@ const EN_LEVELS = [
     {uid:"1-2", type:"grammar", icon:"📖", title:"Gramer: am / is / are (olmak)",
       intro:"İngilizcede \"olmak\" fiili üç şekilde kullanılır: am, is, are. Türkçedeki \"-im, -sin, -dir\" eklerine benzer.",
       rule:"<b>I</b> ile <b>am</b>, <b>he/she/it</b> ile <b>is</b>, <b>you/we/they</b> ile <b>are</b> kullanılır. Örnek: \"I <b>am</b> happy\" = \"Mutlu<b>yum</b>\".",
-      structure:[["Özne","Fiil","Örnek"],["I (ben)","am","I am a teacher (öğretmenim)"],["You (sen)","are","You are kind (nazikssin)"],["He/She/It (o)","is","She is happy (o mutlu)"],["We/They (biz/onlar)","are","We are home (evdeyiz)"]],
+      structure:[["Özne","Fiil","Örnek"],["I (ben)","am","I am a teacher (öğretmenim)"],["You (sen)","are","You are kind (naziksin)"],["He/She/It (o)","is","She is happy (o mutlu)"],["We/They (biz/onlar)","are","We are home (evdeyiz)"]],
       examples:[{en:"I am Deniz.",tr:"Ben Deniz'im."},{en:"You are my friend.",tr:"Sen benim arkadaşımsın."},{en:"He is tall.",tr:"O uzun boylu."},{en:"We are ready.",tr:"Biz hazırız."},{en:"They are here.",tr:"Onlar burada."}],
       exercises:[
         {q:"I ___ happy.", options:["am","is","are"], answer:"am", explain:"I ile her zaman 'am' kullanılır."},
@@ -246,28 +263,28 @@ const EN_LEVELS = [
     ]},
     {uid:"1-6", type:"grammar", icon:"📖", title:"Gramer: a / an",
       intro:"Tekil bir şeyden \"bir tane\" derken ismin önüne a veya an koyarız.",
-      rule:"Kelime <b>sessiz harfle</b> başlıyorsa <b>a</b>: a book. Kelime <b>sesli harfle</b> (a, e, i, o, u) başlıyorsa <b>an</b>: an apple.",
+      rule:"Kelime <b>sessiz bir sesle</b> başlıyorsa <b>a</b>: a book. <b>Sesli bir sesle</b> (a, e, i, o, u sesi) başlıyorsa <b>an</b>: an apple. Önemli olan yazılış değil, okunuştur: <b>an hour</b> (h okunmaz, \"aur\"), <b>a university</b> (\"yu\" sesiyle başlar).",
       structure:[["a (sessiz)","an (sesli)"],["a car","an apple"],["a dog","an egg"],["a house","an orange"]],
       examples:[{en:"a book",tr:"bir kitap"},{en:"an apple",tr:"bir elma"},{en:"a dog",tr:"bir köpek"},{en:"an egg",tr:"bir yumurta"}],
       exercises:[
-        {q:"___ apple", options:["an","a"], answer:"an", explain:"apple sesli harfle başlar → an."},
-        {q:"___ book", options:["a","an"], answer:"a", explain:"book sessiz harfle başlar → a."},
-        {q:"___ egg", options:["an","a"], answer:"an", explain:"egg sesli harfle başlar → an."},
-        {q:"___ house", options:["a","an"], answer:"a", explain:"house sessiz (h) ile başlar → a."}
+        {q:"___ apple", options:["an","a"], answer:"an", explain:"apple sesli bir sesle (a) başlar → an."},
+        {q:"___ book", options:["a","an"], answer:"a", explain:"book sessiz bir sesle (b) başlar → a."},
+        {q:"___ egg", options:["an","a"], answer:"an", explain:"egg sesli bir sesle (e) başlar → an."},
+        {q:"___ house", options:["a","an"], answer:"a", explain:"house'da h okunur, sessiz sesle başlar → a."}
       ]},
     {uid:"1-7", type:"vocab", icon:"👨‍👩‍👧", title:"Aile & Ev", desc:"Aile bireyleri ve evdeki kelimeler.", words:[
       {en:"Mother", tr:"Anne", ex:"My mother is here.", exTr:"Annem burada."},
       {en:"Father", tr:"Baba", ex:"My father is at home.", exTr:"Babam evde."},
       {en:"Sister", tr:"Kız kardeş", ex:"This is my sister.", exTr:"Bu kız kardeşim."},
-      {en:"Brother", tr:"Erkek kardeş", ex:"My brother is tall.", exTr:"Erkek kardeşim uzun."},
+      {en:"Brother", tr:"Erkek kardeş", ex:"My brother is tall.", exTr:"Erkek kardeşim uzun boylu."},
       {en:"House", tr:"Ev", ex:"This is my house.", exTr:"Bu benim evim."},
       {en:"Water", tr:"Su", ex:"I drink water.", exTr:"Su içerim."}
     ]},
     {uid:"1-8", type:"grammar", icon:"📖", title:"Gramer: this / that / these / those",
       intro:"Bir şeyi gösterirken yakın mı uzak mı, tekil mi çoğul mu olduğuna göre kelime değişir.",
-      rule:"<b>this</b> = bu (yakın, tekil), <b>that</b> = şu/o (uzak, tekil), <b>these</b> = bunlar (yakın, çoğul), <b>those</b> = onlar (uzak, çoğul).",
+      rule:"<b>this</b> = bu (yakın, tekil), <b>that</b> = şu/o (uzak, tekil), <b>these</b> = bunlar (yakın, çoğul), <b>those</b> = şunlar/onlar (uzak, çoğul).",
       structure:[["","Tekil","Çoğul"],["Yakın","this","these"],["Uzak","that","those"]],
-      examples:[{en:"This is my phone.",tr:"Bu benim telefonum."},{en:"That is your car.",tr:"Şu senin araban."},{en:"These are books.",tr:"Bunlar kitap."},{en:"Those are cats.",tr:"Onlar kedi."}],
+      examples:[{en:"This is my phone.",tr:"Bu benim telefonum."},{en:"That is your car.",tr:"Şu senin araban."},{en:"These are books.",tr:"Bunlar kitap."},{en:"Those are cats.",tr:"Şunlar kedi."}],
       exercises:[
         {q:"___ is my book. (yakın, tekil)", options:["This","These","Those"], answer:"This", explain:"Yakın + tekil = this."},
         {q:"___ are my friends. (yakın, çoğul)", options:["These","This","That"], answer:"These", explain:"Yakın + çoğul = these."},
@@ -277,8 +294,8 @@ const EN_LEVELS = [
     {uid:"1-9", type:"vocab", icon:"💬", title:"Günlük Konuşma Kalıpları", desc:"Her gün işine yarayacak pratik kalıplar.", words:[
       {en:"See you later", tr:"Sonra görüşürüz", ex:"Bye! See you later.", exTr:"Hoşça kal! Sonra görüşürüz."},
       {en:"Please", tr:"Lütfen", ex:"Water, please.", exTr:"Su, lütfen."},
-      {en:"You're welcome", tr:"Bir şey değil / Rica ederim", ex:"Thanks! — You're welcome.", exTr:"Teşekkürler! — Rica ederim."},
-      {en:"Can you help me?", tr:"Bana yardım edebilir misin?", ex:"Excuse me, can you help me?", exTr:"Affedersiniz, bana yardım edebilir misin?"},
+      {en:"Have a nice day!", tr:"İyi günler!", ex:"Thank you, have a nice day!", exTr:"Teşekkürler, iyi günler!"},
+      {en:"Can you help me?", tr:"Bana yardım edebilir misin?", ex:"Excuse me, can you help me?", exTr:"Affedersiniz, bana yardım edebilir misiniz?"},
       {en:"I don't understand", tr:"Anlamıyorum", ex:"Sorry, I don't understand.", exTr:"Pardon, anlamıyorum."},
       {en:"Don't worry!", tr:"Merak etme! / Endişe etme!", ex:"Don't worry, it's okay.", exTr:"Merak etme, sorun yok."},
       {en:"Congratulations!", tr:"Tebrikler!", ex:"Congratulations! Well done.", exTr:"Tebrikler! Aferin."}
@@ -286,17 +303,17 @@ const EN_LEVELS = [
   ]
 },
 {
-  id:2, cefr:"A2", name:"Seviye 2 — Temel", desc:"Cümle kurmaya başla: geniş zaman, can, have ve edatlar.",
+  id:2, cefr:"A1+", name:"Seviye 2 — Temel", desc:"Cümle kurmaya başla: geniş zaman, can, have ve edatlar.",
   units:[
     {uid:"2-1", type:"grammar", icon:"📖", title:"Gramer: Geniş Zaman (Present Simple)",
       intro:"Her zaman yaptığımız, alışkanlık olan işleri anlatır. \"Her gün çay içerim\" gibi.",
-      rule:"I/You/We/They + <b>fiilin yalın hali</b>: I drink. He/She/It + <b>fiil + s</b>: He drink<b>s</b>. (go → goes, do → does gibi küçük istisnalar var.)",
+      rule:"I/You/We/They + <b>fiilin yalın hali</b>: I drink. He/She/It + <b>fiil + s</b>: He drink<b>s</b>. (-o, -s, -sh, -ch, -x ile bitenlere <b>-es</b>: go → goes, watch → watches. Sessiz harf + y → <b>-ies</b>: study → studies. have → has.)",
       structure:[["Özne","Fiil","Örnek"],["I / You / We / They","work","I work every day"],["He / She / It","works","She works here"],["He / She / It","goes","He goes to school"]],
       examples:[{en:"I drink tea.",tr:"Çay içerim."},{en:"She drinks coffee.",tr:"O kahve içer."},{en:"We play every day.",tr:"Her gün oynarız."},{en:"He goes to work.",tr:"O işe gider."}],
       exercises:[
         {q:"She ___ tea. (drink)", options:["drinks","drink","drinking"], answer:"drinks", explain:"She ile fiile -s: drinks."},
         {q:"I ___ every day. (work)", options:["work","works","working"], answer:"work", explain:"I ile fiil yalın: work."},
-        {q:"He ___ to school. (go)", options:["goes","gos","go"], answer:"goes", explain:"go → goes (istisna)."},
+        {q:"He ___ to school. (go)", options:["goes","gos","go"], answer:"goes", explain:"-o ile bitince -es: go → goes."},
         {q:"They ___ football. (play)", options:["play","plays","playing"], answer:"play", explain:"They ile fiil yalın: play."}
       ]},
     {uid:"2-2", type:"vocab", icon:"🍎", title:"Yiyecek & Fiiller", desc:"Yiyecekler ve günlük fiiller.", words:[
@@ -360,7 +377,7 @@ const EN_LEVELS = [
         {q:"I am ___ home.", options:["at","in","on"], answer:"at", explain:"at home kalıptır."}
       ]},
     {uid:"2-8", type:"vocab", icon:"📅", title:"Zaman & Günler", desc:"Zaman ve gün kelimeleri.", words:[
-      {en:"Today", tr:"Bugün", ex:"Today is Monday.", exTr:"Bugün Pazartesi."},
+      {en:"Today", tr:"Bugün", ex:"Today is Monday.", exTr:"Bugün pazartesi."},
       {en:"Tomorrow", tr:"Yarın", ex:"See you tomorrow.", exTr:"Yarın görüşürüz."},
       {en:"Yesterday", tr:"Dün", ex:"I was tired yesterday.", exTr:"Dün yorgundum."},
       {en:"Morning", tr:"Sabah", ex:"Good morning!", exTr:"Günaydın!"},
@@ -370,7 +387,7 @@ const EN_LEVELS = [
   ]
 },
 {
-  id:3, cefr:"B1", name:"Seviye 3 — Orta", desc:"Zamanları öğren: şimdiki, geçmiş, gelecek ve karşılaştırma.",
+  id:3, cefr:"A2", name:"Seviye 3 — Temel Üstü", desc:"Zamanları öğren: şimdiki, geçmiş, gelecek ve karşılaştırma.",
   units:[
     {uid:"3-1", type:"grammar", icon:"📖", title:"Gramer: Şimdiki Zaman (Present Continuous)",
       intro:"Tam şu anda yapılan işi anlatır. \"Şu an okuyorum\" gibi.",
@@ -396,7 +413,7 @@ const EN_LEVELS = [
       ]},
     {uid:"3-3", type:"grammar", icon:"📖", title:"Gramer: Geçmiş Zaman (-ed)",
       intro:"Düzenli fiillerin geçmiş hali. Sona -ed eklenir.",
-      rule:"Düzenli fiil + <b>-ed</b>: play → play<b>ed</b>, work → work<b>ed</b>, like → lik<b>ed</b>. \"Dün futbol oynadım.\"",
+      rule:"Düzenli fiil + <b>-ed</b>: play → play<b>ed</b>, work → work<b>ed</b>, like → lik<b>ed</b> (-e ile bitene sadece -d). \"I played football\" = \"Futbol oynadım.\"",
       structure:[["Şimdi","Geçmiş"],["play","played"],["work","worked"],["watch","watched"],["like","liked"]],
       examples:[{en:"I played football.",tr:"Futbol oynadım."},{en:"She worked hard.",tr:"O çok çalıştı."},{en:"We watched a film.",tr:"Bir film izledik."},{en:"They liked the food.",tr:"Yemeği beğendiler."}],
       exercises:[
@@ -409,7 +426,7 @@ const EN_LEVELS = [
       intro:"Bazı fiiller geçmişte -ed almaz; tamamen değişir. Bunları ezberlemek gerekir.",
       rule:"go → <b>went</b>, have → <b>had</b>, see → <b>saw</b>, eat → <b>ate</b>, come → <b>came</b>, do → <b>did</b>.",
       structure:[["Şimdi","Geçmiş","Anlam"],["go","went","gitmek"],["eat","ate","yemek"],["see","saw","görmek"],["have","had","sahip olmak"],["come","came","gelmek"]],
-      examples:[{en:"I went to school.",tr:"Okula gittim."},{en:"She ate an apple.",tr:"O bir elma yedi."},{en:"We saw a film.",tr:"Bir film gördük."},{en:"He had a car.",tr:"Onun arabası vardı."}],
+      examples:[{en:"I went to school.",tr:"Okula gittim."},{en:"She ate an apple.",tr:"O bir elma yedi."},{en:"We saw a film.",tr:"Bir film izledik."},{en:"He had a car.",tr:"Onun arabası vardı."}],
       exercises:[
         {q:"I ___ to school. (go)", options:["went","goed","go"], answer:"went", explain:"go → went."},
         {q:"She ___ an apple. (eat)", options:["ate","eated","eat"], answer:"ate", explain:"eat → ate."},
@@ -418,8 +435,8 @@ const EN_LEVELS = [
       ]},
     {uid:"3-5", type:"grammar", icon:"📖", title:"Gramer: Gelecek Zaman (will / going to)",
       intro:"İleride olacak işleri anlatır. İki yol vardır.",
-      rule:"<b>will</b> + fiil = anlık karar/tahmin: I will help you. <b>be going to</b> + fiil = plan: I am going to travel.",
-      structure:[["Yapı","Kullanım","Örnek"],["will + fiil","karar/tahmin","It will rain"],["going to + fiil","plan","I am going to study"]],
+      rule:"<b>will</b> + fiil = anlık karar, söz veya tahmin: I will help you. <b>be going to</b> + fiil = plan: I am going to travel.",
+      structure:[["Yapı","Kullanım","Örnek"],["will + fiil","karar/söz/tahmin","It will rain"],["be going to + fiil","plan","I am going to study"]],
       examples:[{en:"I will help you.",tr:"Sana yardım edeceğim."},{en:"It will rain.",tr:"Yağmur yağacak."},{en:"I am going to travel.",tr:"Seyahat edeceğim (planlı)."},{en:"She is going to cook.",tr:"O yemek yapacak (planlı)."}],
       exercises:[
         {q:"I ___ help you. (söz veriyorum)", options:["will","going","am"], answer:"will", explain:"Anlık karar/söz: will."},
@@ -429,7 +446,7 @@ const EN_LEVELS = [
       ]},
     {uid:"3-6", type:"grammar", icon:"📖", title:"Gramer: Karşılaştırma (bigger, better)",
       intro:"İki şeyi karşılaştırırken kullanılır. \"daha büyük\" gibi.",
-      rule:"Kısa sıfat + <b>-er</b> + <b>than</b>: big → big<b>ger</b> than. İstisnalar: good → <b>better</b>, bad → <b>worse</b>.",
+      rule:"Kısa sıfat + <b>-er</b> + <b>than</b>: big → big<b>ger</b> than. Uzun sıfatlarda <b>more</b>: more beautiful. İstisnalar: good → <b>better</b>, bad → <b>worse</b>.",
       structure:[["Sıfat","Karşılaştırma"],["big","bigger"],["small","smaller"],["old","older"],["good","better"],["bad","worse"]],
       examples:[{en:"An elephant is bigger than a cat.",tr:"Fil kediden daha büyük."},{en:"This is better than that.",tr:"Bu şundan daha iyi."},{en:"A mouse is smaller than a dog.",tr:"Fare köpekten daha küçük."}],
       exercises:[
@@ -444,7 +461,7 @@ const EN_LEVELS = [
       {en:"Hotel", tr:"Otel", ex:"The hotel is nice.", exTr:"Otel güzel."},
       {en:"Help", tr:"Yardım", ex:"Can you help me?", exTr:"Bana yardım edebilir misin?"},
       {en:"Where is...?", tr:"... nerede?", ex:"Where is the hotel?", exTr:"Otel nerede?"},
-      {en:"Excuse me", tr:"Affedersiniz", ex:"Excuse me, where is the bus?", exTr:"Affedersiniz, otobüs nerede?"}
+      {en:"Excuse me", tr:"Affedersiniz", ex:"Excuse me, where is the bus stop?", exTr:"Affedersiniz, otobüs durağı nerede?"}
     ]}
   ]
 }
@@ -491,7 +508,7 @@ const EN_DICT_EXTRA = [
   {en:"Moon",tr:"Ay (gökyüzü)",ex:"The moon is white.",exTr:"Ay beyaz.",cat:"Doğa & Hava"},
   {en:"Rain",tr:"Yağmur",ex:"I like the rain.",exTr:"Yağmuru severim.",cat:"Doğa & Hava"},
   {en:"Snow",tr:"Kar",ex:"The snow is cold.",exTr:"Kar soğuk.",cat:"Doğa & Hava"},
-  {en:"Wind",tr:"Rüzgar",ex:"A strong wind.",exTr:"Güçlü bir rüzgar.",cat:"Doğa & Hava"},
+  {en:"Wind",tr:"Rüzgâr",ex:"A strong wind.",exTr:"Sert bir rüzgâr.",cat:"Doğa & Hava"},
   {en:"Tree",tr:"Ağaç",ex:"A big tree.",exTr:"Büyük bir ağaç.",cat:"Doğa & Hava"},
   {en:"Flower",tr:"Çiçek",ex:"A red flower.",exTr:"Kırmızı bir çiçek.",cat:"Doğa & Hava"},
   {en:"Sea",tr:"Deniz",ex:"The sea is blue.",exTr:"Deniz mavi.",cat:"Doğa & Hava"},
@@ -515,7 +532,7 @@ const EN_DICT_EXTRA = [
   {en:"Give",tr:"Vermek",ex:"Give me the book.",exTr:"Kitabı bana ver.",cat:"Fiiller"},
   {en:"Take",tr:"Almak",ex:"Take this.",exTr:"Bunu al.",cat:"Fiiller"},
   {en:"Sleep",tr:"Uyumak",ex:"I sleep at night.",exTr:"Gece uyurum.",cat:"Fiiller"},
-  {en:"Walk",tr:"Yürümek",ex:"I walk to work.",exTr:"İşe yürürüm.",cat:"Fiiller"},
+  {en:"Walk",tr:"Yürümek",ex:"I walk to work.",exTr:"İşe yürüyerek giderim.",cat:"Fiiller"},
   {en:"Run",tr:"Koşmak",ex:"I run fast.",exTr:"Hızlı koşarım.",cat:"Fiiller"},
   // Sıfatlar
   {en:"Big",tr:"Büyük",ex:"A big house.",exTr:"Büyük bir ev.",cat:"Sıfatlar"},
@@ -538,7 +555,7 @@ const EN_DICT_EXTRA = [
   {en:"Salad",tr:"Salata",ex:"A green salad.",exTr:"Yeşil salata.",cat:"Yiyecek"},
   {en:"Fruit",tr:"Meyve",ex:"I like fruit.",exTr:"Meyveyi severim.",cat:"Yiyecek"},
   {en:"Vegetable",tr:"Sebze",ex:"Fresh vegetables.",exTr:"Taze sebze.",cat:"Yiyecek"},
-  {en:"Sugar",tr:"Şeker",ex:"No sugar, please.",exTr:"Şeker yok, lütfen.",cat:"Yiyecek"},
+  {en:"Sugar",tr:"Şeker",ex:"No sugar, please.",exTr:"Şekersiz olsun, lütfen.",cat:"Yiyecek"},
   {en:"Salt",tr:"Tuz",ex:"A little salt.",exTr:"Biraz tuz.",cat:"Yiyecek"},
   {en:"Egg",tr:"Yumurta",ex:"One egg.",exTr:"Bir yumurta.",cat:"Yiyecek"},
   {en:"Cheese",tr:"Peynir",ex:"I like cheese.",exTr:"Peyniri severim.",cat:"Yiyecek"},
@@ -567,7 +584,7 @@ const EN_DICT_EXTRA = [
   {en:"City",tr:"Şehir",ex:"A big city.",exTr:"Büyük bir şehir.",cat:"Şehir"},
   {en:"Map",tr:"Harita",ex:"I have a map.",exTr:"Bir haritam var.",cat:"Şehir"},
   {en:"Money",tr:"Para",ex:"I have money.",exTr:"Param var.",cat:"Şehir"},
-  {en:"Shop",tr:"Dükkan",ex:"The shop is open.",exTr:"Dükkan açık.",cat:"Şehir"},
+  {en:"Shop",tr:"Dükkân",ex:"The shop is open.",exTr:"Dükkân açık.",cat:"Şehir"},
   {en:"Hospital",tr:"Hastane",ex:"Where is the hospital?",exTr:"Hastane nerede?",cat:"Şehir"},
   {en:"School",tr:"Okul",ex:"I go to school.",exTr:"Okula giderim.",cat:"Şehir"}
 ];
@@ -598,7 +615,7 @@ const IT_LEVELS = [
     {en:"Mi chiamo Deniz", tr:"Benim adım Deniz", ex:"Ciao, mi chiamo Deniz.", exTr:"Merhaba, benim adım Deniz."},
     {en:"Come ti chiami?", tr:"Adın ne?", ex:"Come ti chiami?", exTr:"Adın ne?"},
     {en:"Piacere", tr:"Memnun oldum", ex:"Piacere!", exTr:"Memnun oldum!"},
-    {en:"Sono della Turchia", tr:"Türkiye'denim", ex:"Sono della Turchia.", exTr:"Türkiye'denim."},
+    {en:"Vengo dalla Turchia", tr:"Türkiye'denim", ex:"Vengo dalla Turchia.", exTr:"Türkiye'den geliyorum."},
     {en:"Grazie", tr:"Teşekkür ederim", ex:"Grazie mille!", exTr:"Çok teşekkürler!"},
     {en:"Prego", tr:"Rica ederim / Buyurun", ex:"Prego!", exTr:"Rica ederim!"}
   ]},
@@ -650,7 +667,7 @@ const IT_LEVELS = [
   ]},
   {uid:"it1-9", type:"vocab", icon:"💬", title:"Temel İfadeler", desc:"Günlük hayatta çok kullanılan kalıplar.", words:[
     {en:"Grazie mille",tr:"Çok teşekkürler",ex:"Grazie mille!",exTr:"Çok teşekkürler!"},
-    {en:"Prego",tr:"Rica ederim",ex:"Prego!",exTr:"Rica ederim!"},
+    {en:"Prego",tr:"Rica ederim / Buyurun",ex:"Prego!",exTr:"Rica ederim!"},
     {en:"Mi scusi",tr:"Affedersiniz",ex:"Mi scusi, dov'è il bagno?",exTr:"Affedersiniz, tuvalet nerede?"},
     {en:"Non capisco",tr:"Anlamıyorum",ex:"Scusa, non capisco.",exTr:"Pardon, anlamıyorum."},
     {en:"Ho capito",tr:"Anladım",ex:"Sì, ho capito.",exTr:"Evet, anladım."},
@@ -664,10 +681,10 @@ const IT_LEVELS = [
     {en:"Non lo so", tr:"Bilmiyorum", ex:"Mi dispiace, non lo so.", exTr:"Üzgünüm, bilmiyorum."},
     {en:"Molto bene", tr:"Çok iyi", ex:"Sto molto bene, grazie.", exTr:"Çok iyiyim, teşekkürler."},
     {en:"Di dove sei?", tr:"Nerelisin?", ex:"Ciao! Di dove sei?", exTr:"Merhaba! Nerelisin?"},
-    {en:"Sono turco", tr:"Türküm", ex:"Sono turco, di Istanbul.", exTr:"Türküm, İstanbulluyum."}
+    {en:"Sono turco", tr:"Türküm (kadın: Sono turca)", ex:"Sono turco, di Istanbul.", exTr:"Türküm, İstanbulluyum."}
   ]}
 ]},
-{ id:2, cefr:"A2", name:"Seviye 2 — Temel", desc:"Cümle kurmaya başla: fiiller, çoğullar, edatlar ve günlük yaşam.", units:[
+{ id:2, cefr:"A1+", name:"Seviye 2 — Temel", desc:"Cümle kurmaya başla: fiiller, çoğullar, edatlar ve günlük yaşam.", units:[
   {uid:"it2-1", type:"grammar", icon:"📖", title:"Gramer: Çoğullar",
     intro:"İtalyancada çoğul, ismin son harfine göre değişir.",
     rule:"Eril <b>-o → -i</b>: libro → libri. Dişil <b>-a → -e</b>: casa → case. <b>-e</b> ile bitenler → <b>-i</b>: cane → cani.",
@@ -753,10 +770,10 @@ const IT_LEVELS = [
     {en:"La lezione",tr:"Ders",ex:"Ho sei ore di lezione.",exTr:"Altı saat dersim var."},
     {en:"I compiti",tr:"Ödevler",ex:"Faccio i compiti.",exTr:"Ödevlerimi yaparım."},
     {en:"La cena",tr:"Akşam yemeği",ex:"Ceno alle 19:00.",exTr:"Saat 19'da akşam yemeği yerim."},
-    {en:"Vado a letto",tr:"Yatağa giderim",ex:"Vado a letto alle 22:30.",exTr:"22:30'da yatağa giderim."}
+    {en:"Vado a letto",tr:"Yatarım / Yatmaya giderim",ex:"Vado a letto alle 22:30.",exTr:"22:30'da yatarım."}
   ]}
 ]},
-{ id:3, cefr:"B1", name:"Seviye 3 — Orta", desc:"Zamanlar: geçmiş, gelecek, modal fiiller ve karşılaştırma.", units:[
+{ id:3, cefr:"A2", name:"Seviye 3 — Temel Üstü", desc:"Zamanlar: geçmiş, gelecek, modal fiiller ve karşılaştırma.", units:[
   {uid:"it3-1", type:"grammar", icon:"📖", title:"Gramer: Geçmiş zaman — avere ile (passato prossimo)",
     intro:"Geçmişte biten işler için passato prossimo. Çoğu fiil 'avere' + geçmiş ortaç ile kurulur.",
     rule:"avere (ho/hai/ha/abbiamo/avete/hanno) + geçmiş ortaç. Ortaç: <b>-are→-ato</b>, <b>-ere→-uto</b>, <b>-ire→-ito</b>. \"Ho mangiato\" = \"yedim\".",
@@ -794,10 +811,10 @@ const IT_LEVELS = [
     intro:"'-ebilmek' ve 'istemek' anlamı: potere (yapabilmek) ve volere (istemek). Sonrasında fiil yalın (mastar) gelir.",
     rule:"potere: <b>posso, puoi, può, possiamo, potete, possono</b>. volere: <b>voglio, vuoi, vuole, vogliamo, volete, vogliono</b>. \"Voglio un caffè\" = \"Bir kahve istiyorum\".",
     structure:[["Özne","potere","volere"],["io","posso","voglio"],["tu","puoi","vuoi"],["lui/lei","può","vuole"],["noi","possiamo","vogliamo"]],
-    examples:[{en:"Voglio un caffè.",tr:"Bir kahve istiyorum."},{en:"Posso aiutare.",tr:"Yardım edebilirim."},{en:"Puoi ripetere?",tr:"Tekrar eder misin?"}],
+    examples:[{en:"Voglio un caffè.",tr:"Bir kahve istiyorum."},{en:"Posso aiutarti.",tr:"Sana yardım edebilirim."},{en:"Puoi ripetere?",tr:"Tekrar eder misin?"}],
     exercises:[
       {q:"Bir kahve istiyorum: ___ un caffè.", options:["Voglio","Posso","Vuoi"], answer:"Voglio", explain:"io istemek: voglio."},
-      {q:"Yardım edebilirim: ___ aiutare.", options:["Posso","Voglio","Puoi"], answer:"Posso", explain:"io yapabilmek: posso."},
+      {q:"Sana yardım edebilirim: ___ aiutarti.", options:["Posso","Voglio","Puoi"], answer:"Posso", explain:"io yapabilmek: posso."},
       {q:"Tekrar eder misin? ___ ripetere?", options:["Puoi","Posso","Vuole"], answer:"Puoi", explain:"tu yapabilmek: puoi."},
       {q:"İstiyoruz: ___ (volere, noi)", options:["vogliamo","volete","vogliono"], answer:"vogliamo", explain:"noi: vogliamo."}
     ]},
@@ -814,9 +831,9 @@ const IT_LEVELS = [
     ]},
   {uid:"it3-6", type:"grammar", icon:"📖", title:"Gramer: Karşılaştırma (più ... di)",
     intro:"İki şeyi karşılaştırırken 'più ... di' (daha ... -den) kullanılır.",
-    rule:"<b>più</b> + sıfat + <b>di</b>: \"Roma è più grande di Pisa\" = \"Roma Pisa'dan daha büyük\". Daha az için <b>meno</b>.",
+    rule:"<b>più</b> + sıfat + <b>di</b>: \"Roma è più grande di Pisa\" = \"Roma Pisa'dan daha büyük\". Daha az için <b>meno</b>. (di + il = <b>del</b>: più forte del tè.)",
     structure:[["Yapı","Örnek"],["più ... di","più grande di"],["meno ... di","meno caro di"]],
-    examples:[{en:"Roma è più grande di Pisa.",tr:"Roma Pisa'dan daha büyük."},{en:"Il caffè è più forte del tè.",tr:"Kahve çaydan daha güçlü."}],
+    examples:[{en:"Roma è più grande di Pisa.",tr:"Roma Pisa'dan daha büyük."},{en:"Il caffè è più forte del tè.",tr:"Kahve çaydan daha sert."}],
     exercises:[
       {q:"daha büyük: ___ grande", options:["più","meno","molto"], answer:"più", explain:"daha = più."},
       {q:"Roma Pisa'dan daha büyük: Roma è più grande ___ Pisa.", options:["di","da","a"], answer:"di", explain:"karşılaştırmada -den = di."},
@@ -828,7 +845,7 @@ const IT_LEVELS = [
     {en:"Albergo",tr:"Otel",ex:"L'albergo è bello.",exTr:"Otel güzel."},
     {en:"Treno",tr:"Tren",ex:"Il treno è veloce.",exTr:"Tren hızlı."},
     {en:"Dov'è...?",tr:"... nerede?",ex:"Dov'è l'albergo?",exTr:"Otel nerede?"},
-    {en:"Scusi",tr:"Affedersiniz",ex:"Scusi, dov'è il bagno?",exTr:"Affedersiniz, tuvalet nerede?"}
+    {en:"Stazione",tr:"İstasyon",ex:"Dov'è la stazione?",exTr:"İstasyon nerede?"}
   ]},
   {uid:"it3-8", type:"vocab", icon:"😊", title:"Duygular & Sıfatlar", desc:"Nasıl hissettiğini anlat.", words:[
     {en:"Felice",tr:"Mutlu",ex:"Sono felice.",exTr:"Mutluyum."},
@@ -916,8 +933,8 @@ const BADGES = [
   {id:"streak3",ico:"🔥", name:"3 Gün Seri",    desc:"3 gün üst üste çalış",  test:s=>s.streak>=3},
   {id:"streak7",ico:"💎", name:"7 Gün Seri",    desc:"7 gün üst üste çalış",  test:s=>s.streak>=7},
   {id:"l1",     ico:"🥉", name:"Seviye 1 (A1)", desc:"Seviye 1'i bitir",      test:s=>levelDoneById(1)},
-  {id:"l2",     ico:"🥈", name:"Seviye 2 (A2)", desc:"Seviye 2'yi bitir",     test:s=>levelDoneById(2)},
-  {id:"l3",     ico:"🥇", name:"Seviye 3 (B1)", desc:"Seviye 3'ü bitir",      test:s=>levelDoneById(3)},
+  {id:"l2",     ico:"🥈", name:"Seviye 2 (A1+)", desc:"Seviye 2'yi bitir",     test:s=>levelDoneById(2)},
+  {id:"l3",     ico:"🥇", name:"Seviye 3 (A2)", desc:"Seviye 3'ü bitir",      test:s=>levelDoneById(3)},
   {id:"perfect",ico:"🎯", name:"Tam Puan",      desc:"Bir testte hepsi doğru",test:s=>s.perfectQuiz===true}
 ];
 
@@ -931,13 +948,14 @@ function defaultState(){
     studyDates:[], streak:0, settings:{fontScale:1, rate:0.85, voiceURI:null}
   });
 }
+function normalizeState(s){ const d=defaultState(); const m=Object.assign(d,s);
+  m.settings=Object.assign(defaultState().settings, s.settings||{});
+  m.langStore=Object.assign({en:defaultLangData(), it:defaultLangData()}, s.langStore||{});
+  return m; }
 function loadState(){
   try{
     const raw=localStorage.getItem(STORE_KEY);
-    if(raw){ const s=JSON.parse(raw); const d=defaultState(); const m=Object.assign(d,s);
-      m.settings=Object.assign(defaultState().settings, s.settings||{});
-      m.langStore=Object.assign({en:defaultLangData(), it:defaultLangData()}, s.langStore||{});
-      return m; }
+    if(raw){ return normalizeState(JSON.parse(raw)); }
     // Eski sürümden (yalnızca İngilizce) göç
     const old=localStorage.getItem(OLD_KEY_V3);
     if(old){ const s=JSON.parse(old); const d=defaultState();
@@ -950,7 +968,7 @@ function loadState(){
 function snapshotActive(){ return {completedLessons:state.completedLessons, wordsLearned:state.wordsLearned, grammarLearned:state.grammarLearned, reviewWords:state.reviewWords, bestScores:state.bestScores, unlocks:state.unlocks, dictLearned:state.dictLearned, earnedBadges:state.earnedBadges, perfectQuiz:state.perfectQuiz}; }
 function applyLangData(o){ o=o||defaultLangData(); state.completedLessons=o.completedLessons||[]; state.wordsLearned=o.wordsLearned||0; state.grammarLearned=o.grammarLearned||0; state.reviewWords=o.reviewWords||[]; state.bestScores=o.bestScores||{}; state.unlocks=o.unlocks||{}; state.dictLearned=o.dictLearned||[]; state.earnedBadges=o.earnedBadges||[]; state.perfectQuiz=!!o.perfectQuiz; }
 function saveState(){ try{ if(state.lang){ state.langStore[state.lang]=snapshotActive(); } localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){} }
-function setLanguage(lang, opts){ opts=opts||{};
+function setLanguage(lang, opts){ opts=opts||{}; if(!LANGS[lang]) lang="en";
   if(state.lang && !opts.skipSaveOld){ state.langStore[state.lang]=snapshotActive(); }
   state.lang=lang;
   LEVELS=LANGS[lang].levels; DICTIONARY_EXTRA=LANGS[lang].dictExtra;
@@ -970,38 +988,57 @@ function registerStudyToday(){ const t=dateKey(); if(!state.studyDates.includes(
 function checkBadges(){ const n=[]; BADGES.forEach(b=>{ if(b.test(state)&&!state.earnedBadges.includes(b.id)){ state.earnedBadges.push(b.id); n.push(b);} }); if(n.length) saveState(); return n; }
 
 /* ===== SES ===== */
+let currentScreen="";
 let VOICES=[];
 function refreshVoices(){ if("speechSynthesis" in window){ VOICES=window.speechSynthesis.getVoices()||[]; } }
-if("speechSynthesis" in window){ refreshVoices(); window.speechSynthesis.onvoiceschanged=refreshVoices; }
-function langVoices(){ const p=SPEAK_LANG.slice(0,2); return VOICES.filter(v=>new RegExp("^"+p,"i").test(v.lang)); }
+if("speechSynthesis" in window){ refreshVoices();
+  const onVC=()=>{ const had=VOICES.length; refreshVoices(); if(currentScreen==="settings" && VOICES.length!==had) renderSettings(true); };
+  if(window.speechSynthesis.addEventListener) window.speechSynthesis.addEventListener("voiceschanged",onVC); else window.speechSynthesis.onvoiceschanged=onVC;
+  // iOS Safari "voiceschanged" olayını her zaman göndermez; birkaç kez yeniden dene
+  [300,1000,2500].forEach(t=>setTimeout(onVC,t)); }
+// Apple cihazlardaki şaka/efekt sesleri (Albert, Bad News, Zarvox...) yaşlı kullanıcı için anlaşılmaz; listeden çıkar
+const NOVELTY_VOICES=/^(Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Pipe Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Deranged|Hysterical|Junior|Ralph|Fred|Kathy|Princess|Eddy|Flo|Grandma|Grandpa|Reed|Rocko|Sandy|Shelley)\b/i;
+function langVoices(){ const p=SPEAK_LANG.slice(0,2); return VOICES.filter(v=>new RegExp("^"+p,"i").test(v.lang) && !NOVELTY_VOICES.test(v.name||"")); }
 function pickVoice(){ const vs=langVoices();
   if(state.settings.voiceURI){ const v=vs.find(x=>x.voiceURI===state.settings.voiceURI); if(v) return v; }
-  return vs.find(v=>v.lang && v.lang.replace("_","-").toLowerCase()===SPEAK_LANG.toLowerCase())||vs[0]||null; }
-function speak(text){ if(!("speechSynthesis" in window)){ showToast("Bu cihazda sesli okuma yok."); return; }
-  window.speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang=SPEAK_LANG; u.rate=state.settings.rate||0.85;
-  const v=pickVoice(); if(v) u.voice=v; window.speechSynthesis.speak(u); }
+  const exact=vs.filter(v=>v.lang && v.lang.replace("_","-").toLowerCase()===SPEAK_LANG.toLowerCase());
+  const pool=exact.length?exact:vs;
+  return pool.find(v=>/enhanced|premium|natural/i.test(v.name))||pool.find(v=>v.default)||pool.find(v=>/google|samantha|alice|federica/i.test(v.name))||pool[0]||null; }
+function speakSeq(texts){ if(!("speechSynthesis" in window)){ showToast("Bu cihazda sesli okuma yok."); return; }
+  texts=(texts||[]).map(t=>t==null?"":String(t).trim()).filter(Boolean);
+  const ss=window.speechSynthesis; if(!VOICES.length) refreshVoices();
+  ss.cancel(); if(ss.paused) ss.resume();
+  const v=pickVoice();
+  texts.forEach(t=>{ const u=new SpeechSynthesisUtterance(t); u.lang=SPEAK_LANG; u.rate=state.settings.rate||0.85; if(v) u.voice=v; ss.speak(u); }); }
+function speak(text){ speakSeq([text]); }
+// Kelime + örnek cümle: önce kelimenin kendisi, sonra cümle
+function speakWord(w){ if(!w) return; speakSeq(w.ex && w.ex!==w.en ? [w.en, w.ex] : [w.en]); }
 
 /* ===== TEST MOTORU ===== */
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 function sample(a,n){ return shuffle(a).slice(0,n); }
-function distractors(field, answer, n){ const seen=new Set([answer]); const out=[];
-  for(const w of shuffle(VOCAB_POOL)){ const v=w[field]; if(v && !seen.has(v)){ seen.add(v); out.push(v); if(out.length>=n) break; } } return out; }
+// Yanlış şıklar: aynı anlama gelen başka bir kelime "yanlış" diye çıkmasın (iki doğru şık olmasın)
+function distractors(field, answer, n, word){ const other=field==="en"?"tr":"en"; const low=x=>String(x||"").trim().toLowerCase();
+  const seen=new Set([low(answer)]); const out=[];
+  for(const w of shuffle(VOCAB_POOL)){ const v=w[field]; if(!v || seen.has(low(v))) continue;
+    if(word && low(w[other])===low(word[other])) continue;
+    seen.add(low(v)); out.push(v); if(out.length>=n) break; } return out; }
 function buildVocabQuiz(words, count){
   const n=count||Math.min(6,Math.max(4,words.length));
   const chosen=sample(words,Math.min(n,words.length)); while(chosen.length<n){ chosen.push(words[Math.floor(Math.random()*words.length)]); }
   const types=["en2tr","tr2en","listen"];
   return chosen.map(w=>{ const t=types[Math.floor(Math.random()*types.length)];
-    if(t==="tr2en"){ const o=shuffle([w.en,...distractors("en",w.en,2)]); return {kind:"text",prompt:"\""+w.tr+"\" "+(state.lang==="it"?"İtalyancası":"İngilizcesi")+" nedir?",options:o,answer:w.en,explain:"\""+w.tr+"\" = \""+w.en+"\"."}; }
-    if(t==="listen"){ const o=shuffle([w.tr,...distractors("tr",w.tr,2)]); return {kind:"listen",audio:w.en,prompt:"🔊 Dinle ve Türkçesini seç:",options:o,answer:w.tr,explain:"Duyduğun: \""+w.en+"\" = \""+w.tr+"\"."}; }
-    const o=shuffle([w.tr,...distractors("tr",w.tr,2)]); return {kind:"text",prompt:"\""+w.en+"\" ne demek?",options:o,answer:w.tr,explain:"\""+w.en+"\" = \""+w.tr+"\"."};
+    if(t==="tr2en"){ const o=shuffle([w.en,...distractors("en",w.en,2,w)]); return {kind:"text",prompt:"\""+w.tr+"\" "+(state.lang==="it"?"İtalyancası":"İngilizcesi")+" nedir?",options:o,answer:w.en,explain:"\""+w.tr+"\" = \""+w.en+"\"."}; }
+    if(t==="listen"){ const o=shuffle([w.tr,...distractors("tr",w.tr,2,w)]); return {kind:"listen",audio:w.en,prompt:"🔊 Dinle ve Türkçesini seç:",options:o,answer:w.tr,explain:"Duyduğun: \""+w.en+"\" = \""+w.tr+"\"."}; }
+    const o=shuffle([w.tr,...distractors("tr",w.tr,2,w)]); return {kind:"text",prompt:"\""+w.en+"\" ne demek?",options:o,answer:w.tr,explain:"\""+w.en+"\" = \""+w.tr+"\"."};
   });
 }
-function buildGrammarQuiz(unit){ return unit.exercises.map(e=>({kind:"text",prompt:e.q,options:shuffle(e.options.slice()),answer:e.answer,explain:e.explain||""})); }
+function buildGrammarQuiz(unit){ return (unit.exercises||[]).filter(e=>e && e.options && e.options.length).map(e=>({kind:"text",prompt:e.q,options:shuffle(e.options.slice()),answer:e.answer,explain:e.explain||""})); }
 function buildLevelTest(lv){
   let qs=[];
   lv.units.forEach(u=>{
-    if(u.type==="grammar"){ const g=buildGrammarQuiz(u); qs.push(g[Math.floor(Math.random()*g.length)]); }
-    else if(u.words){ qs=qs.concat(buildVocabQuiz(u.words,2)); }
+    if(u.type==="grammar"){ const g=buildGrammarQuiz(u); if(g.length) qs.push(g[Math.floor(Math.random()*g.length)]); }
+    else if(u.words && u.words.length){ qs=qs.concat(buildVocabQuiz(u.words,2)); }
   });
   return shuffle(qs).slice(0, Math.min(10, qs.length));
 }
@@ -1014,7 +1051,7 @@ function showToast(m){ const t=document.getElementById("toast"); t.textContent=m
 function isDone(uid){ return state.completedLessons.includes(uid); }
 function addReviewWord(w){ if(!state.reviewWords.some(x=>x.en===w.en)){ state.reviewWords.push({en:w.en,tr:w.tr,ex:w.ex,exTr:w.exTr}); saveState(); showToast("Tekrar listesine eklendi: "+w.en);} else showToast("Zaten listede."); }
 function removeReviewWord(en){ state.reviewWords=state.reviewWords.filter(x=>x.en!==en); saveState(); }
-function applySettings(){ document.documentElement.style.setProperty("--fs",(19*(state.settings.fontScale||1))+"px"); }
+function applySettings(){ const k=state.settings.fontScale||1; document.documentElement.style.setProperty("--fs",(19*k)+"px"); document.documentElement.style.setProperty("--k",String(k)); }
 function confetti(){ const c=["#4F7CAC","#F2C14E","#2e9e5b","#d9534f","#9b59b6"];
   for(let i=0;i<70;i++){ const e=document.createElement("div"); e.className="confetti"; e.style.left=Math.random()*100+"vw"; e.style.background=c[i%c.length]; e.style.transform="rotate("+(Math.random()*360)+"deg)"; document.body.appendChild(e);
     const f=600+Math.random()*900, x=Math.random()*120-60; e.animate([{transform:"translate(0,0) rotate(0)",opacity:1},{transform:"translate("+x+"px,100vh) rotate(720deg)",opacity:.9}],{duration:f+1200,easing:"cubic-bezier(.2,.6,.4,1)"}); setTimeout(()=>e.remove(),f+1300); } }
@@ -1053,10 +1090,18 @@ function infoFor(u){
 }
 let ctx={};
 
+/* ===== GEZİNME (telefonun "geri" tuşu) =====
+   Ana sayfa dışındaki her ekran geçmişe tek bir kayıt ekler; böylece Android'de "geri"
+   uygulamadan çıkmak yerine ana sayfaya döner. */
+function nav(screen){ currentScreen=screen;
+  if(state.lang){ try{ if(!(history.state && history.state.inner)) history.pushState({inner:true},""); }catch(e){} } }
+function goHome(){ try{ if(history.state && history.state.inner){ history.back(); return; } }catch(e){} renderHome(); }
+window.addEventListener("popstate",()=>{ if("speechSynthesis" in window) window.speechSynthesis.cancel(); if(state.lang) renderHome(); else renderLangPicker(); });
+function quizTotal(u){ if(!u) return 0; if(u.type==="grammar") return buildGrammarQuiz(u).length; const n=(u.words||[]).length; return n?Math.min(6,Math.max(4,n)):0; }
+
 /* ===== ANA SAYFA ===== */
-function goHome(){ renderHome(); }
-function renderHome(){
-  const totalU=ALL_UNITS.length, doneU=state.completedLessons.length;
+function renderHome(){ currentScreen="home";
+  const totalU=ALL_UNITS.length, doneU=ALL_UNITS.filter(u=>isDone(u.uid)).length;
   const studiedToday=state.studyDates.includes(dateKey());
   // önerilen sıradaki ünite
   let nextU=null, nextLevelLocked=false;
@@ -1095,10 +1140,10 @@ function renderHome(){
   LEVELS.forEach((lv,idx)=>{
     const unlocked=levelUnlocked(idx);
     const done=lv.units.filter(u=>isDone(u.uid)).length;
-    const colorVar = idx===0?"--l1":idx===1?"--l2":"--l3";
+    const colorVar = idx===0?"--l1":idx===1?"--l2":"--l3", pillVar = colorVar+"d";
     html+=`<div class="level-card" style="border-top-color:var(${colorVar});">
       <div class="level-head">
-        <span class="cefr" style="background:var(${colorVar});">${esc(lv.cefr)}</span>
+        <span class="cefr" style="background:var(${pillVar});">${esc(lv.cefr)}</span>
         <span class="lv-title">${esc(lv.name)}</span>
         <span class="lv-prog">${done}/${lv.units.length} ${unlocked?"":"🔒"}</span>
       </div>
@@ -1109,11 +1154,11 @@ function renderHome(){
     } else {
       html+=`<ul class="unit-list">`;
       lv.units.forEach(u=>{
-        const best=state.bestScores[u.uid];
+        const best=state.bestScores[u.uid], tot=quizTotal(u);
         const tag = u.type==="grammar"?`<span class="type-tag g">📖 Gramer</span>`:`<span class="type-tag v">🔤 Kelime</span>`;
         html+=`<li class="unit-item" data-act="openUnit" data-uid="${u.uid}">
           <div class="unit-ico">${u.icon}</div>
-          <div class="unit-meta"><div class="t">${esc(u.title)}</div><div>${tag}${best!=null?`<span class="badge-score">En iyi: ${best}</span>`:""}</div></div>
+          <div class="unit-meta"><div class="t">${esc(u.title)}</div><div>${tag}${best!=null?`<span class="badge-score">En iyi: ${tot?Math.min(best,tot)+"/"+tot:best}</span>`:""}</div></div>
           <div class="check ${isDone(u.uid)?"done":""}">${isDone(u.uid)?"✓":""}</div>
         </li>`;
       });
@@ -1145,7 +1190,7 @@ function openUnit(uid){ const u=findUnit(uid); if(!u){goHome();return;} if(u.typ
 
 /* ----- KELİME DERSİ ----- */
 function renderVocab(u){
-  ctx={unit:u};
+  ctx={unit:u}; nav("vocab");
   const five=u.words.slice(0,5), rest=u.words.slice(5);
   app.innerHTML=`
     <div class="card">
@@ -1195,11 +1240,11 @@ function renderVocab(u){
 
 /* ----- GRAMER DERSİ ----- */
 function renderGrammar(u){
-  ctx={unit:u};
+  ctx={unit:u}; nav("grammar");
   let tbl="";
   if(u.structure && u.structure.length){
-    tbl=`<table class="gtable"><thead><tr>${u.structure[0].map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead>
-      <tbody>${u.structure.slice(1).map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+    tbl=`<div class="table-scroll"><table class="gtable"><thead><tr>${u.structure[0].map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead>
+      <tbody>${u.structure.slice(1).map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
   }
   let exs="";
   if(u.examples && u.examples.length){
@@ -1227,7 +1272,7 @@ function renderGrammar(u){
 
 /* ----- KELİME KARTLARI ----- */
 function renderFlash(uid){ const u=findUnit(uid); ctx={unit:u, fcIndex:0, flipped:false}; drawFlash(); }
-function drawFlash(){ const u=ctx.unit, w=u.words[ctx.fcIndex], n=u.words.length;
+function drawFlash(){ const u=ctx.unit, w=u.words[ctx.fcIndex], n=u.words.length; nav("flash");
   app.innerHTML=`
     <div class="card"><div class="counter">Kart ${ctx.fcIndex+1} / ${n}</div>
       <div class="flash ${ctx.flipped?"flipped":""}" data-act="flip"><div class="flash-inner">
@@ -1249,7 +1294,7 @@ function fcAdvance(){ if(ctx.fcIndex<ctx.unit.words.length-1){ ctx.fcIndex++; ct
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 function renderPractice(uid){ const u=findUnit(uid); ctx={unit:u, prIndex:0}; drawPractice(); }
 function normalize(s){ return String(s).toLowerCase().replace(/[^a-zàáâäèéêëìíîïòóôöùúûüçğıöşü ]/gi,"").replace(/\s+/g," ").trim(); }
-function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.length, mic=!!SR;
+function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.length, mic=!!SR; nav("practice");
   app.innerHTML=`
     <div class="card center"><div class="counter">Telaffuz ${ctx.prIndex+1} / ${n}</div>
       <h2>${esc(w.en)}</h2><p class="word-tr">${esc(w.tr)}</p>
@@ -1275,45 +1320,61 @@ function micCheck(){ if(!SR){ prNext(); return; } const w=ctx.unit.words[ctx.prI
   try{ rec.start(); }catch(e){ box.textContent="Mikrofon başlatılamadı."; } }
 
 /* ----- TEST ----- */
-function renderQuizIntro(uid,kind){ const u=findUnit(uid);
+function renderQuizIntro(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; } nav("quizIntro");
   app.innerHTML=`<div class="card center"><h2>📝 ${kind==="grammar"?"Alıştırma":"Mini Test"}</h2>
     <p>“${esc(u.title)}” için kısa sorular.</p><p class="muted">Korkma! Yanlışta açıklama gelir. Amaç öğrenmek. 💛</p>
     <button class="btn btn-primary" data-act="startQuiz" data-uid="${uid}" data-kind="${kind}">Başla</button>
     <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,0); }
-function startQuiz(uid,kind){ const u=findUnit(uid);
-  const questions = kind==="grammar" ? buildGrammarQuiz(u) : buildVocabQuiz(u.words);
+function startQuiz(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; }
+  const questions = kind==="grammar" ? buildGrammarQuiz(u) : ((u.words&&u.words.length)?buildVocabQuiz(u.words):[]);
+  if(!questions.length){ showToast("Bu ders için soru yok."); return; }
   ctx={unit:u, mode:kind, questions, qIndex:0, correct:0, answered:false}; drawQuiz(); }
-function startLevelTest(id){ const lv=levelById(id); ctx={unit:null, level:lv, mode:"leveltest", questions:buildLevelTest(lv), qIndex:0, correct:0, answered:false}; drawQuiz(); }
-function startMixReview(){ let learned=[]; ALL_UNITS.forEach(u=>{ if(u.type==="vocab" && isDone(u.uid) && u.words) learned=learned.concat(u.words); });
-  const pool=learned.length>=4?learned:VOCAB_POOL; ctx={unit:null, mode:"mix", questions:buildVocabQuiz(pool, Math.min(8,Math.max(5,pool.length))), qIndex:0, correct:0, answered:false}; drawQuiz(); }
-function drawQuiz(){ const q=ctx.questions[ctx.qIndex], n=ctx.questions.length, pct=Math.round(ctx.qIndex/n*100);
+function startLevelTest(id){ const lv=levelById(id); if(!lv) return; const qs=buildLevelTest(lv);
+  if(!qs.length){ showToast("Bu seviye için soru yok."); return; }
+  ctx={unit:null, level:lv, mode:"leveltest", questions:qs, qIndex:0, correct:0, answered:false}; drawQuiz(); }
+function startMixReview(fromReview){ let pool=[];
+  if(fromReview) pool=state.reviewWords.filter(w=>w && w.en && w.tr);
+  else { ALL_UNITS.forEach(u=>{ if(u.type==="vocab" && isDone(u.uid) && u.words) pool=pool.concat(u.words); }); if(pool.length<4) pool=VOCAB_POOL; }
+  if(!pool.length){ showToast("Test için kelime yok."); return; }
+  ctx={unit:null, mode:"mix", questions:buildVocabQuiz(pool, Math.min(8,Math.max(4,pool.length))), qIndex:0, correct:0, answered:false}; drawQuiz(); }
+function drawQuiz(){ const q=ctx.questions[ctx.qIndex], n=ctx.questions.length, pct=Math.round(ctx.qIndex/n*100); nav("quiz");
   app.innerHTML=`<div class="card"><div class="counter">Soru ${ctx.qIndex+1} / ${n}</div>
     <div class="progressbar"><span style="width:${pct}%"></span></div><h3>${esc(q.prompt)}</h3>
     ${q.kind==="listen"?`<button class="btn btn-accent" data-act="replayAudio">🔊 Tekrar Dinle</button>`:""}
     <div id="opts" style="margin-top:10px;">${q.options.map((o,i)=>`<button class="opt" data-act="answer" data-i="${i}"><span>${esc(o)}</span></button>`).join("")}</div>
-    <div id="qfeedback"></div><div id="qnext"></div></div>`;
-  if(q.kind==="listen"){ setTimeout(()=>speak(q.audio),350); } window.scrollTo(0,0); }
+    <div id="qfeedback"></div><div id="qnext"></div></div>
+    <div class="card quiz-exit"><button class="btn btn-soft" data-act="goHome">Testi bırak, Ana Sayfa</button></div>`;
+  if(q.kind==="listen"){ const myQ=q; setTimeout(()=>{ if(currentScreen==="quiz" && ctx.questions && ctx.questions[ctx.qIndex]===myQ && !ctx.answered) speak(myQ.audio); },350); } window.scrollTo(0,0); }
 function answerQuiz(i){ if(ctx.answered) return; ctx.answered=true; const q=ctx.questions[ctx.qIndex]; const correct=q.options[i]===q.answer;
   document.querySelectorAll("#opts .opt").forEach((b,idx)=>{ b.disabled=true; if(q.options[idx]===q.answer) b.classList.add("correct"); else if(idx===i) b.classList.add("wrong"); });
   if(correct) ctx.correct++; const fb=document.getElementById("qfeedback"); fb.className="feedback "+(correct?"good":"bad");
   fb.innerHTML=correct?"✓ Doğru! Aferin. 👏":"✗ Doğru cevap: <b>"+esc(q.answer)+"</b>."+(q.explain?"<br>"+esc(q.explain):"");
   const last=ctx.qIndex>=ctx.questions.length-1;
-  document.getElementById("qnext").innerHTML=`<button class="btn btn-primary" data-act="nextQuiz">${last?"Bitir":"Sonraki Soru"}</button>`; }
+  const nx=document.getElementById("qnext"); nx.innerHTML=`<button class="btn btn-primary" data-act="nextQuiz">${last?"Sonucu Gör":"Sonraki Soru ➡️"}</button>`;
+  // Açıklama ve "Sonraki" düğmesi ekranın altında kalmasın
+  try{ nx.scrollIntoView({block:"nearest",behavior:"smooth"}); }catch(e){ nx.scrollIntoView(false); } }
 function nextQuiz(){ if(ctx.qIndex<ctx.questions.length-1){ ctx.qIndex++; ctx.answered=false; drawQuiz(); } else finishQuiz(); }
-function finishQuiz(){ const n=ctx.questions.length, score=ctx.correct, perfect=score===n; registerStudyToday();
-  let firstTime=false; const u=ctx.unit;
+function finishQuiz(){ const n=ctx.questions.length, score=ctx.correct, perfect=score===n; registerStudyToday(); nav("result");
+  let firstTime=false, levelJustDone=false; const u=ctx.unit;
   if((ctx.mode==="vocab"||ctx.mode==="grammar") && u){
-    firstTime=!isDone(u.uid);
+    firstTime=!isDone(u.uid); const lvWasDone=levelCompleted(u._level);
     if(firstTime){ state.completedLessons.push(u.uid); if(u.type==="vocab"&&u.words) state.wordsLearned+=u.words.length; if(u.type==="grammar") state.grammarLearned+=1; }
     const prev=state.bestScores[u.uid]; if(prev==null||score>prev) state.bestScores[u.uid]=score;
+    levelJustDone = !lvWasDone && levelCompleted(u._level);
   }
   if(perfect) state.perfectQuiz=true; saveState(); const newly=checkBadges(); if(perfect||firstTime) confetti(); celebrate(newly);
   // sıradaki ünite önerisi
   let nextU=null;
-  if(u){ const lv=u._level; const idx=lv.units.findIndex(x=>x.uid===u.uid); if(idx>=0 && idx<lv.units.length-1) nextU=lv.units[idx+1]; }
-  const title = ctx.mode==="leveltest"?"🏁 Seviye Testi Bitti!":(ctx.mode==="mix"?"🔀 Karışık Tekrar Bitti!":"🎉 Üniteyi tamamladın!");
+  let nextLevel=null, nextLevelOpen=false;
+  if(u){ const lv=u._level; const idx=lv.units.findIndex(x=>x.uid===u.uid);
+    // Seviyede önce bitmemiş sıradaki üniteyi öner, yoksa sıradaki üniteyi
+    const after=lv.units.slice(idx+1); nextU=after.find(x=>!isDone(x.uid))||lv.units.find(x=>!isDone(x.uid))||after[0]||null;
+    if(!nextU){ const li=LEVELS.indexOf(lv); if(li>=0 && li<LEVELS.length-1){ nextLevel=LEVELS[li+1]; nextLevelOpen=levelUnlocked(li+1); if(nextLevelOpen) nextU=nextLevel.units.find(x=>!isDone(x.uid))||nextLevel.units[0]||null; } } }
+  const title = ctx.mode==="leveltest"?"🏁 Seviye Testi Bitti!":(ctx.mode==="mix"?"🔀 Karışık Tekrar Bitti!":(levelJustDone?"🏆 "+esc(u._level.name)+" bitti!":"🎉 Üniteyi tamamladın!"));
   let actions="";
-  if(nextU) actions+=`<button class="btn btn-primary" data-act="openUnit" data-uid="${nextU.uid}">▶️ Sıradaki Ünite</button>`;
+  if(levelJustDone && u) actions+=`<p class="center" style="font-weight:700;color:var(--good);">Tebrikler! Bu seviyenin bütün derslerini bitirdin.${nextLevel?" Sıradaki seviye açıldı.":""}</p>
+    <button class="btn btn-accent" data-act="levelTest" data-id="${u._level.id}">📝 ${esc(u._level.cefr)} Seviye Testini Çöz</button>`;
+  if(nextU) actions+=`<button class="btn btn-primary" data-act="openUnit" data-uid="${nextU.uid}">▶️ Sıradaki Ders: ${nextU.icon} ${esc(nextU.title)}</button>`;
   if((ctx.mode==="vocab"||ctx.mode==="grammar")&&u) actions+=`<button class="btn btn-soft" data-act="startQuiz" data-uid="${u.uid}" data-kind="${ctx.mode}">🔁 Tekrar Çöz</button>`;
   actions+=`<button class="btn btn-soft" data-act="goHome">Ana Sayfa</button>`;
   app.innerHTML=`<div class="card center"><h2>${title}</h2>
@@ -1323,26 +1384,26 @@ function finishQuiz(){ const n=ctx.questions.length, score=ctx.correct, perfect=
     <div class="card">${actions}</div>`; window.scrollTo(0,0); }
 
 /* ----- TEKRAR LİSTESİ ----- */
-function renderReview(){ let html=`<div class="card"><h2>🔁 Tekrar Edilecek Kelimeler</h2>`;
+function renderReview(){ nav("review"); let html=`<div class="card"><h2>🔁 Tekrar Edilecek Kelimeler</h2>`;
   if(state.reviewWords.length===0){ html+=`<p class="empty">Liste boş. 👍<br>Kartlarda “Tekrar Et” dediğin kelimeler buraya gelir.</p>`; }
   else{ html+=`<p class="muted">Öğrendiğin kelimeyi “Öğrendim” ile çıkar.</p>`;
     html+=state.reviewWords.map((w,i)=>`<div class="review-item"><div class="word-main"><div class="word-en">${esc(w.en)}</div><div class="word-tr">${esc(w.tr)}</div></div>
       <button class="speak sm" data-act="speakReview" data-i="${i}">🔊</button>
-      <button class="btn-soft" style="border:none;border-radius:12px;padding:10px 12px;cursor:pointer;font-size:15px;" data-act="learned" data-en="${esc(w.en)}">✓ Öğrendim</button></div>`).join("");
-    html+=`<button class="btn btn-accent" data-act="mixReview" style="margin-top:12px;">🔀 Bu kelimelerle test çöz</button>`; }
+      <button class="btn-soft" style="border:none;border-radius:12px;padding:10px 12px;min-height:44px;cursor:pointer;font-size:15px;font-weight:700;flex:0 0 auto;" data-act="learned" data-en="${esc(w.en)}">✓ Öğrendim</button></div>`).join("");
+    html+=`<button class="btn btn-accent" data-act="reviewQuiz" style="margin-top:12px;">🔀 Bu kelimelerle test çöz</button>`; }
   html+=`<button class="btn btn-soft" style="margin-top:12px;" data-act="goHome">Ana Sayfa</button></div>`; app.innerHTML=html; window.scrollTo(0,0); }
 
 /* ----- ROZETLER ----- */
-function renderAchievements(){ app.innerHTML=`<div class="card"><h2>🏅 Rozetlerim</h2>
+function renderAchievements(){ nav("achievements"); app.innerHTML=`<div class="card"><h2>🏅 Rozetlerim</h2>
   <p class="muted">${state.earnedBadges.length} / ${BADGES.length} rozet kazandın.</p>
   <div class="badges">${BADGES.map(b=>{ const on=state.earnedBadges.includes(b.id); return `<div class="badge ${on?"on":""}"><div class="b-ico">${b.ico}</div><div class="b-name">${esc(b.name)}</div><div class="b-desc">${esc(b.desc)}</div></div>`; }).join("")}</div>
   <button class="btn btn-soft" style="margin-top:14px;" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,0); }
 
 /* ----- DİL SEÇİMİ ----- */
-function renderLangPicker(){
+function renderLangPicker(){ nav("picker");
   app.innerHTML=`<div class="card center">
     <h2>🌐 Hangi dili çalışacaksın?</h2>
-    <p class="muted">İstediğin an üstteki 🌐 düğmesinden değiştirebilirsin. İlerlemen her dil için ayrı tutulur.</p>
+    <p class="muted">İstediğin an üstteki 🌐 <b>Dil</b> düğmesinden değiştirebilirsin. İlerlemen her dil için ayrı tutulur.</p>
     <button class="btn btn-primary" data-act="chooseLang" data-lang="en">🇬🇧 İngilizce</button>
     <button class="btn btn-accent" data-act="chooseLang" data-lang="it">🇮🇹 İtalyanca</button>
     ${state.lang?`<button class="btn btn-soft" data-act="goHome">Vazgeç</button>`:""}
@@ -1351,7 +1412,7 @@ function renderLangPicker(){
 }
 
 /* ----- AYARLAR ----- */
-function renderSettings(){ const fs=state.settings.fontScale, rt=state.settings.rate, env=langVoices();
+function renderSettings(keepScroll){ nav("settings"); const fs=state.settings.fontScale, rt=state.settings.rate, env=langVoices(), y=window.scrollY;
   app.innerHTML=`<div class="card"><h2>⚙️ Ayarlar</h2>
     <label class="set-lbl">Yazı Boyutu</label>
     <div class="seg"><button data-act="setFont" data-v="1" class="${fs===1?"active":""}">Normal</button>
@@ -1365,19 +1426,146 @@ function renderSettings(){ const fs=state.settings.fontScale, rt=state.settings.
     ${env.length?`<div class="seg" style="flex-direction:column;">${env.slice(0,6).map(v=>`<button data-act="setVoice" data-uri="${esc(v.voiceURI)}" class="${state.settings.voiceURI===v.voiceURI?"active":""}">${esc(v.name)}</button>`).join("")}</div>`:`<p class="muted">Bu dil için ses bulunamadı; varsayılan kullanılacak.</p>`}
     <button class="btn btn-accent" data-act="testVoice">🔊 Sesi Dene</button>
     <hr style="border:none;border-top:1px solid var(--line);margin:18px 0;">
+    ${backupSectionHtml()}
+    <hr style="border:none;border-top:1px solid var(--line);margin:18px 0;">
     <label class="set-lbl" style="color:var(--bad);">İlerlemeyi Sıfırla</label>
-    <p class="muted">Tüm ilerleme, rozet ve tekrar listesi silinir. Geri alınamaz.</p>
+    <p class="muted">Her iki dildeki tüm ilerleme, rozet ve tekrar listesi silinir. Ayarların (yazı boyutu, ses) kalır. Geri alınamaz.</p>
     <button class="btn btn-ghost" data-act="resetAll" style="color:var(--bad);border-color:var(--bad);">Her şeyi sıfırla</button>
-    <button class="btn btn-soft" style="margin-top:14px;" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,0); }
+    <button class="btn btn-soft" style="margin-top:14px;" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,keepScroll?y:0); }
+
+/* ----- YEDEKLE / TAŞI ----- */
+const BK_PREFIX="TY1", BK_APP="TY-INGILIZCE", BK_FORMAT=1;
+function bkFresh(){ return {code:"", input:"", pending:null, msg:"", msgType:""}; }
+let bk=bkFresh();
+function bkHash(str){ let h=0x811c9dc5; for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,0x01000193); } return (h>>>0).toString(16).padStart(8,"0"); }
+function bkB64Enc(str){ const b=new TextEncoder().encode(str); let bin=""; for(let i=0;i<b.length;i+=0x8000) bin+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000)); return btoa(bin); }
+function bkB64Dec(b64){ const bin=atob(b64); const b=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) b[i]=bin.charCodeAt(i); return new TextDecoder("utf-8",{fatal:true}).decode(b); }
+function bkCurrentState(){ saveState(); return JSON.parse(JSON.stringify(state)); }
+function bkEnvelope(){ return {app:BK_APP, format:BK_FORMAT, created:new Date().toISOString(), state:bkCurrentState()}; }
+function bkMakeCode(){ const json=JSON.stringify(bkEnvelope()); return BK_PREFIX+":"+bkHash(json)+":"+bkB64Enc(json); }
+function bkErr(m){ const e=new Error(m); e.userMsg=m; return e; }
+const BK_ERR_BROKEN="Kod eksik veya bozuk görünüyor. Kodun tamamını (baştan sona) kopyalayıp tekrar yapıştır.";
+/* Kod ya da dosya metnini çözer, doğrular; {state, created} döner. Hata olursa anlaşılır mesajla fırlatır. */
+function bkParse(text){
+  let t=String(text||"").trim();
+  if(!t) throw bkErr("Önce yedek kodunu yapıştır veya bir yedek dosyası seç.");
+  let env;
+  if(t.charAt(0)==="{"){ // .json dosyası
+    try{ env=JSON.parse(t); }catch(e){ throw bkErr("Bu dosya okunamadı. Uygulamadan indirdiğin yedek dosyasını seç."); }
+    if(!env || env.app!==BK_APP) throw bkErr("Bu dosya bu uygulamanın yedeği değil.");
+    if(env.checksum && env.state && bkHash(JSON.stringify(env.state))!==env.checksum) throw bkErr("Yedek dosyası bozulmuş veya değiştirilmiş. Yeni bir yedek dosyası indirip tekrar dene.");
+  } else {
+    t=t.replace(/\s+/g,"");
+    const m=/^TY(\d+):([0-9a-f]{8}):([A-Za-z0-9+/=]+)$/i.exec(t);
+    if(!m){ if(!/^TY\d+:/i.test(t)) throw bkErr("Bu bir yedek kodu değil. Yedek kodu “TY1:” ile başlar. Kodun tamamını kopyaladığından emin ol."); throw bkErr(BK_ERR_BROKEN); }
+    if(+m[1]>BK_FORMAT) throw bkErr("Bu yedek uygulamanın daha yeni bir sürümünden. Önce uygulamayı güncelle (sayfayı yenile), sonra tekrar dene.");
+    let json; try{ json=bkB64Dec(m[3]); }catch(e){ throw bkErr(BK_ERR_BROKEN); }
+    if(bkHash(json)!==m[2].toLowerCase()) throw bkErr(BK_ERR_BROKEN);
+    try{ env=JSON.parse(json); }catch(e){ throw bkErr(BK_ERR_BROKEN); }
+  }
+  if(!env || typeof env!=="object") throw bkErr(BK_ERR_BROKEN);
+  if((env.format||1)>BK_FORMAT) throw bkErr("Bu yedek uygulamanın daha yeni bir sürümünden. Önce uygulamayı güncelle (sayfayı yenile), sonra tekrar dene.");
+  const s=env.state;
+  const okLang=o=>o && typeof o==="object" && (!("completedLessons" in o) || Array.isArray(o.completedLessons));
+  if(!s || typeof s!=="object" || Array.isArray(s) || !s.langStore || typeof s.langStore!=="object"
+     || !Object.keys(s.langStore).every(k=>okLang(s.langStore[k]))
+     || ("studyDates" in s && !Array.isArray(s.studyDates)))
+    throw bkErr("Bu yedeğin içinde ilerleme bilgisi bulunamadı.");
+  return {state:s, created:env.created||null};
+}
+/* Geri yüklenecek durumu uygulamanın açılışta kullandığı normalizasyondan geçirir. */
+function bkNormalize(raw){ const s=normalizeState(JSON.parse(JSON.stringify(raw)));
+  const arr=v=>Array.isArray(v)?v:[], obj=v=>(v&&typeof v==="object"&&!Array.isArray(v))?v:{};
+  Object.keys(s.langStore).forEach(k=>{ const o=Object.assign(defaultLangData(), obj(s.langStore[k]));
+    o.completedLessons=arr(o.completedLessons); o.reviewWords=arr(o.reviewWords); o.dictLearned=arr(o.dictLearned); o.earnedBadges=arr(o.earnedBadges);
+    o.bestScores=obj(o.bestScores); o.unlocks=obj(o.unlocks); o.wordsLearned=+o.wordsLearned||0; o.grammarLearned=+o.grammarLearned||0; o.perfectQuiz=!!o.perfectQuiz;
+    s.langStore[k]=o; });
+  s.studyDates=arr(s.studyDates).filter(d=>typeof d==="string");
+  if(s.lang && !LANGS[s.lang]) s.lang=null;
+  return s; }
+function bkStreakOf(dates){ const set=new Set(dates||[]); let n=0, cur=new Date(); if(!set.has(dateKey(cur))) cur=addDays(cur,-1); while(set.has(dateKey(cur))){ n++; cur=addDays(cur,-1); } return n; }
+function bkFmtDate(k){ if(!k) return "—"; const p=String(k).slice(0,10).split("-"); return p.length===3?p[2]+"."+p[1]+"."+p[0]:"—"; }
+function bkStats(s){ const out={}; Object.keys(LANGS).forEach(l=>{ const o=(s.langStore&&s.langStore[l])||{};
+    out[l]={units:(o.completedLessons||[]).length, words:(+o.wordsLearned||0)+((o.dictLearned||[]).length)}; });
+  const dates=(s.studyDates||[]).slice().sort();
+  return {langs:out, streak:bkStreakOf(dates), last:dates[dates.length-1]||null}; }
+function bkCompareHtml(p){ const a=bkStats(bkCurrentState()), b=bkStats(p.state);
+  const langs=Object.keys(LANGS).filter(l=>a.langs[l].units||a.langs[l].words||b.langs[l].units||b.langs[l].words);
+  if(!langs.length) langs.push("en");
+  const row=(lbl,x,y)=>`<tr><td style="padding:6px 4px;">${lbl}</td><td style="padding:6px 4px;text-align:center;">${x}</td><td style="padding:6px 4px;text-align:center;font-weight:700;">${y}</td></tr>`;
+  let rows="";
+  langs.forEach(l=>{ rows+=`<tr><td colspan="3" style="padding:8px 4px 2px;font-weight:700;">${esc(LANGS[l].name)}</td></tr>`
+    +row("Bitirilen ünite",a.langs[l].units,b.langs[l].units)+row("Öğrenilen kelime",a.langs[l].words,b.langs[l].words); });
+  rows+=row("Seri (gün)",a.streak,b.streak)+row("Son çalışma",bkFmtDate(a.last),bkFmtDate(b.last));
+  return `<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+    <tr style="border-bottom:1px solid var(--line);"><th></th><th style="padding:6px 4px;">Bu cihazda</th><th style="padding:6px 4px;">Yedekte</th></tr>${rows}</table>`; }
+function backupSectionHtml(){
+  const ta="width:100%;padding:12px;font-size:15px;border:2px solid var(--line);border-radius:14px;margin:6px 0 10px;font-family:monospace;word-break:break-all;background:var(--card);color:inherit;";
+  const msg=bk.msg?`<div class="feedback ${bk.msgType==="good"?"good":"bad"}" id="bkMsg" role="alert" style="margin:8px 0;">${esc(bk.msg)}</div>`:"";
+  if(bk.pending){
+    return `<div id="bkBox"><label class="set-lbl">📦 Yedeği Geri Yükle — Emin misin?</label>
+      ${bk.pending.created?`<p class="muted">Yedek tarihi: ${bkFmtDate(bk.pending.created)}</p>`:""}
+      ${bkCompareHtml(bk.pending)}
+      <div class="feedback bad" style="margin:8px 0;">Bu cihazdaki ilerleme silinecek ve yerine yedektekiler gelecek.</div>
+      <button class="btn btn-primary" data-act="bkConfirm">✅ Evet, yedeği yükle</button>
+      <button class="btn btn-soft" data-act="bkCancel">Vazgeç</button></div>`;
+  }
+  return `<div id="bkBox"><label class="set-lbl">📦 İlerlemeyi Yedekle / Taşı</label>
+    <p class="muted">İlerlemen sadece bu cihazda saklanır. Telefondan bilgisayara (ya da tersi) taşımak için burada yedek al, diğer cihazda “Yedeği geri yükle” bölümüne yapıştır.</p>
+    <button class="btn btn-primary" data-act="bkMake">🔑 Yedek kodu oluştur</button>
+    ${bk.code?`<textarea id="bkCode" readonly rows="4" style="${ta}" aria-label="Yedek kodu">${esc(bk.code)}</textarea>
+      <button class="btn btn-accent" data-act="bkCopy">📋 Kopyala</button>
+      <p class="muted">Kopyaladıktan sonra kendine WhatsApp'tan veya e-postayla gönderebilirsin.</p>`:""}
+    <button class="btn btn-soft" data-act="bkDownload">💾 Dosya olarak indir</button>
+    <label class="set-lbl" style="margin-top:16px;">Yedeği geri yükle</label>
+    <p class="muted">Diğer cihazda aldığın kodu aşağıya yapıştır ya da yedek dosyasını seç.</p>
+    <textarea id="bkInput" rows="3" style="${ta}" placeholder="Yedek kodunu buraya yapıştır (TY1: ile başlar)" autocomplete="off" autocapitalize="off" spellcheck="false">${esc(bk.input)}</textarea>
+    ${msg}
+    <button class="btn btn-primary" data-act="bkCheck">📥 Kodu yükle</button>
+    <label class="btn btn-ghost" style="cursor:pointer;">📂 Yedek dosyası seç<input type="file" id="bkFile" accept=".json,application/json,text/plain" style="display:none;"></label></div>`;
+}
+function bkRefresh(focusSel){ const box=document.getElementById("bkBox"); if(!box){ renderSettings(); return; }
+  box.outerHTML=backupSectionHtml(); const nb=document.getElementById("bkBox");
+  const f=focusSel&&document.querySelector(focusSel); (f||nb).scrollIntoView({block:"center"}); }
+function bkTry(text){ const inp=document.getElementById("bkInput"); if(inp) bk.input=inp.value;
+  try{ bk.pending=bkParse(text); bk.msg=""; }catch(e){ bk.pending=null; bk.msg=e.userMsg||BK_ERR_BROKEN; bk.msgType="bad"; }
+  bkRefresh(bk.pending?null:"#bkMsg"); }
+function bkApply(){ if(!bk.pending) return;
+  state=bkNormalize(bk.pending.state);
+  if(state.lang){ setLanguage(state.lang,{skipSaveOld:true}); }
+  else { LEVELS=LANGS.en.levels; DICTIONARY_EXTRA=LANGS.en.dictExtra; indexCurriculum(); }
+  state.streak=computeStreak(); saveState(); applySettings();
+  bk=bkFresh(); showToast("Yedek yüklendi ✓");
+  if(state.lang) goHome(); else renderLangPicker(); }
+function bkCopy(){ const ta=document.getElementById("bkCode"); if(!ta) return;
+  const manual=()=>{ ta.focus(); ta.select(); try{ ta.setSelectionRange(0,ta.value.length); }catch(e){}
+    let ok=false; try{ ok=document.execCommand("copy"); }catch(e){}
+    showToast(ok?"Kod kopyalandı ✓":"Kod seçildi. Basılı tutup “Kopyala”ya dokun."); };
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(ta.value).then(()=>showToast("Kod kopyalandı ✓"), manual); }
+  else manual(); }
+function bkDownload(){ const st=bkCurrentState();
+  const env={app:BK_APP, format:BK_FORMAT, created:new Date().toISOString(), checksum:bkHash(JSON.stringify(st)), state:st};
+  const name="ty-ingilizce-yedek-"+dateKey()+".json";
+  try{ const url=URL.createObjectURL(new Blob([JSON.stringify(env,null,1)],{type:"application/json"}));
+    const a=document.createElement("a"); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),4000); showToast("Yedek dosyası indirildi: "+name);
+  }catch(e){ showToast("Dosya indirilemedi. “Yedek kodu oluştur”u kullan."); } }
+function bkReadFile(input){ const f=input.files&&input.files[0]; if(!f) return;
+  if(f.size>5*1024*1024){ bk.msg="Bu dosya çok büyük; yedek dosyası değil."; bk.msgType="bad"; bkRefresh("#bkMsg"); return; }
+  const r=new FileReader(); r.onload=()=>bkTry(String(r.result||""));
+  r.onerror=()=>{ bk.msg="Dosya okunamadı. Tekrar dene."; bk.msgType="bad"; bkRefresh("#bkMsg"); };
+  r.readAsText(f); input.value=""; }
 
 /* ===== SÖZLÜK ===== */
 const DICT_CATS=["Selamlaşma","Sayılar & Renkler","Aile","Vücut","Hayvanlar","Doğa & Hava","Yiyecek","Ev","Zaman","Fiiller","Sıfatlar","Şehir","Diğer"];
 let dictState={q:"", cat:"Tümü"};
 function dictFind(en){ return DICT.find(x=>x.en===en); }
+// Aramada büyük/küçük harf ve Türkçe karakter farkını yok say (İ/ı/i, ş/s, ç/c, ğ/g, ö/o, ü/u; İtalyanca aksanlar)
+function fold(s){ return String(s||"").replace(/[İIı]/g,"i").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ş/g,"s").replace(/ç/g,"c").replace(/ğ/g,"g").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim(); }
 function dictFiltered(){ let a=DICT.slice();
   if(dictState.cat!=="Tümü") a=a.filter(w=>w.cat===dictState.cat);
-  const q=dictState.q.trim().toLowerCase();
-  if(q) a=a.filter(w=>w.en.toLowerCase().includes(q)||w.tr.toLowerCase().includes(q));
+  const q=fold(dictState.q);
+  if(q) a=a.filter(w=>fold(w.en).includes(q)||fold(w.tr).includes(q));
   return a; }
 function dictListHtml(){ const a=dictFiltered();
   if(!a.length) return `<p class="empty">Kelime bulunamadı. Aramayı veya kategoriyi değiştir.</p>`;
@@ -1386,20 +1574,21 @@ function dictListHtml(){ const a=dictFiltered();
       <div class="word-main"><div class="word-en">${esc(w.en)}${L?" <span style='color:var(--good)'>✓</span>":""}</div>
         <div class="word-tr">${esc(w.tr)}</div>${w.ex?`<div class="word-ex">“${esc(w.ex)}” — ${esc(w.exTr)}</div>`:""}</div>
       <button class="speak sm" data-act="dictSpeak" data-en="${esc(w.en)}" title="Dinle">🔊</button>
-      <button class="icon-btn" data-act="dictLearned" data-en="${esc(w.en)}" title="Öğrendim">${L?"↩️":"✓"}</button>
-      <button class="icon-btn" data-act="dictAddReview" data-en="${esc(w.en)}" title="Tekrara ekle">🔁</button>
+      <button class="icon-btn" data-act="dictLearned" data-en="${esc(w.en)}" title="${L?"Öğrendim işaretini kaldır":"Öğrendim"}" aria-label="${L?"Öğrendim işaretini kaldır":"Öğrendim"}">${L?"↩️":"✓"}</button>
+      <button class="icon-btn" data-act="dictAddReview" data-en="${esc(w.en)}" title="Tekrar listesine ekle" aria-label="Tekrar listesine ekle">🔁</button>
     </div>`; }).join(""); }
 function updateDictList(){ const el=document.getElementById("dictList"); if(el) el.innerHTML=dictListHtml(); }
-function renderDictionary(){
+function dictCountHtml(){ return `Toplam ${DICT.length} kelime · Öğrendiğin: ${state.dictLearned.length}`; }
+function renderDictionary(){ nav("dict");
   const cats=["Tümü"].concat(DICT_CATS.filter(c=>DICT.some(w=>w.cat===c)));
   const chips=cats.map(c=>`<button data-act="dictCat" data-cat="${esc(c)}" class="${dictState.cat===c?"active":""}">${esc(c)}</button>`).join("");
   app.innerHTML=`<div class="card">
     <h2>📖 Sözlük</h2>
     <p class="muted">Test çözmeden de kelime öğrenebilirsin. Ara, 🔊 ile dinle, öğrendiklerini ✓ ile işaretle veya 🔁 ile tekrar listesine ekle.</p>
-    <p class="muted">Toplam ${DICT.length} kelime · Öğrendiğin: ${state.dictLearned.length}</p>
+    <p class="muted" id="dictCount">${dictCountHtml()}</p>
     <input id="dictSearch" type="search" placeholder="🔍 Türkçe veya ${esc(LANGS[state.lang].name)} ara..." value="${esc(dictState.q)}" autocomplete="off"
       style="width:100%;padding:14px;font-size:18px;border:2px solid var(--line);border-radius:14px;margin:6px 0 12px;" />
-    <div class="seg" style="overflow-x:auto;flex-wrap:nowrap;">${chips}</div>
+    <div class="seg chips" id="dictChips">${chips}</div>
     <div id="dictList">${dictListHtml()}</div>
     <button class="btn btn-soft" style="margin-top:12px;" data-act="goHome">Ana Sayfa</button>
   </div>`;
@@ -1410,7 +1599,7 @@ function renderDictionary(){
 document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]"); if(!el) return; const a=el.dataset.act, d=el.dataset;
   switch(a){
     case "goHome": goHome(); break;
-    case "goSettings": renderSettings(); break;
+    case "goSettings": bk=bkFresh(); renderSettings(); break;
     case "langPicker": renderLangPicker(); break;
     case "chooseLang": setLanguage(d.lang); goHome(); break;
     case "openUnit": openUnit(d.uid); break;
@@ -1420,20 +1609,21 @@ document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]")
     case "startQuiz": startQuiz(d.uid, d.kind); break;
     case "levelTest": startLevelTest(+d.id); break;
     case "mixReview": startMixReview(); break;
+    case "reviewQuiz": startMixReview(true); break;
     case "review": renderReview(); break;
     case "achievements": renderAchievements(); break;
     case "openDict": dictState={q:"",cat:"Tümü"}; renderDictionary(); break;
-    case "dictCat": dictState.cat=d.cat; renderDictionary(); break;
-    case "dictSpeak": { const w=dictFind(d.en); if(w) speak(w.ex||w.en); break; }
+    case "dictCat": dictState.cat=d.cat; document.querySelectorAll("#dictChips button").forEach(b=>b.classList.toggle("active",b.dataset.cat===d.cat)); updateDictList(); break;
+    case "dictSpeak": { const w=dictFind(d.en); if(w) speakWord(w); break; }
     case "dictAddReview": { const w=dictFind(d.en); if(w) addReviewWord(w); break; }
-    case "dictLearned": { const i=state.dictLearned.indexOf(d.en); if(i>=0) state.dictLearned.splice(i,1); else { state.dictLearned.push(d.en); showToast("Öğrendin: "+d.en+" 👏"); } saveState(); renderDictionary(); break; }
+    case "dictLearned": { const i=state.dictLearned.indexOf(d.en); if(i>=0) state.dictLearned.splice(i,1); else { state.dictLearned.push(d.en); showToast("Öğrendin: "+d.en+" 👏"); } saveState(); updateDictList(); const dc=document.getElementById("dictCount"); if(dc) dc.textContent=dictCountHtml(); break; }
     case "unlock": state.unlocks[+d.id]=true; saveState(); showToast("Seviye açıldı."); goHome(); break;
     case "reveal": { const box=document.getElementById("rev"+d.i); if(box){ const nowHidden=box.classList.toggle("hidden"); el.textContent = nowHidden ? "👁 Göster" : "🙈 Gizle"; } break; }
-    case "speakUnitEx": speak(ctx.unit.words[+d.i].ex); break;
+    case "speakUnitEx": speakWord(ctx.unit.words[+d.i]); break;
     case "speakExample": speak(ctx.unit.examples[+d.i].en); break;
-    case "speakFlash": speak(ctx.unit.words[ctx.fcIndex].ex); break;
+    case "speakFlash": speakWord(ctx.unit.words[ctx.fcIndex]); break;
     case "speakPractice": speak(ctx.unit.words[ctx.prIndex].en); break;
-    case "speakReview": speak(state.reviewWords[+d.i].en); break;
+    case "speakReview": { const w=state.reviewWords[+d.i]; if(w) speakWord(w); break; }
     case "replayAudio": speak(ctx.questions[ctx.qIndex].audio); break;
     case "flip": flipCard(); break;
     case "fcKnow": showToast("Aferin! 👏"); fcAdvance(); break;
@@ -1443,16 +1633,26 @@ document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]")
     case "answer": answerQuiz(+d.i); break;
     case "nextQuiz": nextQuiz(); break;
     case "learned": removeReviewWord(d.en); showToast("Tebrikler! Öğrendin: "+d.en); renderReview(); break;
-    case "setFont": state.settings.fontScale=+d.v; saveState(); applySettings(); renderSettings(); break;
-    case "setRate": state.settings.rate=+d.v; saveState(); renderSettings(); break;
-    case "setVoice": state.settings.voiceURI=d.uri; saveState(); renderSettings(); break;
+    case "setFont": state.settings.fontScale=+d.v; saveState(); applySettings(); renderSettings(true); break;
+    case "setRate": state.settings.rate=+d.v; saveState(); renderSettings(true); speak(state.lang==="it"?"Ciao, come stai?":"Hello, how are you?"); break;
+    case "setVoice": state.settings.voiceURI=d.uri; saveState(); renderSettings(true); speak(state.lang==="it"?"Ciao, come stai?":"Hello, how are you?"); break;
     case "testVoice": speak(state.lang==="it"?"Ciao, buongiorno. Come stai? Sto imparando l'italiano.":"Hello, good morning. How are you? I am learning English."); break;
-    case "resetAll": if(confirm("Tüm ilerleme silinsin mi? Geri alınamaz.")){ state=defaultState(); saveState(); applySettings(); showToast("Sıfırlandı."); goHome(); } break;
+    case "bkMake": bk.input=(document.getElementById("bkInput")||{}).value||bk.input; bk.code=bkMakeCode(); bk.msg=""; bkRefresh("#bkCode"); break;
+    case "bkCopy": bkCopy(); break;
+    case "bkDownload": bkDownload(); break;
+    case "bkCheck": { const inp=document.getElementById("bkInput"); bkTry(inp?inp.value:""); break; }
+    case "bkConfirm": bkApply(); break;
+    case "bkCancel": bk.pending=null; bk.msg=""; bkRefresh(); break;
+    case "resetAll": if(confirm("Tüm ilerleme silinsin mi? Geri alınamaz.")){ const keepLang=state.lang||"en", keepSet=state.settings; state=defaultState(); state.settings=keepSet; setLanguage(keepLang,{skipSaveOld:true}); state.streak=0; saveState(); applySettings(); showToast("Sıfırlandı."); goHome(); } break;
   }
 });
 document.addEventListener("input",(e)=>{ if(e.target && e.target.id==="dictSearch"){ dictState.q=e.target.value; updateDictList(); } });
+document.addEventListener("change",(e)=>{ if(e.target && e.target.id==="bkFile") bkReadFile(e.target); });
 
 /* ===== BAŞLAT ===== */
+if(state.lang && !LANGS[state.lang]) state.lang=null;
+try{ if(history.state && history.state.inner) history.replaceState(null,""); }catch(e){}
+try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(()=>{}); }catch(e){}
 if(state.lang){ setLanguage(state.lang, {skipSaveOld:true}); }
 else { LEVELS=LANGS.en.levels; DICTIONARY_EXTRA=LANGS.en.dictExtra; indexCurriculum(); }
 state.streak=computeStreak(); saveState();
