@@ -1322,7 +1322,7 @@ function micCheck(){ if(!SR){ prNext(); return; } const w=ctx.unit.words[ctx.prI
 /* ----- TEST ----- */
 function renderQuizIntro(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; } nav("quizIntro");
   app.innerHTML=`<div class="card center"><h2>📝 ${kind==="grammar"?"Alıştırma":"Mini Test"}</h2>
-    <p>“${esc(u.title)}” için kısa sorular.</p><p class="muted">Korkma! Yanlışta açıklama gelir. Amaç öğrenmek. 💛</p>
+    <p>“${esc(u.title)}” için kısa sorular.</p><p class="muted">Korkma! Yanlışta açıklama gelir. Amaç öğrenmek. 💛<br>Üniteyi geçmek için soruların yaklaşık üçte ikisini doğru bil.</p>
     <button class="btn btn-primary" data-act="startQuiz" data-uid="${uid}" data-kind="${kind}">Başla</button>
     <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,0); }
 function startQuiz(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; }
@@ -1354,9 +1354,20 @@ function answerQuiz(i){ if(ctx.answered) return; ctx.answered=true; const q=ctx.
   // Açıklama ve "Sonraki" düğmesi ekranın altında kalmasın
   try{ nx.scrollIntoView({block:"nearest",behavior:"smooth"}); }catch(e){ nx.scrollIntoView(false); } }
 function nextQuiz(){ if(ctx.qIndex<ctx.questions.length-1){ ctx.qIndex++; ctx.answered=false; drawQuiz(); } else finishQuiz(); }
+function passMark(n){ return Math.max(1, Math.ceil(n*0.67)); }
 function finishQuiz(){ const n=ctx.questions.length, score=ctx.correct, perfect=score===n; registerStudyToday(); nav("result");
   let firstTime=false, levelJustDone=false; const u=ctx.unit;
-  if((ctx.mode==="vocab"||ctx.mode==="grammar") && u){
+  const unitQuiz=(ctx.mode==="vocab"||ctx.mode==="grammar") && !!u, need=passMark(n), passed=score>=need;
+  if(unitQuiz && !passed){
+    const prevB=state.bestScores[u.uid]; if(prevB==null||score>prevB) state.bestScores[u.uid]=score; saveState();
+    app.innerHTML=`<div class="card center"><h2>📚 Biraz daha çalışalım</h2>
+      <p style="font-size:24px;font-weight:800;">${score} / ${n} doğru</p>
+      <p class="muted">Üniteyi geçmek için en az <b>${need} doğru</b> gerekiyor. Dersi bir kez daha gözden geçir, sonra testi tekrar çöz. 💛</p>
+      ${isDone(u.uid)?`<p class="muted">Bu üniteyi daha önce geçmiştin; tamamlanmış olarak kalıyor.</p>`:""}</div>
+      <div class="card"><button class="btn btn-primary" data-act="startQuiz" data-uid="${u.uid}" data-kind="${ctx.mode}">🔁 Testi Tekrar Çöz</button>
+      <button class="btn btn-accent" data-act="openUnit" data-uid="${u.uid}">📖 Dersi Tekrar Gözden Geçir</button>
+      <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,0); return; }
+  if(unitQuiz){
     firstTime=!isDone(u.uid); const lvWasDone=levelCompleted(u._level);
     if(firstTime){ state.completedLessons.push(u.uid); if(u.type==="vocab"&&u.words) state.wordsLearned+=u.words.length; if(u.type==="grammar") state.grammarLearned+=1; }
     const prev=state.bestScores[u.uid]; if(prev==null||score>prev) state.bestScores[u.uid]=score;
