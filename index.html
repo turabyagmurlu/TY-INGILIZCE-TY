@@ -275,6 +275,42 @@
   /* Çok büyük yazıda iki/üç sütun sıkışmasın */
   html.fs-xl .unit-list{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));}
   html.fs-xl .dict-list-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));}
+  /* ----- Notlar ve el yazısı ----- */
+  .notes-card h3{margin-bottom:6px;}
+  .notes-card .notes-h{display:block;}
+  .notes-card .notes-toggle{display:none;margin-top:0;}
+  .notes-card.compact .notes-h{display:none;}
+  .notes-card.compact .notes-toggle{display:flex;}
+  .notes-card.compact.closed .notes-body{display:none;}
+  .notes-card.compact .notes-body{margin-top:12px;}
+  .notes-ta{width:100%;min-height:calc(130px*var(--k));padding:12px 14px;font-size:calc(18px*var(--k));line-height:1.5;border:2px solid var(--line);border-radius:14px;resize:vertical;display:block;}
+  .notes-status{min-height:1.5em;font-size:calc(14px*var(--k));color:var(--muted);margin-top:4px;}
+  .notes-status.ok{color:var(--good);font-weight:700;}
+  .hw-result{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0 4px;}
+  .hw-result:empty{display:none;}
+  .hw-result .lbl{font-size:calc(15px*var(--k));color:var(--muted);width:100%;}
+  .hw-chip{min-height:44px;padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:#fff;font-size:calc(17px*var(--k));font-weight:700;cursor:pointer;color:var(--primary-dark);max-width:100%;overflow-wrap:anywhere;}
+  .hw-chip.on{background:var(--primary);border-color:var(--primary);color:#fff;}
+  .hw-chip.undo{background:#eef2f6;border-color:#eef2f6;}
+  .hw-pad{margin-top:10px;}
+  .hw-pad .seg{margin:4px 0 8px;}
+  .hw-pad .seg button{min-height:44px;padding:8px;}
+  .hw-wrap{position:relative;border:2px solid var(--line);border-radius:14px;overflow:hidden;
+    background:#fffdf7 repeating-linear-gradient(to bottom, transparent 0, transparent 47px, #d9e4ef 47px, #d9e4ef 49px);}
+  .hw-wrap canvas{display:block;width:100%;height:calc(220px*var(--k));touch-action:none;cursor:crosshair;-webkit-user-select:none;user-select:none;}
+  .hw-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px;color:#9aa6b2;font-size:calc(17px*var(--k));pointer-events:none;}
+  .hw-msg{min-height:1.4em;font-size:calc(15px*var(--k));margin:6px 0 0;color:var(--muted);}
+  .hw-msg.bad{background:var(--bad-bg);color:var(--bad);border-radius:12px;padding:10px 12px;font-weight:700;}
+  .hw-tools{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;}
+  .hw-tools .btn{margin-top:0;padding:10px 12px;min-height:48px;font-size:calc(17px*var(--k));}
+  .hw-note{margin:10px 0 0;}
+  .note-item{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;}
+  .note-item .ni-t{font-weight:700;font-size:calc(17px*var(--k));}
+  .note-item .ni-s{white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0;font-size:calc(16px*var(--k));}
+  .note-item .ni-d{font-size:calc(13px*var(--k));color:var(--muted);}
+  .note-item .btn-row .btn{padding:10px 12px;font-size:calc(17px*var(--k));min-height:48px;}
+  .note-item .del-q{font-weight:700;color:var(--bad);margin-top:8px;}
+  .notes-lv{margin:16px 0 8px;color:var(--primary-dark);}
   @media (prefers-reduced-motion:reduce){ *{transition:none !important;animation:none !important;} }
 </style>
 </head>
@@ -1029,11 +1065,11 @@ const BADGES = [
 /* ===== DURUM ===== */
 const STORE_KEY="dilOgren_v4";
 const OLD_KEY_V3="ingilizceOgren_v3";
-function defaultLangData(){ return {completedLessons:[], wordsLearned:0, grammarLearned:0, reviewWords:[], bestScores:{}, unlocks:{}, dictLearned:[], earnedBadges:[], perfectQuiz:false, unitProgress:{}, lastUid:null, quizSave:null}; }
+function defaultLangData(){ return {completedLessons:[], wordsLearned:0, grammarLearned:0, reviewWords:[], bestScores:{}, unlocks:{}, dictLearned:[], earnedBadges:[], perfectQuiz:false, unitProgress:{}, lastUid:null, quizSave:null, notes:{}}; }
 function defaultState(){
   return Object.assign({}, defaultLangData(), {
     lang:null, langStore:{en:defaultLangData(), it:defaultLangData()},
-    studyDates:[], streak:0, settings:{fontScale:1, rate:0.85, voiceURI:null}
+    studyDates:[], streak:0, settings:{fontScale:1, rate:0.85, voiceURI:null, hwLang:"tr"}
   });
 }
 function normalizeState(s){ const d=defaultState(); const m=Object.assign(d,s);
@@ -1053,11 +1089,14 @@ function loadState(){
     return defaultState();
   }catch(e){ return defaultState(); }
 }
-function snapshotActive(){ return {completedLessons:state.completedLessons, wordsLearned:state.wordsLearned, grammarLearned:state.grammarLearned, reviewWords:state.reviewWords, bestScores:state.bestScores, unlocks:state.unlocks, dictLearned:state.dictLearned, earnedBadges:state.earnedBadges, perfectQuiz:state.perfectQuiz, unitProgress:state.unitProgress, lastUid:state.lastUid, quizSave:state.quizSave||null}; }
+function snapshotActive(){ return {completedLessons:state.completedLessons, wordsLearned:state.wordsLearned, grammarLearned:state.grammarLearned, reviewWords:state.reviewWords, bestScores:state.bestScores, unlocks:state.unlocks, dictLearned:state.dictLearned, earnedBadges:state.earnedBadges, perfectQuiz:state.perfectQuiz, unitProgress:state.unitProgress, lastUid:state.lastUid, quizSave:state.quizSave||null, notes:state.notes||{}}; }
 function applyLangData(o){ o=o||defaultLangData(); state.completedLessons=o.completedLessons||[]; state.wordsLearned=o.wordsLearned||0; state.grammarLearned=o.grammarLearned||0; state.reviewWords=o.reviewWords||[]; state.bestScores=o.bestScores||{}; state.unlocks=o.unlocks||{}; state.dictLearned=o.dictLearned||[]; state.earnedBadges=o.earnedBadges||[]; state.perfectQuiz=!!o.perfectQuiz;
   // Ünite adım takibi (eski kayıtlarda yok → boş başlar; bitmiş üniteler completedLessons'tan anlaşılır)
   const up=o.unitProgress; state.unitProgress=(up&&typeof up==="object"&&!Array.isArray(up))?up:{}; state.lastUid=typeof o.lastUid==="string"?o.lastUid:null;
-  const qs=o.quizSave; state.quizSave=(qs&&typeof qs==="object"&&typeof qs.key==="string"&&Array.isArray(qs.questions)&&qs.questions.length&&qs.questions.every(q=>q&&Array.isArray(q.options)&&typeof q.answer==="string")&&qs.qIndex>=0&&qs.qIndex<qs.questions.length)?qs:null; }
+  const qs=o.quizSave; state.quizSave=(qs&&typeof qs==="object"&&typeof qs.key==="string"&&Array.isArray(qs.questions)&&qs.questions.length&&qs.questions.every(q=>q&&Array.isArray(q.options)&&typeof q.answer==="string")&&qs.qIndex>=0&&qs.qIndex<qs.questions.length)?qs:null;
+  // Notlar (eski kayıtlarda yok → boş): {anahtar: {text, updatedAt}}, bozuk kayıtlar atlanır
+  const nt=o.notes, notes={}; if(nt&&typeof nt==="object"&&!Array.isArray(nt)) Object.keys(nt).forEach(k=>{ const n=nt[k]; if(n&&typeof n==="object"&&typeof n.text==="string"&&n.text.trim()) notes[k]={text:n.text, updatedAt:+n.updatedAt||0}; });
+  state.notes=notes; }
 function saveState(){ try{ if(state.lang){ state.langStore[state.lang]=snapshotActive(); } localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){} }
 function setLanguage(lang, opts){ opts=opts||{}; if(!LANGS[lang]) lang="en";
   if(state.lang && !opts.skipSaveOld){ state.langStore[state.lang]=snapshotActive(); }
@@ -1369,6 +1408,7 @@ function renderHome(){ currentScreen="home";
       <button class="btn btn-accent" data-act="openDict">📖 Sözlük — Test Gerekmez, Kelime Öğren</button>
       <button class="btn btn-soft" data-act="achievements">🏅 Rozetlerimi Gör</button>
       <button class="btn btn-soft" data-act="review">🔁 Tekrar Listesi (${state.reviewWords.length})</button>
+      <button class="btn btn-soft" data-act="openNotes">📝 Notlarım (${Object.keys(state.notes||{}).length})</button>
     </div>`;
   app.innerHTML=html; window.scrollTo(0,0);
 }
@@ -1412,13 +1452,14 @@ function renderVocab(u){
         <div class="word-ex">“${esc(w.ex)}” — ${esc(w.exTr)}</div></div>
         <button class="speak" data-act="speakUnitEx" data-i="${i}" title="Dinle" aria-label="Dinle">🔊</button></div>`;}).join("")}
     </div>`:""}
+    ${notesSlotHtml()}
     <div class="card">
       <h3>Ezberledin mi? Sıradaki: 2. adım</h3>
       <p class="muted">Kartlarla tekrar et, telaffuz yap, en son mini testi çöz.</p>
       <button class="btn btn-accent" data-act="flash" data-uid="${u.uid}">🃏 Kelime Kartlarına Geç</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button>
     </div>`;
-  window.scrollTo(0,0);
+  notesMount(u.uid,"full"); window.scrollTo(0,0);
 }
 
 /* ----- GRAMER DERSİ ----- */
@@ -1443,10 +1484,11 @@ function renderGrammar(u){
       ${stepperHtml(u,"rule")}
     </div>
     ${exs?`<div class="card" id="exCard">${exs}</div>`:""}
+    ${notesSlotHtml()}
     <div class="card"><h3>Anladın mı? 💪</h3><p class="muted">Şimdi kısa alıştırmalarla pekiştir.</p>
       <button class="btn btn-primary" data-act="startQuiz" data-uid="${u.uid}" data-kind="grammar">📝 Alıştırmalara Başla (3. adım)</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`;
-  window.scrollTo(0,0);
+  notesMount(u.uid,"full"); window.scrollTo(0,0);
   // Örneklere inince adım çubuğu "2 Örnekler"i göstersin
   const ex=document.getElementById("exCard");
   if(ex && "IntersectionObserver" in window){ const io=new IntersectionObserver(es=>{ if(currentScreen!=="grammar"||ctx.unit!==u){ io.disconnect(); return; }
@@ -1468,9 +1510,10 @@ function drawFlash(){ const u=ctx.unit, w=u.words[ctx.fcIndex], n=u.words.length
       <button class="btn btn-accent" data-act="speakFlash">🔊 Dinle</button>
       <div class="btn-row"><button class="btn btn-primary" data-act="fcKnow">✓ Biliyorum</button>
         <button class="btn btn-soft" data-act="fcRepeat">🔁 Tekrar Et</button></div></div>
+    ${notesSlotHtml()}
     <div class="card"><button class="btn btn-soft" data-act="practice" data-uid="${u.uid}">🎤 Kartları atla, Telaffuza geç</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`;
-  window.scrollTo(0,0);
+  notesMount(u.uid,"compact"); window.scrollTo(0,0);
 }
 function flipCard(){ ctx.flipped=!ctx.flipped; const f=document.querySelector(".flash"); if(f) f.classList.toggle("flipped",ctx.flipped); }
 function fcAdvance(){ if(ctx.fcIndex<ctx.unit.words.length-1){ ctx.fcIndex++; ctx.flipped=false; drawFlash(); }
@@ -1491,10 +1534,11 @@ function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.len
       <button class="btn btn-accent" data-act="speakPractice">🔊 Dinle</button>
       ${mic?`<button class="btn btn-primary" data-act="micCheck">🎤 Söyle ve Kontrol Et</button>`:`<button class="btn btn-primary" data-act="prNext">🗣️ Ben Söyledim, Devam</button>`}
       <div id="micState" class="mic-state ${mic?"":"hidden"}">Hazır olduğunda “Söyle ve Kontrol Et”e bas.</div></div>
+    ${notesSlotHtml()}
     <div class="card"><button class="btn btn-soft" data-act="prNext">➡️ Sonraki Kelime</button>
       <button class="btn btn-soft" data-act="quizIntro" data-uid="${u.uid}" data-kind="vocab">📝 Teste geç (4. adım)</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`;
-  window.scrollTo(0,0);
+  notesMount(u.uid,"compact"); window.scrollTo(0,0);
 }
 function prNext(){ if(ctx.prIndex<ctx.unit.words.length-1){ ctx.prIndex++; drawPractice(); }
   else { const u=ctx.unit; markStep(u.uid,"practice"); pendingNote="✓ Telaffuz bitti. Şimdi son adım: Test."; renderQuizIntro(u.uid,"vocab"); } }
@@ -1836,6 +1880,187 @@ function renderDictionary(){ nav("dict");
   window.scrollTo(0,0);
 }
 
+/* ===== NOTLAR + EL YAZISI =====
+   Tek bir kalıcı panel öğesi (NP.el) her ders ekranında #notesSlot yerine takılır. Ekran yeniden çizilse
+   de aynı öğe taşındığı için yazılmamış metin ve defterdeki mürekkep kaybolmaz.
+   state.notes: {ünite uid | "general": {text, updatedAt}} — dil başına ayrı. */
+const HW_LANGS=[["tr","Türkçe"],["en","English"],["it","Italiano"]];
+const HW_OFFLINE="İnternet yok, el yazısı çevrilemedi. İnternet gelince 'Yazıya çevir'e bas.";
+const NP={el:null, key:null, lang:null, dirty:false, timer:null, compactOpen:false, padOpen:false,
+  strokes:[], cur:null, t0:0, autoTimer:null, busy:false, again:false, sawPen:false, ptype:"touch", last:null, dpr:1};
+let notesDelKey=null;
+function notesSlotHtml(){ return `<div id="notesSlot"></div>`; }
+function hwLang(){ const l=state.settings.hwLang; return HW_LANGS.some(x=>x[0]===l)?l:"tr"; }
+function npTa(){ return NP.el.querySelector("#notesText"); }
+function npEnsure(){ if(NP.el) return NP.el;
+  const el=document.createElement("div"); el.className="card notes-card"; el.id="notesPanel";
+  el.innerHTML=`<button class="btn btn-soft notes-toggle" data-act="notesToggle" aria-expanded="false" aria-controls="notesBody">📝 Notlarım <span class="nt-cnt"></span></button>
+    <div class="notes-body" id="notesBody">
+      <h3 class="notes-h"><label for="notesText">📝 Notlarım</label></h3>
+      <textarea id="notesText" class="notes-ta" rows="4" placeholder="Buraya not al… (yeni kelimeler, aklına takılanlar)" spellcheck="true"></textarea>
+      <div class="notes-status" aria-live="polite"></div>
+      <div class="hw-result" aria-live="polite"></div>
+      <button class="btn btn-ghost hw-toggle" data-act="hwToggle" aria-expanded="false" aria-controls="hwPad">✍️ El yazısıyla yaz</button>
+      <div class="hw-pad hidden" id="hwPad">
+        <div class="seg hw-langs" role="group" aria-label="El yazısının dili">${HW_LANGS.map(([c,n])=>`<button data-act="hwLang" data-lang="${c}">${n}</button>`).join("")}</div>
+        <div class="hw-wrap"><canvas aria-label="El yazısı defteri: parmakla, kalemle veya fareyle yaz"></canvas><div class="hw-ph">Parmağınla ya da kalemle buraya yaz ✍️</div></div>
+        <div class="hw-msg" role="status"></div>
+        <div class="hw-tools">
+          <button class="btn btn-soft" data-act="hwUndo">↶ Geri al</button>
+          <button class="btn btn-soft" data-act="hwClear">🧹 Temizle</button>
+          <button class="btn btn-soft" data-act="hwNewline">↵ Alt satır</button>
+          <button class="btn btn-primary" data-act="hwConvert">🔤 Yazıya çevir</button>
+        </div>
+      </div>
+      <p class="muted hw-note">El yazısını yazıya çevirmek için internet gerekir. İpucu: Telefon klavyesinin el yazısı modu (Gboard el yazısı, iPad Scribble) da doğrudan yukarıdaki kutuya yazar.</p>
+    </div>`;
+  NP.el=el;
+  const ta=npTa();
+  ta.addEventListener("input",()=>{ NP.dirty=true; npStatus("Kaydediliyor…"); clearTimeout(NP.timer); NP.timer=setTimeout(npFlush,500); });
+  ta.addEventListener("blur",()=>{ if(NP.dirty) npFlush(); });
+  const cv=el.querySelector("canvas");
+  cv.addEventListener("pointerdown",npDown); cv.addEventListener("pointermove",npMove);
+  cv.addEventListener("pointerup",npUp); cv.addEventListener("pointercancel",npUp);
+  cv.addEventListener("contextmenu",e=>e.preventDefault());
+  if("ResizeObserver" in window){ try{ new ResizeObserver(()=>npResize()).observe(cv); }catch(e){} }
+  return el; }
+function npStatus(t,ok){ const s=NP.el&&NP.el.querySelector(".notes-status"); if(s){ s.textContent=t||""; s.classList.toggle("ok",!!ok); } }
+function npMsg(t,bad){ const m=NP.el&&NP.el.querySelector(".hw-msg"); if(m){ m.textContent=t||""; m.classList.toggle("bad",!!bad); } }
+/* Notu kaydet (panelin ait olduğu dil/anahtar için; dil değişmişse o dilin deposuna) */
+function noteStoreFor(lang){ if(lang===state.lang) return state.notes||(state.notes={}); const o=state.langStore[lang]; if(!o) return null; if(!o.notes||typeof o.notes!=="object") o.notes={}; return o.notes; }
+function npFlush(){ clearTimeout(NP.timer); NP.timer=null; if(!NP.el||!NP.key||!NP.dirty) return; NP.dirty=false;
+  const store=noteStoreFor(NP.lang); if(!store) return; const t=npTa().value;
+  if(t.trim()) store[NP.key]={text:t, updatedAt:Date.now()}; else delete store[NP.key];
+  saveState(); npStatus("Kaydedildi ✓",true); npCount(); }
+function npCount(){ const c=NP.el&&NP.el.querySelector(".nt-cnt"); if(c){ const t=npTa().value.trim(); c.textContent=t?"(dolu)":""; } }
+function notesMount(key,mode){ const slot=document.getElementById("notesSlot"); if(!slot) return; const el=npEnsure(), ta=npTa();
+  if(NP.key!==key || NP.lang!==state.lang){ npFlush(); NP.key=key; NP.lang=state.lang; NP.last=null; NP.el.querySelector(".hw-result").innerHTML=""; npStatus(""); NP.dirty=false; }
+  if(!NP.dirty){ const n=(state.notes||{})[key]; if(ta.value!==(n?n.text:"")) ta.value=n?n.text:""; }
+  el.classList.toggle("compact",mode==="compact"); el.classList.toggle("closed",mode==="compact" && !NP.compactOpen);
+  el.querySelector(".notes-toggle").setAttribute("aria-expanded",String(mode!=="compact"||NP.compactOpen));
+  slot.replaceWith(el); npCount(); npSyncPad(); }
+function npToggleCompact(){ NP.compactOpen=!NP.compactOpen; NP.el.classList.toggle("closed",!NP.compactOpen);
+  NP.el.querySelector(".notes-toggle").setAttribute("aria-expanded",String(NP.compactOpen)); if(NP.compactOpen){ npSyncPad(); } }
+function npTogglePad(){ NP.padOpen=!NP.padOpen; npSyncPad(); if(NP.padOpen){ const w=NP.el.querySelector(".hw-wrap"); try{ w.scrollIntoView({behavior:"smooth",block:"nearest"}); }catch(e){} } }
+function npSyncPad(){ if(!NP.el) return; const pad=NP.el.querySelector(".hw-pad"), b=NP.el.querySelector(".hw-toggle");
+  pad.classList.toggle("hidden",!NP.padOpen); b.setAttribute("aria-expanded",String(NP.padOpen)); b.textContent=NP.padOpen?"✍️ Defteri kapat":"✍️ El yazısıyla yaz";
+  const l=hwLang(); NP.el.querySelectorAll(".hw-langs button").forEach(x=>{ const on=x.dataset.lang===l; x.classList.toggle("active",on); x.setAttribute("aria-pressed",String(on)); });
+  if(NP.padOpen) npResize(); }
+function npSetLang(l){ state.settings.hwLang=l; saveState(); npSyncPad(); }
+/* ----- Çizim ----- */
+function npCanvas(){ return NP.el&&NP.el.querySelector("canvas"); }
+function npResize(){ const cv=npCanvas(); if(!cv||!cv.isConnected) return; const r=cv.getBoundingClientRect(); if(!r.width||!r.height) return;
+  const dpr=window.devicePixelRatio||1, w=Math.round(r.width*dpr), h=Math.round(r.height*dpr);
+  if(cv.width!==w||cv.height!==h){ cv.width=w; cv.height=h; } NP.dpr=dpr; npRedraw(); }
+function npPen(c){ c.setTransform(NP.dpr,0,0,NP.dpr,0,0); c.lineCap="round"; c.lineJoin="round"; c.lineWidth=3.2; c.strokeStyle="#1d3557"; c.fillStyle="#1d3557"; }
+function npDrawStroke(c,s){ const n=s.x.length; if(!n) return;
+  if(n===1){ c.beginPath(); c.arc(s.x[0],s.y[0],1.8,0,Math.PI*2); c.fill(); return; }
+  c.beginPath(); c.moveTo(s.x[0],s.y[0]); for(let i=1;i<n;i++) c.lineTo(s.x[i],s.y[i]); c.stroke(); }
+function npRedraw(){ const cv=npCanvas(); if(!cv) return; const c=cv.getContext("2d"); c.setTransform(1,0,0,1,0,0); c.clearRect(0,0,cv.width,cv.height); npPen(c);
+  NP.strokes.forEach(s=>npDrawStroke(c,s)); if(NP.cur) npDrawStroke(c,NP.cur);
+  const ph=NP.el.querySelector(".hw-ph"); if(ph) ph.classList.toggle("hidden",!!(NP.strokes.length||NP.cur)); }
+function npPt(e){ const r=npCanvas().getBoundingClientRect(); return [Math.round(e.clientX-r.left), Math.round(e.clientY-r.top)]; }
+function npDown(e){ if(e.pointerType==="pen") NP.sawPen=true;
+  if(NP.sawPen && e.pointerType==="touch") return; // kalemle yazarken avuç içi dokunuşunu yok say
+  if(!e.isPrimary || NP.cur) return; if(e.button>0) return;
+  e.preventDefault(); try{ e.target.setPointerCapture(e.pointerId); }catch(_){}
+  clearTimeout(NP.autoTimer); if(!NP.strokes.length) NP.t0=performance.now();
+  NP.ptype=e.pointerType||"touch"; NP.cur={x:[],y:[],t:[],id:e.pointerId}; npAddPt(e); npRedraw(); npMsg(""); }
+function npAddPt(e){ const [x,y]=npPt(e), s=NP.cur, n=s.x.length; if(n && s.x[n-1]===x && s.y[n-1]===y) return; s.x.push(x); s.y.push(y); s.t.push(Math.max(0,Math.round(performance.now()-NP.t0))); }
+function npMove(e){ if(!NP.cur || e.pointerId!==NP.cur.id) return; e.preventDefault();
+  const s=NP.cur, from=s.x.length-1, list=(e.getCoalescedEvents&&e.getCoalescedEvents())||[]; (list.length?list:[e]).forEach(npAddPt);
+  const n=s.x.length; if(n<2 || n-1<=from) return; const c=npCanvas().getContext("2d"); npPen(c);
+  c.beginPath(); c.moveTo(s.x[Math.max(0,from)],s.y[Math.max(0,from)]); for(let i=Math.max(1,from+1);i<n;i++) c.lineTo(s.x[i],s.y[i]); c.stroke(); }
+function npUp(e){ if(!NP.cur || e.pointerId!==NP.cur.id) return; const s=NP.cur; NP.cur=null; delete s.id;
+  if(s.x.length) NP.strokes.push(s); npRedraw();
+  clearTimeout(NP.autoTimer); NP.autoTimer=setTimeout(()=>npConvert(true),1200); }
+function npUndoStroke(){ clearTimeout(NP.autoTimer); if(NP.strokes.length){ NP.strokes.pop(); npRedraw(); npMsg(""); } }
+function npClearPad(){ clearTimeout(NP.autoTimer); NP.strokes=[]; NP.cur=null; npRedraw(); npMsg(""); }
+/* ----- Tanıma ----- */
+const HWR={cache:{}};
+function withTimeout(p,ms){ return Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")),ms))]); }
+async function hwrChrome(strokes,lang){ // Chrome Handwriting Recognition API (varsa)
+  if(!navigator.createHandwritingRecognizer) return null;
+  const c={languages:[lang]};
+  if(navigator.queryHandwritingRecognizer){ const q=await navigator.queryHandwritingRecognizer(c); if(!q) return null; }
+  else if(navigator.queryHandwritingRecognizerSupport){ const q=await navigator.queryHandwritingRecognizerSupport(c); if(!q||q.languages===false) return null; }
+  if(!HWR.cache[lang]) HWR.cache[lang]=navigator.createHandwritingRecognizer(c);
+  let rec; try{ rec=await HWR.cache[lang]; }catch(e){ delete HWR.cache[lang]; throw e; }
+  const d=rec.startDrawing({recognitionType:"text", inputType:NP.ptype==="pen"?"stylus":(NP.ptype==="mouse"?"mouse":"touch"), alternatives:4});
+  try{ strokes.forEach(s=>{ const st=new HandwritingStroke(); for(let i=0;i<s.x.length;i++) st.addPoint({x:s.x[i],y:s.y[i],t:s.t[i]}); d.addStroke(st); });
+    const p=await d.getPrediction(); const out=(p||[]).map(x=>x&&x.text).filter(Boolean); return out.length?out:null;
+  } finally { try{ d.clear(); }catch(e){} } }
+async function hwrGoogle(strokes,lang,w,h){
+  const body={options:"enable_pre_space", requests:[{writing_guide:{writing_area_width:w, writing_area_height:h}, ink:strokes.map(s=>[s.x.slice(),s.y.slice(),s.t.slice()]), language:lang}]};
+  const ac=("AbortController" in window)?new AbortController():null; const to=setTimeout(()=>{ try{ ac&&ac.abort(); }catch(e){} },8000);
+  try{ const r=await fetch("https://inputtools.google.com/request?ime=handwriting&app=mobilesearch&cs=1&oe=UTF-8",{method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body), signal:ac?ac.signal:undefined, cache:"no-store"});
+    if(!r.ok) throw new Error("http "+r.status); const j=await r.json();
+    if(!Array.isArray(j) || j[0]!=="SUCCESS") throw new Error("bad response");
+    const c=j[1]&&j[1][0]&&j[1][0][1]; return Array.isArray(c)?c.filter(x=>typeof x==="string"&&x.trim()):[];
+  } finally { clearTimeout(to); } }
+async function npConvert(auto){ clearTimeout(NP.autoTimer); if(!NP.el) return;
+  if(NP.busy){ NP.again=true; return; }
+  if(!NP.strokes.length){ if(!auto) npMsg("Önce defterin içine bir şey yaz."); return; }
+  const batch=NP.strokes.slice(), lang=hwLang(), r=npCanvas().getBoundingClientRect(), w=Math.max(1,Math.round(r.width)), h=Math.max(1,Math.round(r.height));
+  NP.busy=true; npMsg("Çevriliyor…"); let cands=null, failed=false;
+  try{ cands=await withTimeout(hwrChrome(batch,lang),6000); }catch(e){ cands=null; }
+  if(!cands||!cands.length){
+    if(navigator.onLine===false) failed=true;
+    else { try{ cands=await hwrGoogle(batch,lang,w,h); }catch(e){ failed=true; } }
+  }
+  NP.busy=false;
+  if(failed){ npMsg(HW_OFFLINE,true); }
+  else if(!cands||!cands.length){ npMsg("Yazı okunamadı. Biraz daha büyük ve düzgün yazıp tekrar dene.",true); }
+  else { // Çevrilen çizgileri defterden sil (bu sırada yeni yazılanlar kalsın), en iyi sonucu ekle
+    NP.strokes=NP.strokes.filter(s=>!batch.includes(s)); if(!NP.strokes.length) NP.t0=performance.now(); npRedraw();
+    npInsert(String(cands[0]).trim(), cands.slice(0,4).map(x=>String(x).trim()).filter((x,i,a)=>x && a.indexOf(x)===i)); npMsg("");
+  }
+  if(NP.again){ NP.again=false; if(NP.strokes.length && !failed) NP.autoTimer=setTimeout(()=>npConvert(true),600); } }
+function npInsert(text,cands){ const ta=npTa(), v=ta.value; const sep=(!v || /\s$/.test(v))?"":" ";
+  const start=v.length+sep.length; ta.value=v+sep+text; NP.last={prev:v, start, text, cands, pick:0};
+  NP.dirty=true; npFlush(); npResult(); try{ ta.scrollTop=ta.scrollHeight; }catch(e){} }
+function npResult(){ const box=NP.el.querySelector(".hw-result"); const L=NP.last; if(!L){ box.innerHTML=""; return; }
+  box.innerHTML=`<span class="lbl">✓ Eklendi. Yanlışsa doğrusuna dokun:</span>${L.cands.map((c,i)=>`<button class="hw-chip${c===L.text?" on":""}" data-act="hwAlt" data-i="${i}" aria-pressed="${c===L.text}">${esc(c)}</button>`).join("")}<button class="hw-chip undo" data-act="hwUndoInsert">↶ Eklenen yazıyı geri al</button>`; }
+function npLastValid(){ const L=NP.last; if(!L) return false; const v=npTa().value; return v.substr(L.start,L.text.length)===L.text && v.length===L.start+L.text.length; }
+function npPickAlt(i){ const L=NP.last; if(!L||!L.cands[i]) return; if(!npLastValid()){ showToast("Metin değişti; seçenek uygulanamadı."); NP.last=null; npResult(); return; }
+  const ta=npTa(); ta.value=ta.value.slice(0,L.start)+L.cands[i]; L.text=L.cands[i]; NP.dirty=true; npFlush(); npResult(); }
+function npUndoInsert(){ const L=NP.last; if(!L) return; const ta=npTa();
+  if(npLastValid()){ ta.value=L.prev; NP.dirty=true; npFlush(); showToast("Geri alındı."); } else showToast("Metin değişti; geri alınamadı.");
+  NP.last=null; npResult(); }
+function npNewline(){ const ta=npTa(); if(ta.value && !/\n$/.test(ta.value)){ ta.value=ta.value.replace(/[ \t]+$/,"")+"\n"; NP.dirty=true; npFlush(); } NP.last=null; npResult(); }
+/* Panel ekrandan kalkınca (başka sayfaya geçiş) yazılanı hemen kaydet */
+try{ new MutationObserver(()=>{ if(NP.el && !NP.el.isConnected){ npFlush(); clearTimeout(NP.autoTimer); } }).observe(app,{childList:true}); }catch(e){}
+addEventListener("pagehide",()=>npFlush()); document.addEventListener("visibilitychange",()=>{ if(document.visibilityState==="hidden") npFlush(); });
+addEventListener("resize",()=>{ if(NP.padOpen) npResize(); });
+/* ----- Notlarım ekranı ----- */
+function noteDelete(key){ if(state.notes) delete state.notes[key]; saveState();
+  if(NP.el && NP.key===key && NP.lang===state.lang){ clearTimeout(NP.timer); NP.dirty=false; npTa().value=""; NP.last=null; npResult(); npStatus(""); npCount(); } }
+function fmtNoteDate(ts){ if(!ts) return ""; const d=new Date(ts); return String(d.getDate()).padStart(2,"0")+"."+String(d.getMonth()+1).padStart(2,"0")+"."+d.getFullYear()+" "+String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0"); }
+function noteItemHtml(key,title){ const n=state.notes[key], txt=n.text.trim(), snip=txt.length>140?txt.slice(0,140)+"…":txt, ask=notesDelKey===key;
+  return `<div class="note-item" id="note-${esc(key)}"><div class="ni-t">${title}</div><div class="ni-s">${esc(snip)}</div><div class="ni-d">Son değişiklik: ${fmtNoteDate(n.updatedAt)}</div>
+    ${ask?`<div class="del-q" role="alert">Bu not silinsin mi? Geri alınamaz.</div><div class="btn-row"><button class="btn btn-ghost" style="color:var(--bad);border-color:var(--bad);" data-act="noteDelYes" data-key="${esc(key)}">🗑️ Evet, sil</button><button class="btn btn-soft" data-act="noteDelNo">Vazgeç</button></div>`
+      :`<div class="btn-row"><button class="btn btn-soft" data-act="noteEdit" data-key="${esc(key)}">✏️ Düzenle</button><button class="btn btn-ghost" data-act="noteDel" data-key="${esc(key)}">🗑️ Sil</button></div>`}</div>`; }
+function renderNotes(keepScroll){ npFlush(); const y=window.scrollY; nav("notes"); const notes=state.notes||{};
+  let html=`<div class="card"><h2>📝 Notlarım</h2><p class="muted">${esc(LANGS[state.lang].name)} derslerinde aldığın notlar. Her ders sayfasının altında not kutusu var.</p>
+    <h3 class="notes-lv">🗒️ Genel not</h3>`;
+  html+= notes.general ? noteItemHtml("general","Genel not") : `<div class="note-item"><div class="ni-s muted">Henüz genel not yok. Derslerden bağımsız her şeyi buraya yazabilirsin.</div><button class="btn btn-accent" data-act="noteEdit" data-key="general">✏️ Genel not yaz</button></div>`;
+  const seen=new Set(["general"]); let any=false;
+  LEVELS.forEach(lv=>{ const items=lv.units.filter(u=>notes[u.uid]); if(!items.length) return; any=true;
+    html+=`<h3 class="notes-lv">${esc(lv.cefr)} · ${esc(lv.name)}</h3>`+items.map(u=>{ seen.add(u.uid); return noteItemHtml(u.uid, `${u.icon} ${esc(u.title)}`); }).join(""); });
+  const other=Object.keys(notes).filter(k=>!seen.has(k));
+  if(other.length){ any=true; html+=`<h3 class="notes-lv">Diğer</h3>`+other.map(k=>noteItemHtml(k,esc(k))).join(""); }
+  if(!any) html+=`<p class="empty">Ders notun yok.<br>Bir derse girip sayfanın altındaki 📝 Notlarım kutusuna yazabilirsin.</p>`;
+  html+=`<button class="btn btn-soft" style="margin-top:12px;" data-act="goHome">Ana Sayfa</button></div>`;
+  app.innerHTML=html; window.scrollTo(0,keepScroll?y:0); }
+function renderNoteEdit(key){ const u=key==="general"?null:findUnit(key); nav("noteEdit");
+  app.innerHTML=`<div class="card">${u?`<div class="muted">${esc(u._level.name)} · ${u.type==="grammar"?"📖 Gramer":"🔤 Kelime"}</div><h2>${u.icon} ${esc(u.title)}</h2>`:`<h2>🗒️ Genel not</h2>`}
+      <p class="muted">Yazdıkların kendiliğinden kaydedilir.</p></div>
+    ${notesSlotHtml()}
+    <div class="card">${u?`<button class="btn btn-accent" data-act="openUnit" data-uid="${u.uid}">📖 Derse git</button>`:""}
+      <button class="btn btn-soft" data-act="openNotes">← Tüm notlarım</button>
+      <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`;
+  notesMount(key,"full"); window.scrollTo(0,0); }
+
 /* ===== OLAYLAR ===== */
 document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]"); if(!el) return; const a=el.dataset.act, d=el.dataset;
   switch(a){
@@ -1888,6 +2113,20 @@ document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]")
     case "bkCheck": { const inp=document.getElementById("bkInput"); bkTry(inp?inp.value:""); break; }
     case "bkConfirm": bkApply(); break;
     case "bkCancel": bk.pending=null; bk.msg=""; bkRefresh(); break;
+    case "openNotes": notesDelKey=null; renderNotes(); break;
+    case "noteEdit": renderNoteEdit(d.key); break;
+    case "noteDel": notesDelKey=d.key; renderNotes(true); break;
+    case "noteDelNo": notesDelKey=null; renderNotes(true); break;
+    case "noteDelYes": noteDelete(d.key); notesDelKey=null; renderNotes(true); showToast("Not silindi."); break;
+    case "notesToggle": npToggleCompact(); break;
+    case "hwToggle": npTogglePad(); break;
+    case "hwLang": npSetLang(d.lang); break;
+    case "hwUndo": npUndoStroke(); break;
+    case "hwClear": npClearPad(); break;
+    case "hwNewline": npNewline(); break;
+    case "hwConvert": npConvert(false); break;
+    case "hwAlt": npPickAlt(+d.i); break;
+    case "hwUndoInsert": npUndoInsert(); break;
     case "resetAll": if(confirm("Tüm ilerleme silinsin mi? Geri alınamaz.")){ const keepLang=state.lang||"en", keepSet=state.settings; state=defaultState(); state.settings=keepSet; setLanguage(keepLang,{skipSaveOld:true}); state.streak=0; saveState(); applySettings(); showToast("Sıfırlandı."); goHome(); } break;
   }
 });
