@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="theme-color" content="#4F7CAC" />
+<meta name="color-scheme" content="light" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -14,33 +15,46 @@
 <title>TY İngilizce</title>
 <style>
   :root{
-    --bg:#F7F4EF; --primary:#4F7CAC; --primary-dark:#3c5f87;
+    --bg:#F7F4EF; --primary:#44709e; --primary-dark:#3c5f87;
     --accent:#F2C14E; --accent-dark:#d9a52f; --text:#222222; --card:#ffffff;
-    --good:#2e9e5b; --good-bg:#e7f6ec; --bad:#d9534f; --bad-bg:#fbe9e8;
-    --muted:#6b6b6b; --line:#ece6dc; --shadow:0 6px 18px rgba(60,50,30,.10);
-    --radius:18px; --fs:19px; --k:1;
+    --good:#2e9e5b; --good-bg:#e7f6ec; --bad:#c0392b; --bad-bg:#fbe9e8;
+    --muted:#626262; --line:#ece6dc; --shadow:0 6px 18px rgba(60,50,30,.10);
+    --radius:18px; --fs:19px; --k:1; --focus:#1f4e80;
+    color-scheme:light;
     --l1:#4F7CAC; --l2:#2e9e5b; --l3:#9b59b6;
     --l1d:#3c5f87; --l2d:#237a46; --l3d:#7d3f9a;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{margin:0;padding:0;}
   html{background:var(--bg);}
-  body{font-family:"Segoe UI",-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji";
     background:var(--bg);color:var(--text);font-size:var(--fs);line-height:1.55;-webkit-text-size-adjust:100%;overflow-x:hidden;}
   button,input,[data-act]{touch-action:manipulation;}
-  button{font-family:inherit;}
+  button,input,textarea,select{font-family:inherit;color:var(--text);}
+  input,textarea,select{background:#fff;}
+  /* Klavye ile gezinmede her yerde görünür odak halkası */
+  :focus-visible{outline:3px solid var(--focus);outline-offset:2px;}
+  .btn:focus-visible,.icon-btn:focus-visible,.seg button:focus-visible,.opt:focus-visible,.speak:focus-visible,.reveal-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  input:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:0;border-color:var(--primary) !important;}
+  /* Bayraklar: Windows bayrak emojisi göstermediği için satır içi SVG */
+  .flag{display:inline-block;width:1.4em;height:.95em;border-radius:3px;overflow:hidden;vertical-align:-0.12em;box-shadow:0 0 0 1px rgba(0,0,0,.18);flex:0 0 auto;line-height:0;}
+  .flag svg{display:block;width:100%;height:100%;}
   .wrap{max-width:720px;margin:0 auto;
     padding:14px max(16px,env(safe-area-inset-right)) calc(80px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));}
   /* Başlık çentiğin altında kalmasın: yapışınca durum çubuğu alanını da kaplar */
   header.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:-14px 0 14px;
     position:sticky;top:0;background:var(--bg);z-index:20;padding:calc(10px + env(safe-area-inset-top,0px)) 0 8px;border-bottom:1px solid var(--line);}
-  header.top h1{font-size:20px;margin:0;color:var(--primary-dark);min-width:0;line-height:1.2;}
+  header.top h1{font-size:20px;margin:0;color:var(--primary-dark);min-width:0;line-height:1.2;display:flex;align-items:center;gap:8px;}
+  header.top h1 .h1-logo{display:inline-flex;align-items:center;justify-content:center;background:var(--primary-dark);color:#fff;border-radius:9px;font-size:14px;font-weight:800;padding:4px 7px;letter-spacing:.5px;flex:0 0 auto;}
+  header.top h1 .h1-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
   .top-actions{display:flex;gap:6px;flex:0 0 auto;}
   .icon-btn{background:#fff;border:2px solid var(--line);color:var(--primary-dark);border-radius:12px;
     padding:8px 12px;font-size:16px;cursor:pointer;font-weight:600;min-width:44px;min-height:44px;}
   .top-actions .icon-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 6px;min-width:52px;line-height:1.1;}
-  .top-actions .icon-btn .ib-lbl{font-size:11px;font-weight:700;white-space:nowrap;}
+  .top-actions .icon-btn .ib-lbl{font-size:12px;font-weight:700;white-space:nowrap;}
+  .top-actions .icon-btn .ib-ico{font-size:17px;line-height:1.2;height:20px;display:flex;align-items:center;}
   .icon-btn:hover{border-color:var(--primary);}
+  .icon-btn[aria-current="page"]{border-color:var(--primary);background:#eef2f6;}
   .hidden{display:none !important;}
 
   .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:16px;}
@@ -61,6 +75,14 @@
   .btn-soft:hover{background:#e2e9f0;}
   .btn-ghost{background:transparent;border:2px solid var(--line);color:var(--primary-dark);}
   .btn-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .lang-choices{display:grid;gap:12px;margin:14px 0 4px;}
+  .lang-choice{display:flex;align-items:center;gap:14px;width:100%;background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;cursor:pointer;text-align:left;color:var(--text);font-size:calc(20px*var(--k));font-weight:800;min-height:64px;}
+  .lang-choice:hover{border-color:var(--primary);background:#f7fafd;}
+  .lang-choice.current{border-color:var(--primary);background:#eef4fa;}
+  .lang-choice .flag{font-size:calc(30px*var(--k));border-radius:5px;}
+  .lang-choice .lc-txt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+  .lang-choice .lc-sub{font-size:calc(15px*var(--k));font-weight:600;color:var(--muted);}
+  .lang-choice .lc-go{color:var(--primary-dark);font-size:calc(15px*var(--k));font-weight:700;white-space:nowrap;}
   .btn-row .btn{flex:1;min-width:130px;}
 
   .stats{display:flex;gap:10px;flex-wrap:wrap;}
@@ -172,7 +194,8 @@
   .goal{background:#eef5ff;border-left:5px solid var(--primary);border-radius:10px;padding:10px 14px;margin:6px 0;font-size:calc(16px*var(--k));}
   .stepper{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
   button.step{border:2px solid transparent;cursor:pointer;min-height:44px;font-family:inherit;line-height:1.3;}
-  button.step:hover,button.step:focus-visible{border-color:var(--primary);outline:none;}
+  button.step:hover{border-color:var(--primary);}
+  button.step:focus-visible{border-color:var(--primary);outline:3px solid var(--primary);outline-offset:2px;}
   .stepper-hint{font-size:calc(13px*var(--k));color:var(--muted);margin-top:6px;text-align:center;}
   .dict-item{flex-direction:column;align-items:stretch;gap:8px;}
   .dict-actions{display:flex;gap:6px;}
@@ -183,6 +206,36 @@
   .daily b{color:#7a5a00;}
   .step{flex:1;min-width:64px;background:#eef2f6;border-radius:12px;padding:8px 4px;text-align:center;font-size:calc(13px*var(--k));color:var(--primary-dark);font-weight:700;}
   .step .n{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;align-items:center;justify-content:center;font-size:calc(13px*var(--k));margin-bottom:3px;}
+  /* adım takibi */
+  .step.ok{background:var(--good-bg);color:#1d7a42;}
+  .step.ok .n{background:var(--good);}
+  .step.cur{background:var(--primary);color:#fff;border-color:var(--primary-dark);box-shadow:0 2px 8px rgba(79,124,172,.35);}
+  .step.cur .n{background:#fff;color:var(--primary-dark);}
+  .step.cur.ok .n{color:var(--good);}
+  .step-pos{font-size:calc(14px*var(--k));color:var(--muted);margin-top:10px;}
+  .step-pos b{color:var(--primary-dark);}
+  .step-note{background:var(--good-bg);color:#1d7a42;border-radius:12px;padding:10px 12px;font-weight:700;font-size:calc(16px*var(--k));margin-bottom:4px;}
+  .unit-bar{padding:12px 14px;}
+  .unit-bar .ub-title{font-weight:800;color:var(--primary-dark);font-size:calc(17px*var(--k));overflow-wrap:break-word;}
+  .unit-bar .step-pos{margin-top:2px;}
+  .unit-bar .stepper{margin-top:6px;}
+  .st{display:inline-block;font-size:calc(12px*var(--k));font-weight:700;border-radius:999px;padding:2px 8px;margin:2px 6px 0 0;}
+  .st-ok{background:var(--good-bg);color:#1d7a42;}
+  .st-bad{background:var(--bad-bg);color:#a8312d;}
+  .st-go{background:#e6eef7;color:#34618c;}
+  .st-new{background:#f1eee8;color:var(--muted);}
+  .st-next{background:var(--accent);color:#3a2e00;}
+  .st-line{font-size:calc(16px*var(--k));color:var(--primary-dark);margin:4px 0 8px;}
+  .u-tags{display:flex;flex-wrap:wrap;align-items:center;}
+  .u-tags .type-tag{margin-top:2px;}
+  .unit-item.is-next{border-color:var(--accent);background:#fffaf0;}
+  .check.part{background:#e6eef7;color:#34618c;font-size:calc(11px*var(--k));border:2px solid var(--primary);}
+  .check.retry{background:var(--bad-bg);color:var(--bad);border:2px solid var(--bad);}
+  .lv-bar{background:#e7e1d7;border-radius:999px;height:10px;overflow:hidden;margin:10px 0 2px;}
+  .lv-bar > span{display:block;height:100%;border-radius:999px;min-width:0;}
+  .lv-done{color:var(--good);font-weight:700;font-size:calc(15px*var(--k));margin:6px 0 0;}
+  .continue-card{border:2px solid var(--primary);}
+  .continue-card .stepper{margin-bottom:4px;}
   .ezber{background:#f5f9fc;border:2px dashed var(--primary);border-radius:14px;padding:14px;margin-bottom:11px;}
   .ezber .ez-top{display:flex;align-items:center;gap:10px;}
   .ezber .en{font-size:calc(23px*var(--k));font-weight:800;flex:1;min-width:0;overflow-wrap:break-word;line-height:1.25;}
@@ -196,19 +249,44 @@
   .seg.chips button{flex:0 0 auto;min-width:0;white-space:nowrap;}
   .review-item .icon-btn{flex:0 0 auto;}
   .quiz-exit{margin-top:4px;}
-  @media (max-width:480px){ header.top h1{font-size:15px;} .flash-face .big{font-size:calc(30px*var(--k));} .icon-btn{padding:8px 10px;font-size:15px;} .top-actions .icon-btn{padding:4px 4px;min-width:48px;} }
-  @media (max-width:350px){ header.top h1 .h1-txt{display:none;} }
+  @media (max-width:480px){ header.top h1{font-size:15px;gap:6px;} header.top h1 .h1-logo{font-size:12px;padding:3px 6px;} .flash-face .big{font-size:calc(30px*var(--k));} .icon-btn{padding:8px 10px;font-size:15px;} .top-actions{gap:4px;} .top-actions .icon-btn{padding:4px 3px;min-width:46px;} .top-actions .icon-btn .ib-lbl{font-size:11px;} }
+  @media (max-width:400px){ header.top h1 .h1-name{display:none;} }
+  /* Masaüstü / geniş pencere: daha geniş sütun, daha sakin düğmeler, iki sütunlu ünite listesi */
+  @media (min-width:760px){
+    .wrap{max-width:860px;padding-left:24px;padding-right:24px;}
+    header.top h1{font-size:22px;}
+    .top-actions{gap:8px;}
+    .top-actions .icon-btn{flex-direction:row;gap:6px;padding:6px 12px;min-height:44px;}
+    .top-actions .icon-btn .ib-lbl{font-size:14px;}
+    .card{padding:24px 28px;}
+    .btn{padding:13px 20px;font-size:calc(18px*var(--k));border-radius:12px;}
+    .unit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+    .unit-list .unit-item{margin-bottom:0;}
+    .lang-choices{grid-template-columns:1fr 1fr;}
+    .dict-list-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+    .dict-list-grid .review-item{margin-bottom:0;}
+    .dict-list-grid .empty{grid-column:1/-1;}
+  }
+  @media (min-width:1100px){
+    .wrap{max-width:1000px;}
+    .unit-list{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .dict-list-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  }
+  /* Çok büyük yazıda iki/üç sütun sıkışmasın */
+  html.fs-xl .unit-list{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));}
+  html.fs-xl .dict-list-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));}
+  @media (prefers-reduced-motion:reduce){ *{transition:none !important;animation:none !important;} }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>📘 <span class="h1-txt">Dil Öğreniyorum</span></h1>
+    <h1 id="appTitle"><span class="h1-logo" aria-hidden="true">TY</span><span class="h1-txt"><span class="h1-name">Dil Öğren</span></span></h1>
     <div class="top-actions">
-      <button class="icon-btn" data-act="langPicker" title="Dil" aria-label="Dil seç"><span aria-hidden="true">🌐</span><span class="ib-lbl">Dil</span></button>
-      <button class="icon-btn" data-act="openDict" title="Sözlük" aria-label="Sözlük"><span aria-hidden="true">📖</span><span class="ib-lbl">Sözlük</span></button>
-      <button class="icon-btn" data-act="goSettings" title="Ayarlar" aria-label="Ayarlar"><span aria-hidden="true">⚙️</span><span class="ib-lbl">Ayarlar</span></button>
-      <button class="icon-btn" data-act="goHome" title="Ana Sayfa" aria-label="Ana Sayfa"><span aria-hidden="true">🏠</span><span class="ib-lbl">Ana Sayfa</span></button>
+      <button class="icon-btn" id="topLang" data-act="langPicker" title="Dili değiştir" aria-label="Dili değiştir"><span class="ib-ico" aria-hidden="true">🌐</span><span class="ib-lbl">Dil</span></button>
+      <button class="icon-btn" data-act="openDict" title="Sözlük"><span class="ib-ico" aria-hidden="true">📖</span><span class="ib-lbl">Sözlük</span></button>
+      <button class="icon-btn" data-act="goSettings" title="Ayarlar"><span class="ib-ico" aria-hidden="true">⚙️</span><span class="ib-lbl">Ayarlar</span></button>
+      <button class="icon-btn" data-act="goHome" title="Ana Sayfa"><span class="ib-ico" aria-hidden="true">🏠</span><span class="ib-lbl">Ana Sayfa</span></button>
     </div>
   </header>
   <div id="app"></div>
@@ -951,7 +1029,7 @@ const BADGES = [
 /* ===== DURUM ===== */
 const STORE_KEY="dilOgren_v4";
 const OLD_KEY_V3="ingilizceOgren_v3";
-function defaultLangData(){ return {completedLessons:[], wordsLearned:0, grammarLearned:0, reviewWords:[], bestScores:{}, unlocks:{}, dictLearned:[], earnedBadges:[], perfectQuiz:false}; }
+function defaultLangData(){ return {completedLessons:[], wordsLearned:0, grammarLearned:0, reviewWords:[], bestScores:{}, unlocks:{}, dictLearned:[], earnedBadges:[], perfectQuiz:false, unitProgress:{}, lastUid:null}; }
 function defaultState(){
   return Object.assign({}, defaultLangData(), {
     lang:null, langStore:{en:defaultLangData(), it:defaultLangData()},
@@ -975,8 +1053,10 @@ function loadState(){
     return defaultState();
   }catch(e){ return defaultState(); }
 }
-function snapshotActive(){ return {completedLessons:state.completedLessons, wordsLearned:state.wordsLearned, grammarLearned:state.grammarLearned, reviewWords:state.reviewWords, bestScores:state.bestScores, unlocks:state.unlocks, dictLearned:state.dictLearned, earnedBadges:state.earnedBadges, perfectQuiz:state.perfectQuiz}; }
-function applyLangData(o){ o=o||defaultLangData(); state.completedLessons=o.completedLessons||[]; state.wordsLearned=o.wordsLearned||0; state.grammarLearned=o.grammarLearned||0; state.reviewWords=o.reviewWords||[]; state.bestScores=o.bestScores||{}; state.unlocks=o.unlocks||{}; state.dictLearned=o.dictLearned||[]; state.earnedBadges=o.earnedBadges||[]; state.perfectQuiz=!!o.perfectQuiz; }
+function snapshotActive(){ return {completedLessons:state.completedLessons, wordsLearned:state.wordsLearned, grammarLearned:state.grammarLearned, reviewWords:state.reviewWords, bestScores:state.bestScores, unlocks:state.unlocks, dictLearned:state.dictLearned, earnedBadges:state.earnedBadges, perfectQuiz:state.perfectQuiz, unitProgress:state.unitProgress, lastUid:state.lastUid}; }
+function applyLangData(o){ o=o||defaultLangData(); state.completedLessons=o.completedLessons||[]; state.wordsLearned=o.wordsLearned||0; state.grammarLearned=o.grammarLearned||0; state.reviewWords=o.reviewWords||[]; state.bestScores=o.bestScores||{}; state.unlocks=o.unlocks||{}; state.dictLearned=o.dictLearned||[]; state.earnedBadges=o.earnedBadges||[]; state.perfectQuiz=!!o.perfectQuiz;
+  // Ünite adım takibi (eski kayıtlarda yok → boş başlar; bitmiş üniteler completedLessons'tan anlaşılır)
+  const up=o.unitProgress; state.unitProgress=(up&&typeof up==="object"&&!Array.isArray(up))?up:{}; state.lastUid=typeof o.lastUid==="string"?o.lastUid:null; }
 function saveState(){ try{ if(state.lang){ state.langStore[state.lang]=snapshotActive(); } localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){} }
 function setLanguage(lang, opts){ opts=opts||{}; if(!LANGS[lang]) lang="en";
   if(state.lang && !opts.skipSaveOld){ state.langStore[state.lang]=snapshotActive(); }
@@ -1056,12 +1136,29 @@ function buildLevelTest(lv){
 /* ===== YARDIMCI ===== */
 const app=document.getElementById("app");
 function esc(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
+/* ===== BAYRAKLAR =====
+   Windows bayrak emojisi çizemez ("GB", "IT" harfleri çıkar); bu yüzden çevrimdışı çalışan satır içi SVG.
+   flag(kod) → erişilebilir <span role="img" aria-label="...">; flag(kod,true) → yanında dil adı yazıyorsa dekoratif. */
+const FLAG_SVG={
+  en:{label:"Birleşik Krallık bayrağı", svg:'<svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>'},
+  it:{label:"İtalya bayrağı", svg:'<svg viewBox="0 0 3 2" preserveAspectRatio="none" focusable="false"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>'}
+};
+function flag(code, decorative){ const f=FLAG_SVG[code]; if(!f) return "";
+  return decorative ? `<span class="flag" aria-hidden="true">${f.svg}</span>` : `<span class="flag" role="img" aria-label="${f.label}">${f.svg}</span>`; }
+/* Üst başlık: uygulama adı + çalışılan dil (TY İngilizce / TY İtalyanca), aktif ekran işareti */
+function updateHeader(){ const L=state.lang&&LANGS[state.lang];
+  const t=document.querySelector("#appTitle .h1-txt"); if(t) t.innerHTML=L?`${flag(state.lang,true)} <span class="h1-name">${esc(L.name)}</span>`:`<span class="h1-name">Dil Öğren</span>`;
+  const h=document.getElementById("appTitle"); if(h) h.setAttribute("aria-label", L?"TY "+L.name:"TY Dil Öğren");
+  const b=document.getElementById("topLang"); if(b){ b.querySelector(".ib-ico").innerHTML=L?flag(state.lang,true):"🌐"; b.setAttribute("aria-label", L?"Dil: "+L.name+" — değiştir":"Dil seç"); }
+  document.title=L?"TY "+L.name:"TY İngilizce";
+  const map={home:"goHome",dict:"openDict",settings:"goSettings",picker:"langPicker"};
+  document.querySelectorAll("header.top .icon-btn").forEach(x=>{ if(map[currentScreen]===x.dataset.act) x.setAttribute("aria-current","page"); else x.removeAttribute("aria-current"); }); }
 let toastTimer=null;
 function showToast(m){ const t=document.getElementById("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove("show"),2300); }
 function isDone(uid){ return state.completedLessons.includes(uid); }
 function addReviewWord(w){ if(!state.reviewWords.some(x=>x.en===w.en)){ state.reviewWords.push({en:w.en,tr:w.tr,ex:w.ex,exTr:w.exTr}); saveState(); showToast("Tekrar listesine eklendi: "+w.en);} else showToast("Zaten listede."); }
 function removeReviewWord(en){ state.reviewWords=state.reviewWords.filter(x=>x.en!==en); saveState(); }
-function applySettings(){ const k=state.settings.fontScale||1; document.documentElement.style.setProperty("--fs",(19*k)+"px"); document.documentElement.style.setProperty("--k",String(k)); }
+function applySettings(){ const k=state.settings.fontScale||1; document.documentElement.style.setProperty("--fs",(19*k)+"px"); document.documentElement.style.setProperty("--k",String(k)); document.documentElement.classList.toggle("fs-xl",k>=1.25); }
 function confetti(){ const c=["#4F7CAC","#F2C14E","#2e9e5b","#d9534f","#9b59b6"];
   for(let i=0;i<70;i++){ const e=document.createElement("div"); e.className="confetti"; e.style.left=Math.random()*100+"vw"; e.style.background=c[i%c.length]; e.style.transform="rotate("+(Math.random()*360)+"deg)"; document.body.appendChild(e);
     const f=600+Math.random()*900, x=Math.random()*120-60; e.animate([{transform:"translate(0,0) rotate(0)",opacity:1},{transform:"translate("+x+"px,100vh) rotate(720deg)",opacity:.9}],{duration:f+1200,easing:"cubic-bezier(.2,.6,.4,1)"}); setTimeout(()=>e.remove(),f+1300); } }
@@ -1100,6 +1197,75 @@ function infoFor(u){
 }
 let ctx={};
 
+/* ===== ÜNİTE İLERLEMESİ (adım adım) =====
+   state.unitProgress[uid] = {done:{adım:1}, cur:"adım", pos:{flash:n, practice:n}, last:{score,total,passed}}
+   Geçilmiş ünite = completedLessons (asıl kaynak). */
+const STEPS={
+  vocab:[{k:"lesson",n:"Ezberle",go:"Ezberlemeye devam et"},{k:"flash",n:"Kartlar",go:"Kartlara devam et"},{k:"practice",n:"Telaffuz",go:"Telaffuza devam et"},{k:"quiz",n:"Test",go:"Teste geç"}],
+  grammar:[{k:"rule",n:"Kural",go:"Kurala devam et"},{k:"examples",n:"Örnekler",go:"Örneklere devam et"},{k:"quiz",n:"Alıştırma",go:"Alıştırmaya geç"}]
+};
+function unitSteps(u){ return STEPS[u.type==="grammar"?"grammar":"vocab"]; }
+function stepIdx(u,k){ return unitSteps(u).findIndex(s=>s.k===k); }
+function upGet(uid){ const r=state.unitProgress[uid]; return (r&&typeof r==="object")?r:{}; }
+function upRec(uid){ let r=state.unitProgress[uid]; if(!r||typeof r!=="object"){ r=state.unitProgress[uid]={}; } if(!r.done||typeof r.done!=="object") r.done={}; return r; }
+function stepDone(u,k){ if(isDone(u.uid)) return true; if(k==="quiz") return false; const d=upGet(u.uid).done; return !!(d&&d[k]); }
+function markStep(uid,k){ const r=upRec(uid); r.done[k]=1; saveState(); }
+function setCur(u,k,pos){ const r=upRec(u.uid); r.cur=k; if(pos!=null){ if(!r.pos||typeof r.pos!=="object") r.pos={}; r.pos[k]=pos; } state.lastUid=u.uid; saveState(); }
+function stepPos(u,k){ const p=upGet(u.uid).pos; return (!stepDone(u,k) && p && typeof p==="object" && +p[k]>0)?+p[k]:0; }
+function lastAttempt(u){ const r=upGet(u.uid); if(r.last) return r.last; const b=state.bestScores[u.uid]; return b!=null?{score:b,total:quizTotal(u),passed:isDone(u.uid)}:null; }
+function failedAttempt(u){ if(isDone(u.uid)) return false; const a=lastAttempt(u); return !!a && !a.passed; }
+function unitStarted(u){ const r=upGet(u.uid); return !!(r.cur || (r.done && Object.keys(r.done).length)); }
+/* Kaldığı yerden devam: nerede kaldıysa orası; yoksa ilk yapılmamış adım. */
+function nextStepFor(u){ if(isDone(u.uid)) return null; if(failedAttempt(u)) return "quiz";
+  const r=upGet(u.uid); if(r.cur && stepIdx(u,r.cur)>=0 && !stepDone(u,r.cur)) return r.cur;
+  const s=unitSteps(u).find(x=>!stepDone(u,x.k)); return s?s.k:"quiz"; }
+function resumeLabel(u){ const k=nextStepFor(u); if(!k) return "📖 Dersi aç";
+  if(failedAttempt(u)) return u.type==="grammar"?"🔁 Alıştırmayı tekrar çöz":"🔁 Testi tekrar çöz";
+  if(!unitStarted(u)) return "▶️ Derse başla";
+  const s=unitSteps(u)[stepIdx(u,k)];
+  let extra=""; const ps=stepPos(u,k); if((k==="flash"||k==="practice") && ps>0 && u.words) extra=` (${Math.min(ps+1,u.words.length)}/${u.words.length})`;
+  return "▶️ "+s.go+extra; }
+function resumeUnit(uid){ const u=findUnit(uid); if(!u){ goHome(); return; } const k=nextStepFor(u); if(!k){ openUnit(uid); return; } goStep(uid,k); }
+function unitStatusHtml(u){
+  if(isDone(u.uid)){ const best=state.bestScores[u.uid], tot=quizTotal(u); return `<span class="st st-ok">✓ Geçtin${best!=null?` · ${tot?Math.min(best,tot)+"/"+tot:best}`:""}</span>`; }
+  if(failedAttempt(u)){ const a=lastAttempt(u); return `<span class="st st-bad">Tekrar dene${a&&a.total?` · ${a.score}/${a.total}`:""}</span>`; }
+  if(unitStarted(u)){ const k=nextStepFor(u), i=stepIdx(u,k), st=unitSteps(u); return `<span class="st st-go">Devam: ${i+1}/${st.length} ${esc(st[i].n)}</span>`; }
+  return `<span class="st st-new">Başlanmadı</span>`; }
+function unitCheckHtml(u){
+  if(isDone(u.uid)) return `<div class="check done" aria-label="Geçti">✓</div>`;
+  if(failedAttempt(u)) return `<div class="check retry" aria-label="Tekrar gerekli">!</div>`;
+  if(unitStarted(u)){ const st=unitSteps(u), n=st.filter(s=>stepDone(u,s.k)).length; return `<div class="check part" aria-label="${n}/${st.length} adım">${n}/${st.length}</div>`; }
+  return `<div class="check"></div>`; }
+/* Adım çubuğu: her ünite ekranında "neredeyim, ne bitti" */
+let pendingNote="";
+function stepperHtml(u,cur){ const st=unitSteps(u), ci=stepIdx(u,cur);
+  const note=pendingNote; pendingNote="";
+  return `${note?`<div class="step-note" role="status">${note}</div>`:""}
+    <div class="step-pos">Adım ${ci+1} / ${st.length}: <b>${esc(st[ci].n)}</b></div>
+    <div class="stepper" id="unitSteps">${st.map((s,i)=>{ const ok=stepDone(u,s.k), c=i===ci;
+      return `<button class="step${ok?" ok":""}${c?" cur":""}" data-act="step" data-uid="${u.uid}" data-k="${s.k}" ${c?'aria-current="step"':""} aria-label="Adım ${i+1}: ${esc(s.n)}${ok?" (bitti)":""}"><span class="n">${ok?"✓":i+1}</span><br>${esc(s.n)}</button>`; }).join("")}</div>`; }
+function unitBarHtml(u,cur){ return `<div class="card unit-bar"><div class="ub-title">${u.icon} ${esc(u.title)}</div>${stepperHtml(u,cur)}</div>`; }
+function refreshStepper(u,cur){ const el=document.getElementById("unitSteps"); if(!el) return; const box=el.parentNode;
+  const pos=box.querySelector(".step-pos"); const tmp=document.createElement("div"); tmp.innerHTML=stepperHtml(u,cur);
+  if(pos) pos.replaceWith(tmp.querySelector(".step-pos")); el.replaceWith(tmp.querySelector("#unitSteps")); }
+/* Dersten (Ezberle / Kural-Örnekler) sonraki adıma geçerken ders adımlarını bitmiş say */
+function leaveLesson(uid){ if(!ctx.unit || ctx.unit.uid!==uid) return;
+  if(currentScreen==="vocab") markStep(uid,"lesson");
+  else if(currentScreen==="grammar"){ const r=upRec(uid); r.done.rule=1; r.done.examples=1; saveState(); } }
+function jumpTo(id){ const t=document.getElementById(id); if(t){ try{ t.scrollIntoView({behavior:"smooth",block:"start"}); }catch(_){ t.scrollIntoView(); } } }
+function goStep(uid,k){ const u=findUnit(uid); if(!u){ goHome(); return; }
+  const resumePos=stepPos(u,k);
+  switch(k){
+    case "lesson": if(currentScreen==="vocab" && ctx.unit===u) jumpTo("ezberCard"); else renderVocab(u); break;
+    case "rule": if(currentScreen==="grammar" && ctx.unit===u){ jumpTo("ruleBox"); grammarAt(u,"rule"); } else renderGrammar(u); break;
+    case "examples": if(!(currentScreen==="grammar" && ctx.unit===u)) renderGrammar(u); grammarAt(u,"examples"); jumpTo(document.getElementById("exCard")?"exCard":"ruleBox"); break;
+    case "flash": renderFlash(uid,resumePos); break;
+    case "practice": renderPractice(uid,resumePos); break;
+    case "quiz": if(currentScreen==="quiz" && ctx.unit===u) return; renderQuizIntro(uid,u.type==="grammar"?"grammar":"vocab"); break;
+  } }
+/* Gramer dersinde kural ve örnekler aynı ekranda: hangisindeyse onu işaretle */
+function grammarAt(u,k){ if(k==="examples"){ const r=upRec(u.uid); r.done.rule=1; } setCur(u,k); refreshStepper(u,k); }
+
 /* ===== GEZİNME (telefonun "geri" tuşu) =====
    Ana sayfa dışındaki her ekran geçmişe tek bir kayıt ekler; böylece Android'de "geri"
    uygulamadan çıkmak yerine ana sayfaya döner. */
@@ -1119,6 +1285,9 @@ function renderHome(){ currentScreen="home";
     const u=lv.units.find(x=>!isDone(x.uid));
     if(u){ if(levelUnlocked(i)){ nextU=u; } else { nextLevelLocked=true; } break; }
   }
+  // Yarım kalan (en son çalışılan) ünite varsa önce ona devam
+  const lastU=state.lastUid && findUnit(state.lastUid);
+  if(lastU && !isDone(lastU.uid) && levelUnlocked(LEVELS.indexOf(lastU._level)) && (unitStarted(lastU)||failedAttempt(lastU))) nextU=lastU;
   const names=["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"]; const today=new Date(); let week="";
   for(let i=6;i>=0;i--){ const d=addDays(today,-i); const k=dateKey(d); const on=state.studyDates.includes(k); const dn=(d.getDay()+6)%7;
     week+=`<div class="day"><div class="dot ${on?"on":""} ${i===0?"today":""}">${on?"✓":d.getDate()}</div><div class="lbl">${names[dn]}</div></div>`; }
@@ -1133,15 +1302,18 @@ function renderHome(){ currentScreen="home";
       </div>
       ${studiedToday?"":`<div class="daily">⏰ <b>Bugünün 10 dakikası seni bekliyor.</b> ${state.reviewWords.length?`Önce tekrar listendeki ${state.reviewWords.length} kelimeye bak, sonra kaldığın dersten devam et.`:"Aşağıdan kaldığın dersten devam et."}
         ${state.reviewWords.length?`<button class="btn btn-accent" data-act="review">🔁 ${state.reviewWords.length} kelimeyi tekrar et</button>`:""}</div>`}
-      <button class="btn btn-soft" data-act="langPicker">🌐 Dil: ${LANGS[state.lang].flag} ${esc(LANGS[state.lang].name)} — Değiştir</button>
+      <button class="btn btn-soft" data-act="langPicker"><span>🌐 Dil: ${flag(state.lang,true)} ${esc(LANGS[state.lang].name)} — Değiştir</span></button>
     </div>`;
 
   if(nextU){
-    html+=`<div class="card">
-      <h3>Kaldığın Yerden Devam Et</h3>
+    const nk=nextStepFor(nextU), started=unitStarted(nextU), failed=failedAttempt(nextU), la=lastAttempt(nextU);
+    html+=`<div class="card continue-card">
+      <h3>${started||failed?"Kaldığın Yerden Devam Et":"Sıradaki Ders"}</h3>
       <p style="font-size:20px;font-weight:700;color:var(--primary-dark);margin-bottom:2px;">${nextU.icon} ${esc(nextU.title)}</p>
       <p class="muted">${nextU._level.name} · ${nextU.type==="grammar"?"Gramer dersi":"Kelime dersi"}</p>
-      <button class="btn btn-primary" data-act="openUnit" data-uid="${nextU.uid}">▶️ Derse Başla</button>
+      ${failed&&la?`<p class="st-line">Son deneme: <b>${la.score}/${la.total||quizTotal(nextU)}</b> · Geçmek için en az <b>${passMark(la.total||quizTotal(nextU))}</b> doğru gerekli.</p>`:""}
+      ${started||failed?stepperHtml(nextU,nk):""}
+      <button class="btn btn-primary" data-act="resume" data-uid="${nextU.uid}">${resumeLabel(nextU)}</button>
     </div>`;
   } else if(!nextLevelLocked){
     html+=`<div class="card"><h3>🎉 Tüm dersleri bitirdin!</h3><p class="muted">Karışık tekrar ile bilgini taze tut.</p>
@@ -1157,8 +1329,10 @@ function renderHome(){ currentScreen="home";
       <div class="level-head">
         <span class="cefr" style="background:var(${pillVar});">${esc(lv.cefr)}</span>
         <span class="lv-title">${esc(lv.name)}</span>
-        <span class="lv-prog">${done}/${lv.units.length} ${unlocked?"":"🔒"}</span>
+        <span class="lv-prog">${done}/${lv.units.length} ünite ${unlocked?"":"· 🔒 Kilitli"}</span>
       </div>
+      <div class="lv-bar" role="progressbar" aria-valuemin="0" aria-valuemax="${lv.units.length}" aria-valuenow="${done}" aria-label="${done}/${lv.units.length} ünite bitti"><span style="width:${Math.round(done/lv.units.length*100)}%;background:var(${colorVar});"></span></div>
+      ${done===lv.units.length?`<p class="lv-done">✓ Bu seviye tamam!</p>`:""}
       <p class="muted" style="margin-top:6px;">${esc(lv.desc)}</p>`;
     if(!unlocked){
       html+=`<div class="locked-note">🔒 Bu seviye, bir önceki seviyeyi bitirince açılır. Yine de denemek istersen aşağıdan açabilirsin.</div>
@@ -1166,12 +1340,12 @@ function renderHome(){ currentScreen="home";
     } else {
       html+=`<ul class="unit-list">`;
       lv.units.forEach(u=>{
-        const best=state.bestScores[u.uid], tot=quizTotal(u);
         const tag = u.type==="grammar"?`<span class="type-tag g">📖 Gramer</span>`:`<span class="type-tag v">🔤 Kelime</span>`;
-        html+=`<li class="unit-item" data-act="openUnit" data-uid="${u.uid}" role="button" tabindex="0">
+        const isNext = nextU===u;
+        html+=`<li class="unit-item${isNext?" is-next":""}" data-act="resume" data-uid="${u.uid}" role="button" tabindex="0">
           <div class="unit-ico">${u.icon}</div>
-          <div class="unit-meta"><div class="t">${esc(u.title)}</div><div>${tag}${best!=null?`<span class="badge-score">En iyi: ${tot?Math.min(best,tot)+"/"+tot:best}</span>`:""}</div></div>
-          <div class="check ${isDone(u.uid)?"done":""}">${isDone(u.uid)?"✓":""}</div>
+          <div class="unit-meta"><div class="t">${esc(u.title)}</div><div class="u-tags">${tag}${unitStatusHtml(u)}${isNext?`<span class="st st-next">▶ Sıradaki</span>`:""}</div></div>
+          ${unitCheckHtml(u)}
         </li>`;
       });
       html+=`</ul>
@@ -1202,7 +1376,7 @@ function openUnit(uid){ const u=findUnit(uid); if(!u){goHome();return;} if(u.typ
 
 /* ----- KELİME DERSİ ----- */
 function renderVocab(u){
-  ctx={unit:u}; nav("vocab");
+  ctx={unit:u}; nav("vocab"); setCur(u,"lesson");
   const five=u.words.slice(0,5), rest=u.words.slice(5);
   app.innerHTML=`
     <div class="card">
@@ -1211,12 +1385,7 @@ function renderVocab(u){
       ${u.desc?`<p>${esc(u.desc)}</p>`:""}
       <div class="goal">🎯 <b>Hedef:</b> Bu derste ${u.words.length} kelime/ifade var. Önce aşağıdaki <b>5 kelimeyi ezberle</b>, sonra kartlar ve testle pekiştir.</div>
       <div class="tip">💡 <b>Bilgi:</b> ${infoFor(u)}</div>
-      <div class="stepper">
-        <button class="step" data-act="jump" data-target="ezberCard"><span class="n">1</span><br>Ezberle</button>
-        <button class="step" data-act="flash" data-uid="${u.uid}"><span class="n">2</span><br>Kartlar</button>
-        <button class="step" data-act="practice" data-uid="${u.uid}"><span class="n">3</span><br>Telaffuz</button>
-        <button class="step" data-act="quizIntro" data-uid="${u.uid}" data-kind="vocab"><span class="n">4</span><br>Test</button>
-      </div><div class="stepper-hint">Bir adıma dokunarak doğrudan oraya geçebilirsin.</div>
+      ${stepperHtml(u,"lesson")}<div class="stepper-hint">Bir adıma dokunarak doğrudan oraya geçebilirsin.</div>
     </div>
     <div class="card" id="ezberCard">
       <h3>🧠 Ezberlenecek 5 Kelime</h3>
@@ -1225,7 +1394,7 @@ function renderVocab(u){
         <div class="ezber">
           <div class="ez-top">
             <div class="en">${esc(w.en)}</div>
-            <button class="speak sm" data-act="speakUnitEx" data-i="${i}" title="Dinle">🔊</button>
+            <button class="speak sm" data-act="speakUnitEx" data-i="${i}" title="Dinle" aria-label="Dinle">🔊</button>
             <button class="reveal-btn" data-act="reveal" data-i="${i}">👁 Göster</button>
           </div>
           <div class="reveal-box hidden" id="rev${i}">
@@ -1239,10 +1408,10 @@ function renderVocab(u){
       ${rest.map((w,k)=>{const i=k+5;return `<div class="word-row"><div class="word-main">
         <div class="word-en">${esc(w.en)}</div><div class="word-tr">${esc(w.tr)}</div>
         <div class="word-ex">“${esc(w.ex)}” — ${esc(w.exTr)}</div></div>
-        <button class="speak" data-act="speakUnitEx" data-i="${i}">🔊</button></div>`;}).join("")}
+        <button class="speak" data-act="speakUnitEx" data-i="${i}" title="Dinle" aria-label="Dinle">🔊</button></div>`;}).join("")}
     </div>`:""}
     <div class="card">
-      <h3>▶️ Adım 2: Pekiştir</h3>
+      <h3>Ezberledin mi? Sıradaki: 2. adım</h3>
       <p class="muted">Kartlarla tekrar et, telaffuz yap, en son mini testi çöz.</p>
       <button class="btn btn-accent" data-act="flash" data-uid="${u.uid}">🃏 Kelime Kartlarına Geç</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button>
@@ -1252,7 +1421,7 @@ function renderVocab(u){
 
 /* ----- GRAMER DERSİ ----- */
 function renderGrammar(u){
-  ctx={unit:u}; nav("grammar");
+  ctx={unit:u}; nav("grammar"); setCur(u,"rule");
   let tbl="";
   if(u.structure && u.structure.length){
     tbl=`<div class="table-scroll"><table class="gtable"><thead><tr>${u.structure[0].map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead>
@@ -1262,30 +1431,32 @@ function renderGrammar(u){
   if(u.examples && u.examples.length){
     exs=`<h3>Örnekler</h3>`+u.examples.map((e,i)=>`
       <div class="ex-row"><div class="ex-main"><div class="ex-en">${esc(e.en)}</div><div class="ex-tr">${esc(e.tr)}</div></div>
-        <button class="speak sm" data-act="speakExample" data-i="${i}">🔊</button></div>`).join("");
+        <button class="speak sm" data-act="speakExample" data-i="${i}" title="Dinle" aria-label="Dinle">🔊</button></div>`).join("");
   }
   app.innerHTML=`
     <div class="card"><div class="muted">${u._level.name} · 📖 Gramer dersi</div><h2>${u.icon} ${esc(u.title)}</h2>
       <p>${esc(u.intro)}</p>
       <div class="rule-box" id="ruleBox">${u.rule}</div>
       ${tbl}
-      <div class="stepper">
-        <button class="step" data-act="jump" data-target="ruleBox"><span class="n">1</span><br>Kural</button>
-        <button class="step" data-act="jump" data-target="exCard"><span class="n">2</span><br>Örnekler</button>
-        <button class="step" data-act="startQuiz" data-uid="${u.uid}" data-kind="grammar"><span class="n">3</span><br>Alıştırma</button>
-      </div>
+      ${stepperHtml(u,"rule")}
     </div>
     ${exs?`<div class="card" id="exCard">${exs}</div>`:""}
     <div class="card"><h3>Anladın mı? 💪</h3><p class="muted">Şimdi kısa alıştırmalarla pekiştir.</p>
-      <button class="btn btn-primary" data-act="startQuiz" data-uid="${u.uid}" data-kind="grammar">📝 Alıştırmalara Başla</button>
+      <button class="btn btn-primary" data-act="startQuiz" data-uid="${u.uid}" data-kind="grammar">📝 Alıştırmalara Başla (3. adım)</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`;
   window.scrollTo(0,0);
+  // Örneklere inince adım çubuğu "2 Örnekler"i göstersin
+  const ex=document.getElementById("exCard");
+  if(ex && "IntersectionObserver" in window){ const io=new IntersectionObserver(es=>{ if(currentScreen!=="grammar"||ctx.unit!==u){ io.disconnect(); return; }
+      es.forEach(e=>{ if(e.isIntersecting && upGet(u.uid).cur!=="examples"){ grammarAt(u,"examples"); io.disconnect(); } }); },{threshold:0.6});
+    setTimeout(()=>{ if(currentScreen==="grammar"&&ctx.unit===u) io.observe(ex); },400); }
 }
 
 /* ----- KELİME KARTLARI ----- */
-function renderFlash(uid){ const u=findUnit(uid); ctx={unit:u, fcIndex:0, flipped:false}; drawFlash(); }
-function drawFlash(){ const u=ctx.unit, w=u.words[ctx.fcIndex], n=u.words.length; nav("flash");
-  app.innerHTML=`
+function renderFlash(uid,pos){ const u=findUnit(uid); if(!u||!u.words||!u.words.length){ goHome(); return; } leaveLesson(uid);
+  ctx={unit:u, fcIndex:Math.min(Math.max(0,pos||0),u.words.length-1), flipped:false}; drawFlash(); }
+function drawFlash(){ const u=ctx.unit, w=u.words[ctx.fcIndex], n=u.words.length; nav("flash"); setCur(u,"flash",ctx.fcIndex);
+  app.innerHTML=`${unitBarHtml(u,"flash")}
     <div class="card"><div class="counter">Kart ${ctx.fcIndex+1} / ${n}</div>
       <div class="flash ${ctx.flipped?"flipped":""}" data-act="flip"><div class="flash-inner">
         <div class="flash-face flash-front"><div class="big">${esc(w.en)}</div><div class="sub">(Türkçesi için karta dokun)</div></div>
@@ -1295,21 +1466,23 @@ function drawFlash(){ const u=ctx.unit, w=u.words[ctx.fcIndex], n=u.words.length
       <button class="btn btn-accent" data-act="speakFlash">🔊 Dinle</button>
       <div class="btn-row"><button class="btn btn-primary" data-act="fcKnow">✓ Biliyorum</button>
         <button class="btn btn-soft" data-act="fcRepeat">🔁 Tekrar Et</button></div></div>
-    <div class="card"><button class="btn btn-soft" data-act="practice" data-uid="${u.uid}">🎤 Telaffuz Pratiği</button>
+    <div class="card"><button class="btn btn-soft" data-act="practice" data-uid="${u.uid}">🎤 Kartları atla, Telaffuza geç</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`;
   window.scrollTo(0,0);
 }
 function flipCard(){ ctx.flipped=!ctx.flipped; const f=document.querySelector(".flash"); if(f) f.classList.toggle("flipped",ctx.flipped); }
-function fcAdvance(){ if(ctx.fcIndex<ctx.unit.words.length-1){ ctx.fcIndex++; ctx.flipped=false; drawFlash(); } else renderQuizIntro(ctx.unit.uid,"vocab"); }
+function fcAdvance(){ if(ctx.fcIndex<ctx.unit.words.length-1){ ctx.fcIndex++; ctx.flipped=false; drawFlash(); }
+  else { const u=ctx.unit; markStep(u.uid,"flash"); pendingNote="✓ Kartlar bitti. Şimdi 3. adım: Telaffuz."; renderPractice(u.uid,0); } }
 
 /* ----- TELAFFUZ ----- */
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 // iPhone'da ana ekrana kurulan uygulamada ses tanıma genelde çalışmaz → baştan "Ben söyledim" akışı
 let MIC_OFF=(()=>{ try{ return /iP(hone|ad|od)/.test(navigator.userAgent) && (navigator.standalone===true || matchMedia("(display-mode: standalone)").matches); }catch(e){ return false; } })();
-function renderPractice(uid){ const u=findUnit(uid); ctx={unit:u, prIndex:0}; drawPractice(); }
+function renderPractice(uid,pos){ const u=findUnit(uid); if(!u||!u.words||!u.words.length){ goHome(); return; } leaveLesson(uid);
+  ctx={unit:u, prIndex:Math.min(Math.max(0,pos||0),u.words.length-1)}; drawPractice(); }
 function normalize(s){ return String(s).toLowerCase().replace(/[^a-zàáâäèéêëìíîïòóôöùúûüçğıöşü ]/gi,"").replace(/\s+/g," ").trim(); }
-function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.length, mic=!!SR && !MIC_OFF; nav("practice");
-  app.innerHTML=`
+function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.length, mic=!!SR && !MIC_OFF; nav("practice"); setCur(u,"practice",ctx.prIndex);
+  app.innerHTML=`${unitBarHtml(u,"practice")}
     <div class="card center"><div class="counter">Telaffuz ${ctx.prIndex+1} / ${n}</div>
       <h2>${esc(w.en)}</h2><p class="word-tr">${esc(w.tr)}</p>
       <p class="muted">1) Dinle 2) Sen söyle 3) ${mic?"Mikrofona söyleyip kontrol et":"Tekrar dinle"}</p>
@@ -1317,11 +1490,12 @@ function drawPractice(){ const u=ctx.unit, w=u.words[ctx.prIndex], n=u.words.len
       ${mic?`<button class="btn btn-primary" data-act="micCheck">🎤 Söyle ve Kontrol Et</button>`:`<button class="btn btn-primary" data-act="prNext">🗣️ Ben Söyledim, Devam</button>`}
       <div id="micState" class="mic-state ${mic?"":"hidden"}">Hazır olduğunda “Söyle ve Kontrol Et”e bas.</div></div>
     <div class="card"><button class="btn btn-soft" data-act="prNext">➡️ Sonraki Kelime</button>
-      <button class="btn btn-soft" data-act="quizIntro" data-uid="${u.uid}" data-kind="vocab">📝 Mini Test</button>
+      <button class="btn btn-soft" data-act="quizIntro" data-uid="${u.uid}" data-kind="vocab">📝 Teste geç (4. adım)</button>
       <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`;
   window.scrollTo(0,0);
 }
-function prNext(){ if(ctx.prIndex<ctx.unit.words.length-1){ ctx.prIndex++; drawPractice(); } else { showToast("Harika pratik! 🎉"); renderQuizIntro(ctx.unit.uid,"vocab"); } }
+function prNext(){ if(ctx.prIndex<ctx.unit.words.length-1){ ctx.prIndex++; drawPractice(); }
+  else { const u=ctx.unit; markStep(u.uid,"practice"); pendingNote="✓ Telaffuz bitti. Şimdi son adım: Test."; renderQuizIntro(u.uid,"vocab"); } }
 function micCheck(){ if(!SR||MIC_OFF){ prNext(); return; } const w=ctx.unit.words[ctx.prIndex]; const box=document.getElementById("micState"); const target=normalize(w.en);
   const rec=new SR(); rec.lang=SPEAK_LANG; rec.interimResults=false; rec.maxAlternatives=5;
   box.className="mic-state listening"; box.innerHTML="🎤 <span class='pulse'>Dinliyorum... şimdi söyle</span>"; let done=false;
@@ -1336,15 +1510,20 @@ function micCheck(){ if(!SR||MIC_OFF){ prNext(); return; } const w=ctx.unit.word
   try{ rec.start(); }catch(e){ box.textContent="Mikrofon başlatılamadı."; } }
 
 /* ----- TEST ----- */
-function renderQuizIntro(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; } nav("quizIntro");
-  app.innerHTML=`<div class="card center"><h2>📝 ${kind==="grammar"?"Alıştırma":"Mini Test"}</h2>
-    <p>“${esc(u.title)}” için kısa sorular.</p><p class="muted">Korkma! Yanlışta açıklama gelir. Amaç öğrenmek. 💛<br>Üniteyi geçmek için soruların yaklaşık üçte ikisini doğru bil.</p>
+function renderQuizIntro(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; } leaveLesson(uid); nav("quizIntro"); setCur(u,"quiz");
+  const tot=quizTotal(u), need=passMark(tot), la=lastAttempt(u), failed=failedAttempt(u);
+  app.innerHTML=`${unitBarHtml(u,"quiz")}<div class="card center"><h2>📝 ${kind==="grammar"?"Alıştırma":"Mini Test"}</h2>
+    <p>“${esc(u.title)}” için ${tot} kısa soru.</p>
+    ${failed&&la?`<p class="st-line">Son denemen: <b>${la.score}/${la.total||tot}</b>. Bu sefer en az <b>${need}</b> doğru yeter. 💪</p>`:""}
+    ${isDone(u.uid)?`<p class="st-line">Bu üniteyi zaten geçtin ✓ İstersen tekrar çözebilirsin.</p>`:""}
+    <p class="muted">Korkma! Yanlışta açıklama gelir. Amaç öğrenmek. 💛<br>Üniteyi geçmek için ${tot} sorudan en az <b>${need}</b> doğru gerekli.</p>
     <button class="btn btn-primary" data-act="startQuiz" data-uid="${uid}" data-kind="${kind}">Başla</button>
+    ${failed?`<button class="btn btn-accent" data-act="openUnit" data-uid="${uid}">📖 Önce dersi tekrar gözden geçir</button>`:""}
     <button class="btn btn-soft" data-act="goHome">Ana Sayfa</button></div>`; window.scrollTo(0,0); }
-function startQuiz(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; }
+function startQuiz(uid,kind){ const u=findUnit(uid); if(!u){ goHome(); return; } leaveLesson(uid);
   const questions = kind==="grammar" ? buildGrammarQuiz(u) : ((u.words&&u.words.length)?buildVocabQuiz(u.words):[]);
   if(!questions.length){ showToast("Bu ders için soru yok."); return; }
-  ctx={unit:u, mode:kind, questions, qIndex:0, correct:0, answered:false}; drawQuiz(); }
+  setCur(u,"quiz"); ctx={unit:u, mode:kind, questions, qIndex:0, correct:0, answered:false}; drawQuiz(); }
 function startLevelTest(id){ const lv=levelById(id); if(!lv) return; const qs=buildLevelTest(lv);
   if(!qs.length){ showToast("Bu seviye için soru yok."); return; }
   ctx={unit:null, level:lv, mode:"leveltest", questions:qs, qIndex:0, correct:0, answered:false}; drawQuiz(); }
@@ -1354,7 +1533,8 @@ function startMixReview(fromReview){ let pool=[];
   if(!pool.length){ showToast("Test için kelime yok."); return; }
   ctx={unit:null, mode:"mix", questions:buildVocabQuiz(pool, Math.min(8,Math.max(4,pool.length))), qIndex:0, correct:0, answered:false}; drawQuiz(); }
 function drawQuiz(){ const q=ctx.questions[ctx.qIndex], n=ctx.questions.length, pct=Math.round(ctx.qIndex/n*100); nav("quiz");
-  app.innerHTML=`<div class="card"><div class="counter">Soru ${ctx.qIndex+1} / ${n}</div>
+  const unitQ=(ctx.mode==="vocab"||ctx.mode==="grammar") && ctx.unit;
+  app.innerHTML=`${unitQ?unitBarHtml(ctx.unit,"quiz"):""}<div class="card"><div class="counter">Soru ${ctx.qIndex+1} / ${n}</div>
     <div class="progressbar"><span style="width:${pct}%"></span></div><h3>${esc(q.prompt)}</h3>
     ${q.kind==="listen"?`<button class="btn btn-accent" data-act="replayAudio">🔊 Tekrar Dinle</button>`:""}
     <div id="opts" style="margin-top:10px;">${q.options.map((o,i)=>`<button class="opt" data-act="answer" data-i="${i}"><span>${esc(o)}</span></button>`).join("")}</div>
@@ -1376,9 +1556,10 @@ function passMark(n){ return Math.max(1, Math.ceil(n*0.67)); }
 function finishQuiz(){ const n=ctx.questions.length, score=ctx.correct, perfect=score===n; registerStudyToday(); nav("result");
   let firstTime=false, levelJustDone=false; const u=ctx.unit;
   const unitQuiz=(ctx.mode==="vocab"||ctx.mode==="grammar") && !!u, need=passMark(n), passed=score>=need;
+  if(unitQuiz){ const r=upRec(u.uid); r.last={score, total:n, passed}; r.cur="quiz"; state.lastUid=u.uid; }
   if(unitQuiz && !passed){
     const prevB=state.bestScores[u.uid]; if(prevB==null||score>prevB) state.bestScores[u.uid]=score; saveState();
-    app.innerHTML=`<div class="card center"><h2>📚 Biraz daha çalışalım</h2>
+    app.innerHTML=`${unitBarHtml(u,"quiz")}<div class="card center"><h2>📚 Biraz daha çalışalım</h2>
       <p style="font-size:24px;font-weight:800;">${score} / ${n} doğru</p>
       <p class="muted">Üniteyi geçmek için en az <b>${need} doğru</b> gerekiyor. Dersi bir kez daha gözden geçir, sonra testi tekrar çöz. 💛</p>
       ${isDone(u.uid)?`<p class="muted">Bu üniteyi daha önce geçmiştin; tamamlanmış olarak kalıyor.</p>`:""}</div>
@@ -1404,10 +1585,12 @@ function finishQuiz(){ const n=ctx.questions.length, score=ctx.correct, perfect=
   if(levelJustDone && u) actions+=`<p class="center" style="font-weight:700;color:var(--good);">Tebrikler! Bu seviyenin bütün derslerini bitirdin.${nextLevel?" Sıradaki seviye açıldı.":""}</p>
     <button class="btn btn-accent" data-act="levelTest" data-id="${u._level.id}">📝 ${esc(u._level.cefr)} Seviye Testini Çöz</button>`;
   if(nextU) actions+=`<button class="btn btn-primary" data-act="openUnit" data-uid="${nextU.uid}">▶️ Sıradaki Ders: ${nextU.icon} ${esc(nextU.title)}</button>`;
+  else if(u && !levelJustDone) actions+=`<p class="st-line center">Bu seviyedeki bütün dersler tamam ✓</p>`;
   if((ctx.mode==="vocab"||ctx.mode==="grammar")&&u) actions+=`<button class="btn btn-soft" data-act="startQuiz" data-uid="${u.uid}" data-kind="${ctx.mode}">🔁 Tekrar Çöz</button>`;
   actions+=`<button class="btn btn-soft" data-act="goHome">Ana Sayfa</button>`;
-  app.innerHTML=`<div class="card center"><h2>${title}</h2>
+  app.innerHTML=`${unitQuiz?unitBarHtml(u,"quiz"):""}<div class="card center"><h2>${title}</h2>
     <p style="font-size:24px;font-weight:800;">${score} / ${n} doğru</p>
+    ${unitQuiz?`<p class="st-line">✓ Bu ünitenin bütün adımları bitti.</p>`:""}
     <p class="muted">${perfect?"Mükemmel, hepsi doğru! 🌟":(score>=Math.ceil(n*0.6)?"Güzel iş! Biraz daha tekrarla harika olacak.":"Sorun değil — tekrar etmek öğrenmenin yoludur. 💛")}</p>
     ${state.streak>0?`<div class="streak-badge">🔥 ${state.streak} gün seri</div>`:""}</div>
     <div class="card">${actions}</div>`; window.scrollTo(0,0); }
@@ -1417,7 +1600,7 @@ function renderReview(){ nav("review"); let html=`<div class="card"><h2>🔁 Tek
   if(state.reviewWords.length===0){ html+=`<p class="empty">Liste boş. 👍<br>Kartlarda “Tekrar Et” dediğin kelimeler buraya gelir.</p>`; }
   else{ html+=`<p class="muted">Öğrendiğin kelimeyi “Öğrendim” ile çıkar.</p>`;
     html+=state.reviewWords.map((w,i)=>`<div class="review-item"><div class="word-main"><div class="word-en">${esc(w.en)}</div><div class="word-tr">${esc(w.tr)}</div></div>
-      <button class="speak sm" data-act="speakReview" data-i="${i}">🔊</button>
+      <button class="speak sm" data-act="speakReview" data-i="${i}" title="Dinle" aria-label="Dinle">🔊</button>
       <button class="btn-soft" style="border:none;border-radius:12px;padding:10px 12px;min-height:44px;cursor:pointer;font-size:15px;font-weight:700;flex:0 0 auto;" data-act="learned" data-en="${esc(w.en)}">✓ Öğrendim</button></div>`).join("");
     html+=`<button class="btn btn-accent" data-act="reviewQuiz" style="margin-top:12px;">🔀 Bu kelimelerle test çöz</button>`; }
   html+=`<button class="btn btn-soft" style="margin-top:12px;" data-act="goHome">Ana Sayfa</button></div>`; app.innerHTML=html; window.scrollTo(0,0); }
@@ -1431,10 +1614,11 @@ function renderAchievements(){ nav("achievements"); app.innerHTML=`<div class="c
 /* ----- DİL SEÇİMİ ----- */
 function renderLangPicker(){ nav("picker");
   app.innerHTML=`<div class="card center">
-    <h2>🌐 Hangi dili çalışacaksın?</h2>
-    <p class="muted">İstediğin an üstteki 🌐 <b>Dil</b> düğmesinden değiştirebilirsin. İlerlemen her dil için ayrı tutulur.</p>
-    <button class="btn btn-primary" data-act="chooseLang" data-lang="en">🇬🇧 İngilizce</button>
-    <button class="btn btn-accent" data-act="chooseLang" data-lang="it">🇮🇹 İtalyanca</button>
+    <h2>Hangi dili çalışacaksın?</h2>
+    <p class="muted">İstediğin an üstteki <b>Dil</b> düğmesinden değiştirebilirsin. İlerlemen her dil için ayrı tutulur.</p>
+    <div class="lang-choices">${["en","it"].map(c=>`<button class="lang-choice ${state.lang===c?"current":""}" data-act="chooseLang" data-lang="${c}"${state.lang===c?' aria-current="true"':""}>
+      ${flag(c,true)}<span class="lc-txt">${esc(LANGS[c].name)}<span class="lc-sub">${c==="en"?"English":"Italiano"}</span></span>
+      <span class="lc-go">${state.lang===c?"✓ Şu an bu":"Seç ›"}</span></button>`).join("")}</div>
     ${state.lang?`<button class="btn btn-soft" data-act="goHome">Vazgeç</button>`:""}
   </div>`;
   window.scrollTo(0,0);
@@ -1453,7 +1637,7 @@ function renderSettings(keepScroll){ nav("settings"); const fs=state.settings.fo
       <button data-act="setRate" data-v="1" class="${rt===1?"active":""}">Normal</button></div>
     <label class="set-lbl">${esc(LANGS[state.lang].name)} Sesi</label>
     ${env.length?`<div class="seg" style="flex-direction:column;">${env.slice(0,6).map(v=>`<button data-act="setVoice" data-uri="${esc(v.voiceURI)}" class="${state.settings.voiceURI===v.voiceURI?"active":""}">${esc(v.name)}</button>`).join("")}</div>`:`<p class="muted">Bu dil için ses bulunamadı; varsayılan kullanılacak.</p>`}
-    <button class="btn btn-accent" data-act="testVoice">🔊 Sesi Dene</button>
+    <button class="btn btn-soft" data-act="testVoice">🔊 Sesi Dene</button>
     <hr style="border:none;border-top:1px solid var(--line);margin:18px 0;">
     ${backupSectionHtml()}
     <hr style="border:none;border-top:1px solid var(--line);margin:18px 0;">
@@ -1523,7 +1707,7 @@ function bkCompareHtml(p){ const a=bkStats(bkCurrentState()), b=bkStats(p.state)
   if(!langs.length) langs.push("en");
   const row=(lbl,x,y)=>`<tr><td style="padding:6px 4px;">${lbl}</td><td style="padding:6px 4px;text-align:center;">${x}</td><td style="padding:6px 4px;text-align:center;font-weight:700;">${y}</td></tr>`;
   let rows="";
-  langs.forEach(l=>{ rows+=`<tr><td colspan="3" style="padding:8px 4px 2px;font-weight:700;">${esc(LANGS[l].name)}</td></tr>`
+  langs.forEach(l=>{ rows+=`<tr><td colspan="3" style="padding:8px 4px 2px;font-weight:700;">${flag(l,true)} ${esc(LANGS[l].name)}</td></tr>`
     +row("Bitirilen ünite",a.langs[l].units,b.langs[l].units)+row("Öğrenilen kelime",a.langs[l].words,b.langs[l].words); });
   rows+=row("Seri (gün)",a.streak,b.streak)+row("Son çalışma",bkFmtDate(a.last),bkFmtDate(b.last));
   return `<table style="width:100%;border-collapse:collapse;margin:8px 0;">
@@ -1550,7 +1734,7 @@ function backupSectionHtml(){
     <p class="muted">Diğer cihazda aldığın kodu aşağıya yapıştır ya da yedek dosyasını seç.</p>
     <textarea id="bkInput" rows="3" style="${ta}" placeholder="Yedek kodunu buraya yapıştır (TY1: ile başlar)" autocomplete="off" autocapitalize="off" spellcheck="false">${esc(bk.input)}</textarea>
     ${msg}
-    <button class="btn btn-primary" data-act="bkCheck">📥 Kodu yükle</button>
+    <button class="btn btn-accent" data-act="bkCheck">📥 Kodu yükle</button>
     <label class="btn btn-ghost" style="cursor:pointer;">📂 Yedek dosyası seç<input type="file" id="bkFile" accept=".json,application/json,text/plain" style="display:none;"></label></div>`;
 }
 function bkRefresh(focusSel){ const box=document.getElementById("bkBox"); if(!box){ renderSettings(); return; }
@@ -1620,7 +1804,7 @@ function renderDictionary(){ nav("dict");
     <input id="dictSearch" type="search" placeholder="🔍 Türkçe veya ${esc(LANGS[state.lang].name)} ara..." value="${esc(dictState.q)}" autocomplete="off"
       style="width:100%;padding:14px;font-size:18px;border:2px solid var(--line);border-radius:14px;margin:6px 0 12px;" />
     <div class="seg chips" id="dictChips">${chips}</div>
-    <div id="dictList">${dictListHtml()}</div>
+    <div id="dictList" class="dict-list-grid">${dictListHtml()}</div>
     <button class="btn btn-soft" style="margin-top:12px;" data-act="goHome">Ana Sayfa</button>
   </div>`;
   window.scrollTo(0,0);
@@ -1634,6 +1818,8 @@ document.addEventListener("click",(e)=>{ const el=e.target.closest("[data-act]")
     case "langPicker": renderLangPicker(); break;
     case "chooseLang": setLanguage(d.lang); goHome(); break;
     case "openUnit": openUnit(d.uid); break;
+    case "resume": resumeUnit(d.uid); break;
+    case "step": goStep(d.uid, d.k); break;
     case "jump": { const t=document.getElementById(d.target); if(t){ try{ t.scrollIntoView({behavior:"smooth",block:"start"}); }catch(_){ t.scrollIntoView(); } } break; }
     case "flash": renderFlash(d.uid); break;
     case "practice": renderPractice(d.uid); break;
@@ -1690,6 +1876,7 @@ if(state.lang){ setLanguage(state.lang, {skipSaveOld:true}); }
 else { LEVELS=LANGS.en.levels; DICTIONARY_EXTRA=LANGS.en.dictExtra; indexCurriculum(); }
 state.streak=computeStreak(); saveState();
 applySettings();
+try{ new MutationObserver(updateHeader).observe(app,{childList:true}); }catch(e){}
 if(state.lang){ renderHome(); } else { renderLangPicker(); }
 </script>
 <script>if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
