@@ -1,0 +1,45 @@
+Dersten çık
+1/5 · Gramer · 20 dk
+Konuşma modu
+Dil
+00:00 / 20:00
+1
+Gramer
+20 dk, şu an
+2
+Kelime
+10 dk
+3
+Okuma-yazma
+10 dk
+4
+Sesli tekrar
+5 dk
+5
+Konuşma
+15 dk
+Sen:
+Bugünkü İtalyanca dersini başlat.
+İT
+Chiara
+İtalyanca Koç
+Chiara:
+
+1/4 · Kelime · 10 dk
+
+İtalyanca	Okunuş	Türkçe
+il cavo
+	il KA-vo	kablo
+la luce
+	la LU-çe	ışık
+
+Il cavo ne demek?
+
+2 İtalyanca kelime kartlara eklendi
+Dinle
+Tekrar açıkla
+Örnek ver
+Beni test et
+Okunuşu
+Chiara'ya mesaj yaz
+Bloğu bitirdim → Sıradaki: Kelime

@@ -1,0 +1,78 @@
+[375_light] first open: onb visible=true hero visible=false units tab visible=true
+[375_light] after Başla (no key): ders open=false keyGate=true hash= progStartMsg=""
+[375_light] settings scroll y=6 apiKey focused=
+[375_light] bad key msg: Anahtar eksik görünüyor (en az 40 karakter); tamamını yapıştır (console.anthropic.com → API Keys).
+[375_light] key saved msg: ✓ Bağlı · koçlar açıldı. 
+Dersi başlat | state: Bağlı · sk-ant-…AAAA | tab now=tab-setup
+[375_light] test msg: ✓ Bağlantı tamam · claude-sonnet-5-5
+[375_light] learn with key: keyGate=false btnGo="Bugünkü dersi başlat (60 dk)" hint=""
+[375_light] ders open=true mics visible=#dersHands:Konuşma moduSes, #ccMic:Konuş (bas ve söyle)
+[375_light] hands on: state={"state":"listening","hands":true,"mic":true,"tts":true,"settings":{"autoSpeak":true,"autoSend":"auto","handsAuto":true,"rate":0.9,"voices":{},"micLang":{},"noted":0}} vcSt="Dinliyorum… konuş"
+[375_light] hands off: state={"state":"idle","hands":false,"mic":true,"tts":true,"settings":{"autoSpeak":true,"autoSend":"auto","handsAuto":true,"rate":0.9,"voices":{},"micLang":{},"noted":0}}
+[375_light] mic tap: state=listening placeholder="İtalyanca konuş…"
+[375_light] after mic result: ccIn="il cavo la luce" state=processing
+[375_light] after exit: ders hidden=true btnGo="Bugünkü dersi başlat (60 dk)" meter="0 / 60 dk
+kayıtlı gerçek süre" hint=""
+[375_light] resume: note=Kaldığın yer: Gramer
+[375_light] done phase=done ccIn visible=false dersHands visible=true
+[375_light] hub done: btnGo="Koçlarla serbest çalış" kicker="Bugünün 60 dakikası tamam" title="Bugün tamam." sub="Yarın devam edersen seri 2 gün olur." tipPin=true streak="Seri · 1 gün"
+[375_light] day2: btnGo="Bugünkü dersi başlat (60 dk)" title="Okunuş ve sesler" streak="Seri · 1 gün" week="Isınma · Hafta 1'e 3 gün" tabDue=3
+[375_light] day2 ders open=true chat turns=2
+[375_light] font controls: [{"t":"Yazı boyutu","a":null,"id":"","cls":"btn btn-ghost"}]
+[375_light] big font root fs=17px body fs=16px
+[375_light] unit: back controls=["Üniteler","Üniteler"] steps=["1Ezberle","2Kartlar","3Telaffuz","4Test"]
+[375_light] flash speak controls: ["3Telaffuz","Dinle","Kartları atla, telaffuza geç"]
+[375_light] unit button sizes: [["Üniteler",124,44,19],["Not",82,44,19],["Ezberle",74,61,16],["2Kartlar",74,61,16],["3Telaffuz",74,61,16],["4Test",74,61,16],["Başla",307,56,22]]
+[375_light] settings headings: ["Claude bağlantısı","Yoğun program","Yedek","Yedekten geri yükle","Ses","Gelişmişelle kayıt · Dersler yedeği · al","Elle kayıt","Dersler (üniteler) yedeği","Alternatif: Claude uygulamasında sesli d"]
+[375_dark] first open: onb visible=true hero visible=false units tab visible=true
+[375_dark] after Başla (no key): ders open=false keyGate=true hash= progStartMsg=""
+[375_dark] settings scroll y=6 apiKey focused=
+[375_dark] bad key msg: Anahtar eksik görünüyor (en az 40 karakter); tamamını yapıştır (console.anthropic.com → API Keys).
+[375_dark] key saved msg: ✓ Bağlı · koçlar açıldı. 
+Dersi başlat | state: Bağlı · sk-ant-…AAAA | tab now=tab-setup
+[375_dark] test msg: ✓ Bağlantı tamam · claude-sonnet-5-5
+[375_dark] learn with key: keyGate=false btnGo="Bugünkü dersi başlat (60 dk)" hint=""
+[375_dark] ders open=true mics visible=#dersHands:Konuşma moduSes, #ccMic:Konuş (bas ve söyle)
+[375_dark] hands on: state={"state":"listening","hands":true,"mic":true,"tts":true,"settings":{"autoSpeak":true,"autoSend":"auto","handsAuto":true,"rate":0.9,"voices":{},"micLang":{},"noted":0}} vcSt="Dinliyorum… konuş"
+[375_dark] hands off: state={"state":"idle","hands":false,"mic":true,"tts":true,"settings":{"autoSpeak":true,"autoSend":"auto","handsAuto":true,"rate":0.9,"voices":{},"micLang":{},"noted":0}}
+[375_dark] mic tap: state=listening placeholder="İtalyanca konuş…"
+[375_dark] after mic result: ccIn="il cavo la luce" state=processing
+[375_dark] after exit: ders hidden=true btnGo="Bugünkü dersi başlat (60 dk)" meter="0 / 60 dk
+kayıtlı gerçek süre" hint=""
+[375_dark] resume: note=Kaldığın yer: Gramer
+[375_dark] done phase=done ccIn visible=false dersHands visible=true
+[375_dark] hub done: btnGo="Koçlarla serbest çalış" kicker="Bugünün 60 dakikası tamam" title="Bugün tamam." sub="Yarın devam edersen seri 2 gün olur." tipPin=true streak="Seri · 1 gün"
+[375_dark] day2: btnGo="Bugünkü dersi başlat (60 dk)" title="Okunuş ve sesler" streak="Seri · 1 gün" week="Isınma · Hafta 1'e 3 gün" tabDue=3
+[375_dark] day2 ders open=true chat turns=2
+[375_dark] font controls: [{"t":"Yazı boyutu","a":null,"id":"","cls":"btn btn-ghost"}]
+[375_dark] big font root fs=17px body fs=16px
+[375_dark] unit: back controls=["Üniteler","Üniteler"] steps=["1Ezberle","2Kartlar","3Telaffuz","4Test"]
+[375_dark] flash speak controls: ["3Telaffuz","Dinle","Kartları atla, telaffuza geç"]
+[375_dark] unit button sizes: [["Üniteler",124,44,19],["Not",82,44,19],["Ezberle",74,61,16],["2Kartlar",74,61,16],["3Telaffuz",74,61,16],["4Test",74,61,16],["Başla",307,56,22]]
+[375_dark] settings headings: ["Claude bağlantısı","Yoğun program","Yedek","Yedekten geri yükle","Ses","Gelişmişelle kayıt · Dersler yedeği · al","Elle kayıt","Dersler (üniteler) yedeği","Alternatif: Claude uygulamasında sesli d"]
+[1280_light] first open: onb visible=true hero visible=false units tab visible=true
+[1280_light] after Başla (no key): ders open=false keyGate=true hash= progStartMsg=""
+[1280_light] settings scroll y=8 apiKey focused=
+[1280_light] bad key msg: Anahtar eksik görünüyor (en az 40 karakter); tamamını yapıştır (console.anthropic.com → API Keys).
+[1280_light] key saved msg: ✓ Bağlı · koçlar açıldı. 
+Dersi başlat | state: Bağlı · sk-ant-…AAAA | tab now=tab-setup
+[1280_light] test msg: ✓ Bağlantı tamam · claude-sonnet-5-5
+[1280_light] learn with key: keyGate=false btnGo="Bugünkü dersi başlat (60 dk)" hint=""
+[1280_light] ders open=true mics visible=#dersHands:Konuşma moduSes, #ccMic:Konuş (bas ve söyle)
+[1280_light] hands on: state={"state":"listening","hands":true,"mic":true,"tts":true,"settings":{"autoSpeak":true,"autoSend":"auto","handsAuto":true,"rate":0.9,"voices":{},"micLang":{},"noted":0}} vcSt="Dinliyorum… konuş"
+[1280_light] hands off: state={"state":"idle","hands":false,"mic":true,"tts":true,"settings":{"autoSpeak":true,"autoSend":"auto","handsAuto":true,"rate":0.9,"voices":{},"micLang":{},"noted":0}}
+[1280_light] mic tap: state=listening placeholder="İtalyanca konuş…"
+[1280_light] after mic result: ccIn="il cavo la luce" state=processing
+[1280_light] after exit: ders hidden=true btnGo="Bugünkü dersi başlat (60 dk)" meter="0 / 60 dk
+kayıtlı gerçek süre" hint=""
+[1280_light] resume: note=Kaldığın yer: Gramer
+[1280_light] done phase=done ccIn visible=false dersHands visible=true
+[1280_light] hub done: btnGo="Koçlarla serbest çalış" kicker="Bugünün 60 dakikası tamam" title="Bugün tamam." sub="Yarın devam edersen seri 2 gün olur." tipPin=true streak="Seri · 1 gün"
+[1280_light] day2: btnGo="Bugünkü dersi başlat (60 dk)" title="Okunuş ve sesler" streak="Seri · 1 gün" week="Isınma · Hafta 1'e 3 gün" tabDue=3
+[1280_light] day2 ders open=true chat turns=2
+[1280_light] font controls: [{"t":"Yazı boyutu","a":null,"id":"","cls":"btn btn-ghost"}]
+[1280_light] big font root fs=17px body fs=16px
+[1280_light] unit: back controls=["Üniteler","Üniteler"] steps=["1Ezberle","2Kartlar","3Telaffuz","4Test"]
+[1280_light] flash speak controls: ["3Telaffuz","Dinle","Kartları atla, telaffuza geç"]
+[1280_light] unit button sizes: [["Üniteler",124,44,19],["Not",82,44,19],["Ezberle",225,62,16],["2Kartlar",225,62,16],["3Telaffuz",225,62,16],["4Test",225,62,16],["Başla",916,56,22]]
+[1280_light] settings headings: ["Claude bağlantısı","Yoğun program","Yedek","Yedekten geri yükle","Ses","Gelişmişelle kayıt · Dersler yedeği · al","Elle kayıt","Dersler (üniteler) yedeği","Alternatif: Claude uygulamasında sesli d"]

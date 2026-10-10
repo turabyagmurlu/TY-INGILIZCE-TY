@@ -1,0 +1,90 @@
+Claude bağlantısı
+
+Koçlar (Chiara, Oliver, Selin) senin Anthropic API anahtarınla çalışır. Program, kartlar ve ilerleme anahtar olmadan da çalışır.
+
+Bağlı · sk-ant-…AAAA
+API anahtarı
+Göster
+Kaydet
+Bağlantıyı test et
+Anahtarı sil
+Model
+Claude Sonnet 5.5 — önerilen · hız ve kalite dengesi
+Claude Opus 5.5 — daha güçlü · yaklaşık 2× pahalı
+Claude Haiku 5.5 — en ucuz ve en hızlı · basit işler
+
+Günlük ders için yeterli ve ekonomik.
+
+Anahtar yalnızca bu cihazda saklanır. Max planında aylık API kredisi dahildir; claude.ai → Ayarlar → Faturalandırma → Link organization, sonra console.anthropic.com'dan anahtar al.
+
+Yoğun program
+
+Günde 60 dk: İtalyanca 45 (kelime 10 · gramer 20 · okuma-yazma 10 · sesli tekrar 5) + İngilizce 15 konuşma. Pazar 60 dk tekrar: İtalyanca 40 (haftanın kartları + 10 soruluk mini sınav), İngilizce 20 serbest konuşma. 4. ve 8. hafta Pazar ara sınav, 12. hafta Pazar A1 sınav simülasyonu. Yolda 15–20 dk podcast önerilir; 60 dakikaya dahil değil.
+
+Başlangıç
+8 Ekim 2026
+Hafta 1
+12 Ekim
+Final
+3 Ocak
+Yeni başlangıç tarihi
+Tarihi değiştir
+Programı sıfırla
+Yedek
+
+Kayıtların yalnızca bu cihazda durur. Telefon değiştirmeden ya da tarayıcı verisini silmeden önce yedek al; başka cihazda geri yükle.
+
+Yedeği indir (.json)
+Kodu kopyala
+Yedekten geri yükle
+Ses
+
+Koç yanıtlarını sesli okur; cevabını mikrofona söylersin (konuşma yazıya çevrilir). Ses tanıma tarayıcının kendi servisidir; Chrome önerilir.
+
+Koçu sesli oku
+Yanıt bitince okunur: Türkçe kısımlar Türkçe sesle, İtalyanca/İngilizce kısımlar kendi sesiyle.
+Konuşma modunda otomatik dinle
+Konuşma (Oliver) ve Sesli tekrar (Chiara) bloklarında koç okuyunca mikrofon kendiliğinden açılır.
+Otomatik gönder
+Ders modunda (varsayılan) — Pratik'te önce göster
+Her zaman
+Kapalı — ben Gönder'e basarım
+
+Konuşma modunda cevap her zaman kendiliğinden gider.
+
+Okuma hızı ×0.90
+Sesler
+Türkçe
+Otomatik (en iyi tahmin)
+Google Türkçe
+İtalyanca
+Otomatik (en iyi tahmin)
+Google italiano
+Microsoft Elsa
+İngilizce
+Otomatik (en iyi tahmin)
+Google UK English Male
+Bad News
+
+Liste tarayıcıdaki seslerden gelir; "Google" ya da "Natural/Enhanced" sesler daha doğaldır.
+
+Mikrofon dili
+Chiara
+İtalyanca (it-IT)
+İngilizce · Birleşik Krallık (en-GB)
+İngilizce · ABD (en-US)
+Türkçe (tr-TR)
+Oliver
+İtalyanca (it-IT)
+İngilizce · Birleşik Krallık (en-GB)
+İngilizce · ABD (en-US)
+Türkçe (tr-TR)
+Selin
+İtalyanca (it-IT)
+İngilizce · Birleşik Krallık (en-GB)
+İngilizce · ABD (en-US)
+Türkçe (tr-TR)
+Mikrofonu dene
+Sesleri dinle
+Gelişmiş
+elle kayıt · Dersler yedeği · alternatif sesli ders

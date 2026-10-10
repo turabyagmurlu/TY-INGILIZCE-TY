@@ -1,0 +1,45 @@
+[375_light] load dcl=148ms load=148ms size=726192
+[375_light] after Başla: ders open=true
+[375_light] hands-free state after toggle: listening
+[375_light] Esc in hands-free: ders hidden=false voice=idle
+[375_light] Esc with menu open: menu hidden=true ders hidden=false
+[375_light] steps: lesson,flash,practice,quiz
+[375_light] it units: [{"uid":"it1-1","t":"SelamlaşmaKelimeDevam: 4/4 TestSıradaki25%"},{"uid":"it1-2","t":"Gramer: essere (olmak)GramerBaşlanmadı0%"},{"uid":"it1-3","t":"TanışmaKelimeBaşlanmadı0%"},{"uid":"it1-4","t":"Gramer: Belirli artikeller (il / la)GramerBaşlanma"},{"uid":"it1-5","t":"SayılarKelimeBaşlanmadı0%"},{"uid":"it1-6","t":"RenklerKelimeBaşlanmadı0%"}]
+[375_light] goBack from unit → hash #dersler/it tab visible units=true
+[375_light] goBack again → hash #dersler/it/it1-1/quiz learn visible=false
+[375_dark] load dcl=138ms load=139ms size=726192
+[375_dark] after Başla: ders open=true
+[375_dark] hands-free state after toggle: listening
+[375_dark] Esc in hands-free: ders hidden=false voice=idle
+[375_dark] Esc with menu open: menu hidden=true ders hidden=false
+[375_dark] steps: lesson,flash,practice,quiz
+[375_dark] it units: [{"uid":"it1-1","t":"SelamlaşmaKelimeDevam: 4/4 TestSıradaki25%"},{"uid":"it1-2","t":"Gramer: essere (olmak)GramerBaşlanmadı0%"},{"uid":"it1-3","t":"TanışmaKelimeBaşlanmadı0%"},{"uid":"it1-4","t":"Gramer: Belirli artikeller (il / la)GramerBaşlanma"},{"uid":"it1-5","t":"SayılarKelimeBaşlanmadı0%"},{"uid":"it1-6","t":"RenklerKelimeBaşlanmadı0%"}]
+[375_dark] goBack from unit → hash #dersler/it tab visible units=true
+[375_dark] goBack again → hash #dersler/it/it1-1/quiz learn visible=false
+[1280_light] load dcl=123ms load=123ms size=726192
+[1280_light] after Başla: ders open=true
+[1280_light] hands-free state after toggle: listening
+[1280_light] Esc in hands-free: ders hidden=false voice=idle
+[1280_light] Esc with menu open: menu hidden=true ders hidden=false
+[1280_light] steps: lesson,flash,practice,quiz
+[1280_light] it units: [{"uid":"it1-1","t":"SelamlaşmaKelimeDevam: 4/4 TestSıradaki25%"},{"uid":"it1-2","t":"Gramer: essere (olmak)GramerBaşlanmadı0%"},{"uid":"it1-3","t":"TanışmaKelimeBaşlanmadı0%"},{"uid":"it1-4","t":"Gramer: Belirli artikeller (il / la)GramerBaşlanma"},{"uid":"it1-5","t":"SayılarKelimeBaşlanmadı0%"},{"uid":"it1-6","t":"RenklerKelimeBaşlanmadı0%"}]
+[1280_light] goBack from unit → hash #dersler/it tab visible units=true
+[1280_light] goBack again → hash #dersler/it/it1-1/quiz learn visible=false
+[1280_dark] load dcl=125ms load=126ms size=726192
+[1280_dark] after Başla: ders open=true
+[1280_dark] hands-free state after toggle: listening
+[1280_dark] Esc in hands-free: ders hidden=false voice=idle
+[1280_dark] Esc with menu open: menu hidden=true ders hidden=false
+[1280_dark] steps: lesson,flash,practice,quiz
+[1280_dark] it units: [{"uid":"it1-1","t":"SelamlaşmaKelimeDevam: 4/4 TestSıradaki25%"},{"uid":"it1-2","t":"Gramer: essere (olmak)GramerBaşlanmadı0%"},{"uid":"it1-3","t":"TanışmaKelimeBaşlanmadı0%"},{"uid":"it1-4","t":"Gramer: Belirli artikeller (il / la)GramerBaşlanma"},{"uid":"it1-5","t":"SayılarKelimeBaşlanmadı0%"},{"uid":"it1-6","t":"RenklerKelimeBaşlanmadı0%"}]
+[1280_dark] goBack from unit → hash #dersler/it tab visible units=true
+[1280_dark] goBack again → hash #dersler/it/it1-1/quiz learn visible=false
+[back] after tab click hash= history.length=2
+[back] goBack after tab switch: url=about:blank practice visible=false
+[back] ders open hash=#ders
+[back] goBack in Ders modu: ders hidden=true url=http://127.0.0.1:33857/index.html
+[back] Esc in unit: hash=#dersler/it/it1-1/lesson
+[back] back buttons visible in unit: []
+[mother] text-size controls on units home: ["Yazı boyutu|null"]
+[mother] text-size controls in unit: ["El yazısıyla yaz|null"]
+[mother] unit font sizes min/max: 12/17

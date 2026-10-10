@@ -1,0 +1,69 @@
+/* Ses: mikrofon düğmesi (bas-konuş), ses şeridi (Konuşma modu · durum · Durdur), Ders modu göstergesi, Ayarlar → Ses kartı */
+.cc-mic{flex:none;position:relative;display:inline-grid;place-items:center;width:52px;height:52px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);transition:border-color .15s,background-color .15s}
+.cc-mic .ico{width:24px;height:24px}
+.cc-mic:hover:not(:disabled){border-color:var(--primary)}
+.cc-mic:disabled{opacity:.4;cursor:default}
+.cc-mic.on{border-color:var(--ag-line,var(--primary));background:var(--ag-soft,var(--primary-bg));color:var(--ag,var(--primary-ink))}
+.cc-mic.on::before{content:"";position:absolute;inset:-2px;border-radius:16px;border:3px solid var(--ag-line,var(--primary));opacity:.7;animation:vcRing 1.3s ease-out infinite}
+.cc-mic.busy{border-color:var(--accent);background:var(--accent-bg);color:var(--accent-ink)}
+.cc-mic.busy .ico{animation:vcPulse 1s ease-in-out infinite}
+@keyframes vcRing{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.35);opacity:0}}
+@keyframes vcPulse{0%,100%{opacity:1}50%{opacity:.35}}
+.cc .cc-in.vc-interim{color:var(--muted);font-style:italic}
+.cc.vc-listening .cc-in{border-color:var(--ag-line,var(--primary))}
+/* ses şeridi */
+.vc-bar{display:flex;align-items:center;gap:8px 10px;padding:10px 20px 0;min-width:0}
+.vc-bar[hidden]{display:none}
+.vc-hands{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;justify-content:center;padding:6px 12px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--muted);font-weight:800;font-size:13.5px;white-space:nowrap}
+.vc-hands .ico{width:17px;height:17px}
+.vc-hands:hover:not(:disabled){border-color:var(--primary);color:var(--primary-ink)}
+.vc-hands:disabled{opacity:.45;cursor:default}
+.vc-hands.on{border-color:var(--ag-line);background:var(--ag-soft);color:var(--ag)}
+.vc-st{flex:1;min-width:0;font-size:13.5px;font-weight:700;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vc-st.warn{color:var(--accent-ink);white-space:normal}
+.vc-bar.is-on .vc-st{color:var(--text)}
+.cc.vc-listening .vc-st{color:var(--ag,var(--primary-ink))}
+.vc-stop{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;border-radius:999px;border:0;background:var(--soft);color:var(--primary-ink);font-weight:800;font-size:13.5px}
+.vc-stop:hover{background:var(--soft-h)}
+.vc-stop[hidden]{display:none}
+.vc-note{flex-basis:100%;display:flex;align-items:center;gap:6px;color:var(--accent-ink)}
+.vc-x{display:inline-grid;place-items:center;width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:inherit}
+.vc-x .ico{width:14px;height:14px}
+.cc-pron{display:inline-block;margin-top:6px;padding:2px 9px;border-radius:999px;background:rgba(255,255,255,.18);color:inherit;font-size:12.5px;font-weight:800}
+.cc-err.vc-err{background:var(--accent-bg);color:var(--accent-ink)} .cc-err.vc-err .cc-mini{color:var(--accent-ink)}
+/* Ders modunda eller serbest anahtarı yalnızca başlıkta (#dersHands); şeritteki ikincisi gizli */
+.ders .vc-hands{display:none}
+/* Ders modu başlığı */
+.dHands{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:44px;min-width:44px;padding:4px 10px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--muted);font-weight:800;font-size:12.5px;white-space:nowrap}
+.dHands .ico{width:16px;height:16px}
+.dHands.on{border-color:var(--en);background:var(--en-bg);color:var(--en-ink)}
+.dHands.on.it{border-color:var(--it);background:var(--it-bg);color:var(--it-ink)}
+.dHands.live .ico{animation:vcPulse 1s ease-in-out infinite}
+.dHands[hidden]{display:none}
+.dHands .dhS{display:none}
+@media (max-width:560px){.dHands .dhS{display:inline}}
+.dNoMic{margin:0 0 8px;display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--accent-ink)}
+.dNoMic span{flex:1;min-width:0}
+@media (max-width:560px){.vc-bar{padding:8px 14px 0}.vc-hands{padding:6px 11px;font-size:13px}.dHands .dhL{display:none}.dHands{padding:4px 9px}
+  .dTop:has(.dHands:not([hidden])) .dExit span{display:none} .dTop:has(.dHands:not([hidden])) .dExit{padding:6px 10px}}   /* başlıkta yer: Konuşma modu düğmesi varken çıkış yalnızca simge */
+@media (max-height:560px){.ders .vc-bar{padding-top:4px}}
+/* Ayarlar → Ses */
+.vcGrid{display:grid;gap:14px;max-width:640px}
+.vcRow{display:flex;align-items:flex-start;gap:12px;cursor:pointer;min-height:44px}
+.vcTog{position:relative;flex:none;width:48px;height:28px;margin-top:2px}
+.vcTog input{position:absolute;inset:0;z-index:1;opacity:0;margin:0;cursor:pointer;width:100%;height:100%}
+.vcTog i{position:absolute;inset:0;border-radius:999px;background:var(--line);transition:background-color .15s}
+.vcTog i::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .15s}
+.vcTog input:checked+i{background:var(--good)} .vcTog input:checked+i::after{transform:translateX(20px)}
+.vcTog input:focus-visible+i{outline:3px solid var(--focus);outline-offset:2px}
+.vcLbl{display:flex;flex-direction:column;gap:2px;font-size:16px;color:var(--text)} .vcLbl small{font-size:14px;color:var(--muted);line-height:1.45}
+.vcField{display:grid;gap:6px} .vcField .fl{margin-top:0} .vcField .hint{margin-top:2px}
+#vcRate{width:100%;accent-color:var(--primary);min-height:44px}
+#vcRateOut{font-family:var(--mono);font-weight:700;color:var(--text);margin-left:6px}
+.vcVoices,.vcMics{display:grid;gap:8px}
+.vcVoices label,.vcMics label{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:center;gap:8px;font-size:14.5px;font-weight:700;color:var(--muted)}
+.vcOut{margin-top:8px;padding:10px 12px;border-radius:12px;background:var(--soft);font-size:15.5px;color:var(--text)}
+.vcOut[hidden]{display:none}
+.vcMsg{margin-bottom:12px}
+#vcTest.on{border-color:var(--bad);background:var(--bad-bg);color:var(--bad-ink)}
+@media (prefers-reduced-motion:reduce){.cc-mic.on::before,.cc-mic.busy .ico,.dHands.live .ico{animation:none}.cc-mic.on::before{opacity:.5;transform:none}}

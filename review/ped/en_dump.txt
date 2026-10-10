@@ -1,0 +1,865 @@
+
+##### LEVEL 1 A1 Seviye 1 — Başlangıç
+
+=== 1-1 [vocab] Selamlaşma
+desc: Günlük selamlaşma ifadeleri.
+  1. Hello = Merhaba | Hello, how are you? | Merhaba, nasılsın?
+  2. Good morning = Günaydın | Good morning, mom. | Günaydın, anne.
+  3. Good evening = İyi akşamlar | Good evening! | İyi akşamlar!
+  4. Goodbye = Hoşça kal | Goodbye, see you. | Hoşça kal, görüşürüz.
+  5. How are you? = Nasılsın? | Hello, how are you? | Merhaba, nasılsın?
+  6. I am fine = İyiyim | I am fine, thank you. | İyiyim, teşekkürler.
+  7. Hi = Selam | Hi, Ayşe! | Selam, Ayşe!
+  8. Good afternoon = İyi öğleden sonralar | Good afternoon, sir. | İyi öğleden sonralar, efendim.
+  9. Good night = İyi geceler | Good night, sleep well. | İyi geceler, iyi uykular.
+  10. Welcome = Hoş geldiniz | Welcome to our home! | Evimize hoş geldiniz!
+  11. And you? = Ya sen? | I am fine. And you? | İyiyim. Ya sen?
+info: İngilizce'de 'Hello' her zaman kullanılır. 'Good morning' sabah, 'Good evening' akşam içindir. 'How are you?' hal hatır sormaktır; kısa cevabı 'I am fine' (İyiyim).
+
+=== 1-2 [grammar] Gramer: am / is / are (olmak)
+intro: İngilizcede "olmak" fiili üç şekilde kullanılır: am, is, are. Türkçedeki "-im, -sin, -dir" eklerine benzer.
+rule: <b>I</b> ile <b>am</b>, <b>he/she/it</b> ile <b>is</b>, <b>you/we/they</b> ile <b>are</b> kullanılır. Örnek: "I <b>am</b> happy" = "Mutlu<b>yum</b>".
+structure: [["Özne","Fiil","Örnek"],["I (ben)","am","I am a teacher (öğretmenim)"],["You (sen)","are","You are kind (naziksin)"],["He/She/It (o)","is","She is happy (o mutlu)"],["We/They (biz/onlar)","are","We are home (evdeyiz)"]]
+  ex: I am Deniz. = Ben Deniz'im.
+  ex: You are my friend. = Sen benim arkadaşımsın.
+  ex: He is tall. = O uzun boylu.
+  ex: We are ready. = Biz hazırız.
+  ex: They are here. = Onlar burada.
+  Q1: I ___ happy. [am / is / are] -> am :: I ile her zaman 'am' kullanılır.
+  Q2: She ___ a doctor. [is / am / are] -> is :: He/She/It ile 'is' kullanılır.
+  Q3: They ___ my friends. [are / is / am] -> are :: They ile 'are' kullanılır.
+  Q4: We ___ at home. [are / is / am] -> are :: We ile 'are' kullanılır.
+  Q5: He ___ tired. [is / are / am] -> is :: He ile 'is' kullanılır.
+  Q6: You ___ my teacher. [are / is / am] -> are :: You ile 'are' kullanılır.
+  Q7: It ___ cold today. [is / are / am] -> is :: It ile 'is' kullanılır.
+  Q8: My mother ___ at home. [is / are / am] -> is :: 'My mother' = she (o) → 'is'.
+
+=== 1-3 [vocab] Tanışma
+desc: Kendini tanıtma cümleleri.
+  1. My name is Deniz = Benim adım Deniz | Hello, my name is Deniz. | Merhaba, benim adım Deniz.
+  2. What is your name? = Adın ne? | What is your name? | Adın ne?
+  3. Nice to meet you = Tanıştığımıza memnun oldum | Nice to meet you! | Tanıştığımıza memnun oldum!
+  4. I am from Turkey = Türkiye'denim | I am from Turkey. | Türkiye'denim.
+  5. Thank you = Teşekkür ederim | Thank you very much. | Çok teşekkür ederim.
+  6. You are welcome = Rica ederim | You are welcome. | Rica ederim.
+  7. Where are you from? = Nerelisin? | Where are you from? — I am from Turkey. | Nerelisin? — Türkiye'denim.
+  8. I live in Istanbul = İstanbul'da yaşıyorum | I live in Istanbul with my family. | Ailemle İstanbul'da yaşıyorum.
+  9. How old are you? = Kaç yaşındasın? | How old are you? — I am fifty. | Kaç yaşındasın? — Elli yaşındayım.
+  10. I am married = Evliyim | I am married. I have two children. | Evliyim. İki çocuğum var.
+  11. I speak a little English = Biraz İngilizce konuşuyorum | Sorry, I speak a little English. | Pardon, biraz İngilizce konuşuyorum.
+info: Kendini tanıtırken 'My name is ...' ya da kısaca 'I'm ...' denir. İsim sormak için 'What is your name?'; tanışınca 'Nice to meet you'.
+
+=== 1-4 [grammar] Gramer: Çoğullar (-s)
+intro: Bir şeyden birden fazla olduğunda kelimenin sonuna genellikle -s eklenir.
+rule: Çoğul için sona <b>-s</b> ekle: cat → cat<b>s</b>. Kelime <b>-s, -x, -ch, -sh</b> ile bitiyorsa <b>-es</b> ekle: box → box<b>es</b>.
+structure: [["Tekil","Çoğul"],["cat (kedi)","cats"],["book (kitap)","books"],["car (araba)","cars"],["box (kutu)","boxes"],["bus (otobüs)","buses"]]
+  ex: two cats = iki kedi
+  ex: three books = üç kitap
+  ex: five apples = beş elma
+  ex: many boxes = birçok kutu
+  Q1: one car, two ___ [cars / car / cares] -> cars :: car → cars (sadece -s).
+  Q2: one box, two ___ [boxes / boxs / box] -> boxes :: -x ile bitince -es: box → boxes.
+  Q3: I have three ___ (book). [books / book / bookes] -> books :: book → books.
+  Q4: one bus, two ___ [buses / buss / bus] -> buses :: -s ile bitince -es: bus → buses.
+  Q5: one apple, two ___ [apples / apple / applees] -> apples :: apple → apples (sadece -s).
+  Q6: one watch, two ___ [watches / watchs / watch] -> watches :: -ch ile bitince -es: watch → watches.
+  Q7: one dish, three ___ [dishes / dishs / dish] -> dishes :: -sh ile bitince -es: dish → dishes.
+
+=== 1-5 [vocab] Sayılar & Renkler
+desc: Temel sayılar ve renkler.
+  1. One = Bir | I have one apple. | Bir elmam var.
+  2. Two = İki | I have two cats. | İki kedim var.
+  3. Three = Üç | Three books. | Üç kitap.
+  4. Red = Kırmızı | The apple is red. | Elma kırmızı.
+  5. Blue = Mavi | The sky is blue. | Gökyüzü mavi.
+  6. Green = Yeşil | The grass is green. | Çimen yeşil.
+  7. Four = Dört | I have four books. | Dört kitabım var.
+  8. Five = Beş | Five minutes, please. | Beş dakika, lütfen.
+  9. Ten = On | Ten people. | On kişi.
+  10. Twenty = Yirmi | Twenty eggs, please. | Yirmi yumurta, lütfen.
+  11. Yellow = Sarı | The banana is yellow. | Muz sarı.
+  12. White = Beyaz | The milk is white. | Süt beyaz.
+info: Temel sayılar (one, two, three) ve renkler. Renk, ismin önüne gelir: 'a red apple' = kırmızı bir elma.
+
+=== 1-6 [grammar] Gramer: a / an
+intro: Tekil bir şeyden "bir tane" derken ismin önüne a veya an koyarız.
+rule: Kelime <b>sessiz bir sesle</b> başlıyorsa <b>a</b>: a book. <b>Sesli bir sesle</b> (a, e, i, o, u sesi) başlıyorsa <b>an</b>: an apple. Önemli olan yazılış değil, okunuştur: <b>an hour</b> (h okunmaz, "aur"), <b>a university</b> ("yu" sesiyle başlar).
+structure: [["a (sessiz)","an (sesli)"],["a car","an apple"],["a dog","an egg"],["a house","an orange"]]
+  ex: a book = bir kitap
+  ex: an apple = bir elma
+  ex: a dog = bir köpek
+  ex: an egg = bir yumurta
+  Q1: ___ apple [an / a] -> an :: apple sesli bir sesle (a) başlar → an.
+  Q2: ___ book [a / an] -> a :: book sessiz bir sesle (b) başlar → a.
+  Q3: ___ egg [an / a] -> an :: egg sesli bir sesle (e) başlar → an.
+  Q4: ___ house [a / an] -> a :: house'da h okunur, sessiz sesle başlar → a.
+  Q5: ___ orange [an / a] -> an :: orange sesli bir sesle (o) başlar → an.
+  Q6: ___ car [a / an] -> a :: car sessiz bir sesle (k) başlar → a.
+  Q7: ___ hour [an / a] -> an :: hour'da h okunmaz, "aur" diye sesli başlar → an.
+  Q8: ___ university [a / an] -> a :: university "yu" sesiyle başlar → a.
+
+=== 1-7 [vocab] Aile & Ev
+desc: Aile bireyleri ve evdeki kelimeler.
+  1. Mother = Anne | My mother is here. | Annem burada.
+  2. Father = Baba | My father is at home. | Babam evde.
+  3. Sister = Kız kardeş | This is my sister. | Bu kız kardeşim.
+  4. Brother = Erkek kardeş | My brother is tall. | Erkek kardeşim uzun boylu.
+  5. House = Ev | This is my house. | Bu benim evim.
+  6. Water = Su | I drink water. | Su içerim.
+  7. Husband = Eş (koca) | My husband is at work. | Eşim işte.
+  8. Wife = Eş (hanım) | This is my wife. | Bu benim eşim.
+  9. Son = Oğul | My son is an engineer. | Oğlum mühendis.
+  10. Daughter = Kız evlat | My daughter is a teacher. | Kızım öğretmen.
+  11. Grandmother = Büyükanne / Nine | My grandmother is eighty. | Ninem seksen yaşında.
+  12. Grandfather = Büyükbaba / Dede | My grandfather has a garden. | Dedemin bir bahçesi var.
+info: Aile bireyleri ve ev kelimeleri. Sahiplik için 'my' kullanılır: 'my mother' = annem.
+
+=== 1-8 [grammar] Gramer: this / that / these / those
+intro: Bir şeyi gösterirken yakın mı uzak mı, tekil mi çoğul mu olduğuna göre kelime değişir.
+rule: <b>this</b> = bu (yakın, tekil), <b>that</b> = şu/o (uzak, tekil), <b>these</b> = bunlar (yakın, çoğul), <b>those</b> = şunlar/onlar (uzak, çoğul).
+structure: [["","Tekil","Çoğul"],["Yakın","this","these"],["Uzak","that","those"]]
+  ex: This is my phone. = Bu benim telefonum.
+  ex: That is your car. = Şu senin araban.
+  ex: These are books. = Bunlar kitap.
+  ex: Those are cats. = Şunlar kedi.
+  Q1: ___ is my book. (yakın, tekil) [This / These / Those] -> This :: Yakın + tekil = this.
+  Q2: ___ are my friends. (yakın, çoğul) [These / This / That] -> These :: Yakın + çoğul = these.
+  Q3: ___ is his house. (uzak, tekil) [That / This / Those] -> That :: Uzak + tekil = that.
+  Q4: ___ are her shoes. (uzak, çoğul) [Those / These / That] -> Those :: Uzak + çoğul = those.
+  Q5: Look at ___ bird in the sky! (uzak, tekil) [that / these / those] -> that :: Uzak + tekil = that.
+  Q6: ___ apples here are fresh. (yakın, çoğul) [These / That / This] -> These :: Yakın + çoğul = these.
+  Q7: Is ___ your bag? (yakın, tekil) [this / those / these] -> this :: Yakın + tekil = this.
+
+=== 1-9 [vocab] Günlük Konuşma Kalıpları
+desc: Her gün işine yarayacak pratik kalıplar.
+  1. See you later = Sonra görüşürüz | Bye! See you later. | Hoşça kal! Sonra görüşürüz.
+  2. Please = Lütfen | Water, please. | Su, lütfen.
+  3. Have a nice day! = İyi günler! | Thank you, have a nice day! | Teşekkürler, iyi günler!
+  4. Can you help me? = Bana yardım edebilir misin? | Excuse me, can you help me? | Affedersiniz, bana yardım edebilir misiniz?
+  5. I don't understand = Anlamıyorum | Sorry, I don't understand. | Pardon, anlamıyorum.
+  6. Don't worry! = Merak etme! / Endişe etme! | Don't worry, it's okay. | Merak etme, sorun yok.
+  7. Congratulations! = Tebrikler! | Congratulations! Well done. | Tebrikler! Aferin.
+  8. Yes = Evet | Yes, please. | Evet, lütfen.
+  9. No = Hayır | No, thank you. | Hayır, teşekkürler.
+  10. Sorry = Özür dilerim | Sorry, I am late. | Özür dilerim, geç kaldım.
+  11. Of course = Tabii ki | Of course, no problem. | Tabii ki, sorun değil.
+  12. Please speak slowly = Lütfen yavaş konuşun | Please speak slowly. I am learning English. | Lütfen yavaş konuşun. İngilizce öğreniyorum.
+info: Nezaket ve sohbet kalıpları. 'Please' (lütfen), 'You're welcome' (bir şey değil), 'Can you help me?' (yardım isterken), 'Don't worry!' (merak etme).
+
+=== 1-10 [vocab] Zaman: Haftanın Günleri
+desc: Günler ve haftayla ilgili kelimeler.
+  1. Monday = Pazartesi | I work on Monday. | Pazartesi çalışırım.
+  2. Tuesday = Salı | See you on Tuesday. | Salı görüşürüz.
+  3. Wednesday = Çarşamba | The market is on Wednesday. | Semt pazarı çarşamba günü.
+  4. Thursday = Perşembe | I call my son on Thursday. | Perşembe günü oğlumu ararım.
+  5. Friday = Cuma | Friday is a busy day. | Cuma yoğun bir gün.
+  6. Saturday = Cumartesi | We clean the house on Saturday. | Cumartesi evi temizleriz.
+  7. Sunday = Pazar (gün) | On Sunday we visit my mother. | Pazar günü annemi ziyaret ederiz.
+  8. Weekend = Hafta sonu | Have a nice weekend! | İyi hafta sonları!
+  9. Month = Ay (takvim) | This month is very cold. | Bu ay çok soğuk.
+  10. Year = Yıl | Happy New Year! | Yeni yılın kutlu olsun!
+  11. Birthday = Doğum günü | Happy birthday! | Doğum günün kutlu olsun!
+info: Gün adları İngilizce'de her zaman büyük harfle yazılır: Monday, Friday. Günden önce 'on' kullanılır: 'on Monday' = pazartesi günü. 'At the weekend' = hafta sonu.
+
+=== 1-11 [vocab] Yiyecek: Meyve & Sebze
+desc: Pazarda ve markette en çok lazım olan meyve ve sebzeler.
+  1. Banana = Muz | I eat a banana every day. | Her gün bir muz yerim.
+  2. Grapes = Üzüm | These grapes are sweet. | Bu üzümler tatlı.
+  3. Watermelon = Karpuz | Watermelon is good in summer. | Karpuz yazın iyi gelir.
+  4. Lemon = Limon | Tea with lemon, please. | Limonlu çay, lütfen.
+  5. Strawberry = Çilek | I like strawberries. | Çilekleri severim.
+  6. Tomato = Domates | A kilo of tomatoes, please. | Bir kilo domates, lütfen.
+  7. Potato = Patates | I cook potatoes. | Patates pişiririm.
+  8. Onion = Soğan | Cut the onion. | Soğanı doğra.
+  9. Cucumber = Salatalık | A cucumber salad. | Salatalık salatası.
+  10. Pepper = Biber | Green peppers, please. | Yeşil biber, lütfen.
+  11. Carrot = Havuç | The carrots are fresh. | Havuçlar taze.
+info: Meyve ve sebzeler. Sayılabilenler çoğul olur: 'two bananas', 'three tomatoes' (-o ile bitince -es). 'Grapes' genelde çoğul kullanılır: 'I like grapes.'
+
+=== 1-12 [grammar] Gramer: my / your / his / her (iyelik)
+intro: Bir şeyin kime ait olduğunu söylerken ismin önüne küçük bir kelime koyarız. Türkçedeki "-im, -in, -i" eklerine benzer.
+rule: <b>I → my</b> (benim), <b>you → your</b> (senin), <b>he → his</b> (onun, erkek), <b>she → her</b> (onun, kadın), <b>it → its</b> (onun, eşya/hayvan), <b>we → our</b> (bizim), <b>they → their</b> (onların). Örnek: "<b>my</b> house" = "ev<b>im</b>".
+structure: [["Özne","İyelik","Örnek"],["I","my","my name (adım)"],["you","your","your bag (çantan)"],["he","his","his car (onun arabası)"],["she","her","her son (onun oğlu)"],["we","our","our house (evimiz)"],["they","their","their children (çocukları)"]]
+  ex: My name is Ayşe. = Benim adım Ayşe.
+  ex: Is this your phone? = Bu senin telefonun mu?
+  ex: His wife is a nurse. = Onun eşi hemşire.
+  ex: Her daughter lives in London. = Onun kızı Londra'da yaşıyor.
+  ex: Our house is small. = Evimiz küçük.
+  Q1: I have a cat. ___ cat is white. [My / Your / Her] -> My :: I → my (benim).
+  Q2: Ali has a car. ___ car is red. [His / Her / Their] -> His :: Ali erkek → his (onun).
+  Q3: Ayşe is here. ___ son is a doctor. [Her / His / Our] -> Her :: Ayşe kadın → her (onun).
+  Q4: We have a garden. ___ garden is big. [Our / Their / My] -> Our :: we → our (bizim).
+  Q5: They live here. ___ house is old. [Their / Our / His] -> Their :: they → their (onların).
+  Q6: What is ___ name? (senin) [your / you / my] -> your :: Senin = your. 'you' öznedir, 'your' iyeliktir.
+  Q7: My husband and I love ___ children. [our / their / his] -> our :: My husband and I = we → our.
+
+=== 1-13 [vocab] Vücut
+desc: Vücudun bölümleri — doktorda da işine yarar.
+  1. Head = Baş | My head hurts. | Başım ağrıyor.
+  2. Eye = Göz | She has blue eyes. | Onun mavi gözleri var.
+  3. Ear = Kulak | My ear hurts. | Kulağım ağrıyor.
+  4. Nose = Burun | My nose is cold. | Burnum üşüdü.
+  5. Mouth = Ağız | Open your mouth, please. | Ağzınızı açın, lütfen.
+  6. Tooth = Diş | I brush my teeth. | Dişlerimi fırçalarım.
+  7. Hand = El | Wash your hands. | Ellerini yıka.
+  8. Arm = Kol | My arm is tired. | Kolum yoruldu.
+  9. Leg = Bacak | My leg hurts. | Bacağım ağrıyor.
+  10. Foot = Ayak | My feet are cold. | Ayaklarım üşüyor.
+  11. Back = Sırt | My back hurts. | Sırtım ağrıyor.
+  12. Stomach = Mide / Karın | My stomach hurts. | Midem ağrıyor.
+info: Vücut kelimeleri. Birden fazlaysa çoğul: 'two eyes', 'two hands'. Düzensiz olanlara dikkat: foot → feet (ayaklar), tooth → teeth (dişler).
+
+=== 1-14 [vocab] Kıyafetler
+desc: Giysiler ve aksesuarlar.
+  1. Shirt = Gömlek | A white shirt. | Beyaz bir gömlek.
+  2. T-shirt = Tişört | A blue T-shirt. | Mavi bir tişört.
+  3. Trousers = Pantolon | Black trousers. | Siyah pantolon.
+  4. Dress = Elbise | A beautiful dress. | Güzel bir elbise.
+  5. Skirt = Etek | A long skirt. | Uzun bir etek.
+  6. Shoes = Ayakkabı | New shoes. | Yeni ayakkabılar.
+  7. Socks = Çorap | Warm socks. | Sıcak çoraplar.
+  8. Coat = Mont / Palto | Take your coat. It is cold. | Montunu al. Hava soğuk.
+  9. Hat = Şapka | A summer hat. | Yazlık bir şapka.
+  10. Scarf = Atkı / Eşarp | A red scarf. | Kırmızı bir atkı.
+  11. Bag = Çanta | My bag is on the chair. | Çantam sandalyenin üstünde.
+  12. Glasses = Gözlük | Where are my glasses? | Gözlüğüm nerede?
+info: Kıyafetler. 'Trousers', 'glasses', 'socks', 'shoes' hep çoğul kullanılır: 'My trousers are black.' Giymek: 'I wear a coat.' — üstünü giyinmek: 'put on'.
+
+=== 1-15 [vocab] Zaman: Aylar
+desc: Yılın on iki ayı.
+  1. January = Ocak | It is cold in January. | Ocakta hava soğuk.
+  2. February = Şubat | February is short. | Şubat kısa.
+  3. March = Mart | My birthday is in March. | Doğum günüm martta.
+  4. April = Nisan | April is rainy. | Nisan yağmurlu.
+  5. May = Mayıs | Flowers open in May. | Mayısta çiçekler açar.
+  6. June = Haziran | School ends in June. | Okul haziranda biter.
+  7. July = Temmuz | July is very hot. | Temmuz çok sıcak.
+  8. August = Ağustos | We go to the sea in August. | Ağustosta denize gideriz.
+  9. September = Eylül | School starts in September. | Okul eylülde başlar.
+  10. October = Ekim | October is cool. | Ekim serin.
+  11. November = Kasım | It rains a lot in November. | Kasımda çok yağmur yağar.
+  12. December = Aralık | December is the last month. | Aralık son ay.
+info: Ay adları da büyük harfle yazılır: January, May. Aydan önce 'in' kullanılır: 'in June' = haziranda. Doğum günü sorarken: 'When is your birthday?'
+
+=== 1-16 [vocab] Hava & Mevsimler
+desc: Hava durumu ve mevsimler.
+  1. Weather = Hava (durumu) | The weather is nice today. | Bugün hava güzel.
+  2. Sunny = Güneşli | It is sunny today. | Bugün hava güneşli.
+  3. Rainy = Yağmurlu | It is rainy and cold. | Hava yağmurlu ve soğuk.
+  4. Cloudy = Bulutlu | The sky is cloudy. | Gökyüzü bulutlu.
+  5. Windy = Rüzgârlı | It is very windy. | Hava çok rüzgârlı.
+  6. Warm = Ilık | The water is warm. | Su ılık.
+  7. Spring = İlkbahar | I love spring. | İlkbaharı çok severim.
+  8. Summer = Yaz | Summer is hot. | Yaz sıcak.
+  9. Autumn = Sonbahar | The leaves fall in autumn. | Sonbaharda yapraklar düşer.
+  10. Winter = Kış | Winter is cold. | Kış soğuk.
+  11. Umbrella = Şemsiye | Take an umbrella. | Şemsiye al.
+info: Hava durumu 'It' ile anlatılır: 'It is sunny', 'It is rainy', 'It is cold'. Mevsimden önce 'in' gelir: 'in summer' = yazın.
+
+##### LEVEL 2 A1+ Seviye 2 — Temel
+
+=== 2-1 [grammar] Gramer: Geniş Zaman (Present Simple)
+intro: Her zaman yaptığımız, alışkanlık olan işleri anlatır. "Her gün çay içerim" gibi.
+rule: I/You/We/They + <b>fiilin yalın hali</b>: I drink. He/She/It + <b>fiil + s</b>: He drink<b>s</b>. (-o, -s, -sh, -ch, -x ile bitenlere <b>-es</b>: go → goes, watch → watches. Sessiz harf + y → <b>-ies</b>: study → studies. have → has.)
+structure: [["Özne","Fiil","Örnek"],["I / You / We / They","work","I work every day"],["He / She / It","works","She works here"],["He / She / It","goes","He goes to school"]]
+  ex: I drink tea. = Çay içerim.
+  ex: She drinks coffee. = O kahve içer.
+  ex: We play every day. = Her gün oynarız.
+  ex: He goes to work. = O işe gider.
+  Q1: She ___ tea. (drink) [drinks / drink / drinking] -> drinks :: She ile fiile -s: drinks.
+  Q2: I ___ every day. (work) [work / works / working] -> work :: I ile fiil yalın: work.
+  Q3: He ___ to school. (go) [goes / gos / go] -> goes :: -o ile bitince -es: go → goes.
+  Q4: They ___ football. (play) [play / plays / playing] -> play :: They ile fiil yalın: play.
+  Q5: My father ___ TV every evening. (watch) [watches / watchs / watch] -> watches :: -ch ile bitince -es: watch → watches.
+  Q6: She ___ English. (study) [studies / studys / study] -> studies :: Sessiz harf + y → -ies: study → studies.
+  Q7: We ___ in Ankara. (live) [live / lives / living] -> live :: We ile fiil yalın: live.
+
+=== 2-2 [vocab] Yiyecek & Fiiller
+desc: Yiyecekler ve günlük fiiller.
+  1. Eat = Yemek (yemek yemek) | I eat bread. | Ekmek yerim.
+  2. Drink = İçmek | I drink water. | Su içerim.
+  3. Apple = Elma | I eat an apple. | Bir elma yerim.
+  4. Milk = Süt | The milk is cold. | Süt soğuk.
+  5. Bread = Ekmek | I want bread. | Ekmek istiyorum.
+  6. Like = Sevmek/hoşlanmak | I like tea. | Çayı severim.
+  7. Tea = Çay | I drink tea every morning. | Her sabah çay içerim.
+  8. Coffee = Kahve | A coffee, please. | Bir kahve, lütfen.
+  9. Cook = Yemek pişirmek | I cook dinner every day. | Her gün akşam yemeği pişiririm.
+  10. Cheese = Peynir | I like white cheese. | Beyaz peyniri severim.
+  11. Egg = Yumurta | I eat an egg for breakfast. | Kahvaltıda bir yumurta yerim.
+info: Temel yiyecekler ve günlük fiiller (eat, drink, like). Örnek: 'I like tea' = çayı severim.
+
+=== 2-3 [grammar] Gramer: Olumsuz & Soru (don't / doesn't)
+intro: Geniş zamanda "yapmıyorum" demek ve soru sormak için yardımcı kelime kullanırız.
+rule: Olumsuz: I/you/we/they + <b>don't</b> + fiil. he/she/it + <b>doesn't</b> + fiil. Soru: <b>Do</b> you...? <b>Does</b> she...? (Bu durumda fiil hep yalındır.)
+structure: [["Özne","Olumsuz","Soru"],["I/You/We/They","don't like","Do you like?"],["He/She/It","doesn't like","Does he like?"]]
+  ex: I don't like coffee. = Kahveyi sevmem.
+  ex: She doesn't eat meat. = O et yemez.
+  ex: Do you speak English? = İngilizce konuşur musun?
+  ex: Does he work here? = O burada mı çalışıyor?
+  Q1: She ___ like tea. [doesn't / don't / not] -> doesn't :: He/She/It ile doesn't.
+  Q2: I ___ eat fish. [don't / doesn't / not] -> don't :: I ile don't.
+  Q3: ___ you speak English? [Do / Does / Are] -> Do :: you ile soru: Do you...?
+  Q4: ___ he work here? [Does / Do / Is] -> Does :: he ile soru: Does he...?
+  Q5: My brother ___ drink coffee. [doesn't / don't / isn't] -> doesn't :: 'My brother' = he → doesn't.
+  Q6: ___ they live here? [Do / Does / Are] -> Do :: they ile soru: Do they...?
+  Q7: Does she ___ tea? [like / likes / liking] -> like :: Does'tan sonra fiil yalın: like (likes değil).
+
+=== 2-4 [grammar] Gramer: have / has (sahip olmak)
+intro: Bir şeye sahip olduğumuzu anlatır. "Bir arabam var" gibi.
+rule: I/You/We/They + <b>have</b>: I have a car. He/She/It + <b>has</b>: She has a cat.
+structure: [["Özne","Fiil","Örnek"],["I / You / We / They","have","I have a car"],["He / She / It","has","She has a cat"]]
+  ex: I have a car. = Bir arabam var.
+  ex: She has two cats. = İki kedisi var.
+  ex: We have a big house. = Büyük bir evimiz var.
+  ex: He has a phone. = Onun telefonu var.
+  Q1: I ___ a car. [have / has / haves] -> have :: I ile have.
+  Q2: She ___ two cats. [has / have / haves] -> has :: She ile has.
+  Q3: We ___ a big house. [have / has / having] -> have :: We ile have.
+  Q4: He ___ a phone. [has / have / haves] -> has :: He ile has.
+  Q5: My parents ___ a garden. [have / has / haves] -> have :: 'My parents' = they → have.
+  Q6: The house ___ three rooms. [has / have / haves] -> has :: 'The house' = it → has.
+  Q7: You ___ a beautiful smile. [have / has / having] -> have :: You ile have.
+
+=== 2-5 [vocab] Ev & Eşyalar
+desc: Evdeki eşyalar.
+  1. Table = Masa | The book is on the table. | Kitap masanın üstünde.
+  2. Chair = Sandalye | Sit on the chair. | Sandalyeye otur.
+  3. Door = Kapı | Open the door. | Kapıyı aç.
+  4. Window = Pencere | Close the window. | Pencereyi kapat.
+  5. Bed = Yatak | The cat is on the bed. | Kedi yatağın üstünde.
+  6. Key = Anahtar | Where is the key? | Anahtar nerede?
+  7. Kitchen = Mutfak | She is in the kitchen. | O mutfakta.
+  8. Bathroom = Banyo | Where is the bathroom? | Banyo nerede?
+  9. Bedroom = Yatak odası | The bedroom is upstairs. | Yatak odası üst katta.
+  10. Living room = Oturma odası | We watch TV in the living room. | Oturma odasında televizyon izleriz.
+  11. Sofa = Kanepe | The cat is on the sofa. | Kedi kanepenin üstünde.
+  12. Fridge = Buzdolabı | The milk is in the fridge. | Süt buzdolabında.
+info: Evdeki eşyalar. Yerini belirtmek için edatlarla kullanılır: 'on the table' = masanın üstünde.
+
+=== 2-6 [grammar] Gramer: can / can't (yapabilmek)
+intro: Bir şeyi yapabildiğimizi veya yapamadığımızı anlatır.
+rule: Özne + <b>can</b> + fiil (yalın): I can swim. Olumsuz: <b>can't</b>: She can't drive. Soru: <b>Can</b> you...? (Tüm öznelerde aynı, -s eklenmez.)
+structure: [["Olumlu","Olumsuz","Soru"],["I can swim","I can't swim","Can you swim?"],["She can cook","She can't cook","Can she cook?"]]
+  ex: I can swim. = Yüzebilirim.
+  ex: She can't drive. = O araba süremez.
+  ex: Can you help me? = Bana yardım edebilir misin?
+  ex: He can speak English. = O İngilizce konuşabilir.
+  Q1: I ___ swim. [can / cans / am] -> can :: Özne + can + fiil.
+  Q2: She ___ drive a car. (yapamıyor) [can't / can / doesn't can] -> can't :: Olumsuz: can't.
+  Q3: ___ you help me? [Can / Do / Are] -> Can :: Soru: Can you...?
+  Q4: He can ___ English. [speak / speaks / speaking] -> speak :: can'den sonra fiil yalın: speak.
+  Q5: My mother ___ cook very well. [can / cans / is] -> can :: can tüm öznelerde aynıdır, -s almaz.
+  Q6: I ___ hear you. Please speak louder. (duyamıyorum) [can't / can / don't can] -> can't :: Olumsuz: can't + fiil.
+  Q7: Can she ___ a car? [drive / drives / driving] -> drive :: can'den sonra fiil yalın: drive.
+
+=== 2-7 [grammar] Gramer: Edatlar (in / on / under / at)
+intro: Bir şeyin nerede olduğunu anlatan küçük kelimeler.
+rule: <b>in</b> = içinde, <b>on</b> = üstünde, <b>under</b> = altında, <b>at</b> = belirli bir yerde/saatte (at home, at 5 o'clock).
+structure: [["Edat","Anlam","Örnek"],["in","içinde","in the box"],["on","üstünde","on the table"],["under","altında","under the chair"],["at","-de/-da (nokta)","at home"]]
+  ex: The cat is in the box. = Kedi kutunun içinde.
+  ex: The book is on the table. = Kitap masanın üstünde.
+  ex: The ball is under the chair. = Top sandalyenin altında.
+  ex: I am at home. = Evdeyim.
+  Q1: The book is ___ the table. (üstünde) [on / in / under] -> on :: üstünde = on.
+  Q2: The cat is ___ the box. (içinde) [in / on / at] -> in :: içinde = in.
+  Q3: The ball is ___ the chair. (altında) [under / on / in] -> under :: altında = under.
+  Q4: I am ___ home. [at / in / on] -> at :: at home kalıptır.
+  Q5: The keys are ___ my bag. (içinde) [in / on / under] -> in :: içinde = in.
+  Q6: The shoes are ___ the bed. (altında) [under / on / at] -> under :: altında = under.
+  Q7: The lesson starts ___ 9 o'clock. [at / in / on] -> at :: Saatlerle at kullanılır: at 9 o'clock.
+
+=== 2-8 [vocab] Zaman & Günler
+desc: Zaman ve gün kelimeleri.
+  1. Today = Bugün | Today is Monday. | Bugün pazartesi.
+  2. Tomorrow = Yarın | See you tomorrow. | Yarın görüşürüz.
+  3. Yesterday = Dün | I was tired yesterday. | Dün yorgundum.
+  4. Morning = Sabah | Good morning! | Günaydın!
+  5. Night = Gece | Good night. | İyi geceler.
+  6. Week = Hafta | Next week. | Gelecek hafta.
+  7. Afternoon = Öğleden sonra | I sleep in the afternoon. | Öğleden sonra uyurum.
+  8. Evening = Akşam | I read in the evening. | Akşam kitap okurum.
+  9. Tonight = Bu gece | See you tonight. | Bu gece görüşürüz.
+  10. Now = Şimdi | I am busy now. | Şimdi meşgulüm.
+  11. Minute = Dakika | Wait a minute, please. | Bir dakika bekleyin, lütfen.
+  12. What time is it? = Saat kaç? | Excuse me, what time is it? | Affedersiniz, saat kaç?
+info: Gün ve zaman kelimeleri: 'today' bugün, 'tomorrow' yarın, 'yesterday' dün.
+
+=== 2-9 [vocab] Alışveriş
+desc: Markette ve dükkânda lazım olan kelimeler.
+  1. Supermarket = Süpermarket | The supermarket is open. | Süpermarket açık.
+  2. Price = Fiyat | What is the price? | Fiyatı ne?
+  3. Cheap = Ucuz | This bag is cheap. | Bu çanta ucuz.
+  4. Expensive = Pahalı | It is too expensive. | Çok pahalı.
+  5. How much is it? = Ne kadar? / Kaç para? | How much is it? — Ten pounds. | Ne kadar? — On sterlin.
+  6. Money = Para | I don't have much money. | Çok param yok.
+  7. Cash = Nakit | Can I pay in cash? | Nakit ödeyebilir miyim?
+  8. Card = Kart | I pay by card. | Kartla öderim.
+  9. Receipt = Fiş | Can I have the receipt, please? | Fişi alabilir miyim, lütfen?
+  10. Size = Beden | What size are you? — Medium. | Bedeniniz ne? — Orta (M).
+  11. Discount = İndirim | Is there a discount? | İndirim var mı?
+info: Fiyat sormak: 'How much is it?' (tekil), 'How much are they?' (çoğul). Ödeme: 'Can I pay by card?' ya da 'in cash' (nakit). Beden sorarken: 'What size?'
+
+=== 2-10 [vocab] Ulaşım & Yol Tarifi
+desc: Yol sormak ve ulaşım.
+  1. Bus stop = Otobüs durağı | Where is the bus stop? | Otobüs durağı nerede?
+  2. Station = İstasyon | The train station is near. | Tren istasyonu yakın.
+  3. Taxi = Taksi | Can you call a taxi, please? | Bir taksi çağırabilir misiniz, lütfen?
+  4. Turn left = Sola dön | Turn left at the corner. | Köşeden sola dön.
+  5. Turn right = Sağa dön | Turn right here. | Burada sağa dön.
+  6. Go straight on = Düz git | Go straight on for two minutes. | İki dakika düz git.
+  7. Near = Yakın | Is it near? | Yakın mı?
+  8. Far = Uzak | The hospital is not far. | Hastane uzak değil.
+  9. Corner = Köşe | The shop is on the corner. | Dükkân köşede.
+  10. Traffic lights = Trafik ışıkları | Turn right at the traffic lights. | Trafik ışıklarından sağa dön.
+  11. How can I get to...? = ...'e nasıl gidebilirim? | How can I get to the station? | İstasyona nasıl gidebilirim?
+info: Yol tarifinde emir cümlesi kullanılır: 'Turn left', 'Go straight on'. Sormak için: 'Excuse me, how can I get to the station?' — önce 'Excuse me' demek kibarlıktır.
+
+=== 2-11 [vocab] Sağlık: Doktor & Eczane
+desc: Doktorda ve eczanede derdini anlatmak için.
+  1. Doctor = Doktor | I need a doctor. | Doktora ihtiyacım var.
+  2. Pharmacy = Eczane | Is there a pharmacy near here? | Buralarda eczane var mı?
+  3. Medicine = İlaç | Take this medicine twice a day. | Bu ilacı günde iki kez al.
+  4. Prescription = Reçete | Here is my prescription. | Buyurun, reçetem.
+  5. Pain = Ağrı | I have pain in my back. | Sırtımda ağrı var.
+  6. Headache = Baş ağrısı | I have a headache. | Başım ağrıyor.
+  7. Fever = Ateş (hastalık) | My son has a fever. | Oğlumun ateşi var.
+  8. Cough = Öksürük | I have a bad cough. | Kötü bir öksürüğüm var.
+  9. I have a cold = Soğuk algınlığım var / Nezleyim | I have a cold. I need tissues. | Nezleyim. Kâğıt mendile ihtiyacım var.
+  10. I am ill = Hastayım | I am ill. I can't go to work. | Hastayım. İşe gidemem.
+  11. It hurts here = Burası ağrıyor | Doctor, it hurts here. | Doktor bey, burası ağrıyor.
+info: Doktorda derdini anlatmak: 'I have a headache' (başım ağrıyor), 'I have a fever' (ateşim var). Ağrıyan yeri gösterip 'It hurts here' demek yeterli.
+
+=== 2-12 [vocab] Günlük Rutin
+desc: Bir günün akışını anlatan ifadeler.
+  1. Wake up = Uyanmak | I wake up at seven. | Yedide uyanırım.
+  2. Get up = Kalkmak (yataktan) | I get up early. | Erken kalkarım.
+  3. Have a shower = Duş almak | I have a shower every morning. | Her sabah duş alırım.
+  4. Get dressed = Giyinmek | I get dressed quickly. | Hızlıca giyinirim.
+  5. Have breakfast = Kahvaltı yapmak | We have breakfast together. | Birlikte kahvaltı yaparız.
+  6. Go to work = İşe gitmek | My husband goes to work by bus. | Eşim işe otobüsle gider.
+  7. Have lunch = Öğle yemeği yemek | I have lunch at one o'clock. | Saat birde öğle yemeği yerim.
+  8. Come home = Eve gelmek | He comes home at six. | O altıda eve gelir.
+  9. Have dinner = Akşam yemeği yemek | We have dinner at eight. | Sekizde akşam yemeği yeriz.
+  10. Watch TV = Televizyon izlemek | I watch TV in the evening. | Akşam televizyon izlerim.
+  11. Go to bed = Yatmak | I go to bed at eleven. | On birde yatarım.
+info: Günlük rutin geniş zamanla anlatılır: 'I get up at seven.' Saatten önce 'at' gelir. He/She ile fiile -s eklenir: 'She goes to work at eight.'
+
+=== 2-13 [vocab] Meslekler
+desc: Meslek adları ve iş hayatı.
+  1. Job = Meslek / İş | What is your job? | Mesleğin ne?
+  2. Teacher = Öğretmen | My daughter is a teacher. | Kızım öğretmen.
+  3. Nurse = Hemşire | The nurse is very kind. | Hemşire çok nazik.
+  4. Driver = Şoför | He is a bus driver. | O bir otobüs şoförü.
+  5. Chef = Aşçı | The chef cooks very well. | Aşçı çok güzel yemek yapar.
+  6. Engineer = Mühendis | My son is an engineer. | Oğlum mühendis.
+  7. Electrician = Elektrikçi | We need an electrician. | Bir elektrikçiye ihtiyacımız var.
+  8. Farmer = Çiftçi | My uncle is a farmer. | Amcam çiftçi.
+  9. Shop assistant = Tezgâhtar / Satış görevlisi | Ask the shop assistant. | Satış görevlisine sor.
+  10. Cleaner = Temizlikçi | The cleaner comes on Friday. | Temizlikçi cuma günü gelir.
+  11. Housewife = Ev hanımı | I am a housewife. | Ben ev hanımıyım.
+  12. Retired = Emekli | My father is retired. | Babam emekli.
+info: Meslek söylerken 'a' / 'an' unutulmaz: 'I am a teacher', 'She is an engineer' (sesli harfle başladığı için 'an'). Soru: 'What do you do?' = Ne iş yapıyorsun?
+
+=== 2-14 [grammar] Gramer: There is / There are (var / yok)
+intro: Bir yerde bir şeyin "var" olduğunu söylemek için kullanılır. "Masada bir kitap var" gibi.
+rule: Tekil için <b>There is</b> (kısaca There's): There is a book. Çoğul için <b>There are</b>: There are two cats. Olumsuz: <b>There isn't / There aren't</b>. Soru: <b>Is there...? / Are there...?</b>
+structure: [["","Tekil","Çoğul"],["Olumlu","There is a bank","There are two banks"],["Olumsuz","There isn't a bank","There aren't any banks"],["Soru","Is there a bank?","Are there any banks?"]]
+  ex: There is a cat in the garden. = Bahçede bir kedi var.
+  ex: There are three rooms in the house. = Evde üç oda var.
+  ex: There isn't a hospital in our village. = Köyümüzde hastane yok.
+  ex: Is there a pharmacy near here? = Buralarda eczane var mı?
+  Q1: There ___ a book on the table. [is / are / be] -> is :: Tekil (a book) → There is.
+  Q2: There ___ two cats in the garden. [are / is / am] -> are :: Çoğul (two cats) → There are.
+  Q3: ___ there a bank near here? [Is / Are / Do] -> Is :: Tekil soru: Is there...?
+  Q4: ___ there any chairs in the room? [Are / Is / Do] -> Are :: Çoğul soru: Are there...?
+  Q5: There ___ a hospital in our village. (yok) [isn't / aren't / not] -> isn't :: Tekil + olumsuz → There isn't.
+  Q6: There ___ any eggs in the fridge. (yok) [aren't / isn't / not] -> aren't :: Çoğul + olumsuz → There aren't.
+  Q7: There ___ many people at the bus stop. [are / is / be] -> are :: people çoğuldur → There are.
+
+=== 2-15 [grammar] Gramer: Soru Kelimeleri (What, Where, When...)
+intro: Bilgi istemek için soru kelimeleri kullanırız. Soru kelimesi cümlenin en başına gelir.
+rule: <b>What</b> = ne, <b>Where</b> = nerede/nereye, <b>When</b> = ne zaman, <b>Who</b> = kim, <b>Why</b> = neden, <b>How</b> = nasıl, <b>How much</b> = ne kadar (fiyat). Örnek: "<b>Where</b> is the bank?" = "Banka <b>nerede</b>?"
+structure: [["Soru kelimesi","Anlam","Örnek"],["What","ne","What is this?"],["Where","nerede","Where is the station?"],["When","ne zaman","When is the bus?"],["Who","kim","Who is he?"],["Why","neden","Why are you sad?"],["How","nasıl","How are you?"],["How much","ne kadar","How much is it?"]]
+  ex: Where do you live? = Nerede yaşıyorsun?
+  ex: When is your birthday? = Doğum günün ne zaman?
+  ex: Who is that man? = Şu adam kim?
+  ex: Why are you tired? = Neden yorgunsun?
+  ex: How much is this bag? = Bu çanta ne kadar?
+  Q1: ___ is the bus stop? — It's over there. [Where / When / Who] -> Where :: Yer soruyoruz → Where (nerede).
+  Q2: ___ is your birthday? — In May. [When / Where / What] -> When :: Zaman soruyoruz → When (ne zaman).
+  Q3: ___ is that woman? — She is my aunt. [Who / What / Where] -> Who :: Kişi soruyoruz → Who (kim).
+  Q4: ___ are you sad? — Because I am tired. [Why / How / When] -> Why :: Sebep soruyoruz → Why (neden). Cevap 'Because' (çünkü) ile başlar.
+  Q5: ___ is this? — It's a phone. [What / Who / Where] -> What :: Bir şeyi soruyoruz → What (ne).
+  Q6: ___ are you? — I am fine, thanks. [How / What / Who] -> How :: Hâl hatır soruyoruz → How (nasıl).
+  Q7: How ___ is this coffee? — Three pounds. [much / many / old] -> much :: Fiyat sorarken: How much (ne kadar).
+
+##### LEVEL 3 A2 Seviye 3 — Temel Üstü
+
+=== 3-1 [grammar] Gramer: Şimdiki Zaman (Present Continuous)
+intro: Tam şu anda yapılan işi anlatır. "Şu an okuyorum" gibi.
+rule: <b>am/is/are</b> + fiil + <b>-ing</b>. I am reading. She is cooking. They are playing.
+structure: [["Özne","Yapı","Örnek"],["I","am + ...ing","I am reading"],["He/She/It","is + ...ing","She is cooking"],["You/We/They","are + ...ing","They are playing"]]
+  ex: I am reading a book. = Kitap okuyorum.
+  ex: She is cooking now. = O şu an yemek yapıyor.
+  ex: They are playing. = Onlar oynuyorlar.
+  ex: We are working now. = Şu an çalışıyoruz.
+  Q1: I ___ reading. [am / is / are] -> am :: I ile am + ...ing.
+  Q2: She ___ cooking. [is / am / are] -> is :: She ile is + ...ing.
+  Q3: They ___ playing. [are / is / am] -> are :: They ile are + ...ing.
+  Q4: He is ___ now. (work) [working / work / works] -> working :: fiil + -ing: working.
+  Q5: We ___ watching TV now. [are / is / am] -> are :: We ile are + ...ing.
+  Q6: Look! It ___ raining. [is / are / am] -> is :: It ile is + ...ing.
+  Q7: She is ___ a letter. (write) [writing / writeing / writes] -> writing :: -e ile biten fiilde e düşer: write → writing.
+
+=== 3-2 [grammar] Gramer: Geçmiş Zaman (was / were)
+intro: "Olmak" fiilinin geçmiş hali. "Dün evdeydim" gibi.
+rule: I/He/She/It + <b>was</b>. You/We/They + <b>were</b>. I was happy. They were here.
+structure: [["Özne","Fiil","Örnek"],["I / He / She / It","was","I was at home"],["You / We / They","were","They were tired"]]
+  ex: I was at home. = Evdeydim.
+  ex: She was a teacher. = O öğretmendi.
+  ex: They were tired. = Onlar yorgundu.
+  ex: We were happy. = Biz mutluyduk.
+  Q1: I ___ at home yesterday. [was / were / am] -> was :: I ile was.
+  Q2: They ___ tired. [were / was / are] -> were :: They ile were.
+  Q3: She ___ a teacher. [was / were / is] -> was :: She ile was.
+  Q4: We ___ happy. [were / was / are] -> were :: We ile were.
+  Q5: You ___ late yesterday. [were / was / are] -> were :: You ile were.
+  Q6: The weather ___ very nice last week. [was / were / is] -> was :: 'The weather' = it → was.
+  Q7: My parents ___ in Izmir last summer. [were / was / are] -> were :: 'My parents' = they → were.
+
+=== 3-3 [grammar] Gramer: Geçmiş Zaman (-ed)
+intro: Düzenli fiillerin geçmiş hali. Sona -ed eklenir.
+rule: Düzenli fiil + <b>-ed</b>: play → play<b>ed</b>, work → work<b>ed</b>, like → lik<b>ed</b> (-e ile bitene sadece -d). "I played football" = "Futbol oynadım."
+structure: [["Şimdi","Geçmiş"],["play","played"],["work","worked"],["watch","watched"],["like","liked"]]
+  ex: I played football. = Futbol oynadım.
+  ex: She worked hard. = O çok çalıştı.
+  ex: We watched a film. = Bir film izledik.
+  ex: They liked the food. = Yemeği beğendiler.
+  Q1: I ___ football yesterday. (play) [played / play / plaied] -> played :: play → played.
+  Q2: She ___ hard. (work) [worked / work / worken] -> worked :: work → worked.
+  Q3: We ___ a film. (watch) [watched / watch / watcheded] -> watched :: watch → watched.
+  Q4: They ___ the food. (like) [liked / likeed / like] -> liked :: like → liked.
+  Q5: I ___ my mother yesterday. (call) [called / call / calld] -> called :: call → called.
+  Q6: We ___ the house last week. (clean) [cleaned / clean / cleant] -> cleaned :: clean → cleaned.
+  Q7: She ___ in London for a year. (live) [lived / liveed / live] -> lived :: -e ile biten fiile sadece -d: live → lived.
+
+=== 3-4 [grammar] Gramer: Düzensiz Fiiller
+intro: Bazı fiiller geçmişte -ed almaz; tamamen değişir. Bunları ezberlemek gerekir.
+rule: go → <b>went</b>, have → <b>had</b>, see → <b>saw</b>, eat → <b>ate</b>, come → <b>came</b>, do → <b>did</b>.
+structure: [["Şimdi","Geçmiş","Anlam"],["go","went","gitmek"],["eat","ate","yemek"],["see","saw","görmek"],["have","had","sahip olmak"],["come","came","gelmek"]]
+  ex: I went to school. = Okula gittim.
+  ex: She ate an apple. = O bir elma yedi.
+  ex: We saw a film. = Bir film izledik.
+  ex: He had a car. = Onun arabası vardı.
+  Q1: I ___ to school. (go) [went / goed / go] -> went :: go → went.
+  Q2: She ___ an apple. (eat) [ate / eated / eat] -> ate :: eat → ate.
+  Q3: We ___ a film. (see) [saw / seed / see] -> saw :: see → saw.
+  Q4: He ___ a car. (have) [had / haved / has] -> had :: have → had.
+  Q5: They ___ home late last night. (come) [came / comed / come] -> came :: come → came.
+  Q6: I ___ my homework yesterday. (do) [did / doed / do] -> did :: do → did.
+  Q7: We ___ to the sea last summer. (go) [went / goed / go] -> went :: go → went.
+
+=== 3-5 [grammar] Gramer: Gelecek Zaman (will / going to)
+intro: İleride olacak işleri anlatır. İki yol vardır.
+rule: <b>will</b> + fiil = anlık karar, söz veya tahmin: I will help you. <b>be going to</b> + fiil = plan: I am going to travel.
+structure: [["Yapı","Kullanım","Örnek"],["will + fiil","karar/söz/tahmin","It will rain"],["be going to + fiil","plan","I am going to study"]]
+  ex: I will help you. = Sana yardım edeceğim.
+  ex: It will rain. = Yağmur yağacak.
+  ex: I am going to travel. = Seyahat edeceğim (planlı).
+  ex: She is going to cook. = O yemek yapacak (planlı).
+  Q1: I ___ help you. (söz veriyorum) [will / going / am] -> will :: Anlık karar/söz: will.
+  Q2: It ___ rain. (tahmin) [will / going / is] -> will :: Tahmin: will.
+  Q3: I am ___ to travel. (plan) [going / will / go] -> going :: Plan: be going to.
+  Q4: She is going to ___. (cook) [cook / cooks / cooking] -> cook :: going to'dan sonra fiil yalın.
+  Q5: We are going to ___ my aunt tomorrow. (visit) [visit / visits / visiting] -> visit :: going to'dan sonra fiil yalın.
+  Q6: The phone is ringing. — I ___ answer it! (anlık karar) [will / am going / going] -> will :: Anlık karar: will.
+  Q7: They ___ going to buy a new car. (plan) [are / will / is] -> are :: They ile be going to: are going to.
+
+=== 3-6 [grammar] Gramer: Karşılaştırma (bigger, better)
+intro: İki şeyi karşılaştırırken kullanılır. "daha büyük" gibi.
+rule: Kısa sıfat + <b>-er</b> + <b>than</b>: big → big<b>ger</b> than. Uzun sıfatlarda <b>more</b>: more beautiful. İstisnalar: good → <b>better</b>, bad → <b>worse</b>.
+structure: [["Sıfat","Karşılaştırma"],["big","bigger"],["small","smaller"],["old","older"],["good","better"],["bad","worse"]]
+  ex: An elephant is bigger than a cat. = Fil kediden daha büyük.
+  ex: This is better than that. = Bu şundan daha iyi.
+  ex: A mouse is smaller than a dog. = Fare köpekten daha küçük.
+  Q1: An elephant is ___ than a cat. (big) [bigger / biger / more big] -> bigger :: big → bigger (g iki kez).
+  Q2: This is ___ than that. (good) [better / gooder / more good] -> better :: good → better (istisna).
+  Q3: A mouse is ___ than a dog. (small) [smaller / smallier / more small] -> smaller :: small → smaller.
+  Q4: Today is ___ than yesterday. (bad) [worse / badder / more bad] -> worse :: bad → worse (istisna).
+  Q5: A car is ___ than a bicycle. (fast) [faster / more fast / fastest] -> faster :: Kısa sıfat + -er: fast → faster.
+  Q6: This dress is ___ than that one. (beautiful) [more beautiful / beautifuler / most beautiful] -> more beautiful :: Uzun sıfatlarda more: more beautiful.
+  Q7: My brother is older ___ me. [than / that / then] -> than :: Karşılaştırmada 'than' (-den/-dan) kullanılır.
+
+=== 3-7 [vocab] Seyahat & Daha Fazla
+desc: Seyahat ve faydalı kelimeler.
+  1. Airport = Havalimanı | I am at the airport. | Havalimanındayım.
+  2. Ticket = Bilet | I have a ticket. | Bir biletim var.
+  3. Hotel = Otel | The hotel is nice. | Otel güzel.
+  4. Help = Yardım | Can you help me? | Bana yardım edebilir misin?
+  5. Where is...? = ... nerede? | Where is the hotel? | Otel nerede?
+  6. Excuse me = Affedersiniz | Excuse me, where is the bus stop? | Affedersiniz, otobüs durağı nerede?
+  7. Passport = Pasaport | Here is my passport. | Buyurun, pasaportum.
+  8. Suitcase = Bavul | My suitcase is very heavy. | Bavulum çok ağır.
+  9. Flight = Uçuş | My flight is at ten o'clock. | Uçuşum saat onda.
+  10. Luggage = Bagaj | Where can I get my luggage? | Bagajımı nereden alabilirim?
+  11. Boarding pass = Biniş kartı | Please show your boarding pass. | Lütfen biniş kartınızı gösterin.
+info: Seyahatte gereken kelimeler ve kalıplar. Bir yeri sormak için 'Where is...?' kullanılır.
+
+=== 3-8 [vocab] Seyahat: Otelde
+desc: Otelde giriş, oda ve istekler.
+  1. Reservation = Rezervasyon | I have a reservation. | Rezervasyonum var.
+  2. Single room = Tek kişilik oda | A single room for two nights, please. | İki gece için tek kişilik oda, lütfen.
+  3. Double room = Çift kişilik oda | Do you have a double room? | Çift kişilik odanız var mı?
+  4. Reception = Resepsiyon | Ask at reception. | Resepsiyona sorun.
+  5. Check in = Otele giriş yapmak | What time can I check in? | Saat kaçta giriş yapabilirim?
+  6. Check out = Otelden çıkış yapmak | We check out at twelve. | On ikide çıkış yapıyoruz.
+  7. Towel = Havlu | Can I have a clean towel? | Temiz bir havlu alabilir miyim?
+  8. Lift = Asansör | The lift is on the left. | Asansör solda.
+  9. Breakfast = Kahvaltı | Breakfast is from seven to ten. | Kahvaltı yediden ona kadar.
+  10. Air conditioning = Klima | The air conditioning doesn't work. | Klima çalışmıyor.
+  11. Wi-Fi password = Wi-Fi şifresi | What is the Wi-Fi password? | Wi-Fi şifresi ne?
+info: Otelde: 'I have a reservation' (rezervasyonum var). 'Check in' giriş, 'check out' çıkıştır. İngiltere'de asansöre 'lift', Amerika'da 'elevator' denir.
+
+=== 3-9 [vocab] Duygular
+desc: Nasıl hissettiğini anlat.
+  1. Tired = Yorgun | I am very tired today. | Bugün çok yorgunum.
+  2. Angry = Kızgın | Why are you angry? | Neden kızgınsın?
+  3. Worried = Endişeli | I am worried about my son. | Oğlum için endişeliyim.
+  4. Scared = Korkmuş | The child is scared of the dog. | Çocuk köpekten korkuyor.
+  5. Excited = Heyecanlı | I am excited about the trip. | Gezi için heyecanlıyım.
+  6. Bored = Sıkılmış | I am bored at home. | Evde canım sıkılıyor.
+  7. Surprised = Şaşırmış | She was surprised to see me. | Beni görünce şaşırdı.
+  8. Nervous = Gergin | I am nervous before the exam. | Sınavdan önce gerginim.
+  9. Calm = Sakin | Stay calm, please. | Lütfen sakin olun.
+  10. Lonely = Yalnız (hissetmek) | I feel lonely without my children. | Çocuklarım olmadan kendimi yalnız hissediyorum.
+  11. Proud = Gururlu | I am proud of you. | Seninle gurur duyuyorum.
+info: Duygular 'I am / I feel' ile söylenir: 'I am tired', 'I feel lonely'. Dikkat: 'I am bored' = sıkıldım; 'I am boring' = ben sıkıcıyım demektir!
+
+=== 3-10 [grammar] Gramer: Geçmiş Zaman Olumsuz & Soru (didn't / Did...?)
+intro: Geçmişte "yapmadım" demek ve soru sormak için did kullanırız. Geniş zamandaki do/does gibidir.
+rule: Olumsuz: özne + <b>didn't</b> + fiil (yalın): I <b>didn't</b> go. Soru: <b>Did</b> + özne + fiil (yalın)?: <b>Did</b> you eat? Dikkat: did varken fiil geçmiş hale girmez. "I didn't went" yanlış, "I didn't <b>go</b>" doğru.
+structure: [["Olumlu","Olumsuz","Soru"],["I went","I didn't go","Did you go?"],["She ate","She didn't eat","Did she eat?"],["They played","They didn't play","Did they play?"]]
+  ex: I didn't sleep well. = İyi uyumadım.
+  ex: She didn't come to work. = O işe gelmedi.
+  ex: Did you see my glasses? = Gözlüğümü gördün mü?
+  ex: Did they call you? = Seni aradılar mı?
+  Q1: I ___ go to work yesterday. [didn't / don't / wasn't] -> didn't :: Geçmişte olumsuz: didn't + fiil.
+  Q2: ___ you eat breakfast this morning? [Did / Do / Were] -> Did :: Geçmişte soru: Did you...?
+  Q3: She didn't ___ the film. (like) [like / liked / likes] -> like :: didn't'ten sonra fiil yalın: like.
+  Q4: Did he ___ you yesterday? (call) [call / called / calls] -> call :: Did ile fiil yalın kalır: call.
+  Q5: We ___ see him at the party last night. [didn't / doesn't / weren't] -> didn't :: Geçmiş olumsuz: didn't see.
+  Q6: Did you go to the market? — Yes, I ___. [did / went / do] -> did :: Kısa cevap: Yes, I did. / No, I didn't.
+  Q7: They didn't ___ home early. (come) [come / came / comes] -> come :: didn't'ten sonra düzensiz fiil de yalın: come (came değil).
+
+=== 3-11 [vocab] Telefon & Randevu
+desc: Telefonda konuşmak ve randevu almak.
+  1. Phone number = Telefon numarası | What is your phone number? | Telefon numaran ne?
+  2. Call = Aramak (telefonla) | I will call you tomorrow. | Yarın seni ararım.
+  3. Message = Mesaj | Send me a message. | Bana mesaj at.
+  4. Appointment = Randevu | I have an appointment at three. | Saat üçte randevum var.
+  5. I'd like to make an appointment = Randevu almak istiyorum | I'd like to make an appointment with the doctor. | Doktordan randevu almak istiyorum.
+  6. Cancel = İptal etmek | I want to cancel my appointment. | Randevumu iptal etmek istiyorum.
+  7. Busy = Meşgul | Sorry, I am busy now. | Üzgünüm, şu an meşgulüm.
+  8. Available = Müsait | Are you available on Monday? | Pazartesi müsait misiniz?
+  9. Can I speak to...? = ... ile görüşebilir miyim? | Can I speak to Mr. Smith, please? | Bay Smith ile görüşebilir miyim, lütfen?
+  10. Hold on, please = Lütfen hatta kalın | Hold on, please. I'll check. | Lütfen hatta kalın, bakıyorum.
+  11. Call me back = Beni geri ara | Please call me back later. | Lütfen beni sonra geri ara.
+  12. Wrong number = Yanlış numara | Sorry, wrong number. | Pardon, yanlış numara.
+info: Telefonda kibar kalıplar: 'Can I speak to ...?', 'Hold on, please'. Randevu için: 'I'd like to make an appointment.' — 'I'd like' = 'I would like' (isterdim).
+
+=== 3-12 [vocab] Restoranda
+desc: Masa istemek, sipariş vermek ve hesap.
+  1. A table for two, please = İki kişilik bir masa, lütfen | Good evening. A table for two, please. | İyi akşamlar. İki kişilik bir masa, lütfen.
+  2. Menu = Menü | Can I see the menu, please? | Menüye bakabilir miyim, lütfen?
+  3. Waiter = Garson | The waiter is coming. | Garson geliyor.
+  4. Order = Sipariş vermek | Are you ready to order? | Sipariş vermeye hazır mısınız?
+  5. I'd like... = ... isterim (kibar) | I'd like the fish, please. | Balık alayım, lütfen.
+  6. Hungry = Aç | I am very hungry. | Çok açım.
+  7. Thirsty = Susamış | I am thirsty. Water, please. | Susadım. Su, lütfen.
+  8. Delicious = Lezzetli | The soup is delicious. | Çorba çok lezzetli.
+  9. Dessert = Tatlı | What do you have for dessert? | Tatlı olarak neyiniz var?
+  10. Vegetarian = Vejetaryen | Do you have vegetarian food? | Vejetaryen yemeğiniz var mı?
+  11. Bill = Hesap | The bill, please. | Hesap, lütfen.
+  12. Tip = Bahşiş | We leave a tip for the waiter. | Garsona bahşiş bırakırız.
+info: Restoranda kibar sipariş 'I'd like ...' ile verilir: 'I'd like a soup, please.' Hesabı istemek: 'Can I have the bill, please?' (Amerika'da 'the check').
+
+=== 3-13 [grammar] Gramer: Nesne Zamirleri (me, him, her...)
+intro: Cümlede işi yapan değil, işten etkilenen kişiyi anlatırken zamir değişir. "Beni, onu, bizi" gibi.
+rule: <b>I → me</b> (beni/bana), <b>you → you</b> (seni/sana), <b>he → him</b> (onu, erkek), <b>she → her</b> (onu, kadın), <b>it → it</b>, <b>we → us</b> (bizi/bize), <b>they → them</b> (onları). Fiilden veya edattan sonra gelir: Call <b>me</b>. Look at <b>them</b>.
+structure: [["Özne","Nesne","Örnek"],["I","me","Help me (bana yardım et)"],["he","him","I know him (onu tanıyorum)"],["she","her","Call her (onu ara)"],["we","us","Wait for us (bizi bekle)"],["they","them","I love them (onları seviyorum)"]]
+  ex: Please call me tomorrow. = Lütfen yarın beni ara.
+  ex: I see him every day. = Onu her gün görüyorum.
+  ex: My daughter visits us on Sundays. = Kızım pazar günleri bizi ziyaret eder.
+  ex: These flowers are for you. = Bu çiçekler senin için.
+  Q1: This is my son. I love ___ very much. [him / he / his] -> him :: Fiilden sonra nesne: he → him.
+  Q2: Where is Ayşe? I can't see ___. [her / she / hers] -> her :: she → her (onu).
+  Q3: Can you help ___? (bize) [us / we / our] -> us :: we → us (bizi/bize).
+  Q4: My grandchildren are here. I play with ___. [them / they / their] -> them :: Edattan sonra nesne: they → them.
+  Q5: Please call ___ tomorrow. (beni) [me / I / my] -> me :: I → me (beni/bana).
+  Q6: Ali is my neighbour. I talk to ___ every day. [him / her / them] -> him :: Ali erkek → him.
+  Q7: This cake is for ___. (senin için) [you / your / yours] -> you :: you hem özne hem nesne olarak aynıdır: for you.
+
+=== 3-14 [vocab] Acil Durumlar
+desc: Zor bir anda yardım istemek için.
+  1. Emergency = Acil durum | This is an emergency! | Bu acil bir durum!
+  2. Ambulance = Ambulans | Please call an ambulance! | Lütfen ambulans çağırın!
+  3. Police = Polis | Call the police! | Polisi arayın!
+  4. Fire = Yangın | There is a fire in the building! | Binada yangın var!
+  5. Accident = Kaza | There was an accident on the road. | Yolda bir kaza oldu.
+  6. Danger = Tehlike | Danger! Don't go in. | Tehlike! İçeri girme.
+  7. Injured = Yaralı | A man is injured. | Bir adam yaralı.
+  8. First aid = İlk yardım | Do you know first aid? | İlk yardım biliyor musunuz?
+  9. I am lost = Kayboldum | Excuse me, I am lost. | Affedersiniz, kayboldum.
+  10. My wallet was stolen = Cüzdanım çalındı | Help! My wallet was stolen. | Yardım edin! Cüzdanım çalındı.
+  11. Be careful! = Dikkat et! | Be careful! The floor is wet. | Dikkat et! Yer ıslak.
+  12. Embassy = Büyükelçilik | Where is the Turkish Embassy? | Türk Büyükelçiliği nerede?
+info: Acil durumda kısa ve net konuş: 'Help!', 'Call an ambulance!', 'Call the police!' Avrupa'da acil numara 112'dir. 'Be careful!' = Dikkat et!
+
+##### LEVEL 4 B1 Seviye 4 — Orta
+
+=== 4-1 [grammar] Gramer: Present Perfect (have/has + V3)
+intro: Geçmişte olmuş ama etkisi şimdi de süren olayları ya da hayat tecrübelerini anlatır. "Hiç Londra'ya gittin mi?" gibi.
+rule: <b>have/has</b> + fiilin 3. hali (V3). Düzenli fiillerde V3 = -ed: work → work<b>ed</b>. Düzensizler ezberlenir: go → <b>gone</b>, see → <b>seen</b>, eat → <b>eaten</b>, be → <b>been</b>. <b>ever</b> = hiç (soruda), <b>never</b> = hiç (olumsuz anlam), <b>already</b> = çoktan, <b>yet</b> = henüz.
+structure: [["Özne","Yapı","Örnek"],["I/You/We/They","have + V3","I have finished"],["He/She/It","has + V3","She has gone"],["Soru","Have/Has ... + V3?","Have you ever been to Rome?"],["Olumsuz","haven't/hasn't + V3","He hasn't called yet"]]
+  ex: I have lost my keys. = Anahtarlarımı kaybettim (hâlâ yoklar).
+  ex: She has never seen snow. = O hiç kar görmedi.
+  ex: Have you ever been to London? = Hiç Londra'da bulundun mu?
+  ex: We have already eaten. = Biz çoktan yedik.
+  ex: He hasn't called yet. = O henüz aramadı.
+  Q1: I ___ finished my work. [have / has / am] -> have :: I ile have + V3.
+  Q2: She ___ gone to the market. [has / have / is] -> has :: She ile has + V3.
+  Q3: Have you ever ___ to Paris? (be) [been / was / be] -> been :: be fiilinin 3. hali: been.
+  Q4: We have ___ this film before. (see) [seen / saw / see] -> seen :: see → saw → seen. Present perfect'te 3. hal: seen.
+  Q5: He hasn't called ___. [yet / already / ever] -> yet :: Olumsuz cümlenin sonunda 'yet' (henüz).
+  Q6: I have ___ eaten sushi. (hiç) [never / yet / ever] -> never :: Olumlu cümlede 'hiç' anlamı için never: I have never eaten...
+  Q7: They have ___ left. The house is empty. (çoktan) [already / yet / never] -> already :: çoktan = already.
+
+=== 4-2 [vocab] İş & Ofis
+desc: İş hayatında sık geçen kelimeler.
+  1. Office = Ofis | I work in an office. | Bir ofiste çalışıyorum.
+  2. Meeting = Toplantı | The meeting is at ten. | Toplantı saat onda.
+  3. Boss = Patron | My boss is very busy. | Patronum çok meşgul.
+  4. Colleague = İş arkadaşı | My colleagues are friendly. | İş arkadaşlarım cana yakın.
+  5. Salary = Maaş | The salary is paid every month. | Maaş her ay ödenir.
+  6. Customer = Müşteri | The customer is waiting. | Müşteri bekliyor.
+  7. Contract = Sözleşme | Please sign the contract. | Lütfen sözleşmeyi imzalayın.
+  8. Invoice = Fatura | We sent the invoice yesterday. | Faturayı dün gönderdik.
+  9. Deadline = Son teslim tarihi | The deadline is Friday. | Son teslim tarihi cuma.
+  10. Job interview = İş görüşmesi | I have a job interview tomorrow. | Yarın iş görüşmem var.
+  11. Experience = Deneyim | She has a lot of experience. | Onun çok deneyimi var.
+  12. Overtime = Fazla mesai | We worked overtime last week. | Geçen hafta fazla mesai yaptık.
+info: İş hayatı kelimeleri. 'Boss' günlük dildir; resmi ortamda 'manager' denir. Fazla mesai: 'I work overtime.' Son tarih: 'The deadline is Friday.'
+
+=== 4-3 [grammar] Gramer: Geçmişte Süren Zaman (was/were + -ing)
+intro: Geçmişte belli bir anda devam eden işi anlatır. "Dün akşam saat 8'de yemek yapıyordum" gibi.
+rule: <b>was/were</b> + fiil + <b>-ing</b>. I/he/she/it + <b>was</b>, you/we/they + <b>were</b>. Süren bir iş kısa bir olayla kesilince: <b>when</b> + basit geçmiş zaman: I was cooking <b>when</b> the phone rang. İki iş aynı anda sürüyorsa: <b>while</b>.
+structure: [["Özne","Yapı","Örnek"],["I/He/She/It","was + ...ing","I was sleeping"],["You/We/They","were + ...ing","They were talking"],["Olumsuz","wasn't/weren't + ...ing","She wasn't working"],["Soru","Was/Were ... + ...ing?","Were you sleeping?"]]
+  ex: I was cooking at 8 o'clock. = Saat 8'de yemek yapıyordum.
+  ex: They were watching TV. = Onlar televizyon izliyorlardı.
+  ex: I was sleeping when the phone rang. = Telefon çaldığında uyuyordum.
+  ex: She was reading while he was cooking. = Adam yemek yaparken kadın kitap okuyordu.
+  Q1: I ___ sleeping at midnight last night. [was / were / am] -> was :: I ile was + ...ing.
+  Q2: They ___ playing in the garden at 5 pm yesterday. [were / was / are] -> were :: They ile were + ...ing (geçmiş zaman: yesterday).
+  Q3: She was ___ a book. (read) [reading / read / reads] -> reading :: was + fiil + -ing: reading.
+  Q4: I was cooking when the phone ___. [rang / was ringing / rings] -> rang :: Araya giren kısa olay basit geçmiş zamanla anlatılır: rang.
+  Q5: We ___ watching TV when you called. [were / was / are] -> were :: We ile were + ...ing.
+  Q6: ___ you sleeping when I called? [Were / Was / Did] -> Were :: you ile soru: Were you ...ing?
+  Q7: He ___ working yesterday. He was at home. (değildi) [wasn't / weren't / didn't] -> wasn't :: He ile olumsuz: wasn't + ...ing.
+
+=== 4-4 [vocab] Mahalle & Hizmetler
+desc: Mahalledeki yerler ve hizmetler.
+  1. Post office = Postane | I need to go to the post office. | Postaneye gitmem gerekiyor.
+  2. Bank = Banka | The bank opens at nine. | Banka dokuzda açılır.
+  3. Bakery = Fırın | I buy bread from the bakery. | Ekmeği fırından alırım.
+  4. Butcher = Kasap | The butcher has fresh meat. | Kasapta taze et var.
+  5. Greengrocer = Manav | The greengrocer sells fruit. | Manav meyve satar.
+  6. Hairdresser = Kuaför | I go to the hairdresser every month. | Her ay kuaföre giderim.
+  7. Neighbour = Komşu | Our neighbours are very kind. | Komşularımız çok nazik.
+  8. Library = Kütüphane | The library is quiet. | Kütüphane sessiz.
+  9. Park = Park | Let's walk in the park. | Parkta yürüyelim.
+  10. Town hall = Belediye | The town hall is in the city centre. | Belediye şehir merkezinde.
+  11. Petrol station = Benzin istasyonu | Is there a petrol station near here? | Buralarda benzin istasyonu var mı?
+  12. Dry cleaner's = Kuru temizleme | I took my coat to the dry cleaner's. | Montumu kuru temizlemeye götürdüm.
+info: Dükkân adlarında 's genelde 'dükkânı' anlamına gelir: 'the butcher's' = kasap dükkânı, 'the dry cleaner's' = kuru temizlemeci. 'I'm going to the bank.'
+
+=== 4-5 [grammar] Gramer: If (Birinci Koşul Cümlesi)
+intro: Gerçekleşmesi mümkün bir koşulu ve sonucunu anlatır. "Yağmur yağarsa evde kalırız" gibi.
+rule: <b>If</b> + geniş zaman, <b>will</b> + fiil: If it rain<b>s</b>, we <b>will</b> stay at home. Dikkat: if'li kısımda will kullanılmaz; "If it will rain" yanlıştır. Kısımların yeri değişebilir: We will stay at home if it rains.
+structure: [["If kısmı (koşul)","Sonuç kısmı"],["If it rains,","we will stay at home."],["If you study,","you will pass."],["If she is tired,","she won't come."]]
+  ex: If it rains, I will take an umbrella. = Yağmur yağarsa şemsiye alırım.
+  ex: If you are hungry, I will cook. = Açsan yemek yaparım.
+  ex: If we hurry, we won't miss the bus. = Acele edersek otobüsü kaçırmayız.
+  ex: I will call you if I am late. = Geç kalırsam seni ararım.
+  Q1: If it ___, we will stay at home. (rain) [rains / will rain / rained] -> rains :: If kısmında geniş zaman: rains.
+  Q2: If you study, you ___ pass the exam. [will / are / did] -> will :: Sonuç kısmında will + fiil.
+  Q3: If I ___ tired, I will go to bed early. [am / will be / was] -> am :: If kısmında will kullanılmaz: If I am tired.
+  Q4: She will ___ you if she has time. (help) [help / helps / helped] -> help :: will'den sonra fiil yalın: help.
+  Q5: If we don't hurry, we ___ miss the bus. [will / do / are] -> will :: Sonuç kısmı: will miss.
+  Q6: If he ___ the bus, he will be late. (miss) [misses / will miss / miss] -> misses :: If kısmında geniş zaman; he ile -es: misses.
+  Q7: If it is cold, I ___ go out. (çıkmayacağım) [won't / don't will / am not] -> won't :: will not = won't. Sonuç kısmında olumsuz: won't + fiil.
+
+=== 4-6 [vocab] Haberler & Fikirler
+desc: Haberleri konuşmak ve fikrini söylemek.
+  1. News = Haberler | I watch the news every evening. | Her akşam haberleri izlerim.
+  2. Newspaper = Gazete | My father reads the newspaper. | Babam gazete okur.
+  3. Headline = Manşet | Did you see the headline today? | Bugünkü manşeti gördün mü?
+  4. Article = Makale / Yazı | This article is very interesting. | Bu yazı çok ilginç.
+  5. Weather forecast = Hava tahmini | The weather forecast says it will rain. | Hava tahminine göre yağmur yağacak.
+  6. In my opinion = Bana göre / Bence | In my opinion, it is a good idea. | Bence bu iyi bir fikir.
+  7. I think so = Sanırım öyle | Is it true? — I think so. | Doğru mu? — Sanırım öyle.
+  8. I agree = Katılıyorum | I agree with you. | Sana katılıyorum.
+  9. I disagree = Katılmıyorum | Sorry, I disagree. | Kusura bakma, katılmıyorum.
+  10. That's true = Bu doğru | That's true. You are right. | Bu doğru. Haklısın.
+  11. Really? = Gerçekten mi? | Really? I didn't know that. | Gerçekten mi? Bunu bilmiyordum.
+  12. Maybe = Belki | Maybe you are right. | Belki haklısın.
+info: Fikir bildirmek: 'In my opinion ...' ya da kısaca 'I think ...'. Katılmak 'I agree', katılmamak 'I disagree'. Şaşırınca 'Really?' denir.
+
+=== 4-7 [grammar] Gramer: should / must / have to
+intro: Tavsiye vermek ve zorunluluk anlatmak için kullanılır.
+rule: <b>should</b> + fiil = tavsiye (-meli, iyi olur): You <b>should</b> rest. <b>must</b> + fiil = güçlü zorunluluk, kural: You <b>must</b> stop at a red light. <b>have to / has to</b> + fiil = gereklilik: I <b>have to</b> work tomorrow. <b>mustn't</b> = yasak! <b>don't have to</b> = gerek yok.
+structure: [["Yapı","Anlam","Örnek"],["should","tavsiye","You should see a doctor"],["must","zorunluluk / kural","You must wear a seatbelt"],["have to / has to","gereklilik","She has to work on Saturday"],["mustn't","yasak","You mustn't smoke here"],["don't have to","gerek yok","You don't have to pay"]]
+  ex: You should drink more water. = Daha çok su içmelisin.
+  ex: You must show your passport. = Pasaportunu göstermek zorundasın.
+  ex: I have to go to the bank. = Bankaya gitmem gerekiyor.
+  ex: You mustn't park here. = Buraya park etmek yasak.
+  ex: You don't have to come. = Gelmek zorunda değilsin.
+  Q1: You look tired. You ___ rest. (tavsiye) [should / mustn't / has to] -> should :: Tavsiye: should + fiil.
+  Q2: She ___ work on Saturdays. [has to / have to / must to] -> has to :: she ile has to. (must'tan sonra 'to' gelmez.)
+  Q3: You ___ smoke in the hospital. (yasak) [mustn't / don't have to / should] -> mustn't :: Yasak: mustn't.
+  Q4: It's Sunday. I ___ get up early. (gerek yok) [don't have to / mustn't / must] -> don't have to :: Gerek yok: don't have to.
+  Q5: You must ___ your seatbelt. (wear) [wear / to wear / wearing] -> wear :: must'tan sonra fiil yalın gelir: must wear.
+  Q6: I have a toothache. I ___ see a dentist. (tavsiye) [should / shouldn't / don't have to] -> should :: Tavsiye: should.
+  Q7: We ___ be at the airport at 6. Our flight is at 8. [have to / has to / must to] -> have to :: we ile have to.
+
+=== 4-8 [vocab] Ev İşleri
+desc: Ev işleri ve küçük tamirler.
+  1. Do the laundry = Çamaşır yıkamak | I do the laundry on Mondays. | Pazartesileri çamaşır yıkarım.
+  2. Wash the dishes = Bulaşık yıkamak | Can you wash the dishes? | Bulaşıkları yıkayabilir misin?
+  3. Clean = Temizlemek | I clean the kitchen every day. | Her gün mutfağı temizlerim.
+  4. Iron = Ütülemek | I iron the shirts. | Gömlekleri ütülerim.
+  5. Vacuum = Süpürge çekmek | I vacuum the living room. | Oturma odasına süpürge çekerim.
+  6. Tidy up = Ortalığı toplamak | Please tidy up your room. | Lütfen odanı topla.
+  7. Make the bed = Yatağı toplamak | I make the bed every morning. | Her sabah yatağı toplarım.
+  8. Take out the rubbish = Çöpü çıkarmak | Can you take out the rubbish? | Çöpü çıkarabilir misin?
+  9. Water the plants = Çiçekleri sulamak | I water the plants in the evening. | Akşamları çiçekleri sularım.
+  10. Do the shopping = Alışveriş yapmak | We do the shopping on Saturday. | Cumartesi alışveriş yaparız.
+  11. Broken = Bozuk / Kırık | The washing machine is broken. | Çamaşır makinesi bozuk.
+  12. Repair = Tamir etmek | Can you repair the door? | Kapıyı tamir edebilir misin?
+info: Ev işlerinde 'do' ve 'make' karışır: 'do the laundry', 'do the shopping' ama 'make the bed'. Bir şey bozuksa: 'It's broken. Can you repair it?'
+
+=== 4-9 [grammar] Gramer: who / which (ilgi cümleleri)
+intro: İki cümleyi birleştirip bir kişiyi ya da şeyi daha ayrıntılı anlatmamızı sağlar. "Yan tarafta oturan kadın" gibi.
+rule: İnsanlar için <b>who</b>, eşyalar ve hayvanlar için <b>which</b> kullanılır. Günlük konuşmada ikisinin yerine <b>that</b> da olur. The woman <b>who</b> lives next door = yan tarafta yaşayan kadın. The bus <b>which</b> goes to the city = şehre giden otobüs.
+structure: [["Kim/ne için","Kelime","Örnek"],["insan","who","the man who works here"],["eşya / hayvan","which","the car which is red"],["ikisi de","that","the book that I read"]]
+  ex: The woman who lives next door is a nurse. = Yan tarafta yaşayan kadın hemşire.
+  ex: This is the bus which goes to the airport. = Bu, havalimanına giden otobüs.
+  ex: I have a friend who speaks Italian. = İtalyanca konuşan bir arkadaşım var.
+  ex: Where is the cake which I made? = Yaptığım pasta nerede?
+  Q1: The man ___ lives next door is a doctor. [who / which / where] -> who :: İnsan için who.
+  Q2: This is the bus ___ goes to the city centre. [which / who / where] -> which :: Eşya (otobüs) için which.
+  Q3: I have a friend ___ speaks English. [who / which / what] -> who :: İnsan (arkadaş) için who.
+  Q4: The cake ___ you made is delicious. [which / who / what] -> which :: Eşya (pasta) için which.
+  Q5: The nurse ___ helped me was very kind. [who / which / what] -> who :: İnsan (hemşire) için who.
+  Q6: I lost the bag ___ my daughter gave me. [which / who / what] -> which :: Eşya (çanta) için which.
+  Q7: The shop ___ sells fresh bread is closed today. [which / who / what] -> which :: Yer/eşya (dükkân) için which.

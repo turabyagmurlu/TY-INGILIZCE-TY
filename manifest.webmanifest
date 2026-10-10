@@ -1,13 +1,13 @@
 {
-  "name": "TY İngilizce",
-  "short_name": "TY İngilizce",
-  "description": "İngilizce kelime ve tekrar uygulaması",
+  "name": "TY Dil",
+  "short_name": "TY Dil",
+  "description": "İtalyanca A1 ve İngilizce B2 için günlük ders, koçlar, kelime kartları ve ilerleme",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#F7F4EF",
-  "theme_color": "#4F7CAC",
+  "theme_color": "#44709E",
   "lang": "tr",
   "icons": [
     { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },

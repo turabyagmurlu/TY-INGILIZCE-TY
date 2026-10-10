@@ -1,0 +1,8 @@
+Koçlar için API anahtarı gerekli
+
+Chiara ve Oliver senin Anthropic API anahtarınla çalışır. Anahtar yalnızca bu cihazda saklanır.
+
+Anahtarı gir
+Dersler'e geç
+
+Anahtarsız devam: sadece Dersler (üniteler) ve kelime kartları çalışır; koçlu günlük ders ve kayıt anahtar ister.

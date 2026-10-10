@@ -1,0 +1,882 @@
+
+##### LEVEL 1 A1 Seviye 1 — Başlangıç
+
+=== it1-1 [vocab] Selamlaşma
+desc: Günlük selamlaşma.
+  1. Ciao = Merhaba / Selam | Ciao, come stai? | Merhaba, nasılsın?
+  2. Buongiorno = Günaydın / İyi günler | Buongiorno! | Günaydın!
+  3. Buonasera = İyi akşamlar | Buonasera a tutti. | Herkese iyi akşamlar.
+  4. Arrivederci = Hoşça kal / Görüşürüz | Arrivederci! | Görüşürüz!
+  5. Come stai? = Nasılsın? | Ciao, come stai? | Merhaba, nasılsın?
+  6. Sto bene = İyiyim | Sto bene, grazie. | İyiyim, teşekkürler.
+  7. Buonanotte = İyi geceler | Buonanotte, dormi bene! | İyi geceler, iyi uykular!
+  8. A domani = Yarın görüşürüz | Ciao, a domani! | Hoşça kal, yarın görüşürüz!
+  9. Benvenuto = Hoş geldin (kadına: Benvenuta) | Benvenuto in Italia! | İtalya'ya hoş geldin!
+  10. Come sta? = Nasılsınız? (resmi) | Buongiorno, signora. Come sta? | Günaydın hanımefendi. Nasılsınız?
+  11. E tu? = Ya sen? | Sto bene, e tu? | İyiyim, ya sen?
+info: 'Ciao' hem merhaba hem hoşça kal demektir (samimi). 'Buongiorno' sabah/gündüz, 'Buonasera' akşam kullanılır. 'Come stai?' = nasılsın.
+
+=== it1-2 [grammar] Gramer: essere (olmak)
+intro: İtalyancada 'olmak' fiili essere'dir. Özneye göre değişir.
+rule: io <b>sono</b>, tu <b>sei</b>, lui/lei <b>è</b>, noi <b>siamo</b>, voi <b>siete</b>, loro <b>sono</b>. Örnek: "Io <b>sono</b> felice" = "Ben mutluyum".
+structure: [["Özne","Fiil","Örnek"],["io (ben)","sono","Io sono Deniz"],["tu (sen)","sei","Tu sei gentile"],["lui/lei (o)","è","Lei è felice"],["noi (biz)","siamo","Noi siamo qui"],["voi (siz)","siete","Voi siete pronti"],["loro (onlar)","sono","Loro sono qui"]]
+  ex: Io sono Deniz. = Ben Deniz'im.
+  ex: Tu sei gentile. = Sen naziksin.
+  ex: Lei è felice. = O mutlu.
+  ex: Noi siamo qui. = Biz buradayız.
+  Q1: Io ___ Deniz. [sono / sei / è] -> sono :: io ile 'sono'.
+  Q2: Tu ___ gentile. [sei / sono / è] -> sei :: tu ile 'sei'.
+  Q3: Lei ___ felice. [è / sei / sono] -> è :: lui/lei ile 'è'.
+  Q4: Noi ___ qui. [siamo / siete / sono] -> siamo :: noi ile 'siamo'.
+  Q5: Voi ___ pronti. [siete / siamo / sono] -> siete :: voi ile 'siete'.
+  Q6: Loro ___ qui. [sono / siete / è] -> sono :: loro ile 'sono' (io ile aynı).
+  Q7: Ben Türküm (kadın): Io ___ turca. [sono / è / sei] -> sono :: io ile 'sono'. Kadın için 'turca'.
+
+=== it1-3 [vocab] Tanışma
+desc: Kendini tanıtma.
+  1. Mi chiamo Deniz = Benim adım Deniz | Ciao, mi chiamo Deniz. | Merhaba, benim adım Deniz.
+  2. Come ti chiami? = Adın ne? | Come ti chiami? | Adın ne?
+  3. Piacere = Memnun oldum | Piacere! | Memnun oldum!
+  4. Vengo dalla Turchia = Türkiye'denim | Vengo dalla Turchia. | Türkiye'den geliyorum.
+  5. Grazie = Teşekkür ederim | Grazie mille! | Çok teşekkürler!
+  6. Prego = Rica ederim / Buyurun | Prego! | Rica ederim!
+  7. Quanti anni hai? = Kaç yaşındasın? | Scusa, quanti anni hai? | Pardon, kaç yaşındasın?
+  8. Abito a Istanbul = İstanbul'da oturuyorum | Abito a Istanbul con la mia famiglia. | Ailemle İstanbul'da oturuyorum.
+  9. Parlo un po' d'italiano = Biraz İtalyanca konuşuyorum | Scusi, parlo solo un po' d'italiano. | Affedersiniz, sadece biraz İtalyanca konuşuyorum.
+  10. Che lavoro fai? = Ne iş yapıyorsun? | Che lavoro fai? — Sono insegnante. | Ne iş yapıyorsun? — Öğretmenim.
+  11. Piacere mio = Ben de memnun oldum | Piacere! — Piacere mio. | Memnun oldum! — Ben de memnun oldum.
+info: Adını söylemek: 'Mi chiamo ...' (adım ...). Sormak: 'Come ti chiami?'. Tanışınca 'Piacere' (memnun oldum).
+
+=== it1-4 [grammar] Gramer: Belirli artikeller (il / la)
+intro: İtalyancada isimlerin cinsiyeti vardır: eril ve dişil. Artikel buna göre değişir.
+rule: Eril tekil: genelde <b>il</b> (il libro = kitap). Dişil tekil: <b>la</b> (la casa = ev). Sesli harfle başlayan isimden önce <b>l'</b> (l'amico).
+structure: [["Tür","Artikel","Örnek"],["Eril","il","il libro (kitap)"],["Dişil","la","la casa (ev)"],["Sesli ile başlayan","l'","l'amico (arkadaş)"]]
+  ex: il libro = kitap
+  ex: la casa = ev
+  ex: la pizza = pizza
+  ex: il caffè = kahve
+  Q1: ___ libro (eril) [il / la / lo] -> il :: Eril tekil: il.
+  Q2: ___ casa (dişil) [la / il / lo] -> la :: Dişil tekil: la.
+  Q3: ___ pizza (dişil) [la / il / le] -> la :: pizza dişil: la pizza.
+  Q4: ___ caffè (eril) [il / la / le] -> il :: caffè eril: il caffè.
+  Q5: ___ amico [l' / il / la] -> l' :: Sesli harfle başlayan isimden önce l': l'amico.
+  Q6: ___ finestra (dişil) [la / il / l'] -> la :: Dişil tekil: la finestra.
+  Q7: ___ acqua (dişil, sesli harfle başlıyor) [l' / la / il] -> l' :: Sesli harften önce la → l': l'acqua.
+
+=== it1-5 [vocab] Sayılar
+desc: 1-10 arası sayılar.
+  1. Uno = Bir | Ho un libro. | Bir kitabım var.
+  2. Due = İki | Due caffè, per favore. | İki kahve, lütfen.
+  3. Tre = Üç | Tre amici. | Üç arkadaş.
+  4. Quattro = Dört | Quattro giorni. | Dört gün.
+  5. Cinque = Beş | Cinque minuti. | Beş dakika.
+  6. Dieci = On | Dieci euro. | On euro.
+  7. Sei = Altı | Sei euro. | Altı euro.
+  8. Sette = Yedi | Sette giorni. | Yedi gün.
+  9. Otto = Sekiz | Otto ore. | Sekiz saat.
+  10. Nove = Dokuz | Nove anni. | Dokuz yıl.
+info: 1'den 10'a sayılar: uno, due, tre, quattro, cinque ... dieci.
+
+=== it1-6 [vocab] Renkler
+desc: Temel renkler.
+  1. Rosso = Kırmızı | Il libro è rosso. | Kitap kırmızı.
+  2. Blu = Mavi | Il cielo è blu. | Gökyüzü mavi.
+  3. Verde = Yeşil | L'erba è verde. | Çimen yeşil.
+  4. Giallo = Sarı | Il sole è giallo. | Güneş sarı.
+  5. Bianco = Beyaz | Il latte è bianco. | Süt beyaz.
+  6. Nero = Siyah | Il caffè è nero. | Kahve siyah.
+  7. Rosa = Pembe | La borsa è rosa. | Çanta pembe.
+  8. Arancione = Turuncu | Una maglietta arancione. | Turuncu bir tişört.
+  9. Marrone = Kahverengi | Ho gli occhi marroni. | Gözlerim kahverengi.
+  10. Grigio = Gri | Il cielo è grigio. | Gökyüzü gri.
+  11. Viola = Mor | Un fiore viola. | Mor bir çiçek.
+info: Temel renkler. İtalyanca'da renk genelde ismin sonuna gelir ve cinsiyete uyar: 'libro rosso' = kırmızı kitap.
+
+=== it1-7 [grammar] Gramer: avere (sahip olmak)
+intro: 'Sahip olmak' fiili: avere. 'Bir ...'m var' demek için kullanılır.
+rule: io <b>ho</b>, tu <b>hai</b>, lui/lei <b>ha</b>, noi <b>abbiamo</b>, voi <b>avete</b>, loro <b>hanno</b>. Örnek: "Io <b>ho</b> un cane" = "Bir köpeğim var".
+structure: [["Özne","Fiil","Örnek"],["io","ho","Io ho un libro"],["tu","hai","Tu hai una casa"],["lui/lei","ha","Lei ha un gatto"],["noi","abbiamo","Noi abbiamo tempo"],["voi","avete","Voi avete ragione"],["loro","hanno","Loro hanno fame"]]
+  ex: Io ho un cane. = Bir köpeğim var.
+  ex: Lei ha un gatto. = Onun bir kedisi var.
+  ex: Noi abbiamo tempo. = Zamanımız var.
+  ex: Loro hanno fame. = Onlar aç.
+  Q1: Io ___ un libro. [ho / hai / ha] -> ho :: io ile 'ho'.
+  Q2: Tu ___ una casa. [hai / ho / ha] -> hai :: tu ile 'hai'.
+  Q3: Lei ___ un gatto. [ha / hai / ho] -> ha :: lui/lei ile 'ha'.
+  Q4: Noi ___ tempo. [abbiamo / avete / hanno] -> abbiamo :: noi ile 'abbiamo'.
+  Q5: Voi ___ ragione. [avete / abbiamo / hanno] -> avete :: voi ile 'avete'.
+  Q6: Loro ___ fame. [hanno / ha / avete] -> hanno :: loro ile 'hanno'. (h okunmaz: 'anno')
+  Q7: Bir kız kardeşim var: ___ una sorella. [Ho / Ha / Hai] -> Ho :: io ile 'ho'. Özne (io) söylenmese de fiilden anlaşılır.
+
+=== it1-8 [vocab] Aile
+desc: Aile bireyleri.
+  1. Madre = Anne | Mia madre è qui. | Annem burada.
+  2. Padre = Baba | Mio padre lavora. | Babam çalışıyor.
+  3. Sorella = Kız kardeş | Ho una sorella. | Bir kız kardeşim var.
+  4. Fratello = Erkek kardeş | Ho un fratello. | Bir erkek kardeşim var.
+  5. Figlio = Oğul | Mio figlio è piccolo. | Oğlum küçük.
+  6. Figlia = Kız evlat | Mia figlia è felice. | Kızım mutlu.
+  7. Marito = Koca / eş (erkek) | Mio marito lavora a Istanbul. | Kocam İstanbul'da çalışıyor.
+  8. Moglie = Hanım / eş (kadın) | Sua moglie è italiana. | Onun eşi İtalyan.
+  9. Nonno = Dede | Mio nonno ha ottant'anni. | Dedem seksen yaşında.
+  10. Nonna = Nine / büyükanne | La nonna cucina bene. | Büyükannem iyi yemek yapar.
+  11. Nipote = Torun / yeğen | Ho due nipoti. | İki torunum var.
+  12. Genitori = Anne baba / ebeveyn | I miei genitori sono in Turchia. | Annem babam Türkiye'de.
+info: Aile bireyleri: madre (anne), padre (baba), sorella (kız kardeş), fratello (erkek kardeş), figlio/figlia (oğul/kız).
+
+=== it1-9 [vocab] Temel İfadeler
+desc: Günlük hayatta çok kullanılan kalıplar.
+  1. Grazie mille = Çok teşekkürler | Grazie mille! | Çok teşekkürler!
+  2. Un attimo = Bir saniye / Bir dakika | Un attimo, per favore. | Bir saniye, lütfen.
+  3. Mi scusi = Affedersiniz | Mi scusi, dov'è il bagno? | Affedersiniz, tuvalet nerede?
+  4. Non capisco = Anlamıyorum | Scusa, non capisco. | Pardon, anlamıyorum.
+  5. Ho capito = Anladım | Sì, ho capito. | Evet, anladım.
+  6. Quanto costa? = Ne kadar? / Kaç para? | Quanto costa questo? | Bu ne kadar?
+  7. Va bene = Tamam / Olur | Va bene, grazie. | Tamam, teşekkürler.
+  8. Scusa = Pardon (samimi) | Scusa, dov'è la stazione? | Pardon, istasyon nerede?
+  9. Mi dispiace = Kusura bakma / Maalesef | Mi dispiace, non ho tempo. | Kusura bakma, zamanım yok.
+  10. Certo = Tabii / Elbette | Certo, va bene! | Tabii, olur!
+  11. Non importa = Önemli değil | Non importa, grazie. | Önemli değil, teşekkürler.
+info: Günlük kalıplar: Grazie (teşekkür), Un attimo (bir saniye), Mi scusi (affedersiniz), Quanto costa? (ne kadar?), Va bene (tamam).
+
+=== it1-10 [vocab] Günlük Konuşma Kalıpları
+desc: Sohbette işine yarayacak ek kalıplar.
+  1. A dopo = Sonra görüşürüz | Ciao, a dopo! | Hoşça kal, sonra görüşürüz!
+  2. Per favore = Lütfen | Un caffè, per favore. | Bir kahve, lütfen.
+  3. Puoi aiutarmi? = Bana yardım edebilir misin? | Scusa, puoi aiutarmi? | Pardon, bana yardım edebilir misin?
+  4. Non lo so = Bilmiyorum | Mi dispiace, non lo so. | Üzgünüm, bilmiyorum.
+  5. Molto bene = Çok iyi | Sto molto bene, grazie. | Çok iyiyim, teşekkürler.
+  6. Di dove sei? = Nerelisin? | Ciao! Di dove sei? | Merhaba! Nerelisin?
+  7. Sono turco = Türküm (kadın: Sono turca) | Sono turco, di Istanbul. | Türküm, İstanbulluyum.
+  8. Come si dice...? = ... nasıl denir? | Come si dice 'grazie' in turco? | Türkçede 'grazie' nasıl denir?
+  9. Più piano, per favore = Daha yavaş, lütfen | Scusi, più piano, per favore. | Affedersiniz, daha yavaş lütfen.
+  10. Può ripetere? = Tekrar eder misiniz? | Scusi, può ripetere? | Affedersiniz, tekrar eder misiniz?
+  11. Buona giornata = İyi günler dilerim | Grazie, buona giornata! | Teşekkürler, iyi günler!
+info: Sohbette çok geçen kalıplar. 'A dopo' (sonra görüşürüz), 'Per favore' (lütfen), 'Di dove sei?' (nerelisin?), 'Non lo so' (bilmiyorum), 'Sono turco' (Türküm).
+
+=== it1-11 [vocab] Hayvanlar
+desc: Evcil ve çiftlik hayvanları.
+  1. Cane = Köpek | Il cane è in giardino. | Köpek bahçede.
+  2. Gatto = Kedi | Il gatto dorme. | Kedi uyuyor.
+  3. Uccello = Kuş | L'uccello canta. | Kuş ötüyor.
+  4. Pesce = Balık | Il pesce è nell'acqua. | Balık suda.
+  5. Cavallo = At | Il cavallo è grande. | At büyük.
+  6. Mucca = İnek | La mucca dà il latte. | İnek süt verir.
+  7. Pecora = Koyun | Ci sono molte pecore. | Çok koyun var.
+  8. Gallina = Tavuk | La gallina fa le uova. | Tavuk yumurtlar.
+  9. Coniglio = Tavşan | Il coniglio è bianco. | Tavşan beyaz.
+  10. Farfalla = Kelebek | Una farfalla gialla. | Sarı bir kelebek.
+  11. Ape = Arı | L'ape fa il miele. | Arı bal yapar.
+info: İtalyanca'da her ismin cinsiyeti var: -o ile bitenler çoğunlukla eril (il gatto), -a ile bitenler dişil (la mucca). 'Cane' ve 'ape' -e ile biter; cinsiyetini kelimeyle ezberle.
+
+=== it1-12 [vocab] Vücut
+desc: Vücudun bölümleri.
+  1. Bocca = Ağız | Apri la bocca. | Ağzını aç.
+  2. Naso = Burun | Ho il naso rosso. | Burnum kırmızı.
+  3. Orecchio = Kulak | Mi fa male l'orecchio. | Kulağım ağrıyor.
+  4. Braccio = Kol | Alza il braccio. | Kolunu kaldır.
+  5. Gamba = Bacak | Mi fa male la gamba. | Bacağım ağrıyor.
+  6. Capelli = Saç | Ha i capelli neri. | Saçları siyah.
+  7. Schiena = Sırt | Mi fa male la schiena. | Sırtım ağrıyor.
+  8. Pancia = Karın | Ho mal di pancia. | Karnım ağrıyor.
+  9. Dente = Diş | Mi lavo i denti. | Dişlerimi fırçalarım.
+  10. Dito = Parmak | Ho un anello al dito. | Parmağımda bir yüzük var.
+  11. Collo = Boyun | Ho freddo al collo. | Boynum üşüyor.
+  12. Cuore = Kalp | Il cuore batte. | Kalp atıyor.
+info: Vücut kelimelerinde düzensiz çoğullar var: il braccio → le braccia (kollar), il dito → le dita (parmaklar), l'orecchio → le orecchie. 'Capelli' (saç) hep çoğuldur.
+
+=== it1-13 [vocab] Yiyecek: Meyve & Sebze
+desc: Pazarda ve mutfakta lazım olanlar.
+  1. Banana = Muz | Mangio una banana. | Bir muz yerim.
+  2. Arancia = Portakal | L'arancia è dolce. | Portakal tatlı.
+  3. Uva = Üzüm | Mi piace l'uva. | Üzümü severim.
+  4. Fragola = Çilek | Le fragole sono rosse. | Çilekler kırmızı.
+  5. Limone = Limon | Un tè con limone. | Limonlu bir çay.
+  6. Pomodoro = Domates | Un chilo di pomodori. | Bir kilo domates.
+  7. Patata = Patates | Le patate sono in cucina. | Patatesler mutfakta.
+  8. Cipolla = Soğan | Taglio la cipolla. | Soğanı doğrarım.
+  9. Aglio = Sarımsak | Non mi piace l'aglio. | Sarımsağı sevmem.
+  10. Carota = Havuç | Il coniglio mangia la carota. | Tavşan havuç yer.
+  11. Insalata = Salata | Un'insalata verde. | Yeşil salata.
+info: Meyve-sebze. -a ile bitenlerin çoğulu -e olur: banana → banane, fragola → fragole. -o ile bitenler -i olur: pomodoro → pomodori.
+
+=== it1-14 [vocab] Temel Fiiller
+desc: Her gün kullanılan fiiller (mastar hâli).
+  1. Lavorare = Çalışmak | Lavorare in ufficio. | Ofiste çalışmak.
+  2. Dormire = Uyumak | Dormire otto ore. | Sekiz saat uyumak.
+  3. Leggere = Okumak | Leggere un libro. | Kitap okumak.
+  4. Scrivere = Yazmak | Scrivere una lettera. | Mektup yazmak.
+  5. Aprire = Açmak | Aprire la porta. | Kapıyı açmak.
+  6. Chiudere = Kapatmak | Chiudere la finestra. | Pencereyi kapatmak.
+  7. Comprare = Satın almak | Comprare il pane. | Ekmek almak.
+  8. Cucinare = Yemek pişirmek | Cucinare la cena. | Akşam yemeği pişirmek.
+  9. Ascoltare = Dinlemek | Ascoltare la musica. | Müzik dinlemek.
+  10. Guardare = Bakmak / izlemek | Guardare la TV. | Televizyon izlemek.
+  11. Aspettare = Beklemek | Aspettare l'autobus. | Otobüs beklemek.
+  12. Pagare = Ödemek | Pagare il conto. | Hesabı ödemek.
+info: İtalyanca fiillerin mastarı -are, -ere, -ire ile biter: lavorare, leggere, dormire. Çekimde bu ek düşer: lavoro (çalışırım), leggo (okurum), dormo (uyurum).
+
+##### LEVEL 2 A1+ Seviye 2 — Temel
+
+=== it2-1 [grammar] Gramer: Çoğullar
+intro: İtalyancada çoğul, ismin son harfine göre değişir.
+rule: Eril <b>-o → -i</b>: libro → libri. Dişil <b>-a → -e</b>: casa → case. <b>-e</b> ile bitenler → <b>-i</b>: cane → cani.
+structure: [["Tekil","Çoğul"],["libro (kitap)","libri"],["casa (ev)","case"],["cane (köpek)","cani"],["mela (elma)","mele"]]
+  ex: due libri = iki kitap
+  ex: tre case = üç ev
+  ex: due cani = iki köpek
+  Q1: un libro, due ___ [libri / libro / libre] -> libri :: Eril -o → -i.
+  Q2: una casa, due ___ [case / casi / casa] -> case :: Dişil -a → -e.
+  Q3: un cane, due ___ [cani / cane / canes] -> cani :: -e → -i.
+  Q4: una mela, due ___ [mele / meli / mela] -> mele :: Dişil -a → -e.
+  Q5: una sedia, due ___ [sedie / sedii / sedia] -> sedie :: Dişil -a → -e: sedie.
+  Q6: un letto, due ___ [letti / lette / letto] -> letti :: Eril -o → -i: letti.
+  Q7: un fiore, tre ___ [fiori / fiore / fiora] -> fiori :: -e ile biten → -i: fiori.
+
+=== it2-2 [vocab] Yiyecek & İçecek
+desc: Sofradaki temel kelimeler.
+  1. Pane = Ekmek | Il pane è buono. | Ekmek güzel.
+  2. Acqua = Su | Un'acqua, per favore. | Bir su, lütfen.
+  3. Caffè = Kahve | Un caffè, per favore. | Bir kahve, lütfen.
+  4. Latte = Süt | Il latte è freddo. | Süt soğuk.
+  5. Formaggio = Peynir | Mi piace il formaggio. | Peyniri severim.
+  6. Mela = Elma | Mangio una mela. | Bir elma yerim.
+  7. Tè = Çay | Un tè caldo, per favore. | Sıcak bir çay, lütfen.
+  8. Uovo = Yumurta | Mangio un uovo a colazione. | Kahvaltıda bir yumurta yerim.
+  9. Carne = Et | Non mangio molta carne. | Çok et yemem.
+  10. Burro = Tereyağı | Pane e burro. | Ekmek ve tereyağı.
+  11. Zucchero = Şeker | Il caffè senza zucchero. | Şekersiz kahve.
+  12. Succo di frutta = Meyve suyu | Un succo di frutta, per favore. | Bir meyve suyu, lütfen.
+info: Temel yiyecek ve içecekler: pane (ekmek), acqua (su), caffè (kahve), latte (süt), formaggio (peynir).
+
+=== it2-3 [grammar] Gramer: Şimdiki zaman (-are fiilleri)
+intro: -are ile biten fiiller düzenli çekilir. Örnek: parlare (konuşmak).
+rule: Kök + <b>-o, -i, -a, -iamo, -ate, -ano</b>. parlare → io parlo, tu parli, lui/lei parla, noi parliamo, voi parlate, loro parlano.
+structure: [["Özne","parlare"],["io","parlo"],["tu","parli"],["lui/lei","parla"],["noi","parliamo"],["voi","parlate"],["loro","parlano"]]
+  ex: Io parlo italiano. = İtalyanca konuşurum.
+  ex: Lei parla bene. = O iyi konuşur.
+  ex: Noi mangiamo la pizza. = Pizza yeriz.
+  Q1: Io ___ italiano. (parlare) [parlo / parli / parla] -> parlo :: io → -o: parlo.
+  Q2: Tu ___ bene. (parlare) [parli / parlo / parla] -> parli :: tu → -i: parli.
+  Q3: Lui ___ italiano. (parlare) [parla / parlo / parli] -> parla :: lui → -a: parla.
+  Q4: Noi ___ la pizza. (mangiare) [mangiamo / mangiate / mangiano] -> mangiamo :: noi → -iamo.
+  Q5: Voi ___ italiano. (parlare) [parlate / parliamo / parlano] -> parlate :: voi → -ate: parlate.
+  Q6: Loro ___ molto. (lavorare) [lavorano / lavorate / lavora] -> lavorano :: loro → -ano: lavorano.
+  Q7: Io ___ la TV. (guardare) [guardo / guarda / guardi] -> guardo :: io → -o: guardo.
+
+=== it2-4 [grammar] Gramer: Olumsuz (non)
+intro: Olumsuz cümle için fiilden önce 'non' konur.
+rule: Özne + <b>non</b> + fiil. "Non parlo inglese" = "İngilizce konuşmam". "Non ho tempo" = "Zamanım yok".
+structure: [["Olumlu","Olumsuz"],["Parlo italiano","Non parlo italiano"],["Ho tempo","Non ho tempo"]]
+  ex: Non parlo inglese. = İngilizce konuşmam.
+  ex: Non ho tempo. = Zamanım yok.
+  ex: Non capisco. = Anlamıyorum.
+  Q1: İngilizce konuşmam: ___ parlo inglese. [Non / No / Ne] -> Non :: Olumsuzluk: non.
+  Q2: Zamanım yok: Non ___ tempo. [ho / hai / ha] -> ho :: io ile ho.
+  Q3: O et yemez: Lei non ___ carne. (mangiare) [mangia / mangio / mangi] -> mangia :: lui/lei → mangia.
+  Q4: Kahve içmiyoruz: Noi ___ beviamo caffè. [non / no / ne] -> non :: Fiilin önüne non: non beviamo.
+  Q5: Onlar burada değil: Loro non ___ qui. [sono / è / siamo] -> sono :: loro ile 'sono': non sono qui.
+  Q6: 'non' cümlede nereye gelir? [Fiilden önce / Fiilden sonra / Cümlenin sonuna] -> Fiilden önce :: non her zaman fiilin hemen önüne gelir.
+
+=== it2-5 [vocab] Ev & Eşyalar
+desc: Evdeki eşyalar.
+  1. Casa = Ev | La mia casa è grande. | Evim büyük.
+  2. Tavolo = Masa | Il libro è sul tavolo. | Kitap masanın üstünde.
+  3. Sedia = Sandalye | Una sedia rossa. | Kırmızı bir sandalye.
+  4. Porta = Kapı | Apri la porta. | Kapıyı aç.
+  5. Finestra = Pencere | Chiudi la finestra. | Pencereyi kapat.
+  6. Letto = Yatak | Il gatto è sul letto. | Kedi yatağın üstünde.
+  7. Cucina = Mutfak | Sono in cucina. | Mutfaktayım.
+  8. Bagno = Banyo / tuvalet | Il bagno è piccolo. | Banyo küçük.
+  9. Camera da letto = Yatak odası | La camera da letto è a destra. | Yatak odası sağda.
+  10. Divano = Kanepe | Il gatto dorme sul divano. | Kedi kanepede uyuyor.
+  11. Armadio = Dolap / gardırop | I vestiti sono nell'armadio. | Kıyafetler dolapta.
+  12. Frigorifero = Buzdolabı | Il latte è nel frigorifero. | Süt buzdolabında.
+info: Evdeki eşyalar: tavolo (masa), sedia (sandalye), porta (kapı), finestra (pencere), letto (yatak).
+
+=== it2-6 [grammar] Gramer: Edatlar (in, a, su, con)
+intro: Yer ve durum bildiren küçük kelimeler.
+rule: <b>in</b> = içinde/-de (in casa), <b>a</b> = -e/-a, belirli yer (a Roma), <b>su</b> = üstünde (sul tavolo), <b>con</b> = ile (con me).
+structure: [["Edat","Anlam","Örnek"],["in","içinde/-de","in casa"],["a","-e / belirli yer","a Roma"],["su","üstünde","sul tavolo"],["con","ile","con me"]]
+  ex: Sono a Roma. = Roma'dayım.
+  ex: Il libro è sul tavolo. = Kitap masanın üstünde.
+  ex: Vengo con te. = Seninle geliyorum.
+  Q1: Seninle geliyorum: Vengo ___ te. [con / su / in] -> con :: ile = con.
+  Q2: Roma'dayım: Sono ___ Roma. [a / su / con] -> a :: Belirli yer/şehir: a.
+  Q3: Kitap masanın üstünde: Il libro è ___ tavolo. [sul / con / in] -> sul :: üstünde: su + il = sul.
+  Q4: Evin içinde: ___ casa. [in / con / su] -> in :: içinde: in.
+  Q5: Arkadaşlarla: ___ gli amici. [con / in / su] -> con :: ile = con.
+  Q6: Milano'da oturuyorum: Abito ___ Milano. [a / in / su] -> a :: Şehirler için a: a Milano.
+  Q7: İtalya'da oturuyorum: Abito ___ Italia. [in / a / su] -> in :: Ülkeler için in: in Italia. (Şehir: a, ülke: in)
+
+=== it2-7 [grammar] Gramer: Soru sözcükleri
+intro: Soru sormak için kullanılan kelimeler.
+rule: <b>Dove</b> = nerede, <b>Cosa</b> = ne, <b>Quando</b> = ne zaman, <b>Chi</b> = kim, <b>Perché</b> = neden.
+structure: [["Soru","Anlam","Örnek"],["Dove?","nerede","Dove sei?"],["Cosa?","ne","Cosa fai?"],["Quando?","ne zaman","Quando vieni?"],["Chi?","kim","Chi è?"]]
+  ex: Dove sei? = Neredesin?
+  ex: Cosa fai? = Ne yapıyorsun?
+  ex: Chi è? = Kim o?
+  ex: Di dove sei? = Nerelisin?
+  Q1: Neredesin? ___ sei? [Dove / Chi / Quando] -> Dove :: nerede = Dove.
+  Q2: Ne yapıyorsun? ___ fai? [Cosa / Dove / Chi] -> Cosa :: ne = Cosa.
+  Q3: Kim o? ___ è? [Chi / Cosa / Dove] -> Chi :: kim = Chi.
+  Q4: Ne zaman geliyorsun? ___ vieni? [Quando / Dove / Chi] -> Quando :: ne zaman = Quando.
+  Q5: Neden gülüyorsun? ___ ridi? [Perché / Quando / Chi] -> Perché :: neden = Perché.
+  Q6: Ne kadar? ___ costa? [Quanto / Cosa / Dove] -> Quanto :: ne kadar = Quanto.
+  Q7: Nasılsın? ___ stai? [Come / Chi / Dove] -> Come :: nasıl = Come.
+
+=== it2-8 [vocab] Günler & Zaman
+desc: Haftanın günleri ve zaman.
+  1. Oggi = Bugün | Oggi è lunedì. | Bugün pazartesi.
+  2. Domani = Yarın | A domani! | Yarın görüşürüz!
+  3. Ieri = Dün | Ieri ero a casa. | Dün evdeydim.
+  4. Lunedì = Pazartesi | Lavoro di lunedì. | Pazartesi çalışırım.
+  5. Sabato = Cumartesi | Sabato non lavoro. | Cumartesi çalışmam.
+  6. Domenica = Pazar | Domenica dormo. | Pazar uyurum.
+  7. Martedì = Salı | Martedì vado al mercato. | Salı pazara giderim.
+  8. Mercoledì = Çarşamba | Ci vediamo mercoledì. | Çarşamba görüşürüz.
+  9. Giovedì = Perşembe | Giovedì lavoro fino alle sei. | Perşembe altıya kadar çalışırım.
+  10. Venerdì = Cuma | Venerdì sera esco. | Cuma akşamı dışarı çıkarım.
+  11. Settimana = Hafta | Una settimana in Italia. | İtalya'da bir hafta.
+  12. Mese = Ay (takvim) | Il mese prossimo. | Gelecek ay.
+info: Gün ve zaman: oggi (bugün), domani (yarın), ieri (dün), lunedì (pazartesi), sabato, domenica.
+
+=== it2-9 [vocab] Günlük Rutin
+desc: Carlo'nun günü metninden günlük eylemler.
+  1. Mi alzo = Kalkarım | Mi alzo alle 7:00. | Saat 7'de kalkarım.
+  2. La colazione = Kahvaltı | Faccio colazione con tè. | Çayla kahvaltı yaparım.
+  3. La scuola = Okul | Vado a scuola. | Okula giderim.
+  4. La lezione = Ders | Ho sei ore di lezione. | Altı saat dersim var.
+  5. I compiti = Ödevler | Faccio i compiti. | Ödevlerimi yaparım.
+  6. La cena = Akşam yemeği | Ceno alle 19:00. | Saat 19'da akşam yemeği yerim.
+  7. Vado a letto = Yatarım / Yatmaya giderim | Vado a letto alle 22:30. | 22:30'da yatarım.
+  8. Mi lavo = Yıkanırım | Mi lavo la faccia. | Yüzümü yıkarım.
+  9. Mi vesto = Giyinirim | Mi vesto ed esco. | Giyinip çıkarım.
+  10. Il pranzo = Öğle yemeği | Il pranzo è all'una. | Öğle yemeği saat birde.
+  11. Torno a casa = Eve dönerim | Torno a casa alle sei. | Saat altıda eve dönerim.
+  12. Faccio la spesa = Alışveriş yaparım (market) | Faccio la spesa il sabato. | Cumartesi günleri alışveriş yaparım.
+info: Günlük rutin eylemleri: mi alzo (kalkarım), colazione (kahvaltı), lezione (ders), compiti (ödev), cena (akşam yemeği).
+
+=== it2-10 [vocab] Alışveriş & Market
+desc: Markette ve dükkânda işine yarar.
+  1. Negozio = Dükkân | Il negozio apre alle nove. | Dükkân dokuzda açılır.
+  2. Supermercato = Süpermarket | Vado al supermercato. | Süpermarkete gidiyorum.
+  3. Mercato = Semt pazarı | Al mercato la frutta costa poco. | Pazarda meyve ucuz.
+  4. Prezzo = Fiyat | Il prezzo è buono. | Fiyat iyi.
+  5. Caro = Pahalı | È troppo caro! | Çok pahalı!
+  6. Economico = Ucuz | Questo è più economico. | Bu daha ucuz.
+  7. Scontrino = Fiş | Ecco lo scontrino. | Buyurun fişiniz.
+  8. Resto = Para üstü | Ecco il resto. | Buyurun para üstünüz.
+  9. Sacchetto = Poşet | Vuole un sacchetto? | Poşet ister misiniz?
+  10. Un chilo = Bir kilo | Un chilo di mele, per favore. | Bir kilo elma, lütfen.
+  11. Aperto = Açık | Il negozio è aperto. | Dükkân açık.
+  12. Chiuso = Kapalı | Domenica è chiuso. | Pazar günü kapalı.
+info: Alışverişte fiyat sormak: 'Quanto costa?' (tekil), 'Quanto costano?' (çoğul). Kilo ile istemek: 'Un chilo di pomodori, per favore.' Para üstü = 'il resto'.
+
+=== it2-11 [vocab] Seyahat: Şehirde Yön
+desc: Yol sormak ve şehirde gezmek.
+  1. A destra = Sağa / sağda | Giri a destra. | Sağa dönün.
+  2. A sinistra = Sola / solda | La banca è a sinistra. | Banka solda.
+  3. Dritto = Düz / dümdüz | Vada sempre dritto. | Hep düz gidin.
+  4. Vicino = Yakın | È vicino alla piazza. | Meydana yakın.
+  5. Lontano = Uzak | È lontano da qui? | Buradan uzak mı?
+  6. Strada = Yol / cadde | Attraversa la strada. | Caddeyi geç.
+  7. Piazza = Meydan | Ci vediamo in piazza. | Meydanda görüşürüz.
+  8. Farmacia = Eczane | C'è una farmacia qui vicino? | Yakında eczane var mı?
+  9. Banca = Banka | La banca apre alle otto e mezza. | Banka sekiz buçukta açılır.
+  10. Ospedale = Hastane | Dov'è l'ospedale? | Hastane nerede?
+  11. Fermata = Durak | La fermata dell'autobus è lì. | Otobüs durağı orada.
+  12. Autobus = Otobüs | Prendo l'autobus. | Otobüse binerim.
+info: Yol tarifi: 'Scusi, dov'è la farmacia?' 'A destra' sağda/sağa, 'a sinistra' solda/sola, 'sempre dritto' dümdüz. Uzak mı diye sormak: 'È lontano?'
+
+=== it2-12 [grammar] Gramer: Belirsiz artikeller (un / una)
+intro: 'Bir' demek için kullanılır: un libro = bir kitap. İsmin cinsiyetine ve ilk harfine göre değişir.
+rule: Eril: <b>un</b> (un caffè, un amico). s+ünsüz veya z ile başlayan eril: <b>uno</b> (uno studente, uno zaino). Dişil: <b>una</b> (una pizza). Sesli harfle başlayan dişil: <b>un'</b> (un'amica).
+structure: [["Tür","Artikel","Örnek"],["Eril","un","un caffè, un amico"],["Eril (s+ünsüz, z)","uno","uno studente, uno zaino"],["Dişil","una","una pizza"],["Dişil (sesli harf)","un'","un'amica"]]
+  ex: Un caffè, per favore. = Bir kahve, lütfen.
+  ex: Ho una sorella. = Bir kız kardeşim var.
+  ex: È un'amica. = O bir arkadaş (kadın).
+  ex: Uno zaino rosso. = Kırmızı bir sırt çantası.
+  Q1: ___ caffè (eril) [un / una / uno] -> un :: Eril: un caffè.
+  Q2: ___ pizza (dişil) [una / un / uno] -> una :: Dişil: una pizza.
+  Q3: ___ amica (dişil, sesli harfle başlıyor) [un' / una / uno] -> un' :: Sesli harfle başlayan dişil: un'amica.
+  Q4: ___ amico (eril, sesli harfle başlıyor) [un / un' / uno] -> un :: Eril isimde kesme işareti yok: un amico.
+  Q5: ___ studente (s + ünsüz) [uno / un / una] -> uno :: s+ünsüz ile başlayan eril: uno studente.
+  Q6: ___ zaino (z ile başlıyor) [uno / un / una] -> uno :: z ile başlayan eril: uno zaino.
+  Q7: Bir elma yerim: Mangio ___ mela. [una / un / uno] -> una :: mela dişil: una mela.
+
+=== it2-13 [vocab] Hava Durumu & Mevsimler
+desc: Havadan sohbet etmek için.
+  1. Fa caldo = Hava sıcak | Oggi fa caldo. | Bugün hava sıcak.
+  2. Fa freddo = Hava soğuk | D'inverno fa freddo. | Kışın hava soğuk.
+  3. Piove = Yağmur yağıyor | Piove, prendi l'ombrello! | Yağmur yağıyor, şemsiyeni al!
+  4. Nevica = Kar yağıyor | A gennaio nevica. | Ocakta kar yağar.
+  5. C'è il sole = Güneşli / güneş var | Oggi c'è il sole. | Bugün hava güneşli.
+  6. Nuvoloso = Bulutlu | Il cielo è nuvoloso. | Hava bulutlu.
+  7. Vento = Rüzgâr | C'è molto vento. | Çok rüzgâr var.
+  8. Ombrello = Şemsiye | Dov'è il mio ombrello? | Şemsiyem nerede?
+  9. Primavera = İlkbahar | In primavera ci sono molti fiori. | İlkbaharda çok çiçek olur.
+  10. Estate = Yaz | D'estate andiamo al mare. | Yazın denize gideriz.
+  11. Autunno = Sonbahar | L'autunno è bello a Roma. | Roma'da sonbahar güzel.
+  12. Inverno = Kış | L'inverno è lungo. | Kış uzun.
+info: Sıcak-soğuk 'fare' fiiliyle anlatılır: 'Fa caldo' (hava sıcak), 'Fa freddo'. Yağış tek fiildir: 'Piove' (yağmur yağıyor), 'Nevica' (kar yağıyor).
+
+=== it2-14 [vocab] Kıyafetler
+desc: Giyim ve kıyafet alışverişi.
+  1. Vestito = Elbise | Un vestito blu. | Mavi bir elbise.
+  2. Gonna = Etek | Una gonna nera. | Siyah bir etek.
+  3. Pantaloni = Pantolon | Pantaloni grigi. | Gri pantolon.
+  4. Camicia = Gömlek | Una camicia bianca. | Beyaz bir gömlek.
+  5. Maglione = Kazak | Un maglione caldo. | Sıcak bir kazak.
+  6. Giacca = Ceket | Mettiti la giacca! | Ceketini giy!
+  7. Cappotto = Palto / kaban | D'inverno porto il cappotto. | Kışın palto giyerim.
+  8. Scarpe = Ayakkabı | Scarpe comode. | Rahat ayakkabılar.
+  9. Borsa = Çanta | La mia borsa è marrone. | Çantam kahverengi.
+  10. Sciarpa = Atkı / eşarp | Una sciarpa di lana. | Yün bir atkı.
+  11. Calzini = Çorap | Calzini neri. | Siyah çoraplar.
+  12. Taglia = Beden | Che taglia porta? | Kaç beden giyiyorsunuz?
+info: Kıyafetler. 'Pantaloni' ve 'calzini' çoğul kullanılır. Denemek: 'Posso provarlo?' (erkek eşya), 'Posso provarla?' (dişil eşya). Beden sormak: 'Che taglia?'
+
+=== it2-15 [grammar] Gramer: Şimdiki zaman (-ere / -ire fiilleri)
+intro: -ere ve -ire ile biten fiiller de düzenli çekilir. Örnek: prendere (almak), dormire (uyumak).
+rule: -ere: <b>-o, -i, -e, -iamo, -ete, -ono</b> (prendo, prendi, prende...). -ire: <b>-o, -i, -e, -iamo, -ite, -ono</b> (dormo, dormi, dorme...). Bazı -ire fiilleri araya <b>-isc-</b> alır: capire → io <b>capisco</b>.
+structure: [["Özne","prendere","dormire"],["io","prendo","dormo"],["tu","prendi","dormi"],["lui/lei","prende","dorme"],["noi","prendiamo","dormiamo"],["voi","prendete","dormite"],["loro","prendono","dormono"]]
+  ex: Prendo un caffè. = Bir kahve alıyorum.
+  ex: Lei dorme molto. = O çok uyur.
+  ex: Leggi il giornale? = Gazete okur musun?
+  ex: Non capisco. = Anlamıyorum.
+  Q1: Io ___ un caffè. (prendere) [prendo / prendi / prende] -> prendo :: io → -o: prendo.
+  Q2: Lei ___ molto. (dormire) [dorme / dormo / dormi] -> dorme :: lui/lei → -e: dorme.
+  Q3: Tu ___ il giornale? (leggere) [leggi / leggo / legge] -> leggi :: tu → -i: leggi.
+  Q4: Noi ___ la finestra. (aprire) [apriamo / aprite / aprono] -> apriamo :: noi → -iamo: apriamo.
+  Q5: Loro ___ a Roma. (vivere) [vivono / viviamo / vive] -> vivono :: loro → -ono: vivono.
+  Q6: Voi ___ bene? (dormire) [dormite / dormiamo / dormono] -> dormite :: voi + -ire → -ite: dormite.
+  Q7: Anlamıyorum: Non ___. (capire) [capisco / capo / capiscono] -> capisco :: capire -isc- alır: io capisco.
+
+##### LEVEL 3 A2 Seviye 3 — Temel Üstü
+
+=== it3-1 [grammar] Gramer: Geçmiş zaman — avere ile (passato prossimo)
+intro: Geçmişte biten işler için passato prossimo. Çoğu fiil 'avere' + geçmiş ortaç ile kurulur.
+rule: avere (ho/hai/ha/abbiamo/avete/hanno) + geçmiş ortaç. Ortaç: <b>-are→-ato</b>, <b>-ere→-uto</b>, <b>-ire→-ito</b>. "Ho mangiato" = "yedim".
+structure: [["Mastar","Ortaç"],["parlare","parlato"],["mangiare","mangiato"],["credere","creduto"],["dormire","dormito"]]
+  ex: Ho mangiato la pizza. = Pizza yedim.
+  ex: Hai parlato con Deniz? = Deniz'le konuştun mu?
+  ex: Abbiamo dormito bene. = İyi uyuduk.
+  Q1: Yedim: Ho ___ (mangiare). [mangiato / mangiare / mangio] -> mangiato :: -are → -ato: mangiato.
+  Q2: Konuştun mu? Hai ___? (parlare) [parlato / parlare / parli] -> parlato :: -are → -ato: parlato.
+  Q3: Uyuduk: Abbiamo ___ (dormire). [dormito / dormire / dormo] -> dormito :: -ire → -ito: dormito.
+  Q4: -are fiilinin geçmiş ortacı hangi ekle biter? [-ato / -uto / -ito] -> -ato :: -are → -ato.
+  Q5: Ekmek aldım: Ho ___ il pane. (comprare) [comprato / compruto / comprito] -> comprato :: -are → -ato: comprato.
+  Q6: Anladın mı? Hai ___? (capire) [capito / caputo / capato] -> capito :: -ire → -ito: capito.
+  Q7: Onlar çok çalıştı: ___ lavorato molto. [Hanno / Sono / Avete] -> Hanno :: loro + avere: hanno lavorato.
+
+=== it3-2 [grammar] Gramer: Geçmiş zaman — essere ile
+intro: Bazı fiiller (gitmek, gelmek gibi hareket) 'essere' ile kurulur ve özneye göre uyum sağlar.
+rule: essere (sono/sei/è/siamo/siete/sono) + ortaç. Erkek: <b>-o</b>, kadın: <b>-a</b>. "Sono andato" (erkek), "Sono andata" (kadın) = "gittim".
+structure: [["Özne","Örnek"],["io (kadın)","Sono andata"],["io (erkek)","Sono andato"],["lei","È andata"],["noi","Siamo andati"]]
+  ex: Sono andata a casa. = Eve gittim (kadın).
+  ex: Lei è arrivata. = O geldi (kadın).
+  ex: Siamo andati al bar. = Bara gittik.
+  Q1: Eve gittim (kadın): Sono ___ a casa. (andare) [andata / andato / andare] -> andata :: Kadın için -a: andata.
+  Q2: Hareket fiilleri passato prossimo'da hangi yardımcıyı alır? [essere / avere / fare] -> essere :: Hareket/durum: essere.
+  Q3: O geldi (kadın): Lei ___ arrivata. [è / ha / hai] -> è :: essere: è.
+  Q4: Bara gittik: ___ andati al bar. [Siamo / Abbiamo / Avete] -> Siamo :: noi + essere: siamo.
+  Q5: O (erkek) geldi: Lui è ___. [arrivato / arrivata / arrivati] -> arrivato :: Erkek tekil: -o → arrivato.
+  Q6: Evdeydim (kadın): Sono ___ a casa. (stare) [stata / stato / state] -> stata :: stare → stato/stata. Kadın: stata.
+  Q7: Kızlar İtalya'ya gitti: Le ragazze sono ___ in Italia. [andate / andati / andata] -> andate :: Dişil çoğul: -e → andate.
+
+=== it3-3 [grammar] Gramer: Gelecek zaman (futuro)
+intro: Gelecekte olacak işler için futuro semplice.
+rule: parlare → io <b>parlerò</b>, tu <b>parlerai</b>, lui/lei <b>parlerà</b>, noi <b>parleremo</b>, voi <b>parlerete</b>, loro <b>parleranno</b>.
+structure: [["Özne","parlare"],["io","parlerò"],["tu","parlerai"],["lui/lei","parlerà"],["noi","parleremo"]]
+  ex: Domani parlerò con lei. = Yarın onunla konuşacağım.
+  ex: Andremo a Roma. = Roma'ya gideceğiz.
+  ex: Sarà felice. = Mutlu olacak.
+  Q1: Yarın konuşacağım: Domani ___ (parlare, io). [parlerò / parlo / parlato] -> parlerò :: io gelecek: parlerò.
+  Q2: Konuşacaksın: Tu ___ (parlare). [parlerai / parlerò / parla] -> parlerai :: tu gelecek: parlerai.
+  Q3: Mutlu olacak: ___ felice. (essere) [Sarà / È / Era] -> Sarà :: essere gelecek 3.tekil: sarà.
+  Q4: Gideceğiz: ___ a Roma. (andare) [Andremo / Andiamo / Andato] -> Andremo :: noi gelecek: andremo.
+  Q5: Onlar konuşacak: Loro ___. (parlare) [parleranno / parlerete / parlano] -> parleranno :: loro gelecek: parleranno.
+  Q6: Siz konuşacaksınız: Voi ___. (parlare) [parlerete / parleremo / parlate] -> parlerete :: voi gelecek: parlerete.
+  Q7: Yarın çalışacağım: Domani ___. (lavorare, io) [lavorerò / lavoro / lavorato] -> lavorerò :: -are fiillerinde a → e olur: lavorerò.
+
+=== it3-4 [grammar] Gramer: Modal fiiller (potere / volere)
+intro: '-ebilmek' ve 'istemek' anlamı: potere (yapabilmek) ve volere (istemek). Sonrasında fiil yalın (mastar) gelir.
+rule: potere: <b>posso, puoi, può, possiamo, potete, possono</b>. volere: <b>voglio, vuoi, vuole, vogliamo, volete, vogliono</b>. "Voglio un caffè" = "Bir kahve istiyorum".
+structure: [["Özne","potere","volere"],["io","posso","voglio"],["tu","puoi","vuoi"],["lui/lei","può","vuole"],["noi","possiamo","vogliamo"]]
+  ex: Voglio un caffè. = Bir kahve istiyorum.
+  ex: Posso aiutarti. = Sana yardım edebilirim.
+  ex: Puoi ripetere? = Tekrar eder misin?
+  Q1: Bir kahve istiyorum: ___ un caffè. [Voglio / Posso / Vuoi] -> Voglio :: io istemek: voglio.
+  Q2: Sana yardım edebilirim: ___ aiutarti. [Posso / Voglio / Puoi] -> Posso :: io yapabilmek: posso.
+  Q3: Tekrar eder misin? ___ ripetere? [Puoi / Posso / Vuole] -> Puoi :: tu yapabilmek: puoi.
+  Q4: İstiyoruz: ___ (volere, noi) [vogliamo / volete / vogliono] -> vogliamo :: noi: vogliamo.
+  Q5: O gelebilir: Lei ___ venire. [può / posso / puoi] -> può :: lui/lei yapabilmek: può.
+  Q6: Ne istiyorsun? Cosa ___? [vuoi / voglio / vuole] -> vuoi :: tu istemek: vuoi.
+  Q7: Onlar gelemez: Loro non ___ venire. [possono / potete / possiamo] -> possono :: loro yapabilmek: possono.
+
+=== it3-5 [grammar] Gramer: Sıfat uyumu (bello/bella)
+intro: Sıfatlar, tanımladıkları ismin cinsiyet ve sayısına uyar.
+rule: Eril tekil <b>-o</b>, dişil tekil <b>-a</b>, eril çoğul <b>-i</b>, dişil çoğul <b>-e</b>: bello, bella, belli, belle.
+structure: [["","Tekil","Çoğul"],["Eril","bello","belli"],["Dişil","bella","belle"]]
+  ex: un ragazzo bello = yakışıklı bir çocuk
+  ex: una casa bella = güzel bir ev
+  ex: case belle = güzel evler
+  Q1: güzel bir ev (dişil tekil): una casa ___ [bella / bello / belle] -> bella :: Dişil tekil: -a.
+  Q2: yakışıklı çocuk (eril tekil): un ragazzo ___ [bello / bella / belli] -> bello :: Eril tekil: -o.
+  Q3: güzel evler (dişil çoğul): case ___ [belle / belli / bella] -> belle :: Dişil çoğul: -e.
+  Q4: güzel çocuklar (eril çoğul): ragazzi ___ [belli / belle / bello] -> belli :: Eril çoğul: -i.
+  Q5: kırmızı bir sandalye: una sedia ___ [rossa / rosso / rosse] -> rossa :: sedia dişil tekil: rossa.
+  Q6: Yorgunum (kadın): Sono ___. [stanca / stanco / stanchi] -> stanca :: Kadın konuşuyor: dişil tekil -a → stanca.
+  Q7: beyaz kitaplar: libri ___ [bianchi / bianche / bianco] -> bianchi :: Eril çoğul -i; sesi korumak için h eklenir: bianchi.
+
+=== it3-6 [grammar] Gramer: Karşılaştırma (più ... di)
+intro: İki şeyi karşılaştırırken 'più ... di' (daha ... -den) kullanılır.
+rule: <b>più</b> + sıfat + <b>di</b>: "Roma è più grande di Pisa" = "Roma Pisa'dan daha büyük". Daha az için <b>meno</b>. (di + il = <b>del</b>: più forte del tè.)
+structure: [["Yapı","Örnek"],["più ... di","più grande di"],["meno ... di","meno caro di"]]
+  ex: Roma è più grande di Pisa. = Roma Pisa'dan daha büyük.
+  ex: Il caffè è più forte del tè. = Kahve çaydan daha sert.
+  Q1: daha büyük: ___ grande [più / meno / molto] -> più :: daha = più.
+  Q2: Roma Pisa'dan daha büyük: Roma è più grande ___ Pisa. [di / da / a] -> di :: karşılaştırmada -den = di.
+  Q3: daha az pahalı: ___ caro [meno / più / tanto] -> meno :: daha az = meno.
+  Q4: Kahve çaydan daha sert: Il caffè è più forte ___ tè. [del / di / dal] -> del :: di + il = del: del tè.
+  Q5: Tren otobüsten daha hızlı: Il treno è ___ veloce dell'autobus. [più / meno / tanto] -> più :: daha = più.
+  Q6: Pisa Roma'dan daha küçük (daha az büyük): Pisa è ___ grande di Roma. [meno / più / molto] -> meno :: daha az = meno.
+
+=== it3-7 [vocab] Seyahat
+desc: Seyahatte işe yarar kelimeler.
+  1. Aeroporto = Havalimanı | Sono all'aeroporto. | Havalimanındayım.
+  2. Biglietto = Bilet | Ho un biglietto. | Bir biletim var.
+  3. Albergo = Otel | L'albergo è bello. | Otel güzel.
+  4. Treno = Tren | Il treno è veloce. | Tren hızlı.
+  5. Dov'è...? = ... nerede? | Dov'è l'albergo? | Otel nerede?
+  6. Stazione = İstasyon | Dov'è la stazione? | İstasyon nerede?
+  7. Valigia = Bavul | La mia valigia è pesante. | Bavulum ağır.
+  8. Passaporto = Pasaport | Ecco il mio passaporto. | Buyurun pasaportum.
+  9. Volo = Uçuş | Il volo parte alle dieci. | Uçuş saat onda kalkıyor.
+  10. Binario = Peron | Il treno parte dal binario tre. | Tren üçüncü perondan kalkıyor.
+  11. In ritardo = Rötarlı / gecikmeli | Il treno è in ritardo. | Tren rötarlı.
+  12. Prenotazione = Rezervasyon | Ho una prenotazione. | Rezervasyonum var.
+info: Seyahat kelimeleri: aeroporto (havalimanı), biglietto (bilet), treno (tren), albergo (otel). 'Dov'è...?' = ... nerede.
+
+=== it3-8 [vocab] Duygular & Sıfatlar
+desc: Nasıl hissettiğini anlat.
+  1. Felice = Mutlu | Sono felice. | Mutluyum.
+  2. Triste = Üzgün | Lei è triste. | O üzgün.
+  3. Stanco = Yorgun | Sono stanco. | Yorgunum.
+  4. Contento = Memnun | Sono contento. | Memnunum.
+  5. Bello = Güzel | Che bella giornata! | Ne güzel bir gün!
+  6. Grande = Büyük | Una casa grande. | Büyük bir ev.
+  7. Arrabbiato = Kızgın | Sono arrabbiata con lui. | Ona kızgınım.
+  8. Preoccupato = Endişeli | Sono preoccupata per te. | Senin için endişeliyim.
+  9. Nervoso = Gergin / sinirli | Oggi sono un po' nervosa. | Bugün biraz gerginim.
+  10. Tranquillo = Sakin | Il mare è tranquillo. | Deniz sakin.
+  11. Annoiato = Sıkılmış | I bambini sono annoiati. | Çocuklar sıkıldı.
+  12. Sorpreso = Şaşırmış | Sono sorpresa! | Şaşırdım!
+info: Duygu ve sıfatlar: felice (mutlu), triste (üzgün), stanco (yorgun), contento (memnun), bello (güzel).
+
+=== it3-9 [vocab] Yiyecek: Restoranda
+desc: Sipariş vermek ve hesap istemek.
+  1. Menù = Menü | Posso vedere il menù? | Menüyü görebilir miyim?
+  2. Conto = Hesap | Il conto, per favore. | Hesap, lütfen.
+  3. Cameriere = Garson | Il cameriere è gentile. | Garson kibar.
+  4. Vorrei = ... isterim (kibar) | Vorrei un'acqua naturale. | Sade bir su isterim.
+  5. Un tavolo per due = İki kişilik masa | Un tavolo per due, per favore. | İki kişilik bir masa, lütfen.
+  6. Primo piatto = İlk yemek (makarna, çorba) | Come primo piatto, gli spaghetti. | İlk yemek olarak spagetti.
+  7. Secondo piatto = Ana yemek (et, balık) | Come secondo piatto, il pesce. | Ana yemek olarak balık.
+  8. Dolce = Tatlı | Prendiamo un dolce? | Tatlı alalım mı?
+  9. Forchetta = Çatal | Mi porta una forchetta? | Bana bir çatal getirir misiniz?
+  10. Coltello = Bıçak | Il coltello non taglia. | Bıçak kesmiyor.
+  11. Cucchiaio = Kaşık | Un cucchiaio per la zuppa. | Çorba için bir kaşık.
+  12. Bicchiere = Bardak | Un bicchiere d'acqua. | Bir bardak su.
+info: İtalyan yemek düzeni: önce 'primo' (makarna, risotto, çorba), sonra 'secondo' (et, balık), en son 'dolce'. Hesap: 'Il conto, per favore.' Kibar istek: 'Vorrei...'
+
+=== it3-10 [grammar] Gramer: Dönüşlü fiiller (mi alzo, mi chiamo)
+intro: Kişinin kendine yaptığı işler için dönüşlü fiiller kullanılır: kalkmak, yıkanmak, giyinmek. 'Mi chiamo' da dönüşlüdür.
+rule: Fiilin önüne <b>mi, ti, si, ci, vi, si</b> gelir. alzarsi (kalkmak): io <b>mi alzo</b>, tu <b>ti alzi</b>, lui/lei <b>si alza</b>, noi <b>ci alziamo</b>, voi <b>vi alzate</b>, loro <b>si alzano</b>.
+structure: [["Özne","Zamir","alzarsi"],["io","mi","mi alzo"],["tu","ti","ti alzi"],["lui/lei","si","si alza"],["noi","ci","ci alziamo"],["voi","vi","vi alzate"],["loro","si","si alzano"]]
+  ex: Mi alzo alle sette. = Saat yedide kalkarım.
+  ex: Come ti chiami? = Adın ne?
+  ex: Lei si sveglia presto. = O erken uyanır.
+  ex: Ci vestiamo e usciamo. = Giyinip çıkıyoruz.
+  Q1: Saat yedide kalkarım: ___ alzo alle sette. [Mi / Ti / Si] -> Mi :: io → mi: mi alzo.
+  Q2: Adın ne? Come ___ chiami? [ti / mi / si] -> ti :: tu → ti: ti chiami.
+  Q3: O (kadın) sekizde uyanır: Lei ___ sveglia alle otto. [si / mi / ci] -> si :: lui/lei → si: si sveglia.
+  Q4: Biz giyiniriz: Noi ___ vestiamo. [ci / vi / si] -> ci :: noi → ci: ci vestiamo.
+  Q5: Onun adı Marco: ___ chiama Marco. [Si / Mi / Ti] -> Si :: lui → si: si chiama.
+  Q6: Ellerimi yıkarım: Mi ___ le mani. (lavarsi) [lavo / lava / lavi] -> lavo :: io → mi lavo.
+  Q7: Nasıl hissediyorsun? Come ti ___? (sentirsi) [senti / sento / sente] -> senti :: tu → ti senti.
+
+=== it3-11 [vocab] Seyahat: Otelde
+desc: Otelde oda istemek ve sorun anlatmak.
+  1. Camera singola = Tek kişilik oda | Vorrei una camera singola. | Tek kişilik bir oda istiyorum.
+  2. Camera doppia = Çift kişilik oda | Avete una camera doppia? | Çift kişilik odanız var mı?
+  3. Una notte = Bir gece | Quanto costa una notte? | Bir gecesi ne kadar?
+  4. Chiave = Anahtar | Ecco la chiave della camera. | Buyurun oda anahtarı.
+  5. Reception = Resepsiyon | Chiedo alla reception. | Resepsiyona sorarım.
+  6. Ascensore = Asansör | L'ascensore è a destra. | Asansör sağda.
+  7. Piano = Kat | La camera è al terzo piano. | Oda üçüncü katta.
+  8. Colazione inclusa = Kahvaltı dahil | La colazione è inclusa? | Kahvaltı dahil mi?
+  9. Doccia = Duş | La doccia non funziona. | Duş çalışmıyor.
+  10. Asciugamano = Havlu | Posso avere un altro asciugamano? | Bir havlu daha alabilir miyim?
+  11. Aria condizionata = Klima | C'è l'aria condizionata? | Klima var mı?
+  12. Bagaglio = Bagaj | Posso lasciare il bagaglio qui? | Bagajımı burada bırakabilir miyim?
+info: Otelde: 'Ho una prenotazione' (rezervasyonum var). Kat 'piano' ile söylenir: 'al primo piano' = birinci katta. 'Colazione inclusa?' = Kahvaltı dahil mi?
+
+=== it3-12 [vocab] Saat & Zaman İfadeleri
+desc: Saati sormak ve söylemek.
+  1. Che ore sono? = Saat kaç? | Scusi, che ore sono? | Affedersiniz, saat kaç?
+  2. Sono le tre = Saat üç | Sono le tre e dieci. | Saat üçü on geçiyor.
+  3. È l'una = Saat bir | È l'una e venti. | Saat biri yirmi geçiyor.
+  4. E mezza = Buçuk | Sono le sei e mezza. | Saat altı buçuk.
+  5. E un quarto = Çeyrek geçiyor | Sono le otto e un quarto. | Saat sekizi çeyrek geçiyor.
+  6. Mezzogiorno = Öğlen (12:00) | Pranzo a mezzogiorno. | Öğlen yemek yerim.
+  7. Mezzanotte = Gece yarısı | Vado a letto a mezzanotte. | Gece yarısı yatarım.
+  8. Mattina = Sabah | La mattina bevo un caffè. | Sabahları bir kahve içerim.
+  9. Pomeriggio = Öğleden sonra | Il pomeriggio lavoro. | Öğleden sonra çalışırım.
+  10. Sera = Akşam | La sera guardo la TV. | Akşamları televizyon izlerim.
+  11. Presto = Erken | Mi alzo presto. | Erken kalkarım.
+  12. Tardi = Geç | È tardi, andiamo! | Geç oldu, gidelim!
+info: Saat sormak: 'Che ore sono?' Cevapta 'sono le' + saat: 'Sono le tre' (saat üç). Tek istisna saat bir: 'È l'una'. Buçuk: 'e mezza', çeyrek: 'e un quarto'.
+
+=== it3-13 [grammar] Gramer: Birleşik edatlar (al, nel, del...)
+intro: a, di, da, in, su edatları 'il / la / l'' ile birleşip tek kelime olur. Günlük konuşmada çok sık çıkar.
+rule: a + il = <b>al</b>, a + la = <b>alla</b>, di + il = <b>del</b>, in + il = <b>nel</b>, in + la = <b>nella</b>, da + il = <b>dal</b>, su + il = <b>sul</b>. Sesli harften önce: <b>all', dell', nell', dall', sull'</b>. <b>da</b> birinin yanına gitmek için de kullanılır: vado dal medico.
+structure: [["Edat","+ il","+ la","+ l'"],["a","al","alla","all'"],["di","del","della","dell'"],["in","nel","nella","nell'"],["da","dal","dalla","dall'"],["su","sul","sulla","sull'"]]
+  ex: Vado al bar. = Bara gidiyorum.
+  ex: Sono all'aeroporto. = Havalimanındayım.
+  ex: Il latte è nel frigorifero. = Süt buzdolabında.
+  ex: Vado dal medico. = Doktora gidiyorum.
+  Q1: Bara gidiyorum: Vado ___ bar. [al / alla / allo] -> al :: a + il = al.
+  Q2: Kitap çantanın içinde: Il libro è ___ borsa. [nella / nel / nello] -> nella :: in + la = nella (borsa dişil).
+  Q3: Havalimanındayım: Sono ___ aeroporto. [all' / al / alla] -> all' :: a + l' = all' (sesli harften önce).
+  Q4: Doktora gidiyorum: Vado ___ medico. [dal / dalla / del] -> dal :: Birinin yanına: da + il = dal.
+  Q5: Kedi yatağın üstünde: Il gatto è ___ letto. [sul / sulla / nel] -> sul :: üstünde: su + il = sul.
+  Q6: Kızın evi: La casa ___ ragazza. [della / del / dalla] -> della :: -in (sahiplik): di + la = della.
+  Q7: İstasyona gidiyorum: Vado ___ stazione. [alla / al / nella] -> alla :: a + la = alla (stazione dişil).
+
+=== it3-14 [vocab] Boş Zaman & Hobiler
+desc: Neleri sevdiğini anlat.
+  1. Tempo libero = Boş zaman | Nel tempo libero leggo. | Boş zamanımda okurum.
+  2. Mi piace = ... severim / hoşuma gider | Mi piace cucinare. | Yemek yapmayı severim.
+  3. Passeggiare = Yürüyüş yapmak | Passeggiare in riva al mare è bello. | Deniz kenarında yürümek güzel.
+  4. Nuotare = Yüzmek | Sai nuotare? | Yüzmeyi bilir misin?
+  5. Ballare = Dans etmek | Ballare è divertente. | Dans etmek eğlenceli.
+  6. Cantare = Şarkı söylemek | Lei canta molto bene. | O çok güzel şarkı söyler.
+  7. Musica = Müzik | Ascolto musica italiana. | İtalyan müziği dinlerim.
+  8. Cinema = Sinema | Andiamo al cinema? | Sinemaya gidelim mi?
+  9. Televisione = Televizyon | Non guardo molto la televisione. | Çok televizyon izlemem.
+  10. Giardinaggio = Bahçe işleri | Il giardinaggio mi rilassa. | Bahçe işleri beni rahatlatır.
+  11. Lavorare a maglia = Örgü örmek | Mia nonna lavora a maglia. | Büyükannem örgü örer.
+  12. Viaggiare = Seyahat etmek | Viaggiare è la mia passione. | Seyahat etmek benim tutkum.
+info: Sevdiğini söylemek: tekil şey/fiil için 'Mi piace' (Mi piace nuotare), çoğul için 'Mi piacciono' (Mi piacciono i film). 'Non mi piace' = sevmem.
+
+=== it3-15 [vocab] Ev İşleri
+desc: Evdeki günlük işler.
+  1. Pulire = Temizlemek | Pulisco la cucina. | Mutfağı temizlerim.
+  2. Lavare i piatti = Bulaşık yıkamak | Dopo cena lavo i piatti. | Akşam yemeğinden sonra bulaşık yıkarım.
+  3. Fare il bucato = Çamaşır yıkamak | Faccio il bucato il lunedì. | Pazartesi çamaşır yıkarım.
+  4. Stirare = Ütülemek | Stiro le camicie. | Gömlekleri ütülerim.
+  5. Passare l'aspirapolvere = Süpürge çekmek | Passo l'aspirapolvere in salotto. | Salonda süpürge çekerim.
+  6. Rifare il letto = Yatağı toplamak | Ogni mattina rifaccio il letto. | Her sabah yatağı toplarım.
+  7. Buttare la spazzatura = Çöpü atmak | Puoi buttare la spazzatura? | Çöpü atabilir misin?
+  8. Apparecchiare la tavola = Sofrayı kurmak | Apparecchio la tavola per quattro. | Dört kişilik sofra kurarım.
+  9. Annaffiare le piante = Çiçekleri sulamak | Annaffio le piante sul balcone. | Balkondaki çiçekleri sularım.
+  10. Lavatrice = Çamaşır makinesi | La lavatrice è nuova. | Çamaşır makinesi yeni.
+  11. Lavastoviglie = Bulaşık makinesi | Metto i piatti nella lavastoviglie. | Tabakları bulaşık makinesine koyarım.
+  12. Forno = Fırın | La torta è nel forno. | Kek fırında.
+info: Ev işlerinde çoğu kalıp 'fare' ile kurulur: 'fare il bucato' (çamaşır yıkamak), 'fare la spesa' (alışveriş). 'Rifare il letto' = yatağı toplamak.
+
+##### LEVEL 4 B1 Seviye 4 — Orta
+
+=== it4-1 [vocab] İş & Çalışma Hayatı
+desc: İş yerinde ve iş ararken.
+  1. Ufficio = Ofis | Lavoro in un ufficio. | Bir ofiste çalışıyorum.
+  2. Collega = İş arkadaşı | La mia collega è simpatica. | İş arkadaşım sevimli.
+  3. Capo = Patron / amir | Il capo è in riunione. | Amir toplantıda.
+  4. Riunione = Toplantı | La riunione è alle dieci. | Toplantı saat onda.
+  5. Stipendio = Maaş | Lo stipendio arriva a fine mese. | Maaş ay sonunda yatıyor.
+  6. Colloquio = İş görüşmesi | Domani ho un colloquio. | Yarın iş görüşmem var.
+  7. Contratto = Sözleşme | Ho firmato il contratto. | Sözleşmeyi imzaladım.
+  8. Azienda = Şirket | Lavora in un'azienda italiana. | Bir İtalyan şirketinde çalışıyor.
+  9. Orario di lavoro = Çalışma saatleri | Il mio orario di lavoro è dalle nove alle cinque. | Çalışma saatlerim dokuzdan beşe.
+  10. Ferie = Yıllık izin | Ad agosto sono in ferie. | Ağustosta izindeyim.
+  11. Pensione = Emeklilik | Mio padre è in pensione. | Babam emekli.
+  12. Cercare lavoro = İş aramak | Mio figlio cerca lavoro. | Oğlum iş arıyor.
+info: İş hayatı. 'Capo' günlük dilde amir/patron demektir. 'Ferie' (yıllık izin) hep çoğuldur: 'Vado in ferie' = izne çıkıyorum. 'Andare in pensione' = emekli olmak.
+
+=== it4-2 [grammar] Gramer: Geçmişte süreklilik (imperfetto)
+intro: Imperfetto, geçmişteki alışkanlıkları, tasvirleri ve devam eden durumları anlatır. Türkçedeki '-ardı / -iyordu' gibidir.
+rule: Mastarın sonundaki -re atılır, <b>-vo, -vi, -va, -vamo, -vate, -vano</b> eklenir: parlare → <b>parlavo</b>, avere → <b>avevo</b>, dormire → <b>dormivo</b>. Düzensiz: essere → <b>ero, eri, era, eravamo, eravate, erano</b>; fare → <b>facevo</b>.
+structure: [["Özne","parlare","essere"],["io","parlavo","ero"],["tu","parlavi","eri"],["lui/lei","parlava","era"],["noi","parlavamo","eravamo"],["voi","parlavate","eravate"],["loro","parlavano","erano"]]
+  ex: Da bambina giocavo in giardino. = Çocukken bahçede oynardım.
+  ex: Era una bella giornata. = Güzel bir gündü.
+  ex: Mia madre faceva il pane. = Annem ekmek yapardı.
+  ex: Avevamo un cane. = Bir köpeğimiz vardı.
+  Q1: Çocukken çok oynardım: Da bambina ___ molto. (giocare) [giocavo / giocava / giocavamo] -> giocavo :: io → -vo: giocavo.
+  Q2: Annem hep ekmek yapardı: Mia madre ___ sempre il pane. (fare) [faceva / facevo / facevano] -> faceva :: fare düzensiz: facevo, facevi, faceva...
+  Q3: Güzel bir gündü: ___ una bella giornata. (essere) [Era / Ero / Eri] -> Era :: Tasvir, 3. tekil: era.
+  Q4: Sen hep yorgundun: Tu ___ sempre stanca. (essere) [eri / era / ero] -> eri :: tu → eri.
+  Q5: Onların bir köpeği vardı: Loro ___ un cane. (avere) [avevano / avevamo / aveva] -> avevano :: loro → -vano: avevano.
+  Q6: Her akşam televizyon izlerdim: ___ la TV ogni sera. (guardare) [Guardavo / Guardava / Guardato] -> Guardavo :: Alışkanlık, io → guardavo.
+  Q7: Gençken İstanbul'da otururduk: Da giovani ___ a Istanbul. (abitare) [abitavamo / abitavano / abitavate] -> abitavamo :: noi → -vamo: abitavamo.
+  Q8: Imperfetto hangi durumda kullanılır? [Geçmişteki alışkanlıklar / Gelecek planları / Emir vermek] -> Geçmişteki alışkanlıklar :: Imperfetto: geçmişteki alışkanlık, tasvir ve süreklilik.
+
+=== it4-3 [vocab] Sağlık & Doktorda
+desc: Doktorda ve eczanede derdini anlatmak.
+  1. Medico = Doktor | Devo andare dal medico. | Doktora gitmem lazım.
+  2. Appuntamento = Randevu | Vorrei un appuntamento. | Randevu almak istiyorum.
+  3. Mi fa male... = ... ağrıyor | Mi fa male il dente. | Dişim ağrıyor.
+  4. Mal di testa = Baş ağrısı | Ho mal di testa. | Başım ağrıyor.
+  5. Febbre = Ateş | Ho la febbre. | Ateşim var.
+  6. Tosse = Öksürük | Ho la tosse da tre giorni. | Üç gündür öksürüyorum.
+  7. Raffreddore = Nezle / soğuk algınlığı | Ho il raffreddore. | Nezleyim.
+  8. Ricetta = Reçete | Il medico mi ha dato la ricetta. | Doktor bana reçete verdi.
+  9. Medicina = İlaç | Prendo la medicina dopo pranzo. | İlacı öğle yemeğinden sonra alırım.
+  10. Pressione = Tansiyon | Devo misurare la pressione. | Tansiyonumu ölçmem lazım.
+  11. Dentista = Diş hekimi | Ho un appuntamento dal dentista. | Diş hekiminde randevum var.
+  12. Pronto soccorso = Acil servis | Andiamo al pronto soccorso! | Acile gidelim!
+info: Ağrıyı anlatmak: tekil için 'Mi fa male la testa' (başım ağrıyor), çoğul için 'Mi fanno male i piedi'. Kısa yolu: 'Ho mal di testa'. Acil servis: 'pronto soccorso'.
+
+=== it4-4 [grammar] Gramer: Imperfetto mi, passato prossimo mu?
+intro: İki geçmiş zaman birlikte kullanılır: biri 'sahneyi', diğeri 'olayı' anlatır.
+rule: <b>Passato prossimo</b>: bir kez olup biten olay (ieri, l'anno scorso, all'improvviso). <b>Imperfetto</b>: arka plan, tasvir, alışkanlık (sempre, ogni giorno, da bambina, mentre). "<b>Mentre cucinavo</b>, <b>è arrivato</b> mio figlio" = Ben yemek yaparken oğlum geldi.
+structure: [["Zaman","Ne için?","Örnek"],["Passato prossimo","Bitmiş, tek olay","Ieri ho comprato una borsa."],["Imperfetto","Alışkanlık","Da bambina andavo al mare."],["Imperfetto","Arka plan / tasvir","Pioveva ed era tardi."],["İkisi birlikte","Sahne + olay","Mentre leggevo, ha squillato il telefono."]]
+  ex: Mentre cucinavo, è arrivato mio figlio. = Ben yemek yaparken oğlum geldi.
+  ex: Da bambina andavo al mare ogni estate. = Çocukken her yaz denize giderdim.
+  ex: L'anno scorso sono andata a Roma. = Geçen yıl Roma'ya gittim.
+  Q1: Dün akşam pizza yedim ve sonra yattım: Ieri sera ___ una pizza e poi sono andata a letto. [ho mangiato / mangiavo / mangerò] -> ho mangiato :: Bitmiş, sıralı olaylar: passato prossimo.
+  Q2: Çocukken her yaz denize giderdim: Da bambina ___ al mare ogni estate. [andavo / sono andata / andrò] -> andavo :: Alışkanlık (ogni estate): imperfetto.
+  Q3: Ben yemek yaparken telefon çaldı: Mentre ___, ha squillato il telefono. [cucinavo / ho cucinato / cucinerò] -> cucinavo :: mentre + arka plandaki eylem: imperfetto.
+  Q4: Kitap okuyordum, birden telefon çaldı: Leggevo un libro quando all'improvviso ___ il telefono. [ha squillato / squillava / squillerà] -> ha squillato :: Birden olan tek olay: passato prossimo.
+  Q5: Küçükken saçlarım uzundu: Quando ero piccola, ___ i capelli lunghi. [avevo / ho avuto / avrò] -> avevo :: Geçmişteki tasvir: imperfetto.
+  Q6: Geçen yıl bir haftalığına Roma'ya gittim (kadın): L'anno scorso ___ a Roma per una settimana. [sono andata / andavo / vado] -> sono andata :: Sınırlı süre, bitmiş olay: passato prossimo.
+  Q7: Bir kez olup biten olay için hangisi? [Passato prossimo / Imperfetto / Futuro] -> Passato prossimo :: Tek, bitmiş olay: passato prossimo.
+  Q8: Hava, saat, yaş gibi arka plan tasviri için hangisi? [Imperfetto / Passato prossimo / Futuro] -> Imperfetto :: Tasvir ve arka plan: imperfetto.
+
+=== it4-5 [vocab] Seyahat: Tren Yolculuğu
+desc: İstasyonda bilet almak ve yolculuk.
+  1. Biglietteria = Bilet gişesi | La biglietteria è chiusa. | Bilet gişesi kapalı.
+  2. Andata e ritorno = Gidiş-dönüş | Un biglietto di andata e ritorno per Firenze. | Floransa'ya gidiş-dönüş bir bilet.
+  3. Solo andata = Sadece gidiş | Solo andata, per favore. | Sadece gidiş, lütfen.
+  4. Orario = Tarife / sefer saatleri | Guardo l'orario dei treni. | Tren tarifesine bakıyorum.
+  5. Partenza = Kalkış | La partenza è alle 8:15. | Kalkış 8:15'te.
+  6. Arrivo = Varış | L'arrivo a Roma è alle 11. | Roma'ya varış saat 11'de.
+  7. Coincidenza = Aktarma (bağlantı) | A Bologna ho la coincidenza. | Bologna'da aktarmam var.
+  8. Posto = Koltuk / yer | Questo posto è libero? | Bu yer boş mu?
+  9. Carrozza = Vagon | Il mio posto è nella carrozza 5. | Yerim 5 numaralı vagonda.
+  10. Convalidare = Bileti onaylatmak (damgalatmak) | Devi convalidare il biglietto. | Bileti onaylatman lazım.
+  11. Controllore = Kondüktör | Il controllore controlla i biglietti. | Kondüktör biletleri kontrol ediyor.
+  12. Sciopero = Grev | Domani c'è uno sciopero dei treni. | Yarın tren grevi var.
+info: Trende bileti yolculuktan önce makinede onaylatmak (convalidare) gerekir; yoksa ceza yazılabilir. Gidiş-dönüş: 'andata e ritorno'. 'Sciopero' (grev) ilanlarına dikkat.
+
+=== it4-6 [grammar] Gramer: Gelecek zaman — düzensiz fiiller
+intro: Futuro'da en sık kullanılan fiillerin bir kısmı düzensizdir. Ekler aynıdır (-ò, -ai, -à, -emo, -ete, -anno), sadece kök değişir.
+rule: essere → <b>sarò</b>, avere → <b>avrò</b>, andare → <b>andrò</b>, fare → <b>farò</b>, venire → <b>verrò</b>, vedere → <b>vedrò</b>, potere → <b>potrò</b>. "Domani <b>sarò</b> a casa" = Yarın evde olacağım.
+structure: [["Mastar","io","noi"],["essere","sarò","saremo"],["avere","avrò","avremo"],["andare","andrò","andremo"],["fare","farò","faremo"],["venire","verrò","verremo"],["vedere","vedrò","vedremo"]]
+  ex: Domani sarò a casa. = Yarın evde olacağım.
+  ex: Quest'estate andremo in Italia. = Bu yaz İtalya'ya gideceğiz.
+  ex: Verrò da te sabato. = Cumartesi sana geleceğim.
+  ex: Ci vedremo presto! = Yakında görüşeceğiz!
+  Q1: Yarın evde olacağım: Domani ___ a casa. (essere) [sarò / sono / sarà] -> sarò :: essere → sarò (io).
+  Q2: Gelecek hafta vaktim olacak: La settimana prossima ___ tempo. (avere) [avrò / averò / ho] -> avrò :: avere → avrò (e düşer).
+  Q3: Bu yaz İtalya'ya gideceğiz: Quest'estate ___ in Italia. (andare) [andremo / anderemo / andiamo] -> andremo :: andare → andremo (noi).
+  Q4: Akşam alışveriş yapacağım: Stasera ___ la spesa. (fare – futuro) [farò / farerò / faccio] -> farò :: fare → farò.
+  Q5: Cumartesi sana geleceğim: Sabato ___ da te. (venire – futuro) [verrò / venirò / vengo] -> verrò :: venire → verrò (çift r).
+  Q6: Yakında görüşeceğiz: Ci ___ presto! (vedere – futuro) [vedremo / vederemo / vediamo] -> vedremo :: vedere → vedremo.
+  Q7: Mutlu olacaksın: Tu ___ contenta. (essere – futuro) [sarai / sarà / sei] -> sarai :: tu → sarai.
+  Q8: Onlar yarın gelecek: Loro ___ domani. (venire – futuro) [verranno / veniranno / vengono] -> verranno :: loro → verranno.
+
+=== it4-7 [grammar] Gramer: Kibar rica (vorrei, potrebbe)
+intro: Condizionale (şart kipi) ile rica ve istekler daha kibar olur. Dükkânda, restoranda, otelde her gün lazım.
+rule: <b>Vorrei</b> = isterdim (kibar 'istiyorum'). <b>Potrei</b> = -ebilir miyim? <b>Potrebbe</b> = -ebilir misiniz? (resmi). <b>Mi piacerebbe</b> = çok isterdim / hoşuma giderdi. <b>Dovresti</b> = -malısın (tavsiye). volere: vorrei, vorresti, vorrebbe, <b>vorremmo</b>, vorreste, vorrebbero.
+structure: [["İfade","Anlam","Örnek"],["Vorrei","isterdim","Vorrei un caffè."],["Potrei...?","-ebilir miyim?","Potrei aprire la finestra?"],["Potrebbe...?","-ebilir misiniz?","Potrebbe aiutarmi?"],["Mi piacerebbe","çok isterdim","Mi piacerebbe vedere Roma."],["Dovresti","-malısın","Dovresti riposare."]]
+  ex: Vorrei un caffè, per favore. = Bir kahve rica ediyorum.
+  ex: Potrebbe aiutarmi? = Bana yardım edebilir misiniz?
+  ex: Mi piacerebbe visitare Venezia. = Venedik'i gezmeyi çok isterdim.
+  ex: Vorremmo un tavolo per due. = İki kişilik bir masa istiyoruz.
+  Q1: Kibarca bir kahve iste: ___ un caffè, per favore. [Vorrei / Vorrò / Vuole] -> Vorrei :: Kibar istek: vorrei.
+  Q2: Bana yardım edebilir misiniz? (resmi): ___ aiutarmi? [Potrebbe / Potrei / Potremmo] -> Potrebbe :: Resmi 'siz' (Lei) → potrebbe.
+  Q3: Pencereyi açabilir miyim? ___ aprire la finestra? [Potrei / Potrebbe / Potresti] -> Potrei :: io → potrei.
+  Q4: Roma'yı görmek çok hoşuma giderdi: Mi ___ vedere Roma. [piacerebbe / piace / piacciono] -> piacerebbe :: '-ardı' anlamı: mi piacerebbe.
+  Q5: İki kişilik bir masa isterdik: ___ un tavolo per due. [Vorremmo / Vorrei / Vorreste] -> Vorremmo :: noi → vorremmo.
+  Q6: Doktora gitmelisin: ___ andare dal medico. [Dovresti / Dovrei / Dovrebbero] -> Dovresti :: tu → dovresti (tavsiye).
+  Q7: Condizionale di cortesia ne işe yarar? [Kibar rica ve istek / Geçmişi anlatmak / Emir vermek] -> Kibar rica ve istek :: Vorrei, potrebbe... ricayı kibarlaştırır.
+
+=== it4-8 [vocab] Ev & Hizmetler
+desc: Kira, faturalar ve evdeki arızalar.
+  1. Affitto = Kira | L'affitto è di 700 euro. | Kira 700 euro.
+  2. Proprietario = Ev sahibi | Devo chiamare il proprietario. | Ev sahibini aramam lazım.
+  3. Bolletta = Fatura | Ho pagato la bolletta della luce. | Elektrik faturasını ödedim.
+  4. Luce = Işık / elektrik | È saltata la luce. | Elektrik kesildi.
+  5. Gas = Doğalgaz | La bolletta del gas è alta. | Doğalgaz faturası yüksek.
+  6. Riscaldamento = Kalorifer / ısıtma | Il riscaldamento non funziona. | Kalorifer çalışmıyor.
+  7. Guasto = Arıza | C'è un guasto all'ascensore. | Asansörde arıza var.
+  8. Idraulico = Tesisatçı | Chiamo l'idraulico. | Tesisatçıyı arıyorum.
+  9. Elettricista = Elektrikçi | L'elettricista arriva domani. | Elektrikçi yarın geliyor.
+  10. Vicino di casa = Komşu | Il mio vicino di casa è gentile. | Komşum kibar.
+  11. Condominio = Apartman | Abito in un condominio. | Bir apartmanda oturuyorum.
+  12. Trasloco = Taşınma | Il trasloco è sabato. | Taşınma cumartesi.
+info: Ev ve faturalar. 'Bolletta della luce' = elektrik faturası. Arıza bildirmek: 'C'è un guasto'. Kiracıysan ev sahibine 'il proprietario' denir.
+
+=== it4-9 [grammar] Gramer: Nesne zamirleri (lo / la / li / le)
+intro: Bir ismi tekrar etmemek için 'onu / onları' anlamında nesne zamiri kullanılır.
+rule: <b>lo</b> = onu (eril), <b>la</b> = onu (dişil), <b>li</b> = onları (eril), <b>le</b> = onları (dişil). Ayrıca <b>mi</b> (beni), <b>ti</b> (seni), <b>ci</b> (bizi), <b>vi</b> (sizi). Zamir çekimli fiilden <b>önce</b> gelir: "Il caffè? <b>Lo</b> bevo." = Kahve mi? Onu içerim.
+structure: [["İsim","Zamir","Örnek"],["il caffè (eril)","lo","Lo bevo."],["la pizza (dişil)","la","La mangio."],["i biscotti (eril çoğul)","li","Li compro."],["le mele (dişil çoğul)","le","Le prendo."]]
+  ex: Il caffè? Lo bevo ogni mattina. = Kahve mi? Onu her sabah içerim.
+  ex: Maria? Sì, la conosco. = Maria mı? Evet, onu tanıyorum.
+  ex: Ti chiamo domani. = Seni yarın ararım.
+  Q1: Kahve mi? Onu her sabah içerim: Il caffè? ___ bevo ogni mattina. [Lo / La / Li] -> Lo :: caffè eril tekil → lo.
+  Q2: Pizza mı? Onu bu akşam yerim: La pizza? ___ mangio stasera. [La / Lo / Le] -> La :: pizza dişil tekil → la.
+  Q3: Bisküviler mi? Onları süpermarketten alırım: I biscotti? ___ compro al supermercato. [Li / Le / Lo] -> Li :: biscotti eril çoğul → li.
+  Q4: Elmalar mı? Onları ben alırım: Le mele? ___ prendo io. [Le / Li / La] -> Le :: mele dişil çoğul → le.
+  Q5: Maria mı? Evet, onu tanıyorum: Maria? Sì, ___ conosco. [la / lo / li] -> la :: Maria kadın → la.
+  Q6: Beni duyuyor musun? ___ senti? [Mi / Ti / Ci] -> Mi :: beni = mi.
+  Q7: Seni yarın ararım: ___ chiamo domani. [Ti / Mi / Vi] -> Ti :: seni = ti.
+  Q8: Nesne zamiri çekimli fiile göre nereye gelir? [Fiilden önce / Fiilden sonra / Cümlenin sonuna] -> Fiilden önce :: Lo bevo, la conosco: zamir fiilden önce.
+
+=== it4-10 [grammar] Gramer: Birleşik zamirler (me lo, glielo)
+intro: 'Onu bana', 'onu sana', 'onu ona' demek için iki zamir birleşir. Başlangıç için en sık kalıpları öğrenelim.
+rule: mi → <b>me</b>, ti → <b>te</b>, ci → <b>ce</b>, vi → <b>ve</b> olur ve lo/la'nın önüne gelir: <b>me lo</b>, <b>te la</b>, <b>ce lo</b>. 'Ona' (gli / le) + lo/la → tek kelime: <b>glielo</b>, <b>gliela</b>. "<b>Me lo</b> dai?" = Onu bana verir misin?
+structure: [["Kime?","+ lo (eril)","+ la (dişil)"],["bana (mi)","me lo","me la"],["sana (ti)","te lo","te la"],["ona (gli / le)","glielo","gliela"],["bize (ci)","ce lo","ce la"],["size (vi)","ve lo","ve la"]]
+  ex: Il libro? Me lo dai? = Kitap mı? Onu bana verir misin?
+  ex: Il caffè? Te lo porto io. = Kahve mi? Onu sana ben getiririm.
+  ex: La verità? Gliela dico domani. = Gerçek mi? Onu ona yarın söylerim.
+  Q1: Kitabı bana verir misin? Il libro? ___ dai? [Me lo / Mi lo / Lo me] -> Me lo :: mi → me + lo: me lo.
+  Q2: Kahveyi sana getiririm: Il caffè? ___ porto. [Te lo / Ti lo / Lo te] -> Te lo :: ti → te + lo: te lo.
+  Q3: Onu ona (erkeğe) söylerim: ___ dico. [Glielo / Gli lo / Lo gli] -> Glielo :: gli + lo = glielo (tek kelime).
+  Q4: Onu ona (kadına) söylerim: ___ dico. [Glielo / Le lo / Lo le] -> Glielo :: le + lo da glielo olur.
+  Q5: Pizzayı sana ben getiririm: La pizza? ___ porto io. [Te la / Te lo / Ti la] -> Te la :: pizza dişil: te + la = te la.
+  Q6: mi + lo birleşince ne olur? [me lo / mi lo / lo mi] -> me lo :: mi → me olur: me lo.
+  Q7: Anahtarı bize verir misin? La chiave? ___ dai? [Ce la / Ci la / Ce lo] -> Ce la :: ci → ce; chiave dişil → la: ce la.
+
+=== it4-11 [vocab] Fikir Bildirme
+desc: Fikrini söylemek, katılmak ya da katılmamak.
+  1. Secondo me = Bence | Secondo me, è una buona idea. | Bence bu iyi bir fikir.
+  2. Penso di sì = Sanırım evet | Viene anche Marco? — Penso di sì. | Marco da geliyor mu? — Sanırım evet.
+  3. Credo di no = Sanmıyorum | Piove domani? — Credo di no. | Yarın yağmur yağacak mı? — Sanmıyorum.
+  4. Sono d'accordo = Katılıyorum | Sono d'accordo con te. | Sana katılıyorum.
+  5. Non sono d'accordo = Katılmıyorum | Scusa, ma non sono d'accordo. | Kusura bakma ama katılmıyorum.
+  6. Hai ragione = Haklısın | Hai ragione, è tardi. | Haklısın, geç oldu.
+  7. Forse = Belki | Forse domani piove. | Belki yarın yağmur yağar.
+  8. Dipende = Duruma bağlı | Vieni con noi? — Dipende. | Bizimle gelir misin? — Duruma bağlı.
+  9. Per me va bene = Bana uyar | Alle otto? Per me va bene. | Sekizde mi? Bana uyar.
+  10. Mi sembra... = Bana ... geliyor | Mi sembra caro. | Bana pahalı geliyor.
+  11. Sinceramente = Açıkçası | Sinceramente, non mi piace. | Açıkçası, hoşuma gitmiyor.
+  12. Comunque = Neyse / yine de | Comunque, grazie. | Yine de teşekkürler.
+info: Fikir bildirmek: 'Secondo me ...' (bence). 'Penso di sì' / 'Credo di no' kalıpları çok kullanılır. Katılmak 'Sono d'accordo', karşı çıkmak 'Non sono d'accordo'.
+
+=== it4-12 [grammar] Gramer: En üstünlük (il più, -issimo, migliore)
+intro: 'En ...' ve 'çok çok ...' demenin yolları, ayrıca buono ve bene'nin özel biçimleri.
+rule: En: <b>il/la più</b> + sıfat (+ di): "la città <b>più</b> bella d'Italia". Çok çok: sıfat + <b>-issimo</b>: bello → <b>bellissimo</b>, buona → <b>buonissima</b>. Özel: buono → <b>migliore</b> (daha iyi), cattivo → <b>peggiore</b> (daha kötü), bene → <b>meglio</b> (zarf). Eşitlik: <b>come</b> (kadar).
+structure: [["Yapı","Anlam","Örnek"],["il/la più ...","en ...","la città più bella"],["-issimo / -issima","çok çok ...","bellissimo, buonissima"],["migliore / peggiore","daha iyi / daha kötü","un caffè migliore"],["meglio","daha iyi (zarf)","parla meglio"],["come","... kadar","alta come me"]]
+  ex: Roma è la città più grande d'Italia. = Roma İtalya'nın en büyük şehri.
+  ex: Questa pizza è buonissima! = Bu pizza çok çok lezzetli!
+  ex: Lei parla meglio di me. = O benden daha iyi konuşuyor.
+  Q1: Roma İtalya'nın en büyük şehri: Roma è la città ___ grande d'Italia. [più / meno / molto] -> più :: en = il/la più.
+  Q2: Çok çok güzel: bello → ___ [bellissimo / bellosissimo / più bello] -> bellissimo :: Son ünlü düşer + -issimo: bellissimo.
+  Q3: Bu pizza çok çok lezzetli: Questa pizza è ___. [buonissima / buonissimo / buonissime] -> buonissima :: pizza dişil tekil: buonissima.
+  Q4: Bu kahve ötekinden daha iyi: Questo caffè è ___ di quello. [migliore / peggiore / meglio] -> migliore :: buono → migliore (sıfat).
+  Q5: Bu şarap ötekinden daha kötü: Questo vino è ___ di quello. [peggiore / migliore / meglio] -> peggiore :: cattivo → peggiore (daha kötü).
+  Q6: O benden daha iyi konuşuyor: Lei parla ___ di me. [meglio / migliore / peggiore] -> meglio :: Fiili niteliyor (zarf): bene → meglio.
+  Q7: O benim kadar uzun: Lei è alta ___ me. [come / di / che] -> come :: Eşitlik: come (kadar).

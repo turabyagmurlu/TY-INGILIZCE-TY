@@ -1,0 +1,6 @@
+tests/shots/
+__pycache__/
+review/**/*.png
+review/**/shots/
+review/**/proof/
+tests/shots/
