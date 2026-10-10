@@ -21,7 +21,7 @@ const PROG={program:{main:{start:'2026-09-22',weeks:12,dailyMin:60,mode:'yogun'}
  // PWA
  {const man=JSON.parse(fs.readFileSync(path.join(H.ROOT,'manifest.webmanifest'),'utf8'));
   ok(man.name==='TY Dil'&&man.short_name==='TY Dil'&&man.display==='standalone'&&man.icons.length===3&&man.theme_color==='#44709E','manifest: TY Dil, standalone, 3 icons, theme');
-  const sw=fs.readFileSync(path.join(H.ROOT,'sw.js'),'utf8');ok(/ty-dil-v3/.test(sw)&&/skipWaiting/.test(sw)&&/clients\.claim/.test(sw)&&/legacy\/ty-ingilizce\.html/.test(sw),'sw.js: cache ty-dil-v3, skipWaiting/claim, precaches legacy');
+  const sw=fs.readFileSync(path.join(H.ROOT,'sw.js'),'utf8');ok(/ty-dil-v4/.test(sw)&&/skipWaiting/.test(sw)&&/clients\.claim/.test(sw)&&/legacy\/ty-ingilizce\.html/.test(sw),'sw.js: cache ty-dil-v4, skipWaiting/claim, precaches legacy');
   const html=fs.readFileSync(path.join(H.ROOT,'index.html'),'utf8');
   ok(/^<!doctype html>\n<html lang="tr">/.test(html)&&/<meta charset="utf-8">/.test(html)&&/name="viewport"/.test(html)&&/name="theme-color"/.test(html)&&/rel="manifest"/.test(html)&&/apple-touch-icon/.test(html)&&/<title>TY Dil<\/title>/.test(html),'index.html: full document skeleton');
   ok(!/claude\.ai'de|claude\.ai’de|giriş yapmış olarak/.test(html)&&(html.match(/claude\.ai/g)||[]).length===1,'no "open in claude.ai" dependency texts (only the billing note mentions claude.ai)');
@@ -30,8 +30,8 @@ const PROG={program:{main:{start:'2026-09-22',weeks:12,dailyMin:60,mode:'yogun'}
   const {p,ctx}=await open({});await p.waitForTimeout(800);
   const reg=await p.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();await navigator.serviceWorker.ready;return r?{scope:r.scope,active:!!(r.active||r.installing||r.waiting)}:null;});
   ok(reg&&reg.active&&/127\.0\.0\.1/.test(reg.scope),'service worker registers on localhost '+JSON.stringify(reg));
-  const cached=await p.evaluate(async()=>{const ks=await caches.keys();const c=await caches.open('ty-dil-v3');const m=await c.match('./index.html');return {ks,idx:!!m};});
-  ok(cached.ks.includes('ty-dil-v3')&&cached.idx,'cache ty-dil-v3 holds index.html');
+  const cached=await p.evaluate(async()=>{const ks=await caches.keys();const c=await caches.open('ty-dil-v4');const m=await c.match('./index.html');return {ks,idx:!!m};});
+  ok(cached.ks.includes('ty-dil-v4')&&cached.idx,'cache ty-dil-v4 holds index.html');
   await ctx.close();}
 
  // Görseller

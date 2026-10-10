@@ -225,6 +225,7 @@ html.ders-on .app{display:none}
 @media (max-width:430px){.dTop{gap:8px}.dTimer{padding-left:8px}.dTime{font-size:14px}.dExit{padding:6px 10px 6px 8px}}
 /* Kapak: günün dil seçimi (İkisi · Sadece İtalyanca · Sadece İngilizce) — kaynaklarda mantık vardı, biçim yoktu */
 .modeSeg{display:grid;gap:6px}
+.onb .modeSeg{margin:4px 0 2px}
 .modeSeg[hidden]{display:none}
 .msL{font-size:14px;font-weight:700;color:var(--muted)}
 .msB{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}

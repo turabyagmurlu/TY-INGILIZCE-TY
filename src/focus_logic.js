@@ -89,7 +89,8 @@ function renderOnb(){
   const step=(n,body)=>`<div class="onbStep" data-step="${n}" ${onbStep===n?"":"hidden"}>${dots(n)}${body}</div>`;
   const html=
     step(1,`<h1 id="onbTitle1" tabindex="-1">Programın: 12 hafta, günde 60 dk</h1>
-      <p class="onbLead"><b>45 dk İtalyanca</b> + <b>15 dk İngilizce</b> konuşma. Pazar tekrar günü. Hedef: 12 haftada temel A1 (günlük dinlemeyle sağlam A1).</p>
+      <div class="modeSeg" id="onbModeSeg" role="radiogroup" aria-labelledby="onbModeL">${modeSegHtml(dayMode(),"Ne çalışacaksın?","onbModeL")}</div>
+      <p class="onbLead" id="onbModeLead">${onbModeLead(dayMode())}</p>
       <div class="onbDate"><label for="progStart">Başlangıç tarihi</label><input type="date" id="progStart" value="${esc(d)}"></div>
       <div class="onbAct"><button type="button" class="btn btn-primary btn-big" data-onb="2">İleri${ICON("arrow")}</button></div>`)+
     step(2,`<h1 id="onbTitle2" tabindex="-1">Bir gün nasıl geçer?</h1>
@@ -107,6 +108,10 @@ function renderOnb(){
   if(onbHtml&&a&&a.id==="progStart"&&el.contains(a)) return;
   onbHtml=html; el.innerHTML=html;
 }
+/* Kurulumdaki dil seçimi: her günün varsayılanı olur, kapaktan her gün değiştirilebilir */
+function onbModeLead(m){return m==="it"?"<b>60 dk İtalyanca</b>: kelime, gramer, okuma-yazma, sesli tekrar. Pazar tekrar günü. Hedef: 12 haftada temel A1.":
+  m==="en"?"<b>60 dk İngilizce</b>: kelime, gramer, okuma-dinleme, konuşma. Hedef: B1'den B2'ye. İtalyanca planı o günlerde ilerlemez.":
+  "<b>45 dk İtalyanca</b> + <b>15 dk İngilizce</b> konuşma. Pazar tekrar günü. Hedef: 12 haftada temel A1 (günlük dinlemeyle sağlam A1).";}
 function onbGo(n){const v=($("#progStart")||{}).value; if(v) onbDate=v; onbStep=Math.max(1,Math.min(3,n)); renderOnb(); const h=$("#onbTitle"+onbStep); if(h) h.focus({preventScroll:true});}
 
 /* ---- Ders modu ---- */
@@ -323,7 +328,7 @@ document.addEventListener("click",e=>{const b=e.target.closest("button"); if(!b)
   if(b.id==="dersExit"){dersExit();return;}
   if(b.id==="dersMode"){dersModeMenu($("#dersModeM").hidden);return;}
   if(b.dataset.dmode){dersSetMode(b.dataset.dmode);return;}
-  if(b.dataset.mode&&b.closest("#modeSeg")){setDayMode(b.dataset.mode); renderAll(); const n=$('#modeSeg [data-mode="'+b.dataset.mode+'"]'); if(n) n.focus({preventScroll:true}); return;}
+  if(b.dataset.mode&&b.closest("#modeSeg,#onbModeSeg")){const seg=b.closest("#onbModeSeg")?"#onbModeSeg":"#modeSeg"; setDayMode(b.dataset.mode); if(seg==="#onbModeSeg"){const v=($("#progStart")||{}).value; if(v) onbDate=v; onbHtml="";} renderAll(); const n=$(seg+' [data-mode="'+b.dataset.mode+'"]'); if(n) n.focus({preventScroll:true}); return;}
   if(b.id==="dersNext"){dersNext(e);return;}
   if(b.id==="dersRetry"){dersNext(null,"retry");return;}
   if(b.id==="dersSkip"){F.wrapErr="";dersNext(null,"skip");return;}
@@ -345,8 +350,8 @@ document.addEventListener("change",e=>{if(e.target&&e.target.id==="progStart"){o
 /* Esc: yazı varken kutudan çıkar (taslak kalır), boşken dersten çıkar */
 /* Dil menüsü dışına tıklayınca kapanır · kapaktaki dil seçiminde ok tuşları */
 document.addEventListener("click",e=>{const m=$("#dersModeM"); if(m&&!m.hidden&&!e.target.closest(".dMode")) dersModeMenu(false);});
-document.addEventListener("keydown",e=>{const g=e.target&&e.target.closest&&e.target.closest("#modeSeg [data-mode]"); if(!g)return;
-  const ks=[...document.querySelectorAll("#modeSeg [data-mode]")], i=ks.indexOf(g), j=e.key==="ArrowRight"||e.key==="ArrowDown"?i+1:e.key==="ArrowLeft"||e.key==="ArrowUp"?i-1:null;
+document.addEventListener("keydown",e=>{const g=e.target&&e.target.closest&&e.target.closest(".modeSeg [data-mode]"); if(!g)return;
+  const ks=[...document.querySelectorAll(".modeSeg [data-mode]")], i=ks.indexOf(g), j=e.key==="ArrowRight"||e.key==="ArrowDown"?i+1:e.key==="ArrowLeft"||e.key==="ArrowUp"?i-1:null;
   if(j==null)return; e.preventDefault(); ks[(j+ks.length)%ks.length].click();});
 document.addEventListener("keydown",e=>{if(!F.open||e.key!=="Escape"||e.isComposing)return; e.preventDefault();
   const mm=$("#dersModeM"); if(mm&&!mm.hidden){dersModeMenu(false); $("#dersMode").focus({preventScroll:true}); return;}

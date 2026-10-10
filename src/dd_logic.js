@@ -187,9 +187,9 @@ function renderHero(){
   renderMeter(ps,total,doneMin); fitBarDate();   /* seri çipi çizildikten sonra: sığmıyorsa tarih gizli */
 }
 /* Günün dil seçimi: kapakta, başlat düğmesinin üstünde 3'lü seçim */
-function renderModeSeg(allDone){const el=$("#modeSeg"); if(!el)return; el.hidden=!!allDone; if(allDone)return; const m=dayMode();
-  const opt=[["both","İkisi · 60 dk","önerilen","İkisi: 45 dk İtalyanca, 15 dk İngilizce"],["it","Sadece İtalyanca","60 dk","Sadece İtalyanca, 60 dakika"],["en","Sadece İngilizce","60 dk","Sadece İngilizce, 60 dakika"]];
-  const html=`<span class="msL" id="modeL">Bugün:</span><div class="msB">${opt.map(o=>`<button type="button" role="radio" data-mode="${o[0]}" aria-checked="${o[0]===m}" aria-label="${o[3]}" tabindex="${o[0]===m?0:-1}" class="${o[0]===m?"on":""}"><b>${o[1]}</b><small>${o[2]}</small></button>`).join("")}</div>`;
+function modeSegHtml(m,label,lid){const opt=[["both","İkisi · 60 dk","önerilen","İkisi: 45 dk İtalyanca, 15 dk İngilizce"],["it","Sadece İtalyanca","60 dk","Sadece İtalyanca, 60 dakika"],["en","Sadece İngilizce","60 dk","Sadece İngilizce, 60 dakika"]];
+  return `<span class="msL" id="${lid||"modeL"}">${label||"Bugün:"}</span><div class="msB">${opt.map(o=>`<button type="button" role="radio" data-mode="${o[0]}" aria-checked="${o[0]===m}" aria-label="${o[3]}" tabindex="${o[0]===m?0:-1}" class="${o[0]===m?"on":""}"><b>${o[1]}</b><small>${o[2]}</small></button>`).join("")}</div>`;}
+function renderModeSeg(allDone){const el=$("#modeSeg"); if(!el)return; el.hidden=!!allDone; if(allDone)return; const html=modeSegHtml(dayMode());
   if(el.dataset.sig!==html){el.dataset.sig=html; el.innerHTML=html;}}
 /* Ölçer: koçun kaydettiği gerçek dakika / plan (kalan dakika yalnızca düğmede yazar) */
 /* Üst çubuktaki tarih sığmıyorsa (kesik "8 Eki Pe…") hiç gösterme */
