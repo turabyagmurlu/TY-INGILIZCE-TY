@@ -228,7 +228,7 @@ function ccActHtml(a){return `<div class="cc-act ${a.err?"err":""}">${a.err?"":C
 function ccWho(){const a=ccA();return `<div class="cc-who">${ccAv(a,1)}<span class="cc-whon">${esc(a.name)}</span><span class="cc-whok">${esc(a.kind)}</span></div>`;}
 function ccMsgHtml(t,i){
   if(t.r==="u"&&t.sys){const plain=t.sf||/^↻/.test(t.sys); return `<div class="cc-row sys"><p class="cc-pill${t.sf?" fail":""}"><span class="cc-vh">Sen: </span>${plain?"":CC_SVG.ok}<span>${esc(t.sys)}</span></p></div>`;}
-  if(t.r==="u") return `<div class="cc-row me"><div class="cc-b me"><span class="cc-vh">Sen: </span>${esc(t.c).replace(/\n/g,"<br>")}${t.pron?`<br><span class="cc-pron" title="Hedef: ${esc(t.pron.target)}">Telaffuz: %${t.pron.pct}</span>`:""}</div></div>`;
+  if(t.r==="u") return `<div class="cc-row me"${i!=null?` data-i="${i}"`:""}><div class="cc-b me"><span class="cc-vh">Sen: </span>${esc(t.c).replace(/\n/g,"<br>")}${t.pron?`<br><span class="cc-pron" title="Hedef: ${esc(t.pron.target)}">Telaffuz: %${t.pron.pct}</span>`:""}</div></div>`;
   const canListen=CC_TTS&&/\[\[(it|en):/.test(t.c);
   return `<div class="cc-row" data-i="${i}">${ccWho()}<div class="cc-b"><span class="cc-vh">${esc(ccA().name)}: </span><div class="cc-md">${ccMd(t.c)}</div>${t.stopped?`<div class="cc-note">Durduruldu.</div>`:""}</div>
     ${(t.acts||[]).map(ccActHtml).join("")}${canListen?`<div class="cc-tools"><button type="button" class="cc-mini" data-listen>${CC_SVG.say}Dinle</button></div>`:""}</div>`;
@@ -606,7 +606,7 @@ function ccSend(text,o){
   if(o&&o.voice){turn.voice=1; if(o.pron)turn.pron={pct:Math.round(+o.pron.pct||0),target:String(o.pron.target||"").slice(0,200)};}
   if(ccHooks.onSend)ccHooks.onSend(o);
   CC.turns.push(turn);
-  ccq("#ccLog").insertAdjacentHTML("beforeend",ccMsgHtml(turn));
+  ccq("#ccLog").insertAdjacentHTML("beforeend",ccMsgHtml(turn,CC.turns.length-1));
   CC.stick=true; ccScroll(true); ccSave(); return ccRun();
 }
 /* Başarısız yanıtı yeniden iste: yarım kalan yanıtı at, son öğrenci mesajıyla tekrar çalıştır */

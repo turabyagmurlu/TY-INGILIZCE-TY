@@ -9,7 +9,7 @@
 (function(){
 "use strict";
 const LS_KEY="tydil.apiKey", LS_SET="tydil.settings", LS_DB="tydil.db", LS_LEGACY="dilOgren_v4";
-const COLLS=["sessions","topics","program","habits","exams","days","cards","chats"];
+const COLLS=["sessions","topics","program","habits","exams","days","cards","chats","highlights"];
 const MODELS=[
   {id:"claude-sonnet-5-5",name:"Claude Sonnet 5.5",note:"önerilen · hız ve kalite dengesi"},
   {id:"claude-opus-5-5",name:"Claude Opus 5.5",note:"daha güçlü · yaklaşık 2× pahalı"},

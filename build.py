@@ -6,14 +6,14 @@ Kullanım: python3 build.py            → index.html
 Sıra (artifact build.py ile aynı, önüne rt.js eklendi):
   CSS : dd_head.html <style> + dd_chat.css + prog_style.css + focus_style.css + settings.css + voice.css + units.css
   Gövde: dd_head.html'in <style> dışındaki kısmı (<title> atılır; head'e taşınır)
-  JS  : rt.js (window.claude shim, önce) · (function(){ dd_data, dd_art, dd_logic, prog_logic, dd_chat, focus_logic, dd_parse, dd_instr, settings, voice, dd_events, units_data, units })();  — units_* Dersler sekmesi (TYDIL.registerUnits ile bağlanır)
+  JS  : rt.js (window.claude shim, önce) · (function(){ dd_data, dd_art, dd_logic, prog_logic, dd_chat, focus_logic, dd_parse, dd_instr, settings, voice, dd_events, units_data, units, install, pen })();  — units_* Dersler sekmesi (TYDIL.registerUnits ile bağlanır) · install: Telefona kur (PWA) · pen: vurgu kalemi
   Son : service worker kaydı
 """
 import os, re, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
-CSS_PARTS = [("dd_chat.css", "SOHBET"), ("prog_style.css", "PROGRAM"), ("focus_style.css", "DERS MODU"), ("settings.css", "AYARLAR"), ("voice.css", "SES"), ("units.css", "DERSLER")]
-JS_PARTS = ["dd_data.js", "dd_art.js", "dd_logic.js", "prog_logic.js", "dd_chat.js", "focus_logic.js", "dd_parse.js", "dd_instr.js", "settings.js", "voice.js", "dd_events.js", "units_data.js", "units.js"]
+CSS_PARTS = [("dd_chat.css", "SOHBET"), ("prog_style.css", "PROGRAM"), ("focus_style.css", "DERS MODU"), ("settings.css", "AYARLAR"), ("voice.css", "SES"), ("units.css", "DERSLER"), ("install.css", "TELEFONA KUR"), ("pen.css", "VURGU KALEMİ")]
+JS_PARTS = ["dd_data.js", "dd_art.js", "dd_logic.js", "prog_logic.js", "dd_chat.js", "focus_logic.js", "dd_parse.js", "dd_instr.js", "settings.js", "voice.js", "dd_events.js", "units_data.js", "units.js", "install.js", "pen.js"]
 THEME_LIGHT, THEME_DARK = "#F7F4EF", "#0F1722"
 
 def read(name):

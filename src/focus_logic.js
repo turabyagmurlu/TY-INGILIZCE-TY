@@ -67,11 +67,8 @@ function renderTop(){
     ws.setAttribute("aria-label",lbl+(showV?", "+v.short:"")+". Yol haritasını aç");}}
   renderTip(); renderOnb(); renderPrac();
 }
-function renderTip(){const el=$("#tipPin"); if(!el)return; let off=false, ready=false;
-  try{const a=localStorage.getItem("tydil-tip-pin");off=a==="1";}catch(e){off=false;}
-  try{const r=localStorage.getItem("tydil-tip-ready");ready=r==="1";}catch(e){ready=false;}
-  el.hidden=off||!ready; if(el.hidden||el.firstChild)return;
-  el.innerHTML=`<span class="tpIco">${ICON("target")}</span><p><b>İpucu:</b> Telefonda ana ekrana ekle: her gün tek dokunuşla açılır.</p><button type="button" class="tpX" id="tipX" aria-label="İpucunu kapat">${ICON("x")}</button>`;}
+/* "Ana ekrana ekle" ipucu kaldırıldı: yerine kapağın altındaki Telefona kur kartı (install.js) var; eski tydil-tip-* anahtarları zararsız */
+function renderTip(){const el=$("#tipPin"); if(el){el.hidden=true; el.innerHTML="";}}
 /* Pratik sekmesi: bugünkü ders bitmediyse üstte "Derse devam et" bandı */
 function renderPrac(){const el=$("#pracBanner"); if(!el)return; let bl=[]; try{bl=dayBlocks();}catch(e){bl=[];}
   const nx=bl.find(b=>b.st==="next"), started=bl.some(b=>b.st==="done");

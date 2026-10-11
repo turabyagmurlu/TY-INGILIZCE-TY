@@ -111,6 +111,6 @@ const tok=s=>Math.round(s.length/3.2);   // Turkish-heavy text with many diacrit
   ok(/skipWaiting/.test(swSrc)&&/clients\.claim/.test(swSrc),'sw.js: skipWaiting + clients.claim');
   ok(!/controllerchange|updatefound/.test(fs.readFileSync(path.join(H.ROOT,'index.html'),'utf8')),'NOTE: no controllerchange/updatefound handling in page → no "new version" prompt/reload (stale-while-revalidate: new HTML on the next load)');
   ok(/url\.origin !== self\.location\.origin/.test(swSrc),'sw.js: cross-origin (API) requests bypass SW');
-  ok(/cache: "no-cache"/.test(swSrc)&&/ty-dil-v3/.test(swSrc),'sw.js v3: stale-while-revalidate, background refresh with cache:"no-cache" (GitHub Pages 10-min max-age bypassed)');
+  ok(/cache: "no-cache"/.test(swSrc)&&/ty-dil-v5/.test(swSrc),'sw.js v5: stale-while-revalidate, background refresh with cache:"no-cache" (GitHub Pages 10-min max-age bypassed)');
   await ctx.close();}
  await b.close();srv.close();console.log('errors',errs);ok(!errs.length,'no page errors');console.log(H.fails()?'FAILED':'ALL PASS');})().catch(e=>{console.error(e);process.exit(1);});

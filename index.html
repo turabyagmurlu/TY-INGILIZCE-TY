@@ -1340,6 +1340,104 @@ html.np-lock,html.np-lock body{overflow:hidden}
 /* Dar ekranda ünite başlığı: 1. satır Üniteler ← · Not, 2. satır başlık (başlık sıkışıp hece bölmesin) */
 @media (max-width:520px){.u-ubar .head{grid-template-columns:auto minmax(0,1fr)} .u-ubar .head>div{grid-row:2;grid-column:1/-1} .u-ubar .head .u-notebtn{grid-row:1;grid-column:2;justify-self:end}}
 
+
+/* ---- TELEFONA KUR ---- */
+/* Telefona kur: Öğren kapağının altındaki kompakt kart + Ayarlar satırı */
+.instCard{display:grid;gap:12px;padding:16px 18px;border:1px solid var(--line)}
+.instCard[hidden],.instRow[hidden]{display:none}
+.instHd{display:flex;align-items:center;gap:12px}
+.instHd h3{margin:0;font-size:17px;font-weight:800;color:var(--heading);line-height:1.25}
+.instHd p{margin:2px 0 0;font-size:14.5px;color:var(--muted);line-height:1.45}
+.instIco{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--primary-bg);color:var(--primary-ink)}
+.instIco .ico{width:22px;height:22px}
+.instIco.ok{background:var(--good-bg);color:var(--good-ink)}
+.instAct{display:flex;flex-wrap:wrap;gap:8px}
+.instAct .btn .ico{width:18px;height:18px}
+.instSteps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.instSteps li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--sand);font-size:15px}
+.instSteps li .ico{width:20px;height:20px;color:var(--primary-ink)}
+.instN{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:var(--on-primary);font-size:13px;font-weight:800}
+.instRowIn{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+.instRowIn>div{flex:1 1 220px;min-width:0}
+.instRowIn h2{font-size:19px}
+.instRowIn .lead{margin-top:2px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.instRowIn .lead .ico{width:17px;height:17px;color:var(--primary-ink)}
+.instRowIn>.btn{flex:none}
+.instRowIn>.btn .ico{width:18px;height:18px}
+@media (max-width:480px){.instRowIn>.btn{flex:1 1 100%}}
+
+
+/* ---- VURGU KALEMİ ---- */
+/* Vurgu kalemi: işaretler (mark.hl), yuvarlak kalem düğmesi, Ders modu düğmesi, araç çubuğu, Vurgula çipi, Vurgularım listesi */
+:root{--hl-y:rgba(255,222,70,.62);--hl-g:rgba(90,210,140,.5);--hl-p:rgba(255,130,180,.45);--hl-y-s:#F2C14E;--hl-g-s:#2E9E5B;--hl-p-s:#E0609A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--hl-y:rgba(242,193,78,.42);--hl-g:rgba(76,194,131,.38);--hl-p:rgba(240,120,170,.4);--hl-y-s:#F2C14E;--hl-g-s:#4CC283;--hl-p-s:#F078AA}}
+:root[data-theme="dark"]{--hl-y:rgba(242,193,78,.42);--hl-g:rgba(76,194,131,.38);--hl-p:rgba(240,120,170,.4);--hl-y-s:#F2C14E;--hl-g-s:#4CC283;--hl-p-s:#F078AA}
+mark.hl{background:var(--hl-y);color:inherit;font-weight:inherit;border-radius:3px;padding:0 1px;margin:0 -1px;box-decoration-break:clone;-webkit-box-decoration-break:clone;cursor:pointer;transition:background-color .2s}
+mark.hl.hl-green{background:var(--hl-g)} mark.hl.hl-pink{background:var(--hl-p)}
+mark.hl:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+mark.hl.has-note::after{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--primary);margin:0 1px 0 3px;vertical-align:super}
+mark.hl.pen-new{box-shadow:0 0 0 3px var(--ring)}
+html.pen-on .cc-md,html.pen-on #uView .u-card,html.pen-on #dersDone,html.pen-on #mistakes{cursor:text}
+/* yuvarlak kalem (sağ alt, güvenli alanın üstünde; ana eylem düğmeleri akışta, .wrap alt boşluğu 80px) */
+.pen-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:50px;height:50px;border-radius:50%;border:0;background:var(--card);color:var(--primary-ink);box-shadow:var(--shadow);display:grid;place-items:center;transition:transform .12s,background-color .15s}
+.pen-fab .ico{width:24px;height:24px}
+.pen-fab:hover{transform:translateY(-1px)}
+.pen-fab.on,.pen-ders.on{background:var(--primary);color:var(--on-primary)}
+html.ders-on .pen-fab{display:none}
+/* Ders modu: "Bloğu bitirdim" satırının solunda */
+.dFoot{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.dFoot .dAlt,.dFoot .dTrans{flex:1 1 100%}
+.dFoot .dAlt{margin-bottom:0}
+.dFoot .dNext{flex:1 1 0;width:auto;min-width:0}
+.pen-ders{flex:none;width:52px;height:52px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);display:grid;place-items:center}
+.pen-ders .ico{width:22px;height:22px}
+.pen-ders.on{border-color:var(--primary)}
+.ders.is-trans .pen-ders{display:none}
+@media (max-height:560px){.pen-ders{width:44px;height:44px}}
+/* araç çubuğu */
+.pen-bar{position:fixed;z-index:80;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:10px 12px;max-width:calc(100vw - 16px);display:grid;gap:8px}
+.pen-bar[hidden]{display:none}
+.pen-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.pen-colors{display:inline-flex;gap:6px;padding-right:6px;border-right:1px solid var(--line);margin-right:2px}
+.pen-c{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer;background:var(--hl-y-s)}
+.pen-c.hl-green{background:var(--hl-g-s)} .pen-c.hl-pink{background:var(--hl-p-s)}
+.pen-c[aria-pressed="true"]{border-color:var(--text);box-shadow:0 0 0 2px var(--card) inset}
+.pen-b{min-height:40px;padding:6px 12px;border-radius:11px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);font-weight:700;font-size:14.5px;font-family:inherit;display:inline-flex;align-items:center;gap:5px}
+.pen-b:hover:not(:disabled){border-color:var(--primary)}
+.pen-b:disabled{opacity:.45;cursor:default}
+.pen-x{border-color:transparent;color:var(--muted);padding-inline:8px 10px}
+.pen-x .ico{width:16px;height:16px}
+.pen-note{display:flex;gap:6px}
+.pen-note[hidden]{display:none}
+.pen-note input{min-height:40px;padding:6px 12px;border-radius:11px;font-size:15px;flex:1;min-width:0}
+.pen-hint{margin:0;font-size:13.5px;color:var(--muted);max-width:40ch}
+/* Vurgula çipi */
+.pen-chip{position:fixed;z-index:80;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 14px;border-radius:999px;border:0;background:var(--primary);color:var(--on-primary);font-weight:800;font-size:14.5px;font-family:inherit;box-shadow:var(--shadow)}
+.pen-chip[hidden]{display:none}
+.pen-chip .ico{width:18px;height:18px}
+/* Vurgularım */
+.hlCard .chead{margin-bottom:10px}
+.hlDay+.hlDay{margin-top:14px}
+.hlDayT{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--muted)}
+.hlItem{display:grid;grid-template-columns:6px minmax(0,1fr);gap:4px 12px;padding:10px 12px;border-radius:14px;background:var(--sand);align-items:start}
+.hlItem+.hlItem{margin-top:8px}
+.hlSw{width:6px;border-radius:3px;align-self:stretch;background:var(--hl-y-s)}
+.hlItem.hl-green .hlSw{background:var(--hl-g-s)} .hlItem.hl-pink .hlSw{background:var(--hl-p-s)}
+.hlBody{min-width:0}
+.hlSrc{display:block;font-size:13px;font-weight:700;color:var(--primary-ink)}
+.hlQ{margin:3px 0 0;font-size:15.5px;line-height:1.45;overflow-wrap:anywhere}
+.hlQ::before{content:"“"} .hlQ::after{content:"”"}
+.hlNote{margin:4px 0 0;font-size:14.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.pen-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--primary);flex:none}
+.hlAct{grid-column:2;display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.hlAct .btn-sm{min-height:40px;padding:6px 12px;font-size:14px}
+.hlView{margin-top:8px}
+.hlView[hidden]{display:none}
+.hlTurn{padding:10px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.hlTurn .hint{margin:0 0 6px;font-size:13.5px}
+.hlTxt{font-size:15px;line-height:1.5}
+.hlTxt table{font-size:14px}
+
 </style>
 </head>
 <body>
@@ -1376,6 +1474,7 @@ html.np-lock,html.np-lock body{overflow:hidden}
           <div class="heroFoot"><button type="button" class="dueChip" id="dueChip" data-go="cards" hidden></button></div>
           <p class="hint" id="heroHint"></p>
         </article>
+        <section class="card instCard" id="instCard" aria-labelledby="instT" hidden></section>
         <details class="more" id="learnMore">
           <summary><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>Detaylar<span class="moreSub">bugünün blokları</span></summary>
           <div class="moreBody">
@@ -1422,6 +1521,9 @@ html.np-lock,html.np-lock body{overflow:hidden}
       <article class="card" aria-labelledby="mistTitle"><h3 id="mistTitle">Sık yaptığın hatalar</h3>
         <p class="lead" style="margin-bottom:14px">Koç bunları her derste özellikle yakalar.</p>
         <div id="mistakes"></div></article>
+      <article class="card hlCard" id="hlCard" aria-labelledby="hlTitle"><div class="chead"><div><h3 id="hlTitle">Vurgularım</h3>
+        <p class="lead">Kalemle işaretlediğin cümleler ve notların. Kaynağa gitmek için Git.</p></div><span class="side" id="hlCount"></span></div>
+        <div id="hlList"></div></article>
       <article class="card" aria-labelledby="sessTitle"><h3 id="sessTitle">Ders geçmişi</h3>
         <p class="lead" style="margin-bottom:10px">Son 30 oturum. Koç her bloğu kendisi işler.</p>
         <div class="tw" id="sessions"></div></article>
@@ -1487,6 +1589,7 @@ html.np-lock,html.np-lock body{overflow:hidden}
         </div>
       </article>
       <article class="card progSetup" id="progSetup" aria-labelledby="progSetupTitle"></article>
+      <article class="card instRow" id="instRow" aria-labelledby="instRowT" hidden></article>
       <article class="card" id="backupCard" aria-labelledby="bkTitle">
         <h2 id="bkTitle">Yedek</h2>
         <p class="lead" style="margin-bottom:14px">Kayıtların yalnızca bu cihazda durur. Telefon değiştirmeden ya da tarayıcı verisini silmeden önce yedek al; başka cihazda geri yükle.</p>
@@ -1556,7 +1659,7 @@ html.np-lock,html.np-lock body{overflow:hidden}
 (function(){
 "use strict";
 const LS_KEY="tydil.apiKey", LS_SET="tydil.settings", LS_DB="tydil.db", LS_LEGACY="dilOgren_v4";
-const COLLS=["sessions","topics","program","habits","exams","days","cards","chats"];
+const COLLS=["sessions","topics","program","habits","exams","days","cards","chats","highlights"];
 const MODELS=[
   {id:"claude-sonnet-5-5",name:"Claude Sonnet 5.5",note:"önerilen · hız ve kalite dengesi"},
   {id:"claude-opus-5-5",name:"Claude Opus 5.5",note:"daha güçlü · yaklaşık 2× pahalı"},
@@ -2676,7 +2779,7 @@ function ccActHtml(a){return `<div class="cc-act ${a.err?"err":""}">${a.err?"":C
 function ccWho(){const a=ccA();return `<div class="cc-who">${ccAv(a,1)}<span class="cc-whon">${esc(a.name)}</span><span class="cc-whok">${esc(a.kind)}</span></div>`;}
 function ccMsgHtml(t,i){
   if(t.r==="u"&&t.sys){const plain=t.sf||/^↻/.test(t.sys); return `<div class="cc-row sys"><p class="cc-pill${t.sf?" fail":""}"><span class="cc-vh">Sen: </span>${plain?"":CC_SVG.ok}<span>${esc(t.sys)}</span></p></div>`;}
-  if(t.r==="u") return `<div class="cc-row me"><div class="cc-b me"><span class="cc-vh">Sen: </span>${esc(t.c).replace(/\n/g,"<br>")}${t.pron?`<br><span class="cc-pron" title="Hedef: ${esc(t.pron.target)}">Telaffuz: %${t.pron.pct}</span>`:""}</div></div>`;
+  if(t.r==="u") return `<div class="cc-row me"${i!=null?` data-i="${i}"`:""}><div class="cc-b me"><span class="cc-vh">Sen: </span>${esc(t.c).replace(/\n/g,"<br>")}${t.pron?`<br><span class="cc-pron" title="Hedef: ${esc(t.pron.target)}">Telaffuz: %${t.pron.pct}</span>`:""}</div></div>`;
   const canListen=CC_TTS&&/\[\[(it|en):/.test(t.c);
   return `<div class="cc-row" data-i="${i}">${ccWho()}<div class="cc-b"><span class="cc-vh">${esc(ccA().name)}: </span><div class="cc-md">${ccMd(t.c)}</div>${t.stopped?`<div class="cc-note">Durduruldu.</div>`:""}</div>
     ${(t.acts||[]).map(ccActHtml).join("")}${canListen?`<div class="cc-tools"><button type="button" class="cc-mini" data-listen>${CC_SVG.say}Dinle</button></div>`:""}</div>`;
@@ -3054,7 +3157,7 @@ function ccSend(text,o){
   if(o&&o.voice){turn.voice=1; if(o.pron)turn.pron={pct:Math.round(+o.pron.pct||0),target:String(o.pron.target||"").slice(0,200)};}
   if(ccHooks.onSend)ccHooks.onSend(o);
   CC.turns.push(turn);
-  ccq("#ccLog").insertAdjacentHTML("beforeend",ccMsgHtml(turn));
+  ccq("#ccLog").insertAdjacentHTML("beforeend",ccMsgHtml(turn,CC.turns.length-1));
   CC.stick=true; ccScroll(true); ccSave(); return ccRun();
 }
 /* Başarısız yanıtı yeniden iste: yarım kalan yanıtı at, son öğrenci mesajıyla tekrar çalıştır */
@@ -3194,11 +3297,8 @@ function renderTop(){
     ws.setAttribute("aria-label",lbl+(showV?", "+v.short:"")+". Yol haritasını aç");}}
   renderTip(); renderOnb(); renderPrac();
 }
-function renderTip(){const el=$("#tipPin"); if(!el)return; let off=false, ready=false;
-  try{const a=localStorage.getItem("tydil-tip-pin");off=a==="1";}catch(e){off=false;}
-  try{const r=localStorage.getItem("tydil-tip-ready");ready=r==="1";}catch(e){ready=false;}
-  el.hidden=off||!ready; if(el.hidden||el.firstChild)return;
-  el.innerHTML=`<span class="tpIco">${ICON("target")}</span><p><b>İpucu:</b> Telefonda ana ekrana ekle: her gün tek dokunuşla açılır.</p><button type="button" class="tpX" id="tipX" aria-label="İpucunu kapat">${ICON("x")}</button>`;}
+/* "Ana ekrana ekle" ipucu kaldırıldı: yerine kapağın altındaki Telefona kur kartı (install.js) var; eski tydil-tip-* anahtarları zararsız */
+function renderTip(){const el=$("#tipPin"); if(el){el.hidden=true; el.innerHTML="";}}
 /* Pratik sekmesi: bugünkü ders bitmediyse üstte "Derse devam et" bandı */
 function renderPrac(){const el=$("#pracBanner"); if(!el)return; let bl=[]; try{bl=dayBlocks();}catch(e){bl=[];}
   const nx=bl.find(b=>b.st==="next"), started=bl.some(b=>b.st==="done");
@@ -4060,8 +4160,8 @@ window.TYDIL={openTab,
   /* Dersler sekmesi: fn(mountEl) ilk açılışta çağrılır; sekme düğmesi görünür olur */
   registerUnits(fn,opt){unitsRender=fn; unitsMounted=false; const b=$('.tabs [data-tab="units"]'); if(b){b.hidden=false; if(opt&&opt.label){const l=b.querySelector(".tl"); if(l)l.textContent=opt.label;}} const m=$("#tyUnitsMount"); if(m)m.hidden=false; decorate(); if(!$("#tab-units").hidden)openTab("units");},
   get db(){return db;}, S, get rt(){return window.TYRT;},
-  chat:{send:(t,o)=>typeof ccSend==="function"?ccSend(t,o):false, submit:()=>typeof ccSubmit==="function"?ccSubmit():undefined, fill:t=>typeof ccFill==="function"?ccFill(t):undefined, speak:(t,l,b)=>typeof ccSpeak==="function"?ccSpeak(t,l,b):undefined, get state(){return typeof CC!=="undefined"?CC:null;}},
-  ders:{open:()=>typeof dersOpen==="function"?dersOpen():undefined, get state(){return typeof F!=="undefined"?F:null;}}};
+  chat:{send:(t,o)=>typeof ccSend==="function"?ccSend(t,o):false, submit:()=>typeof ccSubmit==="function"?ccSubmit():undefined, fill:t=>typeof ccFill==="function"?ccFill(t):undefined, speak:(t,l,b)=>typeof ccSpeak==="function"?ccSpeak(t,l,b):undefined, render:()=>typeof ccRender==="function"?ccRender():undefined, get state(){return typeof CC!=="undefined"?CC:null;}},
+  ders:{open:()=>typeof dersOpen==="function"?dersOpen():undefined, render:()=>{if(typeof F!=="undefined")F.doneSig=""; if(typeof renderFocus==="function")renderFocus();}, get state(){return typeof F!=="undefined"?F:null;}}};
 
 /* ---------- DERSLER · İÇERİK (units_data.js) ----------
    Eski TY İngilizce uygulamasının (legacy/ty-ingilizce.html) müfredatı birebir taşındı.
@@ -6657,6 +6757,247 @@ document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",
 if(window.TYDIL&&typeof TYDIL.registerUnits==="function"){ TYDIL.registerUnits(mountUnits,{label:"Dersler"}); if(parseHash()) showTab(); }
 window.TYDIL=window.TYDIL||{}; TYDIL.units={get state(){ return US; }, save:saveState, reload(){ US=loadState(); setLanguage(US.lang||"it",{skipSaveOld:true}); applyFont(); if(mounted) route(); }, data:U_LANGS, reindex:indexCurriculum, setLanguage, findUnit, unitSteps, nextStepFor, passMark, pronScore, prNorm, bkMakeCode, bkParse, go, get ctx(){ return ctx; }, micAvailable, speak};
 })();
+
+/* ---------- TELEFONA KUR (PWA kurulumu) ----------
+   beforeinstallprompt yakalanır → Öğren kapağının altında kompakt kart (#instCard) + Ayarlar'da satır (#instRow): "Kur" → tarayıcı kurulum penceresi.
+   appinstalled → kart gizlenir, Ayarlar satırı "Kuruldu ✓" olur. Zaten tam ekranda (standalone) ya da kurulduysa hiçbiri görünmez.
+   iOS Safari (beforeinstallprompt yok): 2 adımlı ipucu "Paylaş → Ana Ekrana Ekle". Masaüstü Chrome: aynı pencere, etiket "Bilgisayara kur".
+   Cihaz anahtarları: "tydil-inst-done" (kuruldu) · "tydil-inst-later" (Öğren kartı ertelendi, ms) */
+const INST={deferred:null,installed:false,later:0};
+const INST_LATER_MS=14*86400000;
+const instLs=k=>{try{return localStorage.getItem(k);}catch(e){return null;}};
+const instLsSet=(k,v)=>{try{localStorage.setItem(k,v);}catch(e){}};
+function instStandalone(){try{return navigator.standalone===true||matchMedia("(display-mode: standalone)").matches||matchMedia("(display-mode: fullscreen)").matches||matchMedia("(display-mode: minimal-ui)").matches;}catch(e){return false;}}
+function instIOS(){const ua=navigator.userAgent||"", pf=navigator.platform||""; return /iP(hone|ad|od)/.test(ua)||(pf==="MacIntel"&&(navigator.maxTouchPoints||0)>1&&!/Chrome|CriOS|FxiOS/.test(ua)&&/Safari/.test(ua));}
+function instDesktop(){return !/Android|iP(hone|ad|od)|Mobile|Tablet/i.test(navigator.userAgent||"");}
+const INST_SVG={share:'<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5V4M8 8l4-4 4 4"/><path d="M6 11.5v6A2.5 2.5 0 0 0 8.5 20h7a2.5 2.5 0 0 0 2.5-2.5v-6"/></svg>',
+  plusbox:'<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8.5v7M8.5 12h7"/></svg>',
+  phone:'<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>',
+  laptop:'<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2.5 19h19"/></svg>'};
+/* Durum: "no" (gösterilmez) · "prompt" (Kur düğmesi) · "ios" (2 adım) · "done" (Kuruldu ✓, yalnızca Ayarlar) */
+function instState(){
+  if(INST.installed||instLs("tydil-inst-done")==="1") return instStandalone()?"no":"done";
+  if(instStandalone()) return "no";
+  if(INST.deferred) return "prompt";
+  if(instIOS()) return "ios";
+  return "no";
+}
+function instLabel(){return instDesktop()?"Bilgisayara kur":"Telefona kur";}
+function instLaterOn(){const t=+(instLs("tydil-inst-later")||0); return t&&Date.now()-t<INST_LATER_MS;}
+function renderInstall(){
+  const st=instState(), card=$("#instCard"), row=$("#instRow"), desk=instDesktop(), label=instLabel();
+  const ico=desk?INST_SVG.laptop:INST_SVG.phone;
+  /* Öğren kartı: kur/iOS; ertelendiyse ya da kurulduysa yok */
+  if(card){const show=(st==="prompt"||st==="ios")&&!instLaterOn();
+    card.hidden=!show;
+    if(show){const html=st==="prompt"
+      ?`<div class="instHd"><span class="instIco" aria-hidden="true">${ico}</span><div><h3 id="instT">${esc(label)}</h3><p>${desk?"Kendi penceresinde, sekmeler olmadan açılır.":"Ana ekrana simge ekler, tam ekran açılır. Çevrimdışı da çalışır."}</p></div></div>
+        <div class="instAct"><button type="button" class="btn btn-primary btn-sm" data-inst="go">${ico}Kur</button><button type="button" class="btn btn-ghost btn-sm" data-inst="later">Şimdi değil</button></div>`
+      :`<div class="instHd"><span class="instIco" aria-hidden="true">${ico}</span><div><h3 id="instT">Telefona kur</h3><p>Safari'de iki adım: ana ekrana simge ekler, tam ekran açılır.</p></div></div>
+        <ol class="instSteps"><li><span class="instN">1</span>${INST_SVG.share}<span>Alttaki <b>Paylaş</b> düğmesine bas</span></li><li><span class="instN">2</span>${INST_SVG.plusbox}<span><b>Ana Ekrana Ekle</b>'yi seç</span></li></ol>
+        <div class="instAct"><button type="button" class="btn btn-ghost btn-sm" data-inst="later">Tamam, gördüm</button></div>`;
+      if(card.dataset.sig!==html){card.dataset.sig=html; card.innerHTML=html;}}
+    else {card.innerHTML=""; card.dataset.sig="";}}
+  /* Ayarlar satırı: kur / iOS adımları / Kuruldu ✓ */
+  if(row){row.hidden=st==="no";
+    if(st!=="no"){const html=st==="done"
+      ?`<div class="instRowIn"><span class="instIco ok" aria-hidden="true">${ICON("check")}</span><div><h2 id="instRowT">${esc(label)}</h2><p class="lead">Kuruldu ✓ · Ana ekrandaki TY Dil simgesinden aç.</p></div></div>`
+      :st==="prompt"
+      ?`<div class="instRowIn"><span class="instIco" aria-hidden="true">${ico}</span><div><h2 id="instRowT">${esc(label)}</h2><p class="lead">${desk?"Kendi penceresinde açılır; başlat menüsüne/dock'a simge gelir.":"Ana ekrana simge ekler, tam ekran açılır."}</p></div><button type="button" class="btn btn-primary" data-inst="go">${ico}Kur</button></div>`
+      :`<div class="instRowIn"><span class="instIco" aria-hidden="true">${ico}</span><div><h2 id="instRowT">Telefona kur</h2><p class="lead">Safari'de: ${INST_SVG.share} <b>Paylaş</b> → ${INST_SVG.plusbox} <b>Ana Ekrana Ekle</b>. Ana ekrana simge ekler, tam ekran açılır.</p></div></div>`;
+      if(row.dataset.sig!==html){row.dataset.sig=html; row.innerHTML=html;}}
+    else {row.innerHTML=""; row.dataset.sig="";}}
+}
+async function instGo(btn){const d=INST.deferred; if(!d)return; if(btn){btn.disabled=true;}
+  try{ const fn=d["prompt"]; if(typeof fn==="function") await fn.call(d); const ch=d.userChoice?await d.userChoice:null;
+    if(ch&&ch.outcome==="accepted"){INST.deferred=null;} else if(btn){btn.disabled=false;} }
+  catch(e){ if(btn)btn.disabled=false; }
+  renderInstall();}
+window.addEventListener("beforeinstallprompt",e=>{try{e.preventDefault();}catch(x){} INST.deferred=e; renderInstall();});
+window.addEventListener("appinstalled",()=>{INST.installed=true; INST.deferred=null; instLsSet("tydil-inst-done","1"); renderInstall();});
+try{matchMedia("(display-mode: standalone)").addEventListener("change",renderInstall);}catch(e){}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-inst]"); if(!b)return;
+  if(b.dataset.inst==="go"){instGo(b);return;}
+  if(b.dataset.inst==="later"){instLsSet("tydil-inst-later",String(Date.now())); renderInstall(); return;}});
+renderInstall();
+window.TYINST={state:instState,render:renderInstall,get deferred(){return INST.deferred;}};
+
+/* ---------- VURGU KALEMİ (pen.js) ----------
+   Metin içeren alanlarda seçimi <mark class="hl hl-<renk>" data-hid> ile sarar; vurgu db "highlights" koleksiyonunda, çapa + alıntı (TextQuoteSelector) ile saklanır:
+     chat → {thread: CC.key (tarih_ajan), turn}  ·  unit → {lang, uid, step}  ·  done → {date}  ·  mist → sabit
+   Yeniden çizimden sonra (ccRender, ünite ekranı, bitti ekranı, hatalar) MutationObserver tetikler, vurgular alıntı + ön/son ekle yeniden bulunur (idempotent).
+   Araç: sağ altta yuvarlak kalem (Ders modunda "Bloğu bitirdim" satırının solunda) → araç çubuğu (3 renk, Not ekle, Sil, Kapat).
+   Kalem kapalıyken seçimin yanında küçük "Vurgula" çipi çıkar. Bir vurguya dokununca aynı çubuk o vurgu için açılır (renk / not / kaldır).
+   İlerleme → Vurgularım: gün ve kaynağa göre liste, "Git" kaynağı açar (bugünkü sohbet / ünite adımı) ya da eski sohbet turunu yerinde gösterir.
+   Yedek: koleksiyon rtExport/rtImport ile otomatik taşınır (anahtar içermez). */
+const PEN={items:[],byId:{},armed:false,color:"yellow",ctx:null,obs:[],t:0,applying:false,chipRange:null,selT:0,open:false,anchorEl:null,view:{}};
+const PEN_COLORS={yellow:"Sarı",green:"Yeşil",pink:"Pembe"};
+const PEN_SKIP="button,input,textarea,select,script,style,.cc-vh,.u-notes,.u-ubar,.np-sheet,.pen-ui,.cc-act,.cc-acts,.cc-tools,.cc-think,.u-toast,[contenteditable],[role=button]";
+const PEN_CTX=32, PEN_MAXQ=2000;
+const PEN_SVG={pen:'<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0 0-3L17 5a2.1 2.1 0 0 0-3 0L3.5 15.5V20z"/><path d="M12.5 7.5 17 12"/><path d="M4 20l4-1"/></svg>',
+  dot:'<span class="pen-dot" aria-hidden="true"></span>'};
+const penAgentName=t=>{const id=String(t||"").split("_")[1]||""; return id==="it-koc"?"Chiara":id==="en-koc"?"Oliver":id==="dilbilgisi"?"Selin":"Koç";};
+function penUnitHash(){const h=(location.hash||"").replace(/^#/,""); if(!/^dersler\//i.test(h))return null; const p=h.split("/").slice(1).map(x=>{try{return decodeURIComponent(x);}catch(e){return x;}}); if(!p[1]||!p[2])return null; return {lang:p[0],uid:p[1],step:p[2]};}
+function penUnitTitle(a){let t=a.uid, s=a.step; try{ if(typeof findUnit==="function"){const u=findUnit(a.uid); if(u){t=u.title||t; if(typeof unitSteps==="function"){const st=unitSteps(u).find(x=>x.k===a.step); if(st)s=st.n;}}} }catch(e){} return t+" · "+s;}
+/* Alanlar: root (gözlenen kök) · each(root) → vurgulanabilir öğeler · anchor(el) → çapa · group(a,h) (aynı kapsayıcı) · same(a,h) (aynı öğe) */
+const PEN_SCOPES=[
+  {kind:"chat",root:()=>(typeof CC!=="undefined"&&CC.root)?CC.root.querySelector("#ccLog"):$("#ccLog"),
+   each:r=>[...r.querySelectorAll(".cc-row[data-i]:not(.live):not(.sys) > .cc-b")],
+   anchor:el=>{const row=el.closest(".cc-row"); if(!row||typeof CC==="undefined"||!CC.key)return null; return {kind:"chat",thread:CC.key,turn:+row.dataset.i};},
+   group:(a,h)=>h.kind==="chat"&&h.thread===a.thread, same:(a,h)=>h.turn===a.turn,
+   title:a=>penAgentName(a.thread)+" · sohbet"},
+  {kind:"unit",root:()=>$("#tyUnitsMount"),each:r=>{const v=r.querySelector("#uView"); return v?[v]:[];},
+   anchor:()=>{const a=penUnitHash(); return a?Object.assign({kind:"unit"},a):null;},
+   group:(a,h)=>h.kind==="unit"&&h.lang===a.lang&&h.uid===a.uid&&h.step===a.step, same:()=>true, title:penUnitTitle},
+  {kind:"done",root:()=>$("#dersDone"),each:r=>[r],anchor:()=>({kind:"done",date:today()}),group:(a,h)=>h.kind==="done"&&h.date===a.date,same:()=>true,title:()=>"Bitti ekranı"},
+  {kind:"mist",root:()=>$("#mistakes"),each:r=>[r],anchor:()=>({kind:"mist"}),group:(a,h)=>h.kind==="mist",same:()=>true,title:()=>"Sık yaptığın hatalar"}
+];
+/* ---- metin haritası ---- */
+function penMap(scope){const nodes=[],starts=[]; let len=0;
+  const w=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode(n){const p=n.parentElement; if(!p)return NodeFilter.FILTER_REJECT; const s=p.closest(PEN_SKIP); return s&&scope.contains(s)&&s!==scope?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;}});
+  let n; while((n=w.nextNode())){nodes.push(n); starts.push(len); len+=n.data.length;}
+  return {nodes,starts,text:nodes.map(x=>x.data).join("")};}
+const penCommonTail=(a,b)=>{let i=0; while(i<a.length&&i<b.length&&a[a.length-1-i]===b[b.length-1-i])i++; return i;};
+const penCommonHead=(a,b)=>{let i=0; while(i<a.length&&i<b.length&&a[i]===b[i])i++; return i;};
+/* Alıntıyı bul: tam eşleşmeler arasından ön/son eki en çok tutanı; yoksa boşluk normalize edilmiş eşleşme */
+function penFind(text,h){const q=String(h.quote||""); if(!q)return null; const pre=String(h.prefix||""), suf=String(h.suffix||"");
+  const pick=(T,Q,toRaw)=>{let best=null,bs=-1,i=T.indexOf(Q); while(i>=0){const a=T.slice(Math.max(0,i-pre.length),i), b=T.slice(i+Q.length,i+Q.length+suf.length); const sc=penCommonTail(a,pre)+penCommonHead(b,suf); if(sc>bs){bs=sc;best=i;} i=T.indexOf(Q,i+1);} return best==null?null:(toRaw?toRaw(best,best+Q.length):{s:best,e:best+Q.length});};
+  const r=pick(text,q); if(r)return r;
+  const map=[]; let norm=""; for(let i=0;i<text.length;i++){const c=text[i]; if(/\s/.test(c)){if(norm&&norm[norm.length-1]===" ")continue; norm+=" "; map.push(i);} else {norm+=c; map.push(i);}}
+  const nq=q.replace(/\s+/g," ").trim(); if(!nq)return null;
+  return pick(norm,nq,(s,e)=>({s:map[s],e:map[e-1]+1}));}
+function penPlace(el,h,opt){const {nodes,starts,text}=penMap(el); const r=penFind(text,h); if(!r||r.e<=r.s)return false; penWrap(nodes,starts,r.s,r.e,h,opt); return true;}
+function penWrap(nodes,starts,s,e,h,opt){let first=true;
+  for(let i=0;i<nodes.length;i++){let node=nodes[i]; const a=starts[i], b=a+node.data.length; if(b<=s||a>=e)continue;
+    const from=Math.max(s,a)-a, to=Math.min(e,b)-a; if(to<=from)continue;
+    if(to<node.data.length)node.splitText(to); if(from>0)node=node.splitText(from);
+    const m=document.createElement("mark"); m.dataset.hid=h.id; penStyle(m,h); if(first&&!(opt&&opt.inert)){m.tabIndex=0;} first=false;
+    node.parentNode.insertBefore(m,node); m.appendChild(node);}
+  if(h.note)[...document.querySelectorAll(`mark.hl[data-hid="${h.id}"]`)].pop()?.classList.add("has-note");}
+function penStyle(m,h){m.className="hl hl-"+(PEN_COLORS[h.color]?h.color:"yellow"); const lbl="vurgu: "+(PEN_COLORS[h.color]||"Sarı")+(h.note?" · not: "+h.note:""); m.setAttribute("aria-label",lbl); if(h.note)m.title=h.note; else m.removeAttribute("title"); m.classList.toggle("has-note",false);}
+function penUnwrapMark(m){const p=m.parentNode; if(!p)return; while(m.firstChild)p.insertBefore(m.firstChild,m); p.removeChild(m); try{p.normalize();}catch(e){}}
+function penUnwrapAll(hid){document.querySelectorAll(`mark.hl[data-hid="${hid}"]`).forEach(penUnwrapMark);}
+/* ---- uygula (idempotent) ---- */
+function penApplyEl(def,el){const anchor=def.anchor(el); if(!anchor)return null;
+  el.querySelectorAll("mark.hl[data-hid]").forEach(m=>{const h=PEN.byId[m.dataset.hid]; if(!h||!def.group(anchor,h))penUnwrapMark(m); else penStyle(m,h);});
+  const present=new Set([...el.querySelectorAll("mark.hl[data-hid]")].map(m=>m.dataset.hid));
+  PEN.items.filter(h=>def.group(anchor,h)&&def.same(anchor,h)&&!present.has(h.id)).forEach(h=>{if(penPlace(el,h))present.add(h.id);});
+  /* not noktası: son parçaya */
+  present.forEach(id=>{const h=PEN.byId[id]; if(h&&h.note){const ms=el.querySelectorAll(`mark.hl[data-hid="${id}"]`); if(ms.length)ms[ms.length-1].classList.add("has-note");}});
+  return anchor;}
+function penApplyDef(def){const root=def.root(); if(!root)return; const els=def.each(root); if(!els.length)return; let a0=null;
+  els.forEach(el=>{const a=penApplyEl(def,el); if(a&&!a0)a0=a;});
+  if(def.kind==="chat"&&a0){const placed=new Set([...root.querySelectorAll("mark.hl[data-hid]")].map(m=>m.dataset.hid));
+    PEN.items.filter(h=>def.group(a0,h)&&!placed.has(h.id)).forEach(h=>{for(const el of els){if(penPlace(el,h))break;}});}}
+function penApply(){if(PEN.applying)return; PEN.applying=true; try{PEN_SCOPES.forEach(penApplyDef);}catch(e){} finally{PEN.applying=false; PEN.obs.forEach(o=>{try{o.takeRecords();}catch(e){}});}}
+function penSchedule(){clearTimeout(PEN.t); PEN.t=setTimeout(penApply,60);}
+function penObserve(){PEN_SCOPES.forEach(def=>{const r=def.root(); if(!r||r.__penObs)return; const o=new MutationObserver(()=>{if(!PEN.applying)penSchedule();}); o.observe(r,{childList:true,subtree:true}); r.__penObs=true; PEN.obs.push(o);});}
+/* ---- kayıt ---- */
+const penDb=()=>typeof db!=="undefined"&&db?db:null;
+function penSet(items){PEN.items=items.filter(h=>h&&h.quote).sort((a,b)=>String(a.created||"").localeCompare(String(b.created||""))); PEN.byId={}; PEN.items.forEach(h=>PEN.byId[h.id]=h); penApply(); penRenderList();}
+async function penSave(rec){const d=penDb(); if(d){try{const r=await d.collection("highlights").add(rec); return r.id;}catch(e){}}
+  const id="loc"+Date.now().toString(36)+Math.random().toString(36).slice(2,6); penSet(PEN.items.concat([Object.assign({id},rec)])); return id;}
+async function penUpdate(id,patch){const h=PEN.byId[id]; if(!h)return; Object.assign(h,patch); penSet(PEN.items.slice()); const d=penDb(); if(d){try{await d.collection("highlights").doc(id).update(patch);}catch(e){}}}
+async function penDelete(id){penUnwrapAll(id); penSet(PEN.items.filter(h=>h.id!==id)); const d=penDb(); if(d){try{await d.collection("highlights").doc(id).delete();}catch(e){}}}
+/* ---- seçimden vurgu ---- */
+function penScopeAt(node){for(const def of PEN_SCOPES){const root=def.root(); if(!root||!root.contains(node))continue; const el=def.each(root).find(x=>x.contains(node)); if(el)return {def,el};} return null;}
+function penOffset(map,container,offset,end){const {nodes,starts}=map;
+  if(container.nodeType===3){const i=nodes.indexOf(container); if(i<0){/* atlanan düğüm (düğme vb.): en yakın komşu */ const all=[...nodes]; const after=all.find(n=>container.compareDocumentPosition(n)&Node.DOCUMENT_POSITION_FOLLOWING); if(!end&&after)return starts[nodes.indexOf(after)]; const before=all.slice().reverse().find(n=>container.compareDocumentPosition(n)&Node.DOCUMENT_POSITION_PRECEDING); if(end&&before){const j=nodes.indexOf(before);return starts[j]+before.data.length;} return -1;} return starts[i]+Math.min(offset,container.data.length);}
+  const kids=container.childNodes; if(offset<kids.length){const child=kids[offset]; const i=nodes.findIndex(n=>child===n||child.contains(n)); if(i>=0)return starts[i]; const after=nodes.findIndex(n=>child.compareDocumentPosition(n)&Node.DOCUMENT_POSITION_FOLLOWING); return after>=0?starts[after]:(end?map.text.length:-1);}
+  for(let i=nodes.length-1;i>=0;i--){if(container.contains(nodes[i]))return starts[i]+nodes[i].data.length;} return end?map.text.length:-1;}
+function penCurrentSel(){let sel; try{sel=window.getSelection();}catch(e){return null;} if(!sel||!sel.rangeCount||sel.isCollapsed)return null; const r=sel.getRangeAt(0); if(!String(r).trim())return null;
+  const sc=r.startContainer.nodeType===1?r.startContainer:r.startContainer.parentElement; if(!sc||sc.closest("input,textarea,[contenteditable],.pen-ui"))return null;
+  const hit=penScopeAt(r.startContainer); if(!hit)return null; const range=r.cloneRange(); if(!hit.el.contains(range.endContainer))range.setEnd(hit.el,hit.el.childNodes.length); return Object.assign({range},hit);}
+function penRecFromRange(hit){const map=penMap(hit.el), text=map.text; let s=penOffset(map,hit.range.startContainer,hit.range.startOffset,false), e=penOffset(map,hit.range.endContainer,hit.range.endOffset,true);
+  if(s<0||e<0)return null; if(e<s)[s,e]=[e,s]; while(s<e&&/\s/.test(text[s]))s++; while(e>s&&/\s/.test(text[e-1]))e--; if(e-s<1)return null; if(e-s>PEN_MAXQ)e=s+PEN_MAXQ;
+  const anchor=hit.def.anchor(hit.el); if(!anchor)return null;
+  return Object.assign({},anchor,{quote:text.slice(s,e),prefix:text.slice(Math.max(0,s-PEN_CTX),s),suffix:text.slice(e,e+PEN_CTX),color:PEN.color,note:"",created:new Date().toISOString(),title:hit.def.title(anchor)});}
+async function penCreateFromSel(hit){hit=hit||penCurrentSel(); if(!hit)return false; const rec=penRecFromRange(hit); if(!rec)return false;
+  try{window.getSelection().removeAllRanges();}catch(e){} penChip(false); const id=await penSave(rec); penApply();
+  const m=document.querySelector(`mark.hl[data-hid="${id}"]`); if(m){m.classList.add("pen-new"); setTimeout(()=>m.classList.remove("pen-new"),700);} return true;}
+/* ---- "Vurgula" çipi ---- */
+function penChipEl(){let c=$("#penChip"); if(!c){c=document.createElement("button"); c.type="button"; c.id="penChip"; c.className="pen-chip pen-ui"; c.hidden=true; c.innerHTML=PEN_SVG.pen+"<span>Vurgula</span>"; document.body.appendChild(c);
+    c.addEventListener("pointerdown",e=>e.preventDefault()); c.addEventListener("mousedown",e=>e.preventDefault());
+    c.addEventListener("click",()=>{const hit=PEN.chipRange||penCurrentSel(); PEN.chipRange=null; penCreateFromSel(hit);});} return c;}
+function penChip(on,hit){const c=penChipEl(); if(!on){c.hidden=true; PEN.chipRange=null; return;}
+  PEN.chipRange=hit; let r=hit.range.getBoundingClientRect(); if(!r.width&&!r.height){const rs=hit.range.getClientRects(); if(rs.length)r=rs[0];}
+  c.hidden=false; const w=c.offsetWidth||110, h=c.offsetHeight||40; let top=r.top-h-10; if(top<8)top=r.bottom+10; top=Math.max(8,Math.min(innerHeight-h-8,top)); let left=r.left+r.width/2-w/2; left=Math.max(8,Math.min(innerWidth-w-8,left));
+  c.style.top=Math.round(top)+"px"; c.style.left=Math.round(left)+"px";}
+function penOnSel(){const hit=penCurrentSel(); if(!hit){penChip(false);return;} if(PEN.armed){penCreateFromSel(hit);return;} penChip(true,hit);}
+document.addEventListener("selectionchange",()=>{clearTimeout(PEN.selT); PEN.selT=setTimeout(penOnSel,PEN.armed?120:260);});
+["mouseup","touchend","keyup"].forEach(ev=>document.addEventListener(ev,e=>{if(e.target&&e.target.closest&&e.target.closest(".pen-ui"))return; clearTimeout(PEN.selT); PEN.selT=setTimeout(penOnSel,40);},{passive:true}));
+window.addEventListener("scroll",()=>{if(!PEN.open)penChip(false);},{passive:true,capture:true});
+/* ---- kalem düğmeleri ---- */
+function penFab(){let b=$("#penFab"); if(!b){b=document.createElement("button"); b.type="button"; b.id="penFab"; b.className="pen-fab pen-ui pen-tog"; b.setAttribute("aria-pressed","false"); b.setAttribute("aria-label","Vurgu kalemi"); b.title="Vurgu kalemi"; b.innerHTML=PEN_SVG.pen; document.body.appendChild(b);} return b;}
+function penDersTog(){const f=$("#dersFoot"); if(!f)return null; let b=$("#penDers"); if(!b){b=document.createElement("button"); b.type="button"; b.id="penDers"; b.className="pen-ders pen-ui pen-tog"; b.setAttribute("aria-pressed","false"); b.setAttribute("aria-label","Vurgu kalemi"); b.title="Vurgu kalemi"; b.innerHTML=PEN_SVG.pen; f.insertBefore(b,f.firstChild);} return b;}
+function penPaintTog(){document.querySelectorAll(".pen-tog").forEach(b=>{b.setAttribute("aria-pressed",String(PEN.armed)); b.classList.toggle("on",PEN.armed);}); document.documentElement.classList.toggle("pen-on",PEN.armed);}
+function penToggle(fromEl){PEN.armed=!PEN.armed; penPaintTog(); penChip(false); if(PEN.armed){PEN.ctx=null; penBarOpen(fromEl);} else penBarClose();}
+/* ---- araç çubuğu / açılır pencere ---- */
+function penBarEl(){let b=$("#penBar"); if(!b){b=document.createElement("div"); b.id="penBar"; b.className="pen-bar pen-ui"; b.setAttribute("role","dialog"); b.setAttribute("aria-label","Vurgu kalemi"); b.hidden=true; document.body.appendChild(b);} return b;}
+function penBarHtml(){const h=PEN.ctx?PEN.byId[PEN.ctx]:null, cur=h?h.color:PEN.color;
+  return `<div class="pen-row"><div class="pen-colors" role="group" aria-label="Renk">${Object.keys(PEN_COLORS).map(k=>`<button type="button" class="pen-c hl-${k}" data-pc="${k}" aria-pressed="${k===cur}" aria-label="${PEN_COLORS[k]}" title="${PEN_COLORS[k]}"></button>`).join("")}</div>
+    <button type="button" class="pen-b" data-pa="note" ${h?"":"disabled"} title="${h?"":"Önce bir vurguya dokun"}">${h&&h.note?"Notu düzenle":"Not ekle"}</button>
+    <button type="button" class="pen-b" data-pa="del" ${h?"":"disabled"} title="${h?"":"Önce bir vurguya dokun"}">${h?"Kaldır":"Sil"}</button>
+    <button type="button" class="pen-b pen-x" data-pa="close" aria-label="Kapat">${ICON("x")}<span>Kapat</span></button></div>
+    <div class="pen-note" id="penNote" hidden><label class="cc-vh" for="penNoteIn">Not</label><input id="penNoteIn" maxlength="200" placeholder="Kısa not…"><button type="button" class="pen-b" data-pa="noteSave">Kaydet</button></div>
+    <p class="pen-hint" id="penHint">${h?(h.note?esc(h.note):"Renk seç, not ekle ya da kaldır."):PEN.armed?"Metni seç: seçtiğin anda vurgulanır.":"Metni seç, çıkan Vurgula'ya bas."}</p>`;}
+function penBarOpen(anchorEl){const b=penBarEl(); b.innerHTML=penBarHtml(); b.hidden=false; PEN.open=true; PEN.anchorEl=anchorEl||null; penBarPos(); penChip(false);}
+function penBarPos(){const b=$("#penBar"); if(!b||b.hidden)return; const a=PEN.anchorEl&&PEN.anchorEl.isConnected?PEN.anchorEl.getBoundingClientRect():null; const w=b.offsetWidth, h=b.offsetHeight;
+  let top,left; if(a){top=a.top-h-10; if(top<8)top=a.bottom+10; left=a.left+a.width/2-w/2;} else {top=innerHeight-h-90; left=innerWidth/2-w/2;}
+  left=Math.max(8,Math.min(innerWidth-w-8,left)); top=Math.max(8,Math.min(innerHeight-h-8,top)); b.style.top=Math.round(top)+"px"; b.style.left=Math.round(left)+"px";}
+function penBarClose(){const b=$("#penBar"); if(b){b.hidden=true;} PEN.open=false; PEN.ctx=null;}
+function penBarAct(a,btn){const h=PEN.ctx?PEN.byId[PEN.ctx]:null;
+  if(a==="close"){const wasCtx=!!PEN.ctx; penBarClose(); if(!wasCtx&&PEN.armed){PEN.armed=false; penPaintTog();} return;}
+  if(a==="note"){const box=$("#penNote"), inp=$("#penNoteIn"); if(!box||!h)return; box.hidden=false; inp.value=h.note||""; penBarPos(); inp.focus(); return;}
+  if(a==="noteSave"){const inp=$("#penNoteIn"); if(!h||!inp)return; const v=inp.value.trim().slice(0,200); penUpdate(h.id,{note:v}); const hint=$("#penHint"); if(hint)hint.textContent=v?v:"Not silindi."; $("#penNote").hidden=true; const nb=$('#penBar [data-pa="note"]'); if(nb)nb.textContent=v?"Notu düzenle":"Not ekle"; penBarPos(); return;}
+  if(a==="del"){if(!h)return; penDelete(h.id); penBarClose(); return;}}
+function penMarkOpen(m){const id=m.dataset.hid; if(!PEN.byId[id])return; PEN.ctx=id; penBarOpen(m);}
+document.addEventListener("click",e=>{const t=e.target; if(!t||!t.closest)return;
+  const tog=t.closest(".pen-tog"); if(tog){penToggle(tog);return;}
+  const pc=t.closest("#penBar [data-pc]"); if(pc){const c=pc.dataset.pc; if(PEN.ctx)penUpdate(PEN.ctx,{color:c}); else PEN.color=c; document.querySelectorAll("#penBar [data-pc]").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.pc===c))); return;}
+  const pa=t.closest("#penBar [data-pa]"); if(pa){penBarAct(pa.dataset.pa,pa);return;}
+  const m=t.closest("mark.hl[data-hid]"); if(m){e.preventDefault(); penMarkOpen(m); return;}
+  if(PEN.open&&!t.closest("#penBar")){ if(PEN.ctx)penBarClose(); }
+});
+document.addEventListener("keydown",e=>{const t=e.target; if(t&&t.matches&&t.matches("mark.hl[data-hid]")&&(e.key==="Enter"||e.key===" ")){e.preventDefault(); penMarkOpen(t); return;}
+  if(e.key==="Escape"&&PEN.open){const inp=$("#penNoteIn"); if(inp&&document.activeElement===inp){$("#penNote").hidden=true; return;} e.stopPropagation(); penBarClose(); if(PEN.armed){PEN.armed=false; penPaintTog();}}
+  if(e.key==="Enter"&&e.target&&e.target.id==="penNoteIn"){e.preventDefault(); penBarAct("noteSave");}},true);
+window.addEventListener("resize",penBarPos);
+/* ---- Vurgularım (İlerleme) ---- */
+function penSrcLabel(h){if(h.kind==="chat")return penAgentName(h.thread)+" · sohbet"; if(h.kind==="unit")return h.title||penUnitTitle(h); if(h.kind==="done")return "Bitti ekranı"; return "Sık yaptığın hatalar";}
+function penRenderList(){const box=$("#hlList"), cnt=$("#hlCount"); if(!box)return; const items=PEN.items.slice().reverse();
+  if(cnt)cnt.textContent=items.length?items.length+" vurgu":"";
+  if(!items.length){box.innerHTML=`<div class="empty"><b>Henüz vurgu yok</b>Koç mesajında ya da Dersler'de metni seç, çıkan <b>Vurgula</b>'ya bas. Sağ alttaki kalemle renk seçersin.</div>`;return;}
+  const groups=[]; items.forEach(h=>{const d=String(h.created||"").slice(0,10); let g=groups[groups.length-1]; if(!g||g.d!==d){g={d,items:[]};groups.push(g);} g.items.push(h);});
+  box.innerHTML=groups.map(g=>`<section class="hlDay"><h4 class="hlDayT">${g.d===today()?"Bugün":esc(fmtDay(g.d,{day:"numeric",month:"long",weekday:"long"}))}</h4>${g.items.map(h=>`<article class="hlItem hl-${PEN_COLORS[h.color]?h.color:"yellow"}" data-hid="${esc(h.id)}">
+      <span class="hlSw" aria-hidden="true"></span><div class="hlBody"><span class="hlSrc">${esc(penSrcLabel(h))}</span><blockquote class="hlQ">${esc(h.quote.length>220?h.quote.slice(0,220)+"…":h.quote)}</blockquote>${h.note?`<p class="hlNote">${PEN_SVG.dot}${esc(h.note)}</p>`:""}<div class="hlView" hidden></div></div>
+      <div class="hlAct"><button type="button" class="btn btn-soft btn-sm" data-hgo="${esc(h.id)}">${penGoLabel(h)}</button><button type="button" class="btn btn-ghost btn-sm" data-hdel="${esc(h.id)}" aria-label="Vurguyu sil">Sil</button></div></article>`).join("")}</section>`).join("");}
+function penGoLabel(h){if(h.kind==="chat"&&!(typeof CC!=="undefined"&&CC.key===h.thread)&&String(h.thread||"").slice(0,10)!==today())return PEN.view[h.id]?"Gizle":"Göster"; if(h.kind==="done")return "Göster"; return "Git";}
+async function penGo(h,btn){
+  if(h.kind==="mist"){openTab("progress"); setTimeout(()=>penReveal(h.id,$("#mistakes")),80); return;}
+  if(h.kind==="unit"){const U=window.TYDIL&&TYDIL.units; openTab("units"); if(U&&typeof U.go==="function"){try{U.go(h.lang+"/"+h.uid+"/"+h.step);}catch(e){}} setTimeout(()=>penReveal(h.id,$("#tyUnitsMount")),300); return;}
+  if(h.kind==="chat"&&String(h.thread||"").slice(0,10)===today()){const id=String(h.thread).split("_")[1]; const k=typeof CC_AGENTS!=="undefined"?Object.keys(CC_AGENTS).find(x=>CC_AGENTS[x].id===id):null;
+    openTab("practice"); if(k&&typeof ccSetAgent==="function"){try{await ccSetAgent(k);}catch(e){}} setTimeout(()=>penReveal(h.id,$("#ccLog")),350); return;}
+  /* eski sohbet turu ya da bitti ekranı: yerinde göster */
+  const item=btn.closest(".hlItem"), view=item&&item.querySelector(".hlView"); if(!view)return;
+  if(PEN.view[h.id]){delete PEN.view[h.id]; view.hidden=true; view.innerHTML=""; btn.textContent=penGoLabel(h); return;}
+  PEN.view[h.id]=1; btn.textContent="Gizle"; view.hidden=false; view.innerHTML=`<p class="hint">Yükleniyor…</p>`;
+  if(h.kind==="done"){view.innerHTML=`<div class="hlTurn"><p class="hint">${esc(fmtDay(h.date,{day:"numeric",month:"long"}))} bitti ekranından.</p><div class="hlTxt">${esc(h.prefix||"")}<mark class="hl hl-${esc(h.color)}" data-hid="${esc(h.id)}">${esc(h.quote)}</mark>${esc(h.suffix||"")}</div></div>`; return;}
+  const d=penDb(); let t=null; if(d){try{const g=await d.collection("chats").doc(h.thread).get(); if(g&&g.exists){const v=g.data()||{}; t=(v.turns||[])[h.turn]||null; if(t&&!(t.c||"").includes(h.quote))t=(v.turns||[]).find(x=>x&&(x.c||"").includes(h.quote))||t;}}catch(e){}}
+  if(!t){view.innerHTML=`<div class="hlTurn"><p class="hint">Sohbet kaydı bulunamadı; alıntı:</p><div class="hlTxt">${esc(h.prefix||"")}<mark class="hl hl-${esc(h.color)}" data-hid="${esc(h.id)}">${esc(h.quote)}</mark>${esc(h.suffix||"")}</div></div>`; return;}
+  const who=t.r==="u"?"Sen":penAgentName(h.thread);
+  view.innerHTML=`<div class="hlTurn"><p class="hint">${esc(who)} · ${esc(fmtDay(String(h.thread).slice(0,10),{day:"numeric",month:"long"}))}</p><div class="hlTxt cc-md">${t.r==="u"?esc(t.c).replace(/\n/g,"<br>"):(typeof ccMd==="function"?ccMd(t.c):esc(t.c))}</div></div>`;
+  const tx=view.querySelector(".hlTxt"); if(tx)penPlace(tx,h,{inert:true});}
+function penReveal(id,root){const m=(root||document).querySelector(`mark.hl[data-hid="${id}"]`); if(!m)return; try{m.scrollIntoView({block:"center",behavior:"smooth"});}catch(e){m.scrollIntoView();} m.classList.add("pen-new"); setTimeout(()=>m.classList.remove("pen-new"),1200); try{m.focus({preventScroll:true});}catch(e){}}
+document.addEventListener("click",e=>{const g=e.target.closest("[data-hgo]"); if(g){const h=PEN.byId[g.dataset.hgo]; if(h)penGo(h,g); return;}
+  const d=e.target.closest("[data-hdel]"); if(d){ /* iki adım: önce "Emin misin?", 3,5 sn içinde ikinci bas → sil (pencere/onay kutusu yok) */
+    if(d.dataset.armed&&Date.now()-(+d.dataset.armed)<3500){penDelete(d.dataset.hdel);return;}
+    d.dataset.armed=String(Date.now()); d.textContent="Emin misin?"; d.classList.add("warn"); setTimeout(()=>{if(d.isConnected){d.textContent="Sil";d.classList.remove("warn");delete d.dataset.armed;}},3600); return;}});
+/* ---- başlat ---- */
+penFab(); penDersTog(); penObserve(); penRenderList();
+(async()=>{let d=null; for(let i=0;i<50&&!d;i++){d=penDb(); if(!d)await new Promise(r=>setTimeout(r,100));} if(!d)return;
+  try{ d.collection("highlights").onSnapshot(q=>{penSet(q.docs.map(x=>Object.assign({id:x.id},x.data())));},()=>{}); }catch(e){} })();
+window.TYPEN={get state(){return PEN;},apply:penApply,create:penCreateFromSel,remove:penDelete,update:penUpdate,toggle:penToggle};
 
 })();
 </script>

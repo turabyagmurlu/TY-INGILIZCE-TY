@@ -1,0 +1,23 @@
+/* Telefona kur: Öğren kapağının altındaki kompakt kart + Ayarlar satırı */
+.instCard{display:grid;gap:12px;padding:16px 18px;border:1px solid var(--line)}
+.instCard[hidden],.instRow[hidden]{display:none}
+.instHd{display:flex;align-items:center;gap:12px}
+.instHd h3{margin:0;font-size:17px;font-weight:800;color:var(--heading);line-height:1.25}
+.instHd p{margin:2px 0 0;font-size:14.5px;color:var(--muted);line-height:1.45}
+.instIco{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--primary-bg);color:var(--primary-ink)}
+.instIco .ico{width:22px;height:22px}
+.instIco.ok{background:var(--good-bg);color:var(--good-ink)}
+.instAct{display:flex;flex-wrap:wrap;gap:8px}
+.instAct .btn .ico{width:18px;height:18px}
+.instSteps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.instSteps li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--sand);font-size:15px}
+.instSteps li .ico{width:20px;height:20px;color:var(--primary-ink)}
+.instN{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:var(--on-primary);font-size:13px;font-weight:800}
+.instRowIn{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+.instRowIn>div{flex:1 1 220px;min-width:0}
+.instRowIn h2{font-size:19px}
+.instRowIn .lead{margin-top:2px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.instRowIn .lead .ico{width:17px;height:17px;color:var(--primary-ink)}
+.instRowIn>.btn{flex:none}
+.instRowIn>.btn .ico{width:18px;height:18px}
+@media (max-width:480px){.instRowIn>.btn{flex:1 1 100%}}

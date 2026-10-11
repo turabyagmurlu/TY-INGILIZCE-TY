@@ -80,5 +80,5 @@ window.TYDIL={openTab,
   /* Dersler sekmesi: fn(mountEl) ilk açılışta çağrılır; sekme düğmesi görünür olur */
   registerUnits(fn,opt){unitsRender=fn; unitsMounted=false; const b=$('.tabs [data-tab="units"]'); if(b){b.hidden=false; if(opt&&opt.label){const l=b.querySelector(".tl"); if(l)l.textContent=opt.label;}} const m=$("#tyUnitsMount"); if(m)m.hidden=false; decorate(); if(!$("#tab-units").hidden)openTab("units");},
   get db(){return db;}, S, get rt(){return window.TYRT;},
-  chat:{send:(t,o)=>typeof ccSend==="function"?ccSend(t,o):false, submit:()=>typeof ccSubmit==="function"?ccSubmit():undefined, fill:t=>typeof ccFill==="function"?ccFill(t):undefined, speak:(t,l,b)=>typeof ccSpeak==="function"?ccSpeak(t,l,b):undefined, get state(){return typeof CC!=="undefined"?CC:null;}},
-  ders:{open:()=>typeof dersOpen==="function"?dersOpen():undefined, get state(){return typeof F!=="undefined"?F:null;}}};
+  chat:{send:(t,o)=>typeof ccSend==="function"?ccSend(t,o):false, submit:()=>typeof ccSubmit==="function"?ccSubmit():undefined, fill:t=>typeof ccFill==="function"?ccFill(t):undefined, speak:(t,l,b)=>typeof ccSpeak==="function"?ccSpeak(t,l,b):undefined, render:()=>typeof ccRender==="function"?ccRender():undefined, get state(){return typeof CC!=="undefined"?CC:null;}},
+  ders:{open:()=>typeof dersOpen==="function"?dersOpen():undefined, render:()=>{if(typeof F!=="undefined")F.doneSig=""; if(typeof renderFocus==="function")renderFocus();}, get state(){return typeof F!=="undefined"?F:null;}}};
