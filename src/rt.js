@@ -200,4 +200,9 @@ const userApi=()=>({name:(getSettings().name||"").trim()||"Türab"});
 window.claude={ async use(name){ if(name==="db"){await load(); return dbApi;} if(name==="sample")return sample; if(name==="user")return userApi(); return null; } };
 window.TYRT={MODELS,DEFAULT_MODEL,getKey,setKey,validKey,KEY_MIN,keyStatus:()=>keyStatus||(getKey()?"ok":"none"),keyError:()=>keyErr,hasKey:()=>!!getKey(),getSettings,setSettings,testKey,export:rtExport,import:rtImport,db:dbApi,get mode(){return mode;},ready:load};
 window.rtExport=rtExport; window.rtImport=rtImport;
+/* ===== QR ile anahtar aktarımı: adres "#k=sk-ant-…" ile açılırsa anahtar kaydedilir, adres hemen temizlenir.
+   Parça (#…) sunucuya gitmez; uygulama kodu adresi okumadan önce temizlenir. Sonuç window.TYKEYIMPORT = "ok" | "bad". */
+(function(){ let h=""; try{h=location.hash||"";}catch(e){} if(!/^#k=/.test(h))return; const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)$/.exec(h);
+  try{history.replaceState(null,"",location.pathname+location.search);}catch(e){try{location.hash="";}catch(_){}}
+  if(m&&validKey(m[1])){try{setKey(m[1],{verify:true}); window.TYKEYIMPORT="ok";}catch(e){window.TYKEYIMPORT="bad";}} else window.TYKEYIMPORT="bad"; })();
 })();

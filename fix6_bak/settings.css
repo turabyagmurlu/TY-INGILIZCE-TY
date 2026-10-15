@@ -1,0 +1,27 @@
+/* Ayarlar: Claude bağlantısı (anahtar, model) · Yedek · anahtar yokken sohbet kartı */
+.keyCard{border:2px solid var(--primary)}
+.keySt{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:13.5px;font-weight:800;white-space:nowrap;background:var(--soft);color:var(--muted)}
+.keySt.on{background:var(--good-bg);color:var(--good-ink)}
+.keySt.off{background:var(--gold-bg);color:var(--gold-ink)}
+.keySt .ico{width:15px;height:15px;stroke-width:2.6}
+.keyForm{display:grid;gap:8px;max-width:640px}
+.fl{font-size:14px;font-weight:700;color:var(--muted);margin-top:6px}
+.keyRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:stretch}
+.keyRow input{font-family:var(--mono);font-size:14.5px;letter-spacing:.2px}
+.keyEye{min-height:50px}
+.keyForm .btnRow{margin-top:4px}
+.keyForm .hint{font-size:14px;line-height:1.5}
+.keyForm .msg{margin-top:4px}
+.btn-ghost.warn{border-color:var(--bad);color:var(--bad-ink);background:var(--bad-bg)}
+/* yedek */
+.bkRestore{margin-top:14px;border-top:1px solid var(--line);padding-top:6px}
+.bkIn{display:grid;gap:8px;margin-top:8px;max-width:640px}
+.bkIn textarea{min-height:110px}
+.bkIn input[type=file]{padding:10px 12px;min-height:50px;font-family:var(--font);font-size:15px}
+.bkIn input[type=file]::file-selector-button{font:inherit;font-weight:700;color:var(--primary-ink);background:var(--soft);border:0;border-radius:10px;padding:6px 12px;margin-right:12px;cursor:pointer}
+#bkCode{max-height:160px}
+/* anahtar yokken sohbet */
+.cc .cc-key{border:2px dashed var(--primary);background:var(--primary-bg)}
+.cc-keyIco{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--card);color:var(--primary-ink);flex:none}
+.cc-keyIco .ico{width:24px;height:24px}
+.cc .cc-key .cc-eh{align-items:center}

@@ -12,8 +12,8 @@ Sıra (artifact build.py ile aynı, önüne rt.js eklendi):
 import os, re, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
-CSS_PARTS = [("dd_chat.css", "SOHBET"), ("prog_style.css", "PROGRAM"), ("focus_style.css", "DERS MODU"), ("settings.css", "AYARLAR"), ("voice.css", "SES"), ("units.css", "DERSLER"), ("install.css", "TELEFONA KUR"), ("pen.css", "VURGU KALEMİ")]
-JS_PARTS = ["dd_data.js", "dd_art.js", "dd_logic.js", "prog_logic.js", "dd_chat.js", "focus_logic.js", "dd_parse.js", "dd_instr.js", "settings.js", "voice.js", "dd_events.js", "units_data.js", "units.js", "install.js", "pen.js"]
+CSS_PARTS = [("dd_chat.css", "SOHBET"), ("prog_style.css", "PROGRAM"), ("focus_style.css", "DERS MODU"), ("settings.css", "AYARLAR"), ("voice.css", "SES"), ("units.css", "DERSLER"), ("install.css", "TELEFONA KUR"), ("pen.css", "VURGU KALEMİ"), ("keyxfer.css", "ANAHTAR AKTARIMI")]
+JS_PARTS = ["dd_data.js", "dd_art.js", "dd_logic.js", "prog_logic.js", "dd_chat.js", "focus_logic.js", "dd_parse.js", "dd_instr.js", "settings.js", "voice.js", "dd_events.js", "units_data.js", "units.js", "install.js", "pen.js", "qr_vendor.js", "keyxfer.js"]
 THEME_LIGHT, THEME_DARK = "#F7F4EF", "#0F1722"
 
 def read(name):
