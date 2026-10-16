@@ -1,0 +1,55 @@
+[phone] PLAN [">Kart tekrarı","-Okunuş ve sesler","-Oliver ile konuş"] GO= Başla · önce kart tekrarı
+[phone] HERO İtalyanca A1 · Hafta 1 · bu haftanın konusu | Okunuş ve sesler | 0 / 3 adım | bugün 0 dk çalıştın | Bugün: | İkisi · 60 dk | önerilen | Sadece İtalyanca | 60 dk | Sadece İngilizce | 60 dk | 1 | Kart tekrarı | 5 kart · yaklaşık 1 dk | 2 | Okunuş ve sesler | İtalyanca ders · 30 dk · 5 adım | 3 | Oliver ile konuş | 15 dk sesli konuşma | Başla · önce kart tekrarı
+[phone] DETAILS Detaylar | bugünün planı | Bugünün adımları | 0 / 3 adım tamam | Kart tekrarı | 5 kart · yaklaşık 1 dk | Sırada | Okunuş ve sesler | İtalyanca ders · 30 dk · 5 adım | Bekliyor | Oliver ile konuş | 15 dk sesli konuşma | Bekliyor | Yolda dinle · 15–20 dk isteğe bağlı | İşe giderken İtalyanca podcast (öneri: Coffee Break Italian, 1. sezon, baştan sırayla). 60 dakikaya dahil değil; dinlediysen işaretle. | Yol haritası ve konular
+[phone] after Başla visible cards? true
+[phone] cards end text: Kelime kartları | Kelimeyi gör, anlamını hatırla, kartı çevir. | İtalyanca | İngilizce | Bugünlük tekrar bitti | 1 İngilizce kartın var. Sıradaki tekrar 18 Ekim Pazar. | Sıradaki: Okunuş ve sesler | Bildiğin kelime 1, 2, 4, 8, 16, 32 gün sonra gelir; bilemediğin yarın. | Kendin kelime ekle
+[phone] cards-done buttons ["İtalyanca","İngilizce","Sıradaki: Okunuş ve sesler","Kartı ekle"]
+[phone] PLAN after IT cards ["+Kart tekrarı",">Okunuş ve sesler","-Oliver ile konuş"]
+[phone] 2nd Başla → cards again? false which tab sel İngilizce
+[phone] PLAN after cards ["+Kart tekrarı",">Okunuş ve sesler","-Oliver ile konuş"] GO= Bugünkü dersi başlat
+[phone] lesson title Okunuş ve sesler | eye İtalyanca A1 · Ders
+[phone] screen anlat1 {"sh":0,"ch":0,"words":128,"say":6}
+[phone] STAGE1 Anlat · 1 / 4 | Yazıldığı gibi okunur, ama vurgu ortada | İtalyanca, Türkçe gibi büyük ölçüde yazıldığı gibi okunur: her sesli harf (a, e, i, o, u) net çıkar, yutulmaz. İki fark var: birkaç harf yan yana gelince başka ses verir (sonraki kartlar) ve vurgu Türkçedeki yerinde değildir. | 1 | Vurgu çoğunlukla sondan ikinci hecede | Türkçede vurgu genelde sondadır (araBA). İtalyancada ortaya kayar. | lavoro | = iş · la-VO-ro | 2 | Son hece vurguluysa üstüne aksan yazılır | Aksan işareti sana “vurgu burada” der. Yazarken atlama. | città | = şehir · çit-TA | 3 | Bazı kelimelerde vurgu sondan üçüncü h
+[phone] lsn header btns ["lsnX:Çık","askFab:Koça sor",":1Anlat",":2Dinle",":3Uygula",":4Konuş",":5Yokla",":Dinle: lavoro",":Dinle: città",":Dinle: telefono",":Dinle: cantiere",":Dinle: caffè",":Dinle: fabbrica","aPrev:Geri","aNext:Devam"]
+[phone] askCtx Şu an: Anlat · kart 1/4 | log ci ile chi farkı ne?Kısa ipucu: ce/ci yumuşar → ç. Örnek: cena  = ÇE-na.
+[phone] ask log audio btns 1
+[phone] screen anlat2 {"sh":0,"ch":0,"words":183,"say":16}
+[phone] screen anlat3 {"sh":0,"ch":0,"words":146,"say":16}
+[phone] screen anlat4 {"sh":0,"ch":0,"words":131,"say":7}
+[phone] screen anlat5 {"sh":0,"ch":0,"words":96,"say":10}
+[phone] now step 2Dinle
+[phone] screen dinle {"sh":0,"ch":0,"words":96,"say":10}
+[phone] DINLE Dinle ve tekrar et | Her cümleyi dinle, sonra yüksek sesle tekrar et. Büyük harfli hece vurgulu okunur. | Hepsini sırayla dinle | Yavaş dinle | Uscita di emergenza | u-Şİ-ta di e-mer-CEN-tsa | Acil çıkış | Pericolo, alta tensione | pe-Rİ-ko-lo, AL-ta ten-SYO-ne | Tehlike, yüksek gerilim | Attenzione! | at-ten-TSYO-ne | Dikkat! | Vietato l'accesso | vye-TA-to lat-ÇES-so | Girmek yasaktır | Casco obbligatorio | KAS-ko ob-bli-ga-TO-ryo | Baret zorunludur | Lavori in corso | la-VO-ri in KOR-so | Çal
+[phone] tts spoken 10
+[phone] askWhy ctx Şu an: Uygula · alıştırma 1
+[phone] WRONG fb[0] choice: Doğrusu: çc'den sonra e geliyor; e ve i, c'yi yumuşatır. k sesi için ca/co/cu ya da che/chi yazılır.SonrakiKoça neden diye sor
+[phone] WRONG fb[8] type: Doğrusu: scalask sesi: sc + a.SonrakiKoça neden diye sor
+[phone] SOFT fb: Doğru sayıldı. Vurgu son hecede olduğu için a'nın üstüne aksan yazılır: città.Sonraki
+[phone] WRONG fb[11] order: Doğrusu: uscita di emergenzaSonrakiKoça neden diye sor
+[phone] UYGULA END Alıştırma bitti | 9 / 12 | İyi gidiyorsun. Şimdi Chiara ile bu kalıpları konuşarak kullan. | Alıştırmayı baştan yap | Konuşmaya geç
+[phone] KONUS step CH | Chiara ile konuş | Telefonla konuşur gibi: Chiara kısa sorular sorar, sen sesli cevap verirsin. | Hedef: Şantiye tabelalarını ve sık kelimeleri doğru okumak; hangi harf kuralını kullandığını Türkçe söyleyebilmek. | c/ch/ci | g/gh/gi | gn = ny | gli = ly | sc/sci = sk/ş | çift ünsüz | z = ts/dz | vurgu ve aksan | Aramayı başlat | Alıştırmaya dön | Konuşmayı bitirdim → Yokla
+[phone] call ui Chiara | İtalyanca · Şantiye tabelalarını ve sık kelimeleri doğru okumak; hangi harf kuralını kullandığını Türkçe söyleyebilmek. | 00:00 | CH | Dinliyorum | Chiara | Ciao Türab! Sono Chiara. Leggi questa parola: USCITA. | Duraklat | Tekrar et | Türkçesi? | Altyazı | Bitir
+[phone] SUM Konuşma tamam 1 dk1 cevapChiara DAHA DOĞAL SÖYLEI am running it since 2024→ I've been running it since 2024 İŞİNE YARAYACAK İFADELERa tight deadlinesıkışık teslimKartlara ekleto sort it outhalletmekKartlara ekle İpucu: Süre için have been + -ing. Derse dön
+[phone] after call stage CH | Chiara ile konuş | Telefonla konuşur gibi: Chiara kısa sorular sorar, sen sesli cevap verirsin. | Hedef: Şantiye tabelalarını ve sık kelimeleri doğru okumak; hangi harf kuralını kullandığını Türk
+[phone] YOKLA FAIL Henüz değil | 3 / 5 | Geçmek için 5 sorudan en az 4 doğru olmalı. Tekrar bakman gereken konular: | c + i = ç | ch = k | Anlatıma dön | Yoklamayı tekrar et
+[phone] fail btns ["toStep:Anlatıma dön","redoQ:Yoklamayı tekrar et"]
+[phone] YOKLA PASS Ders tamam | 5 / 5 | Konu tamamlandı olarak işaretlendi; yarın kısa bir Pekiştir gelir. | 1 dk | 13 kelime kartlara eklendi | Dikkat edeceğin konular | c + i = ç | ch = k | Sıradaki: Oliver ile konuş | Kapat | Yoklamayı tekrar et
+[phone] pass btns ["planNext:Sıradaki: Oliver ile konuş","close:Kapat","redoQ:Yoklamayı tekrar et"]
+[phone] PLAN after lesson ["+Kart tekrarı","+Okunuş ve sesler",">Oliver ile konuş"] GO= Başla · Oliver ile konuş
+[phone] HERO2 Ders tamam · sırada: Oliver ile konuş | Okunuş ve sesler | 2 / 3 adım | bugün 2 dk çalıştın | Bugün: | İkisi · 60 dk | önerilen | Sadece İtalyanca | 60 dk | Sadece İngilizce | 60 dk | Kart tekrarı | Bugünlük kartlar bitti | Okunuş ve sesler | İtalyanca ders · 30 dk · 5 adım | 3 | Oliver ile konuş | 15 dk sesli konuşma | Başla · Oliver ile konuş
+[phone] streak Seri · 0 gün
+[phone] sessions {"konus-2026-10-14-it":1,"lesson-2026-10-14-it01":1}
+[phone] 2nd lesson opened? false Okunuş ve sesler
+[phone] after Başla(Oliver) kc? true konus tab? true
+[phone] PLAN final ["+Kart tekrarı","+Okunuş ve sesler","+Oliver ile konuş","-Bir ders daha: Selamlaşma ve tanışma"] GO= Bir ders daha · Selamlaşma ve tanışma
+[phone] HERO3  |           Bugünün planı tamam |           Bugün tamam. |           Seriye saymak için bugün 27 dk daha çalış: Kartlar ya da Konuş yeter. |           3 / 3 adımbugün 3 dk çalıştın |           Bugün:İkisi · 60 dkönerilenSadece İtalyanca60 dkSadece İngilizce60 dk |           Kart tekrarıBugünlük kartlar bittiOkunuş ve seslerİtalyanca ders · 30 dk · 5 adımOliver ile konuş15 dk sesli konuşmaBir ders daha: Selamlaşma ve tanışmaİsteğe bağlı · günün planı tamam |           Bir ders daha · Selamlaşma ve tanışma |          |           Bugün 0 kelime tekrarı |            |         
+[phone] DERSLER Benim derslerim | Adım adım dersler: Anlat · Dinle · Uygula · Konuş · Yokla. İstediğini aç. | Okunuş ve sesler | A1 · İtalyanca · 30 dk | Geçti | Selamlaşma ve tanışma | A1 · İtalyanca · 30 dk | Bugün | İsimler: cinsiyet ve çoğul | A1 · İtalyanca · 30 dk | Yeni | Belirli ve belirsiz artikeller | A1 · İtalyanca · 35 dk | Yeni | Özne zamirleri ve essere — olmak | A1 · İtalyanca · 35 dk | Yeni | avere ve avere kalıpları | A1 · İtalyanca · 35 dk | Yeni | Present ve past: zaman tekrarı | B1 · İngilizce · 35 dk | Bugün | Present perfect mi, past simple mı? | B1 · İngilizce · 35 dk | Yeni | Present perfect continuous | B1 · İngilizce · 30 dk | Yeni | İtalyanca | 0/56 | İngilizce | 0/54 | Sözlük | N
+[phone] reopen eye İtalyanca A1 · Pekiştir | Pekiştir 1 / 6 | “gelato” (dondurma) nasıl okunur? | ge-LA-to | ce-LA-to | CE-la-to
+[phone] it05 eye İtalyanca A1 · Ders locked? true
+[phone] screen it05 {"sh":0,"ch":0,"words":112,"say":2}
+[phone] KARTLAR Kelime kartları | Kelimeyi gör, anlamını hatırla, kartı çevir. | İtalyanca | İngilizce | Bugünlük tekrar bitti | 1 İngilizce kartın var. Sıradaki tekrar 18 Ekim Pazar. | Sıradaki: Oliver ile konuş | Bildiğin kelime 1, 2, 4, 8, 16, 32 gün sonra gelir; bilemediğin yarın. | Kendin kelime ekle
+[phone] BEN  Ben× İlerlemeSeri, haftalar, hatalar, vurgular AyarlarClaude bağlantısı, senkron, ses, yedek Yazarak çalışKoçlarla yazışarak çalış 
+[phone] PROG Yoğun program · Sesler ve tanışma · 12–18 Eki | Hafta 1 / 12 · Gün 3 | Programın önündesin · +1 konu | A1 sınav simülasyonuna 81 gün | Program | 3 / 84 gün | Performans | 1 konu tamam · plan 0 | Önde gidiyorsun. Sıradaki: Selamlaşma ve tanışma. Acele etme; kelime ve sesli tekrar bloklarını atlama. | Hafta 1 hedefleri | Sesler ve tanışma · 12–18 Eki | Dakika | 3 / 420 dk | Yeni İtalyanca kelime | 13 / 50 | Konu | 1 / 2 | Toplam İtalyanca kelime: 17 · hafta 1 sonu hedefi 50, program hedefi 580 | Yolda dinleme: 0 / 7 gün (sayılmaz, alışkanlık) | Sık yaptığın hatalar | Koç bunları her derste özellikle yakalar. | c + i = ç (Okunuş ve sesler) | 1 kez | ch = k (Okunuş ve sesler) | 1 kez | Vurgularım | Kalemle işaretlediğin cümleler ve notların. Kaynağa gitmek için Git. | Henüz vurgu yok | Koç mesajında ya da Dersler'de metni seç, çıkan | Vurgula | 'ya bas. Sağ alttaki kalemle renk seçersin. | D
+[phone] SETUP headings ["Claude bağlantısı","Cihazlar arası senkron","Token nasıl alınır?","Yoğun program","Yedek","Yedekten geri yükle","Ses","Gelişmişelle kayıt · Dersler yedeği · al","Elle kayıt","Dersler (üniteler) yedeği","Alternatif: Claude uygulamasında sesli d"]
+[phone] KONUS TAB Konuş | Telefonla konuşur gibi: koç konuşur, sen sesli cevap verirsin. Mikrofon kendiliğinden açılır; koçu kesmek için küreye dokun. | OL | Oliver | İngilizce · B1+ → B2 | CH | Chiara | İtalyanca · A1, çok yavaş ve basit | Konu | Kendini ve işini anlat: ekip, sıradan bir gün, eskiden ne yapardın (used to) | Kariyerin: hangi projelerde çalıştın, geçen ay ne bitirdin | İlerleme raporu: sahada ne zamandır ne yapıyorsunuz, görünen sonuç ne | Gelecek hafta/ay planı: randevular, teslimler, telefonda t
+[phone] taps 96 errs []
