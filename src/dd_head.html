@@ -389,13 +389,12 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
   <header class="bar">
     <div class="barIn">
       <p class="brand"><span class="logo" aria-hidden="true">TY</span><span class="bt">Dil</span><span class="flags" id="barFlags"></span></p>
-      <div class="barSide"><span class="streak" id="streakChip">Seri yok</span><span class="barDate" id="barDate"></span></div>
+      <div class="barSide"><span class="streak" id="streakChip">Seri yok</span><span class="barDate" id="barDate"></span><button type="button" class="benBtn" id="btnBen" aria-haspopup="dialog" aria-expanded="false" aria-controls="benSheet">Ben</button></div>
       <nav class="tabs" role="tablist" aria-label="Bölümler">
-        <button role="tab" data-tab="learn" aria-selected="true">Öğren</button>
-        <button role="tab" data-tab="practice" aria-selected="false">Pratik<span class="cnt" id="tabDue" hidden>0</span></button>
-        <button role="tab" data-tab="progress" aria-selected="false">İlerleme</button>
-        <button role="tab" data-tab="units" aria-selected="false" hidden>Dersler</button>
-        <button role="tab" data-tab="setup" aria-selected="false">Ayarlar</button>
+        <button role="tab" data-tab="learn" aria-selected="true">Bugün</button>
+        <button role="tab" data-tab="konus" aria-selected="false">Konuş</button>
+        <button role="tab" data-tab="cards" aria-selected="false">Kartlar<span class="cnt" id="tabDue" hidden>0</span></button>
+        <button role="tab" data-tab="units" aria-selected="false">Dersler</button>
       </nav>
     </div>
   </header>
@@ -413,6 +412,7 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
           <p class="sub" id="heroSub"></p>
           <div class="meter" id="meter"></div>
           <div class="modeSeg" id="modeSeg" role="radiogroup" aria-labelledby="modeL"></div>
+          <ol class="dayPlan" id="dayPlan" aria-label="Bugünün planı" hidden></ol>
           <button class="btn btn-primary btn-big goBtn" id="btnGo"></button>
         <div class="keyGate" id="keyGate" role="region" aria-labelledby="keyGateT" hidden></div>
           <div class="heroFoot"><button type="button" class="dueChip" id="dueChip" data-go="cards" hidden></button></div>
@@ -442,6 +442,13 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
         <section id="coachChat"></section>
         <div class="chatPh"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 18.5V7A2.5 2.5 0 0 1 7 4.5h10A2.5 2.5 0 0 1 19.5 7v7a2.5 2.5 0 0 1-2.5 2.5H8.5z"/></svg><div><b>Sohbet hazırlanıyor</b>Koçlar birkaç saniye içinde hazır olur.</div></div>
       </div>
+    </section>
+
+    <!-- ================= KONUŞ ================= -->
+    <section class="panel" id="tab-konus" role="tabpanel" hidden><div id="konusMount" class="konusMount"><div class="empty"><b>Konuş hazırlanıyor</b>Birkaç saniye.</div></div></section>
+
+    <!-- ================= KARTLAR ================= -->
+    <section class="panel" id="tab-cards" role="tabpanel" hidden>
       <article class="card" id="cards" aria-labelledby="cardsTitle">
         <div class="chead"><div><h2 id="cardsTitle">Kelime kartları</h2><p class="lead">Kelimeyi gör, anlamını hatırla, kartı çevir.</p></div>
           <div class="seg" role="group" aria-label="Dil seç"><button data-rl="it" id="rlIt">İtalyanca</button><button data-rl="en" id="rlEn">İngilizce</button></div></div>
@@ -514,6 +521,7 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
 
     <!-- ================= DERSLER (üniteler · sonraki aşama bağlar) ================= -->
     <section class="panel" id="tab-units" role="tabpanel" hidden>
+      <section class="card myLessons" id="myLessons" aria-labelledby="myLT" hidden></section>
       <section id="tyUnitsMount" hidden></section>
     </section>
 
@@ -606,6 +614,16 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
     </section>
   </main>
 </div>
+
+<div class="benSheet" id="benSheet" role="dialog" aria-modal="true" aria-labelledby="benT" lang="tr" hidden>
+  <div class="benBack" data-ben-x></div>
+  <div class="benBox"><div class="benHead"><h2 id="benT">Ben</h2><button type="button" class="benX" data-ben-x aria-label="Kapat">×</button></div>
+    <button type="button" class="benItem" data-ben="progress"><b>İlerleme</b><small>Seri, haftalar, hatalar, vurgular</small></button>
+    <button type="button" class="benItem" data-ben="setup"><b>Ayarlar</b><small>Claude bağlantısı, senkron, ses, yedek</small></button>
+    <button type="button" class="benItem" data-ben="practice"><b>Yazışma</b><small>Koçlarla yazarak çalış</small></button>
+  </div>
+</div>
+<div class="updBar" id="updBar" role="status" lang="tr" hidden><span>Yeni sürüm hazır</span><button type="button" id="updGo">Yenile</button></div>
 
 <div class="ders" id="ders" role="dialog" aria-modal="true" aria-labelledby="dersTitle" lang="tr" hidden>
   <header class="dHead">

@@ -51,7 +51,11 @@ function coachReply(req,st){const {agent,lastText,cont,results}=req;
     return {sse:[{text:'[[en: Tell me about your crew. How long have you been running it?]]'}]};}
   return {sse:[{text:'**Ne?** Kısa açıklama.'}]};}
 /* Sayfaya API taklidi bağla. handler(req,st) → {sse:[...]} | {status,body} | {delay} */
+/* v9: içerik dersleri (content/*.json) varken Başla dersi açar. Eski testler koç yönetimli Ders modunu sınar → varsayılan olarak içerik gizlenir
+   (sayfa içi fetch content/… → 404; SW'den bağımsız). İçerikli testler: st.content=true. */
+const NO_CONTENT=`(()=>{const f=window.fetch;window.fetch=function(u,o){const s=String(u&&u.url||u);if(/(^|\\/)content\\//.test(s))return Promise.resolve(new Response('nf',{status:404}));return f.apply(this,arguments);};})()`;
 async function mockApi(page,st,handler){st.calls=st.calls||[];st.res=st.res||[];st.itDk=st.itDk||{};st.reqs=st.reqs||[];
+  if(!st.content)await page.addInitScript(NO_CONTENT);
   await page.route('https://api.anthropic.com/**',async route=>{const r=route.request();const req=parseReq(r.postData()||'{}');st.reqs.push(req.b);
     const h=r.headers();if(!h['x-api-key']||h['anthropic-version']!=='2023-06-01'||h['anthropic-dangerous-direct-browser-access']!=='true'){return route.fulfill({status:400,body:JSON.stringify({error:{type:'invalid_request_error',message:'başlık eksik'}})});}
     let out;try{out=await (handler||coachReply)(req,st);}catch(e){out={status:500,body:String(e)};}
@@ -63,4 +67,6 @@ async function mockApi(page,st,handler){st.calls=st.calls||[];st.res=st.res||[];
 const AT=(y,m,d,h,mi)=>Date.UTC(y,m-1,d,h,mi||0);
 const clockScript=t=>`(()=>{const R=Date,off=${t}-R.now();class FD extends R{constructor(...a){super(...(a.length?a:[R.now()+off]))}static now(){return R.now()+off}};window.Date=FD;})()`;
 async function browser(){return chromium.launch();}
-module.exports={ROOT,SHOTS,ok,sleep,serve,sse,parseReq,coachReply,mockApi,AT,clockScript,browser,get,fails:()=>fails,PLAN};
+/* Sekme aç (v9 gezinme): Bugün/Konuş/Kartlar/Dersler alt-üst çubukta; İlerleme · Ayarlar · Yazışma (practice) "Ben" sayfasında */
+async function tab(p,t){if(t==='settings')t='setup'; if(['progress','setup','practice'].includes(t)){await p.click('#btnBen');await p.click('#benSheet [data-ben="'+t+'"]');} else await p.click('[data-tab="'+t+'"]'); await sleep(60);}
+module.exports={tab,NO_CONTENT,ROOT,SHOTS,ok,sleep,serve,sse,parseReq,coachReply,mockApi,AT,clockScript,browser,get,fails:()=>fails,PLAN};

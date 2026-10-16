@@ -48,7 +48,7 @@ const remote=()=>JSON.parse(ours()[0].files[FILE].content);
  const dbDo=(p,fn,arg)=>p.evaluate(async([src,arg])=>{const db=await claude.use('db');return (new Function('db','arg','return ('+src+')(db,arg)'))(db,arg);},[fn.toString(),arg]);
  const coll=(p,c)=>p.evaluate(c=>rtExport().collections[c]||{},c);
  const status=p=>p.textContent('#syncStatus');
- const setup=async p=>{await p.click('[data-tab="setup"]');await sleep(200);};
+ const setup=async p=>{await H.tab(p,'setup');await sleep(200);};
  try{
   /* ===== A) PC: eski (meta'sız) kayıtlar + Dersler verisi → token ile bağlan → gizli Gist oluşur ===== */
   const legacyDb={format:1,collections:{program:{main:{start:M3,weeks:12,dailyMin:60,mode:'yogun',created:M3+'T05:00:00.000Z'}},

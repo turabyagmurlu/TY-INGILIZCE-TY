@@ -8,11 +8,14 @@ function kxUrl(){const k=TYRT.getKey(); let base=""; try{base=location.origin+lo
   if(!/^https?:/.test(base)) base="https://turabyagmurlu.github.io/TY-INGILIZCE-TY/";
   const sy=typeof syncConnected==="function"&&syncConnected(); return base+"#k="+k+(sy?"&s="+syToken()+"&g="+syGist():"");}
 /* Uzun adreste (anahtar + token) modüller küçülmesin diye hata düzeltme L */
-function kxSvg(text){const q=TYQR(text,text.length>200?"L":"M"), n=q.n, pad=4, N=n+pad*2; let d="";
+function kxSvg(text){const q=window.TYQR(text,text.length>200?"L":"M"), n=q.n, pad=4, N=n+pad*2; let d="";
   for(let r=0;r<n;r++) for(let c=0;c<n;c++) if(q.dark(r,c)) d+=`M${c+pad} ${r+pad}h1v1h-1z`;
   return `<svg class="kxQr" viewBox="0 0 ${N} ${N}" role="img" aria-label="Anahtar aktarım QR kodu" shape-rendering="crispEdges"><rect width="${N}" height="${N}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`;}
 function kxClose(){clearInterval(KX.timer); KX.timer=0; const b=$("#kxBox"), t=$("#btnKx"); if(b){b.hidden=true; b.innerHTML="";} if(t){t.setAttribute("aria-expanded","false"); t.textContent="Başka cihaza aktar (QR)";}}
-function kxOpen(){const b=$("#kxBox"), t=$("#btnKx"); if(!b||!TYRT.hasKey())return;
+/* QR üretici ilk kullanımda yüklenir (vendor/tyqr.js; sw.js önbelleğe alır) */
+function kxLoadQR(){if(window.TYQR)return Promise.resolve(); return new Promise((res,rej)=>{const s=document.createElement("script"); s.src="vendor/tyqr.js"; s.onload=()=>window.TYQR?res():rej(new Error("tyqr")); s.onerror=()=>rej(new Error("tyqr")); document.head.appendChild(s);});}
+async function kxOpen(){const b=$("#kxBox"), t=$("#btnKx"); if(!b||!TYRT.hasKey())return;
+  try{await kxLoadQR();}catch(e){msg($("#keyMsg"),"err","QR üretici yüklenemedi. İnterneti kontrol edip tekrar dene."); return;}
   let svg=""; try{svg=kxSvg(kxUrl());}catch(e){msg($("#keyMsg"),"err","QR oluşturulamadı."); return;}
   KX.left=90; const sy=typeof syncConnected==="function"&&syncConnected();
   b.innerHTML=`<div class="kxIn">${svg}<div class="kxTxt"><b>Telefon ya da tabletin kamerasıyla okut</b>

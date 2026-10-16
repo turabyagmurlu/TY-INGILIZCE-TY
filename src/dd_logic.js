@@ -184,7 +184,7 @@ function renderHero(){
   const dc=$("#dueChip"); dc.hidden=allDone||!due; dc.parentElement.hidden=dc.hidden; dc.innerHTML=ICON("repeat")+`Bugün ${due} kelime tekrarı`;
   const kgOn=!!($("#keyGate")&&!$("#keyGate").hidden);
   $("#heroHint").textContent=kgOn?"":!chatReady()?(typeof CC!=="undefined"&&CC.locked===CC_NOKEY?"Koçlar kilitli: Ayarlar → Anahtar'dan API anahtarı gir. Anahtarsız Dersler ve kartlar çalışır.":"Sohbet kapalı; düğme Ayarlar'ı açar. Dersi uygulama dışında yaptıysan TYDIL kodunu Ayarlar → Gelişmiş'e yapıştır."):"";
-  renderMeter(ps,total,doneMin); fitBarDate();   /* seri çipi çizildikten sonra: sığmıyorsa tarih gizli */
+  renderMeter(ps,total,doneMin); renderDayPlan(); fitBarDate();   /* seri çipi çizildikten sonra: sığmıyorsa tarih gizli */
 }
 /* Günün dil seçimi: kapakta, başlat düğmesinin üstünde 3'lü seçim */
 function modeSegHtml(m,label,lid){const opt=[["both","İkisi · 60 dk","önerilen","İkisi: 45 dk İtalyanca, 15 dk İngilizce"],["it","Sadece İtalyanca","60 dk","Sadece İtalyanca, 60 dakika"],["en","Sadece İngilizce","60 dk","Sadece İngilizce, 60 dakika"]];
@@ -355,7 +355,8 @@ function renderLog(){
   $("#sessions").innerHTML=ss.length?`<table><thead><tr><th>Tarih</th><th>Dil</th><th>Konu</th><th class="num">Süre</th><th class="num">Yeni kelime</th></tr></thead><tbody>${ss.map(s=>`<tr><td>${esc(fmtDay(s.date,{day:"numeric",month:"short"}))}</td><td>${FLAG(s.lang)}</td><td>${esc(((SYL[s.lang]||[]).find(t=>t[1]===s.topic)||[])[2]||noId(s.topic)||"Serbest")}</td><td class="num">${s.total||0} dk</td><td class="num">${s.words||0}</td></tr>`).join("")}</tbody></table>`:`<div class="empty"><b>Henüz ders yok</b>İlk dersini koçla yaptığında tarih, konu ve süresi burada listelenir.</div>`;
 }
 function decorate(){
-  const tabIco={learn:"learn",practice:"practice",progress:"progress",units:"deck",setup:"setup"};
+  const tabIco={learn:"today",konus:"speaking",cards:"deck",units:"okuma"};
+  const bb=$("#btnBen"); if(bb&&!bb.querySelector(".ico")) bb.innerHTML=ICON("user")+"<span>Ben</span>";
   document.querySelectorAll(".tabs button").forEach(b=>{if(!b.querySelector(".ico")){const n=b.firstChild;const sp=document.createElement("span");sp.className="tl";sp.textContent=n.textContent;b.replaceChild(sp,n);b.insertAdjacentHTML("afterbegin",ICON(tabIco[b.dataset.tab]));}});
   $("#barFlags").innerHTML=FLAG("it")+FLAG("en");
   $("#btnCopyInstr").innerHTML=ICON("copy")+"Talimatı kopyala";

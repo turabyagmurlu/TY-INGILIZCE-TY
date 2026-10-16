@@ -42,7 +42,7 @@ const save=(n,t)=>fs.writeFileSync(path.join(OUT,n+'.txt'),t);
   if(await p.isHidden('#keyGate')){await p.click('#btnGo');await p.waitForTimeout(600);await shot(p,'A5_btnGo_nokey_'+tag,true);note(tag,'btnGo no key: keyGate='+await p.isVisible('#keyGate')+' ders='+await p.isVisible('#ders'));}
   save('A5_keygate_'+tag,await txt(p,'#keyGate'));
   // B. go to key via gate CTA
-  const kg=await p.$('#keyGate [data-go=key]');if(kg){await kg.click();await p.waitForTimeout(600);}else{await p.click('[data-tab=setup]');await p.waitForTimeout(300);}
+  const kg=await p.$('#keyGate [data-go=key]');if(kg){await kg.click();await p.waitForTimeout(600);}else{await H.tab(p,'setup');await p.waitForTimeout(300);}
   await shot(p,'B1_settings_nokey_'+tag,true);await metrics(p,tag+' B1 settings nokey');await contrast(p,tag+' B1');save('B1_settings_nokey_'+tag,await txt(p,'#tab-setup'));
   note(tag,'settings scroll y='+await p.evaluate(()=>scrollY)+' apiKey focused='+await p.evaluate(()=>document.activeElement&&document.activeElement.id));
   await p.fill('#apiKey','sk-ant-abc');await p.click('#btnKeySave');await p.waitForTimeout(200);note(tag,'bad key msg: '+await txt(p,'#keyMsg'));
@@ -66,7 +66,7 @@ const save=(n,t)=>fs.writeFileSync(path.join(OUT,n+'.txt'),t);
   // exit & resume
   await p.click('#dersExit');await p.waitForTimeout(500);await shot(p,'C6_after_exit_'+tag,true);save('C6_after_exit_'+tag,await txt(p,'#tab-learn'));
   note(tag,'after exit: ders hidden='+await p.isHidden('#ders')+' btnGo="'+await txt(p,'#btnGo')+'" meter="'+await txt(p,'#meter')+'" hint="'+await txt(p,'#heroHint')+'"');
-  await p.click('[data-tab=practice]');await p.waitForTimeout(500);await shot(p,'C7_practice_mid_lesson_'+tag,true);await metrics(p,tag+' C7 practice');await contrast(p,tag+' C7');save('C7_practice_'+tag,await txt(p,'#tab-practice'));
+  await H.tab(p,'practice');await p.waitForTimeout(500);await shot(p,'C7_practice_mid_lesson_'+tag,true);await metrics(p,tag+' C7 practice');await contrast(p,tag+' C7');save('C7_practice_'+tag,await txt(p,'#tab-practice'));
   await p.click('[data-tab=learn]');await p.waitForTimeout(200);await p.click('#btnGo');await p.waitForTimeout(1200);await shot(p,'C8_resume_'+tag);save('C8_resume_'+tag,await txt(p,'#ders'));note(tag,'resume: note='+await p.evaluate(()=>TYDIL.ders.state.note));
   // language menu
   await p.click('#dersMode');await p.waitForTimeout(200);await shot(p,'C9_lang_menu_'+tag);await metrics(p,tag+' C9 menu');save('C9_lang_menu_'+tag,await txt(p,'#dersModeM'));await p.keyboard.press('Escape');await p.waitForTimeout(200);
@@ -78,7 +78,7 @@ const save=(n,t)=>fs.writeFileSync(path.join(OUT,n+'.txt'),t);
   note(tag,'done phase='+await p.evaluate(()=>TYDIL.ders.state.phase)+' ccIn visible='+await p.isVisible('#ccIn')+' dersHands visible='+await p.isVisible('#dersHands'));
   const back=await p.$('#dersBack');if(back)await back.click();await p.waitForTimeout(500);await shot(p,'C13_hub_done_'+tag,true);save('C13_hub_done_'+tag,await txt(p,'#tab-learn'));await metrics(p,tag+' C13 hub done');
   note(tag,'hub done: btnGo="'+await txt(p,'#btnGo')+'" kicker="'+await txt(p,'#heroKicker')+'" title="'+await txt(p,'#heroTitle')+'" sub="'+await txt(p,'#heroSub')+'" tipPin='+await p.isVisible('#tipPin')+' streak="'+await txt(p,'#streakChip')+'"');
-  await p.click('[data-tab=progress]');await p.waitForTimeout(500);await shot(p,'C14_progress_'+tag,true);await metrics(p,tag+' C14 progress');await contrast(p,tag+' C14');save('C14_progress_'+tag,await txt(p,'#tab-progress'));
+  await H.tab(p,'progress');await p.waitForTimeout(500);await shot(p,'C14_progress_'+tag,true);await metrics(p,tag+' C14 progress');await contrast(p,tag+' C14');save('C14_progress_'+tag,await txt(p,'#tab-progress'));
   if(errs.length)note(tag,'ERRORS day1: '+errs.join(' | '));
   // D. next day (same storage)
   await p.close();p=await newPage(ctx,st,DAY2,errs);await p.goto(srv.base+'/index.html');await p.waitForTimeout(800);
@@ -102,7 +102,7 @@ const save=(n,t)=>fs.writeFileSync(path.join(OUT,n+'.txt'),t);
   // mother: tap target sizes in unit
   note(tag,'unit button sizes: '+JSON.stringify(await p.$$eval('#tab-units button',e=>e.filter(x=>x.offsetParent).map(x=>{const r=x.getBoundingClientRect();return [x.textContent.trim().slice(0,14)||x.getAttribute('aria-label'),Math.round(r.w||r.width),Math.round(r.height),Math.round(parseFloat(getComputedStyle(x).fontSize))];}))));
   // F. Ayarlar comprehension
-  await p.click('[data-tab=setup]');await p.waitForTimeout(400);await shot(p,'F1_settings_'+tag,true);await metrics(p,tag+' F1 settings');await contrast(p,tag+' F1');save('F1_settings_'+tag,await txt(p,'#tab-setup'));
+  await H.tab(p,'setup');await p.waitForTimeout(400);await shot(p,'F1_settings_'+tag,true);await metrics(p,tag+' F1 settings');await contrast(p,tag+' F1');save('F1_settings_'+tag,await txt(p,'#tab-setup'));
   await p.click('#bkRestore summary');await p.click('#advMore summary');await p.waitForTimeout(200);await shot(p,'F2_settings_open_'+tag,true);await metrics(p,tag+' F2 settings open');save('F2_settings_open_'+tag,await txt(p,'#tab-setup'));
   note(tag,'settings headings: '+JSON.stringify(await p.$$eval('#tab-setup h2, #tab-setup h3, #tab-setup summary',e=>e.filter(x=>x.offsetParent).map(x=>x.textContent.trim().slice(0,40)))));
   if(errs.length)note(tag,'ERRORS day2: '+errs.join(' | '));

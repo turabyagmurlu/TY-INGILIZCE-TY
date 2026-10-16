@@ -65,27 +65,27 @@ const MOCK=`(()=>{
   await ctx.close();}
 
  // 2) Mikrofon düğmesi: var / yok (desteksiz tarayıcı)
- {const {p,ctx}=await open({seed:PROG});await p.click('[data-tab=practice]');await p.waitForTimeout(200);
+ {const {p,ctx}=await open({seed:PROG});await H.tab(p,'practice');await p.waitForTimeout(200);
   ok(await p.isVisible('#ccMic')&&await p.isVisible('#vcHands')&&await p.isVisible('#vcBar'),'mic button + Konuşma modu toggle visible when SpeechRecognition exists');
   const m=await box(p,'#ccMic'),ta=await box(p,'#ccIn'),sd=await box(p,'#ccSend');
   ok(m.w>=44&&m.h>=44&&sd.w>=44&&sd.h>=44&&m.r<=ta.x&&ta.r<=sd.x&&ta.w>=150&&await hscroll(p),'375: mic | textarea | send in a row, ≥44px, textarea ≥150px, no h-scroll '+JSON.stringify([m.w,ta.w,sd.w]));
   const hb=await box(p,'#vcHands');ok(hb.w>=44&&hb.h>=44,'Konuşma modu toggle ≥44px');
   ok(/Mikrofon düğmesine bas/.test(await p.evaluate(()=>{document.querySelector('[data-agent=en]').click();return new Promise(r=>setTimeout(()=>r(document.querySelector('#ccLog').textContent),300));})),'Oliver empty card tells about mic + Konuşma modu');
-  await p.click('[data-tab=setup]');await p.waitForTimeout(100);
+  await H.tab(p,'setup');await p.waitForTimeout(100);
   ok(await p.isVisible('#voiceCard')&&await p.isChecked('#vcAutoSpeak')&&await p.isChecked('#vcHandsAuto')&&await p.inputValue('#vcAutoSend')==='auto'&&await p.inputValue('#vcRate')==='0.9','Ayarlar → Ses card: defaults (Koçu sesli oku ON, otomatik dinle ON, gönder auto, hız 0.9)');
   const vo=await p.$$eval('#vcVoices select',e=>e.map(s=>[s.dataset.voice,[...s.options].map(o=>o.textContent)]));
   ok(vo.length===3&&vo[1][1].includes('Google italiano')&&vo[1][1].includes('Microsoft Elsa')&&vo[2][1].includes('Bad News')&&vo[2][1].includes('Google UK English Male')&&!vo[0][1].includes('Google italiano'),'voice lists filtered by language '+JSON.stringify(vo.map(x=>x[1].length)));
   ok((await p.$$eval('[data-mic]',e=>e.map(s=>s.id+'='+s.value))).join()==='vcMic-it=it-IT,vcMic-en=en-GB,vcMic-db=tr-TR','mic language per coach defaults it-IT / en-GB / tr-TR');
   await ctx.close();}
- {const {p,ctx}=await open({seed:PROG,q:'?unsupported=1'});await p.click('[data-tab=practice]');await p.waitForTimeout(200);
+ {const {p,ctx}=await open({seed:PROG,q:'?unsupported=1'});await H.tab(p,'practice');await p.waitForTimeout(200);
   ok(!(await p.$('#ccMic'))&&!(await p.$('#vcHands'))&&/Bu tarayıcıda sesli giriş yok; Chrome kullan/.test(await p.textContent('#ccFoot')),'unsupported browser: mic hidden, one-time note shown');
   await p.click('#vcNote .vc-x');await p.waitForTimeout(100);ok(!(await p.$('#vcNote'))&&JSON.parse(await p.evaluate(()=>localStorage.getItem('tydil.voice'))).noted===1,'note dismissed and remembered');
-  await p.reload();await p.waitForTimeout(500);await p.click('[data-tab=practice]');ok(!(await p.$('#vcNote')),'note not shown again after reload');
+  await p.reload();await p.waitForTimeout(500);await H.tab(p,'practice');ok(!(await p.$('#vcNote')),'note not shown again after reload');
   ok(await p.evaluate(()=>TYDIL.voice.state.tts===true&&TYDIL.voice.state.mic===false),'TTS stays available without mic');
   await ctx.close();}
 
  // 3) Pratik: bas-konuş, ara metin gri, son metin kutuda, Pratik'te otomatik gönderim YOK; koç yanıtı okunur ve dil parçalarına bölünür
- {const {p,ctx,st}=await open({seed:PROG});await p.click('[data-tab=practice]');await p.click('[data-agent=en]');await p.waitForTimeout(300);
+ {const {p,ctx,st}=await open({seed:PROG});await H.tab(p,'practice');await p.click('[data-agent=en]');await p.waitForTimeout(300);
   await shot(p,'voice_chat_idle.png');
   await p.click('#ccMic');await waitState(p,'listening');
   ok(await p.evaluate(()=>__sr.cur.lang==='en-GB'&&__sr.cur.interimResults===true&&__sr.cur.continuous===false),'recognition started with en-GB, interim on, continuous off');
@@ -166,7 +166,7 @@ const MOCK=`(()=>{
   await ctx.close();}
 
  // 5) Hatalar: not-allowed kartı · boş erken bitişte ≤2 yeniden başlatma · no-speech ipucu
- {const {p,ctx}=await open({seed:PROG});await p.click('[data-tab=practice]');await p.click('[data-agent=en]');await p.waitForTimeout(300);
+ {const {p,ctx}=await open({seed:PROG});await H.tab(p,'practice');await p.click('[data-agent=en]');await p.waitForTimeout(300);
   await p.evaluate(()=>{__sr.script=rec=>{rec._error('not-allowed');rec._end();};});
   await p.click('#ccMic');await p.waitForSelector('#ccLog .cc-err.vc-err',{timeout:3000});
   ok(/Mikrofon izni ver \(tarayıcı adres çubuğu/.test(await p.textContent('#ccLog .cc-err.vc-err'))&&(await vstate(p))==='idle','not-allowed → in-page permission card');
@@ -180,17 +180,17 @@ const MOCK=`(()=>{
   await ctx.close();}
 
  // 6) Ayarlar kalıcı: sesli okuma kapalı, hız, ses seçimi, mikrofon dili; "Mikrofonu dene"
- {const {p,ctx,st}=await open({seed:PROG});await p.click('[data-tab=setup]');await p.waitForTimeout(100);
+ {const {p,ctx,st}=await open({seed:PROG});await H.tab(p,'setup');await p.waitForTimeout(100);
   await p.click('#vcAutoSpeak');await p.selectOption('#vcAutoSend','on');await p.$eval('#vcRate',e=>{e.value='1.1';e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}));});
   await p.selectOption('#vcVoices select[data-voice=it]','ms-it');await p.selectOption('#vcMic-en','en-US');
   await p.evaluate(()=>{__sr.script=rec=>setTimeout(()=>{rec._result('merhaba dünya',true);rec._end();},50);});
   await p.click('#vcTest');await p.waitForFunction(()=>/Anlaşılan/.test(document.querySelector('#vcTestOut').textContent),null,{timeout:3000});
   ok(/merhaba dünya/.test(await p.textContent('#vcTestOut'))&&await p.evaluate(()=>__sr.cur.lang==='it-IT'),'Mikrofonu dene shows recognized text (uses current coach language)');
-  await p.reload();await p.waitForTimeout(500);await p.click('[data-tab=setup]');
+  await p.reload();await p.waitForTimeout(500);await H.tab(p,'setup');
   const v=JSON.parse(await p.evaluate(()=>localStorage.getItem('tydil.voice')));
   ok(v.autoSpeak===false&&v.autoSend==='on'&&Math.abs(v.rate-1.1)<1e-9&&v.voices.it==='ms-it'&&v.micLang.en==='en-US','settings persisted in tydil.voice '+JSON.stringify(v));
   ok(!(await p.isChecked('#vcAutoSpeak'))&&await p.inputValue('#vcAutoSend')==='on'&&await p.inputValue('#vcRate')==='1.1'&&await p.inputValue('#vcVoices select[data-voice=it]')==='ms-it'&&await p.inputValue('#vcMic-en')==='en-US','settings UI reflects stored values after reload');
-  await p.click('[data-tab=practice]');await p.click('[data-agent=en]');await p.waitForTimeout(300);
+  await H.tab(p,'practice');await p.click('[data-agent=en]');await p.waitForTimeout(300);
   await p.evaluate(()=>{__sr.script=rec=>setTimeout(()=>{rec._result('hello there',true);rec._end();},50);});
   await p.click('#ccMic');await p.waitForFunction(()=>document.querySelectorAll('#ccLog .cc-row.me').length===1,null,{timeout:4000});await idle(p);await p.waitForTimeout(200);
   ok(await p.evaluate(()=>__sr.list[__sr.list.length-1].lang==='en-US'&&__tts.spoken.length===0),'mic override en-US used; auto-send "Her zaman" sends in Pratik; auto-speak off → nothing spoken');

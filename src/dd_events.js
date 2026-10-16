@@ -1,8 +1,11 @@
 /* ---------- OLAYLAR ---------- */
-const TABS=["learn","practice","progress","units","setup"];
+const TABS=["learn","konus","cards","units","practice","progress","setup"];
+/* Alt/üst gezinmedeki 4 sekme; İlerleme · Ayarlar · Yazışma "Ben" sayfasından açılır */
+const NAV_OF={practice:"konus",progress:"ben",setup:"ben"};
 /* Eski hedef adları: cards → Pratik/Kelime kartları, syl → Öğren/yol, log → İlerleme, paste → Ayarlar/Gelişmiş, coach → Pratik/sohbet, key → Ayarlar/Claude bağlantısı */
-const TAB_ALIAS={roadmap:["progress","#roadmapCard"],progsetup:["setup","#progSetup"],cards:["practice","#cards"],syl:["progress","#pathCard"],log:["progress",null],paste:["setup","#pasteBox"],coach:["practice","#coach"],key:["setup","#keyCard"],backup:["setup","#backupCard"]};
-const HASH={ogren:"learn",pratik:"practice",ilerleme:"progress",dersler:"units",ayarlar:"setup",kurulum:"setup",kartlar:"cards",yol:"syl"};
+const TAB_ALIAS={roadmap:["progress","#roadmapCard"],progsetup:["setup","#progSetup"],cards:["cards",null],syl:["progress","#pathCard"],log:["progress",null],paste:["setup","#pasteBox"],coach:["practice","#coach"],key:["setup","#keyCard"],backup:["setup","#backupCard"]};
+/* Eski adresler: #pratik/#practice → Konuş (yazışma oradan), #kartlar → Kartlar */
+const HASH={ogren:"learn",bugun:"learn",learn:"learn",pratik:"konus",practice:"konus",konus:"konus",yazisma:"practice",ilerleme:"progress",progress:"progress",dersler:"units",units:"units",ayarlar:"setup",setup:"setup",kurulum:"setup",kartlar:"cards",cards:"cards",yol:"syl"};
 /* Dersler sekmesi (üniteler): sonraki aşama TYDIL.registerUnits(renderFn) ile bağlar; sekme o zamana kadar gizli */
 let unitsRender=null, unitsMounted=false;
 const reduceMo=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -11,12 +14,23 @@ function scrollToEl(el){if(!el)return;const bar=document.querySelector(".bar"), 
 function openTab(t,scroll){let target=null;
   if(TAB_ALIAS[t]){target=TAB_ALIAS[t][1];t=TAB_ALIAS[t][0];} if(!TABS.includes(t))t="learn";
   const was=TABS.find(k=>!$("#tab-"+k).hidden);
-  document.querySelectorAll(".tabs button").forEach(x=>{x.setAttribute("aria-selected",String(x.dataset.tab===t));x.tabIndex=x.dataset.tab===t?0:-1;});
+  const nv=NAV_OF[t]||t; document.querySelectorAll(".tabs button").forEach(x=>{x.setAttribute("aria-selected",String(x.dataset.tab===nv));x.tabIndex=x.dataset.tab===nv?0:-1;});
+  const bb=$("#btnBen"); if(bb) bb.classList.toggle("on",nv==="ben");
+  TABS.forEach(k=>document.documentElement.classList.toggle("tab-"+k,k===t)); benClose(true);
   TABS.forEach(k=>$("#tab-"+k).hidden=k!==t);
   if(t==="units"&&unitsRender&&!unitsMounted){unitsMounted=true; const m=$("#tyUnitsMount"); if(m){m.hidden=false; try{unitsRender(m);}catch(e){console.error(e);}}}
   if(scroll&&target){const el=$(target), d=el&&el.closest("details:not([open])"); if(d) d.open=true; requestAnimationFrame(()=>scrollToEl(el));}
   else if(was!==t) window.scrollTo({top:0,behavior:"auto"});
-  if(t==="practice"&&typeof ccScroll==="function") requestAnimationFrame(()=>ccScroll(true));   /* Pratik sohbeti son mesajda açılır */}
+  if(t==="practice"&&typeof ccScroll==="function") requestAnimationFrame(()=>ccScroll(true));   /* Pratik sohbeti son mesajda açılır */
+  if(t==="konus") setTimeout(lxKonusTab,0);
+  if(t==="practice") setTimeout(()=>{try{penPracTog();}catch(e){}},0);
+  if(t==="units"&&typeof lxRenderMine==="function") lxRenderMine();}
+/* Ben sayfası: İlerleme · Ayarlar · Yazışma */
+function benOpen(){const s=$("#benSheet"); if(!s)return; s.hidden=false; $("#btnBen").setAttribute("aria-expanded","true"); const f=s.querySelector(".benItem"); if(f)f.focus();}
+function benClose(quiet){const s=$("#benSheet"); if(!s||s.hidden)return; s.hidden=true; $("#btnBen").setAttribute("aria-expanded","false"); if(!quiet)$("#btnBen").focus();}
+$("#btnBen").addEventListener("click",()=>{if($("#benSheet").hidden)benOpen(); else benClose();});
+$("#benSheet").addEventListener("click",e=>{const it=e.target.closest("[data-ben]"); if(it){openTab(it.dataset.ben); return;} if(e.target.closest("[data-ben-x]"))benClose();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#benSheet").hidden){e.preventDefault();benClose();}});
 document.querySelectorAll(".tabs button").forEach(b=>{b.id="tabBtn-"+b.dataset.tab;b.setAttribute("aria-controls","tab-"+b.dataset.tab);$("#tab-"+b.dataset.tab).setAttribute("aria-labelledby",b.id);b.addEventListener("click",()=>openTab(b.dataset.tab));});
 $(".tabs").addEventListener("keydown",e=>{const bs=[...document.querySelectorAll(".tabs button")],i=bs.indexOf(document.activeElement);if(i<0)return;
   const j=e.key==="ArrowRight"?i+1:e.key==="ArrowLeft"?i-1:e.key==="Home"?0:e.key==="End"?bs.length-1:null;if(j==null)return;e.preventDefault();const b=bs[(j+bs.length)%bs.length];b.focus();openTab(b.dataset.tab);});
@@ -39,6 +53,7 @@ $("#syl").addEventListener("click",async e=>{
 $("#btnUnitsBk").addEventListener("click",()=>{const U=window.TYDIL&&TYDIL.units; if(U&&typeof U.go==="function"){const l=(U.state&&U.state.lang)||"it"; openTab("units"); U.go(l+"/yedek");} else openTab("units");});
 /* Tek ana eylem: ders bitmediyse Ders modunu açar (sohbet kapalıysa Ayarlar → Claude bağlantısı); bittiyse kartlar ya da serbest pratik */
 $("#btnGo").addEventListener("click",()=>{
+  if(lxGo())return;
   const ps=dayBlocks(), due=dueCards("it").length+dueCards("en").length;
   if(!ps.some(b=>b.st!=="done")){openTab(due?"cards":"coach",true);return;}
   if(dersGate()) dersOpen();
@@ -74,6 +89,7 @@ function liveErr(e){if(liveWarned)return;liveWarned=true;const n=document.create
   db.collection("days").onSnapshot(q=>{S.days={};q.docs.forEach(d=>S.days[d.id]=d.data());daysMerge();renderLive();},liveErr);
   let first=true; db.collection("cards").onSnapshot(q=>{S.cards=q.docs.map(d=>Object.assign({id:d.id},d.data()));renderLive();
     if(first){first=false;buildQueue();} else if(rqi>=rq.length) buildQueue(); else updateLangBtns(); },liveErr);
+  lxDb();
 })();
 /* ---------- DIŞA AÇIK KANCALAR (sonraki aşamalar: üniteler, ses) ---------- */
 window.TYDIL={openTab,

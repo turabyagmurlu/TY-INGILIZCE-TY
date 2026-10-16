@@ -67,3 +67,10 @@ html.ders-on .pen-fab{display:none}
 .hlTurn .hint{margin:0 0 6px;font-size:13.5px}
 .hlTxt{font-size:15px;line-height:1.5}
 .hlTxt table{font-size:14px}
+.pen-prac{margin-left:auto;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);font-weight:700;font-size:14.5px}
+.pen-prac .ico,.pen-prac svg{width:19px;height:19px}
+.pen-prac.on{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+#penPracBar{display:flex;justify-content:flex-end;margin-bottom:8px}
+.ders .pen-prac,.ders #penPracBar{display:none}
+html.tab-practice .pen-fab{display:none!important}
+.vc-bar .pen-prac{margin-bottom:10px}

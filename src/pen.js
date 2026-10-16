@@ -106,6 +106,11 @@ window.addEventListener("scroll",()=>{if(!PEN.open)penChip(false);},{passive:tru
 /* ---- kalem düğmeleri ---- */
 function penFab(){let b=$("#penFab"); if(!b){b=document.createElement("button"); b.type="button"; b.id="penFab"; b.className="pen-fab pen-ui pen-tog"; b.setAttribute("aria-pressed","false"); b.setAttribute("aria-label","Vurgu kalemi"); b.title="Vurgu kalemi"; b.innerHTML=PEN_SVG.pen; document.body.appendChild(b);} return b;}
 function penDersTog(){const f=$("#dersFoot"); if(!f)return null; let b=$("#penDers"); if(!b){b=document.createElement("button"); b.type="button"; b.id="penDers"; b.className="pen-ders pen-ui pen-tog"; b.setAttribute("aria-pressed","false"); b.setAttribute("aria-label","Vurgu kalemi"); b.title="Vurgu kalemi"; b.innerHTML=PEN_SVG.pen; f.insertBefore(b,f.firstChild);} return b;}
+/* Yazışma: yüzen kalem sohbet kutusuyla çakışmasın → kalem anahtarı ses şeridinde (Konuşma modu'nun yanında) */
+function penPracTog(){const cc=$("#coachChat"), form=cc&&cc.querySelector("#ccForm"); if(!form)return null; let b=$("#penPrac"); if(b&&b.isConnected&&cc.contains(b))return b;
+  let bar=cc.querySelector("#vcBar"); if(!bar){bar=document.createElement("div"); bar.className="vc-bar"; bar.id="penPracBar"; form.parentNode.insertBefore(bar,form);}
+  if(!b){b=document.createElement("button"); b.type="button"; b.id="penPrac"; b.className="pen-prac pen-ui pen-tog"; b.setAttribute("aria-pressed",String(PEN.armed)); b.title="Vurgu kalemi"; b.innerHTML=PEN_SVG.pen+"<span>Vurgula</span>";}
+  bar.appendChild(b); return b;}
 function penPaintTog(){document.querySelectorAll(".pen-tog").forEach(b=>{b.setAttribute("aria-pressed",String(PEN.armed)); b.classList.toggle("on",PEN.armed);}); document.documentElement.classList.toggle("pen-on",PEN.armed);}
 function penToggle(fromEl){PEN.armed=!PEN.armed; penPaintTog(); penChip(false); if(PEN.armed){PEN.ctx=null; penBarOpen(fromEl);} else penBarClose();}
 /* ---- araç çubuğu / açılır pencere ---- */
@@ -170,7 +175,7 @@ document.addEventListener("click",e=>{const g=e.target.closest("[data-hgo]"); if
     if(d.dataset.armed&&Date.now()-(+d.dataset.armed)<3500){penDelete(d.dataset.hdel);return;}
     d.dataset.armed=String(Date.now()); d.textContent="Emin misin?"; d.classList.add("warn"); setTimeout(()=>{if(d.isConnected){d.textContent="Sil";d.classList.remove("warn");delete d.dataset.armed;}},3600); return;}});
 /* ---- başlat ---- */
-penFab(); penDersTog(); penObserve(); penRenderList();
+penFab(); penDersTog(); penPracTog(); penObserve(); penRenderList();
 (async()=>{let d=null; for(let i=0;i<50&&!d;i++){d=penDb(); if(!d)await new Promise(r=>setTimeout(r,100));} if(!d)return;
   try{ d.collection("highlights").onSnapshot(q=>{penSet(q.docs.map(x=>Object.assign({id:x.id},x.data())));},()=>{}); }catch(e){} })();
 window.TYPEN={get state(){return PEN;},apply:penApply,create:penCreateFromSel,remove:penDelete,update:penUpdate,toggle:penToggle};

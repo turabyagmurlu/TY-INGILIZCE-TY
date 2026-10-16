@@ -23,7 +23,8 @@ function instState(){
   return "no";
 }
 function instLabel(){return instDesktop()?"Bilgisayara kur":"Telefona kur";}
-function instLaterOn(){const t=+(instLs("tydil-inst-later")||0); return t&&Date.now()-t<INST_LATER_MS;}
+/* Bir kez "Sonra" denince Bugün ekranında bir daha çıkmaz (Ayarlar satırı kalır) */
+function instLaterOn(){return +(instLs("tydil-inst-later")||0)>0;}
 function renderInstall(){
   const st=instState(), card=$("#instCard"), row=$("#instRow"), desk=instDesktop(), label=instLabel();
   const ico=desk?INST_SVG.laptop:INST_SVG.phone;

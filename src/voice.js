@@ -89,7 +89,7 @@ function voiceScore(target,heard,lang){return voiceScoreInfo(target,heard,lang).
 
 /* ===== sesli okuma: markdown → dil parçaları ===== */
 const vSep=l=>/^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?\s*$/.test(l);
-function vCleanText(t){return String(t||"").replace(/[*_#`>|]+/g," ").replace(/\s+([,.;:!?])/g,"$1").replace(/\s+/g," ").trim().replace(/^[–—-]\s*|\s*[–—-]$/g,"").trim();}
+function vCleanText(t){return String(t||"").replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200D}\u{20E3}]/gu,"").replace(/[*_#`>|]+/g," ").replace(/\s+([,.;:!?])/g,"$1").replace(/\s+/g," ").trim().replace(/^[–—-]\s*|\s*[–—-]$/g,"").trim();}
 /* Parçalar: [{lang:"tr"|"it"|"en", t}] — kod ve URL atlanır, tablo satırı "hücre – hücre", başlık/liste işaretleri düşer */
 function vSegments(md){
   let s=String(md||"").replace(/\r\n?/g,"\n").replace(/```[\s\S]*?(```|$)/g," ").replace(/`[^`\n]*`/g," ").replace(/https?:\/\/\S+/g," ").replace(/\*\((Yanıt uzunluk sınırında kesildi[^)]*)\)\*/g,"");
@@ -254,6 +254,29 @@ function vDersBlock(b){const key=b?b.key:""; if(key===V.blockKey)return; V.block
   vSetHands(hf&&V.set.handsAuto,true);}
 function vDersClose(){V.blockKey=""; voiceStop(); vSetHands(false,true);}
 
+/* ===== en doğal ses (dil başına puan) =====
+   Natural/Neural/Online > Premium/Enhanced/Siri > Google; Compact/eSpeak/yenilik sesleri cezalı. voiceschanged'de yeniden; elle seçim (Ayarlar) her zaman önce. */
+const V_BAD=/compact|espeak|novelty|zarvox|trinoids|whisper|bad news|good news|jester|superstar|wobble|cellos|bubbles|boing|deranged|hysterical|bahh|pipe organ|\b(organ|bells|fred|albert|junior|kathy|ralph|grandma|grandpa|eddy|flo|reed|rocko|sandy|shelley)\b/i;
+const V_NAT=/natural|neural|online|premium|enhanced|siri/i;
+function vVoiceScore(v,lang){const n=String(v&&v.name||""); let s=0;
+  if(/natural|neural|online/i.test(n))s+=100; if(/premium|enhanced|siri/i.test(n))s+=70; if(/google/i.test(n))s+=40; if(V_BAD.test(n))s-=300;
+  if(v.localService===false)s+=4; if(String(v.lang||"").replace("_","-").toLowerCase()===(V_LANGTAG[lang]||"").toLowerCase())s+=3; if(v.default)s+=1; return s;}
+let V_BEST={};
+function vBest(lang){if(V_BEST[lang]!==undefined)return V_BEST[lang]; const vs=vVoices(lang).slice().sort((a,b)=>vVoiceScore(b,lang)-vVoiceScore(a,lang)); V_BEST[lang]=vs[0]||null; return V_BEST[lang];}
+if(typeof window!=="undefined"&&window.speechSynthesis){try{window.speechSynthesis.addEventListener("voiceschanged",()=>{V_BEST={};});}catch(e){}}
+/* Doğal ses ipucu: en iyi ses doğal/premium değilse platforma göre tek satır (kapatılabilir) */
+function vPlat(){const ua=navigator.userAgent||"", pf=navigator.platform||""; if(/iP(hone|ad|od)/.test(ua)||(pf==="MacIntel"&&(navigator.maxTouchPoints||0)>1))return "ios"; if(/Android/i.test(ua))return "android"; if(/Mac/.test(pf))return "mac"; if(/Edg\//.test(ua))return "edge"; return "win";}
+function vTipText(langs){langs=langs.filter(l=>{const v=vBest(l); return !(v&&V_NAT.test(v.name||""));}); if(!langs.length)return "";
+  const ln=langs.map(l=>V_LANGN[l]).join(" / "), pl=vPlat();
+  if(pl==="ios")return "Daha doğal ses: Ayarlar → Erişilebilirlik → Seslendirilen İçerik → Sesler → "+ln+" → 'Gelişmiş' ya da 'Premium' yazan sesi indir.";
+  if(pl==="mac")return "Daha doğal ses: Sistem Ayarları → Erişilebilirlik → Seslendirilen İçerik → Sistem sesi → Sesleri yönet → "+ln+" → 'Gelişmiş' ya da 'Premium' sesi indir.";
+  if(pl==="android")return "Daha doğal ses: Ayarlar → Google Konuşma Hizmetleri → ses verilerini yükle.";
+  if(pl==="win")return "Daha doğal ses için uygulamayı Microsoft Edge'de aç.";
+  return "";}
+function vTipHtml(langs,where){if(!vTtsOk())return ""; langs=Array.isArray(langs)?langs:[langs]; const k="tydil.vtip."+(where||"x"); let off=false; try{off=localStorage.getItem(k)==="1";}catch(e){} if(off)return "";
+  const t=vTipText(langs); return t?`<p class="vTip" data-vtip="${esc(k)}"><span>${esc(t)}</span><button type="button" data-vtip-x aria-label="İpucunu kapat">×</button></p>`:"";}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-vtip-x]"); if(!b)return; const p=b.closest("[data-vtip]"); if(!p)return; try{localStorage.setItem(p.dataset.vtip,"1");}catch(x){} p.remove();});
+
 /* ===== Ayarlar → Ses kartı ===== */
 const V_MIC_OPTS=[["it-IT","İtalyanca (it-IT)"],["en-GB","İngilizce · Birleşik Krallık (en-GB)"],["en-US","İngilizce · ABD (en-US)"],["tr-TR","Türkçe (tr-TR)"]];
 function vVoices(lang){try{return (window.speechSynthesis.getVoices()||[]).filter(v=>(v.lang||"").toLowerCase().replace("_","-").startsWith(lang));}catch(e){return [];}}
@@ -270,7 +293,7 @@ function vSettingsMount(){if(document.getElementById("voiceCard"))return; const 
       <div class="vcField">${sel("vcAutoSend","Otomatik gönder",`<option value="auto">Ders modunda (varsayılan) — Pratik'te önce göster</option><option value="on">Her zaman</option><option value="off">Kapalı — ben Gönder'e basarım</option>`)}
         <p class="hint">Konuşma modunda cevap her zaman kendiliğinden gider.</p></div>
       <div class="vcField"><label class="fl" for="vcRate">Okuma hızı <output id="vcRateOut" for="vcRate"></output></label><input type="range" id="vcRate" min="0.6" max="1.3" step="0.05" aria-describedby="vcRateOut"></div>
-      <div class="vcField"><label class="fl">Sesler</label><div class="vcVoices" id="vcVoices"></div><p class="hint">Liste tarayıcıdaki seslerden gelir; "Google" ya da "Natural/Enhanced" sesler daha doğaldır.</p></div>
+      <div class="vcField"><label class="fl">Sesler</label><div id="vcTip"></div><div class="vcVoices" id="vcVoices"></div><p class="hint">Otomatik: cihazdaki en doğal ses seçilir (Natural, Premium, Gelişmiş). Listeden elle de seçebilirsin.</p></div>
       <div class="vcField"><label class="fl">Mikrofon dili</label><div class="vcMics">${["it","en","db"].map(k=>`<label><span>${esc(CC_AGENTS[k].name)}</span><select class="inp" id="vcMic-${k}" data-mic="${k}">${V_MIC_OPTS.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join("")}</select></label>`).join("")}</div></div>
       <div class="vcField"><div class="btnRow"><button type="button" class="btn btn-soft" id="vcTest" ${vMicOk()?"":"disabled"}>${ICON("speaking")}Mikrofonu dene</button><button type="button" class="btn btn-ghost" id="vcTestTts">Sesleri dinle</button></div><div class="vcOut" id="vcTestOut" role="status" aria-live="polite" hidden></div></div>
     </div></article>`);
@@ -300,7 +323,8 @@ function vSettingsPaint(){const card=document.getElementById("voiceCard"); if(!c
   ["it","en","db"].forEach(k=>{const el=q("vcMic-"+k); if(el)el.value=s.micLang[k]||V_MICLANG[k];});
   const vw=q("vcVoices"); if(vw){const prev=vw.dataset.sig||"", html=["tr","it","en"].map(l=>{const vs=vVoices(l), cur=s.voices[l]||"";
       return `<label><span>${V_LANGN[l]}</span><select class="inp" data-voice="${l}" aria-label="${V_LANGN[l]} sesi"><option value="">Otomatik${vs.length?" (en iyi tahmin)":" — ses bulunamadı"}</option>${vs.map(v=>`<option value="${esc(v.voiceURI)}"${v.voiceURI===cur?" selected":""}>${esc(v.name)}${v.localService===false?" · çevrimiçi":""}</option>`).join("")}</select></label>`;}).join("");
-    if(prev!==html){vw.dataset.sig=html; vw.innerHTML=html;}}}
+    if(prev!==html){vw.dataset.sig=html; vw.innerHTML=html;}}
+  const tp=q("vcTip"); if(tp){const h=vTipHtml(["it","en"],"set"); if(tp.dataset.sig!==h){tp.dataset.sig=h; tp.innerHTML=h;}}}
 
 /* ===== köprü (dd_chat.js ccHooks) ===== */
 if(typeof ccHooks!=="undefined"){

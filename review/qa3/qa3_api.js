@@ -92,7 +92,7 @@ const KEY='sk-ant-api03-QA3SECRETKEY_abcdefghijklmnopqrstuvwxyz0123456789';
   p.on('console',m=>logs.push(m.text()));
   p.on('request',r=>{const h=r.headers();const pd=r.postData()||'';const where=[];if(r.url().includes(KEY))where.push('url');if(pd.includes(KEY))where.push('body');Object.entries(h).forEach(([k,v])=>{if(String(v).includes(KEY))where.push('header:'+k);});if(where.length)seen.push({url:r.url().slice(0,60),where});});
   await p.click('#btnGo');await p.waitForSelector('#ders:not([hidden])');await idle(p);await next(p);
-  await p.click('#dersExit');await p.waitForTimeout(300);await p.click('[data-tab=setup]');await p.waitForTimeout(300);
+  await p.click('#dersExit');await p.waitForTimeout(300);await H.tab(p,'setup');await p.waitForTimeout(300);
   const bad=seen.filter(s=>!(s.url.startsWith('https://api.anthropic.com')&&s.where.length===1&&s.where[0]==='header:x-api-key'));
   ok(seen.length>0&&!bad.length,'key appears only in x-api-key header to api.anthropic.com ('+seen.length+' reqs) '+JSON.stringify(bad).slice(0,200));
   ok(!logs.some(l=>l.includes(KEY)),'key never printed to console');

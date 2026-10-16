@@ -13,7 +13,7 @@ const THU=AT(2026,10,8,9);const PROG={program:{main:{start:'2026-09-22',weeks:12
  for(const scenario of ['no-speech','aborted','not-allowed','network']){
   const {p,ctx,st}=await open({handler:()=>({sse:[{text:'[[en: Tell me about your day.]]'}]})});
   await p.evaluate(sc=>{__sr.script=r=>{setTimeout(()=>r._error(sc),20);setTimeout(()=>r._end(),40);};},scenario);
-  await p.click('[data-tab=practice]');await sleep(200);await p.click('[data-agent=en]');await sleep(200);
+  await H.tab(p,'practice');await sleep(200);await p.click('[data-agent=en]');await sleep(200);
   await p.click('#vcHands');await sleep(200);
   await p.fill('#ccIn','hello');await p.press('#ccIn','Enter');await idle(p);await sleep(4000);
   const r=await p.evaluate(()=>({starts:__sr.log.filter(x=>/^start/.test(x)).length,instances:__sr.list.length,hands:TYDIL.voice.state.hands,state:TYDIL.voice.state.state,spoken:__tts.spoken.length,q:__tts.q.length,errCards:document.querySelectorAll('.vc-err').length}));
@@ -24,7 +24,7 @@ const THU=AT(2026,10,8,9);const PROG={program:{main:{start:'2026-09-22',weeks:12
  // 30× hands toggle + 30× mic tap while speaking: no TTS queue growth, SR instances bounded, listeners sane
  {const {p,ctx}=await open({handler:()=>({sse:[{text:'[[en: A long reply to be read aloud by the speaker so that the queue has items.]]'}]})});
   await p.evaluate(()=>{__sr.script=r=>{setTimeout(()=>r._result('I am fine thanks',true),30);setTimeout(()=>r._end(),60);};__tts.delay=400;});
-  await p.click('[data-tab=practice]');await sleep(200);await p.click('[data-agent=en]');await sleep(200);
+  await H.tab(p,'practice');await sleep(200);await p.click('[data-agent=en]');await sleep(200);
   for(let i=0;i<30;i++){await p.click('#vcHands');await sleep(30);}
   await p.fill('#ccIn','hi');await p.press('#ccIn','Enter');await idle(p);await sleep(200);
   for(let i=0;i<30;i++){await p.click('#ccMic');await sleep(40);}

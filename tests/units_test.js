@@ -210,7 +210,7 @@ const MOCK=`(()=>{
   // taze cihazda kodu geri yükle
   const f=await open({nomic:true,hash:'#dersler/it/yedek'});const p2=f.p;
   ok(await p2.isVisible('#uBkInput')&&await p2.isVisible('[data-act=bkMake]'),'Ünite yedeği screen');
-  await p2.click('[data-tab=setup]');await p2.waitForTimeout(150);await p2.click('#advMore summary');await p2.click('#btnUnitsBk');await p2.waitForTimeout(250);
+  await H.tab(p2,'setup');await p2.waitForTimeout(150);await p2.click('#advMore summary');await p2.click('#btnUnitsBk');await p2.waitForTimeout(250);
   ok(await hash(p2)==='#dersler/it/yedek'&&await p2.isVisible('#uBkInput'),'Ayarlar → Gelişmiş → Ünite yedeğini aç → Dersler yedek screen');
   await p2.fill('#uBkInput','TY1:bozuk');await p2.click('[data-act=bkCheck]');await p2.waitForTimeout(150);ok(/bozuk görünüyor/.test(await p2.textContent('#uBkMsg')),'broken code → clear error');
   await p2.fill('#uBkInput',code);await p2.click('[data-act=bkCheck]');await p2.waitForTimeout(150);

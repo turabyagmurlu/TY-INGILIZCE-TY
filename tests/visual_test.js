@@ -21,7 +21,7 @@ const PROG={program:{main:{start:'2026-09-22',weeks:12,dailyMin:60,mode:'yogun'}
  // PWA
  {const man=JSON.parse(fs.readFileSync(path.join(H.ROOT,'manifest.webmanifest'),'utf8'));
   ok(man.name==='TY Dil'&&man.short_name==='TY Dil'&&man.display==='standalone'&&man.icons.length===3&&man.theme_color==='#44709E','manifest: TY Dil, standalone, 3 icons, theme');
-  const sw=fs.readFileSync(path.join(H.ROOT,'sw.js'),'utf8');ok(/ty-dil-v8/.test(sw)&&/skipWaiting/.test(sw)&&/clients\.claim/.test(sw)&&/legacy\/ty-ingilizce\.html/.test(sw),'sw.js: cache ty-dil-v8, skipWaiting/claim, precaches legacy');
+  const sw=fs.readFileSync(path.join(H.ROOT,'sw.js'),'utf8');ok(/ty-dil-v9/.test(sw)&&/skipWaiting/.test(sw)&&/clients\.claim/.test(sw)&&/legacy\/ty-ingilizce\.html/.test(sw),'sw.js: cache ty-dil-v9, skipWaiting/claim, precaches legacy');
   const html=fs.readFileSync(path.join(H.ROOT,'index.html'),'utf8');
   ok(/^<!doctype html>\n<html lang="tr">/.test(html)&&/<meta charset="utf-8">/.test(html)&&/name="viewport"/.test(html)&&/name="theme-color"/.test(html)&&/rel="manifest"/.test(html)&&/apple-touch-icon/.test(html)&&/<title>TY Dil<\/title>/.test(html),'index.html: full document skeleton');
   ok(!/claude\.ai'de|claude\.ai’de|giriş yapmış olarak/.test(html)&&(html.match(/claude\.ai/g)||[]).length===1,'no "open in claude.ai" dependency texts (only the billing note mentions claude.ai)');
@@ -30,22 +30,22 @@ const PROG={program:{main:{start:'2026-09-22',weeks:12,dailyMin:60,mode:'yogun'}
   const {p,ctx}=await open({});await p.waitForTimeout(800);
   const reg=await p.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();await navigator.serviceWorker.ready;return r?{scope:r.scope,active:!!(r.active||r.installing||r.waiting)}:null;});
   ok(reg&&reg.active&&/127\.0\.0\.1/.test(reg.scope),'service worker registers on localhost '+JSON.stringify(reg));
-  const cached=await p.evaluate(async()=>{const ks=await caches.keys();const c=await caches.open('ty-dil-v8');const m=await c.match('./index.html');return {ks,idx:!!m};});
-  ok(cached.ks.includes('ty-dil-v8')&&cached.idx,'cache ty-dil-v8 holds index.html');
+  const cached=await p.evaluate(async()=>{const ks=await caches.keys();const c=await caches.open('ty-dil-v9');const m=await c.match('./index.html');return {ks,idx:!!m};});
+  ok(cached.ks.includes('ty-dil-v9')&&cached.idx,'cache ty-dil-v9 holds index.html');
   await ctx.close();}
 
  // Görseller
  for(const [w,scheme] of [[375,'light'],[375,'dark'],[1280,'light'],[1280,'dark']]){const vp={viewport:{width:w,height:w<500?812:900},colorScheme:scheme};const tag=`${w} ${scheme}`;
   {const {p,ctx}=await open({key:null},vp);await shot(p,`onb_${w}_${scheme}.png`);ok(await hscroll(p),`onboarding no h-scroll ${tag}`);
-   await p.click('[data-tab=setup]');await p.waitForTimeout(150);ok(await p.isVisible('#keyCard')&&await p.isVisible('#apiKey')&&await p.isVisible('#btnKeyTest')&&await p.isVisible('#modelSel')&&await p.isVisible('#btnBkDl'),`Ayarlar: key card + backup visible ${tag}`);
+   await H.tab(p,'setup');await p.waitForTimeout(150);ok(await p.isVisible('#keyCard')&&await p.isVisible('#apiKey')&&await p.isVisible('#btnKeyTest')&&await p.isVisible('#modelSel')&&await p.isVisible('#btnBkDl'),`Ayarlar: key card + backup visible ${tag}`);
    await shot(p,`ayarlar_${w}_${scheme}.png`,true);ok(await hscroll(p),`Ayarlar no h-scroll ${tag}`);
-   await p.click('[data-tab=practice]');await p.waitForTimeout(150);await shot(p,`nokey_${w}_${scheme}.png`);ok(/API anahtarı gerekli/.test(await p.textContent('#ccLog')),`no-key chat card ${tag}`);
+   await H.tab(p,'practice');await p.waitForTimeout(150);await shot(p,`nokey_${w}_${scheme}.png`);ok(/API anahtarı gerekli/.test(await p.textContent('#ccLog')),`no-key chat card ${tag}`);
    await ctx.close();}
   const {p,ctx,st}=await open({seed:PROG},vp);
   await shot(p,`learn_${w}_${scheme}.png`);ok(await hscroll(p),`learn no h-scroll ${tag}`);
   ok(await p.evaluate(()=>document.querySelector('#btnGo').getBoundingClientRect().bottom<=innerHeight),`primary button above the fold ${tag}`);
-  await p.click('[data-tab=practice]');await p.waitForTimeout(150);await shot(p,`practice_${w}_${scheme}.png`);ok(await hscroll(p),`practice no h-scroll ${tag}`);
-  await p.click('[data-tab=progress]');await p.waitForTimeout(150);await shot(p,`progress_${w}_${scheme}.png`,true);ok(await hscroll(p),`progress no h-scroll ${tag}`);
+  await H.tab(p,'practice');await p.waitForTimeout(150);await shot(p,`practice_${w}_${scheme}.png`);ok(await hscroll(p),`practice no h-scroll ${tag}`);
+  await H.tab(p,'progress');await p.waitForTimeout(150);await shot(p,`progress_${w}_${scheme}.png`,true);ok(await hscroll(p),`progress no h-scroll ${tag}`);
   await p.click('[data-tab=learn]');await p.click('#btnGo');await p.waitForSelector('#ders:not([hidden])');await idle(p);await p.waitForTimeout(200);
   await p.fill('#ccIn','Il cavo è kablo.');await p.press('#ccIn','Enter');await idle(p);await p.waitForTimeout(200);
   await shot(p,`ders_${w}_${scheme}.png`);ok(await hscroll(p),`Ders modu no h-scroll ${tag}`);

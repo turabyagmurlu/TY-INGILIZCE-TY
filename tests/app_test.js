@@ -24,7 +24,7 @@ const PROG=s=>({program:{main:{start:s||'2026-09-22',weeks:12,dailyMin:60,mode:'
   ok(await p.isVisible('#onb')&&!(await p.isVisible('#learnMain')),'first run: onboarding replaces dashboard');
   ok(/Programın: 12 hafta, günde 60 dk/.test(await p.textContent('#onb .onbStep[data-step="1"]'))&&await p.inputValue('#progStart')==='2026-10-08','step 1: program + start date defaults to today');
   ok(await p.evaluate(()=>!!document.querySelector('[data-tab=units]').offsetParent&&document.querySelector('#tab-units').hidden&&document.querySelector('#tyUnitsMount').innerHTML===''),'Dersler tab registered (units.js) but panel hidden + unmounted until opened');
-  ok((await p.$$eval('.tabs button',e=>e.filter(x=>!x.hidden).map(x=>x.querySelector('.tl').textContent))).join()==='Öğren,Pratik,İlerleme,Dersler,Ayarlar','tabs: Öğren, Pratik, İlerleme, Dersler, Ayarlar (Kurulum renamed)');
+  ok((await p.$$eval('.tabs button',e=>e.filter(x=>!x.hidden).map(x=>x.querySelector('.tl').textContent))).join()==='Bugün,Konuş,Kartlar,Dersler'&&await p.isVisible('#btnBen'),'v9 nav: Bugün, Konuş, Kartlar, Dersler + Ben (İlerleme/Ayarlar)');
   await p.click('[data-onb="2"]');await p.click('.onbStep[data-step="2"] [data-onb="3"]');ok(await p.isVisible('#btnProgStart')&&/12 Ekim Pazartesi/.test(await p.textContent('#progStartHint')),'step 3: Başla + week-1 date hint');
   ok(Object.keys(await store(p,'program')).length===0,'no program written before Başla');
   await p.evaluate(()=>{const x=document.querySelector('#btnProgStart');x.click();x.click();});
@@ -57,7 +57,7 @@ const PROG=s=>({program:{main:{start:s||'2026-09-22',weeks:12,dailyMin:60,mode:'
   // sayfa yenile: ders işaretleri (days) + sohbet geçmişi IndexedDB'den geri gelir
   await p.reload();await p.waitForTimeout(700);
   ok(await p.isHidden('#ders')&&/Derse devam et/.test(await p.textContent('#btnGo'))&&/45 \/ 60 dk/.test(await p.textContent('#meter')),'after reload: progress kept (45 / 60 dk logged from sessions), Ders modu closed');
-  await p.click('[data-tab=practice]');await p.waitForTimeout(400);
+  await H.tab(p,'practice');await p.waitForTimeout(400);
   ok((await p.$$eval('#ccLog .cc-row',e=>e.length))>=2&&/Tell me about your crew/.test(await p.textContent('#ccLog')),'chat history (chats collection) restored after reload');
   await p.click('#btnGo').catch(()=>{});await p.click('[data-tab=learn]');await p.click('#btnGo');await p.waitForSelector('#ders:not([hidden])');await p.waitForTimeout(500);
   await next(p,st);await p.waitForSelector('#dersDone:not([hidden])',{timeout:4000});
@@ -75,7 +75,7 @@ const PROG=s=>({program:{main:{start:s||'2026-09-22',weeks:12,dailyMin:60,mode:'
  {const {p,ctx,st}=await open({key:null,seed:PROG()},THU);
   ok(await p.isVisible('#learnMain')&&/Bugünkü dersi başlat/.test(await p.textContent('#btnGo')),'no key: dashboard + program work');
   ok(/API anahtarı gir/.test(await p.textContent('#heroHint'))&&await p.isHidden('#keyGate'),'no key: hero hint points to Ayarlar → Anahtar; gate card hidden until Başla');
-  await p.click('[data-tab=practice]');await p.waitForTimeout(300);
+  await H.tab(p,'practice');await p.waitForTimeout(300);
   ok(/API anahtarı gerekli/.test(await p.textContent('#ccLog'))&&await p.isDisabled('#ccIn')&&await p.isHidden('#pracBanner'),'no key: chat shows key card, input disabled');
   await p.click('#ccLog [data-go=key]');await p.waitForTimeout(400);ok(await p.isVisible('#keyCard')&&/Anahtar yok/.test(await p.textContent('#keyState')),'key card button → Ayarlar / Claude bağlantısı');
   await p.click('[data-tab=learn]');await p.click('#btnGo');await p.waitForTimeout(400);
@@ -92,10 +92,10 @@ const PROG=s=>({program:{main:{start:s||'2026-09-22',weeks:12,dailyMin:60,mode:'
   await p.waitForFunction(()=>/Bağlı/.test(document.querySelector('#keyState').textContent),null,{timeout:4000});
   ok(/Bağlı/.test(await p.textContent('#keyState'))&&await p.evaluate(()=>localStorage.getItem('tydil.apiKey'))===LONGKEY&&await p.isVisible('#btnKeyGo'),'key saved + verified: keyState Bağlı, "Dersi başlat" action in #keyMsg');
   await p.click('#btnKeyGo');await p.waitForSelector('#ders:not([hidden])',{timeout:4000});ok(await p.isVisible('#ders'),'Dersi başlat → Ders modu opens');await p.keyboard.press('Escape');await p.waitForTimeout(300);
-  await p.click('[data-tab=practice]');await p.waitForTimeout(300);ok(await p.isEnabled('#ccIn')&&/Chiara/.test(await p.textContent('#ccLog'))&&await p.isVisible('#pracBanner'),'after key: coaches unlocked without reload');
+  await H.tab(p,'practice');await p.waitForTimeout(300);ok(await p.isEnabled('#ccIn')&&/Chiara/.test(await p.textContent('#ccLog'))&&await p.isVisible('#pracBanner'),'after key: coaches unlocked without reload');
   ok(await p.$$eval('#tab-practice .cc-start, #pracGo',e=>e.filter(x=>x.offsetParent).length)===1,'Pratik: exactly one start CTA (banner) while lesson pending');
   await p.click('[data-tab=learn]');await p.waitForTimeout(100);ok(await p.isHidden('#keyGate'),'after key: gate card gone');
-  await p.click('[data-tab=setup]');await p.selectOption('#modelSel','claude-haiku-5-5');await p.click('[data-tab=learn]');await p.click('#btnGo');await p.waitForSelector('#ders:not([hidden])');await idle(p);await p.fill('#ccIn','ciao');await p.press('#ccIn','Enter');await idle(p);
+  await H.tab(p,'setup');await p.selectOption('#modelSel','claude-haiku-5-5');await p.click('[data-tab=learn]');await p.click('#btnGo');await p.waitForSelector('#ders:not([hidden])');await idle(p);await p.fill('#ccIn','ciao');await p.press('#ccIn','Enter');await idle(p);
   ok(st.reqs.length>0&&st.reqs[st.reqs.length-1].model==='claude-haiku-5-5','model choice from Ayarlar used in requests');
   // geçersiz anahtar: 401 → mesaj
   st.fail=()=>true;st.failStatus=401;await p.fill('#ccIn','ciao');await p.press('#ccIn','Enter');await idle(p);await p.waitForTimeout(200);
@@ -113,7 +113,7 @@ const PROG=s=>({program:{main:{start:s||'2026-09-22',weeks:12,dailyMin:60,mode:'
   const s2=await steps(p),days=await store(p,'days');ok(s2[1]==='+Kelime'&&s2[2]==='>Okuma-yazma'&&days['2026-10-08']&&days['2026-10-08'].fin.includes('it-kelime'),'Kaydetmeden geç → advances, fin persisted to days/2026-10-08 '+JSON.stringify(days['2026-10-08']&&days['2026-10-08'].fin));
   await p.reload();await p.waitForTimeout(600);await p.click('#btnGo');await p.waitForSelector('#ders:not([hidden])');await p.waitForTimeout(600);
   ok((await steps(p))[2]==='>Okuma-yazma','after reload: skipped block still done (days + localStorage)');
-  await p.keyboard.press('Escape');await p.click('[data-tab=setup]');await p.waitForTimeout(200);
+  await p.keyboard.press('Escape');await H.tab(p,'setup');await p.waitForTimeout(200);
   const dl=p.waitForEvent('download');await p.click('#btnBkDl');const d=await dl;const fp=path.join(H.SHOTS,'yedek.json');await d.saveAs(fp);
   const j=JSON.parse(require('fs').readFileSync(fp,'utf8'));ok(/^ty-dil-yedek-2026-10-08\.json$/.test(d.suggestedFilename())&&j.app==='TY-DIL'&&j.collections.program.main&&Object.keys(j.collections.sessions).length===1,'backup download: ty-dil-yedek-<date>.json with data');
   await p.click('#bkRestore summary');await p.fill('#bkPaste','{"app":"TY-DIL","format":1,"created":"2026-10-01T10:00:00Z","collections":{"program":{"main":{"start":"2026-09-01","weeks":12,"dailyMin":60,"mode":"yogun"}},"cards":{"k1":{"lang":"it","f":"la casa","tr":"ev","box":2,"due":"2026-10-08"}}}}');
@@ -121,7 +121,7 @@ const PROG=s=>({program:{main:{start:s||'2026-09-22',weeks:12,dailyMin:60,mode:'
   await p.click('#btnBkNo');ok((await p.textContent('#bkConfirm')).trim()===''&&(await store(p,'cards'))['k1']===undefined,'Vazgeç → nothing changed');
   await p.click('#btnBkRestore');await p.click('#btnBkYes');await p.waitForTimeout(1500);
   const cards=await store(p,'cards'),prog=await store(p,'program');ok(cards.k1&&cards.k1.f==='la casa'&&prog.main.start==='2026-09-01'&&Object.keys(cards).length===1,'restore replaced store + reloaded '+JSON.stringify(prog.main));
-  await p.click('[data-tab=setup]');await p.click('#bkRestore summary');await p.fill('#bkPaste','{"app":"X"}');await p.click('#btnBkRestore');ok(/TY Dil yedeği değil/.test(await p.textContent('#bkMsg')),'bad backup rejected');
+  await H.tab(p,'setup');await p.click('#bkRestore summary');await p.fill('#bkPaste','{"app":"X"}');await p.click('#btnBkRestore');ok(/TY Dil yedeği değil/.test(await p.textContent('#bkMsg')),'bad backup rejected');
   await ctx.close();}
 
  // D) Var olan program ezilmez; Pazar varyantı; Dersler sekmesi kancası
@@ -131,6 +131,6 @@ const PROG=s=>({program:{main:{start:s||'2026-09-22',weeks:12,dailyMin:60,mode:'
   const r=await p.evaluate(()=>{TYDIL.registerUnits(m=>{m.innerHTML='<article class="card" id="uOk"><h2>Üniteler</h2></article>';});return {tab:!!document.querySelector('[data-tab=units]').offsetParent,mount:!document.querySelector('#tyUnitsMount').hidden};});
   await p.click('[data-tab=units]');await p.waitForTimeout(200);
   ok(r.tab&&r.mount&&await p.isVisible('#uOk')&&await p.isVisible('#tab-units'),'TYDIL.registerUnits shows Dersler tab, renders into #tyUnitsMount on open');
-  ok((await p.$$eval('.tabs button',e=>e.filter(x=>!x.hidden).length))===5&&await hscroll(p),'5 tabs fit at 375, no h-scroll');
+  ok((await p.$$eval('.tabs button',e=>e.filter(x=>!x.hidden).length))===4&&await hscroll(p),'4 tabs fit at 375, no h-scroll');
   await ctx.close();}
  await b.close();srv.close();console.log('errors',errs);ok(!errs.length,'no console errors / dialogs');console.log(H.fails()?'FAILED':'ALL PASS');})().catch(e=>{console.error(e);process.exit(1);});

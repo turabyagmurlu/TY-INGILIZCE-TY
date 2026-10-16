@@ -30,7 +30,7 @@ const BIP=`(()=>{const e=new Event('beforeinstallprompt',{cancelable:true});wind
   const t=await p.textContent('#instCard');ok(/Telefona kur/.test(t)&&/ana ekrana simge ekler, tam ekran açılır/i.test(t)&&/Kur/.test(t)&&/Şimdi değil/.test(t),'card copy: Telefona kur · simge · tam ekran · Kur · Şimdi değil');
   ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'no h-scroll with card at 375');
   await p.screenshot({path:path.join(SHOTS,'learn_install_375.png')});
-  await p.click('[data-tab=setup]');await p.waitForTimeout(150);
+  await H.tab(p,'setup');await p.waitForTimeout(150);
   const rt=await p.textContent('#instRow');ok(await vis(p,'#instRow')&&/Telefona kur/.test(rt)&&/ana ekrana simge ekler, tam ekran açılır/i.test(rt)&&/Kur/.test(rt),'Ayarlar row: "Telefona kur — ana ekrana simge ekler, tam ekran açılır" + Kur');
   await p.click('#instRow [data-inst=go]');await p.waitForTimeout(150);
   ok((await p.evaluate(()=>window.__prompted))===1,'Kur → prompt() called once');
@@ -44,21 +44,21 @@ const BIP=`(()=>{const e=new Event('beforeinstallprompt',{cancelable:true});wind
  /* ---- B. Şimdi değil: kart ertelenir, Ayarlar satırı kalır ---- */
  {const {p,ctx}=await open({seed:PROG},ANDROID);await p.evaluate(BIP);await p.waitForTimeout(100);
   await p.click('#instCard [data-inst=later]');await p.waitForTimeout(100);
-  ok(!(await vis(p,'#instCard')),'Şimdi değil hides the Öğren card');await p.click('[data-tab=setup]');await p.waitForTimeout(100);ok(await vis(p,'#instRow')&&!!(await p.$('#instRow [data-inst=go]')),'Ayarlar row still offers Kur');
+  ok(!(await vis(p,'#instCard')),'Şimdi değil hides the Öğren card');await H.tab(p,'setup');await p.waitForTimeout(100);ok(await vis(p,'#instRow')&&!!(await p.$('#instRow [data-inst=go]')),'Ayarlar row still offers Kur');
   await p.click('#instRow [data-inst=go]');await p.waitForTimeout(100);await p.evaluate(()=>window.__choose({outcome:'dismissed'}));await p.waitForTimeout(150);
   ok(!!(await p.$('#instRow [data-inst=go]:not([disabled])')),'dismissed prompt → Kur usable again');
   await ctx.close();}
  /* ---- C. standalone (kurulu açılış): hiçbir kurulum öğesi yok ---- */
  {const {p,ctx}=await open({seed:PROG,init:`(()=>{const mm=window.matchMedia;window.matchMedia=q=>/display-mode: standalone/.test(q)?{matches:true,media:q,addEventListener(){},removeEventListener(){},addListener(){},removeListener(){}}:mm.call(window,q);})()`});
   await p.evaluate(BIP);await p.waitForTimeout(100);
-  ok(!(await vis(p,'#instCard')),'standalone: card hidden even with beforeinstallprompt');await p.click('[data-tab=setup]');await p.waitForTimeout(100);ok(!(await vis(p,'#instRow')),'standalone: Ayarlar row hidden');
+  ok(!(await vis(p,'#instCard')),'standalone: card hidden even with beforeinstallprompt');await H.tab(p,'setup');await p.waitForTimeout(100);ok(!(await vis(p,'#instRow')),'standalone: Ayarlar row hidden');
   await ctx.close();}
  /* ---- D. iOS Safari: 2 adımlı ipucu ---- */
  {const {p,ctx}=await open({seed:PROG},{userAgent:'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1',hasTouch:true,isMobile:true});
   const t=await p.textContent('#instCard');
   ok(await vis(p,'#instCard')&&/Paylaş/.test(t)&&/Ana Ekrana Ekle/.test(t)&&/1/.test(t)&&/2/.test(t)&&!/\bKur\b/.test(t),'iOS: 2-step hint "Paylaş → Ana Ekrana Ekle", no Kur button');
   ok((await p.$$('#instCard .instSteps svg')).length===2,'iOS hint shows share + add icons');
-  await p.click('[data-tab=setup]');await p.waitForTimeout(100);const r=await p.textContent('#instRow');ok(await vis(p,'#instRow')&&/Paylaş/.test(r)&&/Ana Ekrana Ekle/.test(r),'iOS: Ayarlar row shows the same 2 steps');
+  await H.tab(p,'setup');await p.waitForTimeout(100);const r=await p.textContent('#instRow');ok(await vis(p,'#instRow')&&/Paylaş/.test(r)&&/Ana Ekrana Ekle/.test(r),'iOS: Ayarlar row shows the same 2 steps');
   await ctx.close();}
  /* ---- E. Masaüstü Chrome: "Bilgisayara kur" ---- */
  {const {p,ctx}=await open({seed:PROG},{viewport:{width:1280,height:900},userAgent:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'});

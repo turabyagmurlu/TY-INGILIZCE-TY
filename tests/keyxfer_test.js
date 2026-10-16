@@ -8,7 +8,7 @@ const okHandler=async()=>({status:200,body:JSON.stringify({id:'m',type:'message'
   {const ctx=await b.newContext({viewport:{width:1280,height:900}});const p=await ctx.newPage();p.on('pageerror',e=>errs.push(e.message));
    await ctx.addInitScript(k=>{try{localStorage.setItem('tydil.apiKey',k);}catch(e){}},KEY);
    await H.mockApi(p,{},okHandler);
-   await p.goto(srv.base+'/index.html');await p.click('[data-tab="setup"]');await H.sleep(300);
+   await p.goto(srv.base+'/index.html');await H.tab(p,'setup');await H.sleep(300);
    H.ok(await p.isVisible('#btnKx')&&(await p.textContent('#btnKx')).trim()==='Başka cihaza aktar (QR)','Ayarlar: "Başka cihaza aktar (QR)" görünür (anahtar varken)');
    H.ok(/Telefon, tablet: aynı QR'ı her cihazla okut\./.test(await p.textContent('#kxRow')),'ipucu: Telefon, tablet: aynı QR\'ı her cihazla okut.');
    await p.click('#btnKx');await H.sleep(200);
@@ -26,7 +26,7 @@ const okHandler=async()=>({status:200,body:JSON.stringify({id:'m',type:'message'
    await ctx.close();}
   /* 2) Anahtar yokken satır gizli */
   {const ctx=await b.newContext({viewport:{width:375,height:800}});const p=await ctx.newPage();p.on('pageerror',e=>errs.push(e.message));
-   await p.goto(srv.base+'/index.html');await p.click('[data-tab="setup"]');await H.sleep(200);
+   await p.goto(srv.base+'/index.html');await H.tab(p,'setup');await H.sleep(200);
    H.ok(await p.isHidden('#kxRow'),'anahtar yokken QR satırı gizli');await ctx.close();}
   /* 3) Telefon: #k= ile açılış → kayıt, adres temiz, bildirim → Bağlandı */
   {const ctx=await b.newContext({viewport:{width:375,height:800},isMobile:true,hasTouch:true});const p=await ctx.newPage();p.on('pageerror',e=>errs.push(e.message));
@@ -37,7 +37,7 @@ const okHandler=async()=>({status:200,body:JSON.stringify({id:'m',type:'message'
    H.ok(st.h===''&&!/sk-ant/.test(st.u),'adres çubuğundan anahtar temizlendi');
    const t=await p.textContent('#kxToast');H.ok(/Bağlandı/.test(t),'bildirim: Bağlandı ('+t.trim().slice(0,40)+')');
    await p.screenshot({path:path.join(H.SHOTS,'keyxfer_phone_375.png')});
-   await p.click('[data-tab="setup"]');await H.sleep(200);
+   await H.tab(p,'setup');await H.sleep(200);
    H.ok(/Bağlı/.test(await p.textContent('#keyState')),'Ayarlar: Bağlı');
    await ctx.close();}
   /* 4) Hatalı kod → hata bildirimi, anahtar yok */

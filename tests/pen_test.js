@@ -23,11 +23,13 @@ const overlap=(a,b)=>!!(a&&b)&&a.l<b.r&&b.l<a.r&&a.t<b.b&&b.t<a.b;
 
  /* ---- A. Ders modunda koç mesajı: çip, kalem, renk, not, kaldır, yeniden çizim, yenileme ---- */
  {const {p,ctx}=await open({seed:PROG});
-  ok(await p.isVisible('#penFab')&&await p.evaluate(()=>document.querySelector('#penFab').getAttribute('aria-pressed')==='false'),'pen FAB visible on Öğren, aria-pressed=false');
-  /* FAB ana eylemle çakışmaz (Öğren #btnGo, Pratik #ccSend sayfa sonunda) */
-  ok(!overlap(await rect(p,'#penFab'),await rect(p,'#btnGo')),'FAB does not overlap #btnGo at 375');
-  await p.click('[data-tab=practice]');await p.waitForTimeout(200);await p.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));await p.waitForTimeout(100);
-  ok(!overlap(await rect(p,'#penFab'),await rect(p,'#ccSend'))&&!overlap(await rect(p,'#penFab'),await rect(p,'#ccNew')),'FAB does not overlap chat send / Yeni sohbet when scrolled to bottom');
+  /* v9: kalem yalnızca vurgulanacak metin olan ekranlarda (Yazışma, Dersler, İlerleme); Bugün'de yok; alt çubuğun üstünde */
+  ok(await p.isHidden('#penFab'),'pen FAB hidden on Bugün (no highlightable text)');
+  await H.tab(p,'practice');await p.waitForTimeout(200);
+  ok(await p.isHidden('#penFab'),'Yazışma: floating FAB hidden (would collide with chat input)');
+  {const t=await rect(p,'#penPrac'),sd=await rect(p,'#ccSend'),ti=await rect(p,'#ccIn'),mi=await rect(p,'#ccMic');ok(t&&t.w>=44&&t.h>=44&&!overlap(t,sd)&&!overlap(t,ti)&&!overlap(t,mi)&&await p.evaluate(()=>document.querySelector('#penPrac').getAttribute('aria-pressed')==='false'),'Yazışma: inline "Vurgula" pen toggle in the voice bar, ≥44 px, no overlap with send/textarea/mic '+JSON.stringify(t));}
+  await H.tab(p,'units');await p.waitForTimeout(200);
+  {const f=await rect(p,'#penFab'),n=await rect(p,'.tabs');ok(f&&n&&f.b<=n.t,'Dersler: pen FAB visible, above the bottom tab bar');}
   await p.click('[data-tab=learn]');await p.click('#btnGo');await p.waitForSelector('#ders:not([hidden])');await idle(p);await p.waitForTimeout(200);
   ok(await p.evaluate(()=>getComputedStyle(document.querySelector('#penFab')).display==='none'),'FAB hidden in Ders modu');
   const pd=await rect(p,'#penDers'), nx=await rect(p,'#dersNext'), send=await rect(p,'#ccSend'), ta=await rect(p,'#ccIn');
@@ -81,7 +83,7 @@ const overlap=(a,b)=>!!(a&&b)&&a.l<b.r&&b.l<a.r&&a.t<b.b&&b.t<a.b;
   ms=await marks(p,'#ccLog');ok(ms.length===1&&ms[0].t==='il cavo','Kaldır removes the green mark, pink stays');
   const thread=await p.evaluate(()=>TYDIL.chat.state.key);
   /* yenileme → vurgu yerinde (db'den) */
-  await p.reload();await p.waitForTimeout(700);await p.click('[data-tab=practice]');await p.waitForTimeout(600);
+  await p.reload();await p.waitForTimeout(700);await H.tab(p,'practice');await p.waitForTimeout(600);
   ms=await marks(p,'#ccLog');ok(ms.length===1&&ms[0].t==='il cavo'&&ms[0].c==='hl-pink'&&ms[0].note==='artikel il + cavo','after reload (Pratik): highlight re-attached with colour and note '+JSON.stringify(ms));
   const rec=await p.evaluate(()=>TYPEN.state.items.map(h=>({k:h.kind,thread:h.thread,turn:h.turn,q:h.quote,pre:h.prefix.length>0,suf:h.suffix.length>0})));
   ok(rec.length===1&&rec[0].k==='chat'&&rec[0].thread===thread&&typeof rec[0].turn==='number'&&rec[0].pre&&rec[0].suf,'record: chat anchor thread+turn with prefix/suffix '+JSON.stringify(rec));
@@ -89,13 +91,13 @@ const overlap=(a,b)=>!!(a&&b)&&a.l<b.r&&b.l<a.r&&a.t<b.b&&b.t<a.b;
   await p.evaluate(()=>{TYDIL.chat.state.turns.unshift({r:'u',c:'(eklenen eski mesaj)',t:Date.now()-99999});TYDIL.chat.render();});await p.waitForTimeout(250);
   ms=await marks(p,'#ccLog');ok(ms.length===1&&ms[0].t==='il cavo','turn index shifted → quote/prefix fallback still re-attaches');
   /* İlerleme → Vurgularım */
-  await p.click('[data-tab=progress]');await p.waitForTimeout(200);
+  await H.tab(p,'progress');await p.waitForTimeout(200);
   const list=await p.evaluate(()=>({n:document.querySelectorAll('#hlList .hlItem').length,txt:document.querySelector('#hlList').innerText,cnt:document.querySelector('#hlCount').textContent}));
   ok(list.n===1&&/Bugün/.test(list.txt)&&/Chiara/.test(list.txt)&&/il cavo/.test(list.txt)&&/artikel il \+ cavo/.test(list.txt)&&/Git/.test(list.txt)&&list.cnt==='1 vurgu','Vurgularım lists the highlight grouped by day with source, quote, note, Git');
   await p.click('#hlList [data-hgo]');await p.waitForTimeout(700);
   ok(!(await p.evaluate(()=>document.querySelector('#tab-practice').hidden))&&await p.evaluate(()=>{const m=document.querySelector('#ccLog mark.hl');const r=m.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}),'Git opens Pratik and scrolls the mark into view');
   /* hatalar listesi (İlerleme) de vurgulanır */
-  await p.click('[data-tab=progress]');await p.waitForTimeout(200);await p.evaluate(()=>document.querySelector('#mistakes').scrollIntoView({block:'center'}));await p.waitForTimeout(100);
+  await H.tab(p,'progress');await p.waitForTimeout(200);await p.evaluate(()=>document.querySelector('#mistakes').scrollIntoView({block:'center'}));await p.waitForTimeout(100);
   const gm=await p.evaluate(SELECT+`('#mistakes','essere/avere')`);await p.waitForTimeout(450);await p.click('#penChip');await p.waitForTimeout(250);
   ok(gm==='essere/avere'&&(await marks(p,'#mistakes')).length===1,'İlerleme mistakes list highlightable');
   await p.evaluate(()=>TYDIL.db.collection('sessions').doc('a').update({}));await p.waitForTimeout(250);ok((await marks(p,'#mistakes')).length===1,'mistakes highlight re-applied after renderLog');
@@ -135,7 +137,7 @@ const overlap=(a,b)=>!!(a&&b)&&a.l<b.r&&b.l<a.r&&a.t<b.b&&b.t<a.b;
   await p.reload();await p.waitForTimeout(600);await p.evaluate((a)=>{TYDIL.openTab('units');TYDIL.units.go(a);},'it/'+uid+'/'+step);await p.waitForTimeout(500);
   um=await marks(p,'#uView');ok(um.length===1&&um[0].t===txt,'after reload: unit mark persists');
   /* Vurgularım → Git ünite adımını açar */
-  await p.click('[data-tab=progress]');await p.waitForTimeout(200);const lt=await p.textContent('#hlList');
+  await H.tab(p,'progress');await p.waitForTimeout(200);const lt=await p.textContent('#hlList');
   ok(/Git/.test(lt)&&new RegExp(rec[0].title.split(' · ')[1]).test(lt),'list shows unit title · step');
   await p.click('#hlList [data-hgo]');await p.waitForTimeout(700);
   ok(/dersler\//.test(await p.evaluate(()=>location.hash))&&(await marks(p,'#uView')).length===1,'Git opens the unit step with the mark');

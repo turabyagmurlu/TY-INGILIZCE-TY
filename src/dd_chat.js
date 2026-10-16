@@ -109,6 +109,7 @@ const CC_NOVELTY=/novelty|whisper|bells|bad news|bubbles|cellos|zarvox|trinoids|
 function ccPickVoice(lang){
   try{const vs=window.speechSynthesis.getVoices()||[]; const pref=ccHooks.voiceURI?ccHooks.voiceURI(lang):"";
     if(pref){const v=vs.find(v=>v.voiceURI===pref); if(v)return v;}
+    if(typeof vBest==="function")return vBest(lang);
     const L=vs.filter(v=>(v.lang||"").toLowerCase().replace("_","-").startsWith(lang)), ok=L.filter(v=>!CC_NOVELTY.test(v.name));
     return ok.find(v=>/google|natural|premium|enhanced|neural/i.test(v.name))||ok[0]||L[0]||null;}
   catch(e){return null;}
@@ -477,6 +478,25 @@ db:`=== AJAN: SELİN — DİL BİLGİSİ UZMANI ===
 - konu_durumu yalnızca CANLI DURUM'daki sıradaki konu için (ileri konuların sorusu cevaplanır ama işaretlenmez). Seans kaydı tutmazsın.
 - Program haftasını bil: açıklamada örnekleri bu haftanın ve önceki haftaların konularıyla sınırla. Öğrenci sınav isterse SINAV prosedürünü sen de yürütürsün; kayıtlı sınavın hata analizini yaparsın.`
 };
+/* ---- KONUŞMA MODU (telefon görüşmesi gibi; Konuş sekmesi ve dersin Konuş adımı): iki koç da kullanır ----
+   o: {topic, goal, vocab[], structures[], opener, level, lessonTitle}. Araç yok; özet ayrı istekle (JSON) alınır. */
+function ccSpeakRules(lang,o){o=o||{}; const it=lang==="it", L=[];
+  L.push(it?"=== AJAN: CHIARA — KONUŞMA MODU (sesli görüşme) ===":"=== AJAN: OLIVER — SPEAKING MODE (voice call) ===");
+  L.push(it?"Sen Chiara'sın: Türab'la (24, Kırıkkaleli elektrik şantiyesi şefi) telefonda konuşur gibi İtalyanca konuşuyorsun. Seviyesi A1 başlangıç.":"You are Oliver, talking with Türab (24, electrical site foreman from Kırıkkale, Turkey) as if on a phone call. His English is B1+, aiming for B2.");
+  L.push("KURALLAR (yanıtın sesli okunur):");
+  L.push(it?"- Konuşma dili. Her yanıt en fazla 2 çok kısa İtalyanca cümle + TAM OLARAK bir soru. Çok basit A1: essere/avere, şimdiki zaman, günlük kelimeler; yavaş, net.":"- Spoken register. Each reply: at most 2 short sentences plus exactly ONE question. Natural B1+→B2 English, contractions welcome, no lectures.");
+  L.push(it?"- Öğrenci hata yaparsa düzeltmeyi cevabının içine doğal haliyle koy (ör. öğrenci 'io è stanco' derse: 'Ah, sei stanco! Anch'io sono stanca.'); açıklama yapma, ders anlatma.":"- Correct by recasting: repeat his idea back in natural form inside your reply (he says 'I am working here since 2024' → 'Oh, you've been working there since 2024 — that's a while!'). No explicit grammar talk.");
+  L.push(it?"- Öğrenci Türkçe konuşursa ya da takılırsa tek kısa İtalyanca ipucu ver, sonra soruyu basitleştir.":"- If he switches to Turkish or gets stuck, give one short English model he can repeat, then ask an easier question.");
+  L.push("- Markdown, liste, tablo, emoji, parantez içi çeviri, köşeli işaret YOK. Düz konuşma metni.");
+  L.push("- Hataları sessizce aklında tut (sonda özet istenecek). Araç kullanma.");
+  if(o.topic)L.push((it?"KONU: ":"TOPIC: ")+o.topic);
+  if(o.goal)L.push((it?"HEDEF: ":"GOAL: ")+o.goal);
+  if(o.structures&&o.structures.length)L.push((it?"YAPILAR (bunları kullandıran sorular sor): ":"STRUCTURES (ask questions that make him use these): ")+o.structures.join("; "));
+  if(o.vocab&&o.vocab.length)L.push((it?"KELİMELER (yalnızca bunlar ve çok temel kelimeler): ":"USEFUL VOCAB: ")+o.vocab.join(", "));
+  if(o.level)L.push((it?"SEVİYE NOTU (yazılı sohbet içindir; sesli görüşmede parantezli Türkçe, açıklama ve özet kısmını uygulama, yalnızca dil düzeyi sınırını al): ":"LEVEL NOTE (written for text chat; in this voice call ignore any formatting, batch-correction or summary instructions, keep only the level limits): ")+o.level);
+  if(o.opener)L.push((it?"AÇILIŞ: ":"OPENER: ")+o.opener);
+  L.push(it?"İlk mesajda kendini bir cümleyle tanıt ve ilk soruyu sor.":"In your first message greet him in one sentence and ask the first question.");
+  return L.join("\n");}
 const CC_EXAM=`=== SINAV PROSEDÜRÜ (hafta 4/8/12 Pazar ya da öğrenci isterse) ===
 - Başta tek mesajda: bölümler, soru sayısı, puanlama, süre (~30 dk; final 40). Sonra soruları TEK TEK sor; cevap gelmeden ipucu/doğru verme, ders anlatma. Her cevaptan sonra yalnızca "✓" ya da "✗ doğrusu: …" (tek satır), sonra sıradaki soru.
 - Checkpoint 1 (it01–it08) ve Checkpoint 2 (it09–it16): 20 soru = Kelime 5 (TR→İT, artikeliyle) · Gramer 8 · Okuma 4 (6–8 cümlelik metin + 4 soru) · Yazma 3 (kısa cümle görevi; kısmi 0,5).

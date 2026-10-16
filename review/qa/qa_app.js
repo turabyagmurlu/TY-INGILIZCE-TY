@@ -49,10 +49,10 @@ const tok=s=>Math.round(s.length/3.2);   // Turkish-heavy text with many diacrit
     topics:{it01:{status:'done',note:'<img src=x onerror=window.__xss=1>'}}},PROG);
   const {p,ctx,st}=await open({seed,handler:(req,st)=>({sse:[{text:payload},{tool:{name:'kelime_ekle',input:{lang:'it',items:[{f:'<img src=x onerror="window.__xss=1">',tr:'<svg/onload="window.__xss=1">'}]}}}]})});
   await p.evaluate(()=>window.__xss=0);
-  for(const t of ['learn','practice','progress','units','settings']){await p.click('[data-tab='+t+']').catch(()=>{});await sleep(300);}
-  await p.click('[data-tab=practice]');await sleep(200);await p.fill('#ccIn','x');await p.press('#ccIn','Enter');await idle(p).catch(()=>{});await sleep(400);
+  for(const t of ['learn','konus','cards','practice','progress','units','setup']){await H.tab(p,t).catch(()=>{});await sleep(300);}
+  await H.tab(p,'practice');await sleep(200);await p.fill('#ccIn','x');await p.press('#ccIn','Enter');await idle(p).catch(()=>{});await sleep(400);
   // cards tab / review
-  await p.click('[data-tab=progress]').catch(()=>{});await sleep(300);
+  await H.tab(p,'progress').catch(()=>{});await sleep(300);
   const x1=await p.evaluate(()=>window.__xss);ok(!x1,'XSS via coach markdown / tool input / imported docs: __xss='+x1);
   const html=await p.content();ok(!/<img src=x onerror=/.test(html.replace(/&lt;/g,'')),'no raw injected tag in DOM');
   // units notes
@@ -89,7 +89,7 @@ const tok=s=>Math.round(s.length/3.2);   // Turkish-heavy text with many diacrit
   console.log('  heap before/after 30 ders open-close cycles MB:',Math.round(h0/1048576),Math.round(h1/1048576),'| chat rows',rows);
   ok(h1-h0<15*1048576,'no gross leak over 30 cycles (Δ '+Math.round((h1-h0)/1048576)+' MB)');
   // 375 layout: no horizontal scroll on every tab
-  for(const t of ['learn','practice','progress','units','settings']){await p.click('[data-tab='+t+']').catch(()=>{});await sleep(250);const okw=await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1);ok(okw,'375: no horizontal scroll on tab '+t);}
+  for(const t of ['learn','konus','cards','practice','progress','units','setup']){await H.tab(p,t).catch(()=>{});await sleep(250);const okw=await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1);ok(okw,'375: no horizontal scroll on tab '+t);}
   await ctx.close();}
 
  /* ---- 4) service worker: registration, precache, offline reload, update flow ---- */
@@ -109,8 +109,8 @@ const tok=s=>Math.round(s.length/3.2);   // Turkish-heavy text with many diacrit
   // update flow: SW has skipWaiting+claim but page never reloads/prompts → new version applies on NEXT navigation only; API bypass check
   const swSrc=fs.readFileSync(path.join(H.ROOT,'sw.js'),'utf8');
   ok(/skipWaiting/.test(swSrc)&&/clients\.claim/.test(swSrc),'sw.js: skipWaiting + clients.claim');
-  ok(!/controllerchange|updatefound/.test(fs.readFileSync(path.join(H.ROOT,'index.html'),'utf8')),'NOTE: no controllerchange/updatefound handling in page → no "new version" prompt/reload (stale-while-revalidate: new HTML on the next load)');
+  {const ih=fs.readFileSync(path.join(H.ROOT,'index.html'),'utf8');ok(/controllerchange/.test(ih)&&/updatefound/.test(ih)&&/Yeni sürüm hazır/.test(ih),'v9: page handles updatefound/controllerchange → "Yeni sürüm hazır · Yenile" banner (tests/update_test.js)');}
   ok(/url\.origin !== self\.location\.origin/.test(swSrc),'sw.js: cross-origin (API) requests bypass SW');
-  ok(/cache: "no-cache"/.test(swSrc)&&/ty-dil-v8/.test(swSrc),'sw.js v5: stale-while-revalidate, background refresh with cache:"no-cache" (GitHub Pages 10-min max-age bypassed)');
+  ok(/cache: "no-cache"/.test(swSrc)&&/ty-dil-v9/.test(swSrc),'sw.js v5: stale-while-revalidate, background refresh with cache:"no-cache" (GitHub Pages 10-min max-age bypassed)');
   await ctx.close();}
  await b.close();srv.close();console.log('errors',errs);ok(!errs.length,'no page errors');console.log(H.fails()?'FAILED':'ALL PASS');})().catch(e=>{console.error(e);process.exit(1);});

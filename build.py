@@ -6,14 +6,16 @@ Kullanım: python3 build.py            → index.html
 Sıra (artifact build.py ile aynı, önüne rt.js eklendi):
   CSS : dd_head.html <style> + dd_chat.css + prog_style.css + focus_style.css + settings.css + voice.css + units.css
   Gövde: dd_head.html'in <style> dışındaki kısmı (<title> atılır; head'e taşınır)
-  JS  : rt.js (window.claude shim, önce) · (function(){ dd_data, dd_art, dd_logic, prog_logic, dd_chat, focus_logic, dd_parse, dd_instr, settings, voice, dd_events, units_data, units, install, pen, qr_vendor, keyxfer, sync })();  — units_* Dersler sekmesi (TYDIL.registerUnits ile bağlanır) · install: Telefona kur (PWA) · pen: vurgu kalemi · keyxfer: QR aktarım · sync: cihazlar arası senkron (GitHub Gist)
+  JS  : rt.js (window.claude shim, önce) · (function(){ dd_data, dd_art, dd_logic, prog_logic, dd_chat, focus_logic, dd_parse, dd_instr, settings, voice, dd_events, units_data, units, install, pen, keyxfer, sync, lx })();  — units_* Dersler sekmesi (TYDIL.registerUnits ile bağlanır) · install: Telefona kur (PWA) · pen: vurgu kalemi · keyxfer: QR aktarım · sync: cihazlar arası senkron (GitHub Gist)
   Son : service worker kaydı
+Tembel dosyalar (sw.js önbelleğe alır; gzip bütçesi): mod/lesson.js ← lesson.css + lesson.js + konus.js (ders ekranı + Konuş) · vendor/tyqr.js ← qr_vendor.js
+sw.js: FILES listesi content/index.json'dan üretilir (yeni ders = otomatik önbellek); BUILD damgası her içerik/kod değişiminde SW güncellemesini tetikler.
 """
-import os, re, sys
+import os, re, sys, json, hashlib
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
-CSS_PARTS = [("dd_chat.css", "SOHBET"), ("prog_style.css", "PROGRAM"), ("focus_style.css", "DERS MODU"), ("settings.css", "AYARLAR"), ("voice.css", "SES"), ("units.css", "DERSLER"), ("install.css", "TELEFONA KUR"), ("pen.css", "VURGU KALEMİ"), ("keyxfer.css", "ANAHTAR AKTARIMI"), ("sync.css", "SENKRON")]
-JS_PARTS = ["dd_data.js", "dd_art.js", "dd_logic.js", "prog_logic.js", "dd_chat.js", "focus_logic.js", "dd_parse.js", "dd_instr.js", "settings.js", "voice.js", "dd_events.js", "units_data.js", "units.js", "install.js", "pen.js", "qr_vendor.js", "keyxfer.js", "sync.js"]
+CSS_PARTS = [("dd_chat.css", "SOHBET"), ("prog_style.css", "PROGRAM"), ("focus_style.css", "DERS MODU"), ("settings.css", "AYARLAR"), ("voice.css", "SES"), ("units.css", "DERSLER"), ("install.css", "TELEFONA KUR"), ("pen.css", "VURGU KALEMİ"), ("keyxfer.css", "ANAHTAR AKTARIMI"), ("sync.css", "SENKRON"), ("nav.css", "GEZİNME")]
+JS_PARTS = ["dd_data.js", "dd_art.js", "dd_logic.js", "prog_logic.js", "dd_chat.js", "focus_logic.js", "dd_parse.js", "dd_instr.js", "settings.js", "voice.js", "dd_events.js", "lx.js", "units_data.js", "units.js", "install.js", "pen.js", "keyxfer.js", "sync.js"]
 THEME_LIGHT, THEME_DARK = "#F7F4EF", "#0F1722"
 
 # Satır başındaki /* … */ açıklama blokları çıktıdan atılır (kaynakta kalır; gzip boyutu GitHub Pages bütçesinin altında kalsın).
@@ -67,6 +69,56 @@ def build():
         f.write(out)
     return path, len(out.encode("utf-8"))
 
+MOD_PARTS = ["lesson.js", "konus.js"]
+def write(rel, text):
+    path = os.path.join(ROOT, rel); os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(text)
+    return text.encode("utf-8")
+
+def build_lazy():
+    css = strip_comments(read("lesson.css"))
+    js = strip_comments("".join(read(p) + "\n" for p in MOD_PARTS))
+    mod = ("/* TY Dil · ders ekranı + Konuş (tembel modül; build.py üretir, elle düzenleme) */\n(function(){\n\"use strict\";\nif(window.TYLESSON)return;\nconst LCSS=" +
+           json.dumps(css, ensure_ascii=False) + ";\n" + js + "})();\n")
+    qr = strip_comments(read("qr_vendor.js")) + "\nwindow.TYQR=TYQR;\n"
+    qr = "(function(){\n" + qr + "})();\n"
+    return write("mod/lesson.js", mod) + write("vendor/tyqr.js", qr)
+
+def content_files():
+    p = os.path.join(ROOT, "content", "index.json")
+    if not os.path.exists(p): return []
+    try:
+        with open(p, encoding="utf-8") as f: j = json.load(f)
+    except Exception as e:
+        print("UYARI: content/index.json okunamadı:", e); return ["content/index.json"]
+    lst = j if isinstance(j, list) else (j.get("lessons") or j.get("items") or [])
+    out = ["content/index.json"]
+    for e in lst:
+        e = {"id": e} if isinstance(e, str) else e
+        if not isinstance(e, dict) or not isinstance(e.get("id"), str): continue
+        fn = e.get("file") if isinstance(e.get("file"), str) and e["file"].endswith(".json") and ".." not in e["file"] else e["id"] + ".json"
+        fn = "content/" + re.sub(r"^content/", "", fn)
+        if os.path.exists(os.path.join(ROOT, fn)): out.append(fn)
+        else: print("UYARI: dizinde var ama dosya yok:", fn)
+    return out
+
+def build_sw(blob):
+    p = os.path.join(ROOT, "sw.js")
+    with open(p, encoding="utf-8") as f: sw = f.read()
+    files = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png",
+             "./legacy/ty-ingilizce.html", "./vendor/jsqr.js", "./vendor/tyqr.js", "./mod/lesson.js"] + ["./" + c for c in content_files()]
+    h = hashlib.sha256(blob)
+    for c in content_files():
+        with open(os.path.join(ROOT, c), "rb") as f: h.update(f.read())
+    sw = re.sub(r"(?m)^const FILES = .*$", "const FILES = " + json.dumps(files, ensure_ascii=False).replace('","', '", "') + ";", sw)
+    sw = re.sub(r'(?m)^const BUILD = .*$', 'const BUILD = "' + h.hexdigest()[:12] + '";', sw)
+    with open(p, "w", encoding="utf-8") as f: f.write(sw)
+    return len(files)
+
 if __name__ == "__main__":
     p, n = build()
-    print("built", os.path.relpath(p, ROOT), n, "bytes")
+    blob = build_lazy()
+    with open(p, "rb") as f: blob += f.read()
+    k = build_sw(blob)
+    print("built", os.path.relpath(p, ROOT), n, "bytes · mod/lesson.js + vendor/tyqr.js · sw.js", k, "dosya")

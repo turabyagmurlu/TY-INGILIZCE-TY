@@ -12,7 +12,7 @@ const LS_KEY="tydil.apiKey", LS_SET="tydil.settings", LS_DB="tydil.db", LS_LEGAC
 /* Senkron (sync.js): cihaz kimliği + belge başına {ts,dev,del?} + localStorage anahtarlarının {ts,h} kaydı. Token/gist kimliği burada okunmaz/yazılmaz (yalnızca QR içe aktarma). */
 const LS_DEV="tydil.sync.dev", LS_LSMETA="tydil.sync.lsmeta", LS_STOKEN="tydil.sync.token", LS_SGIST="tydil.sync.gist";
 const SYNC_LS=["tydil-mode-last",LS_SET,LS_LEGACY], TOMB_DAYS=60;
-const COLLS=["sessions","topics","program","habits","exams","days","cards","chats","highlights"];
+const COLLS=["sessions","topics","program","habits","exams","days","cards","chats","highlights","lessons"];
 const MODELS=[
   {id:"claude-sonnet-5-5",name:"Claude Sonnet 5.5",note:"önerilen · hız ve kalite dengesi"},
   {id:"claude-opus-5-5",name:"Claude Opus 5.5",note:"daha güçlü · yaklaşık 2× pahalı"},

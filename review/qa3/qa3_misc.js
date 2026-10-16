@@ -27,12 +27,12 @@ const clock=t=>`(()=>{const R=Date,off=${t}-R.now();window.__shift=0;class FD ex
   ok(!v.mic&&!v.hands&&/sesli giriş yok; Chrome kullan/.test(v.note),'no SR: mic + hands-free hidden, hint shown: '+JSON.stringify(v));
   ok(await p.isVisible('#dersNoMic')&&/sesli giriş yok; Chrome kullan/.test(await p.textContent('#dersNoMic')),'no SR: hint visible inside Ders mode (#dersNoMic in footer)');
   await p.fill('#ccIn','ciao');await p.press('#ccIn','Enter');await idle(p);
-  await p.click('#dersExit');await p.click('[data-tab=practice]');await p.waitForTimeout(300);
+  await p.click('#dersExit');await H.tab(p,'practice');await p.waitForTimeout(300);
   ok(await p.isVisible('#vcNote'),'no SR: hint visible in Pratik chat');
   await p.click('#vcNote .vc-x');ok(!(await p.$('#vcNote'))&&await p.evaluate(()=>/noted/.test(localStorage.getItem('tydil.voice')||'')),'no SR: hint dismissable + remembered');
   await p.click('[data-tab=learn]');await p.click('#btnGo');await p.waitForSelector('#ders:not([hidden])');ok(!(await p.$('#dersNoMic')),'no SR: Ders hint gone too after dismiss');await p.keyboard.press('Escape');await p.waitForTimeout(200);
   // Ayarlar → Ses card says why
-  await p.click('[data-tab=setup]');await p.waitForTimeout(300);
+  await H.tab(p,'setup');await p.waitForTimeout(300);
   const setTxt=await p.textContent('#tab-setup');ok(/sesli giriş yok; Chrome kullan/.test(setTxt),'no SR: Ayarlar → Ses explains (hint text present)');
   ok(!myErrs.length,'no SR: no page errors');await ctx.close();}
  /* no speechSynthesis either (very old WebView) */
@@ -112,7 +112,7 @@ const clock=t=>`(()=>{const R=Date,off=${t}-R.now();window.__shift=0;class FD ex
   ok(!x1,'XSS via all tool inputs (seans_kaydet hatalar/not/sonraki, konu_durumu not, sinav_kaydet notlar, kelime_ekle ex) + done screen: __xss='+x1);
   ok(!/<img src=x onerror=/.test(raw1)&&!/<svg onload=/.test(raw1),'no raw payload tags in DOM after lesson');
   await p.click('#dersExit').catch(()=>{});await p.waitForTimeout(200);
-  for(const t of ['progress','practice','learn','setup']){await p.click('[data-tab='+t+']');await p.waitForTimeout(300);}
+  for(const t of ['progress','practice','learn','setup']){await H.tab(p,t);await p.waitForTimeout(300);}
   // open card practice if available
   const x2=await p.evaluate(()=>window.__xss);const raw2=await p.evaluate(()=>document.body.innerHTML);
   ok(!x2&&!/<img src=x onerror=/.test(raw2)&&!/<svg onload=/.test(raw2),'XSS: progress/practice/setup tabs render stored payloads escaped');

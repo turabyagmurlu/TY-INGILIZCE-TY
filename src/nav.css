@@ -1,0 +1,68 @@
+/* Gezinme: ≤1024 alt sekme çubuğu (güvenli alan, ikon + etiket, ≥44 px) · >1024 üst çubukta aynı 4 öğe · "Ben" sayfası · güncelleme bandı · günün planı · Benim derslerim */
+.benBtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;padding:6px 14px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);font-weight:800;font-size:15px;flex:none}
+.benBtn .ico{width:19px;height:19px}
+.benBtn:hover,.benBtn[aria-expanded="true"],.benBtn.on{border-color:var(--primary);background:var(--primary-bg)}
+.tabs button{border:0;background:transparent}
+.tabs button .tl{white-space:nowrap}
+@media (max-width:1024px){
+  .barIn{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand side"}
+  .barSide{justify-content:flex-end}
+  .tabs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.06);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));gap:4px}
+  .tabs button{flex-direction:column;gap:2px;padding:5px 4px;min-height:54px;border-radius:12px;color:var(--muted);font-size:12.5px}
+  .tabs .cnt{position:absolute;top:3px;right:calc(50% - 30px)}
+  .tabs button[aria-selected="true"]{background:var(--primary-bg);color:var(--primary-ink)}
+  .tabs button:hover{border-color:transparent;color:var(--primary-ink)}
+  .wrap{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+  .pen-fab{bottom:calc(82px + env(safe-area-inset-bottom,0px))!important}
+}
+@media (min-width:1025px){
+  .barIn{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"brand tabs side"}
+  .tabs{display:flex;justify-content:center;gap:4px}
+  .tabs button{flex-direction:row;gap:8px;min-height:44px;padding:6px 14px;font-size:15px;border-radius:12px;color:var(--primary-ink)}
+  .tabs button .ico{width:19px;height:19px}
+  .tabs button[aria-selected="true"]{background:var(--primary-bg)}
+  .tabs .cnt{position:static}
+}
+/* Okuma ekranları (tablet/masaüstü): ortada en çok ~760 px */
+#tab-learn,#tab-cards,#tab-konus,#myLessons{max-width:760px;width:100%;margin-inline:auto}
+html:not(.tab-practice):not(.tab-units):not(.tab-progress) .pen-fab,html.lsn-on .pen-fab,html.kc-on .pen-fab{display:none!important}
+/* Ben sayfası */
+.benSheet{position:fixed;inset:0;z-index:60;display:grid;align-items:end}
+.benBack{position:absolute;inset:0;background:rgba(10,16,26,.42)}
+.benBox{position:relative;background:var(--card);border-radius:20px 20px 0 0;padding:14px 16px calc(18px + env(safe-area-inset-bottom,0px));display:grid;gap:8px;max-width:520px;width:100%;margin:0 auto;box-shadow:var(--shadow)}
+.benHead{display:flex;justify-content:space-between;align-items:center}
+.benHead h2{margin:0;font-size:21px;color:var(--heading)}
+.benX{min-width:44px;min-height:44px;border:0;background:transparent;font-size:26px;color:var(--muted);border-radius:12px}
+.benItem{display:grid;text-align:left;gap:2px;min-height:60px;padding:12px 16px;border-radius:14px;border:2px solid var(--line);background:var(--sand);color:var(--text)}
+.benItem b{font-size:17px;color:var(--primary-ink)}
+.benItem small{color:var(--muted);font-size:14px}
+.benItem:hover{border-color:var(--primary)}
+@media (min-width:1025px){.benSheet{align-items:start}.benBox{border-radius:18px;margin:72px 24px 0 auto;max-width:380px}}
+/* Güncelleme bandı */
+.updBar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:58;display:flex;align-items:center;gap:12px;background:var(--heading);color:var(--card);border-radius:999px;padding:6px 6px 6px 18px;box-shadow:var(--shadow);font-weight:700;font-size:15px;max-width:calc(100vw - 32px)}
+.updBar button{min-height:44px;padding:8px 18px;border-radius:999px;border:0;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:15px}
+/* Günün planı (Bugün kartı) */
+.dayPlan{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.dayPlan li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;align-items:center;padding:8px 12px;border-radius:14px;background:var(--sand);border:2px solid transparent}
+.dayPlan li.next{border-color:var(--primary);background:var(--primary-bg)}
+.dayPlan li.done{opacity:.8}
+.dayPlan .pn{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;background:var(--card);color:var(--primary-ink);border:2px solid var(--line2)}
+.dayPlan li.done .pn{background:var(--good);border-color:var(--good);color:#fff}
+.dayPlan li.done .pn .ico{width:18px;height:18px;stroke-width:2.6}
+.dayPlan b{display:block;font-size:16px;line-height:1.3}
+.dayPlan small{display:block;color:var(--muted);font-size:14px;line-height:1.35}
+/* Benim derslerim (Dersler sekmesinin üstü) */
+.myLessons h2{margin:0}
+.myList{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.myList button{width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;min-height:58px;padding:10px 14px;border-radius:14px;border:2px solid var(--line);background:var(--sand);color:var(--text)}
+.myList button:hover{border-color:var(--primary)}
+.myList b{display:block;font-size:16px}
+.myList small{display:block;color:var(--muted);font-size:13.5px}
+.myList .lst{font-size:13px;font-weight:800;border-radius:999px;padding:4px 10px;background:var(--soft);color:var(--primary-ink);white-space:nowrap}
+.myList .lst.ok{background:var(--good-bg);color:var(--good-ink)}
+.myList .lst.go{background:var(--accent-bg);color:var(--accent-ink)}
+.vTip{display:flex;gap:10px;align-items:flex-start;background:var(--accent-bg);color:var(--text);border-radius:12px;padding:10px 12px;font-size:14.5px;line-height:1.45}
+.vTip span{flex:1}
+.vTip button{min-width:44px;min-height:44px;margin:-8px -6px -8px 0;border:0;background:transparent;color:var(--muted);font-size:22px;border-radius:10px;flex:none}
+@media (max-width:1024px){.updBar{bottom:calc(80px + env(safe-area-inset-bottom,0px))}}
+@media (max-width:1024px){html.tab-practice .wrap,html.tab-units .wrap,html.tab-progress .wrap{padding-bottom:calc(164px + env(safe-area-inset-bottom,0px))}}
