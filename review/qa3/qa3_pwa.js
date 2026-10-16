@@ -1,4 +1,4 @@
-/* QA3: PWA under GitHub Pages sub-path /TY-INGILIZCE-TY/ — manifest validity, SW precache (ty-dil-v6), offline reload,
+/* QA3: PWA under GitHub Pages sub-path /TY-INGILIZCE-TY/ — manifest validity, SW precache (ty-dil-v7), offline reload,
    update flow (old cache deleted, new SW takes over), legacy page offline, icon dimensions.
    NODE_PATH=$(npm root -g) node review/qa3/qa3_pwa.js */
 const H=require('../../tests/_h.js');const {ok,sleep}=H;const http=require('http');const fs=require('fs');const path=require('path');const net=require('net');
@@ -12,7 +12,7 @@ function serve(){return new Promise(res=>{const s=http.createServer((req,r)=>{co
   if(!u.pathname.startsWith(PFX+'/')){r.writeHead(404);return r.end('nf');}
   let rel=decodeURIComponent(u.pathname.slice(PFX.length+1));if(rel===''||rel.endsWith('/'))rel+='index.html';
   const fp=path.join(H.ROOT,rel);if(!fp.startsWith(H.ROOT)||!fs.existsSync(fp)||fs.statSync(fp).isDirectory()){r.writeHead(404);return r.end('nf');}
-  let body=fs.readFileSync(fp);if(rel==='sw.js'&&swVer)body=Buffer.from(body.toString().replace('"ty-dil-v6"','"ty-dil-v'+swVer+'"'));
+  let body=fs.readFileSync(fp);if(rel==='sw.js'&&swVer)body=Buffer.from(body.toString().replace('"ty-dil-v7"','"ty-dil-v'+swVer+'"'));
   r.writeHead(200,{'content-type':MIME[path.extname(fp)]||'application/octet-stream','cache-control':'max-age=600'});r.end(body);});
   s.listen(0,'127.0.0.1',()=>res({base:'http://127.0.0.1:'+s.address().port,close:()=>s.close()}));});}
 const offline=async(srv,on)=>{await H.get(srv.base+'/__pause?on='+(on?1:0)).catch(()=>{});};
@@ -40,9 +40,9 @@ const png=b=>({w:b.readUInt32BE(16),h:b.readUInt32BE(20)});
  await p.goto(APP);
  await p.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();return !!(r&&r.active)&&(await caches.keys()).length===1;},null,{timeout:15000}).catch(()=>{});
  await p.reload();await p.waitForTimeout(800);
- const sw=await p.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();const keys=await caches.keys();const c=await caches.open('ty-dil-v6');const ks=(await c.keys()).map(r=>new URL(r.url).pathname);return {scope:reg&&reg.scope,active:!!(reg&&reg.active),ctrl:!!navigator.serviceWorker.controller,keys,ks};});
+ const sw=await p.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();const keys=await caches.keys();const c=await caches.open('ty-dil-v7');const ks=(await c.keys()).map(r=>new URL(r.url).pathname);return {scope:reg&&reg.scope,active:!!(reg&&reg.active),ctrl:!!navigator.serviceWorker.controller,keys,ks};});
  ok(sw.active&&sw.ctrl&&/\/TY-INGILIZCE-TY\/$/.test(sw.scope),'SW active + controlling, scope '+sw.scope);
- ok(JSON.stringify(sw.keys)===JSON.stringify(['ty-dil-v6']),'caches after activate: '+JSON.stringify(sw.keys)+' (old ty-dil-v1 deleted)');
+ ok(JSON.stringify(sw.keys)===JSON.stringify(['ty-dil-v7']),'caches after activate: '+JSON.stringify(sw.keys)+' (old ty-dil-v1 deleted)');
  const need=['/TY-INGILIZCE-TY/','/TY-INGILIZCE-TY/index.html','/TY-INGILIZCE-TY/manifest.webmanifest','/TY-INGILIZCE-TY/icon-192.png','/TY-INGILIZCE-TY/legacy/ty-ingilizce.html','/TY-INGILIZCE-TY/apple-touch-icon.png','/TY-INGILIZCE-TY/icon-512.png','/TY-INGILIZCE-TY/icon-maskable-512.png'];
  ok(need.every(n=>sw.ks.includes(n)),'precache has all FILES under sub-path: missing '+need.filter(n=>!sw.ks.includes(n)).join(','));
 
@@ -59,16 +59,16 @@ const png=b=>({w:b.readUInt32BE(16),h:b.readUInt32BE(20)});
  ok(t3.title==='TY Dil','offline unknown navigation → falls back to cached index.html '+JSON.stringify(t3));
  await p2.close();await p3.close();await offline(srv,false);
 
- /* update flow: new sw.js (CACHE v6) deployed → old cache ty-dil-v6 deleted, new SW controls after reload */
- await H.get(srv.base+'/__swver?v=7');
+ /* update flow: new sw.js (CACHE v8) deployed → old cache ty-dil-v7 deleted, new SW controls after reload */
+ await H.get(srv.base+'/__swver?v=8');
  await p.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();});
- await p.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();const ks=await caches.keys();return ks.includes('ty-dil-v7')&&!r.installing&&!r.waiting;},null,{timeout:15000}).catch(()=>{});
+ await p.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();const ks=await caches.keys();return ks.includes('ty-dil-v8')&&!r.installing&&!r.waiting;},null,{timeout:15000}).catch(()=>{});
  {const tl=[];for(let i=0;i<10;i++){tl.push((await p.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();return (await caches.keys()).join('+')+' act='+(r.active&&r.active.state)+' inst='+(r.installing&&r.installing.state)+' wait='+(r.waiting&&r.waiting.state)+' ctrl='+(navigator.serviceWorker.controller?'y':'n');})));await sleep(300);}console.log('  update timeline:',tl.join(' | '));}
- const up=await p.evaluate(async()=>{const o={keys:await caches.keys()};if(o.keys.includes('ty-dil-v7')){const c=await caches.open('ty-dil-v7');o.v2=(await c.keys()).map(r=>new URL(r.url).pathname);}return o;});
+ const up=await p.evaluate(async()=>{const o={keys:await caches.keys()};if(o.keys.includes('ty-dil-v8')){const c=await caches.open('ty-dil-v8');o.v2=(await c.keys()).map(r=>new URL(r.url).pathname);}return o;});
  if(up.v2)console.log('  v2 leftover entries:',JSON.stringify(up.v2));
- ok(JSON.stringify(up.keys)===JSON.stringify(['ty-dil-v7']),'after SW update: caches '+JSON.stringify(up.keys)+' (v6 removed by activate)');
+ ok(JSON.stringify(up.keys)===JSON.stringify(['ty-dil-v8']),'after SW update: caches '+JSON.stringify(up.keys)+' (v7 removed by activate)');
  await p.reload();await p.waitForTimeout(500);
- const up2=await p.evaluate(async()=>{const c=await caches.open('ty-dil-v7');return {n:(await c.keys()).length,ok:!!navigator.serviceWorker.controller};});
+ const up2=await p.evaluate(async()=>{const c=await caches.open('ty-dil-v8');return {n:(await c.keys()).length,ok:!!navigator.serviceWorker.controller};});
  ok(up2.ok&&up2.n>=8,'new SW controls + repopulated precache ('+up2.n+' entries)');
  await offline(srv,true);await p.reload().catch(e=>errs.push('offline after update '+e.message));await p.waitForTimeout(400);
  ok(await p.evaluate(()=>document.title==='TY Dil'),'offline still works after update');

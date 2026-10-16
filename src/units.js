@@ -34,7 +34,7 @@ function applyLangData(o){ o=o||defaultLangData(); US.completedLessons=o.complet
   const nt=o.notes, notes={}; if(nt&&typeof nt==="object"&&!Array.isArray(nt)) Object.keys(nt).forEach(k=>{ const n=nt[k]; if(n&&typeof n==="object"&&typeof n.text==="string"&&n.text.trim()) notes[k]={text:n.text, updatedAt:+n.updatedAt||0}; });
   US.notes=notes; }
 let lastSaved="";
-function saveState(){ try{ if(US.lang){ US.langStore[US.lang]=snapshotActive(); } lastSaved=JSON.stringify(US); localStorage.setItem(STORE_KEY, lastSaved); }catch(e){} }
+function saveState(){ try{ if(US.lang){ US.langStore[US.lang]=snapshotActive(); } lastSaved=JSON.stringify(US); localStorage.setItem(STORE_KEY, lastSaved); }catch(e){} try{ if(window.TYRT&&TYRT.sync) TYRT.sync.lsTouch(STORE_KEY); }catch(e){} }
 /* Başka sekme/eski TY İngilizce sayfası aynı anahtara yazdıysa (annenin telefonunda iki sayfa açık): bizim kopya bayatlamasın, ezmeyelim */
 function externalChanged(){ try{ const raw=localStorage.getItem(STORE_KEY); return !!raw&&raw!==lastSaved; }catch(e){ return false; } }
 function reloadIfChanged(){ if(!externalChanged()) return false; if(NP.dirty) npFlush(); US=loadState(); setLanguage(US.lang||"it",{skipSaveOld:true}); US.streak=computeStreak(); applyFont(); if(mounted&&!(ctx&&ctx.questions&&!ctx.finished&&curScreen==="quiz")){ if(parseHash()) route(); else go(US.lang||"it",true); } return true; }

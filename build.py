@@ -6,15 +6,21 @@ Kullanım: python3 build.py            → index.html
 Sıra (artifact build.py ile aynı, önüne rt.js eklendi):
   CSS : dd_head.html <style> + dd_chat.css + prog_style.css + focus_style.css + settings.css + voice.css + units.css
   Gövde: dd_head.html'in <style> dışındaki kısmı (<title> atılır; head'e taşınır)
-  JS  : rt.js (window.claude shim, önce) · (function(){ dd_data, dd_art, dd_logic, prog_logic, dd_chat, focus_logic, dd_parse, dd_instr, settings, voice, dd_events, units_data, units, install, pen })();  — units_* Dersler sekmesi (TYDIL.registerUnits ile bağlanır) · install: Telefona kur (PWA) · pen: vurgu kalemi
+  JS  : rt.js (window.claude shim, önce) · (function(){ dd_data, dd_art, dd_logic, prog_logic, dd_chat, focus_logic, dd_parse, dd_instr, settings, voice, dd_events, units_data, units, install, pen, qr_vendor, keyxfer, sync })();  — units_* Dersler sekmesi (TYDIL.registerUnits ile bağlanır) · install: Telefona kur (PWA) · pen: vurgu kalemi · keyxfer: QR aktarım · sync: cihazlar arası senkron (GitHub Gist)
   Son : service worker kaydı
 """
 import os, re, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
-CSS_PARTS = [("dd_chat.css", "SOHBET"), ("prog_style.css", "PROGRAM"), ("focus_style.css", "DERS MODU"), ("settings.css", "AYARLAR"), ("voice.css", "SES"), ("units.css", "DERSLER"), ("install.css", "TELEFONA KUR"), ("pen.css", "VURGU KALEMİ"), ("keyxfer.css", "ANAHTAR AKTARIMI")]
-JS_PARTS = ["dd_data.js", "dd_art.js", "dd_logic.js", "prog_logic.js", "dd_chat.js", "focus_logic.js", "dd_parse.js", "dd_instr.js", "settings.js", "voice.js", "dd_events.js", "units_data.js", "units.js", "install.js", "pen.js", "qr_vendor.js", "keyxfer.js"]
+CSS_PARTS = [("dd_chat.css", "SOHBET"), ("prog_style.css", "PROGRAM"), ("focus_style.css", "DERS MODU"), ("settings.css", "AYARLAR"), ("voice.css", "SES"), ("units.css", "DERSLER"), ("install.css", "TELEFONA KUR"), ("pen.css", "VURGU KALEMİ"), ("keyxfer.css", "ANAHTAR AKTARIMI"), ("sync.css", "SENKRON")]
+JS_PARTS = ["dd_data.js", "dd_art.js", "dd_logic.js", "prog_logic.js", "dd_chat.js", "focus_logic.js", "dd_parse.js", "dd_instr.js", "settings.js", "voice.js", "dd_events.js", "units_data.js", "units.js", "install.js", "pen.js", "qr_vendor.js", "keyxfer.js", "sync.js"]
 THEME_LIGHT, THEME_DARK = "#F7F4EF", "#0F1722"
+
+# Satır başındaki /* … */ açıklama blokları çıktıdan atılır (kaynakta kalır; gzip boyutu GitHub Pages bütçesinin altında kalsın).
+# Lisans/telif içerenler korunur. Satır içi açıklamalara ve HTML gövdesine dokunulmaz.
+_CMT = re.compile(r"(?m)^[ \t]*/\*[\s\S]*?\*/[ \t]*\n")
+def strip_comments(src):
+    return _CMT.sub(lambda m: m.group(0) if re.search(r"Copyright|MIT|lisans", m.group(0)) else "", src)
 
 def read(name):
     with open(os.path.join(SRC, name), encoding="utf-8") as f:
@@ -30,8 +36,9 @@ def build():
     body = head[b + len("</style>"):].strip("\n")
     for name, lbl in CSS_PARTS:
         css += "\n/* ---- " + lbl + " ---- */\n" + read(name) + "\n"
-    rt = read("rt.js")
-    app = "".join(read(p) + "\n" for p in JS_PARTS)
+    css = strip_comments(css)
+    rt = strip_comments(read("rt.js"))
+    app = strip_comments("".join(read(p) + "\n" for p in JS_PARTS))
     js = "(function(){\n\"use strict\";\n" + app + "})();"
     sw = ('if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").catch(()=>{});});}')
     out = ("<!doctype html>\n<html lang=\"tr\">\n<head>\n"

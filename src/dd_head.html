@@ -526,7 +526,7 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
           <div class="keyRow"><input type="password" id="apiKey" autocomplete="off" spellcheck="false" placeholder="sk-ant-…" aria-describedby="keyNote"><button type="button" class="btn btn-ghost btn-sm keyEye" id="keyEye" aria-pressed="false" aria-label="Anahtarı göster">Göster</button></div>
           <div class="btnRow"><button type="button" class="btn btn-primary" id="btnKeySave">Kaydet</button><button type="button" class="btn btn-soft" id="btnKeyTest">Bağlantıyı test et</button><button type="button" class="btn btn-ghost" id="btnKeyDel" hidden>Anahtarı sil</button></div>
           <div id="keyMsg"></div>
-          <div class="kxRow" id="kxRow" hidden><button type="button" class="btn btn-soft" id="btnKx" aria-expanded="false" aria-controls="kxBox">Telefona aktar (QR)</button><span class="hint">Telefonda anahtarı yeniden girmeden bağlan.</span></div>
+          <div class="kxRow" id="kxRow" hidden><button type="button" class="btn btn-soft" id="btnKx" aria-expanded="false" aria-controls="kxBox">Başka cihaza aktar (QR)</button><span class="hint">Telefon, tablet: aynı QR'ı her cihazla okut.</span></div>
           <div class="kxBox" id="kxBox" hidden></div>
           <label class="fl" for="modelSel">Model</label>
           <select class="inp" id="modelSel" aria-describedby="modelNote"></select>
@@ -534,11 +534,38 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
           <p class="hint" id="keyNote">Anahtar yalnızca bu cihazda saklanır. Max planında aylık API kredisi dahildir; claude.ai → Ayarlar → Faturalandırma → Link organization, sonra console.anthropic.com'dan anahtar al.</p>
         </div>
       </article>
+      <article class="card syncCard" id="syncCard" aria-labelledby="syncTitle">
+        <div class="chead"><div><h2 id="syncTitle">Cihazlar arası senkron</h2><p class="lead">Bilgisayar, telefon ve tablet aynı ilerlemeyi gösterir; kayıtlar GitHub hesabındaki gizli bir Gist'te birleşir.</p></div><span class="keySt off" id="syncState">Kapalı</span></div>
+        <div class="keyForm">
+          <div id="syncOff">
+            <label class="fl" for="syncToken">GitHub token</label>
+            <div class="keyRow syncRow"><input type="password" id="syncToken" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="github_pat_…" aria-describedby="syncNote"><button type="button" class="btn btn-primary" id="btnSyncConnect">Bağla</button></div>
+            <details class="syncHow" id="syncHow"><summary><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Token nasıl alınır?</summary>
+              <ol class="syncSteps">
+                <li><b>github.com</b>'a gir → sağ üstte profil resmi → <b>Settings</b>.</li>
+                <li>Sol menünün en altı: <b>Developer settings</b> → <b>Personal access tokens</b> → <b>Fine-grained tokens</b> → <b>Generate new token</b>.</li>
+                <li>Token name: <b>TY Dil</b></li>
+                <li>Expiration: listedeki <b>en uzun</b> süreyi seç. Süresi dolunca yenisini oluşturup buraya yapıştır.</li>
+                <li>Repository access: <b>Public repositories</b></li>
+                <li>Permissions → <b>Account permissions</b> → <b>Gists</b> → <b>Read and write</b></li>
+                <li><b>Generate token</b> → çıkan kodu kopyala (github_pat_ ile başlar), yukarıya yapıştır, <b>Bağla</b>.</li>
+              </ol>
+              <a class="btn btn-soft btn-sm syncLink" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Token sayfasını aç ↗</a>
+            </details>
+          </div>
+          <div id="syncOn" hidden>
+            <p class="syncStatus" id="syncStatus" role="status" aria-live="polite"></p>
+            <div class="btnRow"><button type="button" class="btn btn-primary" id="btnSyncNow">Şimdi senkronla</button><button type="button" class="btn btn-ghost" id="btnSyncOff">Bağlantıyı kes</button></div>
+          </div>
+          <div id="syncMsg"></div>
+          <p class="hint" id="syncNote">Otomatik çalışır: açılışta, uygulamaya dönünce ve her kayıttan kısa süre sonra. Claude anahtarı ve GitHub token'ı senkrona girmez; her cihazda yerel kalır.</p>
+        </div>
+      </article>
       <article class="card progSetup" id="progSetup" aria-labelledby="progSetupTitle"></article>
       <article class="card instRow" id="instRow" aria-labelledby="instRowT" hidden></article>
       <article class="card" id="backupCard" aria-labelledby="bkTitle">
         <h2 id="bkTitle">Yedek</h2>
-        <p class="lead" style="margin-bottom:14px">Kayıtların yalnızca bu cihazda durur. Telefon değiştirmeden ya da tarayıcı verisini silmeden önce yedek al; başka cihazda geri yükle.</p>
+        <p class="lead" style="margin-bottom:14px">Senkron kapalıysa kayıtların yalnızca bu cihazda durur. Telefon değiştirmeden ya da tarayıcı verisini silmeden önce yedek al; başka cihazda geri yükle.</p>
         <div class="btnRow"><button type="button" class="btn btn-primary" id="btnBkDl">Yedeği indir (.json)</button><button type="button" class="btn btn-soft" id="btnBkCopy">Kodu kopyala</button></div>
         <pre class="code" id="bkCode" hidden></pre>
         <details class="bkRestore" id="bkRestore"><summary><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Yedekten geri yükle</summary>

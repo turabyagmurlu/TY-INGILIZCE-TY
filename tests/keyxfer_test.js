@@ -9,7 +9,8 @@ const okHandler=async()=>({status:200,body:JSON.stringify({id:'m',type:'message'
    await ctx.addInitScript(k=>{try{localStorage.setItem('tydil.apiKey',k);}catch(e){}},KEY);
    await H.mockApi(p,{},okHandler);
    await p.goto(srv.base+'/index.html');await p.click('[data-tab="setup"]');await H.sleep(300);
-   H.ok(await p.isVisible('#btnKx'),'Ayarlar: "Telefona aktar (QR)" görünür (anahtar varken)');
+   H.ok(await p.isVisible('#btnKx')&&(await p.textContent('#btnKx')).trim()==='Başka cihaza aktar (QR)','Ayarlar: "Başka cihaza aktar (QR)" görünür (anahtar varken)');
+   H.ok(/Telefon, tablet: aynı QR'ı her cihazla okut\./.test(await p.textContent('#kxRow')),'ipucu: Telefon, tablet: aynı QR\'ı her cihazla okut.');
    await p.click('#btnKx');await H.sleep(200);
    H.ok(await p.isVisible('#kxBox svg.kxQr'),'QR çizildi');
    H.ok((await p.getAttribute('#btnKx','aria-expanded'))==='true','düğme aria-expanded=true');
@@ -18,7 +19,7 @@ const okHandler=async()=>({status:200,body:JSON.stringify({id:'m',type:'message'
    let dec='';try{dec=execFileSync('python3',['-c','import cv2,sys;i=cv2.imread(sys.argv[1]);i=cv2.copyMakeBorder(i,40,40,40,40,cv2.BORDER_CONSTANT,value=(255,255,255));print(cv2.QRCodeDetector().detectAndDecode(i)[0])',shot]).toString().trim();}catch(e){dec='ERR '+e.message;}
    H.ok(dec===srv.base+'/index.html#k='+KEY,'QR çözülüyor ve adres + anahtarı içeriyor ('+dec.slice(0,40)+'…)');
    await p.screenshot({path:path.join(H.SHOTS,'keyxfer_settings_1280.png')});
-   await p.click('#btnKx');H.ok(await p.isHidden('#kxBox'),'ikinci basış QR kapatır');
+   await p.click('#btnKx');H.ok(await p.isHidden('#kxBox')&&(await p.textContent('#btnKx')).trim()==='Başka cihaza aktar (QR)','ikinci basış QR kapatır, etiket geri gelir');
    /* 90 sn sonra kendiliğinden kapanır */
    await p.click('#btnKx');await p.evaluate(()=>{});await H.sleep(100);
    const left=await p.textContent('#kxLeft');H.ok(/90 sn/.test(left)||/89 sn/.test(left),'geri sayım görünür');

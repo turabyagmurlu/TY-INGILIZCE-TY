@@ -1,5 +1,6 @@
 /* ---------- YOĞUN PROGRAM (12 hafta · 60 dk/gün) ----------
-   db: program/main {start,weeks:12,dailyMin:60,mode:"yogun"} — yalnızca "Yoğun programı başlat" ile yazılır, yüklemede asla.
+   db: program/main {start,weeks:12,dailyMin:60,mode:"yogun",created,resetAt?} — yalnızca "Yoğun programı başlat" ile yazılır, yüklemede asla.
+       resetAt: sıfırlama/tarih değişikliği anı (senkronda yeni cihazdaki kazara başlatılmış programa karşı koruma; rt.js kural 4).
        habits/<YYYY-MM-DD> {dinleme:true|false} · exams/<tur>-wNN {hafta,puan,toplam,tur,notlar,tarih}
    Haftalar Pazartesi başlar, Pazar tekrar günüdür. Başlangıç Pzt–Çar ise o haftanın Pazartesi'si Hafta 1;
    Per–Paz ise o günler "ısınma" sayılır ve Hafta 1 sonraki Pazartesi başlar. Program = 84 gün. */
@@ -192,6 +193,8 @@ document.addEventListener("click",async e=>{
     if(daysBetween(start,today())>83){msg(m,"err","Bu tarihle program çoktan bitmiş olurdu. Daha yakın bir tarih seç.");return;}
     progWriting=true; b.disabled=true;
     const doc={start,weeks:PROG_WEEKS,dailyMin:60,mode:"yogun",created:new Date().toISOString()};
+    /* Senkron: bu cihazda program sıfırlandıysa yeni program resetAt taşır → diğer cihazdaki eski programı geçer (rt.js kural 4) */
+    let rs=""; try{rs=localStorage.getItem("tydil-prog-reset")||"";}catch(e){} if(rs) doc.resetAt=doc.created;
     try{/* Başka cihazda / geç gelen kayıtta program zaten varsa ezme, onu benimse */
       let ex=null; try{ex=await db.collection("program").doc("main").get();}catch(e){ex=null;}
       if(ex&&ex.exists){S.program=ex.data(); progLoaded=true; onbSkip=false; renderAll(); if(typeof fNotice==="function") fNotice("Program zaten başlatılmış."); return;}
@@ -208,8 +211,8 @@ document.addEventListener("click",async e=>{
     progConfirm={kind:"date",date:v};renderProgSetup();const y=$("#btnCfNo");if(y)y.focus();return;}
   if(b.id==="btnCfNo"){progConfirm=null;renderProgSetup();return;}
   if(b.id==="btnCfYes"){const c=progConfirm; if(!c||!db) return; b.disabled=true;
-    try{ if(c.kind==="reset"){await db.collection("program").doc("main").delete(); S.program=null;}
-         else {const d=Object.assign({},S.program,{start:c.date,updated:new Date().toISOString()}); await db.collection("program").doc("main").set(d); S.program=d;}
+    try{ if(c.kind==="reset"){try{localStorage.setItem("tydil-prog-reset",new Date().toISOString());}catch(e){} await db.collection("program").doc("main").delete(); S.program=null;}
+         else {const now=new Date().toISOString(); const d=Object.assign({},S.program,{start:c.date,updated:now,resetAt:now}); await db.collection("program").doc("main").set(d); S.program=d;}
          progConfirm=null; renderAll(); msg($("#progSetupMsg"),"ok",c.kind==="reset"?"Program sıfırlandı.":"Başlangıç tarihi değişti.");}
     catch(err){b.disabled=false; msg($("#progSetupMsg"),"err",dbErrText(err,"Kaydedilemedi"));} return;}
 });

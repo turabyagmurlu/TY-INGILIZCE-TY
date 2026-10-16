@@ -1,0 +1,14 @@
+.syncCard .keyForm{max-width:640px}
+.syncRow{grid-template-columns:minmax(0,1fr) auto}
+.syncRow .btn{min-height:50px}
+#syncOff[hidden],#syncOn[hidden]{display:none}
+.syncHow{margin-top:10px;border-top:1px solid var(--line);padding-top:4px}
+.syncSteps{margin:6px 0 12px;padding-left:22px;display:grid;gap:6px;font-size:15px;line-height:1.5}
+.syncSteps b{color:var(--heading)}
+.syncLink{display:inline-flex;text-decoration:none}
+.syncStatus{margin:2px 0 4px;font-size:16px;font-weight:800;color:var(--text);display:grid;gap:2px}
+.syncStatus.ok{color:var(--good-ink)}
+.syncStatus.err{color:var(--bad-ink)}
+.syncStatus.busy{color:var(--primary-ink)}
+.syncSub{font-size:13px;font-weight:600;color:var(--muted);font-family:var(--mono);word-break:break-all}
+@media (max-width:420px){.syncRow{grid-template-columns:1fr}.syncRow .btn{width:100%}}
