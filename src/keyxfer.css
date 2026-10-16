@@ -17,3 +17,10 @@
 .kxToast.pend{border-color:var(--primary)}
 .kxX{min-width:44px;min-height:44px;border:0;background:transparent;font-size:24px;line-height:1;color:var(--muted);cursor:pointer;border-radius:10px}
 @media (max-width:560px){.kxIn{flex-direction:column;align-items:center}.kxQr{width:min(260px,100%);height:auto}}
+.kxScan{position:fixed;inset:0;z-index:80;background:rgba(8,12,18,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px 16px calc(20px + env(safe-area-inset-bottom))}
+.kxScanBox{position:relative;width:min(88vw,420px);aspect-ratio:1;border-radius:20px;overflow:hidden;background:#000}
+.kxScanBox video{width:100%;height:100%;object-fit:cover;display:block}
+.kxFrame{position:absolute;inset:12%;border:3px solid rgba(255,255,255,.9);border-radius:16px;box-shadow:0 0 0 999px rgba(0,0,0,.25)}
+.kxScanMsg{margin:0;max-width:420px;text-align:center;color:#fff;font-size:16px;font-weight:700;line-height:1.45}
+.kxScanMsg.err{color:#ffb4a8}
+.kxScanX{min-width:160px;min-height:48px;background:#fff;color:#1b2a3c;border-color:#fff}

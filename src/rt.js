@@ -305,11 +305,17 @@ window.rtExport=rtExport; window.rtImport=rtImport;
    değerler kaydedilir, adres hemen temizlenir. Parça (#…) sunucuya gitmez; uygulama kodu adresi okumadan önce temizlenir.
    Sonuç: window.TYKEYIMPORT = "ok" | "bad" · window.TYSYNCIMPORT = "ok" (senkron bilgisi de geldiyse). */
 const SYNC_TOKEN_RE=/^(github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,})$/, GIST_RE=/^[0-9a-f]{20,40}$/;
+/* applyTransfer("…#k=…[&s=…&g=…]") → {key:"ok"|"bad", sync:bool}. Adres çubuğu (QR bağlantısı) ve uygulama içi kamera okuyucu ortak kullanır. */
+function applyTransfer(text){ const i=String(text||"").indexOf("#k="); if(i<0) return {key:"bad",sync:false};
+  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?$/.exec(String(text).slice(i).trim());
+  if(!m||!validKey(m[1])) return {key:"bad",sync:false};
+  let sync=false; if(m[2]&&SYNC_TOKEN_RE.test(m[2])&&GIST_RE.test(m[3])){ lsSet(LS_STOKEN,m[2]); lsSet(LS_SGIST,m[3]); sync=true; }
+  window.TYSYNCIMPORT=sync?"ok":window.TYSYNCIMPORT; window.TYKEYIMPORT="ok";
+  try{setKey(m[1],{verify:true});}catch(e){window.TYKEYIMPORT="bad"; return {key:"bad",sync};}
+  return {key:"ok",sync}; }
+window.TYRT.applyTransfer=applyTransfer;
 (function(){ let h=""; try{h=location.hash||"";}catch(e){} if(!/^#k=/.test(h))return;
-  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?$/.exec(h);
   try{history.replaceState(null,"",location.pathname+location.search);}catch(e){try{location.hash="";}catch(_){}}
-  if(m&&validKey(m[1])){
-    if(m[2]&&SYNC_TOKEN_RE.test(m[2])&&GIST_RE.test(m[3])){ lsSet(LS_STOKEN,m[2]); lsSet(LS_SGIST,m[3]); window.TYSYNCIMPORT="ok"; }
-    try{setKey(m[1],{verify:true}); window.TYKEYIMPORT="ok";}catch(e){window.TYKEYIMPORT="bad";} } else window.TYKEYIMPORT="bad"; })();
+  if(applyTransfer(h).key!=="ok") window.TYKEYIMPORT="bad"; })();
 syncApi.TOKEN_RE=SYNC_TOKEN_RE; syncApi.GIST_RE=GIST_RE;
 })();

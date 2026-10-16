@@ -1,8 +1,8 @@
-/* TY Dil service worker · ty-dil-v7
+/* TY Dil service worker · ty-dil-v8
    Gezinme (HTML): önce önbellek (anında açılış), arkada ağdan tazele (stale-while-revalidate; fetch cache:"no-cache" → GitHub Pages'in 10 dk HTTP önbelleği atlanır).
    Diğer dosyalar: önbellek öncelikli, arkada tazeleme. API (api.anthropic.com) ve dış istekler SW'ye girmez. */
-const CACHE = "ty-dil-v7";
-const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png", "./legacy/ty-ingilizce.html"];
+const CACHE = "ty-dil-v8";
+const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png", "./legacy/ty-ingilizce.html", "./vendor/jsqr.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => Promise.all(FILES.map(f => c.add(new Request(f, { cache: "no-cache" })).catch(() => {}))))); self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 function refresh(req, c) {

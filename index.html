@@ -1387,6 +1387,13 @@ html.ders-on .pen-fab{display:none}
 .kxToast.pend{border-color:var(--primary)}
 .kxX{min-width:44px;min-height:44px;border:0;background:transparent;font-size:24px;line-height:1;color:var(--muted);cursor:pointer;border-radius:10px}
 @media (max-width:560px){.kxIn{flex-direction:column;align-items:center}.kxQr{width:min(260px,100%);height:auto}}
+.kxScan{position:fixed;inset:0;z-index:80;background:rgba(8,12,18,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px 16px calc(20px + env(safe-area-inset-bottom))}
+.kxScanBox{position:relative;width:min(88vw,420px);aspect-ratio:1;border-radius:20px;overflow:hidden;background:#000}
+.kxScanBox video{width:100%;height:100%;object-fit:cover;display:block}
+.kxFrame{position:absolute;inset:12%;border:3px solid rgba(255,255,255,.9);border-radius:16px;box-shadow:0 0 0 999px rgba(0,0,0,.25)}
+.kxScanMsg{margin:0;max-width:420px;text-align:center;color:#fff;font-size:16px;font-weight:700;line-height:1.45}
+.kxScanMsg.err{color:#ffb4a8}
+.kxScanX{min-width:160px;min-height:48px;background:#fff;color:#1b2a3c;border-color:#fff}
 
 
 .syncCard .keyForm{max-width:640px}
@@ -1548,6 +1555,7 @@ html.ders-on .pen-fab{display:none}
           <div class="keyRow"><input type="password" id="apiKey" autocomplete="off" spellcheck="false" placeholder="sk-ant-…" aria-describedby="keyNote"><button type="button" class="btn btn-ghost btn-sm keyEye" id="keyEye" aria-pressed="false" aria-label="Anahtarı göster">Göster</button></div>
           <div class="btnRow"><button type="button" class="btn btn-primary" id="btnKeySave">Kaydet</button><button type="button" class="btn btn-soft" id="btnKeyTest">Bağlantıyı test et</button><button type="button" class="btn btn-ghost" id="btnKeyDel" hidden>Anahtarı sil</button></div>
           <div id="keyMsg"></div>
+          <div class="kxRow" id="scanRow"><button type="button" class="btn btn-soft" id="btnScan">QR okut (kamera)</button><span class="hint">Başka cihazdaki anahtarı bu cihaza almak için: o cihazda "Başka cihaza aktar (QR)" aç, buradan okut.</span></div>
           <div class="kxRow" id="kxRow" hidden><button type="button" class="btn btn-soft" id="btnKx" aria-expanded="false" aria-controls="kxBox">Başka cihaza aktar (QR)</button><span class="hint">Telefon, tablet: aynı QR'ı her cihazla okut.</span></div>
           <div class="kxBox" id="kxBox" hidden></div>
           <label class="fl" for="modelSel">Model</label>
@@ -1893,12 +1901,17 @@ window.claude={ async use(name){ if(name==="db"){await load(); return dbApi;} if
 window.TYRT={MODELS,DEFAULT_MODEL,getKey,setKey,validKey,KEY_MIN,keyStatus:()=>keyStatus||(getKey()?"ok":"none"),keyError:()=>keyErr,hasKey:()=>!!getKey(),getSettings,setSettings,testKey,export:rtExport,import:rtImport,db:dbApi,get mode(){return mode;},ready:load,sync:syncApi};
 window.rtExport=rtExport; window.rtImport=rtImport;
 const SYNC_TOKEN_RE=/^(github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,})$/, GIST_RE=/^[0-9a-f]{20,40}$/;
+function applyTransfer(text){ const i=String(text||"").indexOf("#k="); if(i<0) return {key:"bad",sync:false};
+  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?$/.exec(String(text).slice(i).trim());
+  if(!m||!validKey(m[1])) return {key:"bad",sync:false};
+  let sync=false; if(m[2]&&SYNC_TOKEN_RE.test(m[2])&&GIST_RE.test(m[3])){ lsSet(LS_STOKEN,m[2]); lsSet(LS_SGIST,m[3]); sync=true; }
+  window.TYSYNCIMPORT=sync?"ok":window.TYSYNCIMPORT; window.TYKEYIMPORT="ok";
+  try{setKey(m[1],{verify:true});}catch(e){window.TYKEYIMPORT="bad"; return {key:"bad",sync};}
+  return {key:"ok",sync}; }
+window.TYRT.applyTransfer=applyTransfer;
 (function(){ let h=""; try{h=location.hash||"";}catch(e){} if(!/^#k=/.test(h))return;
-  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?$/.exec(h);
   try{history.replaceState(null,"",location.pathname+location.search);}catch(e){try{location.hash="";}catch(_){}}
-  if(m&&validKey(m[1])){
-    if(m[2]&&SYNC_TOKEN_RE.test(m[2])&&GIST_RE.test(m[3])){ lsSet(LS_STOKEN,m[2]); lsSet(LS_SGIST,m[3]); window.TYSYNCIMPORT="ok"; }
-    try{setKey(m[1],{verify:true}); window.TYKEYIMPORT="ok";}catch(e){window.TYKEYIMPORT="bad";} } else window.TYKEYIMPORT="bad"; })();
+  if(applyTransfer(h).key!=="ok") window.TYKEYIMPORT="bad"; })();
 syncApi.TOKEN_RE=SYNC_TOKEN_RE; syncApi.GIST_RE=GIST_RE;
 })();
 
@@ -2769,7 +2782,7 @@ function ccEmpty(){
   if(CC.locked===CC_NOKEY||CC.locked===CC_PENDING||(CC.locked||"").startsWith(CC_KEYBAD)){const pend=CC.locked===CC_PENDING, bad=!pend&&CC.locked!==CC_NOKEY;
     return `<div class="cc-empty cc-key"><div class="cc-eh"><span class="cc-keyIco" aria-hidden="true">${ICON("setup")}</span><div><p class="cc-ek">Koçlar kilitli</p><p class="cc-et">${pend?"Anahtar doğrulanıyor…":bad?"Anahtar doğrulanamadı":"API anahtarı gerekli"}</p></div></div>
       <p>${bad?esc(CC.locked.slice(CC_KEYBAD.length)):"Chiara, Oliver ve Selin senin Anthropic API anahtarınla çalışır. Anahtar yalnızca bu cihazda saklanır. Dersler ve kelime kartları anahtarsız da çalışır."}</p>
-      ${pend?"":`<div class="cc-cta"><button type="button" class="cc-start" data-go="key">Anahtarı gir${CC_SVG.arrow}</button></div>`}</div>`;}
+      ${pend?"":`<div class="cc-cta">${(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)?`<button type="button" class="cc-start" data-go="scan">QR okut${CC_SVG.arrow}</button><button type="button" class="cc-start ghost" data-go="key">Anahtarı gir</button>`:`<button type="button" class="cc-start" data-go="key">Anahtarı gir${CC_SVG.arrow}</button>`}</div><p class="cc-mutedp">QR okut: bilgisayarda Ayarlar → "Başka cihaza aktar (QR)" aç, bu cihazın kamerasıyla okut.</p>`}</div>`;}
   if(CC.locked) return `<div class="cc-empty"><p class="cc-et">Sohbet kapalı</p><p>${esc(CC.locked)}</p><div class="cc-cta"><button type="button" class="cc-start ghost" data-go="key">Ayarlar'ı aç${CC_SVG.arrow}</button></div><p class="cc-mutedp">Dersi uygulama dışında yaptıysan koçun verdiği TYDIL kodunu Ayarlar → Gelişmiş → Elle kayıt kutusuna yapıştırabilirsin.</p></div>`;
   if(!CC.ready) return `<div class="cc-empty"><p class="cc-et">Hazırlanıyor…</p><p class="cc-mutedp">Koçlar birkaç saniye içinde hazır olur.</p></div>`;
   if(CC.loading) return `<div class="cc-empty"><p class="cc-et">Sohbet geçmişi yükleniyor…</p></div>`;
@@ -3296,7 +3309,7 @@ function renderKeyGate(show){const el=$("#keyGate"); if(!el)return; const on=!!s
   const ks=window.TYRT&&TYRT.keyStatus?TYRT.keyStatus():"none", pend=ks==="pending", bad=ks==="bad";
   const why=bad?(CC.locked||"").replace(CC_KEYBAD,""):"";
   const html=`<div class="kgHd"><span class="kgIco" aria-hidden="true">${ICON("setup")}</span><div><h3 id="keyGateT" tabindex="-1">${pend?"Anahtar doğrulanıyor…":bad?"Anahtar doğrulanamadı":"Koçlar için API anahtarı gerekli"}</h3><p>${pend?"Bağlantı test ediliyor; birkaç saniye sürer.":bad?esc(why):"Chiara ve Oliver senin Anthropic API anahtarınla çalışır. Anahtar yalnızca bu cihazda saklanır."}</p></div></div>
-    ${pend?"":`<div class="kgAct"><button type="button" class="btn btn-primary" data-go="key">${ICON("setup")}Anahtarı gir</button><button type="button" class="btn btn-ghost" id="keyGateUnits">${ICON("deck")}Dersler'e geç</button></div>
+    ${pend?"":`<div class="kgAct">${(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)?`<button type="button" class="btn btn-primary" data-go="scan">${ICON("target")}QR okut</button><button type="button" class="btn btn-soft" data-go="key">${ICON("setup")}Anahtarı gir</button>`:`<button type="button" class="btn btn-primary" data-go="key">${ICON("setup")}Anahtarı gir</button>`}<button type="button" class="btn btn-ghost" id="keyGateUnits">${ICON("deck")}Dersler'e geç</button></div>
     <p class="kgNote"><b>Anahtarsız devam:</b> sadece Dersler (üniteler) ve kelime kartları çalışır; koçlu günlük ders ve kayıt anahtar ister.</p>`}`;
   if(el.dataset.sig===html)return; const first=!el.dataset.sig; el.dataset.sig=html; el.innerHTML=html;
   if(first){const h=$("#keyGateT"); if(h) h.focus({preventScroll:true}); requestAnimationFrame(()=>{try{el.scrollIntoView({block:"nearest",behavior:"smooth"});}catch(e){}});}}
@@ -8041,7 +8054,7 @@ function kxOpen(){const b=$("#kxBox"), t=$("#btnKx"); if(!b||!TYRT.hasKey())retu
   KX.left=90; const sy=typeof syncConnected==="function"&&syncConnected();
   b.innerHTML=`<div class="kxIn">${svg}<div class="kxTxt"><b>Telefon ya da tabletin kamerasıyla okut</b>
     <ol><li>Kamerayı aç, QR'a tut, çıkan bağlantıya dokun.</li><li>Uygulama açılır, anahtar kendiliğinden kaydedilir ve doğrulanır${sy?"; senkron bağlanır, ilerleme iner":""}.</li><li>Sonra "Telefona kur" ile ana ekrana ekle.</li></ol>
-    <p class="hint">Bu QR anahtarının${sy?" ve GitHub token'ının":""} kendisi: sadece kendi cihazlarınla okut, ekran görüntüsü alma. iPhone'da ana ekran uygulaması Safari'den ayrı saklar; orada anahtarı Ayarlar'a elle yapıştırman gerekebilir.</p>
+    <p class="hint">Bu QR anahtarının${sy?" ve GitHub token'ının":""} kendisi: sadece kendi cihazlarınla okut, ekran görüntüsü alma. iPhone/iPad'de ana ekrandaki uygulamayı aç ve oradaki "QR okut" düğmesiyle okut (telefonun kendi kamerası bağlantıyı Safari'de açar).</p>
     <p class="kxLeft" id="kxLeft" aria-live="polite">${KX.left} sn sonra kapanır</p></div></div>`;
   b.hidden=false; if(t){t.setAttribute("aria-expanded","true"); t.textContent="QR'ı kapat";}
   clearInterval(KX.timer); KX.timer=setInterval(()=>{KX.left--; const l=$("#kxLeft"); if(KX.left<=0||!l){kxClose();return;} l.textContent=KX.left+" sn sonra kapanır";},1000);}
@@ -8065,6 +8078,40 @@ document.addEventListener("click",e=>{const b=e.target.closest("button"); if(!b)
   if(b.classList.contains("kxX")){const t=$("#kxToast"); if(t) t.hidden=true; return;}});
 document.addEventListener("visibilitychange",()=>{if(document.hidden) kxClose();});
 kxRender();
+const KXC={on:false,stream:null,raf:0};
+const kxCamOk=()=>!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia);
+function kxLoadJsQR(){if(window.jsQR) return Promise.resolve(); return new Promise((res,rej)=>{const s=document.createElement("script"); s.src="vendor/jsqr.js"; s.onload=()=>window.jsQR?res():rej(new Error("jsqr")); s.onerror=()=>rej(new Error("jsqr")); document.head.appendChild(s);});}
+function kxScanStop(){KXC.on=false; cancelAnimationFrame(KXC.raf); if(KXC.stream){KXC.stream.getTracks().forEach(t=>{try{t.stop();}catch(e){}});} KXC.stream=null; const o=$("#kxScan"); if(o) o.remove();}
+function kxScanMsg(t,kind){const m=$("#kxScanMsg"); if(m){m.textContent=t; m.className="kxScanMsg "+(kind||"");}}
+async function kxScan(){ if(KXC.on) return; if(!kxCamOk()){kxToast("err","Bu cihazda kamera açılamıyor. Anahtarı Ayarlar'a yapıştır."); return;}
+  KXC.on=true; const o=document.createElement("div"); o.id="kxScan"; o.className="kxScan"; o.setAttribute("role","dialog"); o.setAttribute("aria-modal","true"); o.setAttribute("aria-label","QR okut");
+  o.innerHTML=`<div class="kxScanBox"><video id="kxVid" playsinline muted autoplay></video><span class="kxFrame" aria-hidden="true"></span></div>
+    <p class="kxScanMsg" id="kxScanMsg">Bilgisayarda Ayarlar → "Başka cihaza aktar (QR)" aç, kamerayı QR'a tut.</p>
+    <button type="button" class="btn btn-ghost kxScanX" id="kxScanX">İptal</button>`;
+  document.body.appendChild(o); const btn=$("#kxScanX"); if(btn) btn.focus();
+  try{ await kxLoadJsQR(); }catch(e){kxScanMsg("QR okuyucu yüklenemedi. İnterneti kontrol edip tekrar dene.","err"); return;}
+  try{ KXC.stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}},audio:false}); }
+  catch(e){kxScanMsg(e&&e.name==="NotAllowedError"?"Kamera izni verilmedi. Cihaz ayarlarından bu uygulamaya kamera izni ver ya da anahtarı Ayarlar'a yapıştır.":"Kamera açılamadı. Anahtarı Ayarlar'a yapıştırabilirsin.","err"); return;}
+  if(!KXC.on){kxScanStop(); return;}
+  const v=$("#kxVid"); v.srcObject=KXC.stream; try{await v.play();}catch(e){}
+  const c=document.createElement("canvas"), ctx=c.getContext("2d",{willReadFrequently:true}); let last=0, warned=0;
+  const tick=t=>{ if(!KXC.on) return; KXC.raf=requestAnimationFrame(tick); if(t-last<120||!v.videoWidth) return; last=t;
+    const sc=Math.min(1,720/Math.max(v.videoWidth,v.videoHeight)); c.width=Math.round(v.videoWidth*sc); c.height=Math.round(v.videoHeight*sc);
+    ctx.drawImage(v,0,0,c.width,c.height); let r=null; try{r=window.jsQR(ctx.getImageData(0,0,c.width,c.height).data,c.width,c.height,{inversionAttempts:"dontInvert"});}catch(e){r=null;}
+    if(!r||!r.data) return;
+    if(r.data.indexOf("#k=")<0){ if(t-warned>2500){warned=t; kxScanMsg("Bu TY Dil QR'ı değil. Bilgisayardaki \"Başka cihaza aktar\" QR'ını okut.","err");} return; }
+    const syncIn=/&s=/.test(r.data); KXS.sync=syncIn; KXS.syncDone=false; KXS.keyOk=false;
+    const res=TYRT.applyTransfer(r.data); kxScanStop();
+    if(res.key!=="ok"){kxToast("err","QR'daki anahtar okunamadı. Bilgisayarda QR'ı yeniden aç."); return;}
+    kxToast("pend",res.sync?"Anahtar ve senkron alındı · doğrulanıyor…":"Anahtar alındı · doğrulanıyor…");
+    if(res.sync&&typeof syncRun==="function"){try{syncRun("qr");}catch(e){}} };
+  KXC.raf=requestAnimationFrame(tick); }
+document.addEventListener("click",e=>{const b=e.target.closest("button"); if(!b)return;
+  if(b.dataset.go==="scan"||b.id==="btnScan"){e.preventDefault(); kxScan(); return;}
+  if(b.id==="kxScanX"){kxScanStop(); return;}});
+document.addEventListener("keydown",e=>{if(KXC.on&&e.key==="Escape"){e.preventDefault(); e.stopPropagation(); kxScanStop();}},true);
+document.addEventListener("visibilitychange",()=>{if(document.hidden&&KXC.on) kxScanStop();});
+{const sr=$("#scanRow"); if(sr) sr.hidden=!kxCamOk();}
 
 const SY_API="https://api.github.com", SY_DESC="TY Dil senkron · otomatik, silme", SY_FILE="tydil-sync.json", SY_LAST="tydil.sync.last";
 const SY={busy:false,again:false,fails:0,nextOk:0,timer:0,err:null,dirty:false,pruned:0,runs:0,offArm:0,tick:0};
