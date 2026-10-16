@@ -79,7 +79,7 @@ function renderDayPlan(){const el=$("#dayPlan"); if(!el||!LX)return; let st=null
   const ms=$("#modeSeg"); if(ms&&all)ms.hidden=true;
   {const ls=st.find(s=>s.k==="lesson"||s.k==="pekistir"||s.k==="pkweek"), nn=st.find(s=>s.next);
     if(!all&&ls){$("#heroTitle").textContent=ls.t; if(ls.done&&nn)$("#heroKicker").innerHTML=ICON("check")+esc("Ders tamam · sırada: "+nn.t);}}
-  if(all){$("#heroKicker").innerHTML=ICON("check")+"Bugünün planı tamam"; $("#heroTitle").textContent="Bugün tamam."; if(sub){sub.hidden=false; sub.textContent=lxStreakTxt();}}
+  if(all){$("#heroKicker").innerHTML=ICON("check")+"Bugünün planı tamam"; const okM=mins>=STREAK_MIN; $("#heroTitle").textContent=okM?"Bugün tamam.":"Plan tamam."; if(sub){sub.hidden=false; sub.textContent=okM?lxStreakTxt():"Seri için "+(STREAK_MIN-mins)+" dk daha: Kartlar ya da Konuş (isteğe bağlı).";}}
   const g=$("#btnGo"); if(!g)return; const n=st.find(s=>s.next);
   if(n){g.innerHTML=ICON("play")+`<span>${esc(n.k==="lesson"&&!lxP(n.id).step?"Bugünkü dersi başlat":n.k==="lesson"?"Derse devam et":"Başla · "+lxLabel(n))}</span>`; g.className="btn btn-big goBtn btn-primary";}
   else{g.innerHTML=ICON(st.extra?"plus":"chat")+`<span>${esc(st.extra?"Bir ders daha · "+st.extra.t:"Koçla serbest konuş")}</span>`; g.className="btn btn-big goBtn btn-soft";}}

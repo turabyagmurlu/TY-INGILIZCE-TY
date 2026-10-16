@@ -192,8 +192,8 @@ function handler(req,st){const s=req.system;st.sys=st.sys||[];st.sys.push(s);
   pl=await plan(p);const ex=await p.textContent('#dayPlan li.extra').catch(()=>'');
   ok(pl.join('|')==='+'+FIX.title+'|+Oliver ile konuş'&&/Bir ders daha: /.test(ex)&&ex.includes(IT06.title),'day plan done; next lesson only as optional "Bir ders daha" '+pl.join('|')+' / '+ex);
   const h=await p.evaluate(()=>({k:document.querySelector('#heroKicker').textContent,t:document.querySelector('#heroTitle').textContent,s:document.querySelector('#heroSub').textContent,m:document.querySelector('#meter').textContent,go:document.querySelector('#btnGo').textContent,more:document.querySelector('#todayTitle').textContent==='Bugünün adımları'&&!/Gramer/.test(document.querySelector('#plan').textContent),seg:document.querySelectorAll('#meter .segbar i').length,segDone:document.querySelectorAll('#meter .segbar i.done').length}));
-  ok(/Bugünün planı tamam/.test(h.k)&&h.t==='Bugün tamam.'&&/2 \/ 2 adım/.test(h.m)&&/12 dk/.test(h.m)&&h.seg===2&&h.segDone===2,'hero consistent with plan: "Bugün tamam", meter 2/2 adım from plan steps '+JSON.stringify(h));
-  ok(/Seriye saymak için bugün 18 dk daha/.test(h.s),'streak text honest (12 dk < 30): '+h.s);
+  ok(/Bugünün planı tamam/.test(h.k)&&h.t==='Plan tamam.'&&/2 \/ 2 adım/.test(h.m)&&/12 dk/.test(h.m)&&h.seg===2&&h.segDone===2,'hero consistent with plan: "Plan tamam", meter 2/2 adım from plan steps '+JSON.stringify(h));
+  ok(/Seri için 18 dk daha/.test(h.s),'streak text honest (12 dk < 30): '+h.s);
   ok(/Bir ders daha/.test(h.go)&&h.more,'Başla offers optional next lesson; Detaylar shows the day-plan steps (old 5 blocks replaced)');
   await p.screenshot({path:path.join(SHOTS10,'today_390.png')});
   await ctx.close();}
