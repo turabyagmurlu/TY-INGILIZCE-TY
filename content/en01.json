@@ -1,0 +1,715 @@
+{
+  "id": "en01",
+  "lang": "en",
+  "level": "B1",
+  "title": "Present ve past: zaman tekrarı",
+  "lead": "Rutini “şu an”dan, bitmiş olayı “o sırada süren”den ayırmayı ve eski alışkanlıkları used to ile anlatmayı netleştireceksin. Türklerin en sık yaptığı dört hatayı da kapatacaksın.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Simple mı, continuous mu? Türkçe “-iyor” ikisini de karşılar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede “Her sabah panoları kontrol ediyorum” ve “Şu an panoyu kontrol ediyorum” aynı ekle kurulur. İngilizcede ikisi ayrıdır. **Present simple** = rutin, genel doğru, program. **Present continuous** = şu an süren ya da geçici durum."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Her sabah",
+                  "s": "rutin"
+                },
+                {
+                  "t": "kontrol ed",
+                  "s": "fiil"
+                },
+                {
+                  "t": "-iyorum",
+                  "s": "tek ek",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I",
+                  "s": "özne"
+                },
+                {
+                  "t": "check",
+                  "s": "simple",
+                  "hl": true
+                },
+                {
+                  "t": "the panels every morning",
+                  "s": "rutin"
+                }
+              ]
+            },
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Şu an",
+                  "s": "an"
+                },
+                {
+                  "t": "kontrol ed",
+                  "s": "fiil"
+                },
+                {
+                  "t": "-iyorum",
+                  "s": "aynı ek",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I",
+                  "s": "özne"
+                },
+                {
+                  "t": "am checking",
+                  "s": "continuous",
+                  "hl": true
+                },
+                {
+                  "t": "panel B right now",
+                  "s": "şu an"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "We start at 8 every morning.",
+              "tr": "Her sabah 8'de başlıyoruz. (rutin)"
+            },
+            {
+              "x": "We're working in Kırıkkale this month.",
+              "tr": "Bu ay Kırıkkale'de çalışıyoruz. (geçici)"
+            },
+            {
+              "x": "The site closes at 6 on Saturdays.",
+              "tr": "Şantiye cumartesi 6'da kapanıyor. (program)"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Sık hata: “I am working here every day.” → **I work here every day.** every day, usually, always, never, on Mondays gibi sıklık ifadeleri varsa genelde simple."
+        }
+      ]
+    },
+    {
+      "title": "Stative verbs: durum fiilleri -ing almaz",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bazı fiiller bir hareket değil, bir **durum** anlatır: bilmek, istemek, ihtiyaç duymak, anlamak, ait olmak. Bunlar şu an doğru olsa bile continuous yapılmaz. Türkçede “biliyorum” dediğin için -ing koymak istersin; koyma."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Fiil",
+            "Türkçe",
+            "Yanlış",
+            "Doğru"
+          ],
+          "x": 3,
+          "rows": [
+            [
+              "know",
+              "bilmek",
+              "I'm knowing the answer.",
+              "I know the answer."
+            ],
+            [
+              "need",
+              "ihtiyacı olmak",
+              "We're needing more cable.",
+              "We need more cable."
+            ],
+            [
+              "want",
+              "istemek",
+              "He's wanting a day off.",
+              "He wants a day off."
+            ],
+            [
+              "understand",
+              "anlamak",
+              "Are you understanding?",
+              "Do you understand?"
+            ],
+            [
+              "belong",
+              "ait olmak",
+              "This drill is belonging to Ali.",
+              "This drill belongs to Ali."
+            ],
+            [
+              "seem",
+              "gibi görünmek",
+              "The panel is seeming fine.",
+              "The panel seems fine."
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "İki anlamlı olanlar: **think** — “I think it's safe.” (fikrim bu) / “I'm thinking about the offer.” (düşünüp taşınıyorum). **have** — “I have two crews.” (sahibim) / “I'm having lunch.” (yemek yiyorum)."
+        }
+      ]
+    },
+    {
+      "title": "Geçmiş: past simple ve past continuous",
+      "blocks": [
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Past simple: bitmiş olay",
+              "text": "Olay başladı ve bitti. Sıralı olaylar hep past simple.",
+              "ex": {
+                "x": "Yesterday I went to the site and checked the panels.",
+                "tr": "Dün şantiyeye gittim ve panoları kontrol ettim."
+              }
+            },
+            {
+              "title": "Past continuous: geçmişte bir anda süren arka plan",
+              "text": "was/were + -ing. “-iyordum” dediğin süreç.",
+              "ex": {
+                "x": "At 10 a.m. we were testing the panel.",
+                "tr": "Saat 10'da panoyu test ediyorduk."
+              }
+            },
+            {
+              "title": "İkisi birlikte: uzun süreç + araya giren kısa olay",
+              "text": "Uzun olan continuous, araya giren simple. when kısa olayın, while uzun sürecin önüne gelir.",
+              "ex": {
+                "x": "I was testing the circuit when the breaker tripped.",
+                "tr": "Devreyi test ediyordum ki şalter attı."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Sık hata: olay sıralarken continuous kullanmak. “Yesterday I was going to the site and I was checking the panels.” → **Yesterday I went to the site and checked the panels.**"
+        }
+      ]
+    },
+    {
+      "title": "used to: eskiden öyleydi, artık değil",
+      "blocks": [
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Bodrum'da",
+                  "s": "yer"
+                },
+                {
+                  "t": "çalış",
+                  "s": "fiil"
+                },
+                {
+                  "t": "-ırdım",
+                  "s": "eski alışkanlık",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I",
+                  "s": "özne"
+                },
+                {
+                  "t": "used to work",
+                  "s": "eski alışkanlık",
+                  "hl": true
+                },
+                {
+                  "t": "in Bodrum",
+                  "s": "yer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Olumlu: used to + fiilin yalın hali",
+              "text": "Artık doğru olmayan geçmiş alışkanlık ya da durum.",
+              "ex": {
+                "x": "I used to work in Bodrum.",
+                "tr": "Eskiden Bodrum'da çalışırdım. (artık değil)"
+              }
+            },
+            {
+              "title": "Olumsuz ve soru: did + use to (d düşer)",
+              "text": "did zaten geçmişi taşıdığı için used değil use yazılır.",
+              "ex": {
+                "x": "I didn't use to wear gloves.",
+                "tr": "Eskiden eldiven takmazdım."
+              }
+            },
+            {
+              "title": "Şimdiki alışkanlık için used to yok",
+              "text": "Bugünkü rutin için present simple + usually.",
+              "ex": {
+                "x": "I usually wake up at 6.",
+                "tr": "Genelde 6'da kalkarım."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Karıştırma: **be used to + -ing** başka bir yapı: “I'm used to working at night.” = Gece çalışmaya **alışkınım**. Şimdilik sadece tanı."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "I check the panels every morning.",
+      "tr": "Panoları her sabah kontrol ederim."
+    },
+    {
+      "x": "Right now I'm checking panel B.",
+      "tr": "Şu an B panosunu kontrol ediyorum."
+    },
+    {
+      "x": "We're working in Kırıkkale this month.",
+      "tr": "Bu ay Kırıkkale'de çalışıyoruz."
+    },
+    {
+      "x": "I know this site very well.",
+      "tr": "Bu şantiyeyi çok iyi biliyorum."
+    },
+    {
+      "x": "This drill belongs to Ali.",
+      "tr": "Bu matkap Ali'nin."
+    },
+    {
+      "x": "I'm thinking about the offer.",
+      "tr": "Teklifi düşünüyorum."
+    },
+    {
+      "x": "I was testing the circuit when the breaker tripped.",
+      "tr": "Devreyi test ediyordum ki şalter attı."
+    },
+    {
+      "x": "While the crew was pulling cable, it started to rain.",
+      "tr": "Ekip kablo çekerken yağmur başladı."
+    },
+    {
+      "x": "I used to work in Bodrum, but now I'm back in Kırıkkale.",
+      "tr": "Eskiden Bodrum'da çalışırdım, ama şimdi Kırıkkale'ye döndüm."
+    },
+    {
+      "x": "I didn't use to write daily reports. Now I do.",
+      "tr": "Eskiden günlük rapor yazmazdım. Şimdi yazıyorum."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "We usually ___ at 8 a.m.",
+      "a": "start",
+      "o": [
+        "start",
+        "are starting",
+        "started"
+      ],
+      "why": {
+        "are starting": "usually = rutin → present simple.",
+        "started": "Geçmişten değil, genel alışkanlıktan bahsediyorsun."
+      },
+      "ok": "Rutin → simple."
+    },
+    {
+      "t": "choice",
+      "q": "Look! The electrician ___ the main panel.",
+      "a": "is opening",
+      "o": [
+        "opens",
+        "is opening",
+        "opened"
+      ],
+      "why": {
+        "opens": "Look! = şu an gözünün önünde oluyor → continuous.",
+        "opened": "Look! anlık bir şeyi gösterir; bitmiş geçmiş değil."
+      },
+      "ok": "Şu an → continuous."
+    },
+    {
+      "t": "choice",
+      "q": "I ___ what you mean.",
+      "a": "understand",
+      "o": [
+        "understand",
+        "am understanding",
+        "understood"
+      ],
+      "why": {
+        "am understanding": "understand bir durum fiilidir; -ing almaz.",
+        "understood": "mean şimdiki zamanda; anlamak da şimdi: understand."
+      },
+      "ok": "Stative → simple."
+    },
+    {
+      "t": "choice",
+      "q": "We ___ more cable for the second floor.",
+      "a": "need",
+      "o": [
+        "need",
+        "are needing",
+        "needs"
+      ],
+      "why": {
+        "are needing": "need durum fiili; continuous olmaz.",
+        "needs": "we ile -s gelmez."
+      },
+      "ok": "We need."
+    },
+    {
+      "t": "choice",
+      "q": "I ___ about the offer. I'll tell you tomorrow.",
+      "a": "am thinking",
+      "o": [
+        "think",
+        "am thinking"
+      ],
+      "why": {
+        "think": "Burada “fikrim şu” değil, “düşünüp taşınıyorum” süreci var → am thinking."
+      },
+      "ok": "Süreç olarak düşünmek → continuous."
+    },
+    {
+      "t": "choice",
+      "q": "I ___ the cables when the power went off.",
+      "a": "was checking",
+      "o": [
+        "checked",
+        "was checking",
+        "am checking"
+      ],
+      "why": {
+        "checked": "Kesinti, süren işin ortasında oldu; arka plandaki uzun eylem was checking.",
+        "am checking": "Cümle geçmişte (went off)."
+      },
+      "ok": "Uzun süreç + araya giren olay."
+    },
+    {
+      "t": "choice",
+      "q": "Müfettiş geldiğinde (o sırada) çalışıyorduk: “When the inspector arrived, we ___.”",
+      "a": "were working",
+      "o": [
+        "were working",
+        "worked",
+        "are working"
+      ],
+      "why": {
+        "worked": "worked, müfettiş gelince çalışmaya başladık gibi sıralı olay anlatır.",
+        "are working": "Cümle geçmişte."
+      },
+      "ok": "O sırada süren → were working."
+    },
+    {
+      "t": "choice",
+      "q": "I ___ smoke, but I quit two years ago.",
+      "a": "used to",
+      "o": [
+        "used to",
+        "use to",
+        "was used to"
+      ],
+      "why": {
+        "use to": "Olumlu cümlede d ile: used to. use to sadece did'den sonra.",
+        "was used to": "be used to = alışkın olmak; başka anlam ve ardından -ing gelir."
+      },
+      "ok": "Eski alışkanlık → used to."
+    },
+    {
+      "t": "choice",
+      "q": "___ you use to work in Bodrum?",
+      "a": "Did",
+      "o": [
+        "Did",
+        "Were",
+        "Used"
+      ],
+      "why": {
+        "Were": "used to sorusu did ile kurulur.",
+        "Used": "Soru yardımcı fiille başlar: Did you use to…?"
+      },
+      "ok": "Did you use to…?"
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “I am knowing this site very well.”",
+      "a": [
+        "i know this site very well"
+      ],
+      "hint": "know durum fiili.",
+      "ok": "I know this site very well."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Eskiden gece çalışırdım.”",
+      "a": [
+        "i used to work at night",
+        "i used to work nights",
+        "i used to work night shifts",
+        "i used to work the night shift",
+        "i used to work on the night shift",
+        "i used to do night shifts",
+        "i used to do the night shift",
+        "i used to work nightshifts",
+        "i used to work during the night"
+      ],
+      "hint": "used to + fiilin yalın hali. gece = at night.",
+      "ok": "I used to work at night."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Kabloyu çekerken yağmur başladı.”",
+      "words": [
+        "rain",
+        "were",
+        "it",
+        "the",
+        "while",
+        "started",
+        "pulling",
+        "we",
+        "to",
+        "cable"
+      ],
+      "a": "while we were pulling the cable it started to rain",
+      "alt": [
+        "it started to rain while we were pulling the cable"
+      ],
+      "ok": "While we were pulling the cable, it started to rain."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Rutini ve şu an yapılanı ayırarak işini anlatmak; dünkü bir olayı past simple + past continuous ile anlatmak; eskiden farklı olan bir şeyi used to ile söylemek.",
+    "vocab": [
+      "site",
+      "crew",
+      "shift",
+      "panel",
+      "cable tray",
+      "pull cable",
+      "breaker trips",
+      "power goes off",
+      "inspector",
+      "daily report",
+      "overtime",
+      "this month",
+      "right now",
+      "usually"
+    ],
+    "structures": [
+      "present simple vs present continuous",
+      "stative verbs (know, need, want, belong, seem)",
+      "past simple vs past continuous (when / while)",
+      "used to / didn't use to"
+    ],
+    "opener_hint": "Oliver, İngiliz bir ana yüklenicinin proje müdürü olarak kendini tanıtsın ve sorsun: “What does a normal day look like for you on site?” Sonra “And what are you working on this week?” ile continuous'a, ardından “Tell me about a problem you had yesterday.” ile geçmişe geçsin.",
+    "level_note": "B1+: doğal ama net İngilizce, 1-3 cümlelik mesajlar. Hataları her mesajda düzeltme; 3 turda bir en önemli 1-2 hatayı “You said … → Better: …” biçiminde topla. Türkçe açıklamayı sadece istenirse ver."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "stative have",
+      "q": "The site manager ___ two cars.",
+      "a": "has",
+      "o": [
+        "has",
+        "is having"
+      ],
+      "why": {
+        "is having": "have “sahip olmak” anlamında durum fiilidir; continuous olmaz."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "şu an → continuous",
+      "q": "Shh! The engineer ___ on the phone.",
+      "a": "is talking",
+      "o": [
+        "talks",
+        "is talking"
+      ],
+      "why": {
+        "talks": "Shh! = şu an oluyor → continuous."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "past continuous",
+      "q": "We ___ the transformer when the alarm rang.",
+      "a": "were installing",
+      "o": [
+        "were installing",
+        "installed",
+        "install"
+      ],
+      "why": {
+        "installed": "Alarm, montaj sürerken çaldı; süren iş continuous.",
+        "install": "Cümle geçmişte (rang)."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "used to",
+      "q": "Ahmet ___ work on Saturdays, but now he has them off.",
+      "a": "used to",
+      "o": [
+        "used to",
+        "uses to",
+        "is used to"
+      ],
+      "why": {
+        "uses to": "used to sadece geçmiş için; “uses to” diye bir yapı yok.",
+        "is used to": "is used to = alışkın; ardından -ing gelir ve anlam farklı."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "rutin → simple",
+      "q": "Düzelt: “Every day I am writing a report.”",
+      "a": [
+        "every day i write a report",
+        "i write a report every day"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "Copper ___ electricity well.",
+        "a": "conducts",
+        "o": [
+          "conducts",
+          "is conducting"
+        ],
+        "why": {
+          "is conducting": "Genel doğru (her zaman geçerli) → present simple."
+        },
+        "ok": "Genel doğru → simple."
+      },
+      {
+        "t": "choice",
+        "q": "This toolbox ___ to the night crew.",
+        "a": "belongs",
+        "o": [
+          "belongs",
+          "is belonging"
+        ],
+        "why": {
+          "is belonging": "belong durum fiili; -ing almaz."
+        },
+        "ok": "Stative → belongs."
+      },
+      {
+        "t": "choice",
+        "q": "What ___ you doing when I called?",
+        "a": "were",
+        "o": [
+          "were",
+          "did",
+          "was"
+        ],
+        "why": {
+          "did": "doing ile continuous kuruluyor: were … doing.",
+          "was": "you ile were kullanılır."
+        },
+        "ok": "What were you doing…?"
+      },
+      {
+        "t": "choice",
+        "q": "I ___ like coffee, but now I drink it every day.",
+        "a": "didn't use to",
+        "o": [
+          "didn't use to",
+          "didn't used to",
+          "wasn't use to"
+        ],
+        "why": {
+          "didn't used to": "did'den sonra d düşer: didn't use to.",
+          "wasn't use to": "used to olumsuzu did ile kurulur."
+        },
+        "ok": "didn't use to."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Şu an panoyu test ediyoruz.”",
+        "a": [
+          "we are testing the panel now",
+          "we're testing the panel now",
+          "we are testing the panel right now",
+          "we're testing the panel right now",
+          "right now we are testing the panel",
+          "right now we're testing the panel",
+          "now we are testing the panel",
+          "now we're testing the panel"
+        ],
+        "hint": "Şu an → am/is/are + -ing. pano = panel.",
+        "ok": "We're testing the panel right now."
+      },
+      {
+        "t": "order",
+        "q": "Sırala: “Elektrik kesildiğinde rapor yazıyordum.”",
+        "words": [
+          "off",
+          "a",
+          "the",
+          "was",
+          "when",
+          "report",
+          "I",
+          "power",
+          "writing",
+          "went"
+        ],
+        "a": "I was writing a report when the power went off",
+        "alt": [
+          "when the power went off I was writing a report"
+        ],
+        "ok": "I was writing a report when the power went off."
+      }
+    ],
+    "konus_prompt": "Oliver'a dünkü vardiyanı anlat: sabah ne yaptınız (past simple), bir şey olduğunda ne yapıyordunuz (past continuous), ve 2 yıl önce farklı olan bir şeyi used to ile söyle."
+  }
+}

@@ -10,6 +10,9 @@ function kTopics(coach){const out=[];
     out.push({t:e.theme||wk[0],lesson:L0?L0.id:null,sub:e.t?"Gramer odağı: "+e.t[2]:""}); for(let k=1;k<=3;k++)out.push({t:wk[(i0+k)%wk.length]});}
   else{const x=C.itToday(), id=x.t?x.t[1]:null, m=id?C.lxMeta(id):null; out.push({t:m?m.title:x.t?x.t[2]:"Selamlaşma ve tanışma",lesson:m&&C.lxP(m.id).passed?m.id:null}); KIT_ALT.forEach(t=>out.push({t}));}
   out.push({t:"Serbest",free:1}); return out;}
+/* Ses ipucu Konuş'ta yalnızca ilk açılışta (o oturum boyunca) görünür; asıl yeri Ayarlar › Ses */
+function kTip(){if(K.tipOn===undefined){let seen=false; try{seen=localStorage.getItem("tydil.vtip.konusSeen")==="1";}catch(e){} K.tipOn=!seen; if(!seen){try{localStorage.setItem("tydil.vtip.konusSeen","1");}catch(e){}}}
+  return K.tipOn?C.tipHtml(["it","en"],"konus"):"";}
 /* ---- seçim ekranı ---- */
 function kMount(el){if(!el)return; K.el=el; kPaint();}
 function kPaint(){const el=K.el; if(!el)return; const tp=kTopics(K.coach); if(K.topic>=tp.length)K.topic=0;
@@ -19,7 +22,7 @@ function kPaint(){const el=K.el; if(!el)return; const tp=kTopics(K.coach); if(K.
    <article class="card kpick"><div class="kcoaches" role="radiogroup" aria-label="Koç">${co("en")}${co("it")}</div>
     <h3 id="kTopL">Konu</h3><div class="kchips" role="radiogroup" aria-labelledby="kTopL">${tp.map((t,i)=>`<button type="button" class="kchip" role="radio" aria-checked="${i===K.topic}" data-kt="${i}">${esc(t.t)}</button>`).join("")}</div>
     ${tp[K.topic]&&tp[K.topic].sub?`<p class="hint" style="margin:0">${esc(tp[K.topic].sub)}</p>`:""}
-    ${C.tipHtml([K.coach],"konus")}
+    ${kTip()}
     ${lk?`<p class="msg info" style="margin:0">${esc(lk)} <button type="button" class="btn btn-soft btn-sm" data-go="key">Ayarlar'a git</button></p>`:""}
     <div class="btnRow"><button type="button" class="btn btn-primary btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Aramayı başlat</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div></article></div>`;}
 document.addEventListener("click",e=>{const b=e.target.closest("#konusMount button"); if(!b)return;
@@ -50,7 +53,7 @@ function kPaintCall(){const c=K.call, el=kEl(), co=COACH[c.coach], o=c.o;
     <p class="kcSt" id="kcSt" aria-live="polite">${KSTN[c.st]}</p><div class="kcHint" id="kcHint" hidden></div>
     <div class="kcCap" id="kcCap"></div>
     <form class="kcType" id="kcType" ${c.srOff?"":"hidden"}><div><label class="cc-vh" for="kcIn">Cevabın</label><textarea id="kcIn" rows="1" lang="${c.lang}" placeholder="${c.lang==="it"?"İtalyanca cevap ver…":"Answer in English…"}"></textarea><button type="submit" class="btn btn-primary">Gönder</button></div><p class="hint">Klavyedeki mikrofon tuşuyla dikte et</p></form>
-    ${C.tipHtml([c.lang],"konus")}</div>
+</div>
    <footer class="kcCtl"><button type="button" class="kcB" id="kcMic" aria-pressed="false">${ICON("speaking")}<span>Duraklat</span></button><button type="button" class="kcB" id="kcRep">${ICON("repeat")}<span>Tekrar et</span></button><button type="button" class="kcB" id="kcTr">${ICON("globe")}<span>Türkçesi?</span></button><button type="button" class="kcB" id="kcCapT" aria-pressed="true">${ICON("chat")}<span>Altyazı</span></button><button type="button" class="kcB end" id="kcEnd">${ICON("x")}<span>Bitir</span></button></footer>`;
   kCaps(); kState(c.st);}
 function kTime(){const c=K.call; if(!c)return; const el=document.getElementById("kcTime"); if(el){const s=Math.floor(kMs()/1000); el.textContent=String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");}}

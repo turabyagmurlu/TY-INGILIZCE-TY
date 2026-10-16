@@ -1,0 +1,164 @@
+{
+  "id": "it01",
+  "lang": "it",
+  "level": "A1",
+  "title": "Okunuş ve sesler",
+  "lead": "İtalyancada harflerin hangi seslere döndüğünü öğreneceksin. Ders bitince şantiyedeki bir İtalyanca tabelayı (Uscita, Pericolo, Attenzione) ilk görüşte doğru okuyabileceksin.",
+  "minutes": 30,
+  "anlat": [
+    {
+      "title": "Yazıldığı gibi okunur, ama vurgu ortada",
+      "blocks": [
+        {"type": "p", "text": "İtalyanca, Türkçe gibi büyük ölçüde **yazıldığı gibi okunur**: her sesli harf (a, e, i, o, u) net çıkar, yutulmaz. İki fark var: birkaç harf yan yana gelince başka ses verir (sonraki kartlar) ve **vurgu** Türkçedeki yerinde değildir."},
+        {"type": "rules", "items": [
+          {"title": "Vurgu çoğunlukla sondan ikinci hecede", "text": "Türkçede vurgu genelde sondadır (araBA). İtalyancada ortaya kayar.", "ex": {"x": "lavoro", "tr": "iş · la-VO-ro"}},
+          {"title": "Son hece vurguluysa üstüne aksan yazılır", "text": "Aksan işareti sana “vurgu burada” der. Yazarken atlama.", "ex": {"x": "città", "tr": "şehir · çit-TA"}},
+          {"title": "Bazı kelimelerde vurgu sondan üçüncü hecede", "text": "Yazıda işaret yoktur; kelimeyi dinleyerek öğrenirsin.", "ex": {"x": "telefono", "tr": "telefon · te-LE-fo-no"}}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "cantiere", "tr": "şantiye", "ph": "kan-TYE-re"},
+          {"x": "caffè", "tr": "kahve", "ph": "kaf-FE"},
+          {"x": "fabbrica", "tr": "fabrika", "ph": "FAB-bri-ka"}
+        ]},
+        {"type": "note", "text": "**h hiç okunmaz.** hotel = o-TEL. Okunuş sütunlarında büyük harfli hece vurguludur."}
+      ]
+    },
+    {
+      "title": "c ve g: arkasındaki harf karar verir",
+      "blocks": [
+        {"type": "p", "text": "c ve g'nin sesi, arkasından gelen harfe bağlıdır. Tek kural: arkasında **e veya i** varsa yumuşar (ç, c); **a, o, u** varsa sert kalır (k, g). Araya **h** girerse yine sert kalır."},
+        {"type": "table", "head": ["Yazım", "Ses", "Örnek", "Okunuş", "Anlamı"], "x": 2,
+          "rows": [
+            ["ca · co · cu", "k", "cavo", "KA-vo", "kablo"],
+            ["ce · ci", "ç", "cemento", "çe-MEN-to", "çimento"],
+            ["che · chi", "k", "chiave", "KYA-ve", "anahtar (kilit)"],
+            ["cia · cio · ciu", "ç (i okunmaz)", "ciao", "ÇA-o", "merhaba / hoşça kal"],
+            ["ga · go · gu", "g", "guanto", "GUAN-to", "eldiven"],
+            ["ge · gi", "c", "generatore", "ce-ne-ra-TO-re", "jeneratör"],
+            ["ghe · ghi", "g", "ghiaccio", "GYAT-ço", "buz"],
+            ["gia · gio · giu", "c (i okunmaz)", "giorno", "COR-no", "gün"]
+          ],
+          "say": ["cavo", "cemento", "chiave", "ciao", "guanto", "generatore", "ghiaccio", "giorno"]},
+        {"type": "note", "text": "Türkçe gözü buraya takılır: **che** “çe” değil **ke**dir. İtalyancada h, c ve g'yi sert tutan bir kilittir.", "warn": true},
+        {"type": "note", "text": "cia, gio gibi yazımlarda i sadece c/g'yi yumuşatır, ayrı hece olmaz: ciao = **ÇA-o**, “çi-a-o” değil."}
+      ]
+    },
+    {
+      "title": "gn, gli, sc: Türkçede olmayan üç birleşim",
+      "blocks": [
+        {"type": "p", "text": "Bu üç birleşim tek bir ses verir. Harf harf okursan kelime tanınmaz hale gelir."},
+        {"type": "table", "head": ["Yazım", "Ses", "Örnek", "Okunuş", "Anlamı"], "x": 2,
+          "rows": [
+            ["gn", "ny (tek ses)", "ingegnere", "in-ce-NYE-re", "mühendis"],
+            ["gn", "ny", "bagno", "BA-nyo", "banyo, tuvalet"],
+            ["gli", "ly (dil damakta)", "famiglia", "fa-Mİ-lya", "aile"],
+            ["gli", "ly", "foglio", "FO-lyo", "kâğıt yaprağı"],
+            ["sce · sci", "ş", "uscita", "u-Şİ-ta", "çıkış"],
+            ["sci + sesli", "ş (i okunmaz)", "sciopero", "ŞO-pe-ro", "grev"],
+            ["sca · sco · scu", "sk", "scala", "SKA-la", "merdiven"],
+            ["sche · schi", "sk", "schema", "SKE-ma", "şema"]
+          ],
+          "say": ["ingegnere", "bagno", "famiglia", "foglio", "uscita", "sciopero", "scala", "schema"]},
+        {"type": "note", "text": "Mantık c/g kuralının aynısı: sc + e/i yumuşar (ş), sc + a/o/u ya da sch sert kalır (sk)."},
+        {"type": "note", "text": "gl, arkasında i yoksa düz okunur: **inglese** = in-GLE-se (İngiliz)."}
+      ]
+    },
+    {
+      "title": "Çift ünsüz, z, r ve qu",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "Çift ünsüz uzun okunur ve anlam değiştirir", "text": "Türkçedeki elli, dikkat, anne gibi: sesi bir an tut. sete (SE-te) = susuzluk, sette (SET-te) = yedi.", "ex": {"x": "sette", "tr": "yedi · SET-te"}},
+          {"title": "z iki türlü okunur: ts ya da dz", "text": "Hangisi olduğu kelimeye göre değişir; kelimeyle birlikte ezberle. Emin değilsen ts de, anlaşılırsın.", "ex": {"x": "attenzione", "tr": "dikkat · at-ten-TSYO-ne"}},
+          {"title": "r her yerde dil ucuyla titrer", "text": "Türkçede sondaki r yumuşar; İtalyancada sonda ve ortada da net çıkar.", "ex": {"x": "pericolo", "tr": "tehlike · pe-Rİ-ko-lo"}},
+          {"title": "qu = ku", "text": "q hep u ile gelir ve “ku” okunur.", "ex": {"x": "quadro", "tr": "pano · KUA-dro"}}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "sicurezza", "tr": "güvenlik (z = ts)", "ph": "si-ku-RET-tsa"},
+          {"x": "zona", "tr": "bölge (z = dz)", "ph": "DZO-na"},
+          {"x": "motore", "tr": "motor (sondaki r net)", "ph": "mo-TO-re"}
+        ]}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Uscita di emergenza", "tr": "Acil çıkış", "ph": "u-Şİ-ta di e-mer-CEN-tsa"},
+    {"x": "Pericolo, alta tensione", "tr": "Tehlike, yüksek gerilim", "ph": "pe-Rİ-ko-lo, AL-ta ten-SYO-ne"},
+    {"x": "Attenzione!", "tr": "Dikkat!", "ph": "at-ten-TSYO-ne"},
+    {"x": "Vietato l'accesso", "tr": "Girmek yasaktır", "ph": "vye-TA-to lat-ÇES-so"},
+    {"x": "Casco obbligatorio", "tr": "Baret zorunludur", "ph": "KAS-ko ob-bli-ga-TO-ryo"},
+    {"x": "Lavori in corso", "tr": "Çalışma var (yapım çalışması)", "ph": "la-VO-ri in KOR-so"},
+    {"x": "Pavimento scivoloso", "tr": "Kaygan zemin", "ph": "pa-vi-MEN-to şi-vo-LO-so"},
+    {"x": "Quadro elettrico", "tr": "Elektrik panosu", "ph": "KUA-dro e-LET-tri-ko"},
+    {"x": "Spegnere il motore", "tr": "Motoru kapatın", "ph": "SPE-nye-re il mo-TO-re"},
+    {"x": "Cantiere chiuso", "tr": "Şantiye kapalı", "ph": "kan-TYE-re KYU-so"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "“cemento” kelimesindeki c nasıl okunur?", "a": "ç", "o": ["k", "ç", "s"],
+      "why": {"k": "c'den sonra e geliyor; e ve i, c'yi yumuşatır. k sesi için ca/co/cu ya da che/chi yazılır.", "s": "İtalyancada c hiçbir zaman s okunmaz. Ya k ya ç."},
+      "ok": "ce → çe. çe-MEN-to."},
+    {"t": "choice", "q": "“chiave” (anahtar) nasıl okunur?", "a": "KYA-ve", "o": ["ÇYA-ve", "KYA-ve", "çi-A-ve"],
+      "why": {"ÇYA-ve": "h, c'yi sert tutar: chi = ki. “ç” için ci yazılırdı.", "çi-A-ve": "ch sert okunur ve i burada a ile tek hece olur: KYA."},
+      "ok": "chi → ki. KYA-ve."},
+    {"t": "choice", "q": "“giorno” (gün) nasıl okunur?", "a": "COR-no", "o": ["ci-OR-no", "COR-no", "GYOR-no"],
+      "why": {"ci-OR-no": "gio'daki i ayrı hece değildir; sadece g'yi yumuşatır.", "GYOR-no": "Sert g için gh yazılırdı. gi + sesli = c."},
+      "ok": "gio → co. COR-no."},
+    {"t": "choice", "q": "“ingegnere” (mühendis) nasıl okunur?", "a": "in-ce-NYE-re", "o": ["in-ge-NE-re", "in-ce-NYE-re", "in-ceg-NE-re"],
+      "why": {"in-ge-NE-re": "ge yumuşar (ce) ve gn tek ses verir (ny). İki kural birden kaçmış.", "in-ceg-NE-re": "gn'yi g + n diye ayırma; birlikte “ny” okunur."},
+      "ok": "ge = ce, gn = ny."},
+    {"t": "choice", "q": "Tabelada “USCITA” yazıyor. Nasıl okunur?", "a": "u-Şİ-ta", "o": ["us-Kİ-ta", "u-Şİ-ta", "us-Çİ-ta"],
+      "why": {"us-Kİ-ta": "sc'den sonra i geliyor; i yumuşatır: sci = şi. sk sesi için schi yazılırdı.", "us-Çİ-ta": "sc + i birlikte tek ses verir: ş."},
+      "ok": "sci = şi. USCITA = çıkış."},
+    {"t": "choice", "q": "“famiglia” (aile) nasıl okunur?", "a": "fa-Mİ-lya", "o": ["fa-mi-GLİ-a", "fa-Mİ-lya", "fa-MİG-lya"],
+      "why": {"fa-mi-GLİ-a": "gli harf harf okunmaz ve vurgu ortadadır: fa-Mİ-lya.", "fa-MİG-lya": "g ayrı okunmaz; gli tek ses: ly."},
+      "ok": "gli = ly."},
+    {"t": "choice", "q": "Hangisi “yedi” demek?", "a": "sette", "o": ["sete", "sette"],
+      "why": {"sete": "sete (SE-te) = susuzluk. Çift t uzun okunur ve anlam değiştirir: sette = yedi."},
+      "ok": "sette = SET-te. Çift ünsüzü tut."},
+    {"t": "choice", "q": "“telefono” kelimesinde vurgu nerede?", "a": "te-LE-fo-no", "o": ["TE-le-fo-no", "te-LE-fo-no", "te-le-FO-no"],
+      "why": {"TE-le-fo-no": "Vurgu ilk hecede değil. İtalyancada sondan dördüncü heceye vurgu çok nadirdir.", "te-le-FO-no": "Genel kural sondan ikinci hece der, ama telefono sondan üçüncüde vurgulu kelimelerdendir. Bunu dinleyerek öğrenirsin."},
+      "ok": "te-LE-fo-no. Kuralın istisnası; kulakla öğrenilir."},
+    {"t": "type", "q": "Okunuşu “SKA-la” olan kelimeyi yaz (merdiven).", "a": ["scala"], "hint": "sk sesi: sc + a.", "ok": "scala. sc + a sert kalır."},
+    {"t": "type", "q": "Okunuşu “çit-TA” olan kelimeyi yaz (şehir).", "a": ["città"], "soft": ["citta"], "soft_note": "Vurgu son hecede olduğu için a'nın üstüne aksan yazılır: città.", "hint": "ç sesi için c + i. Çift t. Vurgu sonda olduğu için aksan gerekir.", "ok": "città. Son hece vurgulu → aksan."},
+    {"t": "type", "q": "Okunuşu “KUA-dro” olan kelimeyi yaz (pano).", "a": ["quadro"], "hint": "“ku” sesi İtalyancada iki harfle yazılır.", "ok": "quadro. qu = ku."},
+    {"t": "order", "q": "Tabelayı sırala: “Acil çıkış”", "words": ["emergenza", "uscita", "di"], "a": "uscita di emergenza", "ok": "Uscita di emergenza: u-Şİ-ta di e-mer-CEN-tsa."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Şantiye tabelalarını ve sık kelimeleri doğru okumak; hangi harf kuralını kullandığını Türkçe söyleyebilmek.",
+    "vocab": ["uscita", "pericolo", "attenzione", "alta tensione", "vietato l'accesso", "casco", "quadro elettrico", "cantiere", "ingegnere", "scala", "chiave", "sicurezza", "città", "caffè"],
+    "structures": ["c/ch/ci", "g/gh/gi", "gn = ny", "gli = ly", "sc/sci = sk/ş", "çift ünsüz", "z = ts/dz", "vurgu ve aksan"],
+    "opener_hint": "Chiara kendini bir cümleyle tanıtsın, sonra büyük harflerle bir tabela kelimesi yazsın (ör. USCITA) ve Türab'dan okunuşunu Türkçe harflerle yazmasını istesin. Cevaptan sonra doğru okunuşu ve kuralı tek cümleyle söylesin, bir sonraki kelimeye geçsin.",
+    "level_note": "A1, ilk ders: konuşma Türkçe ağırlıklı; İtalyanca sadece kelime ve tabela düzeyinde. Cümle kurdurma, dilbilgisi anlatma. Her turda tek kelime."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "c + i = ç", "q": "“cinque” (beş) nasıl okunur?", "a": "ÇİN-kue", "o": ["KİN-kue", "ÇİN-kue", "SİN-kue"],
+      "why": {"KİN-kue": "c + i yumuşar: çi. k sesi için chi yazılırdı.", "SİN-kue": "c hiçbir zaman s okunmaz."}},
+    {"t": "choice", "topic": "ch = k", "q": "“macchina” (makine, araba) nasıl okunur?", "a": "MAK-ki-na", "o": ["ma-Çİ-na", "MAK-ki-na", "MAÇ-çi-na"],
+      "why": {"ma-Çİ-na": "chi sert okunur (ki) ve cc çift olduğu için uzun: MAK-ki-na.", "MAÇ-çi-na": "h, c'yi sert tutar: chi = ki, “çi” değil."}},
+    {"t": "choice", "topic": "sci = ş", "q": "“sciopero” (grev) nasıl okunur?", "a": "ŞO-pe-ro", "o": ["ski-O-pe-ro", "ŞO-pe-ro", "şi-O-pe-ro"],
+      "why": {"ski-O-pe-ro": "sc + i yumuşar: ş. Sert sk için schi yazılırdı.", "şi-O-pe-ro": "scio'daki i ayrı okunmaz, sadece yumuşatır: ŞO."}},
+    {"t": "choice", "topic": "gli = ly", "q": "Hangi kelimede gl, “ly” diye okunur?", "a": "foglio", "o": ["inglese", "foglio", "gloria"],
+      "why": {"inglese": "gl'den sonra i yok (e var): düz gl okunur, in-GLE-se.", "gloria": "gl'den sonra o var: düz gl okunur."}},
+    {"t": "type", "topic": "gn = ny", "q": "Okunuşu “BA-nyo” olan kelimeyi yaz (banyo, tuvalet).", "a": ["bagno"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "“gelato” (dondurma) nasıl okunur?", "a": "ce-LA-to", "o": ["ge-LA-to", "ce-LA-to", "CE-la-to"],
+        "why": {"ge-LA-to": "g + e yumuşar: ce. Sert g için ghe yazılırdı.", "CE-la-to": "Ses doğru ama vurgu yanlış: sondan ikinci hece, ce-LA-to."},
+        "ok": "ge = ce. Vurgu ortada."},
+      {"t": "choice", "q": "“spaghetti” nasıl okunur?", "a": "spa-GET-ti", "o": ["spa-CET-ti", "spa-GET-ti", "SPA-get-ti"],
+        "why": {"spa-CET-ti": "gh, g'yi sert tutar: ghe = ge.", "SPA-get-ti": "Vurgu sondan ikinci hecede: spa-GET-ti."},
+        "ok": "ghe = ge, tt uzun."},
+      {"t": "choice", "q": "Hangisi “dede” demek?", "a": "nonno", "o": ["nono", "nonno"],
+        "why": {"nono": "nono (NO-no) = dokuzuncu. Dede için nn uzun: NON-no."},
+        "ok": "nonno = NON-no."},
+      {"t": "choice", "q": "“zona” kelimesindeki z nasıl okunur?", "a": "dz", "o": ["dz", "s", "ts"],
+        "why": {"s": "İtalyancada z hiçbir zaman düz s değildir.", "ts": "ts de var (pizza, sicurezza), ama zona'da dz: DZO-na."},
+        "ok": "zona = DZO-na."},
+      {"t": "type", "q": "Okunuşu “CAL-lo” olan kelimeyi yaz (sarı).", "a": ["giallo"], "hint": "c sesi + a için gi + a. Sonda çift l.", "ok": "giallo. gia = ca, ll uzun."},
+      {"t": "type", "q": "Okunuşu “per-KE” olan kelimeyi yaz (neden / çünkü).", "a": ["perché"], "soft": ["perche"], "soft_note": "Son hece vurgulu olduğu için aksan yazılır: perché.", "hint": "k sesi + e için ch. Vurgu sonda → aksan.", "ok": "perché. che = ke."}
+    ],
+    "konus_prompt": "Dünkü 10 tabela cümlesini sesli oku. Sonra Chiara'ya en çok zorlandığın sesi yaz (ör. gli ya da sci); o sana aynı sesle 3 yeni kelime versin, okunuşlarını Türkçe harflerle yaz."
+  }
+}

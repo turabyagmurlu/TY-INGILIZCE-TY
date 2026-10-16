@@ -41,7 +41,7 @@ const SHOTS=path.join(H.ROOT,'review/shots_v9');fs.mkdirSync(SHOTS,{recursive:tr
   // Dersler
   await p.click('[data-tab=units]');await p.waitForTimeout(200);ok((await panel(p))==='units'&&await hs(p),w+': Dersler tab');
   // Ben sayfası
-  await p.click('#btnBen');ok(await p.isVisible('#benSheet')&&(await p.$$eval('#benSheet .benItem b',e=>e.map(x=>x.textContent))).join()==='İlerleme,Ayarlar,Yazışma',w+': Ben sheet: İlerleme · Ayarlar · Yazışma');
+  await p.click('#btnBen');ok(await p.isVisible('#benSheet')&&(await p.$$eval('#benSheet .benItem b',e=>e.map(x=>x.textContent))).join()==='İlerleme,Ayarlar,Yazarak çalış',w+': Ben sheet: İlerleme · Ayarlar · Yazarak çalış');
   const its=await p.$$eval('#benSheet .benItem',e=>e.map(x=>x.getBoundingClientRect().height));ok(its.every(x=>x>=44),w+': sheet items ≥44 px');
   if(w===390)await p.screenshot({path:path.join(SHOTS,'ben_sheet_390.png')});
   await p.keyboard.press('Escape');ok(await p.isHidden('#benSheet'),w+': Esc closes sheet');

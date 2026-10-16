@@ -34,8 +34,7 @@ const save=(n,t)=>fs.writeFileSync(path.join(OUT,n+'.txt'),t);
   await shot(p,'A1_first_open_'+tag,true);await metrics(p,tag+' A1 first');await contrast(p,tag+' A1 first');save('A1_first_open_'+tag,await txt(p,'#tab-learn'));
   note(tag,'first open: onb visible='+await p.isVisible('#onb')+' hero visible='+await p.isVisible('#hero')+' units tab visible='+await p.isVisible('[data-tab=units]'));
   // walk onboarding without key
-  if(await p.isVisible('#onb')){await p.click('[data-onb="2"]');await p.waitForTimeout(150);await shot(p,'A2_onb2_'+tag,true);await metrics(p,tag+' A2 onb2');
-    await p.click('.onbStep[data-step="2"] [data-onb="3"]');await p.waitForTimeout(150);await shot(p,'A3_onb3_'+tag,true);save('A3_onb3_'+tag,await txt(p,'#onb'));
+  if(await p.isVisible('#onb')){await shot(p,'A2_onb_'+tag,true);await metrics(p,tag+' A2 onb (v10: tek ekran)');save('A3_onb3_'+tag,await txt(p,'#onb'));
     await p.click('#btnProgStart');await p.waitForTimeout(900);}
   await shot(p,'A4_after_basla_nokey_'+tag,true);await metrics(p,tag+' A4 nokey after basla');await contrast(p,tag+' A4');save('A4_after_basla_nokey_'+tag,await txt(p,'#tab-learn'));
   note(tag,'after Başla (no key): ders open='+await p.isVisible('#ders')+' keyGate='+await p.isVisible('#keyGate')+' hash='+await p.evaluate(()=>location.hash)+' progStartMsg='+JSON.stringify(await txt(p,'#progStartMsg')));

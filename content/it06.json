@@ -1,0 +1,172 @@
+{
+  "id": "it06",
+  "lang": "it",
+  "level": "A1",
+  "title": "avere ve avere kalıpları",
+  "lead": "“Bir tornavidam var”, “Açım”, “Üşüyorum”, “24 yaşındayım” cümlelerini avere ile kurmayı öğreneceksin. En önemlisi: hangi cümlede essere, hangisinde avere geleceğine karar verebileceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "avere = sahip olmak; h yazılır, okunmaz",
+      "blocks": [
+        {"type": "p", "text": "Türkçede sahip olmayı **iyelik eki + var** ile söylersin: tornavida**m var**. İtalyancada tek bir fiil yapar: **avere**."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Bir tornavida", "s": "isim"}, {"t": "-m", "s": "benim", "hl": true}, {"t": "var", "s": "sahiplik", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Ho", "s": "sahibim (avere)", "hl": true}, {"t": "un cacciavite", "s": "bir tornavida"}]}
+        ]},
+        {"type": "table", "head": ["Özne", "avere", "Okunuş", "Anlamı"], "x": 1,
+          "rows": [
+            ["io", "ho", "O", "benim var / sahibim"],
+            ["tu", "hai", "AY", "senin var"],
+            ["lui / lei / Lei", "ha", "A", "onun var / sizin var (kibar)"],
+            ["noi", "abbiamo", "ab-BYA-mo", "bizim var"],
+            ["voi", "avete", "a-VE-te", "sizin var (çok kişi)"],
+            ["loro", "hanno", "AN-no", "onların var"]
+          ],
+          "say": ["io ho", "tu hai", "lui ha", "noi abbiamo", "voi avete", "loro hanno"]},
+        {"type": "note", "warn": true, "text": "h sadece yazıda karışıklığı önler: **ho** (var) – **o** (veya), **ha** (var) – **a** (-e, -de), **hanno** (var) – **anno** (yıl). Okunuşları aynı; yazarken h'yi unutma."},
+        {"type": "note", "text": "Olumsuz ve soru essere ile aynı: **Non ho tempo.** (Vaktim yok.) **Hai tempo?** (Vaktin var mı?)"}
+      ]
+    },
+    {
+      "title": "Açım, susadım, üşüyorum: İtalyanca “sahip olur”",
+      "blocks": [
+        {"type": "p", "text": "Türkçede “açım” deyip “olmak”la geçersin. İtalyanca bu bedensel durumları **avere + isim** ile söyler: kelimesi kelimesine “açlığım var”."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Aç", "s": "sıfat"}, {"t": "-ım", "s": "olmak (ek)", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Ho", "s": "sahibim", "hl": true}, {"t": "fame", "s": "açlık (isim)"}]}
+        ]},
+        {"type": "table", "head": ["İtalyanca", "Okunuş", "Kelimesi kelimesine", "Türkçesi"], "x": 0,
+          "rows": [
+            ["Ho fame.", "O FA-me", "açlığım var", "Açım. / Acıktım."],
+            ["Ho sete.", "O SE-te", "susuzluğum var", "Susadım."],
+            ["Ho freddo.", "O FRED-do", "soğuğum var", "Üşüyorum."],
+            ["Ho caldo.", "O KAL-do", "sıcağım var", "Sıcakladım. / Sıcaktan bunaldım."],
+            ["Ho sonno.", "O SON-no", "uykum var", "Uykum var."],
+            ["Ho fretta.", "O FRET-ta", "acelem var", "Acelem var."],
+            ["Ho paura.", "O pa-U-ra", "korkum var", "Korkuyorum."]
+          ]},
+        {"type": "note", "text": "İyi haber: **uykum var, acelem var** Türkçede de “var” ile kurulur; mantık aynı. Farklı olanlar sadece açım, susadım, üşüyorum, sıcakladım, korkuyorum."},
+        {"type": "note", "warn": true, "text": "**Sono fame** yanlıştır. Bu kalıplarda isim değişmez: Abbiamo **fame** (açız), “fami” olmaz."}
+      ]
+    },
+    {
+      "title": "Yaş: “24 yılım var”",
+      "blocks": [
+        {"type": "p", "text": "2. derste ezberlediğin **Ho 24 anni**'nin sırrı burada: İtalyanca yaşı “olmak”la değil **avere** ile söyler. Kelimesi kelimesine: “24 yılım var”."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "24 yaşında", "s": "yaş"}, {"t": "-yım", "s": "olmak (ek)", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Ho", "s": "sahibim", "hl": true}, {"t": "24 anni", "s": "24 yıl"}]}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "Quanti anni hai?", "tr": "Kaç yaşındasın?", "ph": "KUAN-ti AN-ni AY"},
+          {"x": "Quanti anni ha?", "tr": "Kaç yaşındasınız? (kibar) / Kaç yaşında? (o)", "ph": "KUAN-ti AN-ni A"},
+          {"x": "Ho ventiquattro anni.", "tr": "24 yaşındayım.", "ph": "O ven-ti-KUAT-tro AN-ni"},
+          {"x": "Ahmet ha ventotto anni.", "tr": "Ahmet 28 yaşında.", "ph": "Ahmet A ven-TOT-to AN-ni"}
+        ]},
+        {"type": "note", "warn": true, "text": "**Sono 24 anni** yanlış. Ayrıca anni çoğuldur: 1 anno (yıl), 24 anni (yıl)."}
+      ]
+    },
+    {
+      "title": "essere mi, avere mi? Karar tablosu",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "Ne olduğunu / nasıl olduğunu sıfatla söylüyorsan: essere", "text": "stanco, pronto, grande, freddo (bir şey için)…", "ex": {"x": "Il caffè è freddo.", "tr": "Kahve soğuk."}},
+          {"title": "Vücudunun hissettiğini isimle söylüyorsan: avere", "text": "fame, sete, freddo, caldo, sonno, fretta, paura… ve yaş.", "ex": {"x": "Ho freddo.", "tr": "Üşüyorum."}}
+        ]},
+        {"type": "table", "head": ["Türkçe", "İtalyanca", "Fiil"], "x": 1,
+          "rows": [
+            ["Yorgunum.", "Sono stanco.", "essere"],
+            ["Açım.", "Ho fame.", "avere"],
+            ["Kahve sıcak.", "Il caffè è caldo.", "essere"],
+            ["Sıcakladım.", "Ho caldo.", "avere"],
+            ["Elektrikçiyim.", "Sono elettricista.", "essere"],
+            ["24 yaşındayım.", "Ho 24 anni.", "avere"],
+            ["Hazırız.", "Siamo pronti.", "essere"],
+            ["Acelemiz var.", "Abbiamo fretta.", "avere"]
+          ],
+          "say": ["Sono stanco.", "Ho fame.", "Il caffè è caldo.", "Ho caldo.", "Sono elettricista.", "Ho ventiquattro anni.", "Siamo pronti.", "Abbiamo fretta."]},
+        {"type": "note", "text": "Dikkat: **freddo** iki fiille de gelir ama anlam değişir. **Ho freddo** = üşüyorum. **Sono freddo** = “ben soğuk biriyim” (dokununca soğuğum ya da duygusuzum). Kışın şantiyede ikincisini söylersen ekip güler."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Ho fame. E tu?", "tr": "Acıktım. Ya sen?", "ph": "O FA-me. e TU"},
+    {"x": "Hai sete?", "tr": "Susadın mı?", "ph": "AY SE-te"},
+    {"x": "Abbiamo freddo.", "tr": "Üşüyoruz.", "ph": "ab-BYA-mo FRED-do"},
+    {"x": "Quanti anni hai? Ho ventiquattro anni.", "tr": "Kaç yaşındasın? 24 yaşındayım.", "ph": "KUAN-ti AN-ni AY. O ven-ti-KUAT-tro AN-ni"},
+    {"x": "Hai un cacciavite?", "tr": "Sende tornavida var mı?", "ph": "AY un kat-ça-Vİ-te"},
+    {"x": "Abbiamo un problema con il quadro.", "tr": "Panoyla ilgili bir sorunumuz var.", "ph": "ab-BYA-mo un pro-BLE-ma kon il KUA-dro"},
+    {"x": "Non ho tempo oggi.", "tr": "Bugün vaktim yok.", "ph": "non O TEM-po OD-ci"},
+    {"x": "Gli operai hanno caldo.", "tr": "İşçiler sıcakladı.", "ph": "lyi o-pe-RA-i AN-no KAL-do"},
+    {"x": "Ho fretta, scusi!", "tr": "Acelem var, kusura bakmayın!", "ph": "O FRET-ta, SKU-zi"},
+    {"x": "Il caffè è caldo, ma io ho freddo.", "tr": "Kahve sıcak ama ben üşüyorum.", "ph": "il kaf-FE E KAL-do, ma İ-o O FRED-do"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "io ___ fame.", "a": "ho", "o": ["ho", "hai", "ha"],
+      "why": {"hai": "hai, tu (sen) içindir.", "ha": "ha, lui/lei/Lei içindir."},
+      "ok": "io → ho. Okunuşu: O."},
+    {"t": "choice", "q": "noi ___ un problema.", "a": "abbiamo", "o": ["abbiamo", "avete", "hanno"],
+      "why": {"avete": "avete = voi (siz).", "hanno": "hanno = loro (onlar)."},
+      "ok": "noi → abbiamo."},
+    {"t": "choice", "q": "loro ___ freddo.", "a": "hanno", "o": ["anno", "hanno", "ha"],
+      "why": {"anno": "anno = yıl. Fiil h ile yazılır: hanno (okunuşu aynı).", "ha": "ha tek kişi içindir; loro çoğul."},
+      "ok": "loro → hanno. h'yi yaz."},
+    {"t": "choice", "q": "Müşteriye kibarca: “Lei ___ fretta?”", "a": "ha", "o": ["hai", "ha", "avete"],
+      "why": {"hai": "hai samimi tu içindir. Kibar Lei “o” gibi çekilir: ha.", "avete": "avete birden çok kişiye."},
+      "ok": "Lei → ha."},
+    {"t": "choice", "q": "Hangisi “veya” demek?", "a": "o", "o": ["ho", "o"],
+      "why": {"ho": "ho = (benim) var, sahibim. “Veya” h'siz yazılır: o."},
+      "ok": "o = veya, ho = var. Okunuş aynı, yazı farklı."},
+    {"t": "choice", "q": "“Açım.”", "a": "Ho fame.", "o": ["Sono fame.", "Ho fame.", "Ho fama."],
+      "why": {"Sono fame.": "Açlık İtalyancada bir “sahipliktir”: avere. essere + fame olmaz.", "Ho fama.": "fama = şöhret! Açlık = fame."},
+      "ok": "Ho fame."},
+    {"t": "choice", "q": "“Kahve soğuk.”", "a": "Il caffè è freddo.", "o": ["Il caffè ha freddo.", "Il caffè è freddo."],
+      "why": {"Il caffè ha freddo.": "avere + freddo bir canlının üşümesidir. Kahvenin nasıl olduğunu sıfatla söylüyorsun: essere."},
+      "ok": "Şeyin durumu → essere."},
+    {"t": "choice", "q": "“Hazırız.”", "a": "Siamo pronti.", "o": ["Abbiamo pronti.", "Siamo pronti."],
+      "why": {"Abbiamo pronti.": "pronto bir sıfattır (nasıl olduğun): essere."},
+      "ok": "Sıfat → essere."},
+    {"t": "type", "q": "Türkçeden çevir: “Susadım.”", "a": ["ho sete", "io ho sete"], "hint": "“Susuzluğum var.” susuzluk = sete (tek t).", "ok": "Ho sete."},
+    {"t": "type", "q": "Türkçeden çevir: “Kaç yaşındasın?”", "a": ["quanti anni hai", "tu quanti anni hai", "quanti anni hai tu"], "hint": "“Kaç yılın var?” kaç = quanti.", "ok": "Quanti anni hai?"},
+    {"t": "type", "q": "Olumsuz yap: “Ho tempo.”", "a": ["non ho tempo", "io non ho tempo"], "hint": "non fiilin hemen önüne.", "ok": "Non ho tempo."},
+    {"t": "order", "q": "Sırala: “İşçiler üşüyor.”", "words": ["hanno", "operai", "gli", "freddo"], "a": "gli operai hanno freddo", "ok": "Gli operai hanno freddo."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "avere ile sahiplik, bedensel durum ve yaş söylemek; aynı konuşmada essere ile avere'yi doğru ayırmak.",
+    "vocab": ["fame", "sete", "freddo", "caldo", "sonno", "fretta", "paura", "tempo", "anni", "un cacciavite", "un problema", "il caffè", "stanco", "pronto", "oggi", "ma", "quanti"],
+    "structures": ["io ho, tu hai, lui/lei/Lei ha, noi abbiamo, voi avete, loro hanno", "avere + fame/sete/freddo/caldo/sonno/fretta/paura", "Quanti anni hai/ha? — Ho … anni", "essere + sıfat vs avere + isim", "non + avere"],
+    "opener_hint": "Chiara şantiyede bir mola anı canlandırsın: “Ciao Türab! Pausa caffè. Hai fame?” (Türkçesi parantezde). Sonra sırayla susuzluk, soğuk/sıcak, acele, yaş sorsun; en az bir soru essere ile cevap gerektirsin (ör. “Sei stanco?”).",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. essere ve avere dışında fiil kullanma. Türab essere/avere karıştırırsa kararı tek cümleyle açıkla (sıfat → essere, his/isim → avere)."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "avere çekimi", "q": "Ekibe: “Voi ___ un cacciavite?”", "a": "avete", "o": ["avete", "abbiamo", "hai"],
+      "why": {"abbiamo": "abbiamo = biz. Karşındakilere soruyorsun: voi avete.", "hai": "hai tek kişiye “sen”."}},
+    {"t": "choice", "topic": "avere kalıpları", "q": "“Uykum var.”", "a": "Ho sonno.", "o": ["Sono sonno.", "Ho sonno.", "Ho sono."],
+      "why": {"Sono sonno.": "Uyku bir “sahiplik”: avere + sonno.", "Ho sono.": "sono = (ben) -im / onlar. Uyku = sonno (çift n)."}},
+    {"t": "choice", "topic": "yaş = avere", "q": "“Elektrikçi 35 yaşında.”", "a": "L'elettricista ha 35 anni.", "o": ["L'elettricista è 35 anni.", "L'elettricista ha 35 anni."],
+      "why": {"L'elettricista è 35 anni.": "Yaş avere ile: ha … anni."}},
+    {"t": "choice", "topic": "essere / avere", "q": "Kış, şantiyedesin, üşüyorsun. Ne dersin?", "a": "Ho freddo.", "o": ["Sono freddo.", "Ho freddo."],
+      "why": {"Sono freddo.": "Bu “soğuk biriyim” demek. Üşümek = ho freddo."}},
+    {"t": "type", "topic": "avere kalıpları", "q": "Türkçeden çevir: “Acelemiz var.”", "a": ["abbiamo fretta", "noi abbiamo fretta"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "tu ___ caldo?", "a": "hai", "o": ["hai", "ha", "ho"],
+        "why": {"ha": "ha, lui/lei/Lei içindir.", "ho": "ho, io içindir."},
+        "ok": "tu → hai."},
+      {"t": "choice", "q": "“Gli operai ___ stanchi.”", "a": "sono", "o": ["hanno", "sono"],
+        "why": {"hanno": "stanco bir sıfat (nasıl oldukları): essere. avere isimle gelir (hanno sonno)."},
+        "ok": "Sıfat → essere: sono stanchi."},
+      {"t": "choice", "q": "“Korkuyorum.”", "a": "Ho paura.", "o": ["Ho paura.", "Sono paura."],
+        "why": {"Sono paura.": "Korku da açlık gibi bir “sahiplik”: ho paura."},
+        "ok": "Ho paura."},
+      {"t": "type", "q": "Türkçeden çevir: “Üşüyor musun?”", "a": ["hai freddo", "tu hai freddo"], "hint": "“Soğuğun var mı?” Soru eki yok.", "ok": "Hai freddo?"},
+      {"t": "type", "q": "Türkçeden çevir: “Ahmet 28 yaşında.”", "a": ["ahmet ha 28 anni", "ahmet ha ventotto anni"], "hint": "Ahmet = lui → ha. Yıl çoğul: anni.", "ok": "Ahmet ha 28 anni."},
+      {"t": "order", "q": "Sırala: “Bir sorunumuz var.”", "words": ["problema", "abbiamo", "un"], "a": "abbiamo un problema", "ok": "Abbiamo un problema."}
+    ],
+    "konus_prompt": "Chiara sana şantiyedeki günün hakkında soracak: aç mısın, üşüyor musun, acelen var mı, kaç yaşındasın, ekip yorgun mu. avere ile cevap ver; en az bir cümlede de essere kullan."
+  }
+}

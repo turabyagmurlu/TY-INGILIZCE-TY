@@ -22,10 +22,10 @@ const PROG=s=>({program:{main:{start:s||'2026-09-22',weeks:12,dailyMin:60,mode:'
  // A) İlk kurulum → Ders modu → bloklar → geçiş → Oliver → çıkış/geri dönüş → bitti
  {const {p,ctx,st}=await open({},THU);
   ok(await p.isVisible('#onb')&&!(await p.isVisible('#learnMain')),'first run: onboarding replaces dashboard');
-  ok(/Programın: 12 hafta, günde 60 dk/.test(await p.textContent('#onb .onbStep[data-step="1"]'))&&await p.inputValue('#progStart')==='2026-10-08','step 1: program + start date defaults to today');
+  ok(/12 hafta, günde 60 dk/.test(await p.textContent('#onb .onbStep[data-step="1"]'))&&await p.inputValue('#progStart')==='2026-10-08'&&(await p.$$('#onb .onbStep')).length===1,'one-screen setup: program + start date defaults to today');
   ok(await p.evaluate(()=>!!document.querySelector('[data-tab=units]').offsetParent&&document.querySelector('#tab-units').hidden&&document.querySelector('#tyUnitsMount').innerHTML===''),'Dersler tab registered (units.js) but panel hidden + unmounted until opened');
   ok((await p.$$eval('.tabs button',e=>e.filter(x=>!x.hidden).map(x=>x.querySelector('.tl').textContent))).join()==='Bugün,Konuş,Kartlar,Dersler'&&await p.isVisible('#btnBen'),'v9 nav: Bugün, Konuş, Kartlar, Dersler + Ben (İlerleme/Ayarlar)');
-  await p.click('[data-onb="2"]');await p.click('.onbStep[data-step="2"] [data-onb="3"]');ok(await p.isVisible('#btnProgStart')&&/12 Ekim Pazartesi/.test(await p.textContent('#progStartHint')),'step 3: Başla + week-1 date hint');
+  await p.click('#onb .onbDate summary');ok(await p.isVisible('#btnProgStart')&&/12 Ekim Pazartesi/.test(await p.textContent('#progStartHint')),'Başla on the same screen + week-1 date hint under "değiştir"');
   ok(Object.keys(await store(p,'program')).length===0,'no program written before Başla');
   await p.evaluate(()=>{const x=document.querySelector('#btnProgStart');x.click();x.click();});
   await p.waitForSelector('#ders:not([hidden])',{timeout:4000});

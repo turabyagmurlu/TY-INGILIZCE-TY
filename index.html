@@ -600,7 +600,7 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
 .habit b{font-size:15.5px;font-weight:800;line-height:1.3}
 .habit small{font-size:14px;color:var(--muted);line-height:1.4}
 .habit.on small{color:var(--good-ink)}
-.habit .opt{font-size:12.5px;font-weight:700;color:var(--muted);margin-left:4px}
+.habit .hopt{font-size:12.5px;font-weight:700;color:var(--muted);margin-left:4px}
 .weekGoals .a1{display:grid;justify-items:end;text-align:right;line-height:1.2}
 .weekGoals .a1 b{font-size:26px;font-weight:800;color:var(--heading);font-variant-numeric:tabular-nums}
 .weekGoals .a1 span{font-size:13.5px;color:var(--muted);font-weight:700}
@@ -1481,6 +1481,9 @@ html:not(.tab-practice):not(.tab-units):not(.tab-progress) .pen-fab,html.lsn-on 
 .vTip button{min-width:44px;min-height:44px;margin:-8px -6px -8px 0;border:0;background:transparent;color:var(--muted);font-size:22px;border-radius:10px;flex:none}
 @media (max-width:1024px){.updBar{bottom:calc(80px + env(safe-area-inset-bottom,0px))}}
 @media (max-width:1024px){html.tab-practice .wrap,html.tab-units .wrap,html.tab-progress .wrap{padding-bottom:calc(164px + env(safe-area-inset-bottom,0px))}}
+.dayPlan li.extra{border:2px dashed var(--line2);background:transparent}
+.onbDate summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700;color:var(--primary-ink)}
+@media (max-width:420px){.streak{padding:6px 10px;font-size:14px}.barDate{display:none!important}}
 
 </style>
 </head>
@@ -1520,7 +1523,7 @@ html:not(.tab-practice):not(.tab-units):not(.tab-progress) .pen-fab,html.lsn-on 
         </article>
         <section class="card instCard" id="instCard" aria-labelledby="instT" hidden></section>
         <details class="more" id="learnMore">
-          <summary><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>Detaylar<span class="moreSub">bugünün blokları</span></summary>
+          <summary><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>Detaylar<span class="moreSub">bugünün planı</span></summary>
           <div class="moreBody">
             <article class="card" aria-labelledby="todayTitle">
               <div class="chead"><h2 id="todayTitle">Bugünün beş bloğu</h2><span class="side" id="todaySide"></span></div>
@@ -1720,7 +1723,7 @@ html:not(.tab-practice):not(.tab-units):not(.tab-progress) .pen-fab,html.lsn-on 
   <div class="benBox"><div class="benHead"><h2 id="benT">Ben</h2><button type="button" class="benX" data-ben-x aria-label="Kapat">×</button></div>
     <button type="button" class="benItem" data-ben="progress"><b>İlerleme</b><small>Seri, haftalar, hatalar, vurgular</small></button>
     <button type="button" class="benItem" data-ben="setup"><b>Ayarlar</b><small>Claude bağlantısı, senkron, ses, yedek</small></button>
-    <button type="button" class="benItem" data-ben="practice"><b>Yazışma</b><small>Koçlarla yazarak çalış</small></button>
+    <button type="button" class="benItem" data-ben="practice"><b>Yazarak çalış</b><small>Koçlarla yazışarak çalış</small></button>
   </div>
 </div>
 <div class="updBar" id="updBar" role="status" lang="tr" hidden><span>Yeni sürüm hazır</span><button type="button" id="updGo">Yenile</button></div>
@@ -2158,7 +2161,7 @@ function dueCards(lang){const t=today();return S.cards.filter(c=>c.lang===lang&&
 const STREAK_MIN=30;
 function dayCounts(k){return (minsByDay()[k]||0)>=STREAK_MIN;}
 function streak(){const mb=minsByDay();let n=0,k=today();if(!((mb[k]||0)>=STREAK_MIN))k=addDays(k,-1);while((mb[k]||0)>=STREAK_MIN){n++;k=addDays(k,-1);}return n;}
-const streakTxt=()=>{const st=streak(), m=minsByDay()[today()]||0; return st?"Seri · "+st+" gün":m>0?"Seri · bugün başladın":"Seri · 0 gün";};
+const streakTxt=()=>{const st=streak(); return "Seri · "+st+" gün";};
 const cardMin=n=>Math.max(1,Math.ceil(n*8/60));
 const cardsLeftTxt=n=>"Kalan kartları bitir: "+n+" (~"+cardMin(n)+" dk)";
 function backlogCards(lang){const t=today();return S.cards.filter(c=>(!lang||c.lang===lang)&&(c.due||"")<=t&&!(c.added&&trKey(c.added)===t)).length;}
@@ -2249,7 +2252,7 @@ function renderHero(){
   const nxt=()=>`Sıradaki: <b>${esc(blockName(nx))}</b> · ${nx.dk} dk.`, mode=dayMode(), enS=mode==="it"?"":" Sonra 20 dk İngilizce.";
   let kicker, title, sub, go;
   if(allDone){kicker=ICON("check")+"Bugünün "+total+" dakikası tamam"; title="Bugün tamam.";
-    sub=(due?due+" kart kaldı; ders tamam. ":"")+"Yarın devam edersen seri "+(st+1)+" gün olur.";
+    sub=(due?due+" kart kaldı; ders tamam. ":"")+lxStreakTxt();
     go=due?cardsLeftTxt(due):"Koçlarla serbest çalış";}
   else if(mode==="en"){const e=enToday(), wk=p&&p.week>=1&&!p.finished?"Hafta "+p.week+" · ":"";
     kicker=FLAG("en")+" Sadece İngilizce · "+wk+(wd===0?"haftalık tekrar":"gramer odağı"); title=wd===0?"Haftanın İngilizce tekrarı":esc(e.t?e.t[2]:"Serbest pratik");
@@ -2292,6 +2295,7 @@ function renderMeter(ps,total,doneMin){
     <div class="segbar" role="img" aria-label="Bugün ${total} dakikanın ${doneMin} dakikası tamam">${ps.map(b=>`<i class="${b.l} ${b.st}" style="--w:${b.dk}" title="${esc(b.t)} · ${b.dk} dk"></i>`).join("")}</div>`;
 }
 function renderPlan(){
+  if(typeof lxPlanDetails==="function"&&lxPlanDetails())return;
   const ps=dayBlocks(), doneN=ps.filter(b=>b.st==="done").length, left=ps.filter(b=>b.st!=="done").reduce((a,b)=>a+b.dk,0);
   const lbl={done:ICON("check")+"Tamam",next:"Sırada",wait:"Bekliyor"};
   $("#todayTitle").textContent="Bugünün "+(NUMW[ps.length]||ps.length)+" bloğu";
@@ -2370,8 +2374,10 @@ function renderReview(){
   if(!db){box.innerHTML=dbState==="none"?`<div class="empty"><b>Kartlar açılamadı</b>Cihaz depolaması açılamadı. Sayfayı yenile; sürerse tarayıcıyı güncelle ya da gizli pencereden çık.</div>`
     :`<div class="empty"><b>Kayıtlara bağlanılıyor</b>Kartların birkaç saniye içinde burada görünecek.</div>`;return;}
   if(!total){box.innerHTML=`<div class="empty"><b>${LANG[reviewLang]} destesi boş</b>Koçla ders yaptıkça öğrendiğin kelimeler buraya kendiliğinden eklenir. Beklemek istemezsen aşağıdan kendin ekle.</div>`;return;}
-  if(rqi>=rq.length){const nextDue=all.map(c=>c.due).filter(d=>d&&d>today()).sort()[0];
-    box.innerHTML=`<div class="empty"><b>Bugünlük tekrar bitti</b>${total} ${LANG[reviewLang]} kartın var.${nextDue?" Sıradaki tekrar "+esc(fmtDay(nextDue,{day:"numeric",month:"long",weekday:"long"}))+".":""}</div>`;return;}
+  if(rqi>=rq.length){const other=reviewLang==="it"?"en":"it";
+    if(rq.length&&dueCards(other).length){reviewLang=other; buildQueue(); return;}
+    const nextDue=all.map(c=>c.due).filter(d=>d&&d>today()).sort()[0], nx=typeof lxNext==="function"?lxNext("cards"):null;
+    box.innerHTML=`<div class="empty"><b>Bugünlük tekrar bitti</b>${total} ${LANG[reviewLang]} kartın var.${nextDue?" Sıradaki tekrar "+esc(fmtDay(nextDue,{day:"numeric",month:"long",weekday:"long"}))+".":""}</div>${nx?`<button type="button" class="btn btn-primary full" data-plan-next>Sıradaki: ${esc(nx.label)}${ICON("arrow")}</button>`:""}`;return;}
   const c=rq[rqi], lv=c.box||1, up=Math.min(6,lv+1);
   let pips="";for(let i=1;i<=6;i++)pips+=`<i class="${i<=lv?"on":""}"></i>`;
   box.innerHTML=`<div class="rv"><div class="cardMeta"><span>${rqi+1} / ${rq.length} kart</span><span class="lvlPips" title="Ezber seviyesi: 1 yeni, 6 kalıcı">Ezber seviyesi ${lv}/6 <span>${pips}</span></span></div>
@@ -2482,7 +2488,7 @@ function trKey0(iso){try{const d=new Date(iso);if(isNaN(d))return String(iso).sl
 function progAnchor(start){const wd=(wdOf(start)+6)%7; return wd<=2?addDays(start,-wd):addDays(start,7-wd);}
 const validDay=k=>/^\d{4}-\d{2}-\d{2}$/.test(k||"")&&!isNaN(Date.parse(k+"T00:00:00Z"));
 const dueDays=n=>n>=2?[3,6]:n===1?[4]:[];
-function expectedBy(week,dw){let e=0;ROADMAP.forEach(r=>{if(r.w<week)e+=r.it.length;else if(r.w===week)e+=dueDays(r.it.length).filter(d=>d<=dw).length;});return e;}
+function expectedBy(week,dw){let e=0;ROADMAP.forEach(r=>{if(r.w<week)e+=r.it.length;else if(r.w===week&&dw>=7)e+=r.it.length;});return e;}
 function progInfo(){
   const pr=S.program; if(!pr||!validDay(pr.start)) return null;
   const t=today(), anchor=progAnchor(pr.start), day=daysBetween(anchor,t)+1, lead=day<1?1-day:0;
@@ -2537,7 +2543,7 @@ const NUMW=["sıfır","bir","iki","üç","dört","beş","altı"];
 function progVerdict(p,it){
   if(p.finished) return {cls:"good",short:"Program bitti",long:"12 hafta tamam. Final sınavı sonucunu İlerleme sekmesinde gör; A2 konularıyla devam edebilirsin."};
   const nm=it&&it.t?`<b>${esc(it.t[2])}</b>`:"";
-  if(p.diff<0) return {cls:"bad",short:Math.abs(p.diff)+" konu gerideysin",long:`Bugün ${nm||"sıradaki konuyu"} bitir. Gramer bloğunu bu konuya ver; konu %80 doğrulukla kapanınca plana yaklaşırsın.`};
+  if(p.diff<0&&!(p.week<=1&&p.doneN===0)) return {cls:"bad",short:Math.abs(p.diff)+" konu gerideysin",long:`Bugün ${nm||"sıradaki konuyu"} bitir. Gramer bloğunu bu konuya ver; konu %80 doğrulukla kapanınca plana yaklaşırsın.`};
   if(p.diff>0) return {cls:"good",short:"Programın önündesin · +"+p.diff+" konu",long:it&&it.mode==="review"?"Konular önde. Bugün tekrar günü: gramer bloğunda eski konuları pekiştir.":`Önde gidiyorsun. ${nm?"Sıradaki: "+nm+". ":""}Acele etme; kelime ve sesli tekrar bloklarını atlama.`};
   return {cls:"ok",short:p.week<1?"Isınmadasın":"Plandasın",long:it&&it.mode==="review"?"Bugün tekrar günü: gramer bloğu eski konuları pekiştirir.":nm?`Bugünün konusu ${nm}.`:"Bugünün planına devam."};
 }
@@ -2564,7 +2570,7 @@ function renderProgStrip(){
 }
 function renderHabit(){const el=$("#habit"); if(!el) return; const k=today(), on=!!(S.habits[k]&&S.habits[k].dinleme);
   el.innerHTML=`<button type="button" class="habit ${on?"on":""}" id="habitBtn" aria-pressed="${on}" ${db?"":"disabled"}><span class="hb">${on?ICON("check"):""}</span>
-    <span class="ht"><b>Yolda dinle · 15–20 dk <span class="opt">isteğe bağlı</span></b><small>${on?"Bugün dinledin. Kaldırmak için tekrar dokun.":"İşe giderken İtalyanca podcast (öneri: Coffee Break Italian, 1. sezon, baştan sırayla). 60 dakikaya dahil değil; dinlediysen işaretle."}</small></span></button>`;}
+    <span class="ht"><b>Yolda dinle · 15–20 dk <span class="hopt">isteğe bağlı</span></b><small>${on?"Bugün dinledin. Kaldırmak için tekrar dokun.":"İşe giderken İtalyanca podcast (öneri: Coffee Break Italian, 1. sezon, baştan sırayla). 60 dakikaya dahil değil; dinlediysen işaretle."}</small></span></button>`;}
 function renderWeekGoals(){
   const el=$("#weekGoals"); if(!el) return; const p=progInfo();
   if(!p){el.innerHTML=`<div class="chead"><div><h2>Haftalık hedefler</h2><p class="lead">Yoğun programı başlatınca bu haftanın dakika, kelime ve konu hedefleri burada görünür.</p></div>
@@ -2634,7 +2640,8 @@ document.addEventListener("click",async e=>{
     try{/* Başka cihazda / geç gelen kayıtta program zaten varsa ezme, onu benimse */
       let ex=null; try{ex=await db.collection("program").doc("main").get();}catch(e){ex=null;}
       if(ex&&ex.exists){S.program=ex.data(); progLoaded=true; onbSkip=false; renderAll(); if(typeof fNotice==="function") fNotice("Program zaten başlatılmış."); return;}
-      await db.collection("program").doc("main").set(doc); S.program=doc; onbSkip=false; renderAll(); if(typeof dersGate==="function"&&dersGate()) dersOpen();}
+      await db.collection("program").doc("main").set(doc); S.program=doc; onbSkip=false; renderAll();
+      lxIndex().then(()=>{renderDayPlan(); if(!lxGo()&&dersGate()) dersOpen();});}
     catch(err){b.disabled=false; msg(m,"err",dbErrText(err,"Program kaydedilemedi"));}
     finally{progWriting=false;} return;}
   if(b.id==="habitBtn"){if(!db||b.dataset.busy)return; const k=today(), on=!(S.habits[k]&&S.habits[k].dinleme); b.dataset.busy="1";
@@ -3367,23 +3374,14 @@ function renderOnb(){
   const show=dbState==="ok"&&progLoaded&&!S.program&&!onbSkip;
   el.hidden=!show; main.hidden=show; if(!show){onbHtml="";return;}
   const d=onbDate||today(), anchor=validDay(d)?progAnchor(d):null, warm=anchor&&anchor>d;
-  const dots=n=>`<div class="onbTop"><span class="onbDots" aria-hidden="true">${[1,2,3].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</span><span class="eyebrow">Adım ${n} / 3</span></div>`;
-  const step=(n,body)=>`<div class="onbStep" data-step="${n}" ${onbStep===n?"":"hidden"}>${dots(n)}${body}</div>`;
-  const html=
-    step(1,`<h1 id="onbTitle1" tabindex="-1">Programın: 12 hafta, günde 60 dk</h1>
+  const html=`<div class="onbStep" data-step="1"><h1 id="onbTitle1" tabindex="-1">12 hafta, günde 60 dk</h1>
       <div class="modeSeg" id="onbModeSeg" role="radiogroup" aria-labelledby="onbModeL">${modeSegHtml(dayMode(),"Ne çalışacaksın?","onbModeL")}</div>
       <p class="onbLead" id="onbModeLead">${onbModeLead(dayMode())}</p>
-      <div class="onbDate"><label for="progStart">Başlangıç tarihi</label><input type="date" id="progStart" value="${esc(d)}"></div>
-      <div class="onbAct"><button type="button" class="btn btn-primary btn-big" data-onb="2">İleri${ICON("arrow")}</button></div>`)+
-    step(2,`<h1 id="onbTitle2" tabindex="-1">Bir gün nasıl geçer?</h1>
-      <ol class="onbFlow"><li>${ICON("play")}<b>Başlat</b></li><li>${ICON("chat")}<b>Koçla çalış</b></li><li>${ICON("check")}<b>Bloğu bitirdim</b></li><li>${ICON("flame")}<b>Bitti</b></li></ol>
-      <p class="onbLead">Koç her bloğu yürütür ve kaydı kendisi tutar. Sen sadece sıradaki düğmeye basarsın.</p>
-      <div class="onbAct"><button type="button" class="btn btn-ghost" data-onb="1">Geri</button><button type="button" class="btn btn-primary btn-big" data-onb="3">İleri${ICON("arrow")}</button></div>`)+
-    step(3,`<h1 id="onbTitle3" tabindex="-1">Hazırsın</h1>
-      <p class="onbLead">Başla'ya bas: program kaydedilir, ilk ders açılır. Chiara seni bekliyor.</p>
-      <p class="hint" id="progStartHint">${anchor?(warm?"Hafta 1: "+esc(fmtDay(anchor,{day:"numeric",month:"long",weekday:"long"}))+". O güne kadar ısınma.":"Hafta 1 bu hafta: "+esc(fmtDay(anchor,{day:"numeric",month:"long"}))+" Pazartesi'den sayılır."):""}</p>
-      <div class="onbAct"><button type="button" class="btn btn-ghost" data-onb="2">Geri</button><button type="button" class="btn btn-primary btn-big" id="btnProgStart">${ICON("play")}Başla</button></div>
-      <div id="progStartMsg"></div>`)+
+      <p class="onbLead">Her gün Bugün ekranında 2–3 adım: kart tekrarı, adım adım ders, koçla sesli konuşma. Tek düğme: Başla.</p>
+      <details class="onbDate" ${d!==today()?"open":""}><summary>Başlangıç: ${d===today()?"bugün":esc(fmtDay(d,{day:"numeric",month:"long"}))} · değiştir</summary><label for="progStart">Başlangıç tarihi</label><input type="date" id="progStart" value="${esc(d)}">
+        <p class="hint" id="progStartHint">${anchor?(warm?"Hafta 1: "+esc(fmtDay(anchor,{day:"numeric",month:"long",weekday:"long"}))+". O güne kadar ısınma.":"Hafta 1 bu hafta: "+esc(fmtDay(anchor,{day:"numeric",month:"long"}))+" Pazartesi'den sayılır."):""}</p></details>
+      <div class="onbAct"><button type="button" class="btn btn-primary btn-big" id="btnProgStart">${ICON("play")}Başla</button></div>
+      <div id="progStartMsg"></div></div>`+
     `<button type="button" class="onbSkip" id="onbSkip">Programsız göz at</button>`;
   if(html===onbHtml) return; const a=document.activeElement;
   if(onbHtml&&a&&a.id==="progStart"&&el.contains(a)) return;
@@ -3392,7 +3390,7 @@ function renderOnb(){
 function onbModeLead(m){return m==="it"?"<b>60 dk İtalyanca</b>: kelime, gramer, okuma-yazma, sesli tekrar. Pazar tekrar günü. Hedef: 12 haftada temel A1.":
   m==="en"?"<b>60 dk İngilizce</b>: kelime, gramer, okuma-dinleme, konuşma. Hedef: B1'den B2'ye. İtalyanca planı o günlerde ilerlemez.":
   "<b>45 dk İtalyanca</b> + <b>15 dk İngilizce</b> konuşma. Pazar tekrar günü. Hedef: 12 haftada temel A1 (günlük dinlemeyle sağlam A1).";}
-function onbGo(n){const v=($("#progStart")||{}).value; if(v) onbDate=v; onbStep=Math.max(1,Math.min(3,n)); renderOnb(); const h=$("#onbTitle"+onbStep); if(h) h.focus({preventScroll:true});}
+function onbGo(n){const v=($("#progStart")||{}).value; if(v) onbDate=v; onbStep=1; renderOnb(); const h=$("#onbTitle"+onbStep); if(h) h.focus({preventScroll:true});}
 
 const dersEl=()=>$("#ders");
 function ccWhenIdle(){return new Promise(r=>{const t=()=>CC.busy?setTimeout(t,120):r();t();});}
@@ -4189,45 +4187,77 @@ function lxGet(id){const m=lxMeta(id); if(!m)return Promise.reject(new Error("De
 const lxP=id=>LX.prog[id]||{};
 const lxPassed=id=>!!lxP(id).passed;
 function lxDb(){if(!db)return; db.collection("lessons").onSnapshot(q=>{LX.prog={}; q.docs.forEach(d=>LX.prog[d.id]=d.data()); LX.progOk(); lxPaint(); if(typeof renderHero==="function")renderHero();},()=>{});}
-function lxPaint(){try{renderDayPlan();}catch(e){} try{lxRenderMine();}catch(e){}}
+function lxPaint(){try{renderDayPlan(); renderPlan();}catch(e){} try{lxRenderMine();}catch(e){}}
 function lxFin(lang,kinds){try{fLoad(); planFor().forEach(b=>{if(b.l===lang&&(!kinds||kinds.includes(b.k)))F.fin.add(b.l+"-"+b.k);}); fSave(); daysSave(); renderLive();}catch(e){}}
 function lxSteps(){
-  if(!LX.index||!LX.index.length||weekday()===0)return null;
-  const mode=dayMode(), t=today(), x=itToday(), itId=x.t&&x.mode!=="review"?x.t[1]:null, e=enToday(), enId=e.t?e.t[1]:null;
+  if(!LX.index||!LX.index.length)return null;
+  const mode=dayMode(), t=today(), sun=weekday()===0, x=itToday(), itId=x.t&&x.mode!=="review"?x.t[1]:null, e=enToday(), enId=e.t?e.t[1]:null;
   const due=dueCards("it").length+dueCards("en").length, revToday=S.cards.some(c=>c.last===t);
   const pkOf=lang=>LX.index.filter(m=>m.lang===lang&&lxPassed(m.id)&&(lxP(m.id).passedAt||"")<t&&lxP(m.id).pk!==t&&!(lxP(m.id).pk>lxP(m.id).passedAt)).sort((a,b)=>(lxP(b.id).passedAt||"").localeCompare(lxP(a.id).passedAt||""))[0]||null;
   const konusDone=lang=>S.sessions.some(s=>s.date===t&&s.lang===lang&&(s.src==="konus"||(lang==="en"&&(+(s.mins||{}).speaking||0)>=7)));
-  const doneToday=lang=>(LX.index.find(m=>m.lang===lang&&lxP(m.id).passed&&lxP(m.id).passedAt===t)||{}).id||null;
+  const passedToday=lang=>(LX.index.filter(m=>m.lang===lang&&lxP(m.id).passed&&lxP(m.id).passedAt===t).sort((a,b)=>String(lxP(b.id).updated||"").localeCompare(String(lxP(a.id).updated||"")))[0]||{}).id||null;
   const out=[]; let usesContent=false;
   const cards=()=>{if(due>0||revToday)out.push({k:"cards",t:"Kart tekrarı",s:due?due+" kart · yaklaşık "+cardMin(due)+" dk":"Bugünlük kartlar bitti",done:!due});};
   const lessonStep=(id,lang)=>{const m=lxMeta(id), p=lxP(id); out.push({k:"lesson",id,lang,t:m.title,s:(lang==="it"?"İtalyanca":"İngilizce")+" ders"+(m.minutes?" · "+m.minutes+" dk":"")+" · 5 adım",done:!!p.passed&&p.passedAt===t});};
   const pkStep=m=>out.push({k:"pekistir",id:m.id,lang:m.lang,t:"Pekiştir: "+m.title,s:"6 kısa soru + kısa konuşma",done:lxP(m.id).pk===t});
+  const konusStep=(coach,lesson)=>out.push(coach==="it"?{k:"konus",coach:"it",lang:"it",t:"Chiara ile konuş",s:"5–8 dk sesli konuşma",done:konusDone("it")}:{k:"konus",coach:"en",lang:"en",lesson,t:"Oliver ile konuş",s:(mode==="en"?"25":"15")+" dk sesli konuşma",done:konusDone("en")});
+  let extra=null;
+  if(sun){const sk=sundayKind(); if(sk.kind!=="normal")return null;                                  /* sınav günleri eski akış */
+    const p=progInfo(); let ids=p&&p.week>=1&&p.week<=PROG_WEEKS?ROADMAP[p.week-1].it.filter(id=>lxHas(id)&&lxPassed(id)):[];
+    if(!ids.length)ids=LX.index.filter(m=>lxPassed(m.id)).sort((a,b)=>(lxP(b.id).passedAt||"").localeCompare(lxP(a.id).passedAt||"")).slice(0,2).map(m=>m.id);
+    if(!ids.length)return null;
+    cards(); out.push({k:"pkweek",ids,lang:lxMeta(ids[0]).lang,t:"Haftanın Pekiştir'i",s:ids.map(id=>lxMeta(id).title).join(" + "),done:ids.every(id=>lxP(id).pk===t)});
+    konusStep(mode==="it"?"it":"en",lxHas(enId)?enId:null); usesContent=true;}
+  else{
   if(mode!=="en"){
-    const pk=pkOf("it"), lid=lxHas(itId)&&!lxPassed(itId)?itId:doneToday("it"), lessonNow=!!lid;
+    const pk=pkOf("it"), nextIt=lxHas(itId)&&!lxPassed(itId)?itId:null, lid=passedToday("it")||nextIt, lessonNow=!!lid;
+    if(lid&&lid!==nextIt&&nextIt)extra=nextIt;
     if(lessonNow||pk){usesContent=true; cards(); if(lessonNow)lessonStep(lid,"it"); if(pk&&(!lessonNow||mode==="it"))pkStep(pk);}
     else out.push({k:"ders",lang:"it",t:"İtalyanca · Chiara ile ders",s:"Koç bloğu bloğu yürütür",done:dayBlocks().filter(b=>b.l==="it").every(b=>b.st==="done")});
-    if(mode==="it"&&usesContent)out.push({k:"konus",coach:"it",t:"Chiara ile konuş",s:"5–8 dk sesli konuşma",done:konusDone("it")});}
+    if(mode==="it"&&usesContent)konusStep("it");}
   if(mode!=="it"){
-    const eid=lxHas(enId)&&!lxPassed(enId)?enId:doneToday("en");
-    if(mode==="en"&&eid){usesContent=true; if(!out.length)cards(); lessonStep(eid,"en");}
-    if(usesContent)out.push({k:"konus",coach:"en",lesson:lxHas(enId)?enId:null,t:"Oliver ile konuş",s:(mode==="en"?"25":"15")+" dk sesli konuşma",done:konusDone("en")});
-    else out.push({k:"ders",lang:"en",t:"İngilizce · Oliver ile konuşma",s:(mode==="en"?"60":"15")+" dk · "+(e.theme||"serbest"),done:dayBlocks().filter(b=>b.l==="en").every(b=>b.st==="done")});}
+    const nextEn=lxHas(enId)&&!lxPassed(enId)?enId:null, eid=passedToday("en")||nextEn;
+    if(mode==="en"&&eid){usesContent=true; if(!out.length)cards(); lessonStep(eid,"en"); if(eid!==nextEn&&nextEn)extra=nextEn;}
+    if(usesContent)konusStep("en",lxHas(enId)?enId:null);
+    else out.push({k:"ders",lang:"en",t:"İngilizce · Oliver ile konuşma",s:(mode==="en"?"60":"15")+" dk · "+(e.theme||"serbest"),done:dayBlocks().filter(b=>b.l==="en").every(b=>b.st==="done")});}}
   if(!usesContent)return null;
-  const n=out.find(s=>!s.done); if(n)n.next=true; return out;}
+  const n=out.find(s=>!s.done); if(n)n.next=true;
+  if(!n&&extra)out.extra={k:"lesson",id:extra,lang:lxMeta(extra).lang,t:lxMeta(extra).title};
+  return out;}
+const lxLabel=n=>n.k==="cards"?"önce kart tekrarı":n.k==="lesson"?(lxP(n.id).step?"derse devam et":"bugünkü ders"):n.k==="pekistir"||n.k==="pkweek"?"Pekiştir":n.k==="konus"?(n.coach==="it"?"Chiara":"Oliver")+" ile konuş":"ders";
+function lxNext(skip){if(!LX||!LX.index)return null; renderDayPlan(); const st=LX.hero; if(!st)return null; const n=st.find(s=>!s.done&&s.k!==skip); return n?{label:n.k==="cards"?"Kart tekrarı":n.k==="lesson"?n.t:n.k==="konus"?(n.coach==="it"?"Chiara":"Oliver")+" ile konuş":n.t,step:n}:null;}
+function lxStreakTxt(){const st=streak(), m=minsByDay()[today()]||0; return m>=STREAK_MIN?"Yarın devam edersen seri "+(st+1)+" gün olur.":"Seriye saymak için bugün "+(STREAK_MIN-m)+" dk daha çalış: Kartlar ya da Konuş yeter.";}
 function renderDayPlan(){const el=$("#dayPlan"); if(!el||!LX)return; let st=null; try{st=lxSteps();}catch(e){st=null;} LX.hero=st;
   el.hidden=!st; const sub=$("#heroSub"); if(sub)sub.hidden=!!st; if(!st){el.innerHTML="";return;}
-  const html=st.map((s,i)=>`<li class="${s.done?"done":s.next?"next":""}"><span class="pn">${s.done?ICON("check"):i+1}</span><div><b>${esc(s.t)}</b><small>${esc(s.s)}</small></div></li>`).join("");
+  const all=st.every(s=>s.done), doneN=st.filter(s=>s.done).length, mins=minsByDay()[today()]||0;
+  let html=st.map((s,i)=>`<li class="${s.done?"done":s.next?"next":""}"><span class="pn">${s.done?ICON("check"):i+1}</span><div><b>${esc(s.t)}</b><small>${esc(s.s)}</small></div></li>`).join("");
+  if(st.extra)html+=`<li class="extra"><span class="pn">${ICON("plus")}</span><div><b>Bir ders daha: ${esc(st.extra.t)}</b><small>İsteğe bağlı · günün planı tamam</small></div></li>`;
   if(el.dataset.sig!==html){el.dataset.sig=html; el.innerHTML=html;}
   const dc=$("#dueChip"); if(dc){dc.hidden=true; dc.parentElement.hidden=true;}                     /* kart tekrarı planda bir adım */
-  const g=$("#btnGo"), n=st.find(s=>s.next); if(!g||!n)return;
-  const lbl=n.k==="cards"?"Başla · önce kart tekrarı":n.k==="lesson"?(lxP(n.id).step?"Derse devam et":"Bugünkü dersi başlat"):n.k==="pekistir"?"Başla · Pekiştir":n.k==="konus"?"Başla · "+(n.coach==="it"?"Chiara":"Oliver")+" ile konuş":"Bugünkü dersi başlat";
-  g.innerHTML=ICON("play")+`<span>${esc(lbl)}</span>`; g.className="btn btn-big goBtn btn-primary";}
-function lxGo(){if(!LX)return false; const st=LX.hero; if(!st)return false; const n=st.find(s=>s.next); if(!n)return false;
-  if(n.k==="cards"){openTab("cards");return true;}
+  const mt=`<div class="meterTop"><b>${doneN} <small>/ ${st.length} adım</small></b><span>bugün ${mins} dk çalıştın</span></div><div class="segbar" role="img" aria-label="Bugün ${st.length} adımın ${doneN} tanesi tamam">${st.map(s=>`<i class="${s.lang||"it"} ${s.done?"done":s.next?"next":"wait"}" style="--w:1" title="${esc(s.t)}"></i>`).join("")}</div>`;
+  const me=$("#meter"); if(me)me.innerHTML=mt;
+  const hero=$("#hero"); if(hero)hero.classList.toggle("isDone",all);
+  const ms=$("#modeSeg"); if(ms&&all)ms.hidden=true;
+  {const ls=st.find(s=>s.k==="lesson"||s.k==="pekistir"||s.k==="pkweek"), nn=st.find(s=>s.next);
+    if(!all&&ls){$("#heroTitle").textContent=ls.t; if(ls.done&&nn)$("#heroKicker").innerHTML=ICON("check")+esc("Ders tamam · sırada: "+nn.t);}}
+  if(all){$("#heroKicker").innerHTML=ICON("check")+"Bugünün planı tamam"; $("#heroTitle").textContent="Bugün tamam."; if(sub){sub.hidden=false; sub.textContent=lxStreakTxt();}}
+  const g=$("#btnGo"); if(!g)return; const n=st.find(s=>s.next);
+  if(n){g.innerHTML=ICON("play")+`<span>${esc(n.k==="lesson"&&!lxP(n.id).step?"Bugünkü dersi başlat":n.k==="lesson"?"Derse devam et":"Başla · "+lxLabel(n))}</span>`; g.className="btn btn-big goBtn btn-primary";}
+  else{g.innerHTML=ICON(st.extra?"plus":"chat")+`<span>${esc(st.extra?"Bir ders daha · "+st.extra.t:"Koçla serbest konuş")}</span>`; g.className="btn btn-big goBtn btn-soft";}}
+function lxPlanDetails(){const st=LX&&LX.hero; if(!st)return false; const lbl={done:ICON("check")+"Tamam",next:"Sırada",wait:"Bekliyor"}, ico={cards:"repeat",lesson:"okuma",pekistir:"repeat",pkweek:"repeat",konus:"speaking",ders:"chat"};
+  $("#todayTitle").textContent="Bugünün adımları"; $("#todaySide").textContent=st.filter(s=>s.done).length+" / "+st.length+" adım tamam";
+  $("#plan").innerHTML=st.map(s=>{const k=s.done?"done":s.next?"next":"wait"; return `<div class="row ${s.lang||"it"} ${k}"><span class="bi">${ICON(s.done?"check":ico[s.k]||"play")}</span><div><h3>${s.lang?FLAG(s.lang):""}${esc(s.t)}</h3><p>${esc(s.s)}</p></div><span class="st ${k}">${lbl[k]}</span></div>`;}).join("");
+  return true;}
+function lxGo(){if(!LX)return false; const st=LX.hero; if(!st)return false; const n=st.find(s=>s.next);
+  if(!n){if(st.extra){lxOpen(st.extra.id,{}); return true;} openTab("konus"); return true;}
+  if(n.k==="cards"){lxCards(); return true;}
   if(n.k==="lesson"||n.k==="pekistir"){lxOpen(n.id,{pk:n.k==="pekistir"});return true;}
+  if(n.k==="pkweek"){lxOpen(n.ids[0],{pk:true,week:n.ids});return true;}
   if(n.k==="konus"){openTab("konus"); lxMod().then(M=>M.konus.call({coach:n.coach,lesson:n.lesson||null})).catch(lxModErr); return true;}
   if(n.k==="ders"){if(dersGate())dersOpen(); return true;}
   return false;}
+function lxCards(){const l=dueCards(reviewLang).length?reviewLang:dueCards("it").length?"it":dueCards("en").length?"en":reviewLang; if(l!==reviewLang){reviewLang=l;} buildQueue(); openTab("cards");}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-plan-next]"); if(b){renderDayPlan(); lxGo();}});
 function lxRenderMine(){const el=$("#myLessons"); if(!el||!LX)return; const L=LX.index||[]; el.hidden=!L.length; if(!L.length)return;
   const x=itToday(), cur=new Set([x.t&&x.t[1],(enToday().t||[])[1]].filter(Boolean)), STEP=["Anlat","Dinle","Uygula","Konuş","Yokla"];
   const html=`<div class="chead"><div><h2 id="myLT">Benim derslerim</h2><p class="lead">Adım adım dersler: Anlat · Dinle · Uygula · Konuş · Yokla. İstediğini aç.</p></div></div>
@@ -4241,7 +4271,7 @@ function lxMod(){if(window.TYLESSON)return Promise.resolve(window.TYLESSON); if(
 function lxModErr(e){fNotice((e&&e.message||"Yüklenemedi")+". Bağlantıyı kontrol edip tekrar dene.");}
 function lxOpen(id,o){lxMod().then(M=>M.open(id,o||{})).catch(lxModErr);}
 function lxKonusTab(){lxMod().then(M=>M.konus.mount($("#konusMount"))).catch(()=>{const m=$("#konusMount"); if(m)m.innerHTML=`<div class="empty"><b>Konuş açılamadı</b>Bağlantıyı kontrol edip sekmeyi yeniden aç.</div>`;});}
-window.TYDIL.core={esc,today,addDays,ICON,FLAG,SYL,SPEAK_EN,itToday,enToday,dayMode,setTopic,upsertSession,lxFin,lxGet,lxMeta,lxP,lxPaint,dueCards,openTab,renderLive,fNotice,
+window.TYDIL.core={esc,today,addDays,ICON,FLAG,SYL,SPEAK_EN,itToday,enToday,dayMode,setTopic,upsertSession,lxFin,lxGet,lxNext,lxGo,lxMeta,lxP,lxPaint,dueCards,openTab,renderLive,fNotice,
   get db(){return db;}, S, LX, sample:()=>CC.sample, locked:()=>CC.locked, speakRules:ccSpeakRules, voiceFor:lang=>ccPickVoice(lang), rate:()=>V.set.rate, tipHtml:vTipHtml, ttsOk:vTtsOk,
   srOk:()=>!!V_SR&&!V_IOS_PWA, SR:()=>V_SR, ccStop:()=>{try{voiceStop();}catch(e){}}, topicById, cardMin};
 lxIndex();

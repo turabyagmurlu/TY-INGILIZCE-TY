@@ -82,23 +82,15 @@ function renderOnb(){
   const show=dbState==="ok"&&progLoaded&&!S.program&&!onbSkip;
   el.hidden=!show; main.hidden=show; if(!show){onbHtml="";return;}
   const d=onbDate||today(), anchor=validDay(d)?progAnchor(d):null, warm=anchor&&anchor>d;
-  const dots=n=>`<div class="onbTop"><span class="onbDots" aria-hidden="true">${[1,2,3].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</span><span class="eyebrow">Adım ${n} / 3</span></div>`;
-  const step=(n,body)=>`<div class="onbStep" data-step="${n}" ${onbStep===n?"":"hidden"}>${dots(n)}${body}</div>`;
-  const html=
-    step(1,`<h1 id="onbTitle1" tabindex="-1">Programın: 12 hafta, günde 60 dk</h1>
+  /* Tek ekran: dil seçimi (İkisi seçili) · başlangıç bugün (istersen değiştir) · Başla */
+  const html=`<div class="onbStep" data-step="1"><h1 id="onbTitle1" tabindex="-1">12 hafta, günde 60 dk</h1>
       <div class="modeSeg" id="onbModeSeg" role="radiogroup" aria-labelledby="onbModeL">${modeSegHtml(dayMode(),"Ne çalışacaksın?","onbModeL")}</div>
       <p class="onbLead" id="onbModeLead">${onbModeLead(dayMode())}</p>
-      <div class="onbDate"><label for="progStart">Başlangıç tarihi</label><input type="date" id="progStart" value="${esc(d)}"></div>
-      <div class="onbAct"><button type="button" class="btn btn-primary btn-big" data-onb="2">İleri${ICON("arrow")}</button></div>`)+
-    step(2,`<h1 id="onbTitle2" tabindex="-1">Bir gün nasıl geçer?</h1>
-      <ol class="onbFlow"><li>${ICON("play")}<b>Başlat</b></li><li>${ICON("chat")}<b>Koçla çalış</b></li><li>${ICON("check")}<b>Bloğu bitirdim</b></li><li>${ICON("flame")}<b>Bitti</b></li></ol>
-      <p class="onbLead">Koç her bloğu yürütür ve kaydı kendisi tutar. Sen sadece sıradaki düğmeye basarsın.</p>
-      <div class="onbAct"><button type="button" class="btn btn-ghost" data-onb="1">Geri</button><button type="button" class="btn btn-primary btn-big" data-onb="3">İleri${ICON("arrow")}</button></div>`)+
-    step(3,`<h1 id="onbTitle3" tabindex="-1">Hazırsın</h1>
-      <p class="onbLead">Başla'ya bas: program kaydedilir, ilk ders açılır. Chiara seni bekliyor.</p>
-      <p class="hint" id="progStartHint">${anchor?(warm?"Hafta 1: "+esc(fmtDay(anchor,{day:"numeric",month:"long",weekday:"long"}))+". O güne kadar ısınma.":"Hafta 1 bu hafta: "+esc(fmtDay(anchor,{day:"numeric",month:"long"}))+" Pazartesi'den sayılır."):""}</p>
-      <div class="onbAct"><button type="button" class="btn btn-ghost" data-onb="2">Geri</button><button type="button" class="btn btn-primary btn-big" id="btnProgStart">${ICON("play")}Başla</button></div>
-      <div id="progStartMsg"></div>`)+
+      <p class="onbLead">Her gün Bugün ekranında 2–3 adım: kart tekrarı, adım adım ders, koçla sesli konuşma. Tek düğme: Başla.</p>
+      <details class="onbDate" ${d!==today()?"open":""}><summary>Başlangıç: ${d===today()?"bugün":esc(fmtDay(d,{day:"numeric",month:"long"}))} · değiştir</summary><label for="progStart">Başlangıç tarihi</label><input type="date" id="progStart" value="${esc(d)}">
+        <p class="hint" id="progStartHint">${anchor?(warm?"Hafta 1: "+esc(fmtDay(anchor,{day:"numeric",month:"long",weekday:"long"}))+". O güne kadar ısınma.":"Hafta 1 bu hafta: "+esc(fmtDay(anchor,{day:"numeric",month:"long"}))+" Pazartesi'den sayılır."):""}</p></details>
+      <div class="onbAct"><button type="button" class="btn btn-primary btn-big" id="btnProgStart">${ICON("play")}Başla</button></div>
+      <div id="progStartMsg"></div></div>`+
     `<button type="button" class="onbSkip" id="onbSkip">Programsız göz at</button>`;
   /* Kayıt anlık görüntüsü her geldiğinde yeniden çizme: odak ve tarih girişi korunur */
   if(html===onbHtml) return; const a=document.activeElement;
@@ -109,7 +101,7 @@ function renderOnb(){
 function onbModeLead(m){return m==="it"?"<b>60 dk İtalyanca</b>: kelime, gramer, okuma-yazma, sesli tekrar. Pazar tekrar günü. Hedef: 12 haftada temel A1.":
   m==="en"?"<b>60 dk İngilizce</b>: kelime, gramer, okuma-dinleme, konuşma. Hedef: B1'den B2'ye. İtalyanca planı o günlerde ilerlemez.":
   "<b>45 dk İtalyanca</b> + <b>15 dk İngilizce</b> konuşma. Pazar tekrar günü. Hedef: 12 haftada temel A1 (günlük dinlemeyle sağlam A1).";}
-function onbGo(n){const v=($("#progStart")||{}).value; if(v) onbDate=v; onbStep=Math.max(1,Math.min(3,n)); renderOnb(); const h=$("#onbTitle"+onbStep); if(h) h.focus({preventScroll:true});}
+function onbGo(n){const v=($("#progStart")||{}).value; if(v) onbDate=v; onbStep=1; renderOnb(); const h=$("#onbTitle"+onbStep); if(h) h.focus({preventScroll:true});}
 
 /* ---- Ders modu ---- */
 const dersEl=()=>$("#ders");

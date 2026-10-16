@@ -35,7 +35,7 @@
 .habit b{font-size:15.5px;font-weight:800;line-height:1.3}
 .habit small{font-size:14px;color:var(--muted);line-height:1.4}
 .habit.on small{color:var(--good-ink)}
-.habit .opt{font-size:12.5px;font-weight:700;color:var(--muted);margin-left:4px}
+.habit .hopt{font-size:12.5px;font-weight:700;color:var(--muted);margin-left:4px}
 .weekGoals .a1{display:grid;justify-items:end;text-align:right;line-height:1.2}
 .weekGoals .a1 b{font-size:26px;font-weight:800;color:var(--heading);font-variant-numeric:tabular-nums}
 .weekGoals .a1 span{font-size:13.5px;color:var(--muted);font-weight:700}

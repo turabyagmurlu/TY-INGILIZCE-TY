@@ -45,7 +45,7 @@ function dueCards(lang){const t=today();return S.cards.filter(c=>c.lang===lang&&
 const STREAK_MIN=30;
 function dayCounts(k){return (minsByDay()[k]||0)>=STREAK_MIN;}
 function streak(){const mb=minsByDay();let n=0,k=today();if(!((mb[k]||0)>=STREAK_MIN))k=addDays(k,-1);while((mb[k]||0)>=STREAK_MIN){n++;k=addDays(k,-1);}return n;}
-const streakTxt=()=>{const st=streak(), m=minsByDay()[today()]||0; return st?"Seri · "+st+" gün":m>0?"Seri · bugün başladın":"Seri · 0 gün";};
+const streakTxt=()=>{const st=streak(); return "Seri · "+st+" gün";};
 /* Tekrar birikmesi: bugünden önce eklenip vadesi gelmiş kartlar (bugün öğrenilenler hariç) */
 /* Kalan kart: aynı metin ve süre formülü kapakta ve bitti ekranında (8 sn/kart) */
 const cardMin=n=>Math.max(1,Math.ceil(n*8/60));
@@ -154,7 +154,7 @@ function renderHero(){
   const nxt=()=>`Sıradaki: <b>${esc(blockName(nx))}</b> · ${nx.dk} dk.`, mode=dayMode(), enS=mode==="it"?"":" Sonra 20 dk İngilizce.";
   let kicker, title, sub, go;
   if(allDone){kicker=ICON("check")+"Bugünün "+total+" dakikası tamam"; title="Bugün tamam.";
-    sub=(due?due+" kart kaldı; ders tamam. ":"")+"Yarın devam edersen seri "+(st+1)+" gün olur.";
+    sub=(due?due+" kart kaldı; ders tamam. ":"")+lxStreakTxt();
     go=due?cardsLeftTxt(due):"Koçlarla serbest çalış";}
   else if(mode==="en"){const e=enToday(), wk=p&&p.week>=1&&!p.finished?"Hafta "+p.week+" · ":"";
     kicker=FLAG("en")+" Sadece İngilizce · "+wk+(wd===0?"haftalık tekrar":"gramer odağı"); title=wd===0?"Haftanın İngilizce tekrarı":esc(e.t?e.t[2]:"Serbest pratik");
@@ -201,6 +201,7 @@ function renderMeter(ps,total,doneMin){
     <div class="segbar" role="img" aria-label="Bugün ${total} dakikanın ${doneMin} dakikası tamam">${ps.map(b=>`<i class="${b.l} ${b.st}" style="--w:${b.dk}" title="${esc(b.t)} · ${b.dk} dk"></i>`).join("")}</div>`;
 }
 function renderPlan(){
+  if(typeof lxPlanDetails==="function"&&lxPlanDetails())return;
   const ps=dayBlocks(), doneN=ps.filter(b=>b.st==="done").length, left=ps.filter(b=>b.st!=="done").reduce((a,b)=>a+b.dk,0);
   const lbl={done:ICON("check")+"Tamam",next:"Sırada",wait:"Bekliyor"};
   $("#todayTitle").textContent="Bugünün "+(NUMW[ps.length]||ps.length)+" bloğu";
@@ -281,8 +282,11 @@ function renderReview(){
   if(!db){box.innerHTML=dbState==="none"?`<div class="empty"><b>Kartlar açılamadı</b>Cihaz depolaması açılamadı. Sayfayı yenile; sürerse tarayıcıyı güncelle ya da gizli pencereden çık.</div>`
     :`<div class="empty"><b>Kayıtlara bağlanılıyor</b>Kartların birkaç saniye içinde burada görünecek.</div>`;return;}
   if(!total){box.innerHTML=`<div class="empty"><b>${LANG[reviewLang]} destesi boş</b>Koçla ders yaptıkça öğrendiğin kelimeler buraya kendiliğinden eklenir. Beklemek istemezsen aşağıdan kendin ekle.</div>`;return;}
-  if(rqi>=rq.length){const nextDue=all.map(c=>c.due).filter(d=>d&&d>today()).sort()[0];
-    box.innerHTML=`<div class="empty"><b>Bugünlük tekrar bitti</b>${total} ${LANG[reviewLang]} kartın var.${nextDue?" Sıradaki tekrar "+esc(fmtDay(nextDue,{day:"numeric",month:"long",weekday:"long"}))+".":""}</div>`;return;}
+  if(rqi>=rq.length){const other=reviewLang==="it"?"en":"it";
+    /* bu dil bitti, diğerinde tekrar bekleyen var → kendiliğinden ona geç (plan iki dili birlikte sayar) */
+    if(rq.length&&dueCards(other).length){reviewLang=other; buildQueue(); return;}
+    const nextDue=all.map(c=>c.due).filter(d=>d&&d>today()).sort()[0], nx=typeof lxNext==="function"?lxNext("cards"):null;
+    box.innerHTML=`<div class="empty"><b>Bugünlük tekrar bitti</b>${total} ${LANG[reviewLang]} kartın var.${nextDue?" Sıradaki tekrar "+esc(fmtDay(nextDue,{day:"numeric",month:"long",weekday:"long"}))+".":""}</div>${nx?`<button type="button" class="btn btn-primary full" data-plan-next>Sıradaki: ${esc(nx.label)}${ICON("arrow")}</button>`:""}`;return;}
   const c=rq[rqi], lv=c.box||1, up=Math.min(6,lv+1);
   let pips="";for(let i=1;i<=6;i++)pips+=`<i class="${i<=lv?"on":""}"></i>`;
   box.innerHTML=`<div class="rv"><div class="cardMeta"><span>${rqi+1} / ${rq.length} kart</span><span class="lvlPips" title="Ezber seviyesi: 1 yeni, 6 kalıcı">Ezber seviyesi ${lv}/6 <span>${pips}</span></span></div>

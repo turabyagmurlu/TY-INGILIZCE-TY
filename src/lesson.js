@@ -50,10 +50,11 @@ const L={id:"",d:null,lang:"it",coach:"it",step:0,done:[0,0,0,0,0],page:0,pr:{i:
 const $l=s=>document.querySelector("#lsn "+s);
 function lsnEl(){let el=document.getElementById("lsn"); if(el)return el;
   el=document.createElement("div"); el.id="lsn"; el.className="lsn"; el.setAttribute("role","dialog"); el.setAttribute("aria-modal","true"); el.setAttribute("aria-labelledby","lsnT"); el.lang="tr"; el.hidden=true;
-  el.innerHTML=`<div class="lsnIn"><div class="lsnTop"><button type="button" class="lsnX" id="lsnX">${ICON("arrow")}Çık</button></div>
-    <header class="lsnHd"><p class="eyebrow" id="lsnEye"></p><h1 id="lsnT"></h1><p class="lead" id="lsnLead"></p></header>
-    <ol class="lpath" id="lpath" aria-label="Dersin adımları"></ol><div id="lsnTip"></div><main id="lstage"></main></div>
-   <button type="button" class="askFab" id="askFab" aria-expanded="false" aria-controls="ask">${ICON("ask")}Koça sor</button>
+  el.innerHTML=`<div class="lsnSticky"><div class="lsnBar"><button type="button" class="lsnX" id="lsnX">${ICON("arrow")}<span>Çık</span></button>
+      <div class="lsnBt"><small id="lsnEye"></small><h1 id="lsnT"></h1></div>
+      <button type="button" class="askFab" id="askFab" aria-expanded="false" aria-controls="ask">${ICON("ask")}<span>Koça sor</span></button></div>
+    <ol class="lpath" id="lpath" aria-label="Dersin adımları"></ol></div>
+   <div class="lsnIn"><p class="lead lsnLead" id="lsnLead"></p><main id="lstage"></main></div>
    <section class="ask" id="ask" hidden aria-label="Koça sor"><header><div><strong id="askWho">Koça sor</strong><small id="askCtx"></small></div><button type="button" class="lx" id="askX" aria-label="Kapat">×</button></header>
     <div class="askLog" id="askLog" aria-live="polite"></div><form id="askForm"><label class="cc-vh" for="askIn">Sorun</label><textarea id="askIn" rows="1" placeholder="Takıldığın yeri yaz…"></textarea><button type="submit" class="btn btn-primary btn-sm" id="askSend">Sor</button></form></section>`;
   document.body.appendChild(el); el.addEventListener("click",onClick); el.addEventListener("submit",onSubmit); el.addEventListener("keydown",onKey);
@@ -67,12 +68,12 @@ async function save(extra){const db=C.db; if(!db)return; const p=progDoc();
 /* aktif süre: görünür + son 3 dk içinde etkileşim (Konuş görüşmesi ayrıca sayılır) */
 function tick(){if(!L.open||document.hidden||K.call)return; if(Date.now()-L.act>180000)return; const t=today(); if(L.msDate!==t){L.msDate=t; L.ms=0;} L.ms+=15000;}
 /* ---- aç / kapat ---- */
-async function open(id,o){o=o||{}; let d; try{d=await C.lxGet(id);}catch(e){C.fNotice(e.message||"Ders açılamadı."); return;}
+async function open(id,o){o=o||{}; let d, wk=null; try{d=await C.lxGet(id); if(o.week&&o.week.length>1)wk=await Promise.all(o.week.map(x=>C.lxGet(x)));}catch(e){C.fNotice(e.message||"Ders açılamadı."); return;}
   const bad=validate(d); if(bad){C.fNotice("Ders dosyası hatalı: "+bad); return;}
   if(L.open)close(true);
   const p=C.lxP(id); Object.assign(L,{id,d,lang:d.lang==="en"?"en":"it",coach:d.konus&&d.konus.coach==="oliver"?"en":d.konus&&d.konus.coach==="chiara"?"it":(d.lang==="en"?"en":"it"),
     done:[0,1,2,3,4].map(i=>!!(p.done&&p.done[i])),step:Math.min(4,Math.max(0,+p.step||0)),page:0,pr:{i:+(p.p&&p.p.i)||0,score:+(p.p&&p.p.score)||0,ans:false},qz:{i:0,score:0,ans:false,miss:[]},
-    pk:o.pk&&d.pekistir&&Array.isArray(d.pekistir.items)?{i:0,score:0,ans:false,talk:false}:null,ask:[],open:true,act:Date.now(),msDate:p.ms&&p.ms.date===today()?p.ms.date:today(),ms:p.ms&&p.ms.date===today()?+p.ms.v||0:0});
+    pk:o.pk&&d.pekistir&&Array.isArray(d.pekistir.items)?{i:0,score:0,ans:false,talk:false,items:wk?[].concat(...wk.map(x=>arr(x.pekistir&&x.pekistir.items).slice(0,4))):d.pekistir.items}:null,week:wk?o.week.slice():null,ask:[],sum:null,open:true,act:Date.now(),msDate:p.ms&&p.ms.date===today()?p.ms.date:today(),ms:p.ms&&p.ms.date===today()?+p.ms.v||0:0});
   if(L.pr.i>=(d.uygula||[]).length&&!L.done[2])L.pr={i:0,score:0,ans:false};
   const el=lsnEl(); el.hidden=false; el.scrollTop=0; document.documentElement.classList.add("lsn-on"); C.ccStop();
   L.tok=Math.random().toString(36).slice(2,9); try{history.pushState({lsn:L.tok},"",location.pathname+location.search+"#ders-"+id); L.pushed=true;}catch(e){L.pushed=false;}
@@ -98,10 +99,9 @@ function itemErr(it){if(!it||!it.q)return "soru metni yok";
 /* ---- çizim ---- */
 const unlocked=i=>i===0||L.done[i-1]||L.done[i]||!!progDoc().passed;
 function render(){const d=L.d; $l("#lsnEye").innerHTML=FLAG(L.lang)+esc(LN[L.lang]+" "+(d.level||"")+(L.pk?" · Pekiştir":" · Ders"));
-  $l("#lsnT").textContent=d.title; const lead=$l("#lsnLead"); lead.innerHTML=L.pk?"Dünkü dersi pekiştir: 6 kısa soru, sonra kısa konuşma.":md(d.lead||""); lead.hidden=!L.pk&&!(L.step===0&&L.page===0&&d.lead);
-  const tip=C.tipHtml([L.lang],"lesson"); const tp=$l("#lsnTip"); if(tp.dataset.sig!==tip){tp.dataset.sig=tip; tp.innerHTML=tip;}
+  $l("#lsnT").textContent=L.week?"Haftanın Pekiştir'i":d.title; const lead=$l("#lsnLead"); lead.innerHTML=L.pk?(L.week?"Haftanın derslerini pekiştir: kısa sorular, sonra kısa konuşma.":"Dünkü dersi pekiştir: kısa sorular, sonra kısa konuşma."):md(d.lead||""); lead.hidden=!L.pk&&!(L.step===0&&L.page===0&&d.lead);
   const path=$l("#lpath");
-  if(L.pk){const ps=[["Sorular",!!L.pk.talk||L.pk.i>=L.d.pekistir.items.length],["Konuş",false]]; path.style.setProperty("--n",2);
+  if(L.pk){const ps=[["Sorular",!!L.pk.talk||L.pk.i>=L.pk.items.length],["Konuş",false]]; path.style.setProperty("--n",2);
     path.innerHTML=ps.map((s,i)=>`<li><button type="button" disabled class="${s[1]?"done":""}" ${(i===0)!==!!L.pk.talk?'aria-current="step"':""}><span>${s[1]?"✓":i+1}</span>${s[0]}</button></li>`).join("");}
   else{path.style.setProperty("--n",5); path.innerHTML=STEPS.map((s,i)=>`<li><button type="button" data-step="${i}" ${i===L.step?'aria-current="step"':""} class="${L.done[i]?"done":""}" ${unlocked(i)?"":"disabled"}><span>${L.done[i]?"✓":i+1}</span>${s[1]}</button></li>`).join("");}
   const k=L.pk?(L.pk.talk?"pkTalk":"pk"):STEPS[L.step][0];
@@ -115,8 +115,11 @@ const BLOCK={
   p:b=>`<p>${md(b.text)}</p>`,
   note:b=>`<p class="lnote${b.warn?" warn":""}">${md(b.text)}</p>`,
   compare:b=>`<div class="compare">${arr(b.rows).map(r=>`<div class="lane"><b>${md(r.label)}</b><div class="blks">${arr(r.items).map(x=>`<span class="blk${x.hl?" v":""}">${md(x.t)}${x.s?`<small>${md(x.s)}</small>`:""}</span>`).join("")}</div></div>`).join("")}</div>`,
-  table:b=>{const x=Number.isInteger(b.x)?b.x:-1, say=Array.isArray(b.say)?b.say:null, sp=say||x>=0;
-    return `<div class="ltbl" tabindex="0" role="region" aria-label="Tablo"><table>${arr(b.head).length?`<thead><tr>${b.head.map(h=>`<th>${md(h)}</th>`).join("")}${sp?"<th></th>":""}</tr></thead>`:""}<tbody>${arr(b.rows).map((r,ri)=>{const t=say?say[ri]:x>=0?String(arr(r)[x]||"").replace(/\*\*/g,""):"";
+  table:b=>{const x=Number.isInteger(b.x)?b.x:-1, say=Array.isArray(b.say)?b.say:null, sp=say||x>=0, H=arr(b.head);
+    /* dar ekran (<600 px): her satır bir kart — hedef dil + okunuş + hoparlör, diğer sütunlar küçük etiketli */
+    const cards=`<div class="lrcs">${arr(b.rows).map((r,ri)=>{r=arr(r); const k=x>=0?x:0, t=say?say[ri]:x>=0?String(r[x]||"").replace(/\*\*/g,""):"";
+      return `<div class="lrc"><div class="lrcH"><span class="${x>=0?"tx":""}">${md(r[k])}</span>${t?sayBtn(t,L.lang):""}</div>${r.map((c,ci)=>ci===k||c===""||c==null?"":`<div class="lrcR"><span>${md(H[ci]||"")}</span><b>${md(c)}</b></div>`).join("")}</div>`;}).join("")}</div>`;
+    return cards+`<div class="ltbl" tabindex="0" role="region" aria-label="Tablo"><table>${arr(b.head).length?`<thead><tr>${b.head.map(h=>`<th>${md(h)}</th>`).join("")}${sp?"<th></th>":""}</tr></thead>`:""}<tbody>${arr(b.rows).map((r,ri)=>{const t=say?say[ri]:x>=0?String(arr(r)[x]||"").replace(/\*\*/g,""):"";
       return `<tr>${arr(r).map((c,ci)=>`<td class="${ci===x?"tx":""}">${md(c)}</td>`).join("")}${sp?`<td>${t?sayBtn(t,L.lang):""}</td>`:""}</tr>`;}).join("")}</tbody></table></div>`;},
   rules:b=>`<ol class="rules">${arr(b.items).map((r,i)=>`<li><span class="n">${i+1}</span><div><b>${md(r.title)}</b>${r.text?`<p>${md(r.text)}</p>`:""}${r.ex&&r.ex.x?`<div class="ex"><span class="tx">${md(r.ex.x)}</span>${sayBtn(r.ex.x.replace(/\*\*/g,""),L.lang)}${r.ex.tr?`<span>= ${md(r.ex.tr)}</span>`:""}</div>`:""}</div></li>`).join("")}</ol>`,
   examples:b=>`<ul class="lines">${arr(b.items).map(e=>`<li>${sayBtn(String(e.x).replace(/\*\*/g,""),L.lang)}<div><div class="tx">${md(e.x)}</div>${e.ph?`<div class="ph">${md(e.ph)}</div>`:""}${e.tr?`<div class="tr">${md(e.tr)}</div>`:""}</div></li>`).join("")}</ul>`
@@ -150,7 +153,7 @@ function feedback(kind,item,val,res){const box=$l("#fb_"+kind); let h;
   document.querySelectorAll("#lstage .lform input,#lstage .lform button,#lstage .oW,#lstage [data-act=oCheck],#lstage [data-act=oUndo]").forEach(x=>x.disabled=true);
   const b=box.querySelector("[data-focusnext]"); if(b)b.focus({preventScroll:true});}
 function stOf(kind){return kind==="p"?L.pr:kind==="q"?L.qz:L.pk;}
-function itemsOf(kind){return kind==="p"?L.d.uygula:kind==="q"?L.d.yokla:L.d.pekistir.items;}
+function itemsOf(kind){return kind==="p"?L.d.uygula:kind==="q"?L.d.yokla:L.pk.items;}
 function answer(kind,val){const st=stOf(kind), item=itemsOf(kind)[st.i]; if(!item||st.ans)return; st.ans=true; L.act=Date.now();
   const res=judge(item,val); if(res!=="no")st.score++; else if(kind==="q")st.miss.push(item.topic||"Genel tekrar");
   feedback(kind,item,val,res); if(kind==="p")save();}
@@ -168,13 +171,17 @@ function vKonus(){const k=L.d.konus||{}, c=COACH[L.coach], s=L.konus;
    <div class="lrow"><button type="button" class="btn ${s?"btn-soft":"btn-primary"}" data-act="call" ${lk?"disabled":""}>${ICON("speaking")}${s?"Yeniden konuş":"Aramayı başlat"}</button></div>
    <div class="lnav"><button type="button" class="btn btn-ghost" data-act="toStep" data-to="2">Alıştırmaya dön</button><button type="button" class="btn ${s||lk?"btn-primary":"btn-ghost"}" data-act="finish" data-i="3">Konuşmayı bitirdim → Yokla</button></div></section>`;}
 function vYokla(){const st=L.qz, Q=L.d.yokla, n=Q.length, pass=+L.d.pass||Math.ceil(n*0.8);
-  if(st.i>=n){const ok=st.score>=pass, miss=[...new Set(st.miss)];
-    return `<section class="lcard ldone"><p class="lk">${ok?"Ders tamam":"Henüz değil"}</p><p class="lbig">${st.score} / ${n}</p>
-     <p class="lead">${ok?"Bu dersi geçtin. Konu tamamlandı olarak işaretlendi; yarın kısa bir Pekiştir gelir.":"Geçmek için "+n+" sorudan en az "+pass+" doğru olmalı. Tekrar bakman gereken konular:"}</p>
-     ${!ok&&miss.length?`<div class="ltopics">${miss.map(m=>`<span>${esc(m)}</span>`).join("")}</div>`:""}
-     <div class="lrow">${ok?`<button type="button" class="btn btn-primary" data-act="close">Bitir</button>`:`<button type="button" class="btn btn-ghost" data-act="toStep" data-to="0">Anlatıma dön</button>`}<button type="button" class="btn ${ok?"btn-ghost":"btn-primary"}" data-act="redoQ">Yoklamayı tekrar et</button></div></section>`;}
+  if(st.i>=n){const ok=st.score>=pass, miss=[...new Set(st.miss)], sm=L.sum, nx=ok&&C.lxNext?C.lxNext():null;
+    if(ok)return `<section class="lcard ldone"><p class="lk">Ders tamam</p><p class="lbig">${st.score} / ${n}</p><p class="lead">Konu tamamlandı olarak işaretlendi; yarın kısa bir Pekiştir gelir.</p>
+     <div class="lsum">${sm?`<span>${ICON("clock")} ${sm.mins} dk</span><span>${ICON("deck")} ${sm.words?sm.words+" kelime kartlara eklendi":"Kartlar zaten vardı"}</span>`:""}</div>
+     ${sm&&sm.miss.length?`<p class="lk">Dikkat edeceğin konular</p><div class="ltopics">${sm.miss.map(m=>`<span>${esc(m)}</span>`).join("")}</div>`:""}
+     <div class="lrow">${nx?`<button type="button" class="btn btn-primary" data-act="planNext">Sıradaki: ${esc(nx.label)}${ICON("arrow")}</button>`:""}<button type="button" class="btn ${nx?"btn-ghost":"btn-primary"}" data-act="close">${nx?"Kapat":"Bitir"}</button><button type="button" class="btn btn-ghost" data-act="redoQ">Yoklamayı tekrar et</button></div></section>`;
+    return `<section class="lcard ldone"><p class="lk">Henüz değil</p><p class="lbig">${st.score} / ${n}</p>
+     <p class="lead">Geçmek için ${n} sorudan en az ${pass} doğru olmalı. Tekrar bakman gereken konular:</p>
+     ${miss.length?`<div class="ltopics">${miss.map(m=>`<span>${esc(m)}</span>`).join("")}</div>`:""}
+     <div class="lrow"><button type="button" class="btn btn-ghost" data-act="toStep" data-to="0">Anlatıma dön</button><button type="button" class="btn btn-primary" data-act="redoQ">Yoklamayı tekrar et</button></div></section>`;}
   return `<section class="lcard">${qView(Q[st.i],st,n,"q")}</section>`;}
-function vPk(){const st=L.pk, P=L.d.pekistir.items, n=P.length;
+function vPk(){const st=L.pk, P=st.items, n=P.length;
   if(st.i>=n)return `<section class="lcard ldone"><p class="lk">Sorular bitti</p><p class="lbig">${st.score} / ${n}</p><p class="lead">Şimdi kısa bir konuşma: ${esc(COACH[L.coach].name)} seninle aynı kalıpları kullanır.</p>
     <div class="lrow"><button type="button" class="btn btn-primary" data-act="pkTalk">Konuşmaya geç</button></div></section>`;
   return `<section class="lcard">${qView(P[st.i],st,n,"k")}</section>`;}
@@ -185,15 +192,32 @@ function vPkTalk(){const c=COACH[L.coach], lk=coachReady(), s=L.konus;
    <div class="lnav"><button type="button" class="btn btn-ghost" data-act="full">Dersi baştan aç</button><button type="button" class="btn btn-primary" data-act="pkDone">Pekiştirmeyi bitir</button></div></section>`;}
 /* ---- geçti / pekiştir kaydı ---- */
 function minsNow(){tick(); return Math.max(1,Math.round(L.ms/60000));}
-async function passLesson(){const t=today(), p=progDoc(), m=minsNow(), db=C.db, lang=L.lang;
-  await save({passed:true,passedAt:p.passed?p.passedAt:t,best:Math.max(+p.best||0,L.qz.score),last:L.qz.score,attempts:(+p.attempts||0)+1});
+/* dersin kelimeleri karta: Dinle cümleleri (x → tr) + konuşma kelimelerinden Türkçesi derste geçenler; aynısı varsa atlanır, yarın ilk tekrar */
+function lessonCards(){const d=L.d, out=[], seen=new Set(), clean=x=>String(x||"").replace(/\*\*/g,"").trim();
+  const ex={}; arr(d.anlat).forEach(c=>arr(c.blocks).forEach(b=>{if(b.type==="examples")arr(b.items).forEach(e=>{if(e.x&&e.tr)ex[norm(clean(e.x))]=clean(e.tr);});}));
+  arr(d.konus&&d.konus.vocab).forEach(v=>{const t=ex[norm(v)]; if(t)out.push({f:clean(v),tr:t});});
+  arr(d.dinle).forEach(l=>{if(l.x&&l.tr)out.push({f:clean(l.x),tr:clean(l.tr),ex:l.ph?clean(l.ph):""});});
+  return out.filter(w=>{const k=w.f.toLowerCase(); if(seen.has(k))return false; seen.add(k); return true;});}
+async function addCards(){const db=C.db; if(!db)return 0; const lang=L.lang, due=C.addDays(today(),1), now=new Date().toISOString(); let n=0;
+  for(const w of lessonCards()){if(C.S.cards.some(c=>c.lang===lang&&String(c.f||"").toLowerCase()===w.f.toLowerCase()))continue;
+    try{await db.collection("cards").add({lang,f:w.f.slice(0,120),tr:w.tr.slice(0,160),ex:(w.ex||"").slice(0,240),box:1,due,added:now,src:"lesson:"+L.id}); n++;}catch(e){}}
+  return n;}
+function missAll(){return [...new Set(arr(progDoc().miss).concat(L.qz.miss))].slice(0,10);}
+async function lessonSession(extra){const t=today(), m=minsNow(), lang=L.lang;
+  const mins=lang==="it"?{gramer:Math.ceil(m*0.7),okuma:m-Math.ceil(m*0.7)}:{gramer:m};
+  try{await C.upsertSession("lesson-"+t+"-"+L.id,Object.assign({date:t,lang,mins,total:m,topic:C.topicById(L.id)?L.id:"",mistakes:missAll().map(x=>x+" ("+L.d.title+")"),note:"",next:"",created:new Date().toISOString(),words:0,src:"lesson"},extra||{}));}catch(e){}
+  return m;}
+async function passLesson(){const t=today(), p=progDoc(), db=C.db, lang=L.lang, first=!p.passed;
+  await save({passed:true,passedAt:p.passed?p.passedAt:t,best:Math.max(+p.best||0,L.qz.score),last:L.qz.score,attempts:(+p.attempts||0)+1,miss:missAll()});
   if(!db)return;
   try{if(C.topicById(L.id))await C.setTopic(L.id,"done");}catch(e){}
-  const mins=lang==="it"?{gramer:Math.ceil(m*0.7),okuma:m-Math.ceil(m*0.7)}:{gramer:m};
-  try{await C.upsertSession("lesson-"+t+"-"+L.id,{date:t,lang,mins,total:m,topic:C.topicById(L.id)?L.id:"",mistakes:[],note:"Ders geçildi: "+L.d.title+" ("+L.qz.score+"/"+L.d.yokla.length+")",next:"",created:new Date().toISOString(),words:0,src:"lesson"});}catch(e){}
-  C.lxFin(lang,lang==="it"?["kelime","gramer","okuma","sesli"]:["kelime","gramer","okuma"]);}
-async function failLesson(){const p=progDoc(); await save({best:Math.max(+p.best||0,L.qz.score),last:L.qz.score,attempts:(+p.attempts||0)+1});}
+  const words=first?await addCards():0;
+  const m=await lessonSession({note:"Ders geçildi: "+L.d.title+" ("+L.qz.score+"/"+L.d.yokla.length+")",words});
+  C.lxFin(lang,lang==="it"?["kelime","gramer","okuma","sesli"]:["kelime","gramer","okuma"]);
+  L.sum={mins:m,words,miss:missAll()};}
+async function failLesson(){const p=progDoc(); await save({best:Math.max(+p.best||0,L.qz.score),last:L.qz.score,attempts:(+p.attempts||0)+1,miss:missAll()}); await lessonSession({note:"Yoklama: "+L.d.title+" ("+L.qz.score+"/"+L.d.yokla.length+")"});}
 async function pkDone(){const t=today(), m=minsNow(); await save({pk:t});
+  if(L.week){for(const id of L.week){if(id===L.id)continue; const p=C.lxP(id), rec=Object.assign({},p,{pk:t,updated:new Date().toISOString()}); C.LX.prog[id]=rec; try{await C.db.collection("lessons").doc(id).set(rec);}catch(e){}}}
   try{await C.upsertSession("pekistir-"+t+"-"+L.id,{date:t,lang:L.lang,mins:{gramer:m},total:m,topic:C.topicById(L.id)?L.id:"",mistakes:[],note:"Pekiştir: "+L.d.title,next:"",created:new Date().toISOString(),words:0,src:"lesson"});}catch(e){}
   close();}
 /* ---- olaylar ---- */
@@ -222,6 +246,7 @@ async function onClick(e){const b=e.target.closest("button"); if(!b||b.disabled)
   if(a==="call"){startCall(); return;}
   if(a==="pkTalk"){L.pk.talk=true; L.konus=null; render(); return;}
   if(a==="pkDone"){pkDone(); return;}
+  if(a==="planNext"){close(); setTimeout(()=>C.lxGo(),0); return;}
   if(a==="full"){L.pk=null; L.step=0; L.page=0; render(); return;}}
 function paintOrder(){const kind=(document.querySelector("#lstage [data-act=oCheck]")||{dataset:{}}).dataset.kind; if(!kind)return; const item=itemsOf(kind)[stOf(kind).i];
   $l("#oBuilt").innerHTML=L.order.map(i=>`<button type="button" class="oW" data-ob="${i}" aria-label="Çıkar: ${esc(item.words[i])}">${esc(item.words[i])}</button>`).join("");
@@ -246,13 +271,17 @@ Yoklama (Yokla) sorularının cevabını ASLA verme; yalnızca kuralı hatırlat
 Öğrenci şu an: ${ctxName()}.
 Ekranda gördüğü:
 ${(($l("#lstage")||{}).innerText||"").replace(/\n{2,}/g,"\n").slice(0,1500)}`;}
+/* koç metni: yalnızca **kalın** ve [[it: …]]/[[en: …]] (hoparlörlü); başka işaret yok */
+function rich(t){const parts=[]; let s=String(t||"").replace(/\[\[(it|en|tr):\s*([^\]]*?)\s*\]\]/g,(m,l,x)=>{parts.push([l,x]); return "\u0001"+(parts.length-1)+"\u0002";});
+  s=esc(s).replace(/\*\*([^*\n]+?)\*\*/g,"<b>$1</b>").replace(/\*/g,"").replace(/^#+\s*/gm,"");
+  return s.replace(/\u0001(\d+)\u0002/g,(m,i)=>{const [l,x]=parts[+i]; return `<b class="tx" lang="${l}">${esc(x)}</b>${l!=="tr"?" "+sayBtn(x,l):""}`;});}
 function bubble(log,cls,text){const d=document.createElement("div"); d.className="m "+cls; d.textContent=text; log.appendChild(d); log.scrollTop=log.scrollHeight; return d;}
 function openAsk(prefill){const p=$l("#ask"); p.hidden=false; const f=$l("#askFab"); f.hidden=true; f.setAttribute("aria-expanded","true"); $l("#askCtx").textContent="Şu an: "+ctxName();
   const i=$l("#askIn"); if(prefill)i.value=prefill; i.focus();}
 function closeAsk(quiet){const p=document.querySelector("#lsn #ask"); if(!p||p.hidden)return; p.hidden=true; const f=$l("#askFab"); f.hidden=false; f.setAttribute("aria-expanded","false"); if(!quiet)f.focus();}
 async function askSend(q){const log=$l("#askLog"); bubble(log,"u",q); const why=coachReady(); if(why){bubble(log,"sys",why); return;}
   if(L.askBusy)return; L.askBusy=true; L.ask.push({role:"user",content:q}); const b=bubble(log,"c",COACH[L.lang].name+" düşünüyor…"); $l("#askSend").disabled=true;
-  try{const r=await C.sample()([{role:"user",content:askRules()},...L.ask.slice(-8)],{onText:({text})=>{b.textContent=text; log.scrollTop=log.scrollHeight;}});
-    b.textContent=r.text||"…"; L.ask.push({role:"assistant",content:r.text||"…"});}
+  try{const r=await C.sample()([{role:"user",content:askRules()},...L.ask.slice(-8)],{onText:({text})=>{b.innerHTML=rich(text); log.scrollTop=log.scrollHeight;}});
+    b.innerHTML=rich(r.text||"…"); L.ask.push({role:"assistant",content:r.text||"…"});}
   catch(e){b.textContent=(e&&e.text)||coachErr(e)||"Yanıt gelmedi."; L.ask.pop();}
   finally{L.askBusy=false; const s=$l("#askSend"); if(s)s.disabled=false;}}

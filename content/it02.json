@@ -1,0 +1,697 @@
+{
+  "id": "it02",
+  "lang": "it",
+  "level": "A1",
+  "title": "Selamlaşma ve tanışma",
+  "lead": "Günün saatine uygun selam vermeyi, adını, memleketini ve yaşını söylemeyi öğreneceksin. En önemlisi: kime “sen” (tu), kime “siz” (Lei) diyeceğini bileceksin.",
+  "minutes": 30,
+  "anlat": [
+    {
+      "title": "Günün saatine göre selam",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "İtalyanlar selamı saate ve kişiye göre seçer. **ciao** samimidir; işverene, müşteriye, yaşça büyüğe **buongiorno / buonasera** denir."
+        },
+        {
+          "type": "table",
+          "head": [
+            "İtalyanca",
+            "Okunuş",
+            "Anlamı",
+            "Kime / ne zaman"
+          ],
+          "x": 0,
+          "rows": [
+            [
+              "Ciao",
+              "ÇA-o",
+              "selam / hoşça kal",
+              "arkadaş, ekip, aile (samimi)"
+            ],
+            [
+              "Salve",
+              "SAL-ve",
+              "merhaba",
+              "tanımadığın biri (nötr, kibar)"
+            ],
+            [
+              "Buongiorno",
+              "buon-COR-no",
+              "günaydın / iyi günler",
+              "herkese, öğleden sonraya kadar"
+            ],
+            [
+              "Buonasera",
+              "buo-na-SE-ra",
+              "iyi akşamlar",
+              "herkese, öğleden sonra ve akşam"
+            ],
+            [
+              "Buonanotte",
+              "buo-na-NOT-te",
+              "iyi geceler",
+              "sadece veda: gece ayrılırken"
+            ],
+            [
+              "Arrivederci",
+              "ar-ri-ve-DER-çi",
+              "hoşça kalın",
+              "veda (kibar)"
+            ],
+            [
+              "A domani",
+              "a do-MA-ni",
+              "yarın görüşürüz",
+              "veda"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**Buongiorno** sadece sabah değildir; öğleden sonraya kadar “iyi günler” anlamında kullanılır. **Buonanotte** ile selam verilmez, sadece vedalaşılır."
+        }
+      ]
+    },
+    {
+      "title": "Tanışma: adın ne, memnun oldum",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tanışmanın üç parçası var: adını söyle, karşındakinin adını sor, “memnun oldum” de. Bu kalıpları **bütün olarak** ezberle; içindeki fiil yapısını ileride açacağız."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Mi chiamo Türab.",
+              "tr": "Adım Türab. (kelimesi kelimesine: kendimi Türab diye çağırırım)",
+              "ph": "mi KYA-mo Türab"
+            },
+            {
+              "x": "Come ti chiami?",
+              "tr": "Adın ne? (samimi)",
+              "ph": "KO-me ti KYA-mi"
+            },
+            {
+              "x": "Come si chiama?",
+              "tr": "Adınız ne? (kibar)",
+              "ph": "KO-me si KYA-ma"
+            },
+            {
+              "x": "Piacere.",
+              "tr": "Memnun oldum.",
+              "ph": "pya-ÇE-re"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Tanışırken el sıkışıp sadece **Piacere, Türab.** demek de yeter: hem “memnun oldum” hem adın."
+        }
+      ]
+    },
+    {
+      "title": "tu mu, Lei mi? Sen ile siz farkı",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede kibar hitap için “siz” ve çoğul eki kullanırsın: nasıl-**sınız**. İtalyancada kibar hitap **Lei**'dir ve fiil **“o” (üçüncü tekil)** gibi çekilir. Yani “Nasılsınız?” kelimesi kelimesine “O nasıl?” gibi kurulur. Saygı için büyük L ile yazılır."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe (sen)",
+              "items": [
+                {
+                  "t": "Nasıl",
+                  "s": "soru"
+                },
+                {
+                  "t": "-sın?",
+                  "s": "sen eki",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "İtalyanca (tu)",
+              "items": [
+                {
+                  "t": "Come",
+                  "s": "nasıl"
+                },
+                {
+                  "t": "stai?",
+                  "s": "tu biçimi",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "Türkçe (siz)",
+              "items": [
+                {
+                  "t": "Nasıl",
+                  "s": "soru"
+                },
+                {
+                  "t": "-sınız?",
+                  "s": "siz eki",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "İtalyanca (Lei)",
+              "items": [
+                {
+                  "t": "Come",
+                  "s": "nasıl"
+                },
+                {
+                  "t": "sta?",
+                  "s": "“o” biçimi",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "tu (samimi)",
+            "Lei (kibar)",
+            "Anlamı"
+          ],
+          "x": 1,
+          "rows": [
+            [
+              "Ciao!",
+              "Buongiorno!",
+              "Selam / İyi günler"
+            ],
+            [
+              "Come stai?",
+              "Come sta?",
+              "Nasılsın? / Nasılsınız?"
+            ],
+            [
+              "Come ti chiami?",
+              "Come si chiama?",
+              "Adın ne? / Adınız ne?"
+            ],
+            [
+              "E tu?",
+              "E Lei?",
+              "Ya sen? / Ya siz?"
+            ],
+            [
+              "Scusa!",
+              "Scusi!",
+              "Pardon!"
+            ]
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "tu kime?",
+              "text": "Ekip arkadaşı, yaşıt, arkadaş, aile, çocuk."
+            },
+            {
+              "title": "Lei kime?",
+              "text": "İşveren, müşteri, mühendis, yaşça büyük, tanımadığın biri, resmi yazışma."
+            },
+            {
+              "title": "Emin değilsen Lei ile başla",
+              "text": "Karşı taraf “sen diyelim” derse tu'ya geçersin.",
+              "ex": {
+                "x": "Diamoci del tu!",
+                "tr": "Birbirimize sen diyelim!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "“Nasılsın”a cevap ve kendini tanıtan hazır kalıplar",
+      "blocks": [
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Bene, grazie. E tu?",
+              "tr": "İyiyim, sağ ol. Ya sen?",
+              "ph": "BE-ne, GRA-tsye. e TU"
+            },
+            {
+              "x": "Molto bene.",
+              "tr": "Çok iyi.",
+              "ph": "MOL-to BE-ne"
+            },
+            {
+              "x": "Non c'è male.",
+              "tr": "Fena değil.",
+              "ph": "non çe MA-le"
+            },
+            {
+              "x": "Così così.",
+              "tr": "Şöyle böyle.",
+              "ph": "ko-Sİ ko-Sİ"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kendini tanıtmak için üç hazır kalıp. Şimdilik **olduğu gibi** ezberle; fiillerini 5. ve 6. derste öğreneceksin."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Sono turco.",
+              "tr": "Türk'üm.",
+              "ph": "SO-no TUR-ko"
+            },
+            {
+              "x": "Sono di Kırıkkale.",
+              "tr": "Kırıkkaleliyim.",
+              "ph": "SO-no di Kırıkkale"
+            },
+            {
+              "x": "Ho ventiquattro anni.",
+              "tr": "24 yaşındayım.",
+              "ph": "O ven-ti-KUAT-tro AN-ni"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Yaş İtalyancada “olmak”la değil **“sahip olmak”**la söylenir: Ho 24 anni = “24 yılım var”. **Sono 24 anni** yanlıştır. Ho'daki h okunmaz: O."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "Buongiorno, ingegnere!",
+      "tr": "Günaydın, mühendis bey!",
+      "ph": "buon-COR-no, in-ce-NYE-re"
+    },
+    {
+      "x": "Ciao, come stai?",
+      "tr": "Selam, nasılsın?",
+      "ph": "ÇA-o, KO-me STAY"
+    },
+    {
+      "x": "Bene, grazie. E tu?",
+      "tr": "İyiyim, sağ ol. Ya sen?",
+      "ph": "BE-ne, GRA-tsye. e TU"
+    },
+    {
+      "x": "Buongiorno, come sta?",
+      "tr": "İyi günler, nasılsınız?",
+      "ph": "buon-COR-no, KO-me STA"
+    },
+    {
+      "x": "Mi chiamo Türab. Piacere.",
+      "tr": "Adım Türab. Memnun oldum.",
+      "ph": "mi KYA-mo Türab. pya-ÇE-re"
+    },
+    {
+      "x": "Come si chiama?",
+      "tr": "Adınız ne?",
+      "ph": "KO-me si KYA-ma"
+    },
+    {
+      "x": "Sono di Kırıkkale.",
+      "tr": "Kırıkkaleliyim.",
+      "ph": "SO-no di Kırıkkale"
+    },
+    {
+      "x": "Ho ventiquattro anni.",
+      "tr": "24 yaşındayım.",
+      "ph": "O ven-ti-KUAT-tro AN-ni"
+    },
+    {
+      "x": "Buonasera, e a domani!",
+      "tr": "İyi akşamlar, yarın görüşürüz!",
+      "ph": "buo-na-SE-ra, e a do-MA-ni"
+    },
+    {
+      "x": "Arrivederci, signora.",
+      "tr": "Hoşça kalın, hanımefendi.",
+      "ph": "ar-ri-ve-DER-çi, si-NYO-ra"
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "Sabah 9, şantiyede İtalyan mühendisle karşılaştın. Ne dersin?",
+      "a": "Buongiorno",
+      "o": [
+        "Buonanotte",
+        "Buongiorno",
+        "Buonasera"
+      ],
+      "why": {
+        "Buonanotte": "Buonanotte sadece gece vedalaşırken söylenir.",
+        "Buonasera": "Buonasera öğleden sonra ve akşam içindir. Sabah buongiorno."
+      },
+      "ok": "Sabah ve öğlene kadar: buongiorno."
+    },
+    {
+      "t": "choice",
+      "q": "Akşam 19:00, müşteriyle karşılaştın. Kibar selam:",
+      "a": "Buonasera",
+      "o": [
+        "Buongiorno",
+        "Buonasera",
+        "Ciao"
+      ],
+      "why": {
+        "Buongiorno": "Akşam saatinde buonasera denir; buongiorno öğleden sonraya kadar.",
+        "Ciao": "Müşteriye ciao fazla samimi kaçar."
+      },
+      "ok": "Akşam + kibar = buonasera."
+    },
+    {
+      "t": "choice",
+      "q": "“Piacere” ne zaman söylenir?",
+      "a": "Tanıştığında",
+      "o": [
+        "Tanıştığında",
+        "Teşekkür ederken",
+        "Vedalaşırken"
+      ],
+      "why": {
+        "Teşekkür ederken": "Teşekkür grazie ile edilir.",
+        "Vedalaşırken": "Veda için arrivederci ya da ciao."
+      },
+      "ok": "Piacere = memnun oldum."
+    },
+    {
+      "t": "choice",
+      "q": "Yaşıtın olan ekip arkadaşına “Nasılsın?”",
+      "a": "Come stai?",
+      "o": [
+        "Come sta?",
+        "Come stai?",
+        "Come si chiama?"
+      ],
+      "why": {
+        "Come sta?": "Come sta, Lei (kibar siz) biçimidir; ekip arkadaşına resmi kaçar.",
+        "Come si chiama?": "Bu “Adınız ne?” demek."
+      },
+      "ok": "tu → Come stai?"
+    },
+    {
+      "t": "choice",
+      "q": "Firmanın müdürüne “Adınız ne?”",
+      "a": "Come si chiama?",
+      "o": [
+        "Come ti chiami?",
+        "Come si chiama?",
+        "Come stai?"
+      ],
+      "why": {
+        "Come ti chiami?": "Bu tu biçimi; müdüre samimi kaçar.",
+        "Come stai?": "Bu “Nasılsın?” demek, hem de tu ile."
+      },
+      "ok": "Lei → Come si chiama?"
+    },
+    {
+      "t": "choice",
+      "q": "Biri sana “Buongiorno, come sta?” dedi. En uygun cevap:",
+      "a": "Bene, grazie. E Lei?",
+      "o": [
+        "Bene, grazie. E Lei?",
+        "Bene, grazie. E tu?",
+        "Piacere."
+      ],
+      "why": {
+        "Bene, grazie. E tu?": "Sana Lei ile sorulduysa sen de Lei ile dön: E Lei?",
+        "Piacere.": "Piacere tanışma sözüdür, “nasılsınız”a cevap değil."
+      },
+      "ok": "Lei ile sorana Lei ile cevap."
+    },
+    {
+      "t": "choice",
+      "q": "“24 yaşındayım” hangisi?",
+      "a": "Ho 24 anni.",
+      "o": [
+        "Sono 24 anni.",
+        "Ho 24 anni.",
+        "Ho 24 anno."
+      ],
+      "why": {
+        "Sono 24 anni.": "İtalyanca yaşı “olmak”la değil “sahip olmak”la söyler: Ho … anni.",
+        "Ho 24 anno.": "anno tekildir (bir yıl). 24 yıl çoğul: anni."
+      },
+      "ok": "Ho 24 anni. h okunmaz: O."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Adım Türab.”",
+      "a": [
+        "mi chiamo türab",
+        "mi chiamo turab",
+        "io mi chiamo türab",
+        "io mi chiamo turab"
+      ],
+      "hint": "“Kendimi … diye çağırırım” kalıbı: mi chiamo.",
+      "ok": "Mi chiamo Türab."
+    },
+    {
+      "t": "type",
+      "q": "Kibarca sor: “Nasılsınız?”",
+      "a": [
+        "come sta",
+        "come sta lei",
+        "lei come sta"
+      ],
+      "hint": "Lei ile fiil “o” gibi çekilir: stai değil.",
+      "ok": "Come sta? Kibar ve tek kişiye."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Kırıkkaleliyim.”",
+      "a": [
+        "sono di kırıkkale",
+        "sono di kirikkale",
+        "io sono di kırıkkale",
+        "io sono di kirikkale"
+      ],
+      "hint": "Hazır kalıp: Sono di + şehir.",
+      "ok": "Sono di Kırıkkale."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Günaydın, adım Türab, memnun oldum.”",
+      "words": [
+        "Türab",
+        "piacere",
+        "buongiorno",
+        "chiamo",
+        "mi"
+      ],
+      "a": "buongiorno mi chiamo Türab piacere",
+      "ok": "Buongiorno, mi chiamo Türab. Piacere."
+    }
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Kısa tanışma diyaloğu: selam, isim, memleket, yaş, nasılsın. Önce tu ile, sonra Lei ile aynı diyalog.",
+    "vocab": [
+      "ciao",
+      "salve",
+      "buongiorno",
+      "buonasera",
+      "buonanotte",
+      "arrivederci",
+      "a domani",
+      "piacere",
+      "grazie",
+      "bene",
+      "molto bene",
+      "non c'è male",
+      "così così",
+      "scusa",
+      "scusi",
+      "signore",
+      "signora",
+      "ingegnere"
+    ],
+    "structures": [
+      "Mi chiamo …",
+      "Come ti chiami? / Come si chiama?",
+      "Come stai? / Come sta?",
+      "E tu? / E Lei?",
+      "Sono di … (kalıp)",
+      "Sono turco (kalıp)",
+      "Ho … anni (kalıp)"
+    ],
+    "opener_hint": "Chiara önce yaşıt bir ekip arkadaşı gibi açsın: “Ciao! Mi chiamo Chiara. Come ti chiami?” 4-5 turdan sonra Türkçe “Şimdi ben müşteriyim, Lei ile konuş” desin ve Signora Chiara olarak “Buongiorno” ile yeniden başlasın.",
+    "level_note": "A1: tek kısa cümle. Fiiller sadece kalıp olarak (mi chiamo, come stai/sta, sono di…, sono turco, ho … anni); essere/avere çekimi öğretme. Türkçe yardım serbest."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "günün saatine göre selam",
+      "q": "Gece 23:00, nöbetten çıkıyorsun, bekçiye veda ediyorsun:",
+      "a": "Buonanotte",
+      "o": [
+        "Buongiorno",
+        "Buonanotte",
+        "Piacere"
+      ],
+      "why": {
+        "Buongiorno": "Buongiorno gündüz selamıdır.",
+        "Piacere": "Piacere tanışırken söylenir."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "tu / Lei",
+      "q": "Sokakta tanımadığın yaşlı bir adama yol soracaksın. “Pardon!”",
+      "a": "Scusi!",
+      "o": [
+        "Scusa!",
+        "Scusi!"
+      ],
+      "why": {
+        "Scusa!": "Scusa tu biçimidir; tanımadığın büyüğe Lei biçimi: Scusi!"
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "tu / Lei",
+      "q": "“Diamoci del tu!” ne demek?",
+      "a": "Birbirimize sen diyelim!",
+      "o": [
+        "Birbirimize sen diyelim!",
+        "Adınız ne?",
+        "Yarın görüşürüz!"
+      ],
+      "why": {
+        "Adınız ne?": "O, Come si chiama?",
+        "Yarın görüşürüz!": "O, A domani!"
+      }
+    },
+    {
+      "t": "type",
+      "topic": "adını sormak",
+      "q": "Ekip arkadaşına sor: “Adın ne?”",
+      "a": [
+        "come ti chiami",
+        "tu come ti chiami"
+      ]
+    },
+    {
+      "t": "type",
+      "topic": "yaş kalıbı",
+      "q": "Türkçeden çevir: “24 yaşındayım.”",
+      "a": [
+        "ho 24 anni",
+        "ho ventiquattro anni",
+        "io ho 24 anni",
+        "io ho ventiquattro anni"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "“Arrivederci” ne zaman söylenir?",
+        "a": "Vedalaşırken",
+        "o": [
+          "Vedalaşırken",
+          "Selam verirken",
+          "Teşekkür ederken"
+        ],
+        "why": {
+          "Selam verirken": "Selam için buongiorno, buonasera, ciao.",
+          "Teşekkür ederken": "Teşekkür: grazie."
+        },
+        "ok": "Arrivederci = hoşça kalın."
+      },
+      {
+        "t": "choice",
+        "q": "Ekip arkadaşın: “Ciao, come stai?” Cevap:",
+        "a": "Bene, grazie. E tu?",
+        "o": [
+          "Bene, grazie. E tu?",
+          "Bene, grazie. E Lei?",
+          "Arrivederci."
+        ],
+        "why": {
+          "Bene, grazie. E Lei?": "Sana tu ile sordu (stai); sen de tu ile dön: E tu?",
+          "Arrivederci.": "Bu veda sözü."
+        },
+        "ok": "tu ile sorana tu ile cevap."
+      },
+      {
+        "t": "choice",
+        "q": "Saat 11:30, iş görüşmesine girdin. Selam:",
+        "a": "Buongiorno",
+        "o": [
+          "Buongiorno",
+          "Buonanotte",
+          "Ciao"
+        ],
+        "why": {
+          "Buonanotte": "Buonanotte gece vedasıdır.",
+          "Ciao": "İş görüşmesinde ciao fazla samimi."
+        },
+        "ok": "Öğleye kadar kibar selam: buongiorno."
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Fena değil.”",
+        "a": [
+          "non c'è male"
+        ],
+        "soft": [
+          "non ce male",
+          "non c'e male"
+        ],
+        "soft_note": "Doğrusu aksanlı: Non c'è male.",
+        "hint": "Üç kelime; ortada c'è var.",
+        "ok": "Non c'è male."
+      },
+      {
+        "t": "type",
+        "q": "Kibarca sor: “Adınız ne?”",
+        "a": [
+          "come si chiama",
+          "come si chiama lei",
+          "lei come si chiama"
+        ],
+        "hint": "Lei biçimi: si chiama.",
+        "ok": "Come si chiama?"
+      },
+      {
+        "t": "order",
+        "q": "Sırala: “Selam, nasılsın? İyiyim, sağ ol.”",
+        "words": [
+          "bene",
+          "stai",
+          "ciao",
+          "grazie",
+          "come"
+        ],
+        "a": "ciao come stai bene grazie",
+        "ok": "Ciao, come stai? Bene, grazie."
+      }
+    ],
+    "konus_prompt": "Chiara bu kez İtalyan bir müşteri, Signora Bianchi. Onu Lei ile selamla, kendini tanıt (ad, memleket, yaş), nasıl olduğunu sor ve kibarca vedalaş."
+  }
+}

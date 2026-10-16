@@ -1,0 +1,577 @@
+{
+  "id": "en03",
+  "lang": "en",
+  "level": "B1",
+  "title": "Present perfect continuous",
+  "lead": "“İki saattir bekliyorum”, “Sabahtan beri kablo çekiyoruz” gibi cümleleri doğru kuracaksın. Ayrıca “süreç” ile “sonuç” arasında simple ve continuous'u seçebileceksin.",
+  "minutes": 30,
+  "anlat": [
+    {
+      "title": "Ne kadar süredir? have been + -ing",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe süren bir işin süresini şimdiki zamanla söyler: “İki saattir bekli**yorum**.” İngilizce “geçmişte başladı, hâlâ sürüyor” bilgisini **present perfect continuous** ile verir: **have/has + been + fiil-ing**."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "İki saattir",
+                  "s": "süre"
+                },
+                {
+                  "t": "bekliyorum",
+                  "s": "şimdiki zaman",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I",
+                  "s": "özne"
+                },
+                {
+                  "t": "have been waiting",
+                  "s": "present perfect continuous",
+                  "hl": true
+                },
+                {
+                  "t": "for two hours",
+                  "s": "süre"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kim / ne?",
+            "Yapı",
+            "Örnek"
+          ],
+          "x": 2,
+          "rows": [
+            [
+              "I / you / we / they",
+              "have been + -ing",
+              "We have been working since 7."
+            ],
+            [
+              "he / she / it",
+              "has been + -ing",
+              "It has been raining all day."
+            ],
+            [
+              "Olumsuz",
+              "haven't / hasn't been + -ing",
+              "They haven't been sleeping well."
+            ],
+            [
+              "Soru",
+              "Have / Has … been + -ing?",
+              "How long have you been waiting?"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Sık hata: “I am waiting for two hours.” → **I have been waiting for two hours.** Cümlede süre anlamında **for / since / how long** varsa ve iş hâlâ sürüyorsa present tense'ten uzaklaş."
+        }
+      ]
+    },
+    {
+      "title": "Görünür sonuç: izi belli",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "İkinci kullanım: yeni bitmiş ya da hâlâ süren bir işin **şu an görünen izi** var: kir, yorgunluk, ıslaklık, dağınıklık. Kaç tane yaptığın değil, ne ile uğraştığın önemli."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Your hands are black. — I've been fixing the generator.",
+              "tr": "Ellerin kapkara. — Jeneratörü tamir ediyordum."
+            },
+            {
+              "x": "The ground is wet. It's been raining.",
+              "tr": "Zemin ıslak. Yağmur yağıyormuş."
+            },
+            {
+              "x": "You look tired. — I've been pulling cable all morning.",
+              "tr": "Yorgun görünüyorsun. — Bütün sabah kablo çektim."
+            },
+            {
+              "x": "It smells of smoke in here. Has someone been welding?",
+              "tr": "Burası duman kokuyor. Biri kaynak mı yapıyordu?"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Türkçe çeviriler değişkendir (-iyordum, -dım, -mış). İngilizcede tek ölçü var: süreç yakın zamanda yaşandı ve izi şimdi görünüyor."
+        }
+      ]
+    },
+    {
+      "title": "Süreç mi, sonuç mu? Continuous ve simple",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "Süreç / süre (continuous)",
+            "Sonuç / sayı (simple)"
+          ],
+          "rows": [
+            [
+              "We've been installing lights all morning.",
+              "We've installed forty lights."
+            ],
+            [
+              "I've been writing reports since 8.",
+              "I've written three reports."
+            ],
+            [
+              "She's been painting the room. (belki bitmedi)",
+              "She's painted the room. (bitti)"
+            ]
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Kaç tane / ne kadar → simple",
+              "text": "how many, how much, sayı, bitmiş ürün.",
+              "ex": {
+                "x": "How many panels have you tested?",
+                "tr": "Kaç pano test ettin?"
+              }
+            },
+            {
+              "title": "Ne kadar süredir → continuous",
+              "text": "how long, since, for, all day, all week.",
+              "ex": {
+                "x": "How long have you been testing panels?",
+                "tr": "Ne zamandır pano test ediyorsun?"
+              }
+            },
+            {
+              "title": "Durum fiilleri continuous olmaz",
+              "text": "know, have (sahip), believe, like, own: süreye rağmen present perfect simple.",
+              "ex": {
+                "x": "I've known the foreman for five years.",
+                "tr": "Ustabaşını beş yıldır tanıyorum."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "live ve work ile ikisi de neredeyse aynı anlamı verir: “I've lived / I've been living in Kırıkkale since September.” İkisi de doğru."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "I've been working here since 2024.",
+      "tr": "2024'ten beri burada çalışıyorum."
+    },
+    {
+      "x": "How long have you been waiting?",
+      "tr": "Ne kadar zamandır bekliyorsun?"
+    },
+    {
+      "x": "We've been pulling cable all morning.",
+      "tr": "Bütün sabah kablo çekiyoruz."
+    },
+    {
+      "x": "It's been raining since last night, so the site is muddy.",
+      "tr": "Dün geceden beri yağmur yağıyor, o yüzden şantiye çamur."
+    },
+    {
+      "x": "Your hands are black. Have you been fixing the generator?",
+      "tr": "Ellerin kapkara. Jeneratörü mü tamir ediyordun?"
+    },
+    {
+      "x": "The crew has been working overtime this week.",
+      "tr": "Ekip bu hafta fazla mesai yapıyor."
+    },
+    {
+      "x": "We've been installing lights all day. We've installed forty so far.",
+      "tr": "Bütün gün armatür takıyoruz. Şimdiye kadar kırk tane taktık."
+    },
+    {
+      "x": "I've known the foreman for five years.",
+      "tr": "Ustabaşını beş yıldır tanıyorum."
+    },
+    {
+      "x": "She hasn't been feeling well lately.",
+      "tr": "Son zamanlarda kendini iyi hissetmiyor."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "I ___ for you for twenty minutes!",
+      "a": "have been waiting",
+      "o": [
+        "am waiting",
+        "have been waiting",
+        "waited"
+      ],
+      "why": {
+        "am waiting": "for twenty minutes: geçmişte başladı, hâlâ sürüyor → have been waiting. Türkçedeki “bekliyorum”a kanma.",
+        "waited": "waited bitmiş demek; hâlâ bekliyorsun."
+      },
+      "ok": "Süre + hâlâ → have been + -ing."
+    },
+    {
+      "t": "choice",
+      "q": "How long ___ on this project?",
+      "a": "have you been working",
+      "o": [
+        "are you working",
+        "have you been working",
+        "do you work"
+      ],
+      "why": {
+        "are you working": "How long + hâlâ süren iş → present perfect continuous.",
+        "do you work": "Rutin sormuyorsun; ne zamandır sürdüğünü soruyorsun."
+      },
+      "ok": "How long have you been…?"
+    },
+    {
+      "t": "choice",
+      "q": "It ___ since midnight, and it hasn't stopped.",
+      "a": "has been raining",
+      "o": [
+        "has been raining",
+        "is raining",
+        "rains"
+      ],
+      "why": {
+        "is raining": "since midnight → present perfect continuous.",
+        "rains": "rains genel doğru anlatır, süre değil."
+      },
+      "ok": "since + süren → has been raining."
+    },
+    {
+      "t": "choice",
+      "q": "He ___ since 7 a.m.",
+      "a": "has been welding",
+      "o": [
+        "has been welding",
+        "has welding",
+        "is been welding"
+      ],
+      "why": {
+        "has welding": "been eksik: has been welding.",
+        "is been welding": "Yapı is ile değil has ile kurulur."
+      },
+      "ok": "has + been + -ing."
+    },
+    {
+      "t": "choice",
+      "q": "We ___ 30 sockets so far.",
+      "a": "have installed",
+      "o": [
+        "have installed",
+        "have been installing"
+      ],
+      "why": {
+        "have been installing": "Sayı (30) ve sonuç var → present perfect simple."
+      },
+      "ok": "Sayı → simple."
+    },
+    {
+      "t": "choice",
+      "q": "I ___ him since we were kids.",
+      "a": "have known",
+      "o": [
+        "have known",
+        "have been knowing"
+      ],
+      "why": {
+        "have been knowing": "know durum fiili; süre olsa bile continuous olmaz."
+      },
+      "ok": "Stative → have known."
+    },
+    {
+      "t": "choice",
+      "q": "“Why are you so dirty?” — “I ___ in the cable trench.”",
+      "a": "have been working",
+      "o": [
+        "have been working",
+        "work",
+        "had worked"
+      ],
+      "why": {
+        "work": "work rutin anlatır; şu anki kirin sebebi değil.",
+        "had worked": "had worked geçmişteki başka bir andan öncesini anlatır (past perfect)."
+      },
+      "ok": "Görünür iz → have been + -ing."
+    },
+    {
+      "t": "choice",
+      "q": "She ___ the report. Here it is.",
+      "a": "has written",
+      "o": [
+        "has written",
+        "has been writing"
+      ],
+      "why": {
+        "has been writing": "Here it is = bitmiş ürün. Sonuç → simple."
+      },
+      "ok": "Bitmiş sonuç → simple."
+    },
+    {
+      "t": "choice",
+      "q": "How ___ have you been working here?",
+      "a": "long",
+      "o": [
+        "long",
+        "much",
+        "many"
+      ],
+      "why": {
+        "much": "Süre sorusu: how long.",
+        "many": "how many sayılabilir şeylerin sayısını sorar."
+      },
+      "ok": "How long…?"
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “I am waiting here for two hours.”",
+      "a": [
+        "i have been waiting here for two hours",
+        "i've been waiting here for two hours"
+      ],
+      "hint": "for + hâlâ süren → have been + -ing.",
+      "ok": "I've been waiting here for two hours."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Sabahtan beri kablo çekiyoruz.”",
+      "a": [
+        "we have been pulling cable since this morning",
+        "we've been pulling cable since this morning",
+        "we have been pulling cables since this morning",
+        "we've been pulling cables since this morning",
+        "we have been pulling cable since the morning",
+        "we've been pulling cable since the morning",
+        "we have been pulling cables since the morning",
+        "we've been pulling cables since the morning",
+        "we have been pulling cable since morning",
+        "we've been pulling cable since morning"
+      ],
+      "hint": "kablo çekmek = pull cable. sabahtan beri = since this morning.",
+      "ok": "We've been pulling cable since this morning."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Ne kadar zamandır bekliyorsun?”",
+      "words": [
+        "been",
+        "you",
+        "long",
+        "waiting",
+        "how",
+        "have"
+      ],
+      "a": "how long have you been waiting",
+      "ok": "How long have you been waiting?"
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Süren işleri ve süresini present perfect continuous ile anlatmak; görünür sonucu açıklamak; sayı/sonuç için present perfect simple'a geçmek.",
+    "vocab": [
+      "pull cable",
+      "install",
+      "test",
+      "weld",
+      "overtime",
+      "cable trench",
+      "generator",
+      "sockets",
+      "lights",
+      "so far",
+      "all morning",
+      "since",
+      "for",
+      "lately"
+    ],
+    "structures": [
+      "have/has been + -ing",
+      "How long have you been…?",
+      "present perfect simple (sayı/sonuç) vs continuous (süre/süreç)",
+      "stative verbs + present perfect simple"
+    ],
+    "opener_hint": "Oliver şantiyeye gelen bir İngiliz denetçi gibi açsın: “You look busy! What have you been doing this morning?” Sonra “How long have you been working on this site?” ve “How many panels have you finished so far?” ile simple/continuous ayrımını zorlasın.",
+    "level_note": "B1+ → B2: doğal konuşma, 1-3 cümle. “I am working here since…” tipi hatayı her gördüğünde hemen ve kısa düzelt (bu dersin hedefi); diğer hataları 3 turda bir topla."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "süre: all week",
+      "q": "The crew ___ overtime all week.",
+      "a": "has been doing",
+      "o": [
+        "has been doing",
+        "is doing",
+        "does"
+      ],
+      "why": {
+        "is doing": "all week: hafta başından beri süren iş → has been doing.",
+        "does": "does rutin anlatır; süre değil."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "görünür sonuç",
+      "q": "Your eyes are red. ___ you ___ at the screen all day?",
+      "a": "Have / been looking",
+      "o": [
+        "Have / been looking",
+        "Are / looking",
+        "Did / look"
+      ],
+      "why": {
+        "Are / looking": "all day + şu an görünen iz (kırmızı göz) → present perfect continuous.",
+        "Did / look": "Geçmişte bitmiş bir olay sormuyorsun; etkisi şimdi görünen süreci soruyorsun."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "sayı → simple",
+      "q": "I ___ three emails since lunch.",
+      "a": "have sent",
+      "o": [
+        "have sent",
+        "have been sending"
+      ],
+      "why": {
+        "have been sending": "Sayı (three) var → present perfect simple."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "stative + perfect simple",
+      "q": "We ___ this generator for ten years.",
+      "a": "have had",
+      "o": [
+        "have had",
+        "have been having"
+      ],
+      "why": {
+        "have been having": "have “sahip olmak” anlamında durum fiili; continuous olmaz."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "how long",
+      "q": "Çevir: “Ne kadar zamandır İngilizce öğreniyorsun?”",
+      "a": [
+        "how long have you been learning english",
+        "how long have you been studying english"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "She ___ in Bodrum since 2025.",
+        "a": "has been living",
+        "o": [
+          "has been living",
+          "is living",
+          "lives"
+        ],
+        "why": {
+          "is living": "since → present perfect (continuous).",
+          "lives": "lives süre bilgisiyle kullanılmaz."
+        },
+        "ok": "since → has been living (has lived da doğru)."
+      },
+      {
+        "t": "choice",
+        "q": "Sorry I'm late. ___ long?",
+        "a": "Have you been waiting",
+        "o": [
+          "Have you been waiting",
+          "Are you waiting",
+          "Did you wait"
+        ],
+        "why": {
+          "Are you waiting": "long ile süre soruyorsun → Have you been waiting?",
+          "Did you wait": "Bekleme şu ana kadar sürdü; kalıp budur: Have you been waiting long? Did you wait long? daha çok bekleme çoktan bittiyse sorulur."
+        },
+        "ok": "Have you been waiting long?"
+      },
+      {
+        "t": "choice",
+        "q": "I'm exhausted because I ___ ladders all day.",
+        "a": "have been carrying",
+        "o": [
+          "have been carrying",
+          "carry",
+          "am carrying"
+        ],
+        "why": {
+          "carry": "carry rutin anlatır; yorgunluğun sebebi bugünkü süreç.",
+          "am carrying": "all day + şimdiki iz (yorgunluk) → have been carrying."
+        },
+        "ok": "Görünür iz → have been + -ing."
+      },
+      {
+        "t": "choice",
+        "q": "How many panels ___ today?",
+        "a": "have you tested",
+        "o": [
+          "have you tested",
+          "have you been testing"
+        ],
+        "why": {
+          "have you been testing": "How many sayı sorar → present perfect simple."
+        },
+        "ok": "How many → simple."
+      },
+      {
+        "t": "type",
+        "q": "Düzelt: “He is working here since March.”",
+        "a": [
+          "he has been working here since march",
+          "he's been working here since march",
+          "he has worked here since march",
+          "he's worked here since march"
+        ],
+        "hint": "since → has (been) …",
+        "ok": "He's been working here since March."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Bütün gün yağmur yağıyor.”",
+        "a": [
+          "it has been raining all day",
+          "it's been raining all day"
+        ],
+        "hint": "it + has been + -ing + all day.",
+        "ok": "It's been raining all day."
+      }
+    ],
+    "konus_prompt": "Oliver'a bu haftanı anlat: ne zamandan beri ne üzerinde çalışıyorsun (continuous), bugüne kadar kaç iş bitirdiniz (simple) ve şu an seni yoran şeyin sebebi ne (görünür sonuç)."
+  }
+}

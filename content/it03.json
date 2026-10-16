@@ -1,0 +1,723 @@
+{
+  "id": "it03",
+  "lang": "it",
+  "level": "A1",
+  "title": "İsimler: cinsiyet ve çoğul",
+  "lead": "Bir ismin eril mi dişil mi olduğunu son harfinden tanımayı ve çoğulunu yapmayı öğreneceksin. Ders bitince şantiyedeki malzemeleri (kablo, pano, boru, priz, baret) tekil ve çoğul söyleyebileceksin.",
+  "minutes": 30,
+  "anlat": [
+    {
+      "title": "Her ismin bir cinsiyeti var",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede kablo da lamba da sadece “şey”dir. İtalyancada her isim ya **eril (m)** ya **dişil (f)**dir; bir kabloyu da erkek, lambayı da kadın kabul eder. Cinsiyet anlamdan değil, çoğunlukla **son harften** anlaşılır. Bunu bilmek şart, çünkü bir sonraki derste artikeli (il, la…) buna göre seçeceksin."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Son harf",
+            "Cinsiyet",
+            "Örnek",
+            "Okunuş",
+            "Anlamı"
+          ],
+          "x": 2,
+          "rows": [
+            [
+              "-o",
+              "eril (m)",
+              "cavo",
+              "KA-vo",
+              "kablo"
+            ],
+            [
+              "-o",
+              "eril (m)",
+              "tubo",
+              "TU-bo",
+              "boru"
+            ],
+            [
+              "-a",
+              "dişil (f)",
+              "lampada",
+              "LAM-pa-da",
+              "lamba"
+            ],
+            [
+              "-a",
+              "dişil (f)",
+              "presa",
+              "PRE-sa",
+              "priz"
+            ],
+            [
+              "-e",
+              "eril (m)",
+              "interruttore",
+              "in-ter-rut-TO-re",
+              "elektrik anahtarı"
+            ],
+            [
+              "-e",
+              "eril (m)",
+              "cantiere",
+              "kan-TYE-re",
+              "şantiye"
+            ],
+            [
+              "-e",
+              "dişil (f)",
+              "chiave",
+              "KYA-ve",
+              "anahtar (kilit)"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**-e ile bitenlerde kural yok**: cinsiyeti kelimeyle birlikte ezberle. İki ipucu: **-ore** ile bitenler çoğunlukla eril (motore, interruttore, generatore), **-ione** ile bitenler çoğunlukla dişil (tensione, attenzione)."
+        }
+      ]
+    },
+    {
+      "title": "Çoğul: Türkçede ek gelir, İtalyancada son harf değişir",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede kelimenin sonuna **-ler/-lar** eklersin. İtalyancada ek gelmez; **son sesli harf değişir**. İngilizcedeki gibi -s de yoktur."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "kablo",
+                  "s": "kelime aynı kalır"
+                },
+                {
+                  "t": "-lar",
+                  "s": "çoğul eki",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {
+                  "t": "cav-",
+                  "s": "kök"
+                },
+                {
+                  "t": "-o → -i",
+                  "s": "son harf değişir",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tekil",
+            "Çoğul",
+            "Kural",
+            "Anlamı"
+          ],
+          "x": 1,
+          "rows": [
+            [
+              "cavo",
+              "cavi",
+              "-o → -i",
+              "kablo → kablolar"
+            ],
+            [
+              "lampada",
+              "lampade",
+              "-a → -e",
+              "lamba → lambalar"
+            ],
+            [
+              "cantiere",
+              "cantieri",
+              "-e → -i",
+              "şantiye → şantiyeler"
+            ],
+            [
+              "chiave",
+              "chiavi",
+              "-e → -i (dişil de olsa)",
+              "anahtar → anahtarlar"
+            ]
+          ],
+          "say": [
+            "cavo, cavi",
+            "lampada, lampade",
+            "cantiere, cantieri",
+            "chiave, chiavi"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Kısaca: **-o ve -e → -i**, **-a → -e**. -e ile biten isim eril de olsa dişil de olsa -i alır."
+        }
+      ]
+    },
+    {
+      "title": "Şantiye çantası: 12 kelime",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "Tekil",
+            "Çoğul",
+            "m/f",
+            "Anlamı"
+          ],
+          "x": 0,
+          "rows": [
+            [
+              "cantiere",
+              "cantieri",
+              "m",
+              "şantiye"
+            ],
+            [
+              "cavo",
+              "cavi",
+              "m",
+              "kablo"
+            ],
+            [
+              "quadro elettrico",
+              "quadri elettrici",
+              "m",
+              "elektrik panosu"
+            ],
+            [
+              "lampada",
+              "lampade",
+              "f",
+              "lamba"
+            ],
+            [
+              "tubo",
+              "tubi",
+              "m",
+              "boru"
+            ],
+            [
+              "presa",
+              "prese",
+              "f",
+              "priz"
+            ],
+            [
+              "interruttore",
+              "interruttori",
+              "m",
+              "elektrik anahtarı"
+            ],
+            [
+              "operaio",
+              "operai",
+              "m",
+              "işçi"
+            ],
+            [
+              "squadra",
+              "squadre",
+              "f",
+              "ekip"
+            ],
+            [
+              "casco",
+              "caschi",
+              "m",
+              "baret"
+            ],
+            [
+              "guanto",
+              "guanti",
+              "m",
+              "eldiven"
+            ],
+            [
+              "scala",
+              "scale",
+              "f",
+              "merdiven"
+            ]
+          ],
+          "say": [
+            "cantiere, cantieri",
+            "cavo, cavi",
+            "quadro elettrico, quadri elettrici",
+            "lampada, lampade",
+            "tubo, tubi",
+            "presa, prese",
+            "interruttore, interruttori",
+            "operaio, operai",
+            "squadra, squadre",
+            "casco, caschi",
+            "guanto, guanti",
+            "scala, scale"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**quadro elettrico → quadri elettrici**: sıfat da isimle birlikte çoğul olur. İtalyancada sıfat ismin peşinden gider."
+        }
+      ]
+    },
+    {
+      "title": "Dört tuzak",
+      "blocks": [
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "-co / -ca: k sesini korumak için h eklenir",
+              "text": "casci yazsaydın “KA-şi” okunurdu (1. ders: sci = şi). h, k sesini korur. Dişil -ca her zaman -che olur. Bazı eril -co kelimeler istisnadır: amico → amici, elettrico → elettrici.",
+              "ex": {
+                "x": "casco, caschi",
+                "tr": "baret, baretler · KAS-ko, KAS-ki"
+              }
+            },
+            {
+              "title": "-io ile bitenler tek i alır",
+              "text": "Çift i yazılmaz. (Nadir istisna: i vurguluysa iki i kalır, zio → zii.)",
+              "ex": {
+                "x": "operaio, operai",
+                "tr": "işçi, işçiler · o-pe-RA-yo, o-pe-RA-i"
+              }
+            },
+            {
+              "title": "Bazıları hiç değişmez",
+              "text": "Son hecesi vurgulu kelimeler (caffè, città), kısaltmalar (foto) ve yabancı kelimeler (bar).",
+              "ex": {
+                "x": "caffè, caffè",
+                "tr": "kahve, kahveler · kaf-FE (değişmez)"
+              }
+            },
+            {
+              "title": "Düzensizler: ezberle",
+              "text": "uomo → uomini (adam), mano → mani (el; dişil ama -o ile biter), problema → problemi (eril ama -a ile biter).",
+              "ex": {
+                "x": "uomo, uomini",
+                "tr": "adam, adamlar · UO-mo, UO-mi-ni"
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Meslekler: **elettricista** (elektrikçi) hem erkek hem kadın için aynıdır. Çoğulu: erkekler / karışık grup **elettricisti**, sadece kadınlar **elettriciste**."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "cavo, cavi",
+      "tr": "kablo, kablolar",
+      "ph": "KA-vo, KA-vi"
+    },
+    {
+      "x": "lampada, lampade",
+      "tr": "lamba, lambalar",
+      "ph": "LAM-pa-da, LAM-pa-de"
+    },
+    {
+      "x": "cantiere, cantieri",
+      "tr": "şantiye, şantiyeler",
+      "ph": "kan-TYE-re, kan-TYE-ri"
+    },
+    {
+      "x": "quadro elettrico, quadri elettrici",
+      "tr": "elektrik panosu, panolar",
+      "ph": "KUA-dro e-LET-tri-ko, KUA-dri e-LET-tri-çi"
+    },
+    {
+      "x": "casco, caschi",
+      "tr": "baret, baretler",
+      "ph": "KAS-ko, KAS-ki"
+    },
+    {
+      "x": "operaio, operai",
+      "tr": "işçi, işçiler",
+      "ph": "o-pe-RA-yo, o-pe-RA-i"
+    },
+    {
+      "x": "squadra, squadre",
+      "tr": "ekip, ekipler",
+      "ph": "SKUA-dra, SKUA-dre"
+    },
+    {
+      "x": "chiave, chiavi",
+      "tr": "anahtar, anahtarlar",
+      "ph": "KYA-ve, KYA-vi"
+    },
+    {
+      "x": "uomo, uomini",
+      "tr": "adam, adamlar",
+      "ph": "UO-mo, UO-mi-ni"
+    },
+    {
+      "x": "caffè, caffè",
+      "tr": "kahve, kahveler (değişmez)",
+      "ph": "kaf-FE, kaf-FE"
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "“tubo” (boru) hangi cinsiyette?",
+      "a": "eril (m)",
+      "o": [
+        "eril (m)",
+        "dişil (f)"
+      ],
+      "why": {
+        "dişil (f)": "-o ile biten isimler neredeyse hep eril. tubo eril."
+      },
+      "ok": "-o → eril."
+    },
+    {
+      "t": "choice",
+      "q": "“presa” (priz) hangi cinsiyette?",
+      "a": "dişil (f)",
+      "o": [
+        "eril (m)",
+        "dişil (f)"
+      ],
+      "why": {
+        "eril (m)": "-a ile biten isimler çoğunlukla dişil. presa dişil."
+      },
+      "ok": "-a → dişil."
+    },
+    {
+      "t": "choice",
+      "q": "Çoğulu: cavo → ?",
+      "a": "cavi",
+      "o": [
+        "cave",
+        "cavi",
+        "cavos"
+      ],
+      "why": {
+        "cave": "-e çoğulu, -a ile biten dişil isimlerindir (lampada → lampade). -o → -i.",
+        "cavos": "İtalyancada çoğul -s yoktur; son harf değişir."
+      },
+      "ok": "-o → -i: cavi."
+    },
+    {
+      "t": "choice",
+      "q": "Çoğulu: lampada → ?",
+      "a": "lampade",
+      "o": [
+        "lampadi",
+        "lampade",
+        "lampadas"
+      ],
+      "why": {
+        "lampadi": "-i, -o ve -e ile bitenlerin çoğuludur. -a → -e.",
+        "lampadas": "İtalyancada -s ile çoğul yapılmaz."
+      },
+      "ok": "-a → -e: lampade."
+    },
+    {
+      "t": "choice",
+      "q": "Çoğulu: cantiere → ?",
+      "a": "cantieri",
+      "o": [
+        "cantieri",
+        "cantiere",
+        "cantiera"
+      ],
+      "why": {
+        "cantiere": "-e ile biten isimler değişir: -e → -i. Değişmeyenler sadece vurgusu sonda olanlar (caffè) ve kısaltmalar.",
+        "cantiera": "Çoğul -a ile yapılmaz; -e → -i."
+      },
+      "ok": "-e → -i: cantieri."
+    },
+    {
+      "t": "choice",
+      "q": "Çoğulu: chiave (f) → ?",
+      "a": "chiavi",
+      "o": [
+        "chiave",
+        "chiavi",
+        "chiavie"
+      ],
+      "why": {
+        "chiave": "-e ile biten dişil isim de -i alır. Cinsiyet çoğulu değiştirmez.",
+        "chiavie": "Ek eklenmez, son harf değişir: -e → -i."
+      },
+      "ok": "-e → -i, dişil olsa bile."
+    },
+    {
+      "t": "choice",
+      "q": "Çoğulu: casco (baret) → ?",
+      "a": "caschi",
+      "o": [
+        "casci",
+        "caschi",
+        "casche"
+      ],
+      "why": {
+        "casci": "casci yazarsan sc + i = ş olur, “KA-şi” okunur. k sesini korumak için h: caschi.",
+        "casche": "casco eril (-o); eril çoğul -i ile biter, -e değil."
+      },
+      "ok": "caschi: h, k sesini korur."
+    },
+    {
+      "t": "choice",
+      "q": "Çoğulu: operaio (işçi) → ?",
+      "a": "operai",
+      "o": [
+        "operaii",
+        "operai",
+        "operaie"
+      ],
+      "why": {
+        "operaii": "-io ile bitenlerde çift i yazılmaz: operai.",
+        "operaie": "Eril isim -i ile çoğul olur."
+      },
+      "ok": "-io → -i: operai."
+    },
+    {
+      "t": "choice",
+      "q": "Hangisi eril?",
+      "a": "problema",
+      "o": [
+        "problema",
+        "scala",
+        "lampada"
+      ],
+      "why": {
+        "scala": "scala -a ile biter ve dişildir.",
+        "lampada": "lampada -a ile biter ve dişildir."
+      },
+      "ok": "problema istisna: -a ile biter ama eril (çoğulu problemi)."
+    },
+    {
+      "t": "type",
+      "q": "Çoğul yaz: “interruttore”",
+      "a": [
+        "interruttori"
+      ],
+      "hint": "-e ile bitiyor: -e → -i.",
+      "ok": "interruttori."
+    },
+    {
+      "t": "type",
+      "q": "Çoğul yaz: “quadro elettrico” (sıfatı da unutma)",
+      "a": [
+        "quadri elettrici"
+      ],
+      "hint": "İki kelime de -o → -i olur. elettrico'nun c'si çoğulda yumuşar: elettrici.",
+      "ok": "quadri elettrici. Sıfat isimle birlikte değişir."
+    },
+    {
+      "t": "type",
+      "q": "Tekile çevir: “mani” (eller)",
+      "a": [
+        "mano"
+      ],
+      "hint": "Düzensiz: dişil ama -o ile biter.",
+      "ok": "mano. Dişil ama -o ile biten istisna."
+    }
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Şantiye ve depo malzemelerini İtalyanca adlandırmak; her birinin cinsiyetini ve çoğulunu söylemek.",
+    "vocab": [
+      "cantiere",
+      "cavo",
+      "quadro elettrico",
+      "lampada",
+      "tubo",
+      "presa",
+      "interruttore",
+      "operaio",
+      "squadra",
+      "casco",
+      "guanto",
+      "scala",
+      "chiave",
+      "motore",
+      "tensione",
+      "elettricista",
+      "caffè",
+      "uomo",
+      "mano",
+      "problema"
+    ],
+    "structures": [
+      "tekil → çoğul (-o/-e → -i, -a → -e)",
+      "eril / dişil tanıma",
+      "-co → -chi, -ca → -che",
+      "-io → -i",
+      "değişmeyen ve düzensiz isimler"
+    ],
+    "opener_hint": "Chiara “Bugün depodayız, malzeme sayıyoruz” desin; Türkçe bir nesne söylesin (ör. “baret”) ve Türab'dan İtalyancasını, m/f bilgisini ve çoğulunu istesin. Doğruysa yeni nesneye geçsin, yanlışsa kuralı tek cümleyle hatırlatsın.",
+    "level_note": "A1: cümle kurdurma, kelime + çoğul düzeyinde kal. Artikeller (il, la, un…) henüz öğretilmedi; kullanma ya da kullanırsan açıklama yapma. Türkçe açıklama serbest."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "-o → -i",
+      "q": "Çoğulu: guanto (eldiven) → ?",
+      "a": "guanti",
+      "o": [
+        "guante",
+        "guanti",
+        "guanto"
+      ],
+      "why": {
+        "guante": "-e çoğulu dişil -a isimlerine aittir. guanto eril: -i.",
+        "guanto": "Değişmeyenler vurgusu sonda olanlar (caffè), kısaltmalar ve yabancı kelimeler; guanto değişir."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "-a → -e",
+      "q": "Çoğulu: squadra (ekip) → ?",
+      "a": "squadre",
+      "o": [
+        "squadri",
+        "squadre",
+        "squadra"
+      ],
+      "why": {
+        "squadri": "-a ile biten dişil isim -e alır.",
+        "squadra": "squadra değişmeyenlerden değil."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "değişmeyen isimler",
+      "q": "Çoğulu: caffè → ?",
+      "a": "caffè",
+      "o": [
+        "caffi",
+        "caffè",
+        "caffèi"
+      ],
+      "why": {
+        "caffi": "Son hecesi vurgulu (aksanlı) kelimeler çoğulda değişmez.",
+        "caffèi": "Ek eklenmez; caffè aynı kalır."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "-ca → -che",
+      "q": "Çoğulu: fabbrica (fabrika) → ?",
+      "a": "fabbriche",
+      "o": [
+        "fabbrice",
+        "fabbriche",
+        "fabbrichi"
+      ],
+      "why": {
+        "fabbrice": "fabbrice “fab-bri-çe” okunur; k sesini korumak için h: fabbriche.",
+        "fabbrichi": "fabbrica dişil (-a); çoğul -e ile biter."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "düzensiz çoğul",
+      "q": "Çoğul yaz: “uomo” (adam)",
+      "a": [
+        "uomini"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "“motore” hangi cinsiyette?",
+        "a": "eril (m)",
+        "o": [
+          "eril (m)",
+          "dişil (f)"
+        ],
+        "why": {
+          "dişil (f)": "-ore ile biten isimler çoğunlukla eril: motore, interruttore, generatore."
+        },
+        "ok": "-ore → çoğunlukla eril."
+      },
+      {
+        "t": "choice",
+        "q": "“tensione” (gerilim) hangi cinsiyette?",
+        "a": "dişil (f)",
+        "o": [
+          "eril (m)",
+          "dişil (f)"
+        ],
+        "why": {
+          "eril (m)": "-ione ile biten isimler çoğunlukla dişil."
+        },
+        "ok": "-ione → çoğunlukla dişil."
+      },
+      {
+        "t": "choice",
+        "q": "Çoğulu: ponteggio (iskele) → ?",
+        "a": "ponteggi",
+        "o": [
+          "ponteggii",
+          "ponteggi",
+          "ponteggie"
+        ],
+        "why": {
+          "ponteggii": "-io ile bitenlerde çift i yazılmaz.",
+          "ponteggie": "Eril isim -i ile çoğul olur."
+        },
+        "ok": "-io → -i: ponteggi."
+      },
+      {
+        "t": "choice",
+        "q": "Çoğulu: città (şehir) → ?",
+        "a": "città",
+        "o": [
+          "città",
+          "citte",
+          "cittì"
+        ],
+        "why": {
+          "citte": "Son hecesi vurgulu kelimeler değişmez.",
+          "cittì": "Aksanlı son hece aynı kalır: città."
+        },
+        "ok": "Değişmez: città."
+      },
+      {
+        "t": "type",
+        "q": "Çoğul yaz: “presa” (priz)",
+        "a": [
+          "prese"
+        ],
+        "hint": "-a ile biten dişil: -a → -e.",
+        "ok": "prese."
+      },
+      {
+        "t": "type",
+        "q": "Tekile çevir: “interruttori”",
+        "a": [
+          "interruttore"
+        ],
+        "hint": "-i ile biten çoğulun tekili -o da olabilir -e de. -ore ile biten eril kelimeyi hatırla.",
+        "ok": "interruttore."
+      }
+    ],
+    "konus_prompt": "Takım çantanda ve panoda olan 5 şeyin adını Chiara'ya tekil ve çoğul yaz (ör. cavo, cavi) ve m/f'sini belirt; o kontrol etsin, yanlışını kuralıyla düzeltsin."
+  }
+}

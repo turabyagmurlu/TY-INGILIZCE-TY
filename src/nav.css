@@ -66,3 +66,6 @@ html:not(.tab-practice):not(.tab-units):not(.tab-progress) .pen-fab,html.lsn-on 
 .vTip button{min-width:44px;min-height:44px;margin:-8px -6px -8px 0;border:0;background:transparent;color:var(--muted);font-size:22px;border-radius:10px;flex:none}
 @media (max-width:1024px){.updBar{bottom:calc(80px + env(safe-area-inset-bottom,0px))}}
 @media (max-width:1024px){html.tab-practice .wrap,html.tab-units .wrap,html.tab-progress .wrap{padding-bottom:calc(164px + env(safe-area-inset-bottom,0px))}}
+.dayPlan li.extra{border:2px dashed var(--line2);background:transparent}
+.onbDate summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700;color:var(--primary-ink)}
+@media (max-width:420px){.streak{padding:6px 10px;font-size:14px}.barDate{display:none!important}}

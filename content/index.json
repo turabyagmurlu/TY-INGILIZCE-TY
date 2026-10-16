@@ -1,0 +1,65 @@
+[
+  {
+    "id": "it01",
+    "lang": "it",
+    "level": "A1",
+    "title": "Okunuş ve sesler",
+    "minutes": 30
+  },
+  {
+    "id": "it02",
+    "lang": "it",
+    "level": "A1",
+    "title": "Selamlaşma ve tanışma",
+    "minutes": 30
+  },
+  {
+    "id": "it03",
+    "lang": "it",
+    "level": "A1",
+    "title": "İsimler: cinsiyet ve çoğul",
+    "minutes": 30
+  },
+  {
+    "id": "it04",
+    "lang": "it",
+    "level": "A1",
+    "title": "Belirli ve belirsiz artikeller",
+    "minutes": 35
+  },
+  {
+    "id": "it05",
+    "lang": "it",
+    "level": "A1",
+    "title": "Özne zamirleri ve essere — olmak",
+    "minutes": 35
+  },
+  {
+    "id": "it06",
+    "lang": "it",
+    "level": "A1",
+    "title": "avere ve avere kalıpları",
+    "minutes": 35
+  },
+  {
+    "id": "en01",
+    "lang": "en",
+    "level": "B1",
+    "title": "Present ve past: zaman tekrarı",
+    "minutes": 35
+  },
+  {
+    "id": "en02",
+    "lang": "en",
+    "level": "B1",
+    "title": "Present perfect mi, past simple mı?",
+    "minutes": 35
+  },
+  {
+    "id": "en03",
+    "lang": "en",
+    "level": "B1",
+    "title": "Present perfect continuous",
+    "minutes": 30
+  }
+]

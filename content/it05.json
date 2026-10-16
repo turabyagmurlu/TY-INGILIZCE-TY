@@ -1,0 +1,719 @@
+{
+  "id": "it05",
+  "lang": "it",
+  "level": "A1",
+  "title": "Özne zamirleri ve essere — olmak",
+  "lead": "“Ben elektrikçiyim”, “Şantiye büyük”, “Burada değiliz” gibi cümlelerin hepsi tek bir fiille kurulur: essere. Ders bitince kendini ve ekibini tanıtabilir, yer ve durum söyleyebilirsin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Türkçede ek, İtalyancada fiil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede “olmak” çoğu zaman bir ektir: elektrikçi**-yim**, büyük**-tür**. İtalyancada bu ek yoktur; yerine ayrı bir fiil gelir: **essere**. Kural basit: Türkçede “-im, -sin, -dir” dediğin yerlerin çoğunda İtalyancada essere vardır. (Birkaç istisna var, ör. yaş: Ho 24 anni. Onları 6. derste göreceksin.)"
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Ben",
+                  "s": "özne"
+                },
+                {
+                  "t": "elektrikçi",
+                  "s": "isim"
+                },
+                {
+                  "t": "-yim",
+                  "s": "olmak (ek)",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {
+                  "t": "Io",
+                  "s": "özne"
+                },
+                {
+                  "t": "sono",
+                  "s": "olmak (fiil)",
+                  "hl": true
+                },
+                {
+                  "t": "elettricista",
+                  "s": "isim"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Sıraya dikkat: Türkçede “olmak” en sonda, İtalyancada **ortada**. Özne → fiil → gerisi. Meslekten önce artikel gelmez: Sono elettricista."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Il cantiere è grande.",
+              "tr": "Şantiye büyük(tür).",
+              "ph": "il kan-TYE-re E GRAN-de"
+            },
+            {
+              "x": "Sono di Kırıkkale.",
+              "tr": "Kırıkkaleliyim. (2. dersteki kalıbın sırrı: sono = -im)",
+              "ph": "SO-no di Kırıkkale"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Altı kişi, altı biçim",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Fiil, kimden bahsettiğine göre değişir; tıpkı Türkçedeki kişi ekleri gibi. Okunuş sütunu Türkçe harflerle; büyük harfli hece vurgulu."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Özne",
+            "essere",
+            "Okunuş",
+            "Anlamı",
+            "Türkçe ek"
+          ],
+          "x": 1,
+          "rows": [
+            [
+              "io",
+              "sono",
+              "İ-o SO-no",
+              "ben",
+              "-im"
+            ],
+            [
+              "tu",
+              "sei",
+              "tu SEY",
+              "sen",
+              "-sin"
+            ],
+            [
+              "lui / lei",
+              "è",
+              "LU-i / LEY E",
+              "o (erkek / kadın)",
+              "-dir"
+            ],
+            [
+              "Lei",
+              "è",
+              "LEY E",
+              "siz (kibar, tek kişi)",
+              "-siniz"
+            ],
+            [
+              "noi",
+              "siamo",
+              "NOY SYA-mo",
+              "biz",
+              "-iz"
+            ],
+            [
+              "voi",
+              "siete",
+              "VOY SYE-te",
+              "siz (birden çok kişi)",
+              "-siniz"
+            ],
+            [
+              "loro",
+              "sono",
+              "LO-ro SO-no",
+              "onlar",
+              "-ler"
+            ]
+          ],
+          "say": [
+            "io sono",
+            "tu sei",
+            "lui è",
+            "Lei è",
+            "noi siamo",
+            "voi siete",
+            "loro sono"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**sono** iki yerde geçer: io sono (ben) ve loro sono (onlar). Hangisi olduğunu cümlenin geri kalanı söyler."
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "**è** (aksanlı) = “-dir”, **e** (aksansız) = “ve”. Yazarken aksanı atlama: Il cavo **è** nuovo (kablo yeni) ≠ il cavo **e** il tubo (kablo ve boru)."
+        }
+      ]
+    },
+    {
+      "title": "Lei ve voi: iki farklı “siz”",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "2. derste gördün: kibar “siz” **Lei**'dir ve “o” gibi çekilir. Şimdi nedenini görüyorsun: Lei **è**. Birden çok kişiye “siz” dediğinde ise **voi siete** kullanılır; ekibe seslenirken budur."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Mühendise",
+              "items": [
+                {
+                  "t": "Lei",
+                  "s": "kibar siz (tek kişi)"
+                },
+                {
+                  "t": "è",
+                  "s": "“o” biçimi",
+                  "hl": true
+                },
+                {
+                  "t": "italiano?",
+                  "s": "İtalyan mısınız?"
+                }
+              ]
+            },
+            {
+              "label": "Ekibe",
+              "items": [
+                {
+                  "t": "Voi",
+                  "s": "siz (çok kişi)"
+                },
+                {
+                  "t": "siete",
+                  "s": "voi biçimi",
+                  "hl": true
+                },
+                {
+                  "t": "pronti?",
+                  "s": "Hazır mısınız?"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Lei è l'ingegnere?",
+              "tr": "Mühendis siz misiniz?",
+              "ph": "LEY E lin-ce-NYE-re"
+            },
+            {
+              "x": "Ragazzi, siete pronti?",
+              "tr": "Arkadaşlar, hazır mısınız?",
+              "ph": "ra-GAT-tsi, SYE-te PRON-ti"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Yazıda lei (o, kadın) ile Lei (siz) aynı biçimi kullanır: **è**. Konuşmada kime baktığın belli eder."
+        }
+      ]
+    },
+    {
+      "title": "Üç kullanım kuralı ve sıfat uyumu",
+      "blocks": [
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Özneyi atabilirsin",
+              "text": "Fiil kimin olduğunu zaten söyler; Türkçedeki gibi “ben” demek zorunda değilsin.",
+              "ex": {
+                "x": "Sono Türab.",
+                "tr": "(Ben) Türab'ım."
+              }
+            },
+            {
+              "title": "Olumsuz: fiilin önüne non",
+              "text": "Türkçedeki “değil”in yerine fiilden hemen önce non gelir.",
+              "ex": {
+                "x": "Non sono stanco.",
+                "tr": "Yorgun değilim."
+              }
+            },
+            {
+              "title": "Soru: cümle aynı, ses sonda yükselir",
+              "text": "Türkçedeki “mı/mi” yoktur. Yazıda soru işareti, konuşmada yükselen ses.",
+              "ex": {
+                "x": "Sei italiano?",
+                "tr": "İtalyan mısın?"
+              }
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kim için?",
+            "Sıfat",
+            "Örnek",
+            "Anlamı"
+          ],
+          "x": 2,
+          "rows": [
+            [
+              "erkek",
+              "stanco",
+              "Sono stanco.",
+              "Yorgunum. (erkek)"
+            ],
+            [
+              "kadın",
+              "stanca",
+              "Sono stanca.",
+              "Yorgunum. (kadın)"
+            ],
+            [
+              "erkekler / karışık grup",
+              "stanchi",
+              "Siamo stanchi.",
+              "Yorgunuz."
+            ],
+            [
+              "sadece kadınlar",
+              "stanche",
+              "Siamo stanche.",
+              "Yorgunuz. (kadınlar)"
+            ]
+          ],
+          "say": [
+            "Sono stanco.",
+            "Sono stanca.",
+            "Siamo stanchi.",
+            "Siamo stanche."
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Sıfat, isim gibi değişir (3. ders): -o/-a/-i/-e. stanchi'deki **h** de aynı sebepten: k sesini korumak için (casco → caschi)."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "Io sono Türab.",
+      "tr": "Ben Türab'ım.",
+      "ph": "İ-o SO-no Türab"
+    },
+    {
+      "x": "Sono elettricista.",
+      "tr": "Elektrikçiyim.",
+      "ph": "SO-no e-let-tri-ÇİS-ta"
+    },
+    {
+      "x": "Tu sei italiano?",
+      "tr": "Sen İtalyan mısın?",
+      "ph": "tu SEY i-ta-LYA-no"
+    },
+    {
+      "x": "Lei è l'ingegnere?",
+      "tr": "Mühendis siz misiniz?",
+      "ph": "LEY E lin-ce-NYE-re"
+    },
+    {
+      "x": "Il cantiere è grande.",
+      "tr": "Şantiye büyük.",
+      "ph": "il kan-TYE-re E GRAN-de"
+    },
+    {
+      "x": "Il quadro elettrico è pronto.",
+      "tr": "Elektrik panosu hazır.",
+      "ph": "il KUA-dro e-LET-tri-ko E PRON-to"
+    },
+    {
+      "x": "Noi siamo pronti.",
+      "tr": "Biz hazırız.",
+      "ph": "NOY SYA-mo PRON-ti"
+    },
+    {
+      "x": "Voi siete stanchi?",
+      "tr": "Yorgun musunuz?",
+      "ph": "VOY SYE-te STAN-ki"
+    },
+    {
+      "x": "La squadra è in cantiere.",
+      "tr": "Ekip şantiyede.",
+      "ph": "la SKUA-dra E in kan-TYE-re"
+    },
+    {
+      "x": "Loro non sono qui.",
+      "tr": "Onlar burada değil.",
+      "ph": "LO-ro non SO-no KUİ"
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "io ___ Türab.",
+      "a": "sono",
+      "o": [
+        "sono",
+        "sei",
+        "è"
+      ],
+      "why": {
+        "sei": "sei, tu (sen) içindir. io (ben) ile sono gelir.",
+        "è": "è, lui/lei (o) içindir. io ile sono gelir."
+      },
+      "ok": "io → sono. “Ben Türab'ım.”"
+    },
+    {
+      "t": "choice",
+      "q": "tu ___ stanco?",
+      "a": "sei",
+      "o": [
+        "siete",
+        "sei",
+        "sono"
+      ],
+      "why": {
+        "siete": "siete, voi (birden çok kişiye siz) içindir. Tek kişiye tu sei.",
+        "sono": "sono, io (ben) ya da loro (onlar) içindir."
+      },
+      "ok": "tu → sei. “Yorgun musun?”"
+    },
+    {
+      "t": "choice",
+      "q": "lei ___ ingegnere.",
+      "a": "è",
+      "o": [
+        "e",
+        "è",
+        "sei"
+      ],
+      "why": {
+        "e": "Aksansız e “ve” demektir. “-dir” anlamı için aksanlı è yazılır.",
+        "sei": "sei, tu içindir. lui/lei/Lei ile è gelir."
+      },
+      "ok": "lei → è. Aksanı unutma: è = -dir, e = ve."
+    },
+    {
+      "t": "choice",
+      "q": "noi ___ a Kırıkkale.",
+      "a": "siamo",
+      "o": [
+        "siamo",
+        "siete",
+        "sono"
+      ],
+      "why": {
+        "siete": "siete = voi (siz). noi (biz) için siamo.",
+        "sono": "sono = io / loro. noi (biz) için siamo."
+      },
+      "ok": "noi → siamo. “Kırıkkale'deyiz.”"
+    },
+    {
+      "t": "choice",
+      "q": "loro ___ amici.",
+      "a": "sono",
+      "o": [
+        "è",
+        "siamo",
+        "sono"
+      ],
+      "why": {
+        "è": "è tek kişi içindir (o). loro (onlar) çoğul: sono.",
+        "siamo": "siamo = noi (biz). loro için sono."
+      },
+      "ok": "loro → sono. io ile aynı biçim; kimden bahsettiğini cümle gösterir."
+    },
+    {
+      "t": "choice",
+      "q": "Mühendise kibarca: “Ingegnere, Lei ___ italiano?”",
+      "a": "è",
+      "o": [
+        "sei",
+        "è",
+        "siete"
+      ],
+      "why": {
+        "sei": "Lei kibar hitaptır ve “o” gibi çekilir: è. sei samimi tu içindir.",
+        "siete": "siete birden çok kişiye. Tek kişiye kibar: Lei è."
+      },
+      "ok": "Lei → è."
+    },
+    {
+      "t": "choice",
+      "q": "“Noi siamo ___.” (Yorgunuz; ekip erkek ve kadın karışık)",
+      "a": "stanchi",
+      "o": [
+        "stanco",
+        "stanchi",
+        "stanche"
+      ],
+      "why": {
+        "stanco": "stanco tekil (tek erkek). noi çoğul.",
+        "stanche": "stanche sadece kadınlardan oluşan grup için. Karışık grup eril çoğul alır: stanchi."
+      },
+      "ok": "Karışık grup → stanchi."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Elektrikçiyim.”",
+      "a": [
+        "sono elettricista",
+        "io sono elettricista"
+      ],
+      "hint": "Özne yazmak zorunda değilsin; sono zaten “ben” der. Meslekten önce artikel yok.",
+      "ok": "Sono elettricista."
+    },
+    {
+      "t": "type",
+      "q": "Olumsuz yap: “Sono stanco.”",
+      "a": [
+        "non sono stanco",
+        "io non sono stanco"
+      ],
+      "hint": "Olumsuzluk için fiilin hemen önüne non gelir.",
+      "ok": "Non sono stanco."
+    },
+    {
+      "t": "type",
+      "q": "Soruya çevir: “Sen Türk müsün?”",
+      "a": [
+        "sei turco",
+        "tu sei turco"
+      ],
+      "hint": "Soru eki yok; cümle aynı kalır, ses sonda yükselir. turco = Türk.",
+      "ok": "Sei turco? Yazıda soru işareti, konuşmada yükselen ses."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Şantiye büyük.”",
+      "a": [
+        "il cantiere è grande"
+      ],
+      "soft": [
+        "il cantiere e grande"
+      ],
+      "soft_note": "è aksanlı yazılır; aksansız e “ve” demektir: Il cantiere è grande.",
+      "hint": "şantiye = il cantiere, büyük = grande. “-dir” yerine hangi fiil?",
+      "ok": "Il cantiere è grande."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Kablolar hazır değil.”",
+      "words": [
+        "pronti",
+        "non",
+        "i",
+        "sono",
+        "cavi"
+      ],
+      "a": "i cavi non sono pronti",
+      "ok": "I cavi non sono pronti. non fiilden hemen önce."
+    }
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "essere ile kendini ve ekibini tanıtmak; yer ve durum söylemek; non ile olumsuz ve tonlamayla soru kurmak.",
+    "vocab": [
+      "Türab",
+      "Kırıkkale",
+      "turco/turca",
+      "italiano/italiana",
+      "elettricista",
+      "ingegnere",
+      "il cantiere",
+      "la squadra",
+      "il quadro elettrico",
+      "grande",
+      "pronto/pronti",
+      "stanco/stanca/stanchi",
+      "qui",
+      "in cantiere",
+      "amico/amici",
+      "di"
+    ],
+    "structures": [
+      "io sono, tu sei, lui/lei è, Lei è, noi siamo, voi siete, loro sono",
+      "non + essere",
+      "soru tonlaması",
+      "sıfat uyumu (-o/-a/-i/-e)"
+    ],
+    "opener_hint": "Chiara kendini tanıtsın (“Ciao! Sono Chiara, sono italiana.”) ve ilk soruyu sorsun: “Tu sei Türab?” Sonra sırayla memleket, meslek, ekibin nerede olduğu, yorgun olup olmadığı. 4. turdan sonra bir kez mühendis rolüne geçip Lei ile sorsun.",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca cümle/soru, alt satırda parantez içinde Türkçesi. Sadece essere ve listedeki kelimeler; avere kullanma (ho … anni kalıbı hariç). Hata olursa “Quasi! → doğru hali” ve kısa Türkçe neden. 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "voi siete",
+      "q": "“Siete pronti?” ne demek?",
+      "a": "Hazır mısınız?",
+      "o": [
+        "Hazır mısınız?",
+        "Hazır mısın?",
+        "Hazırız."
+      ],
+      "why": {
+        "Hazır mısın?": "Tek kişiye “sen” sei olurdu: Sei pronto?",
+        "Hazırız.": "“Hazırız” siamo ile kurulur: Siamo pronti."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "è / e farkı",
+      "q": "“L'ingegnere ___ l'elettricista sono qui.” (mühendis ve elektrikçi)",
+      "a": "e",
+      "o": [
+        "è",
+        "e"
+      ],
+      "why": {
+        "è": "Burada “ve” lazım; fiil zaten sono. Aksanlı è “-dir” demektir."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "Lei è",
+      "q": "Tanımadığın bir beye kibarca: “Lei ___ di Milano?”",
+      "a": "è",
+      "o": [
+        "è",
+        "sei",
+        "siete"
+      ],
+      "why": {
+        "sei": "sei samimi tu içindir. Kibar Lei “o” gibi çekilir: è.",
+        "siete": "siete birden çok kişiye “siz”."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "non ile olumsuz",
+      "q": "Olumsuz yap: “Il quadro è pronto.”",
+      "a": [
+        "il quadro non è pronto"
+      ],
+      "soft": [
+        "il quadro non e pronto"
+      ],
+      "soft_note": "è aksanlı yazılır: Il quadro non è pronto."
+    },
+    {
+      "t": "type",
+      "topic": "loro sono",
+      "q": "Türkçeden çevir: “Onlar Kırıkkaleli.”",
+      "a": [
+        "loro sono di kırıkkale",
+        "loro sono di kirikkale",
+        "sono di kırıkkale",
+        "sono di kirikkale"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "“Io e Ahmet ___ in cantiere.”",
+        "a": "siamo",
+        "o": [
+          "siamo",
+          "sono",
+          "siete"
+        ],
+        "why": {
+          "sono": "“Ben ve Ahmet” = biz. io sono'ya kanma; özne artık noi.",
+          "siete": "siete = siz. Kendini de katıyorsan biz: siamo."
+        },
+        "ok": "io e Ahmet = noi → siamo."
+      },
+      {
+        "t": "choice",
+        "q": "“Le prese ___ pronte.”",
+        "a": "sono",
+        "o": [
+          "è",
+          "sono",
+          "siamo"
+        ],
+        "why": {
+          "è": "le prese çoğul (prizler): onlar → sono.",
+          "siamo": "siamo = biz."
+        },
+        "ok": "Çoğul isim = loro → sono."
+      },
+      {
+        "t": "choice",
+        "q": "Ekibe: “Ragazzi, ___ stanchi?” (Arkadaşlar, yorgun musunuz?)",
+        "a": "siete",
+        "o": [
+          "sei",
+          "siete",
+          "sono"
+        ],
+        "why": {
+          "sei": "sei tek kişiye “sen”. Birden çok kişiye voi siete.",
+          "sono": "sono = ben / onlar. Karşındakilere sesleniyorsun: siete."
+        },
+        "ok": "Çok kişiye “siz” → siete."
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Türk değilim.” (erkek)",
+        "a": [
+          "non sono turco",
+          "io non sono turco"
+        ],
+        "hint": "non + sono + turco.",
+        "ok": "Non sono turco."
+      },
+      {
+        "t": "type",
+        "q": "Kibarca sor: “İtalyan mısınız?” (karşındaki bir bey)",
+        "a": [
+          "lei è italiano",
+          "è italiano"
+        ],
+        "soft": [
+          "lei e italiano",
+          "e italiano"
+        ],
+        "soft_note": "è aksanlı yazılır: Lei è italiano?",
+        "hint": "Lei + è + sıfat. Soru eki yok.",
+        "ok": "Lei è italiano?"
+      },
+      {
+        "t": "order",
+        "q": "Sırala: “Ekip şantiyede.”",
+        "words": [
+          "è",
+          "squadra",
+          "cantiere",
+          "la",
+          "in"
+        ],
+        "a": "la squadra è in cantiere",
+        "ok": "La squadra è in cantiere."
+      }
+    ],
+    "konus_prompt": "Chiara'ya ekibini tanıt: 3 kişi için kim olduğu, nereli olduğu, ne iş yaptığı ve şu an nasıl olduğu (stanco, pronto, qui, in cantiere). Hepsini essere ile kur."
+  }
+}

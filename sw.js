@@ -3,7 +3,7 @@
    Diğer dosyalar: önbellek öncelikli, arkada tazeleme. API (api.anthropic.com) ve dış istekler SW'ye girmez.
    FILES ve BUILD satırlarını build.py yazar (content/index.json'daki dersler otomatik önbelleğe girer; her yeni derleme SW güncellemesini tetikler → sayfada "Yeni sürüm hazır" bandı). */
 const CACHE = "ty-dil-v9";
-const BUILD = "a26b8f4df4d6";
+const BUILD = "b70285603d27";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png", "./legacy/ty-ingilizce.html", "./vendor/jsqr.js", "./vendor/tyqr.js", "./mod/lesson.js", "./content/index.json", "./content/it01.json", "./content/it02.json", "./content/it03.json", "./content/it04.json", "./content/it05.json", "./content/it06.json", "./content/en01.json", "./content/en02.json", "./content/en03.json"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => Promise.all(FILES.map(f => c.add(new Request(f, { cache: "no-cache" })).catch(() => {}))))); self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });

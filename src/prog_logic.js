@@ -38,7 +38,8 @@ function progAnchor(start){const wd=(wdOf(start)+6)%7; return wd<=2?addDays(star
 const validDay=k=>/^\d{4}-\d{2}-\d{2}$/.test(k||"")&&!isNaN(Date.parse(k+"T00:00:00Z"));
 /* Bir topic'in hafta içindeki son günü (Pzt=1): 2 konu → Çar, Cmt · 1 konu → Per */
 const dueDays=n=>n>=2?[3,6]:n===1?[4]:[];
-function expectedBy(week,dw){let e=0;ROADMAP.forEach(r=>{if(r.w<week)e+=r.it.length;else if(r.w===week)e+=dueDays(r.it.length).filter(d=>d<=dw).length;});return e;}
+/* Hoşgörü: bu haftanın konuları ancak haftanın Pazar'ı geride sayılır (hafta içinde "geride" uyarısı yok) */
+function expectedBy(week,dw){let e=0;ROADMAP.forEach(r=>{if(r.w<week)e+=r.it.length;else if(r.w===week&&dw>=7)e+=r.it.length;});return e;}
 function progInfo(){
   const pr=S.program; if(!pr||!validDay(pr.start)) return null;
   const t=today(), anchor=progAnchor(pr.start), day=daysBetween(anchor,t)+1, lead=day<1?1-day:0;
@@ -99,7 +100,7 @@ const NUMW=["sıfır","bir","iki","üç","dört","beş","altı"];
 function progVerdict(p,it){
   if(p.finished) return {cls:"good",short:"Program bitti",long:"12 hafta tamam. Final sınavı sonucunu İlerleme sekmesinde gör; A2 konularıyla devam edebilirsin."};
   const nm=it&&it.t?`<b>${esc(it.t[2])}</b>`:"";
-  if(p.diff<0) return {cls:"bad",short:Math.abs(p.diff)+" konu gerideysin",long:`Bugün ${nm||"sıradaki konuyu"} bitir. Gramer bloğunu bu konuya ver; konu %80 doğrulukla kapanınca plana yaklaşırsın.`};
+  if(p.diff<0&&!(p.week<=1&&p.doneN===0)) return {cls:"bad",short:Math.abs(p.diff)+" konu gerideysin",long:`Bugün ${nm||"sıradaki konuyu"} bitir. Gramer bloğunu bu konuya ver; konu %80 doğrulukla kapanınca plana yaklaşırsın.`};
   if(p.diff>0) return {cls:"good",short:"Programın önündesin · +"+p.diff+" konu",long:it&&it.mode==="review"?"Konular önde. Bugün tekrar günü: gramer bloğunda eski konuları pekiştir.":`Önde gidiyorsun. ${nm?"Sıradaki: "+nm+". ":""}Acele etme; kelime ve sesli tekrar bloklarını atlama.`};
   return {cls:"ok",short:p.week<1?"Isınmadasın":"Plandasın",long:it&&it.mode==="review"?"Bugün tekrar günü: gramer bloğu eski konuları pekiştirir.":nm?`Bugünün konusu ${nm}.`:"Bugünün planına devam."};
 }
@@ -126,7 +127,7 @@ function renderProgStrip(){
 }
 function renderHabit(){const el=$("#habit"); if(!el) return; const k=today(), on=!!(S.habits[k]&&S.habits[k].dinleme);
   el.innerHTML=`<button type="button" class="habit ${on?"on":""}" id="habitBtn" aria-pressed="${on}" ${db?"":"disabled"}><span class="hb">${on?ICON("check"):""}</span>
-    <span class="ht"><b>Yolda dinle · 15–20 dk <span class="opt">isteğe bağlı</span></b><small>${on?"Bugün dinledin. Kaldırmak için tekrar dokun.":"İşe giderken İtalyanca podcast (öneri: Coffee Break Italian, 1. sezon, baştan sırayla). 60 dakikaya dahil değil; dinlediysen işaretle."}</small></span></button>`;}
+    <span class="ht"><b>Yolda dinle · 15–20 dk <span class="hopt">isteğe bağlı</span></b><small>${on?"Bugün dinledin. Kaldırmak için tekrar dokun.":"İşe giderken İtalyanca podcast (öneri: Coffee Break Italian, 1. sezon, baştan sırayla). 60 dakikaya dahil değil; dinlediysen işaretle."}</small></span></button>`;}
 function renderWeekGoals(){
   const el=$("#weekGoals"); if(!el) return; const p=progInfo();
   if(!p){el.innerHTML=`<div class="chead"><div><h2>Haftalık hedefler</h2><p class="lead">Yoğun programı başlatınca bu haftanın dakika, kelime ve konu hedefleri burada görünür.</p></div>
@@ -198,7 +199,9 @@ document.addEventListener("click",async e=>{
     try{/* Başka cihazda / geç gelen kayıtta program zaten varsa ezme, onu benimse */
       let ex=null; try{ex=await db.collection("program").doc("main").get();}catch(e){ex=null;}
       if(ex&&ex.exists){S.program=ex.data(); progLoaded=true; onbSkip=false; renderAll(); if(typeof fNotice==="function") fNotice("Program zaten başlatılmış."); return;}
-      await db.collection("program").doc("main").set(doc); S.program=doc; onbSkip=false; renderAll(); if(typeof dersGate==="function"&&dersGate()) dersOpen();}
+      await db.collection("program").doc("main").set(doc); S.program=doc; onbSkip=false; renderAll();
+      /* İçerikli ders varsa günün planı (ders ekranı); yoksa koç yönetimli Ders modu */
+      lxIndex().then(()=>{renderDayPlan(); if(!lxGo()&&dersGate()) dersOpen();});}
     catch(err){b.disabled=false; msg(m,"err",dbErrText(err,"Program kaydedilemedi"));}
     finally{progWriting=false;} return;}
   if(b.id==="habitBtn"){if(!db||b.dataset.busy)return; const k=today(), on=!(S.habits[k]&&S.habits[k].dinleme); b.dataset.busy="1";

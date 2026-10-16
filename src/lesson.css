@@ -2,16 +2,24 @@
 html.lsn-on,html.kc-on{overflow:hidden}
 html.lsn-on .app,html.lsn-on .tabs{visibility:hidden}
 .lsn{position:fixed;inset:0;z-index:50;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-.lsnIn{max-width:760px;margin:0 auto;padding:calc(10px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(120px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:grid;gap:16px}
+.lsnIn{max-width:760px;margin:0 auto;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:grid;gap:14px}
+/* kompakt yapışkan başlık: Çık · başlık · Koça sor + adım çubuğu */
+.lsnSticky{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(8px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.lsnSticky>*{max-width:760px;margin-inline:auto}
+.lsnBar{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.lsnBt{flex:1;min-width:0;display:grid}
+.lsnBt small{font-size:12.5px;font-weight:800;color:var(--good-ink);display:flex;gap:6px;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lsnBt h1{margin:0;font-size:18px;line-height:1.2;color:var(--heading);font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lsnLead{margin:0}
 .lsnTop{display:flex;align-items:center;gap:10px}
-.lsnX{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 14px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);font-weight:700;font-size:15px}
+.lsnX{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 12px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);font-weight:700;font-size:15px}
 .lsnX .ico{width:18px;height:18px;transform:scaleX(-1)}
 .lsnHd{display:grid;gap:6px}
 .lsnHd .eyebrow{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--good-ink);margin:0;display:flex;align-items:center;gap:8px}
 .lsnHd h1{margin:0;font-size:clamp(26px,5vw,34px);line-height:1.15;color:var(--heading);font-weight:800}
 .lsnHd .lead{margin:0}
 .lpath{display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:6px;list-style:none;margin:0;padding:0}
-.lpath button{width:100%;min-height:56px;border:2px solid var(--line);background:var(--card);border-radius:12px;color:var(--muted);font:700 14px/1.2 var(--font);display:grid;gap:2px;justify-items:center;align-content:center;padding:6px 2px}
+.lpath button{width:100%;min-height:46px;border:2px solid var(--line);background:var(--card);border-radius:12px;color:var(--muted);font:700 14px/1.2 var(--font);display:grid;gap:2px;justify-items:center;align-content:center;padding:6px 2px}
 .lpath button span{font-family:var(--mono);font-size:12px;font-weight:600}
 .lpath button[aria-current="step"]{border-color:var(--primary);color:var(--text);background:var(--primary-bg)}
 .lpath button.done{background:var(--good-bg);border-color:var(--good);color:var(--good-ink)}
@@ -91,7 +99,8 @@ html.lsn-on .app,html.lsn-on .tabs{visibility:hidden}
 .lgoal li{display:flex;gap:8px;align-items:baseline}
 .lgoal li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--good);flex:none;transform:translateY(-2px)}
 /* Koça sor */
-.askFab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));min-height:52px;padding:12px 20px;border-radius:26px;border:0;background:var(--good-ink);color:#fff;font:800 16px var(--font);box-shadow:var(--shadow);z-index:55;display:inline-flex;align-items:center;gap:8px}
+.askFab{flex:none;min-height:44px;padding:8px 14px;border-radius:999px;border:0;background:#1D6B3D;color:#fff;font:800 15px var(--font);display:inline-flex;align-items:center;gap:6px}
+.askFab[hidden]{display:none}
 .askFab .ico{width:20px;height:20px}
 .ask{position:fixed;right:calc(12px + env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));width:min(420px,calc(100vw - 24px));max-height:min(72vh,580px);background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.25);display:grid;grid-template-rows:auto minmax(0,1fr) auto;z-index:56}
 .ask header{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line)}
@@ -149,7 +158,7 @@ html.lsn-on .app,html.lsn-on .tabs{visibility:hidden}
 .kcType textarea{flex:1;min-height:52px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--text);font:400 17px var(--font);padding:10px 12px;resize:none}
 .kcType .hint{margin:0;color:var(--muted);font-size:14px;text-align:center}
 .kcCtl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-width:560px;width:100%;margin:0 auto}
-.kcB{display:grid;justify-items:center;align-content:center;gap:3px;min-height:64px;border-radius:16px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);font:700 12.5px/1.15 var(--font);padding:6px 2px}
+.kcB{display:grid;justify-items:center;align-content:center;gap:3px;min-height:64px;border-radius:16px;border:2px solid var(--line);background:var(--card);color:var(--primary-ink);font:700 13px/1.15 var(--font);padding:6px 2px}
 .kcB .ico{width:22px;height:22px}
 .kcB[aria-pressed="true"]{background:var(--primary-bg);border-color:var(--primary)}
 .kcB.end{background:#B83227;border-color:#B83227;color:#fff}
@@ -168,4 +177,18 @@ html.lsn-on .app,html.lsn-on .tabs{visibility:hidden}
 .kcPh small{display:block;color:var(--muted)}
 .kcAdd{min-height:44px;padding:6px 12px;border-radius:10px;border:2px solid var(--line);background:var(--soft);color:var(--primary-ink);font-weight:700;font-size:14px}
 .kcAdd:disabled{opacity:.6}
-@media (max-width:520px){.lcard{padding:18px}.lpath button{font-size:12px;min-height:52px}.lane{grid-template-columns:1fr}.kcoaches{grid-template-columns:1fr}.kcB{font-size:11.5px}}
+@media (max-width:520px){.lcard{padding:18px}.lpath button{font-size:12px;min-height:52px}.lane{grid-template-columns:1fr}.kcoaches{grid-template-columns:1fr}.kcB{font-size:13px}}
+/* tablo → dar ekranda kartlar */
+.lrcs{display:none;gap:8px}
+.lrc{border:1px solid var(--line);border-radius:12px;padding:8px 12px;display:grid;gap:4px;background:var(--sand)}
+.lrcH{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:18px;font-weight:800}
+.lrcR{display:flex;gap:8px;align-items:baseline;font-size:15px;overflow-wrap:normal;word-break:normal}
+.lrcR span{color:var(--muted);font-size:13px;min-width:72px}
+.lrcR b{font-weight:600}
+@media (max-width:599px){.lrcs{display:grid}.lrcs+.ltbl{display:none}}
+.ltbl td{overflow-wrap:normal;word-break:normal;hyphens:manual}
+.askLog .m .tx{color:var(--good-ink)}
+.askLog .m.c .say{vertical-align:middle;margin-left:4px;width:40px;height:40px;min-width:40px;min-height:40px}
+.lsum{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.lsum span{display:inline-flex;align-items:center;gap:6px;background:var(--soft);border-radius:999px;padding:6px 12px;font-weight:700}
+.lsum .ico{width:18px;height:18px}

@@ -8,7 +8,7 @@ const FIX=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/lesson_it05.j
 const WED=AT(2026,10,14,9), THU=AT(2026,10,15,9);
 const SEED={program:{main:{start:'2026-09-28',weeks:12,dailyMin:60,mode:'yogun'}},topics:Object.fromEntries(['it01','it02','it03','it04'].map(id=>[id,{status:'done',updated:'2026-10-01T10:00:00Z'}])),
   cards:{c1:{lang:'it',f:'il cavo',tr:'kablo',box:1,due:'2026-10-13',added:'2026-10-10T10:00:00Z'}}};
-const SHOTS=path.join(H.ROOT,'review/shots_v9');fs.mkdirSync(SHOTS,{recursive:true});
+const SHOTS=path.join(H.ROOT,'review/shots_v9');fs.mkdirSync(SHOTS,{recursive:true});const SHOTS10=path.join(H.ROOT,'review/shots_v10');fs.mkdirSync(SHOTS10,{recursive:true});
 const sysOf=b=>Array.isArray(b.system)?b.system.map(x=>x.text||'').join('\n'):(b.system||'');
 function handler(req,st){const s=req.system;st.sys=st.sys||[];st.sys.push(s);
   if(/KOÇA SOR/.test(s))return {sse:[{text:'Kısa ipucu: io ile sono gelir.'}]};
@@ -20,11 +20,12 @@ function handler(req,st){const s=req.system;st.sys=st.sys||[];st.sys.push(s);
    await p.addInitScript(H.clockScript(o.at||WED));await p.addInitScript(MOCK);await p.addInitScript(()=>{localStorage.setItem('tydil.apiKey','sk-ant-test');localStorage.setItem('tydil-tip-pin','1');});
    if(o.fixture!==false){await p.route('**/content/index.json',r=>r.fulfill({contentType:'application/json',body:JSON.stringify([{id:'it05',lang:'it',level:'A1',title:FIX.title,minutes:30}])}));
      await p.route('**/content/it05.json',r=>r.fulfill({contentType:'application/json',body:JSON.stringify(FIX)}));}
+   if(o.pre)await o.pre(p);
    await H.mockApi(p,st,o.handler||handler);await p.goto(srv.base+'/index.html');
    if(o.seed){await p.evaluate(s=>rtImport({app:'TY-DIL',format:1,collections:s}),o.seed);await p.reload();}
    await p.waitForTimeout(700);return {p,ctx,st};};
  const store=(p,c)=>p.evaluate(c=>rtExport().collections[c]||{},c);
- const plan=p=>p.$$eval('#dayPlan li',e=>e.map(x=>(x.classList.contains('done')?'+':x.classList.contains('next')?'>':'-')+x.querySelector('b').textContent));
+ const plan=p=>p.$$eval('#dayPlan li:not(.extra)',e=>e.map(x=>(x.classList.contains('done')?'+':x.classList.contains('next')?'>':'-')+x.querySelector('b').textContent));
  const stage=p=>p.evaluate(()=>document.querySelector('#lstage').innerText);
  const cur=p=>p.evaluate(()=>{const b=document.querySelector('#lpath [aria-current=step]');return b?b.lastChild.textContent.trim():'';});
  const click=async(p,sel)=>{await p.click(sel);await p.waitForTimeout(80);};
@@ -49,11 +50,13 @@ function handler(req,st){const s=req.system;st.sys=st.sys||[];st.sys.push(s);
   await p.fill('#askIn','sono ile io sono farkı ne?');await click(p,'#askSend');await p.waitForFunction(()=>/Kısa ipucu/.test(document.querySelector('#askLog').textContent),null,{timeout:4000});
   const s0=st.sys[st.sys.length-1];ok(/KOÇA SOR/.test(s0)&&/it05/.test(s0)&&/Öğrenci şu an: Anlat · kart 1\/3/.test(s0)&&/Türkçede ek, İtalyancada fiil/.test(s0)&&/Yoklama \(Yokla\) sorularının cevabını ASLA verme/.test(s0),'Koça sor request: lesson id + step + visible card text + never-give-quiz-answers rule');
   ok(st.reqs[st.reqs.length-1].messages.slice(-1)[0].content==='sono ile io sono farkı ne?','question sent as user turn');
-  await click(p,'#askX');ok(await p.isHidden('#ask')&&await p.isVisible('#askFab'),'Koça sor closes, FAB back');
+  await click(p,'#askX');ok(await p.isHidden('#ask')&&await p.isVisible('#askFab'),'Koça sor closes, button back');
+  ok(await p.evaluate(()=>!!document.querySelector('.lsnSticky #askFab')),'Koça sor docked in the compact lesson header (no floating button over content)');
   await click(p,'[data-act=aNext]');ok(/Altı kişi, altı biçim/.test(await stage(p)),'Anlat card 2');
-  const tb=await p.evaluate(()=>{const t=document.querySelector('#lstage .ltbl');return {sw:t.scrollWidth,cw:t.clientWidth,ov:getComputedStyle(t).overflowX,say:t.querySelectorAll('.say').length,doc:document.documentElement.scrollWidth<=innerWidth,lsn:document.querySelector('#lsn').scrollWidth<=innerWidth};});
-  ok(tb.ov==='auto'&&tb.say===7&&tb.lsn,'table scrolls inside its box (overflow auto), 7 speaker buttons, no page h-scroll '+JSON.stringify(tb));
-  await p.click('#lstage .ltbl tr:nth-child(5) .say');await p.waitForTimeout(150);
+  const tb=await p.evaluate(()=>{const c=document.querySelector('#lstage .lrcs'),t=document.querySelector('#lstage .ltbl');return {cards:getComputedStyle(c).display,tbl:getComputedStyle(t).display,say:c.querySelectorAll('.say').length,n:c.querySelectorAll('.lrc').length,lsn:document.querySelector('#lsn').scrollWidth<=innerWidth,wide:[...c.querySelectorAll('.lrc')].every(x=>x.scrollWidth<=x.clientWidth+1)};});
+  ok(tb.cards==='grid'&&tb.tbl==='none'&&tb.n===7&&tb.say===7&&tb.lsn&&tb.wide,'390: table rendered as stacked cards (7 rows, speaker each), no sideways scroll '+JSON.stringify(tb));
+  await p.screenshot({path:path.join(SHOTS10,'lesson_table_390.png')});
+  await p.click('#lstage .lrc:nth-child(5) .say');await p.waitForTimeout(150);
   let sp=await p.evaluate(()=>__tts.spoken.slice(-1)[0]);ok(sp&&sp.text==='noi siamo'&&sp.lang==='it-IT'&&sp.voice==='g-it','table speaker reads say[] text in Italian voice: '+JSON.stringify(sp));
   await click(p,'[data-act=aNext]');ok(/Üç kullanım kuralı/.test(await stage(p))&&await p.$$eval('#lstage .rules li',e=>e.length)===3,'Anlat card 3: rules');
   await click(p,'[data-act=aNext]');ok((await cur(p))==='Dinle'&&await p.$$eval('#lpath button.done',e=>e.length)===1,'Anlatım bitti → Dinle, Anlat ticked');
@@ -107,6 +110,11 @@ function handler(req,st){const s=req.system;st.sys=st.sys||[];st.sys.push(s);
   await click(p,'[data-act=redoQ]');
   await yk([{v:'Siamo pronti.'},{v:'e'},{v:'sono'},{t:'type',v:'Lei non e italiana'},{v:'Kırıkkaleliyim.'}]);await p.waitForTimeout(300);
   y=await stage(p);ok(/Ders tamam/.test(y)&&/5 \/ 5/.test(y),'Yokla pass 5/5 (soft accent counts)');
+  ok(/8 kelime kartlara eklendi/.test(y)&&/Dikkat edeceğin konular/.test(y)&&/noi siamo/.test(y)&&/\d+ dk/.test(y),'pass screen = summary: minutes, words added to cards, topics to watch');
+  ok(await p.isVisible('[data-act=planNext]')&&/Sıradaki: Oliver ile konuş/.test(await p.textContent('[data-act=planNext]')),'pass screen primary: "Sıradaki: Oliver ile konuş →"');
+  await p.screenshot({path:path.join(SHOTS10,'pass_summary_390.png')});
+  {const cs=Object.values(await store(p,'cards'));ok(cs.filter(c=>c.src==='lesson:it05').length===8&&cs.some(c=>c.f==='Sono di Kırıkkale.'&&c.tr==='Kırıkkaleliyim.'&&c.due==='2026-10-15'),'lesson lines added as cards (due tomorrow, duplicates skipped)');
+   const se=(await store(p,'sessions'))['lesson-2026-10-14-it05'];ok(se&&se.mistakes.some(m=>/noi siamo/.test(m)),'Yokla miss topics fed into mistakes list: '+JSON.stringify(se&&se.mistakes));}
   ls=(await store(p,'lessons')).it05;ok(ls.passed&&ls.passedAt==='2026-10-14'&&ls.attempts===2&&ls.best===5,'lesson passed recorded '+JSON.stringify({p:ls.passed,at:ls.passedAt,a:ls.attempts}));
   ok(((await store(p,'topics')).it05||{}).status==='done','topic it05 marked done (topics collection)');
   const ss=await store(p,'sessions');const lsess=ss['lesson-2026-10-14-it05'];
@@ -171,6 +179,62 @@ function handler(req,st){const s=req.system;st.sys=st.sys||[];st.sys.push(s);
   ok(!bad.length,'content files ('+idx.map(x=>x.id).join(',')+'): schema valid, every step renders, correct answers accepted, yokla passes, pekiştir runs'+(bad.length?' — FAIL: '+bad.join(' ; '):''));
   await ctx.close();}
 
+
+ // F) Sonraki dersi olan dizin: geçilen ders tiklenir, Oliver sıradadır; plan bitince "Bir ders daha" isteğe bağlı
+ {const IT06=JSON.parse(fs.readFileSync(path.join(H.ROOT,'content/it06.json'),'utf8'));
+  const route=async p=>{await p.route('**/content/index.json',r=>r.fulfill({contentType:'application/json',body:JSON.stringify([{id:'it05',lang:'it',level:'A1',title:FIX.title,minutes:30},{id:'it06',lang:'it',level:'A1',title:IT06.title,minutes:30}])}));
+    await p.route('**/content/it06.json',r=>r.fulfill({contentType:'application/json',body:JSON.stringify(IT06)}));};
+  const base=Object.assign({},SEED,{cards:{},topics:Object.assign({},SEED.topics,{it05:{status:'done',updated:'2026-10-14T10:00:00Z'}}),lessons:{it05:{step:4,done:[true,true,true,true,true],passed:true,passedAt:'2026-10-14',best:5}}});
+  const {p,ctx}=await mk({seed:base,fixture:true,pre:route});
+  let pl=await plan(p);ok(pl.join('|')==='+'+FIX.title+'|>Oliver ile konuş','after passing today: passed lesson ticked, Oliver next (next lesson it06 NOT offered as todays): '+pl.join('|'));
+  ok(/Oliver ile konuş/.test(await p.textContent('#btnGo'))&&!/Bugünkü dersi başlat/.test(await p.textContent('#btnGo')),'Başla → Oliver');
+  await p.evaluate(()=>rtImport(Object.assign(rtExport(),{collections:Object.assign(rtExport().collections,{sessions:{'konus-2026-10-14-en':{date:'2026-10-14',lang:'en',mins:{speaking:12},total:12,src:'konus'}}})})));await p.reload();await p.waitForTimeout(700);
+  pl=await plan(p);const ex=await p.textContent('#dayPlan li.extra').catch(()=>'');
+  ok(pl.join('|')==='+'+FIX.title+'|+Oliver ile konuş'&&/Bir ders daha: /.test(ex)&&ex.includes(IT06.title),'day plan done; next lesson only as optional "Bir ders daha" '+pl.join('|')+' / '+ex);
+  const h=await p.evaluate(()=>({k:document.querySelector('#heroKicker').textContent,t:document.querySelector('#heroTitle').textContent,s:document.querySelector('#heroSub').textContent,m:document.querySelector('#meter').textContent,go:document.querySelector('#btnGo').textContent,more:document.querySelector('#todayTitle').textContent==='Bugünün adımları'&&!/Gramer/.test(document.querySelector('#plan').textContent),seg:document.querySelectorAll('#meter .segbar i').length,segDone:document.querySelectorAll('#meter .segbar i.done').length}));
+  ok(/Bugünün planı tamam/.test(h.k)&&h.t==='Bugün tamam.'&&/2 \/ 2 adım/.test(h.m)&&/12 dk/.test(h.m)&&h.seg===2&&h.segDone===2,'hero consistent with plan: "Bugün tamam", meter 2/2 adım from plan steps '+JSON.stringify(h));
+  ok(/Seriye saymak için bugün 18 dk daha/.test(h.s),'streak text honest (12 dk < 30): '+h.s);
+  ok(/Bir ders daha/.test(h.go)&&h.more,'Başla offers optional next lesson; Detaylar shows the day-plan steps (old 5 blocks replaced)');
+  await p.screenshot({path:path.join(SHOTS10,'today_390.png')});
+  await ctx.close();}
+ // G) Kart döngüsü yok: İtalyanca bitince İngilizceye geçer; bitince "Sıradaki" planı sürdürür
+ {const {p,ctx}=await mk({seed:Object.assign({},SEED,{cards:{c1:SEED.cards.c1,c2:{lang:'en',f:'to sort out',tr:'halletmek',box:2,due:'2026-10-12',added:'2026-10-01T10:00:00Z'}}})});
+  ok(/2 kart/.test(await p.textContent('#dayPlan li')),'plan counts IT+EN due cards');
+  await click(p,'#btnGo');ok(await p.isVisible('#review .fcard.it'),'Başla → Kartlar (Italian first)');
+  await click(p,'#cShow');await click(p,'#cYes');await p.waitForTimeout(150);
+  ok(await p.isVisible('#review .fcard.en'),'Italian done → auto-switched to English (still due)');
+  await click(p,'#cShow');await click(p,'#cYes');await p.waitForTimeout(200);
+  const t=await p.textContent('#review');ok(/Bugünlük tekrar bitti/.test(t)&&await p.isVisible('#review [data-plan-next]')&&/Sıradaki: /.test(await p.textContent('#review [data-plan-next]')),'done state: primary "Sıradaki: <step>" button');
+  await p.screenshot({path:path.join(SHOTS10,'cards_done_390.png')});
+  await click(p,'#review [data-plan-next]');await p.waitForSelector('#lsn:not([hidden])',{timeout:4000});ok((await p.textContent('#lsnT'))===FIX.title,'Sıradaki → continues day plan (lesson opens)');
+  await ctx.close();}
+ // H) Pazar: haftanın Pekiştir'i (iki dersin soruları) + Konuş
+ {const IT06=JSON.parse(fs.readFileSync(path.join(H.ROOT,'content/it06.json'),'utf8'));
+  const route=async p=>{await p.route('**/content/index.json',r=>r.fulfill({contentType:'application/json',body:JSON.stringify([{id:'it05',lang:'it',title:FIX.title},{id:'it06',lang:'it',title:IT06.title}])}));await p.route('**/content/it06.json',r=>r.fulfill({contentType:'application/json',body:JSON.stringify(IT06)}));};
+  const L={it05:{passed:true,passedAt:'2026-10-14',done:[true,true,true,true,true],step:4},it06:{passed:true,passedAt:'2026-10-16',done:[true,true,true,true,true],step:4}};
+  const {p,ctx}=await mk({at:AT(2026,10,18,9),seed:Object.assign({},SEED,{cards:{},lessons:L}),pre:route});
+  const pl=await plan(p);ok(pl[0]===">Haftanın Pekiştir'i"&&pl[pl.length-1]==='-Oliver ile konuş','Sunday: content plan (week Pekiştir + Konuş): '+pl.join('|'));
+  await click(p,'#btnGo');await p.waitForSelector('#lsn:not([hidden])');ok(/Haftanın Pekiştir/.test(await p.textContent('#lsnT'))&&/Pekiştir 1 \/ 8/.test(await stage(p)),'week Pekiştir mixes both lessons (4+4 items)');
+  await ctx.close();}
+ // I) İlk kurulum: tek ekran → Başla içerikli dersi açar (eski sohbet modu değil); 1. haftada "geride" yok
+ {const {p,ctx}=await mk({fixture:false});
+  ok(await p.isVisible('#onb')&&await p.isVisible('#btnProgStart')&&(await p.$$('.onbStep')).length===1&&await p.getAttribute('#onbModeSeg [data-mode=both]','aria-checked')==='true','onboarding: ONE screen, İkisi preselected, Başla');
+  ok(/Başlangıç: bugün/.test(await p.textContent('#onb')),'start date = today (changeable)');
+  await p.screenshot({path:path.join(SHOTS10,'onboarding_390.png')});
+  await click(p,'#btnProgStart');await p.waitForSelector('#lsn:not([hidden])',{timeout:6000}).catch(()=>{});
+  ok(await p.isVisible('#lsn')&&await p.isHidden('#ders')&&/Okunuş ve sesler/.test(await p.textContent('#lsnT')),'setup Başla → lesson engine (it01), not the old chat Ders modu');
+  await click(p,'#lsnX');ok(!/geride/i.test(await p.textContent('#weekStrip')),'week 1 day 1: no "geride" warning ('+(await p.textContent('#weekStrip')).trim()+')');
+  await ctx.close();}
+ // J) Koça sor: **kalın** ve [[it: …]] güvenli çizilir, hoparlör düğmesi
+ {const h2=(req,st)=>/KOÇA SOR/.test(req.system)?{sse:[{text:'Kısa ipucu: **ce/ci** yumuşar → ç. Örnek: [[it: cena]] = ÇE-na. <img src=x onerror=alert(1)>'}]}:handler(req,st);
+  const {p,ctx}=await mk({seed:Object.assign({},SEED,{cards:{}}),handler:h2});await click(p,'#btnGo');await p.waitForSelector('#lsn:not([hidden])');
+  await click(p,'#askFab');await p.fill('#askIn','ci nasıl okunur?');await click(p,'#askSend');await p.waitForFunction(()=>/ipucu/.test(document.querySelector('#askLog').textContent),null,{timeout:4000});
+  const r=await p.evaluate(()=>{const m=[...document.querySelectorAll('#askLog .m.c')].pop();return {txt:m.textContent,b:!!m.querySelector('b'),say:m.querySelectorAll('.say').length,img:!!m.querySelector('img')};});
+  ok(r.b&&r.say===1&&!/\*\*|\[\[/.test(r.txt)&&!r.img,'Koça sor bubble: bold + [[it:]] with speaker, no raw markers, HTML escaped '+JSON.stringify(r));
+  const ov=await p.evaluate(()=>{const a=document.querySelector('#ask').getBoundingClientRect();return a.right<=innerWidth&&a.bottom<=innerHeight;});ok(ov,'390: Koça sor panel inside viewport');
+  await p.screenshot({path:path.join(SHOTS10,'kocasor_390.png')});
+  await p.click('#askLog .m.c .say');await p.waitForTimeout(150);ok(await p.evaluate(()=>__tts.spoken.slice(-1)[0].text==='cena'),'speaker reads the Italian example');
+  await ctx.close();}
  // E) Koça sor 820 ekran görüntüsü
  {const {p,ctx}=await mk({seed:SEED,vp:{width:820,height:1180}});
   await click(p,'[data-tab=units]');await p.click('#myLessons [data-lesson=it05]');await p.waitForSelector('#lsn:not([hidden])');

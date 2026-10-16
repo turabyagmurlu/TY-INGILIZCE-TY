@@ -1,0 +1,155 @@
+{
+  "id": "it04",
+  "lang": "it",
+  "level": "A1",
+  "title": "Belirli ve belirsiz artikeller",
+  "lead": "İsmin önüne hangi artikelin geleceğini (il, lo, la, l', i, gli, le / un, uno, una, un') üç soruyla seçmeyi öğreneceksin. Ders bitince malzeme ve kişileri artikeliyle hatasız söyleyebileceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Türkçede yok, İtalyancada zorunlu",
+      "blocks": [
+        {"type": "p", "text": "Türkçede “kablo” der geçersin; belirsizlik için “bir” eklersin. İtalyancada ismin önüne **neredeyse her zaman** küçük bir kelime gelir: **artikel**. il cavo = (o bilinen) kablo, un cavo = bir kablo."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "kablo", "s": "isim tek başına"}]},
+          {"label": "İtalyanca", "items": [{"t": "il", "s": "belirli artikel", "hl": true}, {"t": "cavo", "s": "isim"}]},
+          {"label": "Türkçe", "items": [{"t": "bir", "s": "belirsizlik", "hl": true}, {"t": "kablo", "s": "isim"}]},
+          {"label": "İtalyanca", "items": [{"t": "un", "s": "belirsiz artikel", "hl": true}, {"t": "cavo", "s": "isim"}]}
+        ]},
+        {"type": "p", "text": "Artikeli üç soru belirler: **1) İsim eril mi dişil mi? 2) Tekil mi çoğul mu? 3) Hangi harfle başlıyor?**"},
+        {"type": "note", "text": "Bundan sonra kelimeyi **artikeliyle** ezberle: cavo değil **il cavo**, lampada değil **la lampada**. Cinsiyeti de böylece bedavaya öğrenmiş olursun."}
+      ]
+    },
+    {
+      "title": "Belirli artikel: il, lo, l', la, i, gli, le",
+      "blocks": [
+        {"type": "table", "head": ["Ne zaman?", "Tekil", "Çoğul", "Örnek"], "x": 3,
+          "rows": [
+            ["Eril, normal ünsüzle başlıyor", "il", "i", "il cavo → i cavi"],
+            ["Eril, s+ünsüz, z, gn, ps, y ile başlıyor", "lo", "gli", "lo strumento → gli strumenti"],
+            ["Eril, sesli harfle başlıyor", "l'", "gli", "l'operaio → gli operai"],
+            ["Dişil, ünsüzle başlıyor", "la", "le", "la lampada → le lampade"],
+            ["Dişil, sesli harfle başlıyor", "l'", "le", "l'uscita → le uscite"]
+          ],
+          "say": ["il cavo, i cavi", "lo strumento, gli strumenti", "l'operaio, gli operai", "la lampada, le lampade", "l'uscita, le uscite"]},
+        {"type": "note", "text": "**lo** neden var? Ses yüzünden: “il strumento” demek zor (l-s-tr), **lo strumento** akıcı. Aynı sebeple: lo zaino (sırt çantası), lo gnomo, lo psicologo."},
+        {"type": "note", "text": "Sadece **s + ünsüz** lo alır. s + sesli normaldir: **il sindaco** (belediye başkanı) ama **lo sciopero**, **lo strumento**.", "warn": true},
+        {"type": "note", "text": "Okunuş: gli = **LYİ** (1. ders: gli = ly). l'operaio = **lo-pe-RA-yo**, tek kelime gibi."}
+      ]
+    },
+    {
+      "title": "Belirsiz artikel: un, uno, una, un'",
+      "blocks": [
+        {"type": "table", "head": ["Ne zaman?", "Artikel", "Örnek", "Anlamı"], "x": 2,
+          "rows": [
+            ["Eril, ünsüz veya sesli harfle başlıyor", "un", "un cavo · un operaio", "bir kablo · bir işçi"],
+            ["Eril, s+ünsüz, z, gn, ps ile başlıyor", "uno", "uno strumento · uno zaino", "bir alet · bir sırt çantası"],
+            ["Dişil, ünsüzle başlıyor", "una", "una lampada", "bir lamba"],
+            ["Dişil, sesli harfle başlıyor", "un'", "un'uscita · un'amica", "bir çıkış · bir (kadın) arkadaş"]
+          ],
+          "say": ["un cavo, un operaio", "uno strumento, uno zaino", "una lampada", "un'uscita, un'amica"]},
+        {"type": "note", "warn": true, "text": "Eril kelimede kesme işareti **yok**: **un operaio** doğru, un'operaio yanlış. Kesme işareti sadece dişilde: **un'amica**. Bu hatayı İtalyanlar bile yazıda yapar; sen yapma."},
+        {"type": "note", "text": "uno ve lo aynı kelimeleri sever: lo zaino / uno zaino, lo strumento / uno strumento. Birini bilen diğerini bilir."}
+      ]
+    },
+    {
+      "title": "Üç soruda karar ver",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "Cinsiyet?", "text": "-o çoğunlukla eril, -a çoğunlukla dişil, -e ezber (3. ders).", "ex": {"x": "la presa", "tr": "priz (dişil)"}},
+          {"title": "Sayı?", "text": "Çoğulda: il → i, lo ve eril l' → gli, la ve dişil l' → le.", "ex": {"x": "gli interruttori", "tr": "elektrik anahtarları (eril, sesliyle başlıyor)"}},
+          {"title": "İlk harf?", "text": "Sesli mi? s+ünsüz, z, gn, ps mi? Yoksa normal ünsüz mü?", "ex": {"x": "lo zaino", "tr": "sırt çantası (eril, z ile başlıyor)"}}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "l'elettricista", "tr": "elektrikçi (erkek ya da kadın)", "ph": "le-let-tri-ÇİS-ta"},
+          {"x": "un elettricista", "tr": "bir elektrikçi (erkek)", "ph": "u-ne-let-tri-ÇİS-ta"},
+          {"x": "un'elettricista", "tr": "bir elektrikçi (kadın)", "ph": "u-ne-let-tri-ÇİS-ta"}
+        ]},
+        {"type": "note", "text": "Son iki örnek aynı okunur; fark sadece yazıda. Kesme işareti “bu kadın” der. Belirsiz artikelin çoğulu (dei, degli, delle = birkaç, bazı) ileriki bir derste."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "il cavo, i cavi", "tr": "kablo, kablolar", "ph": "il KA-vo, i KA-vi"},
+    {"x": "lo strumento, gli strumenti", "tr": "alet, aletler", "ph": "lo stru-MEN-to, lyi stru-MEN-ti"},
+    {"x": "l'operaio, gli operai", "tr": "işçi, işçiler", "ph": "lo-pe-RA-yo, lyi o-pe-RA-i"},
+    {"x": "la presa, le prese", "tr": "priz, prizler", "ph": "la PRE-sa, le PRE-se"},
+    {"x": "l'uscita, le uscite", "tr": "çıkış, çıkışlar", "ph": "lu-Şİ-ta, le u-Şİ-te"},
+    {"x": "il quadro elettrico e i cavi", "tr": "elektrik panosu ve kablolar", "ph": "il KUA-dro e-LET-tri-ko e i KA-vi"},
+    {"x": "un interruttore e una lampada", "tr": "bir anahtar ve bir lamba", "ph": "u-nin-ter-rut-TO-re e U-na LAM-pa-da"},
+    {"x": "uno zaino e un casco", "tr": "bir sırt çantası ve bir baret", "ph": "U-no DZAY-no e un KAS-ko"},
+    {"x": "un'amica di Kırıkkale", "tr": "Kırıkkaleli bir (kadın) arkadaş", "ph": "u-na-Mİ-ka di Kırıkkale"},
+    {"x": "gli operai e le squadre", "tr": "işçiler ve ekipler", "ph": "lyi o-pe-RA-i e le SKUA-dre"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "___ cavo", "a": "il", "o": ["il", "lo", "la"],
+      "why": {"lo": "lo sadece s+ünsüz, z, gn, ps ile başlayan erillerde. cavo normal c ile başlıyor.", "la": "cavo -o ile bitiyor, eril."},
+      "ok": "Eril + normal ünsüz → il."},
+    {"t": "choice", "q": "___ lampada", "a": "la", "o": ["il", "la", "l'"],
+      "why": {"il": "lampada -a ile bitiyor, dişil.", "l'": "l' sesliyle başlayan kelimeler içindir; lampada l ile başlıyor."},
+      "ok": "Dişil + ünsüz → la."},
+    {"t": "choice", "q": "___ operaio", "a": "l'", "o": ["il", "lo", "l'"],
+      "why": {"il": "operaio sesliyle (o) başlıyor; il yerine l' gelir.", "lo": "lo s+ünsüz, z, gn, ps içindir. Sesliyle başlayan tekil isimde l'."},
+      "ok": "Sesli harf → l'operaio."},
+    {"t": "choice", "q": "___ zaino (sırt çantası)", "a": "lo", "o": ["il", "lo", "l'"],
+      "why": {"il": "z ile başlayan eril isim lo alır.", "l'": "zaino ünsüzle (z) başlıyor; l' sadece sesliden önce."},
+      "ok": "z → lo zaino."},
+    {"t": "choice", "q": "___ strumenti (çoğul)", "a": "gli", "o": ["i", "gli", "le"],
+      "why": {"i": "i, il'in çoğuludur. strumento lo aldığı için çoğulu gli.", "le": "le dişil çoğul içindir; strumento eril."},
+      "ok": "lo strumento → gli strumenti."},
+    {"t": "choice", "q": "___ prese (prizler)", "a": "le", "o": ["i", "gli", "le"],
+      "why": {"i": "i eril çoğuldur; presa dişil.", "gli": "gli eril çoğuldur; presa dişil."},
+      "ok": "la presa → le prese."},
+    {"t": "choice", "q": "Belirsiz: ___ cantiere", "a": "un", "o": ["un", "uno", "una"],
+      "why": {"uno": "cantiere c ile başlıyor; uno sadece s+ünsüz, z, gn, ps için.", "una": "cantiere eril."},
+      "ok": "Eril + normal ünsüz → un."},
+    {"t": "choice", "q": "Belirsiz: ___ interruttore", "a": "un", "o": ["un", "un'", "uno"],
+      "why": {"un'": "Kesme işareti sadece dişilde. interruttore eril: un interruttore.", "uno": "uno s+ünsüz, z, gn, ps içindir; sesliden önce eril un kalır."},
+      "ok": "Eril + sesli → un (kesmesiz)."},
+    {"t": "choice", "q": "Belirsiz: ___ uscita", "a": "un'", "o": ["un", "un'", "una"],
+      "why": {"un": "uscita dişil; dişilde sesliden önce un' yazılır.", "una": "una sesliden önce kısalır: un'uscita."},
+      "ok": "Dişil + sesli → un'."},
+    {"t": "type", "q": "Belirli artikelle çoğul yap: “l'operaio”", "a": ["gli operai"], "hint": "Eril, sesliyle başlıyor → çoğulda gli. -io → -i.", "ok": "gli operai."},
+    {"t": "type", "q": "Belirli artikelle yaz: “şantiyeler”", "a": ["i cantieri"], "hint": "il cantiere → çoğul?", "ok": "il cantiere → i cantieri."},
+    {"t": "order", "q": "Sırala: “Bir pano ve kablolar”", "words": ["i", "un", "cavi", "quadro", "e"], "a": "un quadro e i cavi", "ok": "un quadro e i cavi."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Depodaki malzemeleri ve şantiyedeki kişileri doğru artikelle söylemek; tekil ↔ çoğul ve belirli ↔ belirsiz arasında geçiş yapmak.",
+    "vocab": ["il cavo", "il quadro elettrico", "la lampada", "il tubo", "la presa", "l'interruttore", "l'operaio", "la squadra", "il casco", "il guanto", "la scala", "lo strumento", "lo zaino", "l'uscita", "l'elettricista", "ecco"],
+    "structures": ["il / lo / l' / la", "i / gli / le", "un / uno / una / un'", "Ecco + isim (işte …)"],
+    "opener_hint": "Chiara depo sorumlusu rolünde: Türkçe bir malzeme söylesin (ör. “bir sırt çantası”), Türab artikelli İtalyancasını yazsın. Sonra aynı kelimeyi “şimdi belirli” ya da “şimdi çoğul” diye değiştirtsin. Doğru cevaba “Ecco lo zaino!” gibi kısa bir onayla dönsün.",
+    "level_note": "A1: fiil yok; sadece artikel + isim ve “ecco” (işte). essere bir sonraki derste, kullanma. Hata olunca hangi soruda (cinsiyet / sayı / ilk harf) kaydığını Türkçe söyle."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "lo: ps, z, gn, s+ünsüz", "q": "___ psicologo", "a": "lo", "o": ["il", "lo", "l'"],
+      "why": {"il": "ps ile başlayan eril isim lo alır.", "l'": "psicologo ünsüzle başlıyor; l' sadece sesliden önce."}},
+    {"t": "choice", "topic": "gli: eril çoğul", "q": "___ interruttori", "a": "gli", "o": ["i", "gli", "le"],
+      "why": {"i": "Sesliyle başlayan eril çoğul gli alır (l'interruttore → gli interruttori).", "le": "le dişil çoğuldur; interruttore eril."}},
+    {"t": "choice", "topic": "un' / un", "q": "Belirsiz: ___ elettricista (kadın)", "a": "un'", "o": ["un", "un'", "uno"],
+      "why": {"un": "un, erkek elektrikçi için. Kadın için dişil: un'.", "uno": "uno s+ünsüz, z, gn, ps içindir."}},
+    {"t": "choice", "topic": "un: eril, kesmesiz", "q": "Hangisi doğru?", "a": "un operaio", "o": ["un'operaio", "un operaio", "uno operaio"],
+      "why": {"un'operaio": "Kesme işareti sadece dişilde. operaio eril.", "uno operaio": "uno sadece s+ünsüz, z, gn, ps için."}},
+    {"t": "type", "topic": "lo → gli", "q": "Belirli artikelle çoğul yap: “lo scaffale” (raf)", "a": ["gli scaffali"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "___ squadra", "a": "la", "o": ["il", "la", "lo"],
+        "why": {"il": "squadra -a ile biter, dişil.", "lo": "s+ünsüz kuralı sadece eril isimler için. squadra dişil: la squadra."},
+        "ok": "Dişil + ünsüz → la."},
+      {"t": "choice", "q": "___ zona", "a": "la", "o": ["lo", "la", "il"],
+        "why": {"lo": "z kuralı sadece erillerde. zona dişil: la zona.", "il": "zona -a ile biter, dişil."},
+        "ok": "Tuzak: z ile başlıyor ama dişil → la."},
+      {"t": "choice", "q": "___ ingegnere", "a": "l'", "o": ["il", "l'", "lo"],
+        "why": {"il": "ingegnere sesliyle (i) başlıyor: l'.", "lo": "lo s+ünsüz, z, gn, ps için; sesliden önce l'."},
+        "ok": "l'ingegnere."},
+      {"t": "choice", "q": "Belirsiz: ___ sciopero (grev)", "a": "uno", "o": ["un", "uno", "una"],
+        "why": {"un": "sciopero s + ünsüz (c) ile başlıyor: uno.", "una": "sciopero eril (-o)."},
+        "ok": "s+ünsüz → uno sciopero."},
+      {"t": "type", "q": "Belirli artikelle yaz: “baretler”", "a": ["i caschi"], "hint": "il casco → çoğul? h'yi unutma.", "ok": "i caschi."},
+      {"t": "type", "q": "Belirsiz artikelle yaz: “bir (kadın) arkadaş”", "a": ["un'amica"], "soft": ["un amica", "una amica"], "soft_note": "Dişil + sesli: kesme işaretiyle yazılır: un'amica.", "hint": "amica dişil ve sesliyle başlıyor.", "ok": "un'amica."}
+    ],
+    "konus_prompt": "Chiara senden yarın şantiyeye götüreceğin malzemelerin listesini istesin. Her malzemeyi önce belirsiz (un/uno/una/un'), sonra çoğul belirli (i/gli/le) artikelle yaz."
+  }
+}

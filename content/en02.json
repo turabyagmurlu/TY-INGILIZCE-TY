@@ -1,0 +1,684 @@
+{
+  "id": "en02",
+  "lang": "en",
+  "level": "B1",
+  "title": "Present perfect mi, past simple mı?",
+  "lead": "Türkçedeki tek “-di”nin İngilizcede ne zaman past simple, ne zaman present perfect olduğunu karar verebileceksin. Deneyimini, süreyi (for/since) ve son durumu (just/already/yet) doğru anlatacaksın.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Türkçe “-di” ikiye bölünür",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "“Panoyu kurdum” Türkçede tek biçimdir. İngilizcede tek soru sor: **zaman belli ve bitmiş mi?** Belli, bitmiş bir zaman varsa (yesterday, last week, in 2024, two days ago) → **past simple**. Zaman söylenmiyorsa ve önemli olan **şimdiki sonuç** ise → **present perfect** (have/has + V3)."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Panoyu dün",
+                  "s": "zaman belli"
+                },
+                {
+                  "t": "kurdum",
+                  "s": "-di",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I",
+                  "s": "özne"
+                },
+                {
+                  "t": "installed",
+                  "s": "past simple",
+                  "hl": true
+                },
+                {
+                  "t": "the panel yesterday",
+                  "s": "bitmiş zaman"
+                }
+              ]
+            },
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Panoyu",
+                  "s": "zaman yok"
+                },
+                {
+                  "t": "kurdum",
+                  "s": "-di",
+                  "hl": true
+                },
+                {
+                  "t": "(hazır)",
+                  "s": "sonuç şimdi"
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I",
+                  "s": "özne"
+                },
+                {
+                  "t": "have installed",
+                  "s": "present perfect",
+                  "hl": true
+                },
+                {
+                  "t": "the panel",
+                  "s": "şimdi hazır"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Past simple sinyalleri",
+            "Present perfect sinyalleri"
+          ],
+          "rows": [
+            [
+              "yesterday",
+              "ever / never"
+            ],
+            [
+              "last week / last year",
+              "just / already / yet"
+            ],
+            [
+              "in 2024",
+              "for / since (hâlâ sürüyorsa)"
+            ],
+            [
+              "two days ago",
+              "so far, this week (hafta bitmediyse)"
+            ],
+            [
+              "When…?",
+              "How long…?"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Sık hata: “When have you started?” → **When did you start?** When sorusu bitmiş bir zamanı sorar; her zaman past simple."
+        }
+      ]
+    },
+    {
+      "title": "Deneyim: “Hiç … yaptın mı?”",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hayat deneyimi sorarken zaman önemli değildir; sadece **olup olmadığı** önemlidir: present perfect. Detaya (ne zaman, nerede, nasıldı) geçince past simple'a dönersin."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Have you ever worked at a refinery?",
+              "tr": "Hiç rafineride çalıştın mı?"
+            },
+            {
+              "x": "Yes, I have. I worked at a refinery in Kırıkkale a few years ago.",
+              "tr": "Evet. Birkaç yıl önce Kırıkkale'de bir rafineride çalıştım."
+            },
+            {
+              "x": "I've never been to Italy.",
+              "tr": "İtalya'ya hiç gitmedim."
+            },
+            {
+              "x": "Our company has worked on three metro lines.",
+              "tr": "Şirketimiz üç metro hattında çalıştı."
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**been / gone**: “He has **gone** to Ankara.” = Ankara'ya gitti, hâlâ orada. “He has **been** to Ankara.” = Ankara'ya gidip döndü (deneyim)."
+        }
+      ]
+    },
+    {
+      "title": "Bitmemiş zaman: for ve since",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe “2024'ten beri burada çalışıyorum” der: şimdiki zaman. İngilizce “geçmişte başladı, hâlâ sürüyor” bilgisini present perfect ile verir. Türklerin İngilizcedeki bir numaralı hatası budur."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "2024'ten beri",
+                  "s": "başlangıç"
+                },
+                {
+                  "t": "burada",
+                  "s": "yer"
+                },
+                {
+                  "t": "çalışıyorum",
+                  "s": "şimdiki zaman",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I",
+                  "s": "özne"
+                },
+                {
+                  "t": "have worked",
+                  "s": "present perfect",
+                  "hl": true
+                },
+                {
+                  "t": "here since 2024",
+                  "s": "başlangıç"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "for + süre",
+              "text": "Ne kadar süredir: for two years, for six months, for a long time.",
+              "ex": {
+                "x": "I've known Ahmet for ten years.",
+                "tr": "Ahmet'i on yıldır tanıyorum."
+              }
+            },
+            {
+              "title": "since + başlangıç noktası",
+              "text": "Ne zamandan beri: since 2024, since March, since Monday, since I came back.",
+              "ex": {
+                "x": "We've had this van since 2022.",
+                "tr": "Bu kamyonet 2022'den beri bizde."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Yanlış: “I work here since 2024.” / “I am working here for two years.” → **I have worked here since 2024.** / **I have worked here for two years.** (Continuous biçimi bir sonraki derste.)"
+        }
+      ]
+    },
+    {
+      "title": "just, already, yet",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "Kelime",
+            "Anlamı",
+            "Yeri",
+            "Örnek"
+          ],
+          "x": 3,
+          "rows": [
+            [
+              "just",
+              "az önce",
+              "have ile fiil arasında",
+              "The inspector has just left."
+            ],
+            [
+              "already",
+              "çoktan, zaten",
+              "have ile fiil arasında",
+              "I've already sent the report."
+            ],
+            [
+              "yet (olumsuz)",
+              "henüz",
+              "cümle sonunda",
+              "We haven't received the cables yet."
+            ],
+            [
+              "yet (soru)",
+              "… mı? (bekleniyordu)",
+              "cümle sonunda",
+              "Have you finished yet?"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Amerikan İngilizcesinde “I just sent it.” gibi past simple da sık duyulur. Resmi yazışmada ve İngiliz muhataplarla present perfect güvenli seçimdir."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "Have you ever worked at an airport?",
+      "tr": "Hiç havalimanında çalıştın mı?"
+    },
+    {
+      "x": "Yes, I worked on a new airport a few years ago.",
+      "tr": "Evet, birkaç yıl önce yeni bir havalimanında çalıştım."
+    },
+    {
+      "x": "I've worked in electrical contracting since 2019.",
+      "tr": "2019'dan beri elektrik taahhüt işindeyim."
+    },
+    {
+      "x": "We've installed forty lights this week.",
+      "tr": "Bu hafta kırk armatür taktık."
+    },
+    {
+      "x": "The inspector has just left.",
+      "tr": "Müfettiş az önce çıktı."
+    },
+    {
+      "x": "Have you sent the timesheet yet?",
+      "tr": "Puantajı gönderdin mi?"
+    },
+    {
+      "x": "We haven't received the cables yet.",
+      "tr": "Kabloları henüz almadık."
+    },
+    {
+      "x": "I've already checked the main panel.",
+      "tr": "Ana panoyu zaten kontrol ettim."
+    },
+    {
+      "x": "When did you finish the cable tray? We finished it yesterday.",
+      "tr": "Kablo tavasını ne zaman bitirdiniz? Dün bitirdik."
+    },
+    {
+      "x": "He's gone to Ankara. He'll be back on Monday.",
+      "tr": "Ankara'ya gitti. Pazartesi dönecek."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "I ___ the report yesterday.",
+      "a": "sent",
+      "o": [
+        "sent",
+        "have sent",
+        "have send"
+      ],
+      "why": {
+        "have sent": "yesterday bitmiş bir zaman → past simple.",
+        "have send": "have'den sonra V3 gelir (sent); ama burada zaten past simple lazım."
+      },
+      "ok": "Bitmiş zaman → past simple."
+    },
+    {
+      "t": "choice",
+      "q": "İtalya'ya hiç gitmedim: “I ___ to Italy.”",
+      "a": "have never been",
+      "o": [
+        "have never been",
+        "never went",
+        "didn't go never"
+      ],
+      "why": {
+        "never went": "Hayat deneyimi, zaman yok → present perfect.",
+        "didn't go never": "Çift olumsuz İngilizcede olmaz."
+      },
+      "ok": "Deneyim → have never been."
+    },
+    {
+      "t": "choice",
+      "q": "We ___ for this company since 2024.",
+      "a": "have worked",
+      "o": [
+        "work",
+        "have worked",
+        "worked"
+      ],
+      "why": {
+        "work": "since + hâlâ süren durum → present perfect. Türkçe “çalışıyoruz” der, İngilizce demez.",
+        "worked": "worked bitmiş demek; oysa hâlâ çalışıyorsunuz."
+      },
+      "ok": "since → present perfect."
+    },
+    {
+      "t": "choice",
+      "q": "I've known Ahmet ___ ten years.",
+      "a": "for",
+      "o": [
+        "for",
+        "since",
+        "from"
+      ],
+      "why": {
+        "since": "since başlangıç noktası ister (since 2016). ten years bir süre: for.",
+        "from": "from genelde from … to ile kullanılır; süre için for."
+      },
+      "ok": "Süre → for."
+    },
+    {
+      "t": "choice",
+      "q": "She has worked here ___ March.",
+      "a": "since",
+      "o": [
+        "for",
+        "since",
+        "ago"
+      ],
+      "why": {
+        "for": "March bir başlangıç noktası, süre değil: since.",
+        "ago": "ago past simple ile ve süreden sonra gelir (two months ago)."
+      },
+      "ok": "Başlangıç → since."
+    },
+    {
+      "t": "choice",
+      "q": "When ___ the job?",
+      "a": "did you start",
+      "o": [
+        "did you start",
+        "have you started",
+        "you started"
+      ],
+      "why": {
+        "have you started": "When bitmiş bir zamanı sorar → past simple.",
+        "you started": "Soruda yardımcı fiil gerekir: did you start."
+      },
+      "ok": "When → past simple."
+    },
+    {
+      "t": "choice",
+      "q": "Ustabaşı işin bitip bitmediğini bilmiyor, nötr soruyor: “Have you finished ___?”",
+      "a": "yet",
+      "o": [
+        "yet",
+        "already",
+        "just"
+      ],
+      "why": {
+        "already": "already sonda da gelebilir ama “bu kadar çabuk mu bitirdin?” şaşkınlığı katar. Nötr soru için sonda yet.",
+        "just": "just fiilden önce gelir (have just finished) ve “az önce” demek; sonda kullanılmaz."
+      },
+      "ok": "Soru sonunda yet."
+    },
+    {
+      "t": "choice",
+      "q": "The inspector ___ left. You've missed him.",
+      "a": "has just",
+      "o": [
+        "has just",
+        "just has",
+        "is just"
+      ],
+      "why": {
+        "just has": "just, have/has ile fiil arasına girer: has just left.",
+        "is just": "Present perfect has ile kurulur, is ile değil."
+      },
+      "ok": "has just + V3."
+    },
+    {
+      "t": "choice",
+      "q": "He's not here. He ___ to the warehouse.",
+      "a": "has gone",
+      "o": [
+        "has gone",
+        "has been"
+      ],
+      "why": {
+        "has been": "has been = gidip döndü. Şu an burada değilse: has gone."
+      },
+      "ok": "Gitti, hâlâ orada → has gone."
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “I am working here since 2024.”",
+      "a": [
+        "i have worked here since 2024",
+        "i've worked here since 2024",
+        "i have been working here since 2024",
+        "i've been working here since 2024"
+      ],
+      "hint": "since + hâlâ süren → have + V3.",
+      "ok": "I've worked here since 2024."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Kabloları henüz almadık.”",
+      "a": [
+        "we haven't received the cables yet",
+        "we have not received the cables yet",
+        "we haven't got the cables yet",
+        "we have not got the cables yet",
+        "we haven't gotten the cables yet",
+        "we have not gotten the cables yet",
+        "we haven't yet received the cables",
+        "we have not yet received the cables"
+      ],
+      "hint": "almak = receive. henüz = yet, sonda.",
+      "ok": "We haven't received the cables yet."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Raporu zaten gönderdim.”",
+      "words": [
+        "report",
+        "already",
+        "the",
+        "I've",
+        "sent"
+      ],
+      "a": "I've already sent the report",
+      "ok": "I've already sent the report.",
+      "alt": [
+        "I've sent the report already"
+      ]
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Taşeron/iş görüşmesi provası: deneyimini present perfect ile, detayları past simple ile anlatmak; süreyi for/since ile vermek; işin son durumunu just/already/yet ile bildirmek.",
+    "vocab": [
+      "electrical contracting",
+      "subcontractor",
+      "main contractor",
+      "project",
+      "refinery",
+      "airport",
+      "metro line",
+      "hospital",
+      "cable tray",
+      "commissioning",
+      "lighting",
+      "low-current systems",
+      "crew",
+      "inspector",
+      "timesheet"
+    ],
+    "structures": [
+      "Have you ever…? / I've never…",
+      "present perfect + for / since",
+      "past simple + yesterday / ago / in 2024",
+      "just / already / yet",
+      "When did…? vs How long have…?"
+    ],
+    "opener_hint": "Oliver bir İngiliz ana yüklenicinin proje müdürü; Türab'ın firmasıyla taşeronluk görüşmesi yapıyor. “Thanks for coming. How long have you worked in electrical contracting?” ile açsın, sonra “Have you ever worked on an airport project?” ve cevaba göre “When was that?” diye past simple'a geçsin.",
+    "level_note": "B1+: gerçekçi iş görüşmesi tonu, 1-3 cümle. Her 3 turda bir en önemli 1-2 hatayı “You said … → Better: …” diye göster. Türab kendi gerçek proje adlarını vermek zorunda değil; genel ifadeler yeterli."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "ago → past simple",
+      "q": "Two weeks ago we ___ the generator.",
+      "a": "tested",
+      "o": [
+        "tested",
+        "have tested"
+      ],
+      "why": {
+        "have tested": "ago bitmiş zamandır → past simple."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "how long + present perfect",
+      "q": "How long ___ you known the foreman?",
+      "a": "have",
+      "o": [
+        "have",
+        "did",
+        "do"
+      ],
+      "why": {
+        "did": "Hâlâ tanıyorsun; geçmişte başlayıp süren durum → have known.",
+        "do": "Türkçe “ne zamandır tanıyorsun” der ama İngilizcede present perfect gerekir."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "for / since",
+      "q": "We've had this van ___ 2022.",
+      "a": "since",
+      "o": [
+        "since",
+        "for"
+      ],
+      "why": {
+        "for": "2022 bir başlangıç noktası: since."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "deneyim: ever",
+      "q": "___ you ever ___ a high-voltage panel?",
+      "a": "Have / installed",
+      "o": [
+        "Have / installed",
+        "Did / install",
+        "Have / install"
+      ],
+      "why": {
+        "Did / install": "ever ile hayat deneyimi → present perfect.",
+        "Have / install": "have'den sonra V3: installed."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "just",
+      "q": "Çevir: “Mühendis az önce aradı.”",
+      "a": [
+        "the engineer has just called",
+        "the engineer's just called"
+      ],
+      "soft": [
+        "the engineer just called"
+      ],
+      "soft_note": "Amerikan İngilizcesinde kabul; resmi ve İngiliz İngilizcesinde: The engineer has just called."
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "I ___ him last Monday.",
+        "a": "saw",
+        "o": [
+          "saw",
+          "have seen"
+        ],
+        "why": {
+          "have seen": "last Monday bitmiş zaman → past simple."
+        },
+        "ok": "last … → past simple."
+      },
+      {
+        "t": "choice",
+        "q": "This week we ___ 200 metres of cable so far.",
+        "a": "have pulled",
+        "o": [
+          "have pulled",
+          "pulled"
+        ],
+        "why": {
+          "pulled": "this week ve so far: hafta bitmedi, sayım sürüyor → present perfect."
+        },
+        "ok": "Bitmemiş zaman → present perfect."
+      },
+      {
+        "t": "choice",
+        "q": "I've worked in electrical contracting ___ six years.",
+        "a": "for",
+        "o": [
+          "for",
+          "since",
+          "ago"
+        ],
+        "why": {
+          "since": "six years bir süre: for.",
+          "ago": "ago past simple ile kullanılır."
+        },
+        "ok": "Süre → for."
+      },
+      {
+        "t": "choice",
+        "q": "She hasn't called ___.",
+        "a": "yet",
+        "o": [
+          "yet",
+          "already",
+          "just"
+        ],
+        "why": {
+          "already": "already olumsuz cümlede kullanılmaz; “henüz” = yet.",
+          "just": "just olumsuzda bu anlamda kullanılmaz."
+        },
+        "ok": "Olumsuz + henüz → yet."
+      },
+      {
+        "t": "type",
+        "q": "Düzelt: “When have you arrived?”",
+        "a": [
+          "when did you arrive"
+        ],
+        "hint": "When → past simple.",
+        "ok": "When did you arrive?"
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Hiç rafineride çalıştın mı?”",
+        "a": [
+          "have you ever worked at a refinery",
+          "have you ever worked in a refinery"
+        ],
+        "hint": "Have you ever + V3?",
+        "ok": "Have you ever worked at a refinery?"
+      }
+    ],
+    "konus_prompt": "Oliver ile iş görüşmesi provası: önce kaç yıldır bu işte olduğunu (for/since), sonra hangi tür projelerde çalıştığını (present perfect), en az birinin ne zaman ve nerede olduğunu (past simple) anlat."
+  }
+}
