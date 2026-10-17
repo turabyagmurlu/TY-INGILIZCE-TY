@@ -1,0 +1,173 @@
+{
+  "id": "it28",
+  "lang": "it",
+  "level": "A2",
+  "title": "Seyahat, otel, tren, yol tarifi",
+  "lead": "İtalya'da tren bileti alabilecek, perona ve rötara dair anonsu anlayabilecek, otelde rezervasyonunu söyleyip oda isteyebileceksin. Yol sorup gelen tarifi (sağa dön, düz git, ışıklarda) anlayacaksın.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Gişede: bilet almak",
+      "blocks": [
+        {"type": "p", "text": "Bilet cümlesi hep aynı kalıp: **Vorrei un biglietto per** + şehir. Türkçede “Roma'**ya**” dersin; İtalyanca tren ve bilette varış yerini **per** ile verir: **il treno per Roma** = Roma treni."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Roma'ya", "s": "varış (-ya)", "hl": true}, {"t": "bir bilet", "s": "isim"}, {"t": "gidiş-dönüş", "s": "tür"}]},
+          {"label": "İtalyanca", "items": [{"t": "un biglietto", "s": "bir bilet"}, {"t": "per Roma", "s": "varış (per)", "hl": true}, {"t": "andata e ritorno", "s": "gidiş ve dönüş"}]}
+        ]},
+        {"type": "table", "head": ["Türkçe", "İtalyanca", "Okunuş"], "x": 1,
+          "rows": [
+            ["bilet", "il biglietto", "il bi-LYET-to"],
+            ["tek yön", "solo andata", "SO-lo an-DA-ta"],
+            ["gidiş-dönüş", "andata e ritorno", "an-DA-ta e ri-TOR-no"],
+            ["istasyon", "la stazione", "la sta-TSYO-ne"],
+            ["aktarma yapmak", "cambiare", "kam-BYA-re"]
+          ]},
+        {"type": "examples", "items": [
+          {"x": "Vorrei un biglietto per Roma, andata e ritorno.", "tr": "Roma'ya bir gidiş-dönüş bilet istiyorum.", "ph": "vor-REY UN bi-LYET-to per RO-ma, an-DA-ta e ri-TOR-no"},
+          {"x": "Devo cambiare?", "tr": "Aktarma yapmam gerekiyor mu?", "ph": "DE-vo kam-BYA-re"}
+        ]},
+        {"type": "note", "warn": true, "text": "**un biglietto a Roma** yanlış. Bilet ve trende varış: **per**. Kalkış yeri **da**: il treno **da** Milano = Milano'dan gelen tren."}
+      ]
+    },
+    {
+      "title": "Peronda: binario, ritardo, anons",
+      "blocks": [
+        {"type": "p", "text": "Peron **il binario**. Kalkış peronu **dal** ile söylenir (da + il, it14): **parte dal binario 4**. Rötar için Türkçedeki “20 dakika rötarlı” kalıbı İtalyancada **in ritardo di** + süre olur."},
+        {"type": "table", "head": ["Ekranda / anonsta", "Okunuş", "Türkçesi"], "x": 0,
+          "rows": [
+            ["in ritardo", "in ri-TAR-do", "rötarlı, gecikmeli"],
+            ["in orario", "in o-RA-ryo", "zamanında"],
+            ["in partenza", "in par-TEN-tsa", "kalkmak üzere"],
+            ["in arrivo", "in ar-Rİ-vo", "gelmek üzere"],
+            ["il prossimo treno", "il PROS-si-mo TRE-no", "bir sonraki tren"]
+          ]},
+        {"type": "examples", "items": [
+          {"x": "A che ora parte il prossimo treno per Milano?", "tr": "Milano'ya bir sonraki tren kaçta kalkıyor?", "ph": "a ke O-ra PAR-te il PROS-si-mo TRE-no per mi-LA-no"},
+          {"x": "Il treno è in ritardo di venti minuti.", "tr": "Tren yirmi dakika rötarlı.", "ph": "il TRE-no E in ri-TAR-do di VEN-ti mi-NU-ti"},
+          {"x": "Il treno per Roma è in partenza dal binario quattro.", "tr": "Roma treni dört numaralı perondan kalkmak üzere.", "ph": "il TRE-no per RO-ma E in par-TEN-tsa dal bi-NA-ryo KUAT-tro"}
+        ]},
+        {"type": "note", "text": "Peron sorusu: **Da che binario parte?** Cevap: **Dal binario tre.** Peron numarası sayı olarak okunur, sıra sayısı değil."}
+      ]
+    },
+    {
+      "title": "Otelde: rezervasyon ve oda",
+      "blocks": [
+        {"type": "p", "text": "Otele girince ilk cümle: **Ho una prenotazione a nome** + soyadı. Otele, mağazaya ya da restorana kurum olarak **voi** ile sorulur: **Avete una camera?** (Odanız var mı?)."},
+        {"type": "table", "head": ["Türkçe", "İtalyanca", "Okunuş"], "x": 1,
+          "rows": [
+            ["rezervasyon", "la prenotazione", "la pre-no-ta-TSYO-ne"],
+            ["tek kişilik oda", "la camera singola", "la KA-me-ra SİN-go-la"],
+            ["iki kişilik oda", "la camera doppia", "la KA-me-ra DOP-pya"],
+            ["kahvaltı", "la colazione", "la ko-la-TSYO-ne"],
+            ["anahtar", "la chiave", "la KYA-ve"],
+            ["gece (konaklama)", "la notte, per due notti", "la NOT-te, per DU-e NOT-ti"]
+          ]},
+        {"type": "examples", "items": [
+          {"x": "Buonasera, ho una prenotazione a nome Yağmurlu.", "tr": "İyi akşamlar, Yağmurlu adına rezervasyonum var.", "ph": "buo-na-SE-ra, O U-na pre-no-ta-TSYO-ne a NO-me Yağmurlu"},
+          {"x": "Avete una camera singola per stanotte?", "tr": "Bu gece için tek kişilik odanız var mı?", "ph": "a-VE-te U-na KA-me-ra SİN-go-la per sta-NOT-te"},
+          {"x": "La colazione è inclusa?", "tr": "Kahvaltı dahil mi?", "ph": "la ko-la-TSYO-ne E in-KLU-sa"}
+        ]},
+        {"type": "note", "warn": true, "text": "**camera** = oda (fotoğraf makinesi değil). **doppia** iki kişilik odadır, iki ayrı yatak da olabilir; tek büyük yatak istiyorsan **matrimoniale** de. **inclusa**, colazione'ye uyar (kadın, it07)."}
+      ]
+    },
+    {
+      "title": "Yol tarifi: sağa dön, düz git, ne kadar sürer?",
+      "blocks": [
+        {"type": "p", "text": "Yol sormak için: **Scusi, dov'è la stazione?** ya da **Scusi, per andare alla stazione?** Tarif, emir biçimiyle gelir. Emir kipini it30'da öğreneceksin; şimdilik aşağıdakileri **hazır kalıp** olarak ezberle (arkadaşa, tu)."},
+        {"type": "table", "head": ["Türkçe", "İtalyanca", "Okunuş"], "x": 1,
+          "rows": [
+            ["sağa dön", "gira a destra", "Cİ-ra a DES-tra"],
+            ["sola dön", "gira a sinistra", "Cİ-ra a si-NİS-tra"],
+            ["düz git", "vai dritto", "VAY DRİT-to"],
+            ["ışıklarda", "al semaforo", "al se-MA-fo-ro"],
+            ["kavşakta", "all'incrocio", "al-lin-KRO-ço"],
+            ["sağdan ikinci yola gir", "prendi la seconda a destra", "PREN-di la se-KON-da a DES-tra"]
+          ]},
+        {"type": "examples", "items": [
+          {"x": "È lontano? Quanto ci vuole a piedi?", "tr": "Uzak mı? Yürüyerek ne kadar sürer?", "ph": "E lon-TA-no? KUAN-to çi VUO-le a PYE-di"},
+          {"x": "Ci vogliono dieci minuti a piedi, cinque in macchina.", "tr": "Yürüyerek on dakika, arabayla beş dakika.", "ph": "çi VO-lyo-no DYE-çi mi-NU-ti a PYE-di, ÇİN-kue in MAK-ki-na"}
+        ]},
+        {"type": "note", "warn": true, "text": "Tuzak: şimdiki zamanda **tu giri** (dönüyorsun), ama arkadaşa tarifte **gira**. Yabancı biri sana Lei ile tarif ederse **giri a destra, vada dritto, prenda la seconda** duyarsın; anlamı aynı. **la seconda**: strada (yol) kadın olduğu için -a."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Vorrei un biglietto per Roma, andata e ritorno.", "tr": "Roma'ya bir gidiş-dönüş bilet istiyorum.", "ph": "vor-REY UN bi-LYET-to per RO-ma, an-DA-ta e ri-TOR-no"},
+    {"x": "A che ora parte il prossimo treno per Milano?", "tr": "Milano'ya bir sonraki tren kaçta kalkıyor?", "ph": "a ke O-ra PAR-te il PROS-si-mo TRE-no per mi-LA-no"},
+    {"x": "Il treno è in ritardo di venti minuti.", "tr": "Tren yirmi dakika rötarlı.", "ph": "il TRE-no E in ri-TAR-do di VEN-ti mi-NU-ti"},
+    {"x": "Da che binario parte? Dal binario quattro.", "tr": "Hangi perondan kalkıyor? Dört numaralı perondan.", "ph": "da ke bi-NA-ryo PAR-te? dal bi-NA-ryo KUAT-tro"},
+    {"x": "Buonasera, ho una prenotazione a nome Yağmurlu.", "tr": "İyi akşamlar, Yağmurlu adına rezervasyonum var.", "ph": "buo-na-SE-ra, O U-na pre-no-ta-TSYO-ne a NO-me Yağmurlu"},
+    {"x": "Avete una camera doppia per due notti?", "tr": "İki gece için iki kişilik odanız var mı?", "ph": "a-VE-te U-na KA-me-ra DOP-pya per DU-e NOT-ti"},
+    {"x": "La colazione è inclusa?", "tr": "Kahvaltı dahil mi?", "ph": "la ko-la-TSYO-ne E in-KLU-sa"},
+    {"x": "Scusi, per andare alla stazione?", "tr": "Affedersiniz, istasyona nasıl gidilir?", "ph": "SKU-zi, per an-DA-re AL-la sta-TSYO-ne"},
+    {"x": "Vai dritto e al semaforo gira a destra.", "tr": "Düz git, ışıklarda sağa dön. (arkadaşa)", "ph": "VAY DRİT-to e al se-MA-fo-ro Cİ-ra a DES-tra"},
+    {"x": "Quanto ci vuole a piedi? Ci vogliono dieci minuti.", "tr": "Yürüyerek ne kadar sürer? On dakika.", "ph": "KUAN-to çi VUO-le a PYE-di? çi VO-lyo-no DYE-çi mi-NU-ti"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Gişede: “Un biglietto ___ Roma, per favore.”", "a": "per", "o": ["per", "a", "di"],
+      "why": {"a": "Bilet ve trende varış yeri per ile verilir: un biglietto per Roma.", "di": "di aitlik ya da köken bildirir. Varış: per."},
+      "ok": "Varış → per."},
+    {"t": "choice", "q": "“Gidiş-dönüş” hangisi?", "a": "andata e ritorno", "o": ["solo andata", "andata e ritorno", "partenza e arrivo"],
+      "why": {"solo andata": "solo andata = tek yön.", "partenza e arrivo": "partenza ve arrivo kalkış ve varıştır, bilet türü değil."},
+      "ok": "andata = gidiş, ritorno = dönüş."},
+    {"t": "choice", "q": "Ekranda: “Treno per Milano: in ___ di 15 minuti.”", "a": "ritardo", "o": ["ritardo", "orario", "binario"],
+      "why": {"orario": "in orario = zamanında; süre almaz.", "binario": "binario = peron. Gecikme: in ritardo."},
+      "ok": "in ritardo di + süre = … rötarlı."},
+    {"t": "choice", "q": "“Il treno parte ___ binario due.”", "a": "dal", "o": ["dal", "al", "del"],
+      "why": {"al": "al = a + il, “-e doğru”. Kalkış yeri da: dal binario.", "del": "del = di + il, “-in”. Kalkış: dal."},
+      "ok": "da + il = dal."},
+    {"t": "choice", "q": "Resepsiyonda: “Ho una ___ a nome Yağmurlu.”", "a": "prenotazione", "o": ["prenotazione", "camera", "chiave"],
+      "why": {"camera": "Bir odan var ama “a nome …” (… adına) rezervasyonla söylenir.", "chiave": "chiave = anahtar; “… adına anahtar” anlamsız."},
+      "ok": "a nome + soyadı = … adına."},
+    {"t": "choice", "q": "Yalnız kalacaksın. Hangi oda?", "a": "una camera singola", "o": ["una camera singola", "una camera doppia", "una camera matrimoniale"],
+      "why": {"una camera doppia": "doppia iki kişiliktir.", "una camera matrimoniale": "matrimoniale tek büyük yataklı iki kişilik odadır."},
+      "ok": "singola = tek kişilik."},
+    {"t": "choice", "q": "Ahmet'e tarif ediyorsun: “Sağa dön.”", "a": "Gira a destra.", "o": ["Gira a destra.", "Giri a destra.", "Gira a sinistra."],
+      "why": {"Giri a destra.": "giri, Lei (kibar) biçimidir. Arkadaşa (tu): gira.", "Gira a sinistra.": "sinistra = sol. Sağ: destra."},
+      "ok": "Arkadaşa: gira. Yabancıya kibar: giri."},
+    {"t": "choice", "q": "“Quanto ci ___ in macchina?”", "a": "vuole", "o": ["vuole", "vogliono", "vuoi"],
+      "why": {"vogliono": "Soru kalıbı tekildir: quanto ci vuole? Çoğul cevapta gelir: ci vogliono dieci minuti.", "vuoi": "vuoi = istiyorsun. Süre sorusu: quanto ci vuole?"},
+      "ok": "Quanto ci vuole? (it27)"},
+    {"t": "type", "q": "Türkçeden çevir: “Kahvaltı dahil mi?”", "a": ["la colazione è inclusa", "è inclusa la colazione"], "soft": ["la colazione e inclusa", "e inclusa la colazione"], "soft_note": "Doğru sayıldı. “Dir/mi” anlamındaki è aksanla yazılır: La colazione è inclusa?", "hint": "colazione kadın → inclusa.", "ok": "La colazione è inclusa?"},
+    {"t": "type", "q": "Türkçeden çevir: “Aktarma yapmam gerekiyor mu?”", "a": ["devo cambiare", "io devo cambiare", "devo cambiare treno"], "hint": "dovere (it16) + cambiare.", "ok": "Devo cambiare?"},
+    {"t": "order", "q": "Sırala: “Düz git, sonra sola dön.” (arkadaşa)", "words": ["sinistra", "gira", "dritto", "a", "poi", "vai"], "a": "vai dritto poi gira a sinistra", "ok": "Vai dritto, poi gira a sinistra."},
+    {"t": "order", "q": "Sırala: “Milano'ya bir sonraki tren kaçta kalkıyor?”", "words": ["treno", "parte", "per", "prossimo", "ora", "il", "che", "Milano", "a"], "a": "a che ora parte il prossimo treno per Milano", "ok": "A che ora parte il prossimo treno per Milano?"}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "İtalya'da bir yolculuğu canlandırmak: istasyonda bilet almak (per, andata e ritorno), peron ve rötarı sormak, otelde rezervasyonu söyleyip oda ve kahvaltıyı sormak, istasyondan otele yol sorup tarifi anlamak ve süreyi quanto ci vuole ile sormak.",
+    "vocab": ["il biglietto", "solo andata", "andata e ritorno", "il binario", "in ritardo", "in orario", "in partenza", "il prossimo treno", "cambiare", "la stazione", "la prenotazione", "a nome", "la camera singola", "la camera doppia", "matrimoniale", "la colazione", "inclusa", "la chiave", "stanotte", "gira a destra", "gira a sinistra", "vai dritto", "al semaforo", "all'incrocio", "prendi la seconda", "è lontano?", "a piedi", "in macchina", "quanto ci vuole?"],
+    "structures": ["Vorrei un biglietto per + şehir", "A che ora parte…? Da che binario parte? Dal binario…", "in ritardo di + süre", "Ho una prenotazione a nome…", "Avete una camera…? (kuruma voi)", "Scusi, per andare a/alla…? / dov'è…?", "hazır kalıp tarif: gira a destra/sinistra, vai dritto, prendi la seconda (emir kipi it30'da)", "Quanto ci vuole? Ci vuole / ci vogliono…"],
+    "opener_hint": "Chiara önce gişe memuru rolünde: “Buongiorno! Dove va?” (Nereye gidiyorsunuz?). Türab bilet alsın; Chiara saati, peronu ve 10 dakikalık rötarı söylesin. Sonra otel resepsiyonu olsun (rezervasyon, oda türü, kaç gece, kahvaltı). En son arkadaş olarak telefonda istasyondan otele yolu tu ile tarif etsin; Türab tarifi tekrar etsin ve ne kadar sürdüğünü sorsun.",
+    "level_note": "A2: her mesajda 2–3 kısa, doğal İtalyanca cümle; Türkçe sadece Türab takılırsa ya da yeni bir kelimede parantez içinde. Memur ve resepsiyonist rolünde Türab'a Lei ile konuşabilirsin (Dove va? Ha un documento?); tarifte sadece gira, vai, prendi gibi tu kalıplarını kullan, başka emir biçimi kurma. Birleşik zamir (ce l'ho, glielo) ve congiuntivo kullanma. Türab per yerine a derse (biglietto a Roma), ritardo kalıbını ya da ci vuole/ci vogliono uyumunu kaçırırsa doğru cümleyi bir kez tekrar et."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "bilet: solo andata / per", "q": "“Milano'ya tek yön bir bilet istiyorum.”", "a": "Vorrei un biglietto solo andata per Milano.", "o": ["Vorrei un biglietto solo andata per Milano.", "Vorrei un biglietto andata e ritorno per Milano.", "Vorrei un biglietto solo andata a Milano."],
+      "why": {"Vorrei un biglietto andata e ritorno per Milano.": "andata e ritorno gidiş-dönüştür. Tek yön: solo andata.", "Vorrei un biglietto solo andata a Milano.": "Bilette varış per ile verilir: per Milano."}},
+    {"t": "choice", "topic": "rötar: in ritardo di", "q": "“Tren on beş dakika rötarlı.”", "a": "Il treno è in ritardo di quindici minuti.", "o": ["Il treno è ritardo di quindici minuti.", "Il treno è in ritardo di quindici minuti.", "Il treno è in orario di quindici minuti."],
+      "why": {"Il treno è ritardo di quindici minuti.": "Kalıpta in şart: è in ritardo.", "Il treno è in orario di quindici minuti.": "in orario = zamanında; rötar değil."}},
+    {"t": "choice", "topic": "otel: oda istemek", "q": "Resepsiyona: “İki kişilik bir odanız var mı?”", "a": "Avete una camera doppia?", "o": ["Avete una camera singola?", "Avete una camera doppia?", "Hai una camera doppia?"],
+      "why": {"Avete una camera singola?": "singola tek kişiliktir. İki kişilik: doppia.", "Hai una camera doppia?": "Resepsiyondaki birine tu (hai) denmez; otele kurum olarak avete."}},
+    {"t": "choice", "topic": "yol tarifi kalıpları", "q": "Arkadaşına: “Işıklarda sola dön.”", "a": "Al semaforo gira a sinistra.", "o": ["Al semaforo gira a destra.", "Al semaforo gira a sinistra.", "Al semaforo vai dritto."],
+      "why": {"Al semaforo gira a destra.": "destra = sağ. Sol: sinistra.", "Al semaforo vai dritto.": "vai dritto = düz git. Sola dön: gira a sinistra."}},
+    {"t": "type", "topic": "süre: ci vogliono", "q": "Türkçeden çevir: “Yürüyerek beş dakika sürer.”", "a": ["ci vogliono cinque minuti a piedi", "a piedi ci vogliono cinque minuti", "ci vogliono 5 minuti a piedi", "a piedi ci vogliono 5 minuti"], "hint": "cinque minuti çoğul; yürüyerek = a piedi.", "ok": "Ci vogliono cinque minuti a piedi."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Anons: “Il treno per Roma è in ___ dal binario 2.”", "a": "partenza", "o": ["partenza", "arrivo", "ritardo"],
+        "why": {"arrivo": "in arrivo = gelmek üzere. “dal binario” kalkışı gösterir: in partenza.", "ritardo": "in ritardo süre alır (di dieci minuti), peron değil."},
+        "ok": "in partenza = kalkmak üzere."},
+      {"t": "choice", "q": "“Sağdan ikinci yola gir.” (arkadaşa)", "a": "Prendi la seconda a destra.", "o": ["Prendi il secondo a destra.", "Prendi la seconda a destra.", "Prendi la due a destra."],
+        "why": {"Prendi il secondo a destra.": "Kast edilen strada (yol), kadın: la seconda.", "Prendi la due a destra.": "Sıra bildirirken sıra sayısı gerekir: seconda."},
+        "ok": "strada → la seconda."},
+      {"t": "choice", "q": "Otelde: “Bu gece için bir odanız var mı?”", "a": "Avete una camera per stanotte?", "o": ["Avete una camera per stanotte?", "Avete una macchina per stanotte?", "Avete un biglietto per stanotte?"],
+        "why": {"Avete una macchina per stanotte?": "macchina = araba. Oda: camera.", "Avete un biglietto per stanotte?": "biglietto = bilet. Oda: camera."},
+        "ok": "stanotte = bu gece."},
+      {"t": "type", "q": "Türkçeden çevir: “Rezervasyonum var.”", "a": ["ho una prenotazione", "io ho una prenotazione"], "hint": "avere + una prenotazione.", "ok": "Ho una prenotazione."},
+      {"t": "type", "q": "Türkçeden çevir: “İstasyon uzak mı?”", "a": ["la stazione è lontana", "è lontana la stazione"], "soft": ["la stazione e lontana", "e lontana la stazione"], "soft_note": "Doğru sayıldı. è aksanla yazılır: La stazione è lontana?", "hint": "stazione kadın → lontana (it07).", "ok": "La stazione è lontana?"},
+      {"t": "order", "q": "Sırala: “Kavşakta düz git.” (arkadaşa)", "words": ["dritto", "all'incrocio", "vai"], "a": "all'incrocio vai dritto", "alt": ["vai dritto all'incrocio"], "ok": "All'incrocio vai dritto."}
+    ],
+    "konus_prompt": "Chiara seni Roma Termini istasyonunda karşılıyor: önce gişede bilet al (gidiş-dönüş, saat, peron, rötar), sonra otele telefon et (rezervasyon, oda, kahvaltı), en son Chiara'nın tarifini tekrar et. En az 6 cümle kur: biri per + şehir, biri binario, biri in ritardo, biri prenotazione, biri tarif kalıbı (gira / vai dritto), biri quanto ci vuole."
+  }
+}

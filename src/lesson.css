@@ -193,3 +193,14 @@ html.lsn-on .app,html.lsn-on .tabs{visibility:hidden}
 .lsum span{display:inline-flex;align-items:center;gap:6px;background:var(--soft);border-radius:999px;padding:6px 12px;font-weight:700}
 .lsum .ico{width:18px;height:18px}
 @media (max-width:430px){.lsnBt small{display:none}.lsnBt h1{font-size:16px;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}}
+/* sınav: giriş bilgisi + yanlışlar konu gruplarında */
+.xinfo{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0}
+.xinfo div{background:var(--soft);border-radius:12px;padding:10px 12px;text-align:center}
+.xinfo dt{font-size:13px;font-weight:700;color:var(--muted)}
+.xinfo dd{margin:2px 0 0;font-size:18px;white-space:nowrap;font-weight:800;color:var(--heading)}
+.xgrp{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:8px}
+.xgh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.xgrp ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.xgrp li{background:var(--soft);border-radius:12px;padding:10px 12px}
+.xgrp li p{margin:0 0 4px}
+.xa{font-size:15px}.xa s{color:var(--bad-ink)}.xw{font-size:15px;color:var(--muted)}

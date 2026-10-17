@@ -1,0 +1,303 @@
+{
+ "id": "cp2",
+ "kind": "exam",
+ "lang": "it",
+ "level": "A1",
+ "title": "Checkpoint 2 · A1 ara sınavı",
+ "minutes": 20,
+ "lead": "Şimdiki zaman, düzensiz fiiller, soru kelimeleri, edatlar, dönüşlü ve modal fiiller (it09–it16). 20 soru; geçmek için en az 14 doğru.",
+ "scope": [
+  "it09",
+  "it10",
+  "it11",
+  "it12",
+  "it13",
+  "it14",
+  "it15",
+  "it16"
+ ],
+ "items": [
+  {
+   "t": "choice",
+   "topic": "-are çekimi: loro",
+   "from": "it09",
+   "q": "loro ___ in fabbrica. (lavorare)",
+   "a": "lavorano",
+   "o": [
+    "lavorano",
+    "lavorate",
+    "lavora"
+   ],
+   "why": {
+    "lavorate": "lavorate voi (siz) biçimi.",
+    "lavora": "lavora tekil: lui, lei ya da Lei."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "-are çekimi: noi",
+   "from": "it09",
+   "q": "Türkçeden çevir: “Mühendisi bekliyoruz.”",
+   "a": [
+    "aspettiamo l'ingegnere",
+    "noi aspettiamo l'ingegnere"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "-ere çekimi: lui/lei",
+   "from": "it10",
+   "q": "Ahmet ___ il quadro. (chiudere)",
+   "a": "chiude",
+   "o": [
+    "chiude",
+    "chiuda",
+    "chiudi"
+   ],
+   "why": {
+    "chiuda": "-a sonu -are fiillerinindir. -ere'de lui/lei -e alır.",
+    "chiudi": "chiudi tu (sen) biçimi."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "-ere çekimi: loro",
+   "from": "it10",
+   "q": "Sırala: “İşçiler eldivenleri alıyor.”",
+   "words": [
+    "i",
+    "guanti",
+    "prendono",
+    "operai",
+    "gli"
+   ],
+   "a": "gli operai prendono i guanti"
+  },
+  {
+   "t": "choice",
+   "topic": "andare",
+   "from": "it11",
+   "q": "“İşe gidiyoruz.” → ___ a lavoro.",
+   "a": "Andiamo",
+   "o": [
+    "Andiamo",
+    "Vadiamo",
+    "Andate"
+   ],
+   "why": {
+    "Vadiamo": "noi biçimi düzenli kökten gelir: andiamo.",
+    "Andate": "andate voi (siz) biçimi."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "stare (hal)",
+   "from": "it11",
+   "q": "I ragazzi ___ bene.",
+   "a": "stanno",
+   "o": [
+    "stanno",
+    "sono",
+    "hanno"
+   ],
+   "why": {
+    "sono": "Hal ve sağlık stare ile söylenir: sono bene yanlış.",
+    "hanno": "avere sahip olmaktır; “iyiler” stare ister."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "fare (hava)",
+   "from": "it11",
+   "q": "Türkçeden çevir: “Bugün hava sıcak.”",
+   "a": [
+    "oggi fa caldo",
+    "fa caldo oggi"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "quale / quali",
+   "from": "it12",
+   "q": "“Hangi eldivenler?” ___ guanti?",
+   "a": "Quali",
+   "o": [
+    "Quali",
+    "Quale",
+    "Quanti"
+   ],
+   "why": {
+    "Quale": "quale tekil. guanti çoğul olduğu için quali.",
+    "Quanti": "quanti = kaç. “Hangi” quali'dir."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "chi",
+   "from": "it12",
+   "q": "Türkçeden çevir: “Kim geliyor?”",
+   "a": [
+    "chi viene",
+    "chi arriva"
+   ]
+  },
+  {
+   "t": "order",
+   "topic": "soru sırası",
+   "from": "it12",
+   "q": "Sırala: “Mühendis nerede oturuyor?”",
+   "words": [
+    "abita",
+    "l'ingegnere",
+    "dove"
+   ],
+   "a": "dove abita l'ingegnere",
+   "alt": [
+    "l'ingegnere dove abita"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "ad (a + ünlü)",
+   "from": "it13",
+   "q": "“Ankara'ya gidiyorum.” → Vado ___ Ankara.",
+   "a": "ad",
+   "o": [
+    "a",
+    "ad",
+    "in"
+   ],
+   "why": {
+    "a": "Şehre a gelir, ama a ile başlayan yerden önce araya d girer: ad Ankara.",
+    "in": "in ülke ve bölge içindir; Ankara şehir."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "ci sono",
+   "from": "it13",
+   "q": "Türkçeden çevir: “Ofiste üç işçi var.”",
+   "a": [
+    "ci sono tre operai in ufficio",
+    "in ufficio ci sono tre operai"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "da + l'",
+   "from": "it14",
+   "q": "“Ofisten geliyorum.” → Vengo ___ ufficio.",
+   "a": "dall'",
+   "o": [
+    "dal",
+    "dall'",
+    "dallo"
+   ],
+   "why": {
+    "dal": "dal = da + il. ufficio ünlüyle başlar, artikeli l': dall'.",
+    "dallo": "dallo = da + lo (s+ünsüz, z ile başlayanlar)."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "a + il = al",
+   "from": "it14",
+   "q": "Sırala: “Kamyonet deponun önünde.”",
+   "words": [
+    "il",
+    "è",
+    "davanti",
+    "magazzino",
+    "furgone",
+    "al"
+   ],
+   "a": "il furgone è davanti al magazzino"
+  },
+  {
+   "t": "choice",
+   "topic": "dönüşlü zamir: si",
+   "from": "it15",
+   "q": "Elif ___ sveglia alle sette.",
+   "a": "si",
+   "o": [
+    "si",
+    "mi",
+    "ci"
+   ],
+   "why": {
+    "mi": "mi sadece io içindir.",
+    "ci": "ci noi içindir. Elif (lei) → si."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "dönüşlü fiil: noi",
+   "from": "it15",
+   "q": "Türkçeden çevir: “Yedide kalkıyoruz.”",
+   "a": [
+    "ci alziamo alle sette",
+    "noi ci alziamo alle sette",
+    "alle sette ci alziamo"
+   ]
+  },
+  {
+   "t": "order",
+   "topic": "rutin: la sera",
+   "from": "it15",
+   "q": "Sırala: “Akşamları dinleniyoruz.”",
+   "words": [
+    "ci",
+    "la",
+    "riposiamo",
+    "sera"
+   ],
+   "a": "la sera ci riposiamo",
+   "alt": [
+    "ci riposiamo la sera"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "potere: voi",
+   "from": "it16",
+   "q": "Ekibe: “Ragazzi, ___ venire domani?” (potere)",
+   "a": "potete",
+   "o": [
+    "potete",
+    "possono",
+    "puoi"
+   ],
+   "why": {
+    "possono": "possono loro (onlar) biçimi.",
+    "puoi": "puoi tek kişiye “sen”. Ekibe voi: potete."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "modal + dönüşlü",
+   "from": "it16",
+   "q": "“Ekip erken kalkmalı.”",
+   "a": "La squadra deve alzarsi presto.",
+   "o": [
+    "La squadra deve alzarsi presto.",
+    "La squadra deve si alza presto.",
+    "La squadra devono alzarsi presto."
+   ],
+   "why": {
+    "La squadra deve si alza presto.": "Modaldan sonra fiil mastar kalır; zamir mastara yapışır: alzarsi.",
+    "La squadra devono alzarsi presto.": "squadra tekil: deve."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "volere + mastar",
+   "from": "it16",
+   "q": "Türkçeden çevir: “Eve gitmek istiyorum.”",
+   "a": [
+    "voglio andare a casa",
+    "io voglio andare a casa"
+   ]
+  }
+ ],
+ "pass": 14
+}

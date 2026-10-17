@@ -1,0 +1,157 @@
+{
+  "id": "it32",
+  "lang": "it",
+  "level": "B1",
+  "title": "Congiuntivo presente (giriş)",
+  "lead": "“Gelmeni istiyorum”, “Sanırım pano hazır”, “Yorgun olsam da bitiriyorum” cümlelerini congiuntivo ile kurabileceksin. Ne zaman congiuntivo, ne zaman düz mastar gerektiğini ayırt edeceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Congiuntivo: gerçek değil, kafandaki durum",
+      "blocks": [
+        {"type": "p", "text": "Şimdiye kadar hep **gerçeği** söyledin (indicativo): viene = geliyor. **Congiuntivo** düşünce, istek, umut ve ihtimal bildirir. Neredeyse hep **che**'den sonra, ikinci bir öznenin fiilinde çıkar."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Gel", "s": "fiil"}, {"t": "-me-n-i", "s": "isteğin konusu", "hl": true}, {"t": "istiyorum", "s": "ana fiil"}]},
+          {"label": "İtalyanca", "items": [{"t": "Voglio", "s": "istiyorum"}, {"t": "che tu", "s": "senin…"}, {"t": "venga", "s": "gelmen (congiuntivo)", "hl": true}]}
+        ]},
+        {"type": "rules", "items": [
+          {"title": "Fikir: penso che, credo che, mi sembra che", "text": "Emin değilsin, fikrini söylüyorsun.", "ex": {"x": "Penso che sia pronto.", "tr": "Sanırım hazır."}},
+          {"title": "İstek, umut: voglio che, spero che", "text": "Başkasının yapmasını istiyorsun.", "ex": {"x": "Spero che tu venga.", "tr": "Umarım gelirsin."}},
+          {"title": "Genel ifade: è importante che, è necessario che", "text": "“-mesi önemli / gerekli”.", "ex": {"x": "È importante che tutti abbiano il casco.", "tr": "Herkesin bareti olması önemli."}},
+          {"title": "benché = -sa da, -diği halde", "text": "Her zaman congiuntivo ister.", "ex": {"x": "Benché sia tardi, lavoriamo.", "tr": "Geç olsa da çalışıyoruz."}}
+        ]},
+        {"type": "note", "text": "Türkçe ipucu: cümlede “-mesini / -masını istiyorum” varsa İtalyancada neredeyse kesin congiuntivo var."}
+      ]
+    },
+    {
+      "title": "Çekim: -are → -i, -ere / -ire → -a",
+      "blocks": [
+        {"type": "p", "text": "Ünlüler **yer değiştirir**: -are fiilleri **-i**, -ere ve -ire fiilleri **-a** alır. Tekil üç kişi (io, tu, lui / lei) **aynı**; karışmasın diye özneyi söyle: che **tu** lavori. **noi** biçimi şimdiki zamanla aynı, **voi** -iate ile biter."},
+        {"type": "table", "head": ["Özne", "lavorare", "prendere", "dormire", "finire"],
+          "rows": [
+            ["che io / tu / lui", "lavori", "prenda", "dorma", "finisca"],
+            ["che noi", "lavoriamo", "prendiamo", "dormiamo", "finiamo"],
+            ["che voi", "lavoriate", "prendiate", "dormiate", "finiate"],
+            ["che loro", "lavorino", "prendano", "dormano", "finiscano"]
+          ],
+          "say": ["che io lavori, prenda, dorma, finisca", "che noi lavoriamo, prendiamo, dormiamo, finiamo", "che voi lavoriate, prendiate, dormiate, finiate", "che loro lavorino, prendano, dormano, finiscano"]},
+        {"type": "examples", "items": [
+          {"x": "Voglio che loro lavorino insieme.", "tr": "Birlikte çalışmalarını istiyorum.", "ph": "VO-lyo ke LO-ro la-VO-ri-no in-SYE-me"},
+          {"x": "Spero che finiscano oggi.", "tr": "Umarım bugün bitirirler.", "ph": "SPE-ro ke fi-NİS-ka-no OD-ci"}
+        ]},
+        {"type": "note", "warn": true, "text": "Tipik hata: şimdiki zamanın ünlüsünü korumak. che lui **lavora** değil **lavori**; che tu **prendi** değil **prenda**. Yazım: cercare → cer**ch**i, pagare → pa**gh**i (sert ses korunur); mangiare → mangi (tek i)."}
+      ]
+    },
+    {
+      "title": "Düzensizler: dokuz biçimi ezberle",
+      "blocks": [
+        {"type": "p", "text": "Çoğu, şimdiki zamanın **io** biçiminden gelir: **vengo → venga**, **faccio → faccia**, **vado → vada**, **posso → possa**, **voglio → voglia**. essere, avere, sapere ve dovere ayrıca ezberlenir. loro biçimi tekile **-no** ekler."},
+        {"type": "table", "head": ["Mastar", "io / tu / lui", "loro", "Okunuş"], "x": 1,
+          "rows": [
+            ["essere", "sia", "siano", "Sİ-a / Sİ-a-no"],
+            ["avere", "abbia", "abbiano", "AB-bya / AB-bya-no"],
+            ["fare", "faccia", "facciano", "FAT-ça / FAT-ça-no"],
+            ["andare", "vada", "vadano", "VA-da / VA-da-no"],
+            ["venire", "venga", "vengano", "VEN-ga / VEN-ga-no"],
+            ["potere", "possa", "possano", "POS-sa / POS-sa-no"],
+            ["dovere", "debba", "debbano", "DEB-ba / DEB-ba-no"],
+            ["volere", "voglia", "vogliano", "VO-lya / VO-lya-no"],
+            ["sapere", "sappia", "sappiano", "SAP-pya / SAP-pya-no"]
+          ],
+          "say": ["sia, siano", "abbia, abbiano", "faccia, facciano", "vada, vadano", "venga, vengano", "possa, possano", "debba, debbano", "voglia, vogliano", "sappia, sappiano"]},
+        {"type": "note", "text": "noi yine şimdiki zamanla aynı: siamo, abbiamo, facciamo, andiamo. dovere'nin **deva** biçimi de doğru ama daha seyrek; bu derste **debba**."}
+      ]
+    },
+    {
+      "title": "Congiuntivo YOK: aynı özne ve kesinlik",
+      "blocks": [
+        {"type": "p", "text": "Congiuntivo **iki farklı özne** ister: ben istiyorum, **sen** gel. Özne aynıysa che kurulmaz, **mastar** gelir."},
+        {"type": "rules", "items": [
+          {"title": "penso / credo / spero + di + mastar", "text": "Düşünen de yapan da sensin.", "ex": {"x": "Penso di venire domani.", "tr": "Sanırım yarın gelirim."}},
+          {"title": "voglio + mastar (di yok)", "text": "volere doğrudan mastar alır (it16).", "ex": {"x": "Voglio finire oggi.", "tr": "Bugün bitirmek istiyorum."}},
+          {"title": "è importante + mastar", "text": "Kimseye özel değil, genel kural.", "ex": {"x": "È importante arrivare presto.", "tr": "Erken gelmek önemli."}}
+        ]},
+        {"type": "note", "warn": true, "text": "Tipik hata: **Voglio che io finisca**, **Penso che io venga**. Özne aynı → Voglio finire, Penso di venire."},
+        {"type": "note", "warn": true, "text": "Kesinlikte indicativo: **So che** è difficile, **Vedo che** sei stanco, **Sono sicuro che** viene. **perché** (çünkü) de indicativo alır. Konuşmada “penso che è” duyarsın; doğrusu **penso che sia**."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Penso che il quadro sia pronto.", "tr": "Sanırım pano hazır.", "ph": "PEN-so ke il KUA-dro Sİ-a PRON-to"},
+    {"x": "Voglio che tu venga in cantiere alle sette.", "tr": "Saat yedide şantiyeye gelmeni istiyorum.", "ph": "VO-lyo ke tu VEN-ga in kan-TYE-re AL-le SET-te"},
+    {"x": "Spero che domani non piova.", "tr": "Umarım yarın yağmur yağmaz.", "ph": "SPE-ro ke do-MA-ni non PYO-va"},
+    {"x": "È importante che tutti abbiano il casco.", "tr": "Herkesin bareti olması önemli.", "ph": "E im-por-TAN-te ke TUT-ti AB-bya-no il KAS-ko"},
+    {"x": "Credo che Ahmet sappia la risposta.", "tr": "Sanırım Ahmet cevabı biliyor.", "ph": "KRE-do ke Ahmet SAP-pya la ris-POS-ta"},
+    {"x": "Benché sia stanco, finisco il lavoro.", "tr": "Yorgun olsam da işi bitiriyorum.", "ph": "ben-KE Sİ-a STAN-ko, fi-NİS-ko il la-VO-ro"},
+    {"x": "Mi sembra che il cavo sia troppo corto.", "tr": "Bana kablo fazla kısa gibi geliyor.", "ph": "mi SEM-bra ke il KA-vo Sİ-a TROP-po KOR-to"},
+    {"x": "Il capo vuole che facciamo una pausa.", "tr": "Şef mola vermemizi istiyor.", "ph": "il KA-po VUO-le ke fat-ÇA-mo U-na PAU-sa"},
+    {"x": "Penso di venire domani.", "tr": "Sanırım yarın gelirim.", "ph": "PEN-so di ve-Nİ-re do-MA-ni"},
+    {"x": "So che è difficile, ma è necessario che lo facciate oggi.", "tr": "Zor olduğunu biliyorum, ama bunu bugün yapmanız gerekiyor.", "ph": "SO ke E dif-Fİ-çi-le, ma E ne-çes-SA-ryo ke lo fat-ÇA-te OD-ci"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Congiuntivo: lavorare → che lui ___", "a": "lavori", "o": ["lavora", "lavori", "lavorino"],
+      "why": {"lavora": "Bu şimdiki zaman (indicativo). -are fiilleri congiuntivoda -i alır: lavori.", "lavorino": "lavorino = che loro. lui → lavori."},
+      "ok": "-are → -i: che lui lavori."},
+    {"t": "choice", "q": "Congiuntivo: prendere → che tu ___", "a": "prenda", "o": ["prendi", "prenda", "prende"],
+      "why": {"prendi": "Bu şimdiki zaman. -ere fiilleri congiuntivoda -a alır: prenda.", "prende": "Şimdiki zamanın lui biçimi. Congiuntivo: prenda."},
+      "ok": "-ere → -a: che tu prenda."},
+    {"t": "choice", "q": "Penso che il quadro ___ pronto.", "a": "sia", "o": ["è", "sia", "sei"],
+      "why": {"è": "penso che fikir bildirir, congiuntivo ister: sia. (Konuşmada è duyulur ama standart değil.)", "sei": "sei = tu. Pano → lui: sia."},
+      "ok": "Fikir → congiuntivo: sia."},
+    {"t": "choice", "q": "Voglio che tu ___ alle sette.", "a": "venga", "o": ["vieni", "venga", "venire"],
+      "why": {"vieni": "voglio che + başka özne → congiuntivo: venga.", "venire": "Mastar sadece özne aynıysa: Voglio venire (ben gelmek istiyorum)."},
+      "ok": "vengo → venga."},
+    {"t": "choice", "q": "“Herkesin bareti olması önemli.” È importante che tutti ___ il casco.", "a": "abbiano", "o": ["hanno", "abbiano", "abbia"],
+      "why": {"hanno": "È importante che → congiuntivo: abbiano.", "abbia": "tutti çoğul (loro): abbiano."},
+      "ok": "avere → abbia, abbiano."},
+    {"t": "choice", "q": "“Biliyorum, zor.” So che ___ difficile.", "a": "è", "o": ["è", "sia"],
+      "why": {"sia": "sapere kesinlik bildirir: indicativo. So che è difficile."},
+      "ok": "Bilgi, kesinlik → indicativo."},
+    {"t": "choice", "q": "“Umarım yarın gelirim.”", "a": "Spero di venire domani.", "o": ["Spero che io venga domani.", "Spero di venire domani.", "Spero che vengo domani."],
+      "why": {"Spero che io venga domani.": "Umut eden de gelen de sensin: özne aynı → di + mastar.", "Spero che vengo domani.": "Özne aynı → di + mastar; che'li olsaydı bile venga gerekirdi."},
+      "ok": "Aynı özne → spero di + mastar."},
+    {"t": "type", "q": "Çekimi yaz: fare → che io ___", "a": ["faccia"], "hint": "faccio → faccia.", "ok": "faccia (FAT-ça)."},
+    {"t": "choice", "q": "“Yorgun olsam da çalışıyorum.” Benché ___ stanco, lavoro.", "a": "sia", "o": ["sono", "sia", "sarei"],
+      "why": {"sono": "benché her zaman congiuntivo ister: sia.", "sarei": "Bu condizionale. benché → congiuntivo: sia."},
+      "ok": "benché + congiuntivo."},
+    {"t": "type", "q": "Türkçeden çevir: “Sanırım haklısın.” (pensare; avere ragione = haklı olmak)", "a": ["penso che tu abbia ragione", "io penso che tu abbia ragione"], "hint": "Tekil kişiler aynı biçimde: tu'yu söyle.", "ok": "Penso che tu abbia ragione."},
+    {"t": "order", "q": "Sırala: “Şef mola vermemizi istiyor.”", "words": ["vuole", "che", "una", "il", "facciamo", "capo", "pausa"], "a": "il capo vuole che facciamo una pausa", "ok": "noi: facciamo (şimdiki zamanla aynı)."},
+    {"t": "type", "q": "Türkçeden çevir: “Ekibin bugün bitirmesi gerekiyor.” (è necessario che; la squadra; finire)", "a": ["è necessario che la squadra finisca oggi", "è necessario che oggi la squadra finisca"], "soft": ["e necessario che la squadra finisca oggi", "e necessario che oggi la squadra finisca"], "soft_note": "Doğru sayıldı. essere'nin è'si aksanla yazılır (e = ve): È necessario…", "hint": "finire → -isc-: finisca.", "ok": "È necessario che la squadra finisca oggi."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Şantiye ve iş hakkında fikir ve istek bildirmek: ne düşünüyorsun (penso che…), ekipten ne istiyorsun (voglio che…), neyi umuyorsun (spero che…), ne önemli (è importante che…). Aynı öznede mastara geçmek (penso di…, voglio…).",
+    "vocab": ["penso che", "credo che", "mi sembra che", "voglio che", "spero che", "è importante che", "è necessario che", "benché", "sia", "abbia", "faccia", "vada", "venga", "possa", "debba", "voglia", "sappia", "avere ragione", "piovere", "il casco", "la pausa", "la risposta", "troppo corto"],
+    "structures": ["-are → -i, -ere / -ire → -a: che lui lavori, che tu prenda, che loro finiscano", "düzensizler: sia, abbia, faccia, vada, venga, possa, debba, voglia, sappia", "fikir / istek / umut / genel ifade + che + congiuntivo", "benché + congiuntivo", "aynı özne: penso di venire, voglio finire, è importante arrivare presto", "kesinlik → indicativo: so che è, vedo che sei"],
+    "opener_hint": "Chiara bir toplantıdaymış gibi açıyor: “Türab, secondo te il quadro è pronto per il collaudo?” (collaudo = test/kabul). Türab'ı penso che / credo che ile cevaplamaya zorlasın. Sonra: ekipten yarın ne istiyorsun (voglio che…), hava için ne umuyorsun (spero che non piova), güvenlikte ne önemli (è importante che…). Bir soruda aynı özne gerektirsin (Pensi di venire sabato?) ki mastarı kullansın.",
+    "level_note": "B1: neredeyse tamamen İtalyanca konuş, doğal ama net. Türkçe sadece Türab açıkça takılırsa, tek kısa cümle. Hataları anında değil, 3–4 mesajda bir toplu düzelt (yanlış → doğru, tek satır kural). Sadece congiuntivo presente kullan; congiuntivo passato / imperfetto ve trapassato kullanma. Özellikle yakala: penso che è → sia, voglio che tu vieni → venga, aynı öznede che (voglio che io…) → mastar."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "-ire çekimi", "q": "È importante che voi ___ bene stanotte. (stanotte = bu gece)", "a": "dormiate", "o": ["dormite", "dormiate", "dormano"],
+      "why": {"dormite": "Bu şimdiki zaman. voi congiuntivo -iate ile biter: dormiate.", "dormano": "dormano = che loro. voi → dormiate."}},
+    {"t": "choice", "topic": "düzensiz: andare", "q": "Voglio che loro ___ a casa presto.", "a": "vadano", "o": ["vanno", "vadano", "andino"],
+      "why": {"vanno": "Şimdiki zaman. voglio che → congiuntivo: vadano.", "andino": "andare düzensiz: vado → vada, loro → vadano."}},
+    {"t": "choice", "topic": "kesinlik → indicativo", "q": "“Yorgun olduğunu görüyorum.” Vedo che ___ stanco.", "a": "sei", "o": ["sei", "sia"],
+      "why": {"sia": "vedere (görmek) kesin bir gerçek bildirir: indicativo, sei."}},
+    {"t": "type", "topic": "aynı özne → mastar", "q": "Türkçeden çevir: “Sanırım bugün bitiririm.” (pensare; finire)", "a": ["penso di finire oggi", "oggi penso di finire", "io penso di finire oggi", "credo di finire oggi"]},
+    {"t": "type", "topic": "düzensiz: potere", "q": "Boşluğu doldur: “Spero che tu ___ venire.” (potere)", "a": ["possa"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Credo che Elif ___ la risposta. (sapere)", "a": "sappia", "o": ["sa", "sappia", "sapia"],
+        "why": {"sa": "credo che → congiuntivo: sappia.", "sapia": "Yazım çift p: sappia."},
+        "ok": "sapere → sappia."},
+      {"t": "choice", "q": "Mi sembra che loro ___ lavorare sabato. (dovere)", "a": "debbano", "o": ["devono", "debbano", "debba"],
+        "why": {"devono": "mi sembra che fikir bildirir: congiuntivo, debbano.", "debba": "loro çoğul: debbano."},
+        "ok": "dovere → debba, debbano."},
+      {"t": "choice", "q": "“Bitirmek istiyorum.”", "a": "Voglio finire.", "o": ["Voglio che finisca.", "Voglio di finire.", "Voglio finire."],
+        "why": {"Voglio che finisca.": "Bu “(onun) bitirmesini istiyorum” demek. Özne aynıysa mastar: Voglio finire.", "Voglio di finire.": "volere'den sonra di gelmez: Voglio finire."},
+        "ok": "Aynı özne → voglio + mastar."},
+      {"t": "type", "q": "Çekimi yaz: pagare → che tu ___", "a": ["paghi"], "hint": "Sert g sesi korunur: h ekle.", "ok": "paghi."},
+      {"t": "type", "q": "Türkçeden çevir: “Umarım yağmur yağmaz.” (sperare; piovere)", "a": ["spero che non piova", "io spero che non piova"], "hint": "piovere → piova; olumsuzda non fiilden önce.", "ok": "Spero che non piova."},
+      {"t": "order", "q": "Sırala: “Geç olsa da işi bitiriyoruz.”", "words": ["sia", "il", "benché", "finiamo", "tardi", "lavoro"], "a": "benché sia tardi finiamo il lavoro", "alt": ["finiamo il lavoro benché sia tardi"], "ok": "Benché sia tardi, finiamo il lavoro."}
+    ],
+    "konus_prompt": "Chiara yarınki iş planını soracak. En az 5 cümle kur: 2'si penso che / credo che + congiuntivo (sia, abbia…), 1'i voglio che + başka özne (voglio che la squadra venga…), 1'i benché, 1'i aynı öznede mastar (penso di…, voglio…)."
+  }
+}

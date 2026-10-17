@@ -1,0 +1,154 @@
+{
+  "id": "it30",
+  "lang": "it",
+  "level": "B1",
+  "title": "Imperativo",
+  "lead": "Şantiyede ekibe net talimat verebileceksin: “Şalteri kapat!”, “Kablolara dokunmayın!”, “Bana söyle!”. Müşteriye ve şefe de kibar Lei biçimiyle konuşacaksın: “Mi scusi, venga da questa parte.”",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "tu / noi / voi: çoğu zaten bildiğin biçimler",
+      "blocks": [
+        {"type": "p", "text": "Emir kipi (**imperativo**) Türkçedeki **yap! / yapalım! / yapın!** biçimleridir. İyi haber: noi ve voi emri şimdiki zamanla aynı. -ere / -ire fiillerinde tu emri de şimdiki zamanla aynı. Tek yeni şey: **-are fiilinin tu emri -a ile biter**."},
+        {"type": "table", "head": ["Kim", "chiamare", "prendere", "aprire", "finire"], "x": 1,
+          "rows": [
+            ["tu", "chiama!", "prendi!", "apri!", "finisci!"],
+            ["noi", "chiamiamo!", "prendiamo!", "apriamo!", "finiamo!"],
+            ["voi", "chiamate!", "prendete!", "aprite!", "finite!"]
+          ],
+          "say": ["chiama", "chiamiamo", "chiamate"]},
+        {"type": "examples", "items": [
+          {"x": "Chiama l'ingegnere!", "tr": "Mühendisi ara!", "ph": "KYA-ma lin-ce-NYE-re"},
+          {"x": "Apri il quadro.", "tr": "Panoyu aç.", "ph": "A-pri il KUA-dro"},
+          {"x": "Vieni qui!", "tr": "Buraya gel!", "ph": "VYE-ni KUİ"},
+          {"x": "Finite entro le cinque.", "tr": "Beşe kadar bitirin.", "ph": "fi-Nİ-te EN-tro le ÇİN-kue"}
+        ]},
+        {"type": "note", "warn": true, "text": "Türk hatası: -are fiilinde tu emrini şimdiki zamandan almak: “Chiami!” Bu tu'ya emir değil, Lei emri (Arayın!). Arkadaşa **Chiama!** Bir de: **noi** emri “hadi …alım” demektir: Andiamo! = Hadi gidelim!"}
+      ]
+    },
+    {
+      "title": "Düzensiz tu biçimleri: fa', va', di', da', sta', abbi, sii",
+      "blocks": [
+        {"type": "p", "text": "Beş sık fiilin tu emri kısalır; kesme işareti düşen hecenin izidir. Konuşmada uzun biçim (**fai, vai, dai, stai**) de çok yaygın ve doğru. dire'nin tek biçimi var: **di'**. avere ve essere tamamen düzensiz."},
+        {"type": "table", "head": ["Mastar", "tu emri", "Okunuş", "Örnek", "Türkçesi"], "x": 1,
+          "rows": [
+            ["fare", "fa' / fai", "FA / FAY", "Fa' attenzione!", "Dikkat et!"],
+            ["andare", "va' / vai", "VA / VAY", "Va' a casa!", "Eve git!"],
+            ["dire", "di'", "Dİ", "Di' la verità!", "Doğruyu söyle!"],
+            ["dare", "da' / dai", "DA / DAY", "Da' una mano ad Ahmet!", "Ahmet'e yardım et!"],
+            ["stare", "sta' / stai", "STA / STAY", "Sta' attento!", "Dikkatli ol!"],
+            ["avere", "abbi", "AB-bi", "Abbi pazienza!", "Sabırlı ol!"],
+            ["essere", "sii", "Sİ-i", "Sii puntuale!", "Dakik ol!"]
+          ],
+          "say": ["fai", "vai", "di'", "dai", "stai", "abbi", "sii"]},
+        {"type": "note", "text": "noi / voi biçimleri yine şimdiki zaman: facciamo / fate, andiamo / andate, diciamo / dite, diamo / date, stiamo / state. İki istisna: avere → **abbiate**, essere → **siate** (Siate puntuali! = Dakik olun!)."}
+      ]
+    },
+    {
+      "title": "Olumsuz ve zamirli emir: non toccare, dimmi, fallo",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "Olumsuz tu = non + mastar", "text": "Türkçedeki “-ma” eki yok; mastar kullanılır. “Non tocchi” değil.", "ex": {"x": "Non toccare il quadro!", "tr": "Panoya dokunma!"}},
+          {"title": "Olumsuz noi / voi = non + olumlu biçim", "text": "Burada değişiklik yok.", "ex": {"x": "Non toccate i cavi!", "tr": "Kablolara dokunmayın!"}},
+          {"title": "Zamir emrin sonuna yapışır (tu, noi, voi)", "text": "it21–it22'deki lo, la, mi, ti, gli… ve dönüşlü zamir emre bitişik yazılır; vurgu yerinde kalır.", "ex": {"x": "Chiamami domani. Fermati!", "tr": "Yarın beni ara. Dur!"}},
+          {"title": "Kısa biçimlerde ünsüz ikileşir", "text": "di' + mi → **dimmi**, fa' + lo → **fallo**, da' + mi → **dammi**. Tek istisna gli: **digli** (ona söyle). Zamir hep kısa biçime eklenir: fallo (“failo” değil).", "ex": {"x": "Dimmi tutto.", "tr": "Bana her şeyi anlat."}}
+        ]},
+        {"type": "note", "warn": true, "text": "Türk hatası: zamiri Türkçedeki gibi öne koymak. “Mi chiama” = beni arıyor. Emir için **Chiamami!** Olumsuzda ise iki sıra da doğru: **Non toccarlo!** / **Non lo toccare!** (Ona dokunma!)"}
+      ]
+    },
+    {
+      "title": "Lei biçimi: mi scusi, venga, prenda, mi dica",
+      "blocks": [
+        {"type": "p", "text": "Müşteriye, şefe, yabancıya **Lei** emri verilir. Kural: şimdiki zamanın **io** biçimini al, -o'yu at, **ünlüyü ters çevir**: -are fiili **-i** alır, -ere / -ire fiili **-a** alır."},
+        {"type": "table", "head": ["Mastar", "io (şimdiki)", "Lei emri", "Okunuş", "Türkçesi"], "x": 2,
+          "rows": [
+            ["scusare", "scuso", "(mi) scusi", "mi SKU-zi", "affedersiniz"],
+            ["firmare", "firmo", "firmi", "FİR-mi", "imzalayın"],
+            ["prendere", "prendo", "prenda", "PREN-da", "alın"],
+            ["venire", "vengo", "venga", "VEN-ga", "gelin"],
+            ["fare", "faccio", "faccia", "FAT-ça", "yapın"],
+            ["andare", "vado", "vada", "VA-da", "gidin"],
+            ["dire", "dico", "(mi) dica", "mi Dİ-ka", "söyleyin, buyurun"]
+          ],
+          "say": ["mi scusi", "firmi", "prenda", "venga", "faccia", "vada", "mi dica"]},
+        {"type": "note", "text": "Zamir Lei emrinin **önüne** gelir, yapışmaz: **mi dica**, **lo prenda**. Olumsuz: non + aynı biçim: **Non tocchi!** (Dokunmayın!). Ezber dört: essere → **sia**, avere → **abbia**, stare → **stia**, dare → **dia**."},
+        {"type": "note", "warn": true, "text": "Bu biçimler it32'de congiuntivo olarak yeniden karşına çıkacak; şimdilik “Lei emri” diye öğren. Telefonda **Pronto, mi dica** = Alo, buyurun."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Sta' attento, il quadro è sotto tensione!", "tr": "Dikkatli ol, pano enerjili!", "ph": "STA at-TEN-to, il KUA-dro E SOT-to ten-SYO-ne"},
+    {"x": "Non toccare i cavi!", "tr": "Kablolara dokunma!", "ph": "non tok-KA-re i KA-vi"},
+    {"x": "Spegni l'interruttore generale.", "tr": "Ana şalteri kapat.", "ph": "SPE-nyi lin-ter-rut-TO-re ce-ne-RA-le"},
+    {"x": "Passami il cacciavite, per favore.", "tr": "Tornavidayı bana uzat, lütfen.", "ph": "PAS-sa-mi il kat-ça-Vİ-te, per fa-VO-re"},
+    {"x": "Mettete il casco e i guanti.", "tr": "Bareti ve eldivenleri takın.", "ph": "met-TE-te il KAS-ko e i GUAN-ti"},
+    {"x": "Dimmi quando hai finito.", "tr": "Bitirince bana söyle.", "ph": "DİM-mi KUAN-do AY fi-Nİ-to"},
+    {"x": "Fallo subito, per favore.", "tr": "Hemen yap şunu, lütfen.", "ph": "FAL-lo SU-bi-to, per fa-VO-re"},
+    {"x": "Andiamo, ragazzi, cominciamo!", "tr": "Hadi çocuklar, başlayalım!", "ph": "an-DYA-mo, ra-GAT-tsi, ko-min-ÇA-mo"},
+    {"x": "Mi scusi, signore, venga da questa parte.", "tr": "Affedersiniz beyefendi, bu taraftan gelin.", "ph": "mi SKU-zi, si-NYO-re, VEN-ga da KUES-ta PAR-te"},
+    {"x": "Pronto? Sì, mi dica.", "tr": "Alo? Evet, buyurun.", "ph": "PRON-to? Sİ, mi Dİ-ka"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Ahmet'e: “Kabloyu kontrol et!” ___ il cavo!", "a": "Controlla", "o": ["Controlla", "Controlli", "Controllare"],
+      "why": {"Controlli": "Controlli Lei emridir (kontrol edin). Ahmet'e tu: controlla.", "Controllare": "Mastar sadece olumsuz tu emrinde: non controllare."},
+      "ok": "-are + tu → -a."},
+    {"t": "choice", "q": "Bütün ekibe (voi): “Bareti takın!” ___ il casco!", "a": "Mettete", "o": ["Metti", "Mettete", "Mettiamo"],
+      "why": {"Metti": "metti tek kişiye (tu): tak.", "Mettiamo": "mettiamo = takalım (noi)."},
+      "ok": "voi emri = şimdiki zaman: mettete."},
+    {"t": "choice", "q": "Bir arkadaşına: “Dikkatli ol!”", "a": "Sta' attento!", "o": ["Sta' attento!", "Stia attento!", "Essere attento!"],
+      "why": {"Stia attento!": "stia Lei emridir: dikkatli olun.", "Essere attento!": "Mastar emir olmaz; ayrıca bu kalıp stare ile kurulur: stare attento."},
+      "ok": "stare → sta' / stai."},
+    {"t": "choice", "q": "“Panoya dokunma!”", "a": "Non toccare il quadro!", "o": ["Non tocca il quadro!", "Non toccare il quadro!", "Non tocchi il quadro!"],
+      "why": {"Non tocca il quadro!": "Non tocca = (o) dokunmuyor. Olumsuz tu emri: non + mastar.", "Non tocchi il quadro!": "Non tocchi Lei emridir: dokunmayın. Arkadaşa non toccare."},
+      "ok": "Olumsuz tu = non + mastar."},
+    {"t": "choice", "q": "di' + mi = ___ (bana söyle)", "a": "dimmi", "o": ["dimi", "dimmi", "mi di'"],
+      "why": {"dimi": "Kısa emirlerde zamirin ünsüzü ikileşir: dimmi.", "mi di'": "tu emrinde zamir öne gelmez, sona yapışır."},
+      "ok": "di' + mi → dimmi."},
+    {"t": "choice", "q": "Telefonu açtın, arayan bir müşteri: “Pronto, ___.”", "a": "mi dica", "o": ["dimmi", "mi dica", "mi dici"],
+      "why": {"dimmi": "dimmi tu biçimidir; müşteriye Lei: mi dica.", "mi dici": "mi dici şimdiki zaman: bana söylüyorsun."},
+      "ok": "Lei emrinde zamir öne gelir: mi dica."},
+    {"t": "type", "q": "Türkçeden çevir: “Bana tornavidayı ver.” (tu; dare)", "a": ["dammi il cacciavite", "dammi il cacciavite per favore", "per favore dammi il cacciavite"], "hint": "da' + mi → çift m.", "ok": "Dammi il cacciavite."},
+    {"t": "type", "q": "Türkçeden çevir: “Bunu hemen yap!” (tu; bunu = lo)", "a": ["fallo subito", "fallo subito per favore"], "hint": "fa' + lo → çift l.", "ok": "Fallo subito!"},
+    {"t": "type", "q": "Lei emri: venire → ___ (gelin)", "a": ["venga"], "hint": "io vengo → -o'yu at → -ere/-ire fiili -a alır.", "ok": "vengo → venga."},
+    {"t": "order", "q": "Sırala: “Kablolara dokunmayın!” (ekibe)", "words": ["i", "toccate", "non", "cavi"], "a": "non toccate i cavi", "ok": "Olumsuz voi = non + olumlu biçim."},
+    {"t": "type", "q": "Türkçeden çevir: “Dakik ol!” (bir arkadaşına; dakik = puntuale)", "a": ["sii puntuale"], "hint": "essere'nin tu emri tamamen düzensiz.", "ok": "Sii puntuale!"},
+    {"t": "order", "q": "Sırala: “Affedersiniz, burayı imzalayın lütfen.”", "words": ["scusi", "firmi", "mi", "qui", "per", "favore"], "a": "mi scusi firmi qui per favore", "alt": ["mi scusi per favore firmi qui"], "ok": "Mi scusi, firmi qui, per favore."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Emir kipiyle talimat vermek: önce Türab ekibine (tu ve voi) iş güvenliği ve iş talimatları verir (dokunma, kapat, tak, söyle), sonra şantiyeye gelen bir müşteriyi Lei biçimiyle karşılar ve yönlendirir (mi scusi, venga, prenda, firmi, mi dica).",
+    "vocab": ["sta' attento", "fa' attenzione", "non toccare", "spegni", "accendi", "chiudi", "apri", "metti il casco", "i guanti", "passami", "dammi", "dimmi", "fallo", "fermati", "aspetta", "vieni qui", "andiamo", "mi scusi", "venga", "prenda", "firmi", "mi dica", "sotto tensione", "l'interruttore"],
+    "structures": ["tu: -are → -a (chiama), -ere/-ire → şimdiki zaman (prendi, apri, finisci)", "noi / voi = şimdiki zaman (andiamo, mettete); avere → abbiate, essere → siate", "düzensiz tu: fa'/fai, va'/vai, di', da'/dai, sta'/stai, abbi, sii", "olumsuz tu = non + mastar (non toccare)", "zamir sona yapışır: chiamami, prendilo; kısa biçimde ikileşir: dimmi, fallo, dammi (ama digli)", "Lei: io biçimi -o → -are fiili -i, -ere/-ire fiili -a (scusi, prenda, venga); zamir önde (mi dica)"],
+    "opener_hint": "Chiara yeni başlamış, biraz dalgın bir İtalyan çırak: “Ciao Türab, cosa faccio adesso?” Türab ona tu ile talimat versin; Chiara arada riskli bir şey yapmaya kalksın (“Tocco questo cavo?”) ki Türab olumsuz emir kullansın. Sonra Chiara rol değiştirip müşteri olsun: “Buongiorno, cerco l'ingegnere…” ve Türab Lei biçimiyle karşılasın.",
+    "level_note": "B1: neredeyse tamamen İtalyanca, doğal ve kısa cümleler; Türkçe yalnızca Türab açıkça takılırsa tek kelime. Hataları anında değil, 3–4 mesajda bir toplu düzelt (“Piccole correzioni: …”). Emir kipini ve condizionale'yi serbestçe kullan; birleşik zamirleri (dammelo, glielo) kullanma; Lei emri dışında congiuntivo kurma. Özellikle düzelt: olumsuz tu'da non + mastar, -are fiilinde tu emri -a, tu'ya Lei biçimi (ya da tersi) karışıklığı, dimmi/fallo'daki çift ünsüz."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "-are fiilinde tu emri", "q": "Bir arkadaşına: “Şefi ara!”", "a": "Chiama il capo!", "o": ["Chiama il capo!", "Chiami il capo!", "Chiamare il capo!"],
+      "why": {"Chiami il capo!": "chiami Lei emridir (arayın). tu'ya -are fiili -a alır: chiama.", "Chiamare il capo!": "Mastar sadece olumsuz tu emrinde kullanılır."}},
+    {"t": "choice", "topic": "düzensiz tu biçimleri", "q": "Bir arkadaşına: “Eve git!” ___ a casa!", "a": "Va'", "o": ["Va'", "Vada", "Andi"],
+      "why": {"Vada": "vada Lei emridir: gidin.", "Andi": "Böyle bir biçim yok; andare düzensiz: va' / vai."}},
+    {"t": "choice", "topic": "olumsuz tu emri", "q": "“Merdivene çıkma!” (salire = çıkmak) ___ sulla scala!", "a": "Non salire", "o": ["Non sali", "Non salire", "Non sale"],
+      "why": {"Non sali": "Non sali = çıkmıyorsun. Olumsuz tu emri: non + mastar.", "Non sale": "Non sale = (o) çıkmıyor."}},
+    {"t": "choice", "topic": "zamirli emir", "q": "Bir arkadaşına: “Yarın beni ara.”", "a": "Chiamami domani.", "o": ["Mi chiama domani.", "Chiamami domani.", "Chiamimi domani."],
+      "why": {"Mi chiama domani.": "Bu “yarın beni arıyor” demek. tu emrinde zamir sona yapışır: chiamami.", "Chiamimi domani.": "-are fiilinin tu emri -a ile biter: chiama + mi."}},
+    {"t": "type", "topic": "Lei emri", "q": "Bir müşteriye: “Bareti alın, lütfen.” (prendere)", "a": ["prenda il casco per favore", "prenda il casco", "per favore prenda il casco"], "hint": "io prendo → -o'yu at → -a."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Ekibe: “Hadi başlayalım!” (cominciare)", "a": "Cominciamo!", "o": ["Cominciamo!", "Cominciate!", "Comincia!"],
+        "why": {"Cominciate!": "cominciate = başlayın (voi); sen dahil değilsin.", "Comincia!": "comincia = başla (tu), tek kişiye."},
+        "ok": "noi emri = hadi …alım."},
+      {"t": "choice", "q": "Bir arkadaşına: “Ahmet'e yardım et!”", "a": "Da' una mano ad Ahmet!", "o": ["Da' una mano ad Ahmet!", "Dia una mano ad Ahmet!", "Dare una mano ad Ahmet!"],
+        "why": {"Dia una mano ad Ahmet!": "dia Lei emridir: yardım edin.", "Dare una mano ad Ahmet!": "Mastar sadece olumsuz tu emrinde: non dare."},
+        "ok": "dare → da' / dai. dare una mano = yardım etmek."},
+      {"t": "choice", "q": "Bir müşteriye: “Merak etmeyin.” Non si ___.", "a": "preoccupi", "o": ["preoccupa", "preoccupi", "preoccupare"],
+        "why": {"preoccupa": "-are fiilinin Lei emri -i ile biter: preoccupi.", "preoccupare": "non + mastar sadece tu içindir; Lei'de non + Lei biçimi."},
+        "ok": "Non si preoccupi = Merak etmeyin."},
+      {"t": "type", "q": "Türkçeden çevir: “Ona söyle.” (ona = bir erkeğe, gli)", "a": ["digli"], "hint": "di' + gli; gli ikileşmez.", "ok": "Digli."},
+      {"t": "type", "q": "Türkçeden çevir: “Sabırlı ol!” (bir arkadaşına; pazienza)", "a": ["abbi pazienza"], "hint": "avere'nin tu emri düzensiz.", "ok": "Abbi pazienza!"},
+      {"t": "order", "q": "Sırala: “Bitirince bana söyle.”", "words": ["quando", "finito", "dimmi", "hai"], "a": "dimmi quando hai finito", "alt": ["quando hai finito dimmi"], "ok": "Dimmi quando hai finito."}
+    ],
+    "konus_prompt": "Chiara yeni çırak. Ona işe başlamadan önce 5 talimat ver: en az 2 olumlu tu emri (biri düzensiz: sta', fa', da'…), 1 olumsuz (non + mastar), 1 zamirli (dimmi, passami…) ve ekibe 1 voi emri. Sonra gelen müşteriye Lei biçimiyle 2 cümle kur (mi scusi, venga, firmi…)."
+  }
+}

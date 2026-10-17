@@ -1,0 +1,158 @@
+{
+  "id": "it27",
+  "lang": "it",
+  "level": "A2",
+  "title": "Ci ve ne",
+  "lead": "“Oraya yarın gidiyorum”, “İki saat sürer”, “Ondan üç tane aldım” cümlelerini tek kelimelik ci ve ne ile kısa ve doğal kurabileceksin. Yeri ci'yle, miktarı ne'yle tekrar etmeden söylemeyi öğreneceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "ci = oraya / orada",
+      "blocks": [
+        {"type": "p", "text": "**ci**, daha önce adı geçen **yerin** yerine geçer: a Roma, in cantiere, a casa → **ci**. Tıpkı lo/la gibi (it21) çekimli fiilin **önüne** gelir. Türkçede “Yarın gidiyorum” deyip yeri düşürürsün; İtalyanca yeri düşürmez, ci ile söyler."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Yarın", "s": "zaman"}, {"t": "(oraya)", "s": "çoğu zaman söylenmez", "hl": true}, {"t": "gidiyorum", "s": "fiil"}]},
+          {"label": "İtalyanca", "items": [{"t": "Ci", "s": "oraya", "hl": true}, {"t": "vado", "s": "gidiyorum"}, {"t": "domani", "s": "yarın"}]}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "Vai in cantiere oggi? Sì, ci vado alle sette.", "tr": "Bugün şantiyeye gidiyor musun? Evet, oraya yedide gidiyorum.", "ph": "VAY in kan-TYE-re OD-ci? Sİ, çi VA-do AL-le SET-te"},
+          {"x": "A Bodrum? Ci ho lavorato un anno e mezzo.", "tr": "Bodrum mu? Orada bir buçuk yıl çalıştım.", "ph": "a Bodrum? çi O la-vo-RA-to UN AN-no e MED-dzo"}
+        ]},
+        {"type": "note", "text": "Bunu zaten biliyorsun: **c'è** = ci + è, kelimesi kelimesine “orada var” (it13). Modal fiille iki sıra da doğru: **Ci devo andare** = **Devo andarci** (oraya gitmem lazım). Hazır kalıp: **Ci penso io** = Ben hallederim (o işi ben düşünürüm)."},
+        {"type": "note", "warn": true, "text": "**Vado ci** yanlış. Sıra hep: (**non**) + **ci** + fiil → Non ci vado. Non ci sono mai stato."}
+      ]
+    },
+    {
+      "title": "ci vuole / ci vogliono = gerekir, sürer",
+      "blocks": [
+        {"type": "p", "text": "**ci vuole** “gerekir, lazım, sürer” demek. Türkçede “İki saat sürer” dersin, fiil hep tekildir. İtalyancada gereken şey **öznedir**: tekilse **ci vuole**, çoğulsa **ci vogliono**."},
+        {"type": "table", "head": ["Ne gerekiyor?", "İtalyanca", "Okunuş", "Türkçesi"], "x": 1,
+          "rows": [
+            ["tekil", "Ci vuole un'ora.", "çi VUO-le u-NO-ra", "Bir saat sürer."],
+            ["çoğul", "Ci vogliono due ore.", "çi VO-lyo-no DU-e O-re", "İki saat sürer."],
+            ["tekil", "Ci vuole pazienza.", "çi VUO-le pa-TSYEN-tsa", "Sabır lazım."],
+            ["çoğul", "Ci vogliono venti metri di cavo.", "çi VO-lyo-no VEN-ti ME-tri di KA-vo", "Yirmi metre kablo lazım."]
+          ],
+          "say": ["Ci vuole un'ora.", "Ci vogliono due ore.", "Ci vuole pazienza.", "Ci vogliono venti metri di cavo."]},
+        {"type": "examples", "items": [
+          {"x": "Quanto ci vuole da Kırıkkale ad Ankara?", "tr": "Kırıkkale'den Ankara'ya ne kadar sürer?", "ph": "KUAN-to çi VUO-le da Kırıkkale ad Ankara"}
+        ]},
+        {"type": "note", "warn": true, "text": "**Ci vuole due ore** yanlış: “iki saat” çoğul, **ci vogliono**. Geçmişte essere alır ve uyar: **C'è voluta un'ora**, **Ci sono voluti due giorni**. Karıştırma: **vuole** tek başına “istiyor”, **ci vuole** “gerekiyor”."}
+      ]
+    },
+    {
+      "title": "ne = ondan, ondan birkaç tane",
+      "blocks": [
+        {"type": "p", "text": "**ne**, sayı ya da miktarla konuşurken ismin yerine geçer. Türkçede “Kaç işçin var? Altı.” dersin, isim düşer. İtalyanca ismi düşürünce yerine **ne** koymak zorundadır: **Ne ho sei**. Yeri yine fiilin önü."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Altı", "s": "sayı"}, {"t": "(tane)", "s": "isim düştü"}, {"t": "var", "s": "fiil"}]},
+          {"label": "İtalyanca", "items": [{"t": "Ne", "s": "ondan", "hl": true}, {"t": "ho", "s": "var (bende)"}, {"t": "sei", "s": "altı", "hl": true}]}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "Quanti operai hai oggi? Ne ho sei.", "tr": "Bugün kaç işçin var? Altı tane.", "ph": "KUAN-ti o-pe-RA-i AY OD-ci? ne O SEY"},
+          {"x": "Il caffè è pronto. Ne vuoi un po'?", "tr": "Kahve hazır. Biraz ister misin?", "ph": "il kaf-FE E PRON-to. ne VUOY UN PO"},
+          {"x": "Fascette? Non ne ho più.", "tr": "Kablo bağı mı? Hiç kalmadı.", "ph": "fa-ŞET-te? non ne O PYU"}
+        ]},
+        {"type": "note", "text": "İki hazır kalıp: **Che ne pensi?** = Bu konuda ne düşünüyorsun? **Non ne ho idea** = Hiç fikrim yok. Yeni kelime: fascetta = kablo bağı, non… più = artık… yok."},
+        {"type": "note", "warn": true, "text": "Tipik Türk hatası: **Ho sei** demek. Sayı tek başına kalırsa İtalyan kulağına eksik gelir: **Ne ho sei**."}
+      ]
+    },
+    {
+      "title": "ne + passato prossimo: ortaç isme uyar",
+      "blocks": [
+        {"type": "p", "text": "it21'de gördün: **L'ho comprato**, ortaç lo/la/li/le'ye uyar. **ne** ile de aynı: ortaç, ne'nin yerini tuttuğu isme cinsiyet ve sayıda uyar."},
+        {"type": "table", "head": ["Soru", "Cevap", "Okunuş", "Neden"], "x": 1,
+          "rows": [
+            ["Quanti cavi hai comprato?", "Ne ho comprati tre.", "ne O kom-PRA-ti TRE", "cavi: erkek çoğul → -i"],
+            ["Quante lampade hai montato?", "Ne ho montate otto.", "ne O mon-TA-te OT-to", "lampade: kadın çoğul → -e"],
+            ["Quanti caffè hai preso?", "Ne ho preso uno.", "ne O PRE-so U-no", "un caffè: erkek tekil → -o"]
+          ],
+          "say": ["Ne ho comprati tre.", "Ne ho montate otto.", "Ne ho preso uno."]},
+        {"type": "rules", "items": [
+          {"title": "Belirli şeyin hepsi: lo / la / li / le", "text": "Konuşulan kabloların tamamı.", "ex": {"x": "Hai comprato i cavi? Sì, li ho comprati.", "tr": "Kabloları aldın mı? Evet, aldım."}},
+          {"title": "Miktar, bir kısmı: ne", "text": "Kaç tane, ne kadar.", "ex": {"x": "Ne ho comprati tre.", "tr": "Ondan üç tane aldım."}}
+        ]},
+        {"type": "note", "warn": true, "text": "Soru cümlesinde uyum yok: **Quanti cavi hai comprato?** Uyum, cevapta ne fiilin önüne gelince başlar: **Ne ho comprati tre.** Konuşmada uyumsuz biçim de duyulur; standart ve güvenli olan uyumlu biçim."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Vai in cantiere domani? Sì, ci vado presto.", "tr": "Yarın şantiyeye gidiyor musun? Evet, oraya erken gidiyorum.", "ph": "VAY in kan-TYE-re do-MA-ni? Sİ, çi VA-do PRES-to"},
+    {"x": "Non ci sono mai stato.", "tr": "Orada hiç bulunmadım.", "ph": "non çi SO-no MAY STA-to"},
+    {"x": "Quanto ci vuole per finire il quadro?", "tr": "Panoyu bitirmek ne kadar sürer?", "ph": "KUAN-to çi VUO-le per fi-Nİ-re il KUA-dro"},
+    {"x": "Ci vogliono due giorni, forse tre.", "tr": "İki gün sürer, belki üç.", "ph": "çi VO-lyo-no DU-e COR-ni, FOR-se TRE"},
+    {"x": "Quanti operai hai oggi? Ne ho otto.", "tr": "Bugün kaç işçin var? Sekiz tane.", "ph": "KUAN-ti o-pe-RA-i AY OD-ci? ne O OT-to"},
+    {"x": "Ne ho comprati tre ieri.", "tr": "Dün ondan üç tane aldım.", "ph": "ne O kom-PRA-ti TRE YE-ri"},
+    {"x": "Fascette? Non ne ho più.", "tr": "Kablo bağı mı? Hiç kalmadı.", "ph": "fa-ŞET-te? non ne O PYU"},
+    {"x": "C'è voluta un'ora per arrivare.", "tr": "Varmak bir saat sürdü.", "ph": "çe vo-LU-ta u-NO-ra per ar-ri-VA-re"},
+    {"x": "Che ne pensi?", "tr": "Bu konuda ne düşünüyorsun?", "ph": "ke ne PEN-si"},
+    {"x": "Il problema del quadro? Ci penso io.", "tr": "Panonun sorunu mu? Ben hallederim.", "ph": "il pro-BLE-ma del KUA-dro? çi PEN-so İ-o"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "“Vai a Bodrum?” “Sì, ___ vado domani.”", "a": "ci", "o": ["ci", "ne", "lo"],
+      "why": {"ne": "ne miktar içindir. a Bodrum bir yer: ci.", "lo": "lo bir nesnenin (onu) yerine geçer. Yer için ci."},
+      "ok": "Yer → ci: Ci vado domani."},
+    {"t": "choice", "q": "“Quanti operai hai?” “___ ho cinque.”", "a": "Ne", "o": ["Ci", "Ne", "Li"],
+      "why": {"Ci": "ci yer içindir. Sayıyla ismin yerine ne gelir.", "Li": "li belirli şeylerin tamamıdır. Burada miktar soruluyor: ne."},
+      "ok": "Sayı + isim düştü → ne."},
+    {"t": "choice", "q": "Ci ___ due ore per arrivare.", "a": "vogliono", "o": ["vuole", "vogliono", "vuoi"],
+      "why": {"vuole": "due ore çoğul; fiil gereken şeye uyar: ci vogliono.", "vuoi": "vuoi = sen istiyorsun. ci vuole/vogliono kalıbı 3. kişidir."},
+      "ok": "Çoğul → ci vogliono."},
+    {"t": "choice", "q": "Ci ___ un'ora.", "a": "vuole", "o": ["vuole", "vogliono"],
+      "why": {"vogliono": "un'ora tekil: ci vuole."},
+      "ok": "Tekil → ci vuole."},
+    {"t": "choice", "q": "“Oraya gitmiyorum.”", "a": "Non ci vado.", "o": ["Ci non vado.", "Non ci vado.", "Non vado ci."],
+      "why": {"Ci non vado.": "non her şeyin başına gelir: non + ci + fiil.", "Non vado ci.": "ci çekimli fiilin önüne gelir, arkasına değil."},
+      "ok": "non + ci + fiil."},
+    {"t": "choice", "q": "“Quante lampade hai montato?” “Ne ho ___ otto.”", "a": "montate", "o": ["montato", "montate", "montati"],
+      "why": {"montato": "ne ile ortaç isme uyar; lampade kadın çoğul: montate.", "montati": "-i erkek çoğul içindir. lampade kadın: montate."},
+      "ok": "lampade → -e."},
+    {"t": "choice", "q": "“Kabloları aldın mı?” “Evet, (hepsini) aldım.”", "a": "Sì, li ho comprati.", "o": ["Sì, ne ho comprati.", "Sì, li ho comprati.", "Sì, ci ho comprati."],
+      "why": {"Sì, ne ho comprati.": "ne miktar ister (ne ho comprati tre). Belirli kabloların hepsi: li.", "Sì, ci ho comprati.": "ci yer içindir; kablolar nesne: li."},
+      "ok": "Hepsi → li. Bir kısmı / sayı → ne."},
+    {"t": "type", "q": "Türkçeden çevir: “Orada hiç bulunmadım.” (Türab)", "a": ["non ci sono mai stato", "io non ci sono mai stato"], "hint": "non + ci + sono + mai + stato.", "ok": "Non ci sono mai stato."},
+    {"t": "type", "q": "Türkçeden çevir: “Ondan iki tane istiyorum.”", "a": ["ne voglio due", "io ne voglio due", "ne vorrei due", "io ne vorrei due"], "hint": "ne + voglio + sayı.", "ok": "Ne voglio due."},
+    {"t": "type", "q": "Türkçeden çevir: “Yirmi metre kablo lazım.”", "a": ["ci vogliono venti metri di cavo", "ci vogliono 20 metri di cavo"], "hint": "venti metri çoğul.", "ok": "Ci vogliono venti metri di cavo."},
+    {"t": "order", "q": "Sırala: “Ondan üç tane aldım.”", "words": ["tre", "comprati", "ne", "ho"], "a": "ne ho comprati tre", "ok": "Ne ho comprati tre."},
+    {"t": "order", "q": "Sırala: “Panoyu bitirmek ne kadar sürer?”", "words": ["il", "ci", "finire", "quadro", "quanto", "per", "vuole"], "a": "quanto ci vuole per finire il quadro", "ok": "Quanto ci vuole per finire il quadro?"}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Şantiye ve yolculuk hakkında konuşurken yeri ci ile, miktarı ne ile tekrar etmeden söylemek; ci vuole / ci vogliono ile süre ve malzeme ihtiyacı belirtmek; ne ile geçmişte ortacı isme uydurmak.",
+    "vocab": ["ci vado", "ci sono stato", "ci ho lavorato", "ci vuole", "ci vogliono", "c'è voluta", "ne ho", "ne voglio un po'", "non ne ho più", "che ne pensi?", "non ne ho idea", "ci penso io", "fascette", "metri di cavo", "pazienza", "forse", "quanto ci vuole?"],
+    "structures": ["ci = oraya/orada, çekimli fiilin önünde: ci vado, non ci vado", "ci + passato: ci sono stato, ci ho lavorato", "ci vuole + tekil / ci vogliono + çoğul", "ne + sayı/miktar: ne ho sei, ne voglio un po'", "ne + passato: ortaç isme uyar (ne ho comprati tre, ne ho montate otto)"],
+    "opener_hint": "Chiara Türab'ın haftasını soruyor: “Ciao Türab! Domani vai in cantiere? E quanti operai hai questa settimana?” Sonra hiç Roma'da bulunup bulunmadığını, Kırıkkale'den Ankara'ya ne kadar sürdüğünü, bir panoyu bitirmek için kaç gün ve kaç metre kablo gerektiğini, dün kaç lamba taktığını sorsun. Her cevapta ci ya da ne'yi zorlayacak sorular seçsin.",
+    "level_note": "A2: her mesajda 2–3 kısa İtalyanca cümle; Türkçeyi sadece Türab takılırsa ya da yeni bir kelimede parantez içinde ver. Şimdiki zaman, passato prossimo, imperfetto, futuro ve lo/la/li/le kullanabilirsin; ce ne, ce l'ho gibi birleşik zamirleri ve emir kipini kullanma. Türab ci/ne'yi atlarsa (Ho sei, Vado domani) ya da ci vuole/ci vogliono uyumunu ya da ne ile ortaç uyumunu kaçırırsa doğru cümleyi bir kez tekrar et ve kuralı tek cümleyle söyle."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "ci = orada (passato)", "q": "“Sei mai stato a Milano?” “Sì, ___ sono stato due volte.”", "a": "ci", "o": ["ne", "ci", "lo"],
+      "why": {"ne": "ne miktarın yerine geçer. a Milano bir yer: ci.", "lo": "lo bir nesnenin yerine geçer. Yer için ci: ci sono stato."}},
+    {"t": "choice", "topic": "ci vuole / ci vogliono", "q": "Per questo lavoro ci ___ tre operai.", "a": "vogliono", "o": ["vuole", "vogliono"],
+      "why": {"vuole": "tre operai çoğul: ci vogliono."}},
+    {"t": "choice", "topic": "ne + sayı", "q": "“Kaç kardeşin var?” “İki.”", "a": "Ne ho due.", "o": ["Ho due.", "Ne ho due.", "Li ho due."],
+      "why": {"Ho due.": "Sayı tek başına kalırsa ne şart: Ne ho due.", "Li ho due.": "li belirli şeylerin hepsi içindir; sayıyla ne gelir."}},
+    {"t": "choice", "topic": "ne + ortaç uyumu", "q": "“Quanti cavi hai tagliato?” “Ne ho ___ quattro.”", "a": "tagliati", "o": ["tagliato", "tagliati", "tagliate"],
+      "why": {"tagliato": "ne ile ortaç isme uyar; cavi erkek çoğul: tagliati.", "tagliate": "-e kadın çoğul içindir; cavi erkek: tagliati."}},
+    {"t": "type", "topic": "quanto ci vuole?", "q": "Türkçeden çevir: “Ne kadar sürer?”", "a": ["quanto ci vuole"], "hint": "quanto + ci vuole.", "ok": "Quanto ci vuole?"}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "“Vai alla riunione?” “No, non ___ vado.”", "a": "ci", "o": ["ci", "ne", "la"],
+        "why": {"ne": "ne miktar içindir. alla riunione bir yer/etkinlik: ci.", "la": "la bir nesnenin yerine geçer. “Toplantıya gitmek” yer gibi düşünülür: ci."},
+        "ok": "Non ci vado. riunione = toplantı."},
+      {"t": "choice", "q": "Ieri per arrivare ci ___ tre ore.", "a": "sono volute", "o": ["è voluta", "sono volute", "ha voluto"],
+        "why": {"è voluta": "tre ore çoğul: ci sono volute.", "ha voluto": "ci vuole geçmişte essere alır: ci sono volute."},
+        "ok": "ore kadın çoğul → sono volute."},
+      {"t": "choice", "q": "“Il caffè è pronto.” “Grazie, ___ prendo un po'.”", "a": "ne", "o": ["ne", "lo", "ci"],
+        "why": {"lo": "lo kahvenin tamamı olurdu. un po' (biraz) miktar: ne.", "ci": "ci yer içindir; kahve yer değil."},
+        "ok": "Biraz → ne."},
+      {"t": "choice", "q": "“Quante prese hai montato?” “___”", "a": "Ne ho montate dieci.", "o": ["Ne ho montato dieci.", "Ne ho montate dieci.", "Le ho montate dieci."],
+        "why": {"Ne ho montato dieci.": "ne ile ortaç isme uyar; prese kadın çoğul: montate.", "Le ho montate dieci.": "Sayı varsa le değil ne: Ne ho montate dieci."},
+        "ok": "prese (prizler) → montate."},
+      {"t": "type", "q": "Türkçeden çevir: “Oraya yarın gidiyorum.”", "a": ["ci vado domani", "domani ci vado", "io ci vado domani"], "hint": "ci fiilin önünde.", "ok": "Ci vado domani."},
+      {"t": "order", "q": "Sırala: “(Kablo bağı mı?) Hiç kalmadı.”", "words": ["più", "ho", "non", "ne"], "a": "non ne ho più", "ok": "Fascette? Non ne ho più."}
+    ],
+    "konus_prompt": "Chiara yarın ve dün hakkında soracak: nereye gidiyorsun, kaç işçin var, bir işi bitirmek ne kadar sürer, dün kaç tane ne aldın/taktın. En az 5 cümle kur: en az 2'si ci (ci vado, ci sono stato), biri ci vuole/ci vogliono, en az 2'si ne (biri passato ile uyumlu: ne ho comprati…)."
+  }
+}

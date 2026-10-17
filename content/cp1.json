@@ -1,0 +1,295 @@
+{
+ "id": "cp1",
+ "kind": "exam",
+ "lang": "it",
+ "level": "A1",
+ "title": "Checkpoint 1 · A1 başlangıç testi",
+ "minutes": 20,
+ "lead": "Okunuş, selamlaşma, isim ve artikeller, essere/avere, sıfatlar ve sayılar (it01–it08). 20 soru; geçmek için en az 14 doğru.",
+ "scope": [
+  "it01",
+  "it02",
+  "it03",
+  "it04",
+  "it05",
+  "it06",
+  "it07",
+  "it08"
+ ],
+ "items": [
+  {
+   "t": "choice",
+   "topic": "c / ch okunuşu",
+   "from": "it01",
+   "q": "“schema” (şema) nasıl okunur?",
+   "a": "SKE-ma",
+   "o": [
+    "ŞE-ma",
+    "SKE-ma",
+    "ske-MA"
+   ],
+   "why": {
+    "ŞE-ma": "sch sert kalır: h araya girince sc yumuşamaz, sk okunur.",
+    "ske-MA": "Vurgu son hecede olsaydı aksan yazılırdı. Çoğu kelimede vurgu sondan ikinci hecede: SKE-ma."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "ch = k (çoğul)",
+   "from": "it03",
+   "q": "Okunuşu “KAS-ki” olan kelimeyi yaz (baretler).",
+   "a": [
+    "caschi"
+   ]
+  },
+  {
+   "t": "type",
+   "topic": "Lei (kibar)",
+   "from": "it02",
+   "q": "Kibarca sor: “Ya siz?”",
+   "a": [
+    "e lei"
+   ]
+  },
+  {
+   "t": "order",
+   "topic": "kibar selam ve ad sorma",
+   "from": "it02",
+   "q": "Sırala: “İyi akşamlar, adınız ne?”",
+   "words": [
+    "come",
+    "buonasera",
+    "si",
+    "chiama"
+   ],
+   "a": "buonasera come si chiama"
+  },
+  {
+   "t": "choice",
+   "topic": "-a → -e çoğulu",
+   "from": "it03",
+   "q": "Çoğulu: scala (merdiven) → ?",
+   "a": "scale",
+   "o": [
+    "scali",
+    "scale",
+    "scala"
+   ],
+   "why": {
+    "scali": "-a ile biten dişil isim -i değil -e alır: scale.",
+    "scala": "scala tekil. Çoğulda son harf değişir: -a → -e."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "cinsiyet: istisnalar",
+   "from": "it03",
+   "q": "Hangisi dişil?",
+   "a": "mano",
+   "o": [
+    "mano",
+    "problema",
+    "motore"
+   ],
+   "why": {
+    "problema": "problema -a ile biter ama erildir (il problema).",
+    "motore": "-ore ile bitenler çoğunlukla eril: il motore."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "gli (çoğul)",
+   "from": "it04",
+   "q": "___ zaini (sırt çantaları)",
+   "a": "gli",
+   "o": [
+    "i",
+    "gli",
+    "le"
+   ],
+   "why": {
+    "i": "z ile başlayan eril isim tekilde lo, çoğulda gli alır: gli zaini.",
+    "le": "le dişil çoğul içindir; zaino eril."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "le (dişil çoğul)",
+   "from": "it04",
+   "q": "Belirli artikelle çoğul yap: “l'uscita”",
+   "a": [
+    "le uscite"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "voi siete",
+   "from": "it05",
+   "q": "voi ___ di Kırıkkale?",
+   "a": "siete",
+   "o": [
+    "siamo",
+    "siete",
+    "sono"
+   ],
+   "why": {
+    "siamo": "siamo “biz”in biçimi (noi siamo).",
+    "sono": "sono io ya da loro içindir. voi ile siete gelir."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "non ile olumsuz",
+   "from": "it05",
+   "q": "Türkçeden çevir: “Hazır değiliz.” (erkek ya da karışık ekip)",
+   "a": [
+    "non siamo pronti",
+    "noi non siamo pronti"
+   ]
+  },
+  {
+   "t": "order",
+   "topic": "essere + non",
+   "from": "it05",
+   "q": "Sırala: “Mühendis Kırıkkaleli değil.”",
+   "words": [
+    "non",
+    "l'ingegnere",
+    "di",
+    "è",
+    "Kırıkkale"
+   ],
+   "a": "l'ingegnere non è di Kırıkkale"
+  },
+  {
+   "t": "choice",
+   "topic": "avere kalıpları",
+   "from": "it06",
+   "q": "“Susadık.”",
+   "a": "Abbiamo sete.",
+   "o": [
+    "Siamo sete.",
+    "Abbiamo sete.",
+    "Abbiamo seti."
+   ],
+   "why": {
+    "Siamo sete.": "Bedensel durumlar essere ile değil avere ile söylenir: abbiamo sete.",
+    "Abbiamo seti.": "Bu kalıplarda isim değişmez: sete kalır."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "essere mi, avere mi",
+   "from": "it06",
+   "q": "“Ekip yorgun ve aç.”",
+   "a": "La squadra è stanca e ha fame.",
+   "o": [
+    "La squadra è stanca e ha fame.",
+    "La squadra ha stanca e è fame.",
+    "La squadra è stanca e è fame."
+   ],
+   "why": {
+    "La squadra ha stanca e è fame.": "Ters: stanca sıfat → essere; fame isim → avere.",
+    "La squadra è stanca e è fame.": "Açlık avere ile söylenir: ha fame."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "avere = sahip olmak",
+   "from": "it06",
+   "q": "Sırala: “Mühendisin bir tornavidası var.”",
+   "words": [
+    "ha",
+    "cacciavite",
+    "un",
+    "l'ingegnere"
+   ],
+   "a": "l'ingegnere ha un cacciavite"
+  },
+  {
+   "t": "choice",
+   "topic": "renk uyumu",
+   "from": "it07",
+   "q": "“le prese ___” (beyaz prizler)",
+   "a": "bianche",
+   "o": [
+    "bianci",
+    "bianche",
+    "bianchi"
+   ],
+   "why": {
+    "bianci": "h düşerse “BYAN-çi” okunur; k sesi korunsun diye h gelir.",
+    "bianchi": "bianchi eril çoğul. presa dişil: bianche."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "bello önde",
+   "from": "it07",
+   "q": "“Güzel bir şantiye” hangisi?",
+   "a": "un bel cantiere",
+   "o": [
+    "un bello cantiere",
+    "un bel cantiere",
+    "un cantiere bel"
+   ],
+   "why": {
+    "un bello cantiere": "bello önde il gibi davranır: il cantiere → bel cantiere.",
+    "un cantiere bel": "Kısa biçim bel sadece isimden önce gelir; sonra gelirse bello olur."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "sıfat sırası ve uyum",
+   "from": "it07",
+   "q": "Türkçeden çevir: “Siyah kablo yeni.”",
+   "a": [
+    "il cavo nero è nuovo"
+   ],
+   "soft": [
+    "il cavo nero e nuovo"
+   ],
+   "soft_note": "Doğru sayıldı. Doğru yazımı: il cavo nero è nuovo."
+  },
+  {
+   "t": "choice",
+   "topic": "saat: e mezza",
+   "from": "it08",
+   "q": "Saat 10:30.",
+   "a": "Sono le dieci e mezza.",
+   "o": [
+    "Sono le dieci e mezza.",
+    "Sono le dieci e un quarto.",
+    "È le dieci e mezza."
+   ],
+   "why": {
+    "Sono le dieci e un quarto.": "e un quarto = çeyrek geçe (10:15).",
+    "È le dieci e mezza.": "Tekil è sadece l'una, mezzogiorno, mezzanotte ile gelir; gerisi sono le."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "sayılar 20–100",
+   "from": "it08",
+   "q": "Yazıyla yaz: 91",
+   "a": [
+    "novantuno"
+   ]
+  },
+  {
+   "t": "order",
+   "topic": "tarih",
+   "from": "it08",
+   "q": "Sırala: “Bugün 1 Mayıs.”",
+   "words": [
+    "il",
+    "primo",
+    "oggi",
+    "maggio",
+    "è"
+   ],
+   "a": "oggi è il primo maggio"
+  }
+ ],
+ "pass": 14
+}

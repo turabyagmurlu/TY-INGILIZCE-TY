@@ -1,0 +1,180 @@
+{
+  "id": "it25",
+  "lang": "it",
+  "level": "A2",
+  "title": "Futuro semplice",
+  "lead": "“Panoyu yarın bitireceğiz”, “Gelecek hafta Kırıkkale'ye gideceğim”, “Saat sekiz olmalı” cümlelerini kurabileceksin. Düzenli ve düzensiz gelecek zamanı, -care/-gare yazım kuralını ve futuronun tahmin anlamını öğreneceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Kural: mastarın sonuna -rò, -rai, -rà…",
+      "blocks": [
+        {"type": "p", "text": "Gelecek zaman tek kelimedir, yardımcı fiil yok. Mastarın son **-e**'si düşer, kalan **-r**'ye ek gelir. Tek ayrıntı: **-are** fiillerinde a, **e** olur: parl**a**re → parl**e**rò."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Konuş", "s": "kök"}, {"t": "-acak", "s": "gelecek", "hl": true}, {"t": "-ım", "s": "ben", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "parle-", "s": "kök (a → e)"}, {"t": "-r-", "s": "gelecek", "hl": true}, {"t": "-ò", "s": "ben", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Özne", "parlare", "leggere", "finire"], "x": 1,
+          "rows": [
+            ["io", "parlerò", "leggerò", "finirò"],
+            ["tu", "parlerai", "leggerai", "finirai"],
+            ["lui / lei / Lei", "parlerà", "leggerà", "finirà"],
+            ["noi", "parleremo", "leggeremo", "finiremo"],
+            ["voi", "parlerete", "leggerete", "finirete"],
+            ["loro", "parleranno", "leggeranno", "finiranno"]
+          ],
+          "say": ["io parlerò", "tu parlerai", "lui parlerà", "noi parleremo", "voi parlerete", "loro parleranno"]},
+        {"type": "note", "warn": true, "text": "Vurgu io ve lui'de sondadır, aksan yazılır: parler**ò** (par-le-RO), parler**à** (par-le-RA). Aksanı atarsan başka kelime çıkabilir: **farò** = yapacağım, **faro** = deniz feneri. Tipik Türk hatası: -are'yi korumak (parlarò yanlış)."}
+      ]
+    },
+    {
+      "title": "Yazım: -care/-gare h alır, -ciare/-giare i atar",
+      "blocks": [
+        {"type": "p", "text": "Kural sesi korumak için. cercare'nin **k** sesi, e'nin önünde **ce = çe** olur. Sesi k'de tutmak için araya **h** girer (it01: che = ke)."},
+        {"type": "rules", "items": [
+          {"title": "-care / -gare → -cherò / -gherò", "text": "cercare (aramak) → cercherò, pagare (ödemek) → pagherò, caricare (yüklemek) → caricherò.", "ex": {"x": "Pagherò io il caffè.", "tr": "Kahveyi ben ödeyeceğim."}},
+          {"title": "-ciare / -giare → -cerò / -gerò", "text": "i'nin tek işi c/g'yi yumuşatmaktı. e zaten yumuşattığı için i düşer: cominciare → comincerò, mangiare → mangerò.", "ex": {"x": "Lunedì comincerò alle sette.", "tr": "Pazartesi yedide başlayacağım."}}
+        ]},
+        {"type": "table", "head": ["Mastar", "io", "Okunuş"], "x": 1,
+          "rows": [
+            ["cercare", "cercherò", "çer-ke-RO"],
+            ["pagare", "pagherò", "pa-ge-RO"],
+            ["cominciare", "comincerò", "ko-min-çe-RO"],
+            ["mangiare", "mangerò", "man-ce-RO"]
+          ]},
+        {"type": "note", "warn": true, "text": "**cercerò** yazarsan “çerçe-RO” okunur, fiil tanınmaz. **mangierò** ise fazladan i taşır; okunuş aynı ama yazım yanlış."}
+      ]
+    },
+    {
+      "title": "Düzensizler: kök değişir, ekler aynı",
+      "blocks": [
+        {"type": "p", "text": "Düzensiz fiillerde sadece **kök** değişir; -ò, -ai, -à, -emo, -ete, -anno ekleri hep aynı. io biçimini ezberle, gerisi kendiliğinden gelir."},
+        {"type": "table", "head": ["Mastar", "io", "Okunuş", "Mantığı"], "x": 1,
+          "rows": [
+            ["essere", "sarò", "sa-RO", "tamamen yeni kök: sar-"],
+            ["avere", "avrò", "a-VRO", "e düşer: av(e)rò"],
+            ["andare", "andrò", "an-DRO", "e düşer: and(e)rò"],
+            ["potere", "potrò", "po-TRO", "e düşer"],
+            ["dovere", "dovrò", "do-VRO", "e düşer"],
+            ["venire", "verrò", "ver-RO", "çift r: verr-"],
+            ["volere", "vorrò", "vor-RO", "çift r: vorr-"],
+            ["fare", "farò", "fa-RO", "a kalır (stare → starò, dare → darò)"]
+          ],
+          "say": ["sarò", "avrò", "andrò", "potrò", "dovrò", "verrò", "vorrò", "farò"]},
+        {"type": "examples", "items": [
+          {"x": "I ragazzi saranno in cantiere alle sette.", "tr": "Çocuklar yedide şantiyede olacak.", "ph": "i ra-GAT-tsi sa-RAN-no in kan-TYE-re AL-le SET-te"},
+          {"x": "Domani non potrò venire.", "tr": "Yarın gelemeyeceğim.", "ph": "do-MA-ni non po-TRO ve-Nİ-re"}
+        ]},
+        {"type": "note", "warn": true, "text": "loro'da **çift n**: saranno, avranno, faranno. **sarano** yanlış. Not: **verrò** (venire) ile **vorrò** (volere) tek harf farkı; gelmek **e**, istemek **o**."}
+      ]
+    },
+    {
+      "title": "Ne zaman futuro? Plan, söz, tahmin",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "Yakın ve kesin plan: şimdiki zaman yeter", "text": "Zaman sözcüğü (domani, lunedì) varsa İtalyanlar konuşurken çoğu zaman şimdiki zamanı kullanır, Türkçedeki “Yarın gidiyorum” gibi.", "ex": {"x": "Domani vado a Bodrum.", "tr": "Yarın Bodrum'a gidiyorum."}},
+          {"title": "Söz, niyet, uzak gelecek: futuro", "text": "Teslim tarihi, söz, belirsiz plan.", "ex": {"x": "Finiremo il lavoro a maggio.", "tr": "İşi mayısta bitireceğiz."}},
+          {"title": "quando / se'den sonra da futuro", "text": "Türkçe “vardığında”, “olursa” der ve zamanı ana fiile bırakır. İtalyancada ana fiil futuro ise quando / se'li kısım da futuro olur. Konuşmada ikisini birden şimdiki zamanla söylemek de doğru: Se ho tempo, vengo.", "ex": {"x": "Se avrò tempo, verrò.", "tr": "Vaktim olursa geleceğim."}},
+          {"title": "Tahmin: “-dır herhalde”", "text": "Şu an hakkında emin değilsen futuro kullan. Bu, Türkçedeki tahmin anlamlı “-dır”dır.", "ex": {"x": "Che ore sono? Saranno le otto.", "tr": "Saat kaç? Sekiz vardır herhalde."}}
+        ]},
+        {"type": "compare", "rows": [
+          {"label": "Kesin", "items": [{"t": "Ahmet", "s": "özne"}, {"t": "è", "s": "şu an, biliyorum", "hl": true}, {"t": "in cantiere", "s": "şantiyede"}]},
+          {"label": "Tahmin", "items": [{"t": "Ahmet", "s": "özne"}, {"t": "sarà", "s": "şu an, tahmin", "hl": true}, {"t": "in cantiere", "s": "şantiyededir"}]}
+        ]}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Domani finiremo il quadro elettrico.", "tr": "Yarın elektrik panosunu bitireceğiz.", "ph": "do-MA-ni fi-ni-RE-mo il KUA-dro e-LET-tri-ko"},
+    {"x": "La settimana prossima andrò a Kırıkkale.", "tr": "Gelecek hafta Kırıkkale'ye gideceğim.", "ph": "la set-ti-MA-na PROS-si-ma an-DRO a Kırıkkale"},
+    {"x": "Lunedì comincerò alle sette.", "tr": "Pazartesi yedide başlayacağım.", "ph": "lu-ne-Dİ ko-min-çe-RO AL-le SET-te"},
+    {"x": "Dovremo cambiare tutti i cavi.", "tr": "Bütün kabloları değiştirmek zorunda kalacağız.", "ph": "do-VRE-mo kam-BYA-re TUT-ti i KA-vi"},
+    {"x": "Se avrò tempo, verrò al bar.", "tr": "Vaktim olursa kafeye geleceğim.", "ph": "se a-VRO TEM-po ver-RO al BAR"},
+    {"x": "Quando arriverai, ti chiamerò.", "tr": "Vardığında seni arayacağım.", "ph": "KUAN-do ar-ri-ve-RAY ti kya-me-RO"},
+    {"x": "Che ore sono? Saranno le cinque.", "tr": "Saat kaç? Beş vardır herhalde.", "ph": "ke O-re SO-no? sa-RAN-no le ÇİN-kue"},
+    {"x": "Dov'è Ahmet? Sarà in cantiere.", "tr": "Ahmet nerede? Şantiyededir herhalde.", "ph": "do-VE Ahmet? sa-RA in kan-TYE-re"},
+    {"x": "Pagherò io il caffè.", "tr": "Kahveyi ben ödeyeceğim.", "ph": "pa-ge-RO İ-o il kaf-FE"},
+    {"x": "Domani non potrò venire.", "tr": "Yarın gelemeyeceğim.", "ph": "do-MA-ni non po-TRO ve-Nİ-re"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Domani io ___ con il capo. (parlare)", "a": "parlerò", "o": ["parlerò", "parlerà", "parlavo"],
+      "why": {"parlerà": "parlerà = lui/lei konuşacak. io → parlerò.", "parlavo": "parlavo imperfetto (konuşurdum/konuşuyordum). domani gelecek ister: parlerò."},
+      "ok": "io → -ò: parlerò. capo = şef, usta."},
+    {"t": "choice", "q": "Futuro: lavorare → noi ___", "a": "lavoreremo", "o": ["lavoraremo", "lavoreremo", "lavorremo"],
+      "why": {"lavoraremo": "-are fiillerinde a, e olur: lavor-e-remo.", "lavorremo": "Kökteki e düşmez; sadece birkaç düzensizde düşer (andrò, avrò). lavoreremo."},
+      "ok": "lavorare → lavoreremo."},
+    {"t": "choice", "q": "Futuro: cercare → io ___", "a": "cercherò", "o": ["cercerò", "cercherò", "cercarò"],
+      "why": {"cercerò": "ce = çe okunur, k sesi kaybolur. Sesi korumak için h: cercherò.", "cercarò": "-are'nin a'sı e olur, ve -care'de araya h girer: cercherò."},
+      "ok": "-care → -cherò."},
+    {"t": "choice", "q": "“Yarın Bodrum'a gideceğim.” Domani ___ a Bodrum.", "a": "andrò", "o": ["anderò", "andrò", "andarò"],
+      "why": {"anderò": "andare düzensizdir: e düşer, andrò.", "andarò": "Hem düzenli kural (a → e) hem düzensizlik kaçmış. Doğrusu: andrò."},
+      "ok": "andare → andrò. (Konuşmada “Domani vado a Bodrum” de çok doğal.)"},
+    {"t": "choice", "q": "Futuro: essere → loro ___", "a": "saranno", "o": ["saranno", "sarano", "essereranno"],
+      "why": {"sarano": "loro eki çift n'lidir: -anno. saranno.", "essereranno": "essere düzensizdir; kökü sar-: saranno."},
+      "ok": "essere → sarò, saranno."},
+    {"t": "choice", "q": "Futuro: venire → io ___", "a": "verrò", "o": ["venirò", "verrò", "vorrò"],
+      "why": {"venirò": "venire düzensizdir: kök verr-. verrò.", "vorrò": "vorrò = isteyeceğim (volere). Gelmek: verrò."},
+      "ok": "venire → verrò, volere → vorrò."},
+    {"t": "choice", "q": "“Ahmet nerede?” Bilmiyorsun ama tahmin ediyorsun: “Şantiyededir herhalde.” ___ in cantiere.", "a": "Sarà", "o": ["Sarà", "È", "Sarò"],
+      "why": {"È": "È kesin bilgi verir: “şantiyede”. Emin değilsen futuro: Sarà.", "Sarò": "Sarò = ben olacağım. Ahmet → sarà."},
+      "ok": "Şu an hakkında tahmin → futuro: Sarà in cantiere."},
+    {"t": "choice", "q": "“Vardığında seni arayacağım.” Quando ___, ti chiamerò.", "a": "arriverai", "o": ["arriverai", "arrivavi", "arriverò"],
+      "why": {"arrivavi": "arrivavi imperfetto (varıyordun). Burada gelecek var.", "arriverò": "arriverò = ben varacağım. Varan sensin (tu): arriverai."},
+      "ok": "quando + futuro, ana cümle futuro. Türkçenin “-dığında”sı İtalyancada futuro olur."},
+    {"t": "type", "q": "Türkçeden çevir: “Pazartesi panoyu bitireceğiz.” (futuro)", "a": ["lunedì finiremo il quadro", "finiremo il quadro lunedì", "lunedì noi finiremo il quadro", "noi finiremo il quadro lunedì"],
+      "soft": ["lunedi finiremo il quadro", "finiremo il quadro lunedi", "lunedi noi finiremo il quadro", "noi finiremo il quadro lunedi", "lunedì finiamo il quadro", "finiamo il quadro lunedì", "lunedi finiamo il quadro", "finiamo il quadro lunedi"],
+      "soft_note": "Doğru sayıldı. lunedì sonda aksanla yazılır. Şimdiki zaman (finiamo) da doğal İtalyanca; ama bu soruda futuro istendi: Lunedì finiremo il quadro.",
+      "hint": "finire → finiremo; pano = il quadro.", "ok": "Lunedì finiremo il quadro."},
+    {"t": "type", "q": "Türkçeden çevir: “Yarın vaktim olacak.”", "a": ["domani avrò tempo", "avrò tempo domani", "domani io avrò tempo"],
+      "soft": ["domani avro tempo", "avro tempo domani", "domani io avro tempo"],
+      "soft_note": "Doğru sayıldı. Sondaki ò aksanla yazılır: avrò. Aksansız “avro” başka kelime gibi görünür.",
+      "hint": "avere → avrò; vakit = tempo.", "ok": "Domani avrò tempo."},
+    {"t": "order", "q": "Sırala: “Bilmiyorum, saat sekizdir herhalde.”", "words": ["otto", "so", "le", "non", "saranno", "lo"], "a": "non lo so saranno le otto", "ok": "Non lo so, saranno le otto. Saat çoğul (le otto), o yüzden saranno."},
+    {"t": "order", "q": "Sırala: “Gelecek hafta ekip Milano'ya gelecek.”", "words": ["prossima", "verrà", "squadra", "a", "settimana", "la", "Milano", "la"], "a": "la squadra verrà a Milano la settimana prossima", "alt": ["la settimana prossima la squadra verrà a Milano"], "ok": "La squadra verrà a Milano la settimana prossima."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Gelecek hafta ve gelecek ay planlarını futuro ile anlatmak: şantiyede ne bitecek, nereye gideceksin, kim gelecek. Bir de şu an hakkında futuro ile tahmin yürütmek (Saranno le otto, Sarà in cantiere).",
+    "vocab": ["domani", "dopodomani", "la settimana prossima", "il mese prossimo", "l'anno prossimo", "a maggio", "fra due giorni", "finirò", "comincerò", "pagherò", "cercherò", "sarò", "avrò", "farò", "andrò", "verrò", "potrò", "dovrò", "vorrò", "se avrò tempo"],
+    "structures": ["futuro: mastar -e düşer + -ò, -ai, -à, -emo, -ete, -anno; -are → -erò", "-care/-gare → -cherò/-gherò; -ciare/-giare → -cerò/-gerò", "düzensiz kökler: sar-, avr-, andr-, potr-, dovr-, verr-, vorr-, far-", "quando / se + futuro … futuro", "tahmin: Saranno le otto. Sarà in cantiere.", "yakın plan için şimdiki zaman: Domani vado a Bodrum."],
+    "opener_hint": "Chiara soruyor: “Ciao Türab! Cosa farai la settimana prossima?” Sonra şantiyede ne bitireceğini, hafta sonu nereye gideceğini, ekipten kim geleceğini sorsun; bir soru “se” ile kurulsun (Se avrai tempo, cosa farai?), bir soru da tahmin istesin: “Adesso dov'è Ahmet?” (Ahmet şimdi nerede?).",
+    "level_note": "A2: her mesajda 2–3 kısa İtalyanca cümle; Türkçeyi sadece Türab takılırsa parantez içinde ver. futuro, şimdiki zaman, passato prossimo ve imperfetto serbest; karşılaştırma (più … di), ci/ne, condizionale (vorrei dışında), emir kipi ve congiuntivo kullanma. Türab -are'yi korursa (parlarò), düzensiz kökü kaçırırsa (venirò, anderò) ya da ana fiil futuroyken quando'dan sonra şimdiki zaman kullanırsa (quando arrivi, ti chiamerò) doğru biçimi bir kez söyle ve devam et."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "düzenli futuro (-are → -er-)", "q": "“Elif yarın Kırıkkale'ye dönecek.” Domani Elif ___ a Kırıkkale.", "a": "tornerà", "o": ["tornerà", "tornarà", "tornerò"],
+      "why": {"tornarà": "-are'nin a'sı futuroda e olur: tornerà.", "tornerò": "tornerò = ben döneceğim. Elif → tornerà."}},
+    {"t": "choice", "topic": "-care/-gare yazımı", "q": "Futuro: pagare → noi ___", "a": "pagheremo", "o": ["pageremo", "pagheremo", "pagaremo"],
+      "why": {"pageremo": "ge = ce okunur, g sesi kaybolur. Araya h: pagheremo.", "pagaremo": "-are'nin a'sı e olur ve -gare'de h girer: pagheremo."}},
+    {"t": "choice", "topic": "düzensiz futuro", "q": "“Yarın gelemeyeceğim, çok işim var.” Domani non ___ venire, ho troppo lavoro.", "a": "potrò", "o": ["poterò", "potrò", "potrà"],
+      "why": {"poterò": "potere düzensizdir: e düşer, potrò.", "potrà": "potrà = o (lui/lei). io → potrò."}},
+    {"t": "choice", "topic": "tahmin anlamı", "q": "Telefon çalıyor. “Ahmet'tir herhalde.”", "a": "Sarà Ahmet.", "o": ["Sarà Ahmet.", "Era Ahmet.", "Sarò Ahmet."],
+      "why": {"Era Ahmet.": "Era imperfetto (geçmiş): “Ahmet'ti”. Şu an hakkında tahmin futuro ister.", "Sarò Ahmet.": "Sarò = ben olacağım. Ahmet → sarà."}},
+    {"t": "type", "topic": "düzensiz futuro (dovere)", "q": "Türkçeden çevir: “Yarın erken kalkmak zorunda kalacağım.”", "a": ["domani dovrò alzarmi presto", "dovrò alzarmi presto domani", "domani mi dovrò alzare presto", "mi dovrò alzare presto domani", "domani io dovrò alzarmi presto"],
+      "soft": ["domani dovro alzarmi presto", "dovro alzarmi presto domani", "domani mi dovro alzare presto", "mi dovro alzare presto domani"],
+      "soft_note": "Doğru sayıldı. Sondaki ò aksanla yazılır: Domani dovrò alzarmi presto."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Futuro: fare → tu ___", "a": "farai", "o": ["farai", "farerai", "farà"],
+        "why": {"farerai": "fare'nin futuro kökü kısa: far-. farai.", "farà": "farà = lui/lei. tu → farai."},
+        "ok": "fare → farò, farai, farà…"},
+      {"t": "choice", "q": "Futuro: mangiare → noi ___", "a": "mangeremo", "o": ["mangieremo", "mangeremo", "mangiaremo"],
+        "why": {"mangieremo": "-giare fiillerinde i düşer; e zaten g'yi yumuşatır: mangeremo.", "mangiaremo": "a e olur, i de düşer: mangeremo."},
+        "ok": "-giare → -geremo."},
+      {"t": "choice", "q": "“Ahmet kaç yaşında?” Tahmin: “Otuz vardır.”", "a": "Avrà trent'anni.", "o": ["Avrà trent'anni.", "Sarà trent'anni.", "Ha trent'anni."],
+        "why": {"Sarà trent'anni.": "Yaş avere ile söylenir (it06): avrà.", "Ha trent'anni.": "Ha kesin bilgi verir. Tahmin için futuro: Avrà trent'anni."},
+        "ok": "Tahmin → futuro; yaş → avere: Avrà trent'anni."},
+      {"t": "type", "q": "Türkçeden çevir: “Eylülde Kırıkkale'ye döneceğim.”", "a": ["a settembre tornerò a kırıkkale", "tornerò a kırıkkale a settembre", "a settembre io tornerò a kırıkkale"],
+        "soft": ["a settembre tornero a kırıkkale", "tornero a kırıkkale a settembre", "a settembre tornerò a kirikkale", "tornerò a kirikkale a settembre", "a settembre tornero a kirikkale", "tornero a kirikkale a settembre"],
+        "soft_note": "Doğru sayıldı. Doğru yazımı: A settembre tornerò a Kırıkkale (ò aksanlı, şehir adı Türkçe harflerle).",
+        "hint": "tornare → tornerò; ayda a: a settembre.", "ok": "A settembre tornerò a Kırıkkale."},
+      {"t": "type", "q": "Türkçeden çevir: “Yarın ne yapacaksın?”", "a": ["cosa farai domani", "che cosa farai domani", "che farai domani", "domani cosa farai", "domani che cosa farai", "cosa farai domani tu"],
+        "soft": ["cosa fai domani", "che cosa fai domani", "domani cosa fai", "che fai domani"],
+        "soft_note": "Doğru sayıldı; şimdiki zaman konuşmada çok doğal. Futuro ile: Cosa farai domani?",
+        "hint": "fare → farai.", "ok": "Cosa farai domani?"},
+      {"t": "order", "q": "Sırala: “Vaktim olursa geleceğim.”", "words": ["verrò", "tempo", "se", "avrò"], "a": "se avrò tempo verrò", "alt": ["verrò se avrò tempo"], "ok": "Se avrò tempo, verrò. se'den sonra da futuro."}
+    ],
+    "konus_prompt": "Chiara gelecek ayki planlarını soracak. En az 5 futuro cümlesi kur: en az 3 düzensiz fiil (sarò, andrò, farò, verrò…), bir “se avrò tempo…” cümlesi ve bir tahmin cümlesi (Saranno le…, Sarà in cantiere)."
+  }
+}

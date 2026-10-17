@@ -1,4 +1,4 @@
-# Ders yazarı brifingi (it07–it20, en04–en12)
+# Ders yazarı brifingi
 
 Repo: /home/claude/TY-INGILIZCE-TY. Uygulama: TY Dil, Türab'ın kendi dil uygulaması.
 
@@ -35,3 +35,9 @@ Her dosyayı yazınca şunu çalıştır:
 
 ## Teslim
 En fazla 15 satırlık rapor: yazdığın dosyalar, content_check sonucu, emin olmadığın dil kararları (madde madde).
+
+## A2–B1 turu (it21–it34) için ek
+- Bu dersler 12 haftalık A1 programından SONRA gelir. Öğrenci it01–it20'nin hepsini bilir (passato prossimo dahil). Kapsam yine src/dd_data.js'deki SYL sırasına göre; o sırada sonra gelen yapılar işaretlenmeden kullanılmaz.
+- `level`: it21–it28 için "A2", it29–it34 için "B1". `ph` hâlâ zorunlu, ama sadece yeni ya da zor kelimelerde ve dinle satırlarında.
+- Chiara'nın `level_note`'u seviyeye göre ayarlanmalı. A2'de daha uzun İtalyanca, Türkçe sadece takılınca. B1'de neredeyse tamamen İtalyanca, düzeltmeler toplu.
+- Yardımcı betiklerini kendi scratchpad alt klasöründe tut: /tmp/claude-0/-home-claude/0253875b-0829-585e-a51b-c0b2141d66fe/scratchpad/<ders-id>/. Ortak dosya adları birbirini eziyor.

@@ -1,0 +1,174 @@
+{
+  "id": "it26",
+  "lang": "it",
+  "level": "A2",
+  "title": "Karşılaştırma",
+  "lead": "“Bakır alüminyumdan daha ağır”, “Elif, Ayşe kadar becerikli”, “Ekibin en iyisi”, “Çok yorgunum” cümlelerini kurabileceksin. di ile che arasındaki farkı ve migliore, maggiore gibi düzensiz biçimleri öğreneceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Daha, daha az, kadar: più … di, meno … di, quanto",
+      "blocks": [
+        {"type": "p", "text": "Türkçe karşılaştırılanı başa koyar ve **-den** ekler. İtalyanca önce sıfatı söyler, karşılaştırılanı en sona koyar: **più** (daha) / **meno** (daha az) + sıfat + **di** (-den)."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Ahmet", "s": "özne"}, {"t": "Mehmet'ten", "s": "-den", "hl": true}, {"t": "daha", "s": "karşılaştırma", "hl": true}, {"t": "uzun", "s": "sıfat"}]},
+          {"label": "İtalyanca", "items": [{"t": "Ahmet è", "s": "özne + olmak"}, {"t": "più", "s": "daha", "hl": true}, {"t": "alto", "s": "sıfat"}, {"t": "di Mehmet", "s": "-den", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Anlam", "İtalyanca", "Okunuş"], "x": 1,
+          "rows": [
+            ["daha uzun", "più alto di Mehmet", "PYU AL-to di Mehmet"],
+            ["daha az pahalı", "meno caro del cavo vecchio", "ME-no KA-ro del KA-vo VEK-kyo"],
+            ["… kadar uzun", "(tanto) alto quanto Mehmet", "AL-to KUAN-to Mehmet"],
+            ["… kadar uzun", "(così) alto come Mehmet", "AL-to KO-me Mehmet"]
+          ]},
+        {"type": "note", "warn": true, "text": "di artikelle birleşir (it14): più grande **del** cantiere, **della** pinza, **dell'**alluminio. Zamir gelirse vurgulu biçim (a me'deki gibi): più giovane **di me**, **di te**. **di io** yanlış. Eşitlikte tanto / così genelde düşer: alto quanto me."}
+      ]
+    },
+    {
+      "title": "di mi, che mi? Neyi karşılaştırdığına bak",
+      "blocks": [
+        {"type": "p", "text": "Türkçede ikisi de **-den**. İtalyancada soru şu: iki **farklı şeyi** tek bir özellikte mi karşılaştırıyorsun, yoksa **aynı şeyin** iki yanını mı?"},
+        {"type": "rules", "items": [
+          {"title": "İki isim ya da zamir, tek sıfat: di", "text": "Ahmet mi Mehmet mi? Bakır mı alüminyum mu?", "ex": {"x": "Il rame è più pesante dell'alluminio.", "tr": "Bakır alüminyumdan daha ağır."}},
+          {"title": "İki fiil: che", "text": "Okumak mı yazmak mı?", "ex": {"x": "È più facile leggere che scrivere.", "tr": "Okumak yazmaktan daha kolay."}},
+          {"title": "Edatlı iki ifade: che", "text": "a Kırıkkale / a Bodrum, in cantiere / in ufficio.", "ex": {"x": "Lavoro più in cantiere che in ufficio.", "tr": "Ofisten çok şantiyede çalışırım."}},
+          {"title": "İki ismin miktarı: che", "text": "Aynı yerde neyden daha çok var?", "ex": {"x": "Ci sono più operai che elettricisti.", "tr": "Elektrikçiden çok işçi var."}}
+        ]},
+        {"type": "note", "text": "Kısa test: “di”den sonra **çıplak bir isim ya da zamir** gelir (di Mehmet, del rame, di me). Arkadan fiil, edat ya da miktar geliyorsa **che**. Yeni kelimeler: facile = kolay, ufficio = ofis (uf-Fİ-ço)."}
+      ]
+    },
+    {
+      "title": "Düzensizler: migliore, peggiore, maggiore, minore",
+      "blocks": [
+        {"type": "p", "text": "Dört sıfatın tek kelimelik karşılaştırması var. Bu biçim zaten “daha” demek, önüne **più** gelmez."},
+        {"type": "table", "head": ["Sıfat", "Daha …", "Okunuş", "Türkçesi"], "x": 1,
+          "rows": [
+            ["buono", "migliore", "mi-LYO-re", "daha iyi"],
+            ["cattivo", "peggiore", "ped-CO-re", "daha kötü"],
+            ["grande", "maggiore", "mad-CO-re", "daha büyük (yaş, önem)"],
+            ["piccolo", "minore", "mi-NO-re", "daha küçük (yaş, önem)"]
+          ],
+          "say": ["migliore", "peggiore", "maggiore", "minore"]},
+        {"type": "examples", "items": [
+          {"x": "La pinza nuova è migliore della pinza vecchia.", "tr": "Yeni pense eskisinden daha iyi.", "ph": "la PİN-tsa NUO-va E mi-LYO-re del-la PİN-tsa VEK-kya"},
+          {"x": "Il fratello maggiore di Ahmet lavora a Istanbul.", "tr": "Ahmet'in ağabeyi İstanbul'da çalışıyor.", "ph": "il fra-TEL-lo mad-CO-re di Ahmet la-VO-ra a Istanbul"}
+        ]},
+        {"type": "note", "warn": true, "text": "**più migliore** yanlış (daha daha iyi). Boyut için **più grande** daha yaygın; maggiore/minore çoğunlukla kardeş ve önem için. Fiili nitelerken sıfat değil zarf: bene → **meglio**, male → **peggio**. Ahmet lavora **meglio** di me (benden iyi çalışıyor)."}
+      ]
+    },
+    {
+      "title": "En ve çok: il più … di, -issimo",
+      "blocks": [
+        {"type": "p", "text": "**En**: artikel + **più** + sıfat; grup **di** ile gelir. Türkçe “Türkiye'nin en büyük şantiyesi” der, İtalyanca “şantiye en büyük Türkiye'nin” sırasıyla: isim önce, più sonra."},
+        {"type": "examples", "items": [
+          {"x": "È il cantiere più grande della Turchia.", "tr": "Türkiye'nin en büyük şantiyesi.", "ph": "E il kan-TYE-re PYU GRAN-de del-la tur-Kİ-a"},
+          {"x": "Elif è la migliore della squadra.", "tr": "Elif ekibin en iyisi.", "ph": "Elif E la mi-LYO-re del-la SKUA-dra"}
+        ]},
+        {"type": "p", "text": "**Çok** (karşılaştırma yok): son ünlüyü at, **-issimo** ekle, sıfat gibi uyar: -issimo / -issima / -issimi / -issime. molto bello = **bellissimo**."},
+        {"type": "table", "head": ["Sıfat", "-issimo", "Okunuş"], "x": 1,
+          "rows": [
+            ["bello", "bellissimo", "bel-LİS-si-mo"],
+            ["buono", "buonissimo", "buo-NİS-si-mo"],
+            ["stanco", "stanchissimo", "stan-KİS-si-mo"],
+            ["lungo", "lunghissimo", "lun-GİS-si-mo"]
+          ]},
+        {"type": "note", "warn": true, "text": "-co/-go'da çoğu zaman h girer: stan**ch**issimo, lun**gh**issimo. Pratik kural: eril çoğuldaki gibi yaz (stanchi → stanchissimo, ama simpatici → simpaticissimo). **molto bellissimo** yanlış; -issimo zaten “çok”."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Il rame è più pesante dell'alluminio.", "tr": "Bakır alüminyumdan daha ağır.", "ph": "il RA-me E PYU pe-SAN-te del-lal-lu-Mİ-nyo"},
+    {"x": "Il cavo nuovo è meno caro del cavo vecchio.", "tr": "Yeni kablo eskisinden daha ucuz.", "ph": "il KA-vo NUO-vo E ME-no KA-ro del KA-vo VEK-kyo"},
+    {"x": "D'inverno fa più freddo a Kırıkkale che a Bodrum.", "tr": "Kışın Kırıkkale'de Bodrum'dan daha soğuk olur.", "ph": "din-VER-no FA PYU FRED-do a Kırıkkale ke a Bodrum"},
+    {"x": "Ahmet è bravo quanto Mehmet.", "tr": "Ahmet, Mehmet kadar becerikli.", "ph": "Ahmet E BRA-vo KUAN-to Mehmet"},
+    {"x": "Lavoro più in cantiere che in ufficio.", "tr": "Ofisten çok şantiyede çalışırım.", "ph": "la-VO-ro PYU in kan-TYE-re ke in uf-Fİ-ço"},
+    {"x": "La pinza nuova è migliore della pinza vecchia.", "tr": "Yeni pense eskisinden daha iyi.", "ph": "la PİN-tsa NUO-va E mi-LYO-re del-la PİN-tsa VEK-kya"},
+    {"x": "Mehmet è più giovane di me.", "tr": "Mehmet benden daha genç.", "ph": "Mehmet E PYU CO-va-ne di ME"},
+    {"x": "È il cantiere più grande della Turchia.", "tr": "Türkiye'nin en büyük şantiyesi.", "ph": "E il kan-TYE-re PYU GRAN-de del-la tur-Kİ-a"},
+    {"x": "Il caffè qui è buonissimo.", "tr": "Buranın kahvesi çok iyi.", "ph": "il kaf-FE KUİ E buo-NİS-si-mo"},
+    {"x": "Oggi sono stanchissimo.", "tr": "Bugün çok yorgunum.", "ph": "OD-ci SO-no stan-KİS-si-mo"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "“Ahmet, Mehmet'ten daha uzun.” Ahmet è ___ alto di Mehmet.", "a": "più", "o": ["più", "meno", "molto"],
+      "why": {"meno": "meno = daha az. “Daha uzun” için più.", "molto": "molto = çok; karşılaştırma yapmaz ve di ile kullanılmaz."},
+      "ok": "più … di = -den daha."},
+    {"t": "choice", "q": "Il cantiere di Bodrum è più grande ___ cantiere di Kırıkkale.", "a": "del", "o": ["del", "di", "che"],
+      "why": {"di": "cantiere artikelli bir isim (il cantiere): di + il = del.", "che": "İki isim, tek sıfat (grande): di. che fiil, edat ya da miktar içindir."},
+      "ok": "di + il cantiere = del cantiere."},
+    {"t": "choice", "q": "“Mehmet benden daha genç.” Mehmet è più giovane di ___.", "a": "me", "o": ["me", "io", "mi"],
+      "why": {"io": "Edattan sonra io gelmez; vurgulu biçim: di me (a me gibi).", "mi": "mi zayıf zamirdir, edattan sonra kullanılmaz: di me."},
+      "ok": "di me, di te, di lui, di lei."},
+    {"t": "choice", "q": "“Okumak yazmaktan daha kolay.” È più facile leggere ___ scrivere.", "a": "che", "o": ["che", "di", "del"],
+      "why": {"di": "İki fiil karşılaştırılıyor (leggere / scrivere): che.", "del": "del = di + il, isim ister. İki fiil arasında che."},
+      "ok": "İki fiil → che."},
+    {"t": "choice", "q": "D'inverno fa più freddo a Kırıkkale ___ a Bodrum.", "a": "che", "o": ["che", "di"],
+      "why": {"di": "Karşılaştırılan iki edatlı ifade (a Kırıkkale / a Bodrum): che."},
+      "ok": "Edatlı iki ifade → che. d'inverno = kışın; fa freddo = hava soğuk."},
+    {"t": "choice", "q": "“Elif, Ayşe kadar becerikli.” Elif è brava ___ Ayşe.", "a": "quanto", "o": ["quanto", "di", "che"],
+      "why": {"di": "di “-den daha” içindir (più/meno … di). “Kadar” için quanto ya da come.", "che": "che de üstünlük/aşağılık karşılaştırmasıdır. Eşitlik: quanto / come."},
+      "ok": "(tanto) … quanto = … kadar."},
+    {"t": "choice", "q": "“Yeni pense eskisinden daha iyi.” La pinza nuova è ___ della pinza vecchia.", "a": "migliore", "o": ["migliore", "più migliore", "meglio"],
+      "why": {"più migliore": "migliore zaten “daha iyi”; önüne più gelmez.", "meglio": "meglio zarftır, fiili niteler (lavora meglio). Pense (isim) için sıfat: migliore."},
+      "ok": "buono → migliore."},
+    {"t": "choice", "q": "“Ahmet'in ağabeyi” → il fratello ___ di Ahmet", "a": "maggiore", "o": ["maggiore", "migliore", "minore"],
+      "why": {"migliore": "migliore = daha iyi. Yaşça büyük: maggiore.", "minore": "minore = yaşça küçük (küçük kardeş)."},
+      "ok": "fratello maggiore = ağabey, sorella minore = küçük kız kardeş."},
+    {"t": "choice", "q": "“Elif ekibin en iyisi.” Elif è ___ della squadra.", "a": "la migliore", "o": ["la migliore", "la più migliore", "migliore"],
+      "why": {"la più migliore": "migliore'nin önüne più gelmez; “en iyi” = la migliore.", "migliore": "Artikelsiz migliore “daha iyi” demektir. “En” için artikel şart: la migliore."},
+      "ok": "Artikel + migliore = en iyi."},
+    {"t": "type", "q": "Türkçeden çevir: “Ahmet benden daha hızlı.” (hızlı = veloce)", "a": ["ahmet è più veloce di me"],
+      "soft": ["ahmet e più veloce di me", "ahmet è piu veloce di me", "ahmet e piu veloce di me"],
+      "soft_note": "Doğru sayıldı. Aksanlar: è (olmak) ve più. Doğru yazımı: Ahmet è più veloce di me.",
+      "hint": "più … di + vurgulu zamir.", "ok": "Ahmet è più veloce di me."},
+    {"t": "type", "q": "Türkçeden çevir, -issimo ile: “Çok yorgunum.” (Türab)", "a": ["sono stanchissimo", "io sono stanchissimo"],
+      "soft": ["sono molto stanco", "io sono molto stanco"],
+      "soft_note": "Doğru sayıldı; ama bu soruda -issimo istendi: Sono stanchissimo.",
+      "hint": "stanco → c sesini korumak için h.", "ok": "Sono stanchissimo."},
+    {"t": "order", "q": "Sırala: “Burası Türkiye'nin en büyük şantiyesi.”", "words": ["grande", "il", "della", "è", "più", "Turchia", "cantiere"], "a": "è il cantiere più grande della Turchia", "alt": ["è il più grande cantiere della Turchia"], "ok": "È il cantiere più grande della Turchia."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Kırıkkale ile Bodrum'u, iki şantiyeyi, iki aleti ve ekipteki insanları karşılaştırmak: più/meno … di/che, quanto/come, migliore/peggiore, il più … di ve -issimo kullanmak.",
+    "vocab": ["più", "meno", "di", "che", "quanto", "come", "migliore", "peggiore", "maggiore", "minore", "meglio", "peggio", "il più", "bellissimo", "stanchissimo", "caro", "economico", "veloce", "pesante", "facile"],
+    "structures": ["più / meno + sıfat + di (di + artikel: del, della…; di me, di te)", "che: iki fiil, edatlı iki ifade, iki ismin miktarı", "(tanto) … quanto / (così) … come", "buono → migliore, cattivo → peggiore, grande → maggiore, piccolo → minore; bene → meglio", "artikel + (isim) + più + sıfat + di: il cantiere più grande della Turchia", "-issimo: bellissimo, stanchissimo"],
+    "opener_hint": "Chiara soruyor: “Ciao Türab! Secondo te, Kırıkkale è più bella di Bodrum?” (Sence Kırıkkale Bodrum'dan daha mı güzel? “secondo te” = sence, hazır kalıp). Sonra hangi şehirde hava daha sıcak, hangi şantiye daha büyük, ekipte en hızlı kim, bakır mı alüminyum mu daha iyi, şantiyede mi ofiste mi daha çok çalıştığını sorsun.",
+    "level_note": "A2: her mesajda 1–2 kısa İtalyanca cümle; Türkçeyi sadece Türab takılırsa parantez içinde ver. Bütün zamanlar serbest (şimdiki, passato prossimo, imperfetto, futuro); ci/ne, condizionale (vorrei dışında), emir kipi ve congiuntivo kullanma. Türab di/che'yi karıştırırsa, “più migliore” ya da “di io” derse doğru biçimi bir kez söyle ve devam et."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "di mi che mi", "q": "“Ofisten çok şantiyede çalışırım.” Lavoro più in cantiere ___ in ufficio.", "a": "che", "o": ["di", "che"],
+      "why": {"di": "Karşılaştırılan iki edatlı ifade (in cantiere / in ufficio): che."}},
+    {"t": "choice", "topic": "di + artikel", "q": "Il cavo nuovo è meno caro ___ cavo vecchio.", "a": "del", "o": ["del", "che", "di"],
+      "why": {"che": "İki isim, tek sıfat (caro): di. Artikelle birleşir: del.", "di": "il cavo artikelli: di + il = del."}},
+    {"t": "choice", "topic": "eşitlik (così … come)", "q": "“Elif, Türab kadar hızlı.” Elif è così veloce ___ Türab.", "a": "come", "o": ["come", "che", "di"],
+      "why": {"che": "che üstünlük/aşağılık karşılaştırmasında kullanılır. così ile eşitlik: come.", "di": "di “-den daha” içindir. “Kadar”: come."}},
+    {"t": "choice", "topic": "-issimo", "q": "“Kablo çok uzun.” Il cavo è ___.", "a": "lunghissimo", "o": ["lunghissimo", "lungissimo", "più lungo"],
+      "why": {"lungissimo": "gi = ci okunur, g sesi kaybolur. h girer: lunghissimo.", "più lungo": "più lungo = daha uzun, bir şeyle karşılaştırma. “Çok uzun”: lunghissimo."}},
+    {"t": "type", "topic": "il più … di (en)", "q": "Türkçeden çevir: “Elif ekibin en hızlısı.” (hızlı = veloce, ekip = squadra)", "a": ["elif è la più veloce della squadra"],
+      "soft": ["elif e la più veloce della squadra", "elif è la piu veloce della squadra", "elif e la piu veloce della squadra"],
+      "soft_note": "Doğru sayıldı. Aksanlar: è ve più. Doğru yazımı: Elif è la più veloce della squadra."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "“Ahmet benden iyi çalışıyor.” Ahmet lavora ___ di me.", "a": "meglio", "o": ["meglio", "migliore", "più bene"],
+        "why": {"migliore": "migliore sıfattır, ismi niteler. Fiili (lavora) niteleyen zarf: meglio.", "più bene": "bene'nin karşılaştırması düzensizdir: meglio."},
+        "ok": "Fiil + meglio; isim + migliore."},
+      {"t": "choice", "q": "“Ekipte elektrikçiden çok işçi var.” Nella squadra ci sono più operai ___ elettricisti.", "a": "che", "o": ["che", "di", "degli"],
+        "why": {"di": "İki ismin miktarı karşılaştırılıyor: che.", "degli": "degli = di + gli; miktar karşılaştırmasında che gelir."},
+        "ok": "Miktar → più … che."},
+      {"t": "choice", "q": "“Buranın kahvesi çok iyi.” Il caffè qui è ___.", "a": "buonissimo", "o": ["buonissimo", "molto buonissimo", "il più buono"],
+        "why": {"molto buonissimo": "-issimo zaten “çok” demek; molto eklenmez.", "il più buono": "il più buono = en iyisi, bir grupla karşılaştırma. Sadece “çok iyi”: buonissimo."},
+        "ok": "buono → buonissimo."},
+      {"t": "type", "q": "Türkçeden çevir: “Ayşe, Elif'ten daha az yorgun.” (yorgun = stanco)", "a": ["ayşe è meno stanca di elif"],
+        "soft": ["ayşe e meno stanca di elif", "ayse è meno stanca di elif", "ayse e meno stanca di elif"],
+        "soft_note": "Doğru sayıldı. è aksanla yazılır, isim Türkçe yazımıyla: Ayşe è meno stanca di Elif.",
+        "hint": "meno … di; Ayşe kadın → stanca.", "ok": "Ayşe è meno stanca di Elif."},
+      {"t": "type", "q": "Türkçeden çevir: “Yeni pano eskisi kadar büyük.” (pano = il quadro; eski = vecchio)", "a": ["il quadro nuovo è grande quanto il quadro vecchio", "il quadro nuovo è grande come il quadro vecchio", "il quadro nuovo è tanto grande quanto il quadro vecchio", "il quadro nuovo è così grande come il quadro vecchio", "il quadro nuovo è grande quanto quello vecchio", "il quadro nuovo è grande come quello vecchio"],
+        "soft": ["il quadro nuovo e grande quanto il quadro vecchio", "il quadro nuovo e grande come il quadro vecchio", "il quadro nuovo e tanto grande quanto il quadro vecchio", "il quadro nuovo e cosi grande come il quadro vecchio", "il quadro nuovo è cosi grande come il quadro vecchio"],
+        "soft_note": "Doğru sayıldı. Aksanlar: è ve così. Doğru yazımı: Il quadro nuovo è grande quanto il quadro vecchio.",
+        "hint": "Sıfat + quanto / come.", "ok": "Il quadro nuovo è grande quanto il quadro vecchio."},
+      {"t": "order", "q": "Sırala: “Bakır alüminyumdan daha iyi iletir.” (condurre = iletmek)", "words": ["meglio", "rame", "dell'alluminio", "il", "conduce"], "a": "il rame conduce meglio dell'alluminio", "ok": "Il rame conduce meglio dell'alluminio. Fiil (conduce) + meglio."}
+    ],
+    "konus_prompt": "Chiara Kırıkkale ile Bodrum'u ve iki şantiyeni karşılaştırmanı isteyecek. En az 5 cümle kur: bir più … di, bir meno … di, bir che'li cümle (iki fiil ya da edatlı iki ifade), bir “en” cümlesi (il più … di ya da il migliore) ve bir -issimo."
+  }
+}

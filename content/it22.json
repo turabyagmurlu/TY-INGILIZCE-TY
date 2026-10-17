@@ -1,0 +1,159 @@
+{
+  "id": "it22",
+  "lang": "it",
+  "level": "A2",
+  "title": "Dolaylı nesne zamirleri: mi, ti, gli, le",
+  "lead": "“Ona telefon ettim”, “Sana teklifi gönderiyorum”, “Size hesabı getiriyorum” cümlelerini kurabileceksin. Türkçedeki -i / -e farkıyla lo mu gli mi geleceğine saniyede karar vereceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "“Kime?”: mi, ti, gli, le, Le, ci, vi, gli",
+      "blocks": [
+        {"type": "p", "text": "it21'deki lo/la/li/le Türkçedeki **-i** ekiydi (Ahmet'**i**). Bunlar **-e** ekidir: Ahmet'**e**, bana, sana. İtalyancada **a + kişi**nin kısa hâli. it18'deki **mi piace** (“bana hoş gelir”) zaten buydu."},
+        {"type": "table", "head": ["Türkçe", "Zamir", "Örnek", "Okunuş"], "x": 2,
+          "rows": [
+            ["bana", "mi", "Mi scrivi?", "mi SKRİ-vi"],
+            ["sana", "ti", "Ti telefono domani.", "ti te-LE-fo-no do-MA-ni"],
+            ["ona (erkek)", "gli", "Gli mando il preventivo.", "lyi MAN-do il pre-ven-Tİ-vo"],
+            ["ona (kadın)", "le", "Le scrivo un messaggio.", "le SKRİ-vo un mes-SAD-co"],
+            ["size (kibar)", "Le", "Le do il conto.", "le DO il KON-to"],
+            ["bize", "ci", "Ci manda il programma.", "çi MAN-da il pro-GRAM-ma"],
+            ["size (çoğul)", "vi", "Vi telefono dopo.", "vi te-LE-fo-no DO-po"],
+            ["onlara", "gli", "Gli do i guanti.", "lyi DO i GUAN-ti"]
+          ]},
+        {"type": "note", "text": "**mi, ti, ci, vi** hem “beni” hem “bana” demek. Fark sadece üçüncü kişide: onu = **lo / la**, ona = **gli / le**. Resmî yazıda “onlara” için **loro** da görülür (Do loro i guanti); konuşmada **gli**."}
+      ]
+    },
+    {
+      "title": "Türkçe testi: -i mi, -e mi?",
+      "blocks": [
+        {"type": "p", "text": "Kararı Türkçen verir. Fiile sor: “**kimi / neyi?**” cevabı varsa doğrudan zamir (lo, la, li, le); “**kime?**” cevabı varsa dolaylı (gli, le). Aynı kişi, iki fiil, iki zamir:"},
+        {"type": "compare", "rows": [
+          {"label": "Ahmet'i aradım.", "items": [{"t": "L'", "s": "onu (-i)", "hl": true}, {"t": "ho", "s": "avere"}, {"t": "chiamato", "s": "aradım"}]},
+          {"label": "Ahmet'e telefon ettim.", "items": [{"t": "Gli", "s": "ona (-e)", "hl": true}, {"t": "ho", "s": "avere"}, {"t": "telefonato", "s": "telefon ettim"}]}
+        ]},
+        {"type": "rules", "items": [
+          {"title": "Kural çoğu zaman Türkçeyle aynı", "text": "telefonare a, dire a, dare a, mandare a, scrivere a, chiedere a (sormak): Türkçede de hepsi -e alır (birine telefon etmek, söylemek, vermek, göndermek, yazmak, sormak).", "ex": {"x": "Gli ho detto di no.", "tr": "Ona hayır dedim."}},
+          {"title": "İki tuzak: aiutare, ringraziare", "text": "Türkçede “birine yardım etmek / teşekkür etmek” -e alır; İtalyancada doğrudan nesne alırlar: lo / la.", "ex": {"x": "L'ho ringraziato.", "tr": "Ona teşekkür ettim."}}
+        ]},
+        {"type": "note", "warn": true, "text": "Tipik Türk hatası: “Elif'e yardım ediyorum” → “Le aiuto.” Doğrusu **L'aiuto.** (la + aiuto). Bu iki fiili ayrı ezberle; gerisinde Türkçe -e ekine güvenebilirsin."}
+      ]
+    },
+    {
+      "title": "a + kişi → tek kelime",
+      "blocks": [
+        {"type": "p", "text": "Kişinin adını biliyorsan **a + isim** söylersin, isim zaten geçtiyse zamire çevirirsin. Zamir çekimli fiilin önüne gelir, **a** kaybolur. Erkek ya da kalabalık → **gli**, kadın → **le**."},
+        {"type": "table", "head": ["a + kişi", "Zamirle", "Türkçesi"], "x": 1,
+          "rows": [
+            ["Telefono a Marco.", "Gli telefono.", "Ona telefon ediyorum."],
+            ["Scrivo a Elif.", "Le scrivo.", "Ona yazıyorum."],
+            ["Do i guanti agli operai.", "Gli do i guanti.", "Onlara eldiven veriyorum."],
+            ["Mando il preventivo al capo.", "Gli mando il preventivo.", "Ona teklifi gönderiyorum."],
+            ["Do il conto alla signora.", "Le do il conto.", "Ona hesabı veriyorum."]
+          ],
+          "say": ["Gli telefono.", "Le scrivo.", "Gli do i guanti.", "Gli mando il preventivo.", "Le do il conto."]},
+        {"type": "note", "warn": true, "text": "İkisi birden olmaz: “Gli telefono a Marco” konuşmada duyulur ama yazıda yanlış sayılır; ya **Telefono a Marco** ya **Gli telefono**. Yeni kelime: il preventivo = fiyat teklifi, keşif; il conto = hesap."}
+      ]
+    },
+    {
+      "title": "Yeri ve geçmiş: uyum yok, kesme yok",
+      "blocks": [
+        {"type": "p", "text": "Yer kuralı it21 ile aynı: **non + zamir + çekimli fiil**; mastarla sona yapışır: **devo telefonargli = gli devo telefonare**. Geçmişte iki fark var: dolaylı zamirde ortaç **uymaz** ve **le, gli kesilmez**."},
+        {"type": "table", "head": ["Türkçe", "İtalyanca", "Neden"], "x": 1,
+          "rows": [
+            ["Elif'i aradım.", "L'ho chiamata.", "-i → la, ortaç uyar"],
+            ["Elif'e telefon ettim.", "Le ho telefonato.", "-e → le, ortaç sabit"],
+            ["Mektubu yazdım.", "L'ho scritta.", "la lettera → uyar"],
+            ["Elif'e yazdım.", "Le ho scritto.", "a Elif → sabit"],
+            ["Ona henüz telefon etmedim.", "Non gli ho ancora telefonato.", "non + gli + ho"]
+          ]},
+        {"type": "examples", "items": [
+          {"x": "Le ho telefonato ieri.", "tr": "Ona (Elif'e) dün telefon ettim.", "ph": "le O te-le-fo-NA-to YE-ri"},
+          {"x": "Ci ha mandato il programma.", "tr": "Bize programı gönderdi.", "ph": "çi A man-DA-to il pro-GRAM-ma"}
+        ]},
+        {"type": "note", "warn": true, "text": "“Le ho telefonat**a**” yanlış: Elif kadın ama zamir dolaylı, ortaç değişmez. “**L'ho** telefonato” de yanlış: l' = lo/la (doğrudan). Ona = **le ho**, kesmesiz."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Marco? Gli telefono dopo.", "tr": "Marco mu? Ona sonra telefon ederim.", "ph": "MAR-ko? lyi te-LE-fo-no DO-po"},
+    {"x": "Le scrivo un messaggio.", "tr": "Ona (kadın) bir mesaj yazıyorum.", "ph": "le SKRİ-vo un mes-SAD-co"},
+    {"x": "Ti mando il preventivo oggi.", "tr": "Teklifi sana bugün gönderiyorum.", "ph": "ti MAN-do il pre-ven-Tİ-vo OD-ci"},
+    {"x": "Signora, Le do il conto.", "tr": "Hanımefendi, size hesabı veriyorum.", "ph": "si-NYO-ra, le DO il KON-to"},
+    {"x": "Gli operai? Gli do i guanti.", "tr": "İşçiler mi? Onlara eldivenleri veriyorum.", "ph": "lyi o-pe-RA-i? lyi DO i GUAN-ti"},
+    {"x": "Gli ho detto di no.", "tr": "Ona hayır dedim.", "ph": "lyi O DET-to di NO"},
+    {"x": "Le ho telefonato ieri.", "tr": "Ona (kadın) dün telefon ettim.", "ph": "le O te-le-fo-NA-to YE-ri"},
+    {"x": "Il capo ci ha mandato il programma.", "tr": "Şef bize programı gönderdi.", "ph": "il KA-po çi A man-DA-to il pro-GRAM-ma"},
+    {"x": "Mi hai scritto?", "tr": "Bana yazdın mı?", "ph": "mi AY SKRİT-to"},
+    {"x": "Non gli ho ancora telefonato.", "tr": "Ona henüz telefon etmedim.", "ph": "non lyi O an-KO-ra te-le-fo-NA-to"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Marco? ___ telefono dopo.", "a": "Gli", "o": ["Gli", "Le", "Lo"],
+      "why": {"Le": "le kadın içindir (ona, kadın). Marco erkek: gli.", "Lo": "telefonare a: “Marco'ya” telefon edersin, -e → dolaylı: gli."},
+      "ok": "telefonare a Marco → gli telefono."},
+    {"t": "choice", "q": "Elif? ___ scrivo un messaggio.", "a": "Le", "o": ["Gli", "Le", "La"],
+      "why": {"Gli": "gli erkek ya da çoğul içindir. Elif kadın: le.", "La": "scrivere a: “Elif'e” yazarsın, -e → dolaylı: le. (Mesajı yazarsın: o doğrudan nesne.)"},
+      "ok": "scrivere a Elif → le scrivo."},
+    {"t": "choice", "q": "Türab, ___ mando il preventivo oggi. (sana)", "a": "ti", "o": ["ti", "mi", "gli"],
+      "why": {"mi": "mi = bana. Sana: ti.", "gli": "gli = ona / onlara. Karşındakine konuşuyorsun: ti."},
+      "ok": "sana → ti."},
+    {"t": "choice", "q": "Garson bir müşteriye: “Signora, ___ do il conto.” (size)", "a": "Le", "o": ["Le", "La", "Gli"],
+      "why": {"La": "La = sizi (doğrudan). dare a: “size” veririm, -e → Le.", "Gli": "gli = ona (erkek) / onlara. Kibar “size”: Le."},
+      "ok": "Kibar “size” = Le."},
+    {"t": "choice", "q": "Gli operai? ___ do i guanti.", "a": "Gli", "o": ["Gli", "Li", "Le"],
+      "why": {"Li": "li = onları (doğrudan). Eldivenleri “onlara” veriyorsun: gli.", "Le": "le tekil kadın için “ona”dır. Onlara: gli."},
+      "ok": "onlara → gli."},
+    {"t": "choice", "q": "“Ahmet'i aradım.”", "a": "L'ho chiamato.", "o": ["L'ho chiamato.", "Gli ho chiamato."],
+      "why": {"Gli ho chiamato.": "chiamare: “kimi?” → Ahmet'i. -i → doğrudan: l'ho chiamato."},
+      "ok": "chiamare qualcuno → lo."},
+    {"t": "choice", "q": "“Ahmet'e telefon ettim.”", "a": "Gli ho telefonato.", "o": ["L'ho telefonato.", "Gli ho telefonato."],
+      "why": {"L'ho telefonato.": "telefonare a: “kime?” → Ahmet'e. -e → dolaylı: gli ho telefonato."},
+      "ok": "telefonare a qualcuno → gli."},
+    {"t": "choice", "q": "“Elif'e yardım ediyorum.”", "a": "L'aiuto.", "o": ["Le aiuto.", "L'aiuto."],
+      "why": {"Le aiuto.": "Tuzak fiil: aiutare doğrudan nesne alır (aiutare qualcuno). Türkçedeki -e'ye aldanma: la + aiuto → l'aiuto."},
+      "ok": "aiutare → lo / la."},
+    {"t": "choice", "q": "Elif? Le ho ___ ieri.", "a": "telefonato", "o": ["telefonato", "telefonata"],
+      "why": {"telefonata": "Dolaylı zamirde (le = ona) ortaç uymaz: le ho telefonato."},
+      "ok": "Dolaylı → ortaç sabit."},
+    {"t": "type", "q": "Zamirle yeniden yaz: “Do la chiave a Elif.”", "a": ["le do la chiave", "io le do la chiave"], "hint": "a Elif → le, fiilin önüne.", "ok": "Le do la chiave."},
+    {"t": "type", "q": "Türkçeden çevir: “Ona hayır dedim.” (Marco'ya)", "a": ["gli ho detto di no", "io gli ho detto di no"], "hint": "dire a → gli; dire → detto; di no = hayır diye.", "ok": "Gli ho detto di no."},
+    {"t": "order", "q": "Sırala: “Ona (Elif'e) yarın yazmam lazım.”", "words": ["scrivere", "domani", "le", "devo"], "a": "le devo scrivere domani", "alt": ["domani le devo scrivere"], "ok": "Le devo scrivere domani. Aynısı: Devo scriverle domani."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Bugün kime ne yaptığını anlatmak: kime telefon ettin, kime ne yazdın, işçilere ne verdin, şefe ne söyledin. Türab gli / le / Le / ti / ci ile cevap verecek, -i / -e farkına göre lo mu gli mi seçecek ve geçmişte dolaylı zamirde ortacı değiştirmeyecek.",
+    "vocab": ["mi", "ti", "gli", "le", "Le", "ci", "vi", "telefonare a", "dire a", "dare a", "mandare a", "scrivere a", "chiedere a", "aiutare", "ringraziare", "il preventivo", "il conto", "il messaggio", "il programma", "gli operai", "il capo", "di no", "dopo"],
+    "structures": ["gli / le / Le + çekimli fiil: Gli telefono dopo.", "a + kişi = zamir: Scrivo a Elif → Le scrivo.", "-i → lo / la (doğrudan), -e → gli / le (dolaylı)", "tuzaklar: aiutare ve ringraziare doğrudan nesne alır (l'aiuto, l'ho ringraziato)", "geçmişte dolaylı zamir: le ho telefonato (uyum yok, kesme yok)"],
+    "opener_hint": "Chiara akşamüstü soruyor: “Ciao Türab! Hai telefonato al capo oggi?” Sonra Elif'e mesaj yazdın mı, işçilere eldiven verdin mi, şefe ne dedin, teklifi kime gönderdin, müşteriye ne söyledin diye sorsun. Soruları a + isimle sorsun ki Türab zamirle cevap versin; bir soruda da aiutare geçsin (Hai aiutato Elif?).",
+    "level_note": "A2: her mesajda 2–3 kısa İtalyanca cümle; Türkçeyi sadece Türab takılırsa ya da “Türkçe” derse kısaca ver. Şimdiki zaman, passato prossimo, doğrudan ve dolaylı zamirleri kullan; birleşik zamirleri (glielo, me lo), imperfetto'yu ve emir kipini (dimmi) kullanma. Türab -e fiilinde lo/la derse (l'ho telefonato), dolaylıda ortacı uydurursa (le ho telefonata) ya da aiutare'de le derse “Quasi! → doğrusu” yaz ve Türkçe -i / -e testini tek cümleyle hatırlat. 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+  },
+  "yokla": [
+    {"t": "choice", "topic": "gli / le seçimi", "q": "Mehmet? ___ mando la foto.", "a": "Gli", "o": ["Gli", "Le", "Lo"],
+      "why": {"Le": "le kadın için “ona”dır. Mehmet erkek: gli.", "Lo": "mandare a: “Mehmet'e” gönderirsin, -e → gli. (Fotoğrafı gönderirsin: o doğrudan nesne.)"}},
+    {"t": "choice", "topic": "doğrudan mı dolaylı mı (-i / -e)", "q": "Il capo? ___ aspetto qui. (Şefi burada bekliyorum.)", "a": "L'", "o": ["L'", "Gli"],
+      "why": {"Gli": "aspettare: “kimi?” → şefi. -i → doğrudan: lo; ünlüden önce l'aspetto."}},
+    {"t": "choice", "topic": "kibar Le", "q": "Bir müşteriye: “Size bir şey sorabilir miyim?” ___ posso chiedere una cosa?", "a": "Le", "o": ["La", "Le", "Ti"],
+      "why": {"La": "La = sizi (doğrudan). chiedere a: “size” sorarım, -e → Le.", "Ti": "ti samimi (sana). Müşteriye kibar: Le."}},
+    {"t": "choice", "topic": "geçmişte ortaç uyumu yok", "q": "Elif? Le ho ___ un messaggio.", "a": "mandato", "o": ["mandato", "mandata"],
+      "why": {"mandata": "le burada “ona” (dolaylı); ortaç uymaz: le ho mandato."}},
+    {"t": "type", "topic": "a + kişi → zamir", "q": "Zamirle yeniden yaz: “Telefono agli operai.”", "a": ["gli telefono", "io gli telefono"], "hint": "agli operai → onlara."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "“Ona (Marco'ya) teşekkür ettim.”", "a": "L'ho ringraziato.", "o": ["Gli ho ringraziato.", "L'ho ringraziato."],
+        "why": {"Gli ho ringraziato.": "Tuzak fiil: ringraziare doğrudan nesne alır (ringraziare qualcuno): l'ho ringraziato."},
+        "ok": "ringraziare → lo / la."},
+      {"t": "choice", "q": "Şef bize programı gönderdi: “Il capo ___ ha mandato il programma.”", "a": "ci", "o": ["ci", "vi", "gli"],
+        "why": {"vi": "vi = size. Bize: ci.", "gli": "gli = ona / onlara. Bize: ci."},
+        "ok": "bize → ci."},
+      {"t": "choice", "q": "Le chiavi? ___ ho date a Elif.", "a": "Le", "o": ["Le", "Gli", "L'"],
+        "why": {"Gli": "“Anahtarları” (-i) → doğrudan. Kadın çoğul: le. Kime verdiğin (a Elif) zaten sonda.", "L'": "Sadece lo / la kesilir; anahtarlar çoğul: le ho."},
+        "ok": "Burada le = onları (doğrudan), ortaç uyar: date."},
+      {"t": "type", "q": "Türkçeden çevir: “Sana yarın telefon ederim.”", "a": ["ti telefono domani", "domani ti telefono", "io ti telefono domani"], "hint": "sana → ti; şimdiki zaman yakın gelecek için de kullanılır.", "ok": "Ti telefono domani."},
+      {"t": "type", "q": "Zamirle yeniden yaz: “Ho scritto a Elif.”", "a": ["le ho scritto", "io le ho scritto"], "hint": "a Elif → le; dolaylıda ortaç sabit.", "ok": "Le ho scritto."},
+      {"t": "order", "q": "Sırala: “Ona (Mehmet'e) henüz telefon etmedim.”", "words": ["telefonato", "gli", "ancora", "ho", "non"], "a": "non gli ho ancora telefonato", "ok": "Non gli ho ancora telefonato."}
+    ],
+    "konus_prompt": "Chiara sana bu haftaki işleri soracak: kime telefon ettin, kime ne gönderdin, kime ne verdin, kime yardım ettin. En az 5 cümle kur: en az 3'ünde gli / le / ti / ci (gli ho telefonato, le ho mandato il preventivo), birinde aiutare ya da ringraziare (l'ho aiutato), birinde de -i ve -e farkını gösteren bir çift (L'ho chiamato. / Gli ho telefonato.)."
+  }
+}

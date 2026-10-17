@@ -73,13 +73,13 @@ async function open(id,o){o=o||{}; let d, wk=null; try{d=await C.lxGet(id); if(o
   if(L.open)close(true);
   const p=C.lxP(id); Object.assign(L,{id,d,lang:d.lang==="en"?"en":"it",coach:d.konus&&d.konus.coach==="oliver"?"en":d.konus&&d.konus.coach==="chiara"?"it":(d.lang==="en"?"en":"it"),
     done:[0,1,2,3,4].map(i=>!!(p.done&&p.done[i])),step:Math.min(4,Math.max(0,+p.step||0)),page:0,pr:{i:+(p.p&&p.p.i)||0,score:+(p.p&&p.p.score)||0,ans:false},qz:{i:0,score:0,ans:false,miss:[]},
-    pk:o.pk&&d.pekistir&&Array.isArray(d.pekistir.items)?{i:0,score:0,ans:false,talk:false,items:wk?[].concat(...wk.map(x=>arr(x.pekistir&&x.pekistir.items).slice(0,4))):d.pekistir.items}:null,week:wk?o.week.slice():null,ask:[],sum:null,open:true,act:Date.now(),msDate:p.ms&&p.ms.date===today()?p.ms.date:today(),ms:p.ms&&p.ms.date===today()?+p.ms.v||0:0});
+    ex:d.kind==="exam"?{stage:"intro",i:0,score:0,ans:false,miss:[],log:[]}:null,pk:d.kind!=="exam"&&o.pk&&d.pekistir&&Array.isArray(d.pekistir.items)?{i:0,score:0,ans:false,talk:false,items:wk?[].concat(...wk.map(x=>arr(x.pekistir&&x.pekistir.items).slice(0,4))):d.pekistir.items}:null,week:wk?o.week.slice():null,ask:[],sum:null,open:true,act:Date.now(),msDate:p.ms&&p.ms.date===today()?p.ms.date:today(),ms:p.ms&&p.ms.date===today()?+p.ms.v||0:0});
   if(L.pr.i>=(d.uygula||[]).length&&!L.done[2])L.pr={i:0,score:0,ans:false};
   const el=lsnEl(); el.hidden=false; el.scrollTop=0; document.documentElement.classList.add("lsn-on"); C.ccStop();
   L.tok=Math.random().toString(36).slice(2,9); try{history.pushState({lsn:L.tok},"",location.pathname+location.search+"#ders-"+id); L.pushed=true;}catch(e){L.pushed=false;}
   clearInterval(L.tick); L.tick=setInterval(tick,15000);
   render(); const x=$l("#lsnX"); if(x)x.focus({preventScroll:true});}
-function close(quiet){if(!L.open)return; tick(); save(); L.open=false; clearInterval(L.tick); ttsStop(); closeAsk(true); if(K.call)kEnd(true);
+function close(quiet){if(!L.open)return; tick(); if(!L.ex)save(); L.open=false; clearInterval(L.tick); ttsStop(); closeAsk(true); if(K.call)kEnd(true);
   const el=document.getElementById("lsn"); if(el)el.hidden=true; document.documentElement.classList.remove("lsn-on");
   if(L.pushed&&!quiet){L.pushed=false; try{if(history.state&&history.state.lsn===L.tok)history.back();}catch(e){}}
   else if(location.hash.indexOf("#ders-")===0){try{history.replaceState(null,"",location.pathname+location.search);}catch(e){}}
@@ -87,6 +87,8 @@ function close(quiet){if(!L.open)return; tick(); save(); L.open=false; clearInte
 window.addEventListener("popstate",e=>{if(L.open&&!(e.state&&e.state.lsn===L.tok)){L.pushed=false; close(true);}});
 /* şema denetimi: hatalıysa kısa neden (tests: her içerik dosyası) */
 function validate(d){if(!d||typeof d!=="object")return "JSON nesnesi değil"; if(!d.id||!d.title)return "id/title yok"; if(!(d.lang==="it"||d.lang==="en"))return "lang it|en olmalı";
+  if(d.kind==="exam"){if(!Array.isArray(d.items)||d.items.length<10)return "sınav: en az 10 soru"; if(typeof d.pass!=="number"||!(d.pass>0&&d.pass<=d.items.length))return "sınav: pass sayı olmalı";
+    for(const it of d.items){const e=itemErr(it); if(e)return "items: "+e; if(!it.topic||!it.from)return "items: topic/from yok ("+it.q+")";} return "";}
   if(!Array.isArray(d.anlat)||!d.anlat.length)return "anlat boş"; for(const c of d.anlat){if(!c||!Array.isArray(c.blocks))return "anlat kartında blocks yok"; for(const b of c.blocks){if(!b||!BLOCK[b.type])return "bilinmeyen blok: "+(b&&b.type);}}
   if(!Array.isArray(d.dinle)||!d.dinle.every(x=>x&&x.x))return "dinle hatalı";
   const items=(a,n)=>{if(!Array.isArray(a)||!a.length)return n+" boş"; for(const it of a){const e=itemErr(it); if(e)return n+": "+e;} return "";};
@@ -98,7 +100,11 @@ function itemErr(it){if(!it||!it.q)return "soru metni yok";
   return "bilinmeyen tür: "+it.t;}
 /* ---- çizim ---- */
 const unlocked=i=>i===0||L.done[i-1]||L.done[i]||!!progDoc().passed;
-function render(){const d=L.d; $l("#lsnEye").innerHTML=FLAG(L.lang)+esc(LN[L.lang]+" "+(d.level||"")+(L.pk?" · Pekiştir":" · Ders"));
+function render(){const d=L.d; $l("#lsnEye").innerHTML=FLAG(L.lang)+esc(LN[L.lang]+" "+(d.level||"")+(L.ex?" · Sınav":L.pk?" · Pekiştir":" · Ders"));
+  $l("#askFab").hidden=!!L.ex||!$l("#ask").hidden; $l("#lpath").hidden=!!L.ex;
+  if(L.ex){$l("#lsnT").textContent=d.title; const ld=$l("#lsnLead"); ld.innerHTML=md(d.lead||""); ld.hidden=L.ex.stage!=="intro"||!d.lead;
+    $l("#lstage").innerHTML=L.ex.stage==="intro"?vExIntro():L.ex.i>=d.items.length?vExRes():`<section class="lcard">${qView(d.items[L.ex.i],L.ex,d.items.length,"x")}</section>`;
+    const f=$l("#lstage [data-focus]"); if(f)f.focus({preventScroll:true}); return;}
   $l("#lsnT").textContent=L.week?"Haftanın Pekiştir'i":d.title; const lead=$l("#lsnLead"); lead.innerHTML=L.pk?(L.week?"Haftanın derslerini pekiştir: kısa sorular, sonra kısa konuşma.":"Dünkü dersi pekiştir: kısa sorular, sonra kısa konuşma."):md(d.lead||""); lead.hidden=!L.pk&&!(L.step===0&&L.page===0&&d.lead);
   const path=$l("#lpath");
   if(L.pk){const ps=[["Sorular",!!L.pk.talk||L.pk.i>=L.pk.items.length],["Konuş",false]]; path.style.setProperty("--n",2);
@@ -135,27 +141,29 @@ function vDinle(){const lines=L.d.dinle;
    <div class="lnav"><button type="button" class="btn btn-ghost" data-act="toStep" data-to="0">Anlatıma dön</button><button type="button" class="btn btn-primary" data-act="finish" data-i="1">Tekrar ettim → Uygula</button></div></section>`;}
 /* ortak soru görünümü: kind p (Uygula) · q (Yokla) · k (Pekiştir) */
 function qView(item,st,total,kind){
-  const head=`<div class="lmeter" aria-hidden="true"><i style="width:${Math.round(st.i/total*100)}%"></i></div><p class="lk">${kind==="q"?"Yoklama":kind==="k"?"Pekiştir":"Alıştırma"} ${st.i+1} / ${total}</p>`;
+  const head=`<div class="lmeter" aria-hidden="true"><i style="width:${Math.round(st.i/total*100)}%"></i></div><p class="lk">${kind==="q"?"Yoklama":kind==="k"?"Pekiştir":kind==="x"?"Soru":"Alıştırma"} ${st.i+1} / ${total}</p>`;
   const q=String(item.q).includes("___")?md(item.q).replace("___",'<span class="gap">&nbsp;</span>'):md(item.q);
   let input;
   if(item.t==="choice")input=`<div class="opts" role="group" aria-label="Seçenekler">${item.o.map(o=>`<button type="button" class="opt" data-ans="${esc(o)}" data-kind="${kind}">${esc(o)}</button>`).join("")}</div>`;
   else if(item.t==="order"){L.order=[]; input=`<div class="oBuilt" id="oBuilt" aria-live="polite"></div><div class="oPool" role="group" aria-label="Kelimeler">${item.words.map((w,i)=>`<button type="button" class="oW" data-ow="${i}">${esc(w)}</button>`).join("")}</div>
      <div class="lrow"><button type="button" class="btn btn-ghost btn-sm" data-act="oUndo">Geri al</button><button type="button" class="btn btn-primary" data-act="oCheck" data-kind="${kind}">Kontrol</button></div>`;}
-  else input=`<form data-form="${kind}" class="lform"><label class="cc-vh" for="ans_${kind}">Cevabın</label><input type="text" class="lin" id="ans_${kind}" autocomplete="off" autocapitalize="off" spellcheck="false" lang="${L.lang}" placeholder="${LN[L.lang]} yaz"><button class="btn btn-primary" type="submit">Kontrol</button></form>${item.hint&&kind!=="q"?`<p class="lnote">İpucu: ${md(item.hint)}</p>`:""}`;
+  else input=`<form data-form="${kind}" class="lform"><label class="cc-vh" for="ans_${kind}">Cevabın</label><input type="text" class="lin" id="ans_${kind}" autocomplete="off" autocapitalize="off" spellcheck="false" lang="${L.lang}" placeholder="${LN[L.lang]} yaz"><button class="btn btn-primary" type="submit">Kontrol</button></form>${item.hint&&kind!=="q"&&kind!=="x"?`<p class="lnote">İpucu: ${md(item.hint)}</p>`:""}`;
   return `${head}<p class="q" data-focus tabindex="-1">${q}</p>${input}<div id="fb_${kind}" aria-live="polite"></div>`;}
 function feedback(kind,item,val,res){const box=$l("#fb_"+kind); let h;
   if(res==="ok")h=`<div class="fb ok"><b>Doğru.</b> ${md(item.ok||"")}</div>`;
   else if(res==="soft")h=`<div class="fb ok"><b>Doğru sayıldı.</b> ${item.soft_note?md(item.soft_note):`Doğru yazımı: <b>${esc(cap(ansOf(item)))}</b>.`}</div>`;
-  else{const why=item.t==="choice"&&item.why&&item.why[val]?item.why[val]:(kind!=="q"?item.hint||"":""); h=`<div class="fb no"><b>Doğrusu: ${esc(ansOf(item))}</b>${why?"<br>"+md(why):""}</div>`;}
-  h+=`<div class="lrow" style="margin-top:12px"><button type="button" class="btn btn-primary" data-act="next" data-kind="${kind}" data-focusnext>Sonraki</button>${res==="no"&&kind!=="q"?`<button type="button" class="btn btn-ghost" data-act="askWhy">${ICON("ask")}Koça neden diye sor</button>`:""}</div>`;
+  else{const why=whyOf(item,val)||(kind!=="q"&&kind!=="x"?item.hint||"":""); h=`<div class="fb no"><b>Doğrusu: ${esc(ansOf(item))}</b>${why?"<br>"+md(why):""}</div>`;}
+  h+=`<div class="lrow" style="margin-top:12px"><button type="button" class="btn btn-primary" data-act="next" data-kind="${kind}" data-focusnext>Sonraki</button>${res==="no"&&kind!=="q"&&kind!=="x"?`<button type="button" class="btn btn-ghost" data-act="askWhy">${ICON("ask")}Koça neden diye sor</button>`:""}</div>`;
   box.innerHTML=h; L.lastQ={q:item.q,val,a:ansOf(item)};
   document.querySelectorAll("#lstage .opt").forEach(o=>{o.disabled=true; if(o.dataset.ans===ansOf(item))o.classList.add("right"); else if(o.dataset.ans===val)o.classList.add("wrong");});
   document.querySelectorAll("#lstage .lform input,#lstage .lform button,#lstage .oW,#lstage [data-act=oCheck],#lstage [data-act=oUndo]").forEach(x=>x.disabled=true);
   const b=box.querySelector("[data-focusnext]"); if(b)b.focus({preventScroll:true});}
-function stOf(kind){return kind==="p"?L.pr:kind==="q"?L.qz:L.pk;}
-function itemsOf(kind){return kind==="p"?L.d.uygula:kind==="q"?L.d.yokla:L.pk.items;}
+const whyOf=(item,val)=>item.t==="choice"&&item.why&&item.why[val]?item.why[val]:typeof item.why==="string"?item.why:"";
+function stOf(kind){return kind==="p"?L.pr:kind==="q"?L.qz:kind==="x"?L.ex:L.pk;}
+function itemsOf(kind){return kind==="p"?L.d.uygula:kind==="q"?L.d.yokla:kind==="x"?L.d.items:L.pk.items;}
 function answer(kind,val){const st=stOf(kind), item=itemsOf(kind)[st.i]; if(!item||st.ans)return; st.ans=true; L.act=Date.now();
-  const res=judge(item,val); if(res!=="no")st.score++; else if(kind==="q")st.miss.push(item.topic||"Genel tekrar");
+  const res=judge(item,val); if(res!=="no")st.score++; else if(kind==="q"||kind==="x")st.miss.push(item.topic||"Genel tekrar");
+  if(kind==="x")st.log.push({item,val,res});
   feedback(kind,item,val,res); if(kind==="p")save();}
 function vUygula(){const st=L.pr, U=L.d.uygula, n=U.length;
   if(st.i>=n){const good=st.score>=Math.ceil(n*0.75);
@@ -220,6 +228,27 @@ async function pkDone(){const t=today(), m=minsNow(); await save({pk:t});
   if(L.week){for(const id of L.week){if(id===L.id)continue; const p=C.lxP(id), rec=Object.assign({},p,{pk:t,updated:new Date().toISOString()}); C.LX.prog[id]=rec; try{await C.db.collection("lessons").doc(id).set(rec);}catch(e){}}}
   try{await C.upsertSession("pekistir-"+t+"-"+L.id,{date:t,lang:L.lang,mins:{gramer:m},total:m,topic:C.topicById(L.id)?L.id:"",mistakes:[],note:"Pekiştir: "+L.d.title,next:"",created:new Date().toISOString(),words:0,src:"lesson"});}catch(e){}
   close();}
+/* ---- sınav (kind:"exam"): giriş → sorular (yokla çizimi, Koça sor kapalı) → sonuç; kayıt exams/<tur>-wNN (sinav_kaydet biçimi, en yüksek puan kalır) + lessons/<id> ---- */
+const EXW={cp1:[4,"checkpoint"],cp2:[8,"checkpoint"],final:[12,"final"]};
+function vExIntro(){const d=L.d, n=d.items.length, p=progDoc();
+  return `<section class="lcard"><p class="lk">Sınav</p><h2 data-focus tabindex="-1">${esc(d.title)}</h2>
+   <dl class="xinfo"><div><dt>Soru</dt><dd>${n}</dd></div><div><dt>Geçme</dt><dd>${d.pass} doğru</dd></div><div><dt>Süre</dt><dd>${+d.minutes||Math.round(n*1.2)} dk</dd></div></dl>
+   ${p.attempts?`<p class="lnote">En iyi sonucun: <b>${+p.best||0} / ${n}</b> · ${p.attempts} deneme</p>`:""}<p class="lnote">Her sorudan sonra doğrusunu görürsün. Sınavda Koça sor kapalı.</p>
+   <div class="lnav"><button type="button" class="btn btn-ghost" data-act="close">Kapat</button><button type="button" class="btn btn-primary" data-act="exStart">${ICON("play")}Başla</button></div></section>`;}
+function vExRes(){const d=L.d, st=L.ex, n=d.items.length, ok=st.score>=d.pass, pct=Math.round(st.score/n*100), nx=ok&&C.lxNext?C.lxNext():null, G=new Map();
+  st.log.filter(x=>x.res==="no").forEach(x=>{const k=x.item.topic; if(!G.has(k))G.set(k,{from:x.item.from,l:[]}); G.get(k).l.push(x);});
+  const grp=[...G].map(([tp,g])=>{const m=C.lxMeta(g.from); return `<div class="xgrp"><div class="xgh"><b>${esc(tp)}</b>${m&&m.kind!=="exam"?`<button type="button" class="btn btn-soft btn-sm" data-act="exLesson" data-id="${esc(g.from)}">Dersi aç · ${esc(m.title)}</button>`:""}</div>
+    <ul>${g.l.map(x=>{const w=whyOf(x.item,x.val); return `<li><p>${md(x.item.q)}</p><p class="xa">Senin cevabın: <s>${esc(x.val)}</s></p><p class="xa">Doğrusu: <b>${esc(ansOf(x.item))}</b></p>${w?`<p class="xw">${md(w)}</p>`:""}</li>`;}).join("")}</ul></div>`;}).join("");
+  return `<section class="lcard ldone"><p class="lk">${ok?"Sınav · geçti":"Sınav · kaldı"}</p><p class="lbig">${st.score} / ${n}</p><p class="lead"><b>%${pct}</b> · ${ok?"Geçtin. Eşik "+d.pass+" doğruydu.":"Geçmek için en az "+d.pass+" doğru gerekli. Aşağıdaki konulara dön, sonra tekrar dene."}</p></section>
+   ${grp?`<section class="lcard"><h2>Yanlışlar · konuya göre</h2>${grp}</section>`:""}
+   <div class="lrow">${nx?`<button type="button" class="btn btn-primary" data-act="planNext">Sıradaki: ${esc(nx.label)}${ICON("arrow")}</button>`:""}<button type="button" class="btn ${ok?"btn-ghost":"btn-primary"}" data-act="exRedo">Tekrar dene</button><button type="button" class="btn btn-ghost" data-act="close">Kapat</button></div>`;}
+async function examDone(){const d=L.d, st=L.ex, n=d.items.length, sc=st.score, ok=sc>=d.pass, t=today(), p=progDoc(), db=C.db, now=new Date().toISOString(), miss=[...new Set(st.miss)];
+  const rec=Object.assign({},p,{best:Math.max(+p.best||0,sc),last:sc,attempts:(+p.attempts||0)+1,passed:!!p.passed||ok,miss,updated:now}); if(ok&&!p.passed)rec.passedAt=t;
+  C.LX.prog[L.id]=rec; if(!db)return; try{await db.collection("lessons").doc(L.id).set(rec);}catch(e){}
+  const m=EXW[L.id]; if(m){const [w,tur]=m, eid=tur+"-w"+String(w).padStart(2,"0"), E=C.S.exams, prev=E.find(e=>e.id===eid), keep=prev&&+prev.puan>sc;
+    const x=keep?Object.assign({},prev,{deneme:(+prev.deneme||0)+1,updated:now}):{hafta:w,puan:sc,toplam:n,tur,notlar:(miss.length?"Yanlış konular: "+miss.join(", "):"Hepsi doğru").slice(0,400),tarih:t,ajan:"sinav",deneme:(prev&&+prev.deneme||0)+1,updated:now};
+    delete x.id; try{await db.collection("exams").doc(eid).set(x);}catch(e){} const i=E.findIndex(e=>e.id===eid); if(i>=0)E[i]=Object.assign({id:eid},x); else E.push(Object.assign({id:eid},x));}
+  await lessonSession({note:"Sınav: "+d.title+" ("+sc+"/"+n+")",mistakes:miss.map(x=>x+" ("+d.title+")")}); C.lxPaint();}
 /* ---- olaylar ---- */
 async function onClick(e){const b=e.target.closest("button"); if(!b||b.disabled)return; L.act=Date.now();
   if(b.dataset.say!==undefined){const on=b.classList.contains("on"); ttsStop(); if(on)return; b.classList.add("on"); speak([b.dataset.say],b.dataset.sl||L.lang).then(()=>b.classList.remove("on")); return;}
@@ -238,9 +267,12 @@ async function onClick(e){const b=e.target.closest("button"); if(!b||b.disabled)
   if(a==="oUndo"){L.order.pop(); paintOrder(); return;}
   if(a==="oCheck"){const kind=b.dataset.kind, item=itemsOf(kind)[stOf(kind).i]; if(!L.order.length)return; answer(kind,L.order.map(i=>item.words[i]).join(" ")); return;}
   if(a==="next"){const kind=b.dataset.kind, st=stOf(kind); st.i++; st.ans=false;
+    if(kind==="x"&&st.i>=L.d.items.length)await examDone();
     if(kind==="q"&&st.i>=L.d.yokla.length){if(st.score>=(+L.d.pass||Math.ceil(L.d.yokla.length*0.8))){L.done[4]=true; await passLesson();} else await failLesson();}
     if(kind==="p")save(); render(); return;}
   if(a==="redoP"){L.pr={i:0,score:0,ans:false}; save(); render(); return;}
+  if(a==="exStart"||a==="exRedo"){L.ex={stage:"q",i:0,score:0,ans:false,miss:[],log:[]}; render(); const el=document.getElementById("lsn"); if(el)el.scrollTo({top:0,behavior:"auto"}); return;}
+  if(a==="exLesson"){const id=b.dataset.id; if(C.lxMeta(id))open(id,{}); return;}
   if(a==="redoQ"){L.qz={i:0,score:0,ans:false,miss:[]}; render(); return;}
   if(a==="askWhy"){const q=L.lastQ||{}; openAsk("Bu soruda neden yanlış yaptım? Soru: "+String(q.q||"").replace(/\*\*/g,"")+" · Benim cevabım: "+(q.val||"")+" · Doğrusu: "+(q.a||"")); return;}
   if(a==="call"){startCall(); return;}
@@ -261,7 +293,7 @@ function startCall(){const k=L.d.konus||{}; ttsStop(); tick();
   kCall({coach:L.coach,lessonId:L.id,lessonTitle:L.d.title,topic:L.pk?(L.d.pekistir.konus_prompt||k.goal):(k.goal||L.d.title),goal:k.goal,vocab:arr(k.vocab),structures:arr(k.structures),opener:k.opener_hint,level:k.level_note,
     onEnd:r=>{L.act=Date.now(); if(r&&r.turns){L.konus={mins:r.mins,fixes:r.fixes,phrases:r.phrases}; if(!L.pk){L.done[3]=true; save();}} if(L.open)render();}});}
 /* ---- Koça sor ---- */
-function ctxName(){const k=L.pk?(L.pk.talk?"Pekiştir · konuşma":"Pekiştir · soru "+(L.pk.i+1)):STEPS[L.step][1]; if(L.pk)return k;
+function ctxName(){if(L.ex)return "Sınav"; const k=L.pk?(L.pk.talk?"Pekiştir · konuşma":"Pekiştir · soru "+(L.pk.i+1)):STEPS[L.step][1]; if(L.pk)return k;
   if(L.step===0)return k+" · kart "+(Math.min(L.page,L.d.anlat.length-1)+1)+"/"+L.d.anlat.length; if(L.step===2&&L.pr.i<L.d.uygula.length)return k+" · alıştırma "+(L.pr.i+1); if(L.step===4&&L.qz.i<L.d.yokla.length)return k+" · soru "+(L.qz.i+1); return k;}
 function askRules(){const c=COACH[L.lang], quiz=!L.pk&&L.step===4&&L.qz.i<L.d.yokla.length;
   return `=== AJAN: ${c.name.toUpperCase()} — KOÇA SOR (ders içi) ===

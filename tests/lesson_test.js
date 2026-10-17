@@ -155,10 +155,10 @@ function handler(req,st){const s=req.system;st.sys=st.sys||[];st.sys.push(s);
   ok(await p.isHidden('#dayPlan')&&/Bugünkü dersi başlat/.test(await p.textContent('#btnGo'))&&await p.isHidden('#myLessons'),'no content → plan hidden, Başla = legacy Ders modu, no Benim derslerim');
   await ctx.close();}
 
- // D) İçerik dosyaları: her ders şema + bütün adımlar
+ // D) İçerik dosyaları: her ders şema + bütün adımlar (sınavlar exam_test / content_check'te)
  {const idx=JSON.parse(fs.readFileSync(path.join(H.ROOT,'content/index.json'),'utf8'));const bad=[];
   const {p,ctx}=await mk({fixture:false,vp:{width:820,height:1180}});
-  for(const m of idx){const id=m.id;const d=JSON.parse(fs.readFileSync(path.join(H.ROOT,'content',id+'.json'),'utf8'));const e0=errs.length;
+  for(const m of idx.filter(m=>m.kind!=='exam')){const id=m.id;const d=JSON.parse(fs.readFileSync(path.join(H.ROOT,'content',id+'.json'),'utf8'));const e0=errs.length;
     const v=await p.evaluate(async([id,d])=>{const M=await new Promise(r=>{const t=setInterval(()=>{if(window.TYDIL&&TYDIL.core&&TYDIL.core.LX.index){clearInterval(t);r(1);}},50);});
       await (async()=>{if(!window.TYLESSON){const s=document.createElement('script');s.src='mod/lesson.js';document.head.appendChild(s);await new Promise(r=>s.onload=r);}})();return TYLESSON.validate(d);},[id,d]);
     if(v){bad.push(id+': '+v);continue;}
@@ -176,7 +176,7 @@ function handler(req,st){const s=req.system;st.sys=st.sys||[];st.sys.push(s);
     await p.click('[data-act=close]');await p.waitForTimeout(100);
     if(d.pekistir){await p.evaluate(id=>TYLESSON.open(id,{pk:true}),id);await p.waitForSelector('#lsn:not([hidden])');await answerAll('k',d.pekistir.items);await p.click('[data-act=pkTalk]');await p.click('[data-act=pkDone]');}
     if(errs.length>e0)bad.push(id+': page errors '+errs.slice(e0).join(' | '));}
-  ok(!bad.length,'content files ('+idx.map(x=>x.id).join(',')+'): schema valid, every step renders, correct answers accepted, yokla passes, pekiştir runs'+(bad.length?' — FAIL: '+bad.join(' ; '):''));
+  ok(!bad.length,'content files ('+idx.filter(m=>m.kind!=='exam').map(x=>x.id).join(',')+'): schema valid, every step renders, correct answers accepted, yokla passes, pekiştir runs'+(bad.length?' — FAIL: '+bad.join(' ; '):''));
   await ctx.close();}
 
 

@@ -1,0 +1,161 @@
+{
+  "id": "it21",
+  "lang": "it",
+  "level": "A2",
+  "title": "Doğrudan nesne zamirleri: lo, la, li, le",
+  "lead": "“Kabloyu aldın mı? Aldım.” sorusuna İtalyanca “L'ho preso.” diye cevap verebileceksin. Zamiri ismin cinsine ve sayısına göre seçmeyi, fiilden önce koymayı ve geçmişte ortacı ona uydurmayı öğreneceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "“Onu, onları”: lo, la, li, le",
+      "blocks": [
+        {"type": "p", "text": "Türkçede nesneyi tekrarlamazsın, sadece atarsın: “Kabloyu aldın mı? **Aldım.**” İtalyanca nesnesiz bırakmaz; ismin yerine küçük bir zamir koyar: **Lo prendo.** (Onu alıyorum.) Bu zamirler Türkçedeki **-i** ekli nesnenin (kabloyu, anahtarı) yerini tutar."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "(Onu)", "s": "çoğu zaman düşer"}, {"t": "alıyorum", "s": "fiil"}]},
+          {"label": "İtalyanca", "items": [{"t": "Lo", "s": "onu (il cavo)", "hl": true}, {"t": "prendo", "s": "alıyorum"}]}
+        ]},
+        {"type": "table", "head": ["İsim", "Zamir", "Örnek", "Okunuş"], "x": 2,
+          "rows": [
+            ["il cavo (erkek, tekil)", "lo", "Lo prendo io.", "lo PREN-do İ-o"],
+            ["la chiave (kadın, tekil)", "la", "La cerco.", "la ÇER-ko"],
+            ["i guanti (erkek, çoğul)", "li", "Non li trovo.", "non li TRO-vo"],
+            ["le chiavi (kadın, çoğul)", "le", "Le prendo io.", "le PREN-do İ-o"]
+          ]},
+        {"type": "note", "text": "Seçim kuralı artikelle aynı: il/lo → **lo**, la → **la**, i/gli → **li**, le → **le**. Kişiler için de aynı: Ahmet → **lo**, Elif → **la**. Kibar **La** = sizi: **La chiamo domani.** (Sizi yarın ararım.) Yeni kelime: trovare = bulmak."},
+        {"type": "note", "warn": true, "text": "Tipik Türk hatası zamiri atmak: “Il cavo? Prendo.” İtalyan kulağına eksik gelir. Nesne biliniyorsa bile zamir şart: **Lo prendo.**"}
+      ]
+    },
+    {
+      "title": "Yeri: çekimli fiilin önü",
+      "blocks": [
+        {"type": "p", "text": "Zamir çekimli fiilin **hemen önüne** gelir; **non** da onun önüne. Sıra hep aynı: **non + zamir + fiil**. Türkçe gibi düşün: “onu görmüyorum” → zamir fiilden önce."},
+        {"type": "compare", "rows": [
+          {"label": "Olumlu", "items": [{"t": "Lo", "s": "onu", "hl": true}, {"t": "conosco", "s": "tanıyorum"}]},
+          {"label": "Olumsuz", "items": [{"t": "Non", "s": "değil"}, {"t": "lo", "s": "onu", "hl": true}, {"t": "conosco", "s": "tanıyorum"}]}
+        ]},
+        {"type": "rules", "items": [
+          {"title": "Mastarla: sona yapışır", "text": "Mastarın son -e'si düşer, zamir bitişik yazılır: chiamare → chiamar**lo**.", "ex": {"x": "Devo chiamarlo subito.", "tr": "Onu hemen aramam lazım."}},
+          {"title": "Modal + mastar: iki yer de doğru", "text": "dovere, potere, volere (it16) ile zamir ya başa ya mastarın sonuna: **Lo devo chiamare** = **Devo chiamarlo**. Ortaya koyma.", "ex": {"x": "Lo posso fare io.", "tr": "Onu ben yapabilirim."}}
+        ]},
+        {"type": "note", "warn": true, "text": "**Conosco lo** ve **Devo lo chiamare** yanlış. İngilizce bilen Türk kulağı “I know him” diye zamiri sona atar; İtalyancada çekimli fiilden önce gelir. Hazır kalıp: **Non lo so.** = Bilmiyorum (sapere düzensiz; burada lo = “bunu”)."}
+      ]
+    },
+    {
+      "title": "l': ünlüden önce kesme",
+      "blocks": [
+        {"type": "p", "text": "**lo** ve **la**, ünlüyle (ya da h ile) başlayan fiilden önce **l'** olur. Geçmiş zamanda bu hep olur, çünkü ho, hai, ha, abbiamo, avete, hanno ünlü sesle başlar. **li** ve **le** asla kesilmez."},
+        {"type": "table", "head": ["Zamir", "+ avere", "Okunuş", "Türkçesi"], "x": 1,
+          "rows": [
+            ["lo (il quadro)", "l'ho controllato", "LO kon-trol-LA-to", "onu kontrol ettim"],
+            ["la (la porta)", "l'ho chiusa", "LO KYU-sa", "onu kapattım"],
+            ["li (i cavi)", "li ho presi", "li O PRE-si", "onları aldım"],
+            ["le (le chiavi)", "le ho prese", "le O PRE-se", "onları aldım"]
+          ],
+          "say": ["l'ho controllato", "l'ho chiusa", "li ho presi", "le ho prese"]},
+        {"type": "examples", "items": [
+          {"x": "Il quadro? L'abbiamo già controllato.", "tr": "Pano mu? Onu çoktan kontrol ettik.", "ph": "il KUA-dro? lab-BYA-mo CA kon-trol-LA-to"}
+        ]},
+        {"type": "note", "warn": true, "text": "**Lo ho visto** yazılmaz, hep **l'ho visto**. Şimdiki zamanda da doğal olan **l'apro** (kapıyı açarım). **Li ho, le ho** kesmesiz: “l'ho presi” yanlış."}
+      ]
+    },
+    {
+      "title": "Geçmişte uyum: l'ho vista, li ho presi",
+      "blocks": [
+        {"type": "p", "text": "it19'da avere ile ortaç hiç değişmiyordu. Tek istisna bu: önde **lo, la, li, le** varsa ortaç zamire uyar: **-o / -a / -i / -e**. Elif'i gördüysen **l'ho vista**, Ahmet'i gördüysen **l'ho visto**. Yazıda fark sadece son harfte."},
+        {"type": "table", "head": ["Ne?", "İtalyanca", "Okunuş", "Türkçesi"], "x": 1,
+          "rows": [
+            ["Ahmet'i", "L'ho visto ieri.", "LO VİS-to YE-ri", "Onu dün gördüm."],
+            ["Elif'i", "L'ho vista ieri.", "LO VİS-ta YE-ri", "Onu dün gördüm."],
+            ["kabloları", "Li ho presi io.", "li O PRE-si İ-o", "Onları ben aldım."],
+            ["anahtarları", "Le ho prese io.", "le O PRE-se İ-o", "Onları ben aldım."]
+          ]},
+        {"type": "compare", "rows": [
+          {"label": "İsimle", "items": [{"t": "Ho preso", "s": "ortaç sabit"}, {"t": "le chiavi", "s": "nesne sonda"}]},
+          {"label": "Zamirle", "items": [{"t": "Le", "s": "onları (kadın)", "hl": true}, {"t": "ho", "s": "avere"}, {"t": "prese", "s": "ortaç uyar", "hl": true}]}
+        ]},
+        {"type": "note", "warn": true, "text": "En sık hata: “Le chiavi? Le ho **preso**.” İsim sonda olunca uyum yok, zamir önde olunca var. Türkçede hiç olmayan bir kural; kontrol sorusu: “Önde lo/la/li/le var mı?”"}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Il cavo? Lo prendo io.", "tr": "Kablo mu? Onu ben alırım.", "ph": "il KA-vo? lo PREN-do İ-o"},
+    {"x": "I guanti? Non li trovo.", "tr": "Eldivenler mi? Onları bulamıyorum.", "ph": "i GUAN-ti? non li TRO-vo"},
+    {"x": "Ahmet? Lo conosco bene.", "tr": "Ahmet mi? Onu iyi tanırım.", "ph": "Ahmet? lo ko-NOS-ko BE-ne"},
+    {"x": "Devo chiamarlo subito.", "tr": "Onu hemen aramam lazım.", "ph": "DE-vo kya-MAR-lo SU-bi-to"},
+    {"x": "Il quadro? L'abbiamo già controllato.", "tr": "Pano mu? Onu çoktan kontrol ettik.", "ph": "il KUA-dro? lab-BYA-mo CA kon-trol-LA-to"},
+    {"x": "Hai visto Elif? Sì, l'ho vista stamattina.", "tr": "Elif'i gördün mü? Evet, bu sabah gördüm.", "ph": "AY VİS-to Elif? Sİ, LO VİS-ta sta-mat-Tİ-na"},
+    {"x": "Le chiavi? Le ho prese io.", "tr": "Anahtarlar mı? Onları ben aldım.", "ph": "le KYA-vi? le O PRE-se İ-o"},
+    {"x": "Il rapporto? Non l'ho ancora finito.", "tr": "Rapor mu? Onu henüz bitirmedim.", "ph": "il rap-POR-to? non LO an-KO-ra fi-Nİ-to"},
+    {"x": "Signora, La chiamo domani.", "tr": "Hanımefendi, sizi yarın ararım.", "ph": "si-NYO-ra, la KYA-mo do-MA-ni"},
+    {"x": "Non lo so.", "tr": "Bilmiyorum.", "ph": "non lo SO"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Il cavo? ___ prendo io.", "a": "Lo", "o": ["Lo", "La", "Li"],
+      "why": {"La": "il cavo erkek: lo. la sadece kadın tekil isimler için (la chiave).", "Li": "li çoğul içindir (i cavi). Tek kablo: lo."},
+      "ok": "il cavo → lo."},
+    {"t": "choice", "q": "La chiave? ___ cerco.", "a": "La", "o": ["Lo", "La", "Le"],
+      "why": {"Lo": "la chiave kadın: la.", "Le": "le kadın çoğul içindir (le chiavi). Tek anahtar: la."},
+      "ok": "la chiave → la."},
+    {"t": "choice", "q": "I guanti? Non ___ trovo.", "a": "li", "o": ["lo", "li", "le"],
+      "why": {"lo": "guanti çoğul: li.", "le": "le kadın çoğul içindir. i guanti erkek: li."},
+      "ok": "i guanti → li. Sıra: non + zamir + fiil."},
+    {"t": "choice", "q": "Le chiavi? ___ prendo io.", "a": "Le", "o": ["La", "Li", "Le"],
+      "why": {"La": "chiavi çoğul: le.", "Li": "li erkek çoğul içindir. le chiavi kadın: le."},
+      "ok": "le chiavi → le."},
+    {"t": "choice", "q": "“Ahmet'i iyi tanırım.” (Ahmet → onu)", "a": "Lo conosco bene.", "o": ["Conosco lo bene.", "Lo conosco bene."],
+      "why": {"Conosco lo bene.": "Zamir çekimli fiilin önüne gelir: lo conosco."},
+      "ok": "Zamir + çekimli fiil."},
+    {"t": "choice", "q": "Elif? ___ chiamo domani.", "a": "La", "o": ["Lo", "La", "Li"],
+      "why": {"Lo": "Elif kadın: la.", "Li": "li çoğul ve erkek içindir. Tek kadın: la."},
+      "ok": "Kişilerde de aynı: Elif → la."},
+    {"t": "choice", "q": "Il quadro? ___ abbiamo già controllato.", "a": "L'", "o": ["Lo", "L'", "La"],
+      "why": {"Lo": "abbiamo ünlüyle başlar; lo kesilir: l'abbiamo.", "La": "il quadro erkek; ayrıca ünlüden önce kesilirdi."},
+      "ok": "lo + abbiamo → l'abbiamo."},
+    {"t": "choice", "q": "Elif? Sì, l'ho ___ stamattina.", "a": "vista", "o": ["visto", "vista", "visti"],
+      "why": {"visto": "l' burada la (Elif). Önde la varsa ortaç uyar: vista.", "visti": "-i çoğul içindir; Elif tek kişi."},
+      "ok": "l' = la → vista."},
+    {"t": "choice", "q": "I cavi? Li ho ___ ieri.", "a": "presi", "o": ["preso", "presi", "prese"],
+      "why": {"preso": "Önde li var; ortaç uyar: presi.", "prese": "-e kadın çoğul içindir. i cavi erkek: presi."},
+      "ok": "li → presi."},
+    {"t": "type", "q": "Türkçeden çevir: “Onu dün gördüm.” (Ahmet'i)", "a": ["l'ho visto ieri", "ieri l'ho visto", "io l'ho visto ieri", "l'ho visto io ieri"], "hint": "lo + ho → l'ho; Ahmet erkek → visto.", "ok": "L'ho visto ieri."},
+    {"t": "type", "q": "Cevap ver: “Hai preso le chiavi?” → Evet, (onları) aldım.", "a": ["sì, le ho prese", "le ho prese", "sì, le ho prese io", "sì, io le ho prese"], "soft": ["si le ho prese", "si le ho prese io", "si io le ho prese"], "soft_note": "Doğru sayıldı. Evet anlamındaki sì aksanla yazılır (si başka bir kelime): Sì, le ho prese.", "hint": "le + ho (kesme yok) + ortaç kadın çoğul.", "ok": "Sì, le ho prese."},
+    {"t": "order", "q": "Sırala: “(Rapor mu?) Onu henüz bitirmedim.”", "words": ["finito", "ancora", "non", "l'ho"], "a": "non l'ho ancora finito", "ok": "Non l'ho ancora finito. ancora, avere ile ortaç arasına girer (it19)."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "İş sonu kontrolü: Chiara şantiyedeki şeyleri tek tek soracak (kablo, pano, anahtarlar, eldivenler, rapor, Elif, Ahmet). Türab ismi tekrarlamadan lo / la / li / le / l' ile cevap verecek ve geçmişte ortacı zamire uyduracak (l'ho vista, li ho presi).",
+    "vocab": ["lo", "la", "li", "le", "l'ho", "il cavo", "i cavi", "la chiave", "le chiavi", "i guanti", "il quadro", "la porta", "il rapporto", "trovare", "cercare", "conoscere", "chiamare", "controllare", "già", "ancora", "subito", "Non lo so"],
+    "structures": ["lo / la / li / le + çekimli fiil: Lo prendo io.", "non + zamir + fiil: Non li trovo.", "mastarla bitişik: devo chiamarlo = lo devo chiamare", "lo / la + avere → l'ho, l'hai, l'abbiamo; li ho, le ho kesilmez", "zamir önde → ortaç uyar: l'ho visto / vista, li ho presi, le ho prese"],
+    "opener_hint": "Chiara akşam iş bitişinde soruyor: “Ciao Türab! Hai preso i cavi?” Sonra panoyu kontrol ettin mi, anahtarlar nerede, Elif'i bugün gördün mü, raporu bitirdin mi, Ahmet'i tanıyor musun diye sırayla sorsun. Soruları isimle sorsun ki Türab zamirle cevap versin; en az birinde kadın çoğul (le chiavi) ve birinde kadın tekil kişi (Elif) olsun.",
+    "level_note": "A2: her mesajda 2–3 kısa İtalyanca cümle; Türkçeyi sadece Türab takılırsa ya da “Türkçe” derse kısaca ver. Sadece şimdiki zaman, passato prossimo ve doğrudan nesne zamirleri kullan; dolaylı zamirleri (gli, le = ona), birleşik zamirleri (glielo) ve imperfetto'yu kullanma. Türab zamiri atarsa (“Sì, ho preso”), fiilden sonra koyarsa ya da uyumu kaçırırsa (le ho preso) “Quasi! → doğrusu” yaz ve kuralı tek cümleyle hatırlat. 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+  },
+  "yokla": [
+    {"t": "choice", "topic": "zamir seçimi (cinsiyet ve sayı)", "q": "Le viti? Non ___ vedo. (le viti = vidalar)", "a": "le", "o": ["li", "le", "la"],
+      "why": {"li": "li erkek çoğul içindir. le viti kadın: le.", "la": "la tekil içindir; viti çoğul: le."}},
+    {"t": "choice", "topic": "zamirin yeri", "q": "“Onu ben yapabilirim.” (il lavoro)", "a": "Lo posso fare io.", "o": ["Posso lo fare io.", "Lo posso fare io.", "Posso fare io lo."],
+      "why": {"Posso lo fare io.": "Zamir modal ile mastarın arasına girmez: lo posso fare ya da posso farlo.", "Posso fare io lo.": "Zamir mastardan sonra ayrı durmaz; ya başa (lo posso) ya mastara bitişik (farlo)."}},
+    {"t": "choice", "topic": "l' kesmesi", "q": "La porta? ___ ho chiusa io.", "a": "L'", "o": ["Le", "L'", "Lo"],
+      "why": {"Le": "le çoğul içindir; porta tekil: la → ho'dan önce l'.", "Lo": "la porta kadın; lo olmaz. Ünlüden önce la → l'."}},
+    {"t": "choice", "topic": "ortaç uyumu", "q": "La pizza? L'abbiamo ___.", "a": "mangiata", "o": ["mangiato", "mangiata", "mangiate"],
+      "why": {"mangiato": "l' burada la (la pizza). Önde la varsa ortaç uyar: mangiata.", "mangiate": "-e kadın çoğul içindir; tek pizza: mangiata."}},
+    {"t": "type", "topic": "li + ortaç uyumu", "q": "Cevap ver: “Hai comprato i guanti?” → Evet, (onları) aldım.", "a": ["sì, li ho comprati", "li ho comprati", "sì, li ho comprati io", "sì, io li ho comprati"], "soft": ["si li ho comprati", "si li ho comprati io", "si io li ho comprati"], "soft_note": "Doğru sayıldı. Evet anlamındaki sì aksanla yazılır: Sì, li ho comprati."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Ahmet? Non ___ vedo da ieri. (da ieri = dünden beri)", "a": "lo", "o": ["lo", "la", "gli"],
+        "why": {"la": "Ahmet erkek: lo.", "gli": "gli bir artikel; zamir olarak “ona” demek (sonraki ders). “Kimi görmüyorum?” sorusunda lo gelir."},
+        "ok": "Ahmet → lo."},
+      {"t": "choice", "q": "Le foto? ___ ho mandate a Elif. (la foto, çoğulu le foto)", "a": "Le", "o": ["Le", "L'", "Li"],
+        "why": {"L'": "Sadece lo ve la kesilir. le ho kesmesiz kalır.", "Li": "foto kadın (la foto): le. Ortaç da kadın çoğul: mandate."},
+        "ok": "le → mandate."},
+      {"t": "choice", "q": "Bir müşteriye kibarca: “Sizi yarın ararım.”", "a": "La chiamo domani.", "o": ["La chiamo domani.", "Ti chiamo domani.", "Chiamo La domani."],
+        "why": {"Ti chiamo domani.": "ti = seni (samimi). Kibar hitapta: La.", "Chiamo La domani.": "Zamir çekimli fiilden önce gelir: La chiamo."},
+        "ok": "Kibar “sizi” = La."},
+      {"t": "type", "q": "Türkçeden çevir: “Onu gördün mü?” (Elif'i)", "a": ["l'hai vista", "tu l'hai vista", "l'hai vista tu"], "hint": "la + hai → l'hai; Elif kadın → vista.", "ok": "L'hai vista?"},
+      {"t": "type", "q": "Türkçeden çevir: “Bilmiyorum.” (hazır kalıp)", "a": ["non lo so", "io non lo so", "non lo so io"], "hint": "non + lo + so.", "ok": "Non lo so."},
+      {"t": "order", "q": "Sırala: “(Kablolar mı?) Onları dün aldık.”", "words": ["presi", "ieri", "abbiamo", "li"], "a": "li abbiamo presi ieri", "alt": ["ieri li abbiamo presi"], "ok": "Li abbiamo presi ieri."}
+    ],
+    "konus_prompt": "Chiara sana şantiyede kaybolan ve bulunan şeyleri soracak (i cavi, la chiave, le viti, il trapano, Elif). İsmi tekrarlamadan en az 5 cevap ver: 2'si şimdiki zaman (Lo cerco, Non li trovo), en az 3'ü geçmiş ve uyumlu (l'ho vista, li ho presi, le ho messe nel furgone)."
+  }
+}

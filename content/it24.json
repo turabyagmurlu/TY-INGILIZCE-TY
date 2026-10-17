@@ -1,0 +1,153 @@
+{
+  "id": "it24",
+  "lang": "it",
+  "level": "A2",
+  "title": "Imperfetto vs passato prossimo",
+  "lead": "“Panoda çalışıyordum, elektrik gitti” gibi bir olayı doğru iki zamanla anlatabileceksin: arka plan imperfetto, olay passato prossimo. mentre, quando ve sinyal kelimelerle kararını hızlı vereceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Sahne ve olay: iki zaman, iki görev",
+      "blocks": [
+        {"type": "p", "text": "Geçmişi anlatırken iki şey söylersin: **sahne** (nasıldı, ne oluyordu) ve **olay** (ne oldu). Sahne **imperfetto**, olay **passato prossimo**. Olay bitmiş, tek bir noktadır; sahne o noktanın etrafında süren durumdur."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Panoda çalışıyordum,", "s": "sahne: süren", "hl": true}, {"t": "elektrik gitti.", "s": "olay: bitti"}]},
+          {"label": "İtalyanca", "items": [{"t": "Lavoravo nel quadro,", "s": "imperfetto", "hl": true}, {"t": "è andata via la luce.", "s": "passato prossimo"}]}
+        ]},
+        {"type": "table", "head": ["Sahne: imperfetto", "Olay: passato prossimo"],
+          "rows": [
+            ["Pioveva.", "Siamo andati in cantiere."],
+            ["Il quadro era aperto.", "Ahmet ha chiuso il quadro."],
+            ["Ero stanco.", "Sono tornato a casa."],
+            ["Erano le sette.", "È arrivato il capo."]
+          ]},
+        {"type": "note", "text": "Test sorusu: “Bunun bir başı ve sonu var mı, hikâyeyi ileri götürüyor mu?” Evet → passato prossimo. Hayır, sadece ortamı anlatıyor → imperfetto. Yeni: **andare via** = gitmek (elektrik için: kesilmek), **la luce** = ışık, elektrik."}
+      ]
+    },
+    {
+      "title": "mentre + imperfetto, quando + passato prossimo",
+      "blocks": [
+        {"type": "p", "text": "**mentre** (-iyorken) süren eylemi açar, arkasından hemen hemen her zaman imperfetto gelir. **quando** (-ınca, -dığında) burada araya giren olayı açar: passato prossimo."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Çalış-ır-ken", "s": "süren", "hl": true}, {"t": "şef geldi", "s": "olay"}]},
+          {"label": "İtalyanca", "items": [{"t": "Mentre lavoravo,", "s": "mentre + imperfetto", "hl": true}, {"t": "è arrivato il capo.", "s": "olay"}]}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "Mentre lavoravo, è arrivato il capo.", "tr": "Ben çalışırken şef geldi.", "ph": "MEN-tre la-vo-RA-vo, E ar-ri-VA-to il KA-po"},
+          {"x": "Lavoravo quando è arrivato il capo.", "tr": "Şef geldiğinde çalışıyordum.", "ph": "la-vo-RA-vo KUAN-do E ar-ri-VA-to il KA-po"},
+          {"x": "Mentre io controllavo i cavi, Ahmet preparava il rapporto.", "tr": "Ben kabloları kontrol ederken Ahmet raporu hazırlıyordu.", "ph": "MEN-tre İ-o kon-trol-LA-vo i KA-vi, Ahmet pre-pa-RA-va il rap-POR-to"}
+        ]},
+        {"type": "note", "warn": true, "text": "İki eylem aynı anda sürüyorsa ikisi de imperfetto (3. örnek). **quando** dönem anlatıyorsa imperfetto alır: **Quando ero bambino** (çocukken, it23). Kalıp kural değil; sor: süren mi, araya giren mi?"}
+      ]
+    },
+    {
+      "title": "Sinyal kelimeler: ipucu verir, karar vermez",
+      "blocks": [
+        {"type": "table", "head": ["Genelde imperfetto", "Genelde passato prossimo"],
+          "rows": [
+            ["di solito (genelde)", "ieri (dün)"],
+            ["sempre (hep, her zaman)", "una volta (bir kere)"],
+            ["ogni giorno (her gün)", "due volte (iki kere)"],
+            ["ogni tanto (arada bir)", "l'anno scorso (geçen yıl)"],
+            ["da bambino (çocukken)", "per un anno (bir yıl boyunca)"]
+          ]},
+        {"type": "examples", "items": [
+          {"x": "Di solito mi alzavo alle sei, ma ieri mi sono alzato alle otto.", "tr": "Genelde altıda kalkardım ama dün sekizde kalktım.", "ph": "di SO-li-to mi al-TSA-vo AL-le SEY, ma YE-ri mi SO-no al-TSA-to AL-le OT-to"},
+          {"x": "Ogni tanto andavamo al mare.", "tr": "Arada bir denize giderdik.", "ph": "O-nyi TAN-to an-da-VA-mo al MA-re"}
+        ]},
+        {"type": "note", "warn": true, "text": "Tuzak 1: **ieri** tasviri değiştirmez: **Ieri pioveva** doğru (dün yağmur yağıyordu, sahne). Tuzak 2: **una volta** iki anlamlı: bir kere (Una volta **sono caduto** = bir kere düştüm) ya da bir zamanlar (Una volta qui **c'era** un campo = eskiden burada tarla vardı)."}
+      ]
+    },
+    {
+      "title": "Türkçe kafayla karar + belli süre kuralı",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "-iyordu, -iyorken → imperfetto", "text": "O an süren eylem.", "ex": {"x": "Alle otto lavoravo.", "tr": "Sekizde çalışıyordum."}},
+          {"title": "-erdi (alışkanlık) → imperfetto", "text": "Tekrar eden şey.", "ex": {"x": "Ogni giorno prendevo il furgone.", "tr": "Her gün kamyonete binerdim."}},
+          {"title": "-di: önce sor", "text": "Olaysa passato prossimo (geldi → è arrivato). Tasvirse imperfetto (yorgundum → ero stanco, hava soğuktu → faceva freddo).", "ex": {"x": "Faceva freddo, ma abbiamo lavorato.", "tr": "Hava soğuktu ama çalıştık."}},
+          {"title": "Belli, kapanmış süre → passato prossimo", "text": "per due ore, per un anno e mezzo: başı ve sonu belli.", "ex": {"x": "Ho lavorato a Bodrum per un anno e mezzo.", "tr": "Bodrum'da bir buçuk yıl çalıştım."}}
+        ]},
+        {"type": "note", "warn": true, "text": "Tipik Türk hatası: “-di gördüm, passato prossimo yazdım” (Quando sono stato bambino…, Ho avuto 20 anni). Önce görevi sor: sahne mi, olay mı? Yeni: **cadere** = düşmek (essere alır: sono caduto), **la scala** = merdiven."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Mentre lavoravo, è arrivato il capo.", "tr": "Ben çalışırken şef geldi.", "ph": "MEN-tre la-vo-RA-vo, E ar-ri-VA-to il KA-po"},
+    {"x": "Lavoravo nel quadro quando è andata via la luce.", "tr": "Elektrik gittiğinde panoda çalışıyordum.", "ph": "la-vo-RA-vo nel KUA-dro KUAN-do E an-DA-ta Vİ-a la LU-çe"},
+    {"x": "Pioveva, ma siamo andati in cantiere.", "tr": "Yağmur yağıyordu ama şantiyeye gittik.", "ph": "pyo-VE-va, ma SYA-mo an-DA-ti in kan-TYE-re"},
+    {"x": "Quando sono arrivato, gli operai lavoravano già.", "tr": "Ben geldiğimde işçiler zaten çalışıyordu.", "ph": "KUAN-do SO-no ar-ri-VA-to, lyi o-pe-RA-i la-vo-RA-va-no CA"},
+    {"x": "Mentre io controllavo i cavi, Ahmet preparava il rapporto.", "tr": "Ben kabloları kontrol ederken Ahmet raporu hazırlıyordu.", "ph": "MEN-tre İ-o kon-trol-LA-vo i KA-vi, Ahmet pre-pa-RA-va il rap-POR-to"},
+    {"x": "Di solito mi alzavo alle sei, ma ieri mi sono alzato alle otto.", "tr": "Genelde altıda kalkardım ama dün sekizde kalktım.", "ph": "di SO-li-to mi al-TSA-vo AL-le SEY, ma YE-ri mi SO-no al-TSA-to AL-le OT-to"},
+    {"x": "Ho lavorato a Bodrum per un anno e mezzo.", "tr": "Bodrum'da bir buçuk yıl çalıştım.", "ph": "O la-vo-RA-to a Bodrum per un AN-no e MED-dzo"},
+    {"x": "Una volta sono caduto dalla scala.", "tr": "Bir kere merdivenden düştüm.", "ph": "U-na VOL-ta SO-no ka-DU-to DAL-la SKA-la"},
+    {"x": "Faceva freddo, ma abbiamo lavorato fino alle sei.", "tr": "Hava soğuktu ama altıya kadar çalıştık.", "ph": "fa-ÇE-va FRED-do, ma ab-BYA-mo la-vo-RA-to Fİ-no AL-le SEY"},
+    {"x": "Che cosa facevi quando è arrivato Ahmet?", "tr": "Ahmet geldiğinde ne yapıyordun?", "ph": "ke KO-sa fa-ÇE-vi KUAN-do E ar-ri-VA-to Ahmet"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Mentre ___, è arrivato il capo.", "a": "lavoravo", "o": ["lavoravo", "ho lavorato"],
+      "why": {"ho lavorato": "mentre süren eylemi açar: imperfetto ister (mentre lavoravo)."},
+      "ok": "mentre + imperfetto."},
+    {"t": "choice", "q": "Ieri lavoravo quando ___ il capo.", "a": "è arrivato", "o": ["è arrivato", "arrivava"],
+      "why": {"arrivava": "Şefin gelişi araya giren tek olay: passato prossimo (è arrivato)."},
+      "ok": "quando + araya giren olay → passato prossimo."},
+    {"t": "choice", "q": "Di solito ___ alle sei, ma ieri mi sono alzato alle otto.", "a": "mi alzavo", "o": ["mi alzavo", "mi sono alzato"],
+      "why": {"mi sono alzato": "di solito tekrar eden alışkanlık: imperfetto (mi alzavo). Dünkü tek sabah ise passato prossimo."},
+      "ok": "di solito → imperfetto, ieri → olay."},
+    {"t": "choice", "q": "“Dün saat yedide şantiyeye gittim.”", "a": "Ieri sono andato in cantiere alle sette.", "o": ["Ieri andavo in cantiere alle sette.", "Ieri sono andato in cantiere alle sette."],
+      "why": {"Ieri andavo in cantiere alle sette.": "“Gittim” tek, bitmiş bir olay: passato prossimo (sono andato)."},
+      "ok": "Tek olay → passato prossimo."},
+    {"t": "choice", "q": "“Pano açıktı.” (tasvir)", "a": "Il quadro era aperto.", "o": ["Il quadro era aperto.", "Il quadro è stato aperto."],
+      "why": {"Il quadro è stato aperto.": "Bu “pano açıldı” demek (bir olay). Panonun durumu tasvir: era aperto."},
+      "ok": "Durum → imperfetto."},
+    {"t": "choice", "q": "“Arada bir denize giderdik.”", "a": "Ogni tanto andavamo al mare.", "o": ["Ogni tanto andavamo al mare.", "Ogni tanto siamo andati al mare."],
+      "why": {"Ogni tanto siamo andati al mare.": "“Giderdik” tekrar eden alışkanlık (-erdi): imperfetto (andavamo)."},
+      "ok": "-erdi → imperfetto. il mare = deniz."},
+    {"t": "choice", "q": "“Bir kere merdivenden düştüm.”", "a": "Una volta sono caduto dalla scala.", "o": ["Una volta cadevo dalla scala.", "Una volta sono caduto dalla scala.", "Una volta ho caduto dalla scala."],
+      "why": {"Una volta cadevo dalla scala.": "Burada una volta = bir kere: tek olay, passato prossimo.", "Una volta ho caduto dalla scala.": "cadere yer değiştirme fiili: essere alır (sono caduto)."},
+      "ok": "una volta (bir kere) → passato prossimo."},
+    {"t": "choice", "q": "“Bodrum'da bir buçuk yıl çalıştım.”", "a": "Ho lavorato a Bodrum per un anno e mezzo.", "o": ["Lavoravo a Bodrum per un anno e mezzo.", "Ho lavorato a Bodrum per un anno e mezzo."],
+      "why": {"Lavoravo a Bodrum per un anno e mezzo.": "Süre belli ve kapanmış (bir buçuk yıl): passato prossimo."},
+      "ok": "per + belli süre → passato prossimo."},
+    {"t": "order", "q": "Sırala: “Ben kabloları kontrol ederken Ahmet raporu hazırlıyordu.”", "words": ["rapporto", "controllavo", "Ahmet", "i", "mentre", "il", "cavi", "preparava"], "a": "mentre controllavo i cavi Ahmet preparava il rapporto", "alt": ["Ahmet preparava il rapporto mentre controllavo i cavi"], "ok": "Mentre controllavo i cavi, Ahmet preparava il rapporto. İki süren eylem: ikisi de imperfetto."},
+    {"t": "type", "q": "Türkçeden çevir: “Yağmur yağıyordu ama şantiyeye gittik.”", "a": ["pioveva ma siamo andati in cantiere", "pioveva ma noi siamo andati in cantiere", "pioveva ma siamo andati al cantiere"], "hint": "Sahne: piov-eva. Olay: siamo andati.", "ok": "Pioveva, ma siamo andati in cantiere."},
+    {"t": "type", "q": "Türkçeden çevir: “Ben çalışırken elektrik gitti.” (elektrik gitti = è andata via la luce)", "a": ["mentre lavoravo è andata via la luce", "mentre io lavoravo è andata via la luce", "è andata via la luce mentre lavoravo", "mentre lavoravo la luce è andata via", "la luce è andata via mentre lavoravo"], "soft": ["mentre lavoravo e andata via la luce", "mentre io lavoravo e andata via la luce", "e andata via la luce mentre lavoravo", "mentre lavoravo la luce e andata via", "la luce e andata via mentre lavoravo"], "soft_note": "Doğru sayıldı. essere'nin è'si aksanla yazılır: Mentre lavoravo, è andata via la luce.", "hint": "mentre + imperfetto, sonra olay.", "ok": "Mentre lavoravo, è andata via la luce."},
+    {"t": "order", "q": "Sırala: “Ben geldiğimde işçiler zaten çalışıyordu.”", "words": ["operai", "sono", "già", "quando", "lavoravano", "gli", "arrivato"], "a": "quando sono arrivato gli operai lavoravano già", "alt": ["gli operai lavoravano già quando sono arrivato"], "ok": "Quando sono arrivato, gli operai lavoravano già."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Şantiyede yaşanmış kısa bir olayı anlatmak: önce sahne (saat, hava, ne yapıyordun) imperfetto ile, sonra ne oldu passato prossimo ile. mentre ve quando'yu kullanmak, alışkanlığı (di solito) dünkü olaydan (ieri) ayırmak.",
+    "vocab": ["mentre", "quando", "di solito", "sempre", "ogni tanto", "una volta", "ieri", "l'anno scorso", "per un anno e mezzo", "andare via", "la luce", "cadere", "la scala", "il capo", "il mare", "già", "fino alle"],
+    "structures": ["arka plan / tasvir → imperfetto, olay → passato prossimo", "mentre + imperfetto", "quando + passato prossimo (araya giren olay)", "iki süren eylem: imperfetto + imperfetto", "di solito / sempre / ogni giorno → imperfetto; ieri / una volta / due volte → passato prossimo", "belli süre (per due ore) → passato prossimo"],
+    "opener_hint": "Chiara soruyor: “Türab, mi racconti una cosa strana che è successa in cantiere? Che ora era? Che tempo faceva? Cosa facevi?” (raccontare = anlatmak, è successo = oldu; emir kipi raccontami kullanmasın, it30'da gelecek). Sonra mentre ile bir soru sorsun (Mentre lavoravi, chi è arrivato?), ardından Bodrum'da genelde ne yapardın / bir kere ne oldu diye karşılaştırsın.",
+    "level_note": "A2: her mesajda 2–3 kısa İtalyanca cümle; Türkçeyi sadece Türab takılırsa ya da yeni bir kelimede parantez içinde ver. Sadece şimdiki zaman, passato prossimo ve imperfetto kullan; futuro, condizionale ve trapassato kullanma. Türab sahneyi passato prossimo ile (quando sono stato bambino, ho avuto 20 anni) ya da olayı imperfetto ile (mentre ho lavorato, arrivava il capo) kurarsa cümlenin doğrusunu tekrar et ve tek cümleyle “sahne mi, olay mı?” diye hatırlat."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "mentre + imperfetto", "q": "“Ben uyurken Ahmet aradı.” Mentre io ___, Ahmet ha chiamato.", "a": "dormivo", "o": ["dormivo", "ho dormito", "dormo"],
+      "why": {"ho dormito": "mentre süren eylemi açar: imperfetto (dormivo).", "dormo": "Bu şimdiki zaman. Geçmişte süren eylem: dormivo."}},
+    {"t": "choice", "topic": "quando + passato prossimo", "q": "“Kahve içiyordum, o sırada şef geldi.” Bevevo un caffè quando ___ il capo.", "a": "è arrivato", "o": ["è arrivato", "arrivava", "ha arrivato"],
+      "why": {"arrivava": "Şefin gelişi araya giren tek olay: passato prossimo.", "ha arrivato": "arrivare essere alır: è arrivato."}},
+    {"t": "choice", "topic": "di solito vs ieri", "q": "Di solito ___ in furgone, ma ieri sono andato a piedi. (furgone = kamyonet, a piedi = yürüyerek)", "a": "andavo", "o": ["andavo", "sono andato"],
+      "why": {"sono andato": "di solito tekrar eden alışkanlık: imperfetto (andavo)."}},
+    {"t": "choice", "topic": "belli süre → passato prossimo", "q": "“İki saat bekledik.” (aspettare = beklemek)", "a": "Abbiamo aspettato due ore.", "o": ["Aspettavamo due ore.", "Abbiamo aspettato due ore."],
+      "why": {"Aspettavamo due ore.": "Süre belli ve kapanmış (iki saat): passato prossimo."}},
+    {"t": "type", "topic": "tasvir + olay", "q": "Türkçeden çevir: “Hava soğuktu ama çalıştık.”", "a": ["faceva freddo ma abbiamo lavorato", "faceva freddo ma noi abbiamo lavorato"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "“Şef aradığında yemek yiyordum.” Mangiavo quando ___ il capo.", "a": "ha chiamato", "o": ["ha chiamato", "chiamava", "è chiamato"],
+        "why": {"chiamava": "Arama araya giren tek olay: passato prossimo.", "è chiamato": "chiamare (aramak) nesne alır: avere ile (ha chiamato)."},
+        "ok": "Sahne: mangiavo. Olay: ha chiamato."},
+      {"t": "choice", "q": "“Eskiden burada bir tarla vardı.” (il campo = tarla)", "a": "Una volta qui c'era un campo.", "o": ["Una volta qui c'era un campo.", "Una volta qui c'è stato un campo."],
+        "why": {"Una volta qui c'è stato un campo.": "Burada una volta = bir zamanlar; tarlanın varlığı süren durum: c'era."},
+        "ok": "una volta = bir zamanlar → imperfetto."},
+      {"t": "choice", "q": "Mentre Ahmet ___ i cavi, io controllavo il quadro. (tagliare = kesmek)", "a": "tagliava", "o": ["tagliava", "ha tagliato"],
+        "why": {"ha tagliato": "İki eylem aynı anda sürüyor ve mentre var: ikisi de imperfetto."},
+        "ok": "Süren + süren → imperfetto + imperfetto."},
+      {"t": "type", "q": "Türkçeden çevir: “Ben geldiğimde kapı açıktı.”", "a": ["quando sono arrivato la porta era aperta", "la porta era aperta quando sono arrivato", "quando sono venuto la porta era aperta", "la porta era aperta quando sono venuto", "quando io sono arrivato la porta era aperta"], "hint": "Olay: sono arrivato. Tasvir: era aperta (la porta kadın).", "ok": "Quando sono arrivato, la porta era aperta."},
+      {"t": "type", "q": "Türkçeden çevir: “Çocukken Kırıkkale'de otururdum.”", "a": ["da bambino abitavo a kırıkkale", "quando ero bambino abitavo a kırıkkale", "abitavo a kırıkkale da bambino", "abitavo a kırıkkale quando ero bambino"], "soft": ["da bambino abitavo a kirikkale", "quando ero bambino abitavo a kirikkale", "abitavo a kirikkale da bambino", "abitavo a kirikkale quando ero bambino"], "soft_note": "Doğru sayıldı. Şehir adı Türkçe yazımıyla: Kırıkkale.", "hint": "Dönem + alışkanlık → imperfetto.", "ok": "Da bambino abitavo a Kırıkkale."},
+      {"t": "order", "q": "Sırala: “Hava güzeldi ve denize gittik.”", "words": ["andati", "il", "bello", "mare", "era", "siamo", "tempo", "e", "al"], "a": "il tempo era bello e siamo andati al mare", "ok": "Il tempo era bello e siamo andati al mare. il tempo = hava."}
+    ],
+    "konus_prompt": "Chiara senden şantiyede yaşadığın bir olayı anlatmanı isteyecek. En az 5 cümle kur: önce 2 sahne cümlesi (saat, hava, ne yapıyordun: imperfetto), sonra 2 olay cümlesi (ne oldu: passato prossimo). Bir cümlede mentre, birinde quando kullan."
+  }
+}

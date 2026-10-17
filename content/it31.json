@@ -1,0 +1,160 @@
+{
+  "id": "it31",
+  "lang": "it",
+  "level": "B1",
+  "title": "Birleşik zamirler",
+  "lead": "“Onu sana yarın veririm”, “Sana söyledim”, “Ver onu bana” cümlelerini tek bir zamir bloğuyla kurabileceksin: me lo, glielo, te l'ho detto, dammelo, posso dirtelo.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "mi + lo = me lo: iki zamir yan yana",
+      "blocks": [
+        {"type": "p", "text": "Dolaylı (bana, sana: it22) ve doğrudan (onu: it21) zamir birlikteyse ikisi fiilin önüne **yan yana** gelir. Sıra sabit: **önce dolaylı, sonra doğrudan**. Dolaylı zamirin -i'si **-e** olur."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Onu", "s": "doğrudan"}, {"t": "bana", "s": "dolaylı"}, {"t": "verir misin?", "s": "fiil"}]},
+          {"label": "İtalyanca", "items": [{"t": "Me", "s": "bana (mi → me)", "hl": true}, {"t": "lo", "s": "onu", "hl": true}, {"t": "dai?", "s": "verir misin?"}]}
+        ]},
+        {"type": "table", "head": ["Tek başına", "Birleşik", "Örnek"], "x": 1,
+          "rows": [
+            ["mi", "me + lo, la, li, le, ne", "Me lo dai?"],
+            ["ti", "te + lo, la, li, le, ne", "Te la do."],
+            ["ci", "ce + lo, la, li, le, ne", "Ce li porti?"],
+            ["vi", "ve + lo, la, li, le, ne", "Ve ne do due."]
+          ],
+          "say": ["me lo, me la, me li, me le, me ne", "te lo, te la, te li, te le, te ne", "ce lo, ce la, ce li, ce le, ce ne", "ve lo, ve la, ve li, ve le, ve ne"]},
+        {"type": "note", "warn": true, "text": "Türk kulağı “onu bana” der ve **lo mi dai** kurar: yanlış. Sıra hep bana + onu: **me lo dai**. **mi lo** da yanlış."},
+        {"type": "note", "text": "Her gün duyacaksın: Hai la chiave? Sì, **ce l'ho**. = Bende var (ci + lo → ce l')."}
+      ]
+    },
+    {
+      "title": "glielo: ona + onu, tek kelime",
+      "blocks": [
+        {"type": "p", "text": "**gli** (ona, erkeğe) ve **le** (ona, kadına) ikinci zamirden önce **aynı biçime** girer: **glie-**. Üstelik ikinci zamirle **bitişik** yazılır: gli + lo = **glielo**."},
+        {"type": "table", "head": ["Doğrudan nesne", "Ona (erkek / kadın / Lei)", "Okunuş"], "x": 1,
+          "rows": [
+            ["onu (lo)", "glielo", "LYE-lo"],
+            ["onu (la)", "gliela", "LYE-la"],
+            ["onları (li)", "glieli", "LYE-li"],
+            ["onları (le)", "gliele", "LYE-le"],
+            ["ondan (ne)", "gliene", "LYE-ne"]
+          ],
+          "say": ["glielo", "gliela", "glieli", "gliele", "gliene"]},
+        {"type": "examples", "items": [
+          {"x": "Il rapporto? Glielo mando stasera.", "tr": "Rapor mu? Bu akşam ona gönderiyorum.", "ph": "il rap-POR-to? LYE-lo MAN-do sta-SE-ra"},
+          {"x": "La chiave? Gliela do subito.", "tr": "Anahtar mı? Hemen ona veriyorum.", "ph": "la KYA-ve? LYE-la DO SU-bi-to"}
+        ]},
+        {"type": "note", "warn": true, "text": "glielo herkesi kapsar: ona (erkek), ona (kadın), size (Lei), konuşmada onlara da. Kim olduğu bağlamdan anlaşılır. Yanlışlar: **le lo**, **gli lo** (ayrı yazım). Gerekirse ismi söyle: **Lo do a Elif.**"}
+      ]
+    },
+    {
+      "title": "Geçmiş zamanda: te l'ho detto, gliel'ho data",
+      "blocks": [
+        {"type": "p", "text": "Passato prossimo'da blok **ho'nun önüne** geçer. lo / la ünlüden önce **l'** olur: te **l'ho** detto. li / le kısalmaz: te **li** ho mandati. it21'deki kural burada da geçerli: **ortaç doğrudan nesneye uyar** (lo → -o, la → -a, li → -i, le → -e)."},
+        {"type": "table", "head": ["Nesne", "Cümle", "Türkçesi"], "x": 1,
+          "rows": [
+            ["il rapporto (lo)", "Te l'ho mandato.", "Onu sana gönderdim."],
+            ["la chiave (la)", "Gliel'ho data.", "Onu ona verdim."],
+            ["i cavi (li)", "Me li hanno portati.", "Onları bana getirdiler."],
+            ["le foto (le)", "Gliele ho mandate.", "Onları ona gönderdim."]
+          ]},
+        {"type": "note", "warn": true, "text": "Tipik hata: nesne **la chiave** iken **gliel'ho dato** demek. Doğrusu **gliel'ho data**. Uyum dolaylı zamire (gli / le) değil, **doğrudan nesneye** bakar."},
+        {"type": "note", "text": "Ezberle: **Te l'ho detto!** = Sana söyledim! (detto: dire'nin ortacı, it19)."}
+      ]
+    },
+    {
+      "title": "Emir ve mastar: blok fiilin sonuna yapışır",
+      "blocks": [
+        {"type": "p", "text": "it30'daki gibi, **tu emrinde** ve **mastarda** zamir fiilin sonuna yapışır; blok bozulmadan gelir: dammi → **dammelo**. Mastar son -e'sini atar: dire → dir + telo = **dirtelo**."},
+        {"type": "table", "head": ["Yapı", "Örnek", "Okunuş", "Türkçesi"], "x": 1,
+          "rows": [
+            ["emir (tu)", "Dammelo!", "DAM-me-lo", "Ver onu bana!"],
+            ["emir (tu)", "Dimmelo.", "DİM-me-lo", "Söyle onu bana."],
+            ["emir (tu)", "Mandaglielo.", "MAN-da-lye-lo", "Onu ona gönder."],
+            ["mastar", "Posso dirtelo.", "POS-so DİR-te-lo", "Onu sana söyleyebilirim."],
+            ["mastar", "Devo mandarglielo.", "DE-vo man-DAR-lye-lo", "Onu ona göndermeliyim."]
+          ]},
+        {"type": "rules", "items": [
+          {"title": "Modal fiilde iki yol da doğru", "text": "Blok ya mastarın sonuna ya modalın önüne.", "ex": {"x": "Te lo posso dire.", "tr": "Onu sana söyleyebilirim. (= Posso dirtelo.)"}},
+          {"title": "Kibar Lei emrinde blok önde kalır", "text": "Sona yapışma sadece tu emrinde.", "ex": {"x": "Me lo porti, per favore.", "tr": "Onu bana getirin, lütfen."}},
+          {"title": "da', di', fa' ünsüzü ikizler", "text": "da**mm**elo, di**mm**elo, fa**mm**elo. gli ile ikizleşme yok: **daglielo**.", "ex": {"x": "Fammelo vedere.", "tr": "Göster onu bana."}}
+        ]}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Mi passi il cacciavite? Sì, te lo passo subito.", "tr": "Tornavidayı uzatır mısın? Tamam, hemen uzatıyorum.", "ph": "mi PAS-si il kat-ça-Vİ-te? Sİ, te lo PAS-so SU-bi-to"},
+    {"x": "Il rapporto? Glielo mando stasera.", "tr": "Rapor mu? Bu akşam ona gönderiyorum.", "ph": "il rap-POR-to? LYE-lo MAN-do sta-SE-ra"},
+    {"x": "Te l'ho detto ieri!", "tr": "Sana dün söyledim!", "ph": "te LO DET-to YE-ri"},
+    {"x": "Le chiavi del quadro? Gliele ho date stamattina.", "tr": "Pano anahtarları mı? Bu sabah ona verdim.", "ph": "le KYA-vi del KUA-dro? LYE-le O DA-te sta-mat-Tİ-na"},
+    {"x": "Dammelo, lo controllo io.", "tr": "Ver onu bana, ben kontrol ederim.", "ph": "DAM-me-lo, lo kon-TROL-lo İ-o"},
+    {"x": "Posso dirtelo domani?", "tr": "Sana yarın söyleyebilir miyim?", "ph": "POS-so DİR-te-lo do-MA-ni"},
+    {"x": "Hai delle fascette? Me ne dai tre?", "tr": "Kablo bağın var mı? Bana ondan üç tane verir misin?", "ph": "AY DEL-le fa-ŞET-te? me ne DAY TRE"},
+    {"x": "Il progetto ce lo mandano lunedì.", "tr": "Projeyi bize pazartesi gönderiyorlar.", "ph": "il pro-CET-to çe lo MAN-da-no lu-ne-Dİ"},
+    {"x": "Me l'hanno spiegato due volte.", "tr": "Bana onu iki kez açıkladılar.", "ph": "me LAN-no spye-GA-to DU-e VOL-te"},
+    {"x": "Fammelo vedere, per favore.", "tr": "Göster onu bana, lütfen.", "ph": "FAM-me-lo ve-DE-re, per fa-VO-re"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "mi + lo = ?", "a": "me lo", "o": ["mi lo", "me lo", "lo mi"],
+      "why": {"mi lo": "İkinci zamirden önce mi → me olur: me lo.", "lo mi": "Sıra hep dolaylı + doğrudan: önce me, sonra lo."},
+      "ok": "mi → me, sonra lo."},
+    {"t": "choice", "q": "“Onu sana veririm.” (il libro) ___ do.", "a": "Te lo", "o": ["Ti lo", "Te lo", "Lo te"],
+      "why": {"Ti lo": "lo'dan önce ti → te: te lo.", "Lo te": "Önce dolaylı (te), sonra doğrudan (lo)."},
+      "ok": "Te lo do."},
+    {"t": "choice", "q": "Elif'e anahtarı veriyorum (la chiave): ___ do.", "a": "Gliela", "o": ["Le la", "Gliela", "Glielo"],
+      "why": {"Le la": "le + la birleşir ve bitişik yazılır: gliela.", "Glielo": "chiave dişil → la → gliela."},
+      "ok": "le + la = gliela."},
+    {"t": "choice", "q": "Ahmet'e kabloları gönderiyorum (i cavi): ___ mando.", "a": "Glieli", "o": ["Gli li", "Glieli", "Gliele"],
+      "why": {"Gli li": "gli + li bitişik yazılır ve glie- olur: glieli.", "Gliele": "cavi eril çoğul → li → glieli. gliele dişil çoğul içindir."},
+      "ok": "gli + li = glieli."},
+    {"t": "type", "q": "Türkçeden çevir: “Onu bana verir misin?” (tu, dare; il metro = şerit metre)", "a": ["me lo dai", "tu me lo dai", "me lo dai tu"], "hint": "mi → me, + lo, + dai.", "ok": "Me lo dai?"},
+    {"t": "choice", "q": "“Sana söyledim!”", "a": "Te l'ho detto!", "o": ["Ti ho detto lo!", "Te l'ho detto!", "L'ho te detto!"],
+      "why": {"Ti ho detto lo!": "Zamirler ho'nun önüne birlikte geçer ve ti → te olur.", "L'ho te detto!": "Blok bölünmez ve önce dolaylı gelir: te l'ho."},
+      "ok": "Te l'ho detto!"},
+    {"t": "choice", "q": "“Teklifi ona gönderdim.” (l'offerta, dişil) Gliel'ho ___.", "a": "mandata", "o": ["mandato", "mandata", "mandati"],
+      "why": {"mandato": "Uyum doğrudan nesneye bakar: l'offerta dişil → mandata.", "mandati": "Tek teklif var: tekil, dişil → mandata."},
+      "ok": "la → -a: gliel'ho mandata."},
+    {"t": "choice", "q": "“Ondan bize iki tane getirir misin?”", "a": "Ce ne porti due?", "o": ["Ci ne porti due?", "Ce ne porti due?", "Ne ci porti due?"],
+      "why": {"Ci ne porti due?": "ne'den önce de ci → ce: ce ne.", "Ne ci porti due?": "Önce dolaylı (ce), sonra ne."},
+      "ok": "ci + ne = ce ne."},
+    {"t": "type", "q": "Türkçeden çevir: “Ver onu bana!” (tu, dare; il cacciavite)", "a": ["dammelo"], "soft": ["dammi lo", "damelo"], "soft_note": "Anlaşılır ama yazımı: dammelo (tek kelime, çift m).", "hint": "da' + me + lo; ünsüz ikizleşir.", "ok": "Dammelo!"},
+    {"t": "order", "q": "Sırala: “Onu sana yarın söyleyebilirim.”", "words": ["dirtelo", "domani", "posso"], "a": "posso dirtelo domani", "alt": ["domani posso dirtelo"], "ok": "Posso dirtelo domani. (= Te lo posso dire domani.)"},
+    {"t": "type", "q": "Boşluğu doldur: “Mandi il rapporto all'ingegnere?” “Sì, ___ mando domani.”", "a": ["glielo"], "hint": "all'ingegnere → gli; il rapporto → lo.", "ok": "gli + lo = glielo."},
+    {"t": "order", "q": "Sırala: “Pano anahtarlarını ona bu sabah verdim.” (le chiavi)", "words": ["date", "gliele", "stamattina", "ho"], "a": "gliele ho date stamattina", "alt": ["stamattina gliele ho date"], "ok": "le chiavi → le → date."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Şantiyede malzeme ve evrak alışverişini birleşik zamirlerle konuşmak: kime neyi verdin, gönderdin, ne zaman getireceksin. me lo / te la / glielo bloklarını, geçmişte uyumu (gliel'ho data) ve emir + mastar biçimlerini (dammelo, posso dirtelo) kullanmak.",
+    "vocab": ["me lo", "te la", "ce li", "ve ne", "glielo", "gliela", "glieli", "gliele", "gliene", "te l'ho detto", "ce l'ho", "dammelo", "dimmelo", "fammelo vedere", "posso dirtelo", "passare", "mandare", "portare", "spiegare", "la fascetta", "il preventivo", "il metro", "subito", "stasera"],
+    "structures": ["dolaylı + doğrudan, sıra sabit: me lo, te la, ce li, ve ne", "gli / le + lo/la/li/le/ne → glielo, gliela, glieli, gliele, gliene (bitişik)", "geçmişte: te l'ho detto, gliel'ho data; ortaç doğrudan nesneye uyar", "tu emri ve mastar: dammelo, dimmelo, posso dirtelo, devo mandarglielo", "modal ile iki yol: posso dirtelo = te lo posso dire"],
+    "opener_hint": "Chiara şantiyede malzeme soruyor: “Türab, hai il metro? Me lo presti un attimo?” Sonra: rapporu mühendise gönderdin mi (Gliel'hai mandato?), anahtarları kime verdin, fascette'den bana kaç tane verirsin (Me ne dai…?), projeyi bize ne zaman gönderiyorlar. Türab'ı bir kez de emir kurmaya zorlasın (“Fammelo vedere!” gibi bir cevap gerektiren durum).",
+    "level_note": "B1: neredeyse tamamen İtalyanca konuş, doğal hızda ama net. Türkçe sadece Türab açıkça takılırsa, tek kısa cümle. Hataları anında değil, 3–4 mesajda bir toplu düzelt (yanlış → doğru, tek satır kural). Bildiği zamanları (passato prossimo, imperfetto, futuro, condizionale, imperativo) serbestçe kullan; congiuntivo ve trapassato kullanma. Özellikle şu hataları yakala: lo mi / mi lo, gli lo / le lo, geçmişte uyumsuzluk (gliel'ho dato yerine data)."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "sıra kuralı (dolaylı + doğrudan)", "q": "“Onları (le foto) bize gösteriyorlar.” (mostrare = göstermek)", "a": "Ce le mostrano.", "o": ["Le ci mostrano.", "Ci le mostrano.", "Ce le mostrano."],
+      "why": {"Le ci mostrano.": "Önce dolaylı (bize), sonra doğrudan (onları): ce le.", "Ci le mostrano.": "le'den önce ci → ce olur."}},
+    {"t": "choice", "topic": "glie- biçimi", "q": "“Ayşe'ye ondan iki tane veriyorum.”", "a": "Gliene do due.", "o": ["Le ne do due.", "Gliene do due.", "Ne le do due."],
+      "why": {"Le ne do due.": "le + ne birleşir: gliene, bitişik.", "Ne le do due.": "Sıra yanlış ve birleşme yok: gliene."}},
+    {"t": "choice", "topic": "geçmişte uyum", "q": "Le foto? Te le ho ___ ieri.", "a": "mandate", "o": ["mandato", "mandate", "mandati"],
+      "why": {"mandato": "Doğrudan nesne le (le foto, dişil çoğul) → mandate.", "mandati": "-i eril çoğul içindir; foto dişil: mandate."}},
+    {"t": "type", "topic": "emir + zamir", "q": "Türkçeden çevir: “Söyle onu bana!” (tu, dire)", "a": ["dimmelo"], "soft": ["dimelo", "dimmi lo"], "soft_note": "Anlaşılır ama yazımı: dimmelo (tek kelime, çift m)."},
+    {"t": "type", "topic": "mastar + zamir", "q": "Türkçeden çevir: “Onu ona göndermeliyim.” (il file; dovere + mandare)", "a": ["devo mandarglielo", "glielo devo mandare", "io devo mandarglielo", "io glielo devo mandare"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Bir müşteriye kibarca (Lei): “Onu size yarın getiririm.” (il preventivo = fiyat teklifi)", "a": "Glielo porto domani.", "o": ["Le lo porto domani.", "Glielo porto domani.", "Te lo porto domani."],
+        "why": {"Le lo porto domani.": "Kibar Le de lo'dan önce glie- olur: glielo.", "Te lo porto domani.": "te = sana (tu). Lei'ye konuşurken: glielo."},
+        "ok": "Lei'ye de glielo."},
+      {"t": "choice", "q": "“Hai il metro?” “Sì, ___.” (Evet, bende var.)", "a": "ce l'ho", "o": ["ce l'ho", "ci lo ho", "l'ho ce"],
+        "why": {"ci lo ho": "ci → ce, lo → l': ce l'ho.", "l'ho ce": "Blok fiilin önünde ve ce önce gelir: ce l'ho."},
+        "ok": "Ce l'ho = Bende var."},
+      {"t": "choice", "q": "“Onu bana açıkladılar.” (la procedura)", "a": "Me l'hanno spiegata.", "o": ["Me l'hanno spiegato.", "Me l'hanno spiegata.", "Mi l'hanno spiegata."],
+        "why": {"Me l'hanno spiegato.": "procedura dişil → la → spiegata.", "Mi l'hanno spiegata.": "lo / la önünde mi → me."},
+        "ok": "Uyum doğrudan nesneye: spiegata."},
+      {"t": "type", "q": "Türkçeden çevir: “Göster onu bana!” (tu; il disegno; fare vedere kalıbıyla)", "a": ["fammelo vedere"], "soft": ["famelo vedere"], "soft_note": "Anlaşılır ama yazımı: fammelo (çift m).", "hint": "fa' + me + lo → fammelo, sonra vedere.", "ok": "Fammelo vedere!"},
+      {"t": "type", "q": "Türkçeden çevir: “Onu sana yarın veririm.” (la chiave)", "a": ["te la do domani", "domani te la do", "io te la do domani"], "hint": "ti → te, + la, + do.", "ok": "Te la do domani."},
+      {"t": "order", "q": "Sırala: “Onu sana söylemek istiyorum.”", "words": ["dire", "voglio", "te", "lo"], "a": "te lo voglio dire", "ok": "Te lo voglio dire. Aynı anlam: Voglio dirtelo."}
+    ],
+    "konus_prompt": "Chiara senden şantiyede bir şeyler isteyecek ve soracak. En az 5 cümle kur: 2'si şimdiki zamanda blokla (te lo do, glielo mando), 1'i geçmişte uyumla (gliel'ho data / te li ho portati), 1'i emir (dammelo, fammelo vedere), 1'i mastar (posso dirtelo, devo mandarglielo)."
+  }
+}

@@ -25,13 +25,27 @@ const IDS=process.argv.slice(2);if(!IDS.length){console.log('kullanım: node tes
    await p.waitForTimeout(700);return {p,ctx,st};};
 
  const stage=p=>p.evaluate(()=>document.querySelector('#lstage').innerText);
+ /* Sınav (kind:"exam"): giriş ekranı → Başla → bütün sorular doğru cevapla → sonuçta "geçti" + exams kaydı (cp1→checkpoint-w04, cp2→checkpoint-w08, final→final-w12) */
+ const EXID={cp1:'checkpoint-w04',cp2:'checkpoint-w08',final:'final-w12'};
+ async function examCheck(p,id,d,bad){await p.evaluate(id=>TYLESSON.open(id,{}),id);await p.waitForSelector('#lsn:not([hidden])');await p.waitForTimeout(100);
+   const intro=await stage(p);if(!/Başla/.test(intro)||!intro.includes(String(d.items.length))||!(await p.isHidden('#askFab')))bad.push(id+': exam intro (soru sayısı / Başla / Koça sor gizli) eksik');
+   await p.click('[data-act=exStart]');
+   for(const it of d.items){if(it.t==='choice')await p.click(`#lstage .opt[data-ans="${it.a.replace(/"/g,'\\"')}"]`);
+     else if(it.t==='type'){await p.fill('#ans_x',(Array.isArray(it.a)?it.a[0]:it.a));await p.click('[data-form=x] button');}
+     else{const words=await p.$$eval('#lstage .oPool .oW',e=>e.map(x=>x.textContent));const used=new Set();for(const w of String(Array.isArray(it.a)?it.a[0]:it.a).split(' ')){const i=words.findIndex((x,j)=>!used.has(j)&&x.toLowerCase()===w.toLowerCase());if(i<0)break;used.add(i);await p.click(`#lstage .oPool .oW[data-ow="${i}"]`);}await p.click('[data-act=oCheck]');}
+     const f=await p.textContent('#fb_x');if(!/Doğru/.test(f))bad.push(id+': correct answer not accepted → "'+it.q+'" ('+f.trim().slice(0,60)+')');
+     await p.click('[data-act=next][data-kind=x]');await p.waitForTimeout(20);}
+   await p.waitForTimeout(200);const r=await stage(p);if(!/geçti/i.test(r)||!r.includes(d.items.length+' / '+d.items.length))bad.push(id+': all-correct exam did not show "geçti" ('+r.slice(0,80).replace(/\n/g,' ')+')');
+   const ex=await p.evaluate(()=>rtExport().collections.exams||{});const k=EXID[id];if(k&&!(ex[k]&&ex[k].puan===d.items.length&&ex[k].toplam===d.items.length))bad.push(id+': exams/'+k+' kaydı yok ya da yanlış '+JSON.stringify(ex[k]||null));
+   await p.click('[data-act=close]');await p.waitForTimeout(100);}
  // D) İçerik dosyaları: her ders şema + bütün adımlar
- {const idx=IDS.map(id=>{const d=JSON.parse(fs.readFileSync(path.join(H.ROOT,'content',id+'.json'),'utf8'));return {id,lang:d.lang,level:d.level,title:d.title,minutes:d.minutes};});const bad=[];
+ {const idx=IDS.map(id=>{const d=JSON.parse(fs.readFileSync(path.join(H.ROOT,'content',id+'.json'),'utf8'));return {id,kind:d.kind,lang:d.lang,level:d.level,title:d.title,minutes:d.minutes};});const bad=[];
   const {p,ctx}=await mk({fixture:false,vp:{width:820,height:1180},pre:async p=>{await p.route('**/content/index.json',r=>r.fulfill({contentType:'application/json',body:JSON.stringify(idx)}));}});
   for(const m of idx){const id=m.id;const d=JSON.parse(fs.readFileSync(path.join(H.ROOT,'content',id+'.json'),'utf8'));const e0=errs.length;
     const v=await p.evaluate(async([id,d])=>{const M=await new Promise(r=>{const t=setInterval(()=>{if(window.TYDIL&&TYDIL.core&&TYDIL.core.LX.index){clearInterval(t);r(1);}},50);});
       await (async()=>{if(!window.TYLESSON){const s=document.createElement('script');s.src='mod/lesson.js';document.head.appendChild(s);await new Promise(r=>s.onload=r);}})();return TYLESSON.validate(d);},[id,d]);
     if(v){bad.push(id+': '+v);continue;}
+    if(d.kind==='exam'){await examCheck(p,id,d,bad);if(errs.length>e0)bad.push(id+': page errors '+errs.slice(e0).join(' | '));continue;}
     await p.evaluate(id=>TYLESSON.open(id,{}),id);await p.waitForSelector('#lsn:not([hidden])');await p.waitForTimeout(100);
     let guard=0;while(guard++<10){const has=await p.$('[data-act=aNext]');if(!has)break;await p.click('[data-act=aNext]');await p.waitForTimeout(30);}
     await p.click('[data-act=finish][data-i="1"]');
@@ -46,7 +60,7 @@ const IDS=process.argv.slice(2);if(!IDS.length){console.log('kullanım: node tes
     await p.click('[data-act=close]');await p.waitForTimeout(100);
     if(d.pekistir){await p.evaluate(id=>TYLESSON.open(id,{pk:true}),id);await p.waitForSelector('#lsn:not([hidden])');await answerAll('k',d.pekistir.items);await p.click('[data-act=pkTalk]');await p.click('[data-act=pkDone]');}
     if(errs.length>e0)bad.push(id+': page errors '+errs.slice(e0).join(' | '));}
-  ok(!bad.length,'content files ('+idx.map(x=>x.id).join(',')+'): schema valid, every step renders, correct answers accepted, yokla passes, pekiştir runs'+(bad.length?' — FAIL: '+bad.join(' ; '):''));
+  ok(!bad.length,'content files ('+idx.map(x=>x.id).join(',')+'): schema valid, every step renders, correct answers accepted, yokla passes, pekiştir runs; exams: intro, all-correct → geçti, exams record'+(bad.length?' — FAIL: '+bad.join(' ; '):''));
   await ctx.close();}
 
 

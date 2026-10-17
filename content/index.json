@@ -73,7 +73,7 @@
     "id": "it11",
     "lang": "it",
     "level": "A1",
-    "title": "Düzensiz fiiller 1: fare, andare, venire, stare, dare",
+    "title": "Düzensiz fiiller: fare, andare, venire, stare, dare",
     "minutes": 35
   },
   {
@@ -137,6 +137,104 @@
     "lang": "it",
     "level": "A2",
     "title": "Passato prossimo (essere)",
+    "minutes": 35
+  },
+  {
+    "id": "it21",
+    "lang": "it",
+    "level": "A2",
+    "title": "Doğrudan nesne zamirleri: lo, la, li, le",
+    "minutes": 35
+  },
+  {
+    "id": "it22",
+    "lang": "it",
+    "level": "A2",
+    "title": "Dolaylı nesne zamirleri: mi, ti, gli, le",
+    "minutes": 35
+  },
+  {
+    "id": "it23",
+    "lang": "it",
+    "level": "A2",
+    "title": "Imperfetto",
+    "minutes": 35
+  },
+  {
+    "id": "it24",
+    "lang": "it",
+    "level": "A2",
+    "title": "Imperfetto vs passato prossimo",
+    "minutes": 35
+  },
+  {
+    "id": "it25",
+    "lang": "it",
+    "level": "A2",
+    "title": "Futuro semplice",
+    "minutes": 35
+  },
+  {
+    "id": "it26",
+    "lang": "it",
+    "level": "A2",
+    "title": "Karşılaştırma",
+    "minutes": 35
+  },
+  {
+    "id": "it27",
+    "lang": "it",
+    "level": "A2",
+    "title": "Ci ve ne",
+    "minutes": 35
+  },
+  {
+    "id": "it28",
+    "lang": "it",
+    "level": "A2",
+    "title": "Seyahat, otel, tren, yol tarifi",
+    "minutes": 35
+  },
+  {
+    "id": "it29",
+    "lang": "it",
+    "level": "B1",
+    "title": "Condizionale presente",
+    "minutes": 35
+  },
+  {
+    "id": "it30",
+    "lang": "it",
+    "level": "B1",
+    "title": "Imperativo",
+    "minutes": 35
+  },
+  {
+    "id": "it31",
+    "lang": "it",
+    "level": "B1",
+    "title": "Birleşik zamirler",
+    "minutes": 35
+  },
+  {
+    "id": "it32",
+    "lang": "it",
+    "level": "B1",
+    "title": "Congiuntivo presente (giriş)",
+    "minutes": 35
+  },
+  {
+    "id": "it33",
+    "lang": "it",
+    "level": "B1",
+    "title": "Trapassato ve zaman uyumu",
+    "minutes": 35
+  },
+  {
+    "id": "it34",
+    "lang": "it",
+    "level": "B1",
+    "title": "Bağlaçlar ve fikir bildirme",
     "minutes": 35
   },
   {
@@ -222,5 +320,35 @@
     "level": "B2",
     "title": "Wish, if only, I'd rather",
     "minutes": 35
+  },
+  {
+    "id": "cp1",
+    "kind": "exam",
+    "lang": "it",
+    "level": "A1",
+    "title": "Checkpoint 1 · A1 başlangıç testi",
+    "minutes": 20,
+    "q": 20,
+    "pass": 14
+  },
+  {
+    "id": "cp2",
+    "kind": "exam",
+    "lang": "it",
+    "level": "A1",
+    "title": "Checkpoint 2 · A1 ara sınavı",
+    "minutes": 20,
+    "q": 20,
+    "pass": 14
+  },
+  {
+    "id": "final",
+    "kind": "exam",
+    "lang": "it",
+    "level": "A1",
+    "title": "Final · A1 sınav simülasyonu",
+    "minutes": 35,
+    "q": 30,
+    "pass": 21
   }
 ]

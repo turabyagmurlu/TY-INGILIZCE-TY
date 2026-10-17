@@ -1,0 +1,160 @@
+{
+  "id": "it34",
+  "lang": "it",
+  "level": "B1",
+  "title": "Bağlaçlar ve fikir bildirme",
+  "lead": "“Bence”, “ama”, “bu yüzden”, “-se bile”, “ayrıca” diyerek fikrini İtalyanca savunabilecek, kibarca karşı çıkabilecek ve 5 cümlelik kısa bir fikir paragrafı kurabileceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Fikir söylemek: secondo me, per me, penso che",
+      "blocks": [
+        {"type": "p", "text": "Türkçedeki **bence**'nin iki karşılığı var: **secondo me** (se-KON-do me) ve **per me**. Arkalarından **normal fiil** gelir. **Penso che / credo che** ise it32'deki gibi **congiuntivo** ister."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Bence", "s": "fikir", "hl": true}, {"t": "bu kablo", "s": "özne"}, {"t": "fazla ince", "s": "normal yüklem"}]},
+          {"label": "İtalyanca", "items": [{"t": "Secondo me", "s": "bence", "hl": true}, {"t": "questo cavo", "s": "bu kablo"}, {"t": "è troppo sottile", "s": "normal fiil (indicativo)", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Kalıp", "Arkasından", "Örnek", "Okunuş"], "x": 2,
+          "rows": [
+            ["secondo me / per me", "normal fiil", "Secondo me è troppo caro.", "se-KON-do me E TROP-po KA-ro"],
+            ["penso che / credo che", "congiuntivo", "Penso che sia troppo caro.", "PEN-so ke Sİ-a TROP-po KA-ro"],
+            ["penso di sì / di no", "—", "Penso di sì.", "PEN-so di Sİ"]
+          ]},
+        {"type": "note", "warn": true, "text": "İki tipik hata: **secondo me sia** (yanlış; secondo me + **è**) ve **penso che è** (konuşmada duyulur ama doğrusu **sia**). Kısa kural: che'den önce penso/credo varsa congiuntivo; secondo me'den sonra normal fiil. sottile = ince."}
+      ]
+    },
+    {
+      "title": "Karşıtlık: ma, però, invece, mentre, anche se, comunque",
+      "blocks": [
+        {"type": "p", "text": "Hepsi “ama” ailesinden ama her birinin işi farklı. Türkçe karşılığına bakarak seç."},
+        {"type": "table", "head": ["İtalyanca", "Okunuş", "Türkçe", "Örnek"], "x": 0,
+          "rows": [
+            ["ma", "ma", "ama", "È caro, ma è buono."],
+            ["però", "pe-RO", "fakat, ama", "È caro, però è buono."],
+            ["invece", "in-VE-çe", "ise, oysa; bunun yerine", "Io lavoro, tu invece dormi."],
+            ["mentre", "MEN-tre", "-ken; oysa", "Io lavoro di giorno, mentre Ahmet lavora di notte."],
+            ["anche se", "AN-ke se", "-se bile, -diği hâlde", "Anche se piove, lavoriamo."],
+            ["comunque", "ko-MUN-kue", "yine de; neyse", "È caro. Comunque lo compriamo."]
+          ],
+          "say": ["È caro, ma è buono.", "È caro, però è buono.", "Io lavoro, tu invece dormi.", "Io lavoro di giorno, mentre Ahmet lavora di notte.", "Anche se piove, lavoriamo.", "È caro. Comunque lo compriamo."]},
+        {"type": "note", "text": "**ma** hep bağladığı cümlenin başında durur; **però** ve **invece** cümlenin içine de girebilir: tu **invece** dormi. **mentre** it24'teki “-ken” ile aynı kelime; iki kişiyi karşılaştırınca “oysa” olur."},
+        {"type": "note", "warn": true, "text": "**anche se** + normal fiil: anche se **piove**. Congiuntivo değil; “anche se sia” yanlış. Aynı anlamdaki **benché** (it32) ise congiuntivo ister: Anche se **sono** stanco = Benché **sia** stanco."}
+      ]
+    },
+    {
+      "title": "Sonuç ve ekleme: quindi, perciò, allora, inoltre, infatti",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "quindi / perciò = bu yüzden, dolayısıyla", "text": "Sonucu bağlar. quindi (KUİN-di) en yaygını; perciò (per-ÇO) biraz daha yazı dili.", "ex": {"x": "Piove, quindi lavoriamo dentro.", "tr": "Yağmur yağıyor, bu yüzden içeride çalışıyoruz."}},
+          {"title": "allora = o zaman, öyleyse", "text": "Konuşmada çok sık; cümle başında “peki, o hâlde” gibi kullanılır. allora (al-LO-ra).", "ex": {"x": "Allora, cominciamo?", "tr": "O zaman başlayalım mı?"}},
+          {"title": "inoltre = ayrıca, üstelik", "text": "Bir gerekçeye ikincisini ekler. inoltre (i-NOL-tre).", "ex": {"x": "Inoltre costa meno.", "tr": "Ayrıca daha ucuz."}},
+          {"title": "infatti = nitekim, zaten, evet öyle", "text": "Önce söyleneni DOĞRULAR, ona kanıt getirir. infatti (in-FAT-ti).", "ex": {"x": "È stanco. Infatti ha lavorato dieci ore.", "tr": "Yorgun. Nitekim on saat çalıştı."}}
+        ]},
+        {"type": "note", "warn": true, "text": "**infatti** İngilizcedeki “in fact” gibi itiraz için kullanılmaz. Türkçedeki karşıtlık bildiren **aslında** = **in realtà**: Sembra facile, **in realtà** è difficile. (Kolay görünüyor; aslında zor.) sembra = görünüyor."}
+      ]
+    },
+    {
+      "title": "Tartışma kalıpları ve 5 tuğlalı fikir paragrafı",
+      "blocks": [
+        {"type": "table", "head": ["İtalyanca", "Okunuş", "Türkçe"], "x": 0,
+          "rows": [
+            ["Sono d'accordo.", "SO-no dak-KOR-do", "Katılıyorum."],
+            ["Non sono d'accordo.", "non SO-no dak-KOR-do", "Katılmıyorum."],
+            ["Hai ragione, però…", "AY ra-CO-ne pe-RO", "Haklısın ama…"],
+            ["Secondo me ti sbagli.", "se-KON-do me ti ZBA-lyi", "Bence yanılıyorsun."],
+            ["Dipende.", "di-PEN-de", "Duruma göre değişir."]
+          ],
+          "say": ["Sono d'accordo.", "Non sono d'accordo.", "Hai ragione, però...", "Secondo me ti sbagli.", "Dipende."]},
+        {"type": "p", "text": "Paragraf = 5 tuğla: **fikir** (secondo me) → **kanıt** (infatti / perché) → **ek** (inoltre) → **karşı görüş** (anche se) → **sonuç** (quindi)."},
+        {"type": "examples", "items": [
+          {"x": "Secondo me lavorare di notte non è una buona idea.", "tr": "Bence gece çalışmak iyi bir fikir değil.", "ph": "se-KON-do me la-vo-RA-re di NOT-te non E U-na BUO-na i-DE-a"},
+          {"x": "Infatti gli operai sono stanchi e fanno più errori.", "tr": "Nitekim işçiler yorgun ve daha çok hata yapıyor.", "ph": "in-FAT-ti lyi o-pe-RA-i SO-no STAN-ki e FAN-no PYU er-RO-ri"},
+          {"x": "Inoltre costa di più.", "tr": "Ayrıca daha pahalı.", "ph": "i-NOL-tre KOS-ta di PYU"},
+          {"x": "Anche se finiamo prima, la qualità è peggiore.", "tr": "Daha erken bitirsek de kalite daha kötü.", "ph": "AN-ke se fi-NYA-mo PRİ-ma la kua-li-TA E ped-CO-re"},
+          {"x": "Quindi penso che sia meglio lavorare di giorno.", "tr": "Bu yüzden gündüz çalışmanın daha iyi olduğunu düşünüyorum.", "ph": "KUİN-di PEN-so ke Sİ-a ME-lyo la-vo-RA-re di COR-no"}
+        ]}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Secondo me questo cavo è troppo sottile.", "tr": "Bence bu kablo fazla ince.", "ph": "se-KON-do me KUES-to KA-vo E TROP-po sot-Tİ-le"},
+    {"x": "Penso che Ahmet abbia ragione.", "tr": "Bence Ahmet haklı.", "ph": "PEN-so ke Ahmet AB-bya ra-CO-ne"},
+    {"x": "Hai ragione, però costa troppo.", "tr": "Haklısın ama çok pahalı.", "ph": "AY ra-CO-ne pe-RO KOS-ta TROP-po"},
+    {"x": "Piove, quindi oggi lavoriamo dentro.", "tr": "Yağmur yağıyor, bu yüzden bugün içeride çalışıyoruz.", "ph": "PYO-ve KUİN-di OD-ci la-vo-RYA-mo DEN-tro"},
+    {"x": "Anche se sono stanco, finisco il lavoro.", "tr": "Yorgun olsam da işi bitiriyorum.", "ph": "AN-ke se SO-no STAN-ko fi-NİS-ko il la-VO-ro"},
+    {"x": "Io lavoro di giorno, mentre Ahmet lavora di notte.", "tr": "Ben gündüz çalışıyorum, Ahmet ise gece.", "ph": "İ-o la-VO-ro di COR-no MEN-tre Ahmet la-VO-ra di NOT-te"},
+    {"x": "Non sono d'accordo con te.", "tr": "Sana katılmıyorum.", "ph": "non SO-no dak-KOR-do kon TE"},
+    {"x": "Sembra facile, in realtà è molto difficile.", "tr": "Kolay görünüyor, aslında çok zor.", "ph": "SEM-bra FA-çi-le in re-al-TA E MOL-to dif-Fİ-çi-le"},
+    {"x": "Comunque, decidiamo domani.", "tr": "Neyse, yarın karar veririz.", "ph": "ko-MUN-kue de-çi-DYA-mo do-MA-ni"},
+    {"x": "Allora, cosa ne pensi?", "tr": "Peki, sen bu konuda ne düşünüyorsun?", "ph": "al-LO-ra KO-sa ne PEN-si"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "“Bence bu kablo fazla ince.”", "a": "Secondo me questo cavo è troppo sottile.", "o": ["Secondo me questo cavo è troppo sottile.", "Secondo me questo cavo sia troppo sottile."],
+      "why": {"Secondo me questo cavo sia troppo sottile.": "secondo me'den sonra normal fiil gelir: è. Congiuntivo penso che / credo che içindir."},
+      "ok": "secondo me + indicativo."},
+    {"t": "choice", "q": "Penso che Ahmet ___ ragione.", "a": "abbia", "o": ["abbia", "ha", "avere"],
+      "why": {"ha": "penso che + congiuntivo (it32). Konuşmada duyulur ama doğrusu abbia.", "avere": "Mastar che'den sonra gelmez. che + çekimli fiil: abbia."},
+      "ok": "penso che + congiuntivo: abbia."},
+    {"t": "choice", "q": "Il cavo è caro, ___ è di buona qualità.", "a": "però", "o": ["però", "quindi", "infatti"],
+      "why": {"quindi": "quindi sonuç bildirir (bu yüzden). Pahalı ↔ kaliteli zıtlık: però.", "infatti": "infatti önceki sözü doğrular; burada zıtlık var: però."},
+      "ok": "Zıtlık → però / ma."},
+    {"t": "choice", "q": "Piove, ___ oggi non lavoriamo fuori.", "a": "quindi", "o": ["quindi", "anche se", "invece"],
+      "why": {"anche se": "anche se = -se bile. Yağmur → dışarıda çalışmıyoruz: bu bir sonuç: quindi.", "invece": "invece iki şeyi karşılaştırır (ise, oysa); burada sebep-sonuç var."},
+      "ok": "Sebep → sonuç: quindi."},
+    {"t": "choice", "q": "___ sono stanco, finisco il lavoro.", "a": "Anche se", "o": ["Anche se", "Perciò", "Infatti"],
+      "why": {"Perciò": "perciò = bu yüzden. Yorgunluk, işi bitirmenin sebebi değil: anche se.", "Infatti": "infatti önceki sözü doğrular; cümle başında “-se bile” anlamı vermez."},
+      "ok": "Yorgun olsam da: anche se + normal fiil."},
+    {"t": "choice", "q": "Io lavoro in cantiere, Elif ___ lavora in ufficio.", "a": "invece", "o": ["invece", "quindi", "inoltre"],
+      "why": {"quindi": "Benim şantiyede çalışmam Elif'in ofiste çalışmasının sebebi değil.", "inoltre": "inoltre aynı yönde ekleme yapar (ayrıca). Burada iki kişi karşılaştırılıyor: invece."},
+      "ok": "Elif ise ofiste: invece."},
+    {"t": "choice", "q": "A: Secondo me Ahmet è stanco. B: Sì, ___ ieri ha lavorato dodici ore.", "a": "infatti", "o": ["infatti", "invece", "anche se"],
+      "why": {"invece": "B itiraz etmiyor, katılıyor (Sì). Zıtlık değil, kanıt: infatti.", "anche se": "anche se = -se bile; cümleye kanıt anlamı vermez."},
+      "ok": "infatti = nitekim: söyleneni doğrular."},
+    {"t": "choice", "q": "Kibarca karşı çık: “Haklısın ama maliyet yüksek.”", "a": "Hai ragione, però il costo è alto.", "o": ["Hai ragione, però il costo è alto.", "Sei ragione, però il costo è alto.", "Hai ragione, quindi il costo è alto."],
+      "why": {"Sei ragione, però il costo è alto.": "Haklı olmak avere ile kurulur: ho ragione, hai ragione (fame, sete gibi; it06).", "Hai ragione, quindi il costo è alto.": "quindi sonuç bildirir; karşı çıkmak için zıtlık lazım: però."},
+      "ok": "Hai ragione, però… = kibar itirazın en güvenli kalıbı."},
+    {"t": "type", "q": "Türkçeden çevir: “Bence haklısın.”", "a": ["secondo me hai ragione", "per me hai ragione", "penso che tu abbia ragione", "credo che tu abbia ragione"], "hint": "secondo me + avere ragione.", "ok": "Secondo me hai ragione."},
+    {"t": "type", "q": "Türkçeden çevir: “Katılmıyorum.”", "a": ["non sono d'accordo", "non sono daccordo", "io non sono d'accordo", "io non sono daccordo"], "hint": "non + sono + d'accordo.", "ok": "Non sono d'accordo."},
+    {"t": "order", "q": "Sırala: “Yağmur yağsa bile dışarıda çalışıyoruz.”", "words": ["fuori", "piove", "anche", "lavoriamo", "se"], "a": "anche se piove lavoriamo fuori", "alt": ["lavoriamo fuori anche se piove"], "ok": "Anche se piove, lavoriamo fuori."},
+    {"t": "order", "q": "Sırala: “Bence gece çalışmak iyi bir fikir değil.”", "words": ["di", "non", "una", "me", "notte", "idea", "è", "secondo", "lavorare", "buona"], "a": "secondo me lavorare di notte non è una buona idea", "alt": ["lavorare di notte secondo me non è una buona idea", "secondo me non è una buona idea lavorare di notte"], "ok": "Secondo me lavorare di notte non è una buona idea."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Chiara ile tartışmak: Chiara bir görüşü savunur, Türab karşı çıkar. Fikrini secondo me / penso che + congiuntivo ile söylemek, però, invece, anche se, quindi, inoltre, infatti ile gerekçelendirmek, bir noktada “Hai ragione, però…” ile kısmen katılmak ve sonunda 4–5 cümlelik bir fikir paragrafıyla toparlamak.",
+    "vocab": ["secondo me", "per me", "penso che", "credo che", "ma", "però", "invece", "mentre", "anche se", "comunque", "quindi", "perciò", "allora", "inoltre", "infatti", "in realtà", "sono d'accordo", "non sono d'accordo", "hai ragione", "ti sbagli", "dipende", "il problema è che"],
+    "structures": ["secondo me / per me + indicativo", "penso che / credo che + congiuntivo presente (sia, abbia…)", "penso di sì / penso di no", "zıtlık: ma, però, invece, mentre, anche se + indicativo, comunque", "sonuç ve ekleme: quindi, perciò, allora, inoltre, infatti (doğrulama); karşıtlık için in realtà", "itiraz: Hai ragione, però… / Non sono d'accordo perché… / Secondo me ti sbagli"],
+    "opener_hint": "Chiara doğrudan kışkırtıcı bir görüşle açsın: “Secondo me vivere a Bodrum è molto meglio che vivere a Kırıkkale. C'è il mare, c'è più lavoro… Tu cosa ne pensi?” Türab karşı çıktıkça Chiara her turda bir karşı argüman getirsin (iş, kira, aile, deniz); tartışma tıkanırsa ikinci konuya geçsin: “Lavorare di notte in cantiere: sì o no?” Sonunda Türab'dan kendi görüşünü 5 tuğlalı paragrafla özetlemesini istesin.",
+    "level_note": "B1: neredeyse tamamen İtalyanca, doğal ve akıcı ama net cümleler; Türkçeye sadece Türab açıkça takılırsa tek kelimeyle geç. Hataları anında düzeltme; her 4–5 mesajda bir ya da tartışma sonunda kısa toplu liste ver (yanlış → doğru, tek satır gerekçe). Özellikle izle: secondo me + indicativo, penso che + congiuntivo, anche se + indicativo, infatti'nin itiraz için yanlış kullanımı, avere ragione. Kendi görüşünü kibarca ama kolay pes etmeden savun. Congiuntivo imperfetto, passato remoto ve se'li varsayım cümleleri kullanma."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "secondo me + indicativo", "q": "Secondo me il progetto ___ troppo caro.", "a": "è", "o": ["è", "sia", "essere"],
+      "why": {"sia": "secondo me'den sonra normal fiil gelir: è. sia, penso che'den sonra gelir.", "essere": "Mastar değil, çekimli fiil lazım: è."}},
+    {"t": "choice", "topic": "penso che / credo che + congiuntivo", "q": "Credo che il quadro ___ pronto domani.", "a": "sia", "o": ["sia", "è", "essere"],
+      "why": {"è": "credo che + congiuntivo. Konuşmada duyulur ama doğrusu sia.", "essere": "che'den sonra çekimli fiil gelir: sia."}},
+    {"t": "choice", "topic": "infatti mi in realtà mı", "q": "“Herkes kolay sanıyor; aslında çok zor.” Tutti pensano che sia facile; ___ è molto difficile.", "a": "in realtà", "o": ["in realtà", "infatti", "quindi"],
+      "why": {"infatti": "infatti önceki sözü doğrular. Burada zıtlık var (kolay sanıyorlar ↔ zor): in realtà.", "quindi": "quindi sonuç bildirir; “zor” kolay sanılmanın sonucu değil."}},
+    {"t": "choice", "topic": "anche se", "q": "“Pazar olmasına rağmen çalışıyoruz.” Lavoriamo ___ è domenica.", "a": "anche se", "o": ["anche se", "perciò", "invece"],
+      "why": {"perciò": "perciò = bu yüzden; pazar çalışmanın sebebi değil.", "invece": "invece iki şeyi karşılaştırır (ise, oysa); burada “-diği hâlde” lazım."}},
+    {"t": "type", "topic": "kibar itiraz", "q": "Türkçeden çevir: “Haklısın ama pahalı.”", "a": ["hai ragione però è caro", "hai ragione ma è caro", "hai ragione però costa troppo", "hai ragione ma costa troppo"], "soft": ["hai ragione pero e caro", "hai ragione ma e caro", "hai ragione però e caro", "hai ragione pero è caro", "hai ragione pero costa troppo"], "soft_note": "Doğru sayıldı. Aksanlar: però ve è (fiil). Doğrusu: Hai ragione, però è caro."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Il cavo era troppo corto, ___ ne abbiamo comprato un altro.", "a": "perciò", "o": ["perciò", "anche se", "mentre"],
+        "why": {"anche se": "anche se = -se bile. Kısa kablo, yenisini almanın sebebi: perciò.", "mentre": "mentre = -ken / oysa; sebep-sonuç bağlamaz."},
+        "ok": "perciò = bu yüzden (quindi ile aynı)."},
+      {"t": "choice", "q": "Ahmet preferisce il calcio, ___ io preferisco il basket.", "a": "mentre", "o": ["mentre", "quindi", "infatti"],
+        "why": {"quindi": "Ahmet'in futbolu tercih etmesi senin basketbolu tercih etmenin sebebi değil.", "infatti": "infatti doğrular; burada iki kişi karşılaştırılıyor: mentre (oysa)."},
+        "ok": "İki kişiyi karşılaştırınca mentre = oysa (invece da olur)."},
+      {"t": "choice", "q": "A: Il quadro è pronto? B: Penso ___.", "a": "di sì", "o": ["di sì", "che sì", "sì"],
+        "why": {"che sì": "Kısa cevapta che değil di kullanılır: penso di sì.", "sì": "penso'dan sonra çıplak sì kullanılmaz: penso di sì."},
+        "ok": "Penso di sì / Penso di no = Sanırım evet / hayır."},
+      {"t": "choice", "q": "Questo cavo è economico. ___ è facile da installare.", "a": "Inoltre", "o": ["Inoltre", "Invece", "Anche se"],
+        "why": {"Invece": "invece zıtlık kurar; ucuz ve kolay aynı yönde iki artı: inoltre.", "Anche se": "anche se = -se bile; ikinci bir gerekçe eklemiyor."},
+        "ok": "İkinci gerekçe → inoltre (ayrıca)."},
+      {"t": "type", "q": "Türkçeden çevir: “Bence yanılıyorsun.”", "a": ["secondo me ti sbagli", "per me ti sbagli", "secondo me sbagli", "per me sbagli", "penso che tu sbagli", "penso che tu ti sbagli", "secondo me non hai ragione", "per me non hai ragione"], "hint": "secondo me + sbagliarsi (dönüşlü: ti sbagli).", "ok": "Secondo me ti sbagli."},
+      {"t": "order", "q": "Sırala: “Yağmur yağıyor, bu yüzden içeride çalışıyoruz.”", "words": ["dentro", "quindi", "lavoriamo", "piove"], "a": "piove quindi lavoriamo dentro", "ok": "Piove, quindi lavoriamo dentro."}
+    ],
+    "konus_prompt": "Chiara bir konu atacak (ör. “Il lavoro di notte in cantiere è una buona idea?”). 5 tuğlalı bir fikir paragrafı kur: secondo me / penso che + congiuntivo, infatti ya da perché, inoltre, anche se, quindi. Sonra Chiara'nın itirazına “Hai ragione, però…” ile cevap ver."
+  }
+}

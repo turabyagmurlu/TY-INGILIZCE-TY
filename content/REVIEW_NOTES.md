@@ -32,3 +32,7 @@ Her dosya şema kurallarına göre otomatik denetlendi: JSON geçerli, sayılar 
 - **restare / rimanere**: it20 restare öğretir; rimasto'nun daha sık olduğu notta anılır.
 - **Seviye**: it19–it20 "A2", en11–en12 "B2" (müfredat SYL ile aynı).
 - Denetim puanları (düzeltmeden sonra): it07–it20 90–95, en04–en12 92–94.
+
+## it21–it34 + sınavlar turu (Ekim 2026)
+- Denetim puanları: it21–it34 92–95; cp1 93, cp2 94, final 93.
+- Bilinçli sadeleştirmeler: it27 ne + ortaç uyumu zorunlu öğretilir (konuşmada uyumsuz da duyulur); it31 glielo "onlara" da (gündelik dil); it32 deva sadece notta; it28 "biglietto solo andata" konuşma biçimi.

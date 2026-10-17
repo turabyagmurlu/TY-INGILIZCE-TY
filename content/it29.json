@@ -1,0 +1,166 @@
+{
+  "id": "it29",
+  "lang": "it",
+  "level": "B1",
+  "title": "Condizionale presente",
+  "lead": "Kibarca rica etmeyi (Potrebbe…?), tavsiye vermeyi (Dovresti…), isteğini yumuşak söylemeyi (vorrei, mi piacerebbe) ve duyduğun bir haberi “-mış” tadında aktarmayı öğreneceksin. Futuro'yu biliyorsan çekimi beş dakikalık iş.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Çekim: futuro kökü + -ei",
+      "blocks": [
+        {"type": "p", "text": "**Condizionale**, Türkçedeki **-ır(dı) / -ır mıydın** kipidir: konuşurdum, okur muydun? Kuruluşu kolay: it25'teki **futuro kökünü** al (parler-, legger-, finir-), futuro eklerinin yerine **-ei, -esti, -ebbe, -emmo, -este, -ebbero** koy."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Konuş", "s": "fiil kökü"}, {"t": "-urdu", "s": "kip", "hl": true}, {"t": "-m", "s": "ben", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "parler", "s": "futuro kökü", "hl": true}, {"t": "-ei", "s": "ben + kip", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Özne", "parlare", "leggere", "finire", "Okunuş"], "x": 1,
+          "rows": [
+            ["io", "parlerei", "leggerei", "finirei", "par-le-REY"],
+            ["tu", "parleresti", "leggeresti", "finiresti", "par-le-RES-ti"],
+            ["lui / lei / Lei", "parlerebbe", "leggerebbe", "finirebbe", "par-le-REB-be"],
+            ["noi", "parleremmo", "leggeremmo", "finiremmo", "par-le-REM-mo"],
+            ["voi", "parlereste", "leggereste", "finireste", "par-le-RES-te"],
+            ["loro", "parlerebbero", "leggerebbero", "finirebbero", "par-le-REB-be-ro"]
+          ],
+          "say": ["io parlerei", "tu parleresti", "lui parlerebbe", "noi parleremmo", "voi parlereste", "loro parlerebbero"]},
+        {"type": "note", "warn": true, "text": "İki tuzak. (1) -are fiilinde a → e olur: **parlerei**, “parlarei” değil (futuro'daki parlerò gibi). (2) **parleremo** = konuşacağız (futuro), **parleremmo** = konuşurduk. Fark tek m / çift m; çift m'yi uzun söyle."},
+        {"type": "note", "text": "Yazım da futuro ile aynı: cercare → **cercherei**, pagare → **pagherei**, mangiare → **mangerei**."}
+      ]
+    },
+    {
+      "title": "Düzensizler: futuro'nun kökleri aynen",
+      "blocks": [
+        {"type": "p", "text": "Futuro'da kökü düzensiz olan her fiil condizionale'de **aynı kökü** kullanır. Yeni ezber yok: sarò'yu biliyorsan sarei'yi de bilirsin. stare → starei, dare → darei de böyle."},
+        {"type": "table", "head": ["Mastar", "Futuro (io)", "Condizionale (io)", "Okunuş", "Türkçesi"], "x": 2,
+          "rows": [
+            ["essere", "sarò", "sarei", "sa-REY", "olurdum"],
+            ["avere", "avrò", "avrei", "a-VREY", "-im olurdu"],
+            ["fare", "farò", "farei", "fa-REY", "yapardım"],
+            ["volere", "vorrò", "vorrei", "vor-REY", "isterdim"],
+            ["potere", "potrò", "potrei", "po-TREY", "yapabilirdim"],
+            ["dovere", "dovrò", "dovrei", "do-VREY", "-meliyim (yumuşak)"],
+            ["venire", "verrò", "verrei", "ver-REY", "gelirdim"],
+            ["andare", "andrò", "andrei", "an-DREY", "giderdim"]
+          ],
+          "say": ["sarei", "avrei", "farei", "vorrei", "potrei", "dovrei", "verrei", "andrei"]},
+        {"type": "note", "text": "**vorrei artık kalıp değil.** it17'de kafede ezberlediğin vorrei, volere'nin condizionale'sidir ve her kişide çekilir: vorrei, vorresti, vorrebbe, vorremmo, vorreste, vorrebbero."},
+        {"type": "examples", "items": [
+          {"x": "Vorresti un caffè?", "tr": "Bir kahve ister misin?", "ph": "vor-RES-ti un kaf-FE"},
+          {"x": "Elif vorrebbe venire con noi.", "tr": "Elif bizimle gelmek isterdi (kibarca: gelmek istiyor).", "ph": "Elif vor-REB-be ve-Nİ-re kon NOY"},
+          {"x": "Verrei, ma sono stanco.", "tr": "Gelirdim ama yorgunum.", "ph": "ver-REY, ma SO-no STAN-ko"}
+        ]}
+      ]
+    },
+    {
+      "title": "Kullanım 1: kibar rica, istek, öneri",
+      "blocks": [
+        {"type": "p", "text": "Şimdiki zamanla rica (Puoi…? Voglio…) dilbilgisi olarak doğru ama düz durur. Kibarlığı condizionale verir; Türkçedeki **-ebilir misiniz / -sen iyi olur** yumuşaklığı budur."},
+        {"type": "rules", "items": [
+          {"title": "Rica: potresti / potrebbe + mastar", "text": "Arkadaşa potresti, müşteriye ve şefe potrebbe (Lei).", "ex": {"x": "Potrebbe firmare qui?", "tr": "Burayı imzalayabilir misiniz?"}},
+          {"title": "İstek: vorrei / mi piacerebbe + mastar", "text": "mi piacerebbe = hoşuma giderdi, isterdim (it18'deki piacere).", "ex": {"x": "Mi piacerebbe lavorare in Italia.", "tr": "İtalya'da çalışmak isterdim."}},
+          {"title": "Öneri: dovresti + mastar", "text": "devi = zorundasın (emir gibi); dovresti = -sen iyi olur.", "ex": {"x": "Dovresti riposare un po'.", "tr": "Biraz dinlensen iyi olur."}},
+          {"title": "Fikir: al tuo posto… / sarebbe meglio + mastar", "text": "Yerinde olsam…, … daha iyi olur. meglio = daha iyi (zarf).", "ex": {"x": "Al tuo posto chiamerei il capo.", "tr": "Yerinde olsam şefi arardım."}}
+        ]},
+        {"type": "note", "warn": true, "text": "Tipik Türk hatası: “istiyorum” kafasıyla garsona **Voglio un caffè** demek. Kulağa emir gibi gelir; doğrusu **Vorrei un caffè**. Şantiyede de aynı: Devi pulire (temizlemek zorundasın) yerine **Dovresti pulire** (temizlesen iyi olur)."}
+      ]
+    },
+    {
+      "title": "Kullanım 2: duyulan haber ve tahmini rakam (-mış)",
+      "blocks": [
+        {"type": "p", "text": "Condizionale'nin ikinci görevi **doğrulanmamış bilgi**: haber, söylenti, kesin olmayan rakam. Türkçedeki **-mış** eki gibi: duydum ama garanti vermem. Daha çok haber dilidir. Futuro ise kesin plan ya da “herhalde” tahmini verir (it25)."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Şantiye", "s": "özne"}, {"t": "martta", "s": "zaman"}, {"t": "açılacakmış", "s": "duyulan bilgi", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Il cantiere", "s": "özne"}, {"t": "aprirebbe", "s": "condizionale", "hl": true}, {"t": "a marzo", "s": "zaman"}]}
+        ]},
+        {"type": "table", "head": ["Kip", "İtalyanca", "Türkçesi"], "x": 1,
+          "rows": [
+            ["Futuro (kesin)", "Il cantiere aprirà a marzo.", "Şantiye martta açılacak."],
+            ["Condizionale (duyulan)", "Il cantiere aprirebbe a marzo.", "Şantiye martta açılacakmış."],
+            ["Futuro (tahmin)", "Il capo sarà in ufficio.", "Şef ofistedir herhalde."],
+            ["Condizionale (rakam)", "Il lavoro costerebbe circa tremila euro.", "İş yaklaşık üç bin euro tutar (tahmini)."]
+          ]},
+        {"type": "note", "warn": true, "text": "Sınır: bu biçim sadece **şimdi ve gelecek** için. “Şef dün gelmiş” gibi geçmiş bir duyum başka bir biçim ister (condizionale passato); şimdilik kurma. “Eğer … olsaydı” (se + …) da başka kip ister. Varsayımı **al tuo posto** ya da tek başına condizionale ile söyle: **Io chiamerei il capo.** (Ben olsam şefi arardım.)"}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Vorrei parlare con l'ingegnere, per favore.", "tr": "Mühendisle konuşmak istiyorum, lütfen.", "ph": "vor-REY par-LA-re kon lin-ce-NYE-re, per fa-VO-re"},
+    {"x": "Mi potresti passare il cacciavite?", "tr": "Tornavidayı bana uzatabilir misin?", "ph": "mi po-TRES-ti pas-SA-re il kat-ça-Vİ-te"},
+    {"x": "Potrebbe aspettare un momento?", "tr": "Bir dakika bekleyebilir misiniz?", "ph": "po-TREB-be as-pet-TA-re un mo-MEN-to"},
+    {"x": "Dovresti riposare un po'.", "tr": "Biraz dinlensen iyi olur.", "ph": "do-VRES-ti ri-po-SA-re un PO"},
+    {"x": "Al tuo posto chiamerei subito il capo.", "tr": "Yerinde olsam şefi hemen arardım.", "ph": "al TU-o POS-to kya-me-REY SU-bi-to il KA-po"},
+    {"x": "Sarebbe meglio controllare prima il quadro.", "tr": "Önce panoyu kontrol etmek daha iyi olur.", "ph": "sa-REB-be ME-lyo kon-trol-LA-re PRİ-ma il KUA-dro"},
+    {"x": "Mi piacerebbe lavorare in Italia un giorno.", "tr": "Bir gün İtalya'da çalışmak isterdim.", "ph": "mi pya-çe-REB-be la-vo-RA-re in i-TA-lya un COR-no"},
+    {"x": "Verresti con noi a cena stasera?", "tr": "Bu akşam bizimle yemeğe gelir misin?", "ph": "ver-RES-ti kon NOY a ÇE-na sta-SE-ra"},
+    {"x": "Il nuovo cantiere aprirebbe a marzo.", "tr": "Yeni şantiye martta açılacakmış.", "ph": "il NUO-vo kan-TYE-re a-pri-REB-be a MAR-tso"},
+    {"x": "Il lavoro costerebbe circa tremila euro.", "tr": "İş yaklaşık üç bin euro tutar (tahmini).", "ph": "il la-VO-ro kos-te-REB-be ÇİR-ka tre-Mİ-la EU-ro"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "parlare → io ___ (konuşurdum)", "a": "parlerei", "o": ["parlerei", "parlarei", "parlerò"],
+      "why": {"parlarei": "-are fiillerinde kökteki a, e olur: parler- (futuro'daki gibi).", "parlerò": "parlerò futuro'dur: konuşacağım."},
+      "ok": "Futuro kökü parler- + -ei."},
+    {"t": "choice", "q": "essere → io ___ (olurdum)", "a": "sarei", "o": ["sarei", "esserei", "sarò"],
+      "why": {"esserei": "essere'nin kökü düzensiz: futuro'daki sar- kullanılır.", "sarò": "sarò futuro'dur: olacağım."},
+      "ok": "sarò → sarei: aynı kök."},
+    {"t": "choice", "q": "Elif bir kahve istiyor (kibarca): “Elif ___ un caffè.”", "a": "vorrebbe", "o": ["vorrei", "vorrebbe", "vuole"],
+      "why": {"vorrei": "vorrei = io. Elif → lui/lei → vorrebbe.", "vuole": "vuole şimdiki zaman: doğru ama düz. Kibar istek condizionale ile: vorrebbe."},
+      "ok": "vorrei artık çekiliyor: vorrebbe = o isterdi."},
+    {"t": "choice", "q": "“Seve seve gelirdik.” Noi ___ volentieri.", "a": "verremmo", "o": ["verremo", "verremmo", "veniremmo"],
+      "why": {"verremo": "Tek m = futuro: geleceğiz.", "veniremmo": "venire'nin kökü düzensiz: verr-."},
+      "ok": "Çift m = condizionale. volentieri = seve seve."},
+    {"t": "choice", "q": "Müşteriye en kibar biçim: “___ firmare qui?” (Burayı imzalayabilir misiniz?)", "a": "Potrebbe", "o": ["Può", "Potrebbe", "Potresti"],
+      "why": {"Può": "Può da doğru ama düz. En kibarı condizionale: potrebbe.", "Potresti": "potresti tu biçimi; müşteriye Lei: potrebbe."},
+      "ok": "Lei + condizionale = en kibar rica."},
+    {"t": "choice", "q": "Ahmet çok yorgun. Tavsiye: “___ riposare.”", "a": "Dovresti", "o": ["Dovresti", "Devi", "Dovrei"],
+      "why": {"Devi": "devi = zorundasın; emir gibi durur. Tavsiye için dovresti.", "Dovrei": "dovrei = io. Ahmet'e (tu) dovresti."},
+      "ok": "dovresti = -sen iyi olur."},
+    {"t": "choice", "q": "Henüz kesin değil, duydun: “Yeni şantiye martta açılacakmış.”", "a": "Il nuovo cantiere aprirebbe a marzo.", "o": ["Il nuovo cantiere aprirà a marzo.", "Il nuovo cantiere aprirebbe a marzo."],
+      "why": {"Il nuovo cantiere aprirà a marzo.": "aprirà kesin bilgi verir: açılacak. Duyulan bilgi (-mış) condizionale ister."},
+      "ok": "Doğrulanmamış haber → condizionale."},
+    {"t": "choice", "q": "“Onlar bunu yapardı.” Loro lo ___.", "a": "farebbero", "o": ["farebbero", "farebbe", "faranno"],
+      "why": {"farebbe": "farebbe = lui/lei. loro → farebbero.", "faranno": "faranno futuro'dur: yapacaklar."},
+      "ok": "far- + -ebbero."},
+    {"t": "type", "q": "Türkçeden çevir: “Bana yardım edebilir misin?” (kibar, tu; aiutare)", "a": ["mi potresti aiutare", "potresti aiutarmi", "mi potresti aiutare per favore", "potresti aiutarmi per favore"], "hint": "mi + potresti + mastar.", "ok": "Mi potresti aiutare?"},
+    {"t": "order", "q": "Sırala: “Önce panoyu kontrol etmek daha iyi olur.”", "words": ["meglio", "il", "sarebbe", "quadro", "controllare", "prima"], "a": "sarebbe meglio controllare prima il quadro", "alt": ["sarebbe meglio controllare il quadro prima"], "ok": "Sarebbe meglio + mastar."},
+    {"t": "type", "q": "Türkçeden çevir: “Yerinde olsam şefi arardım.” (şef = il capo)", "a": ["al tuo posto chiamerei il capo", "io al tuo posto chiamerei il capo", "al posto tuo chiamerei il capo", "chiamerei il capo al tuo posto", "io al posto tuo chiamerei il capo", "al tuo posto io chiamerei il capo", "al posto tuo io chiamerei il capo", "chiamerei il capo al posto tuo", "io chiamerei il capo"], "hint": "al tuo posto + chiamare (condizionale, io).", "ok": "Al tuo posto chiamerei il capo."},
+    {"t": "type", "q": "Türkçeden çevir: “Bir gün İtalya'da çalışmak isterdim.” (piacere ile)", "a": ["mi piacerebbe lavorare in italia un giorno", "un giorno mi piacerebbe lavorare in italia", "mi piacerebbe un giorno lavorare in italia", "vorrei lavorare in italia un giorno", "un giorno vorrei lavorare in italia"], "hint": "mi piacerebbe + mastar.", "ok": "Mi piacerebbe lavorare in Italia un giorno."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Kibar rica, istek ve tavsiyeyi condizionale ile kurmak: kafede ve otelde kibarca bir şey istemek, bir iş arkadaşına tavsiye vermek (dovresti, al tuo posto, sarebbe meglio), hayalini anlatmak (mi piacerebbe), duyduğu bir haberi condizionale ile aktarmak.",
+    "vocab": ["vorrei", "vorresti", "potresti", "potrebbe", "dovresti", "sarebbe meglio", "al tuo posto", "mi piacerebbe", "volentieri", "verrei", "andrei", "farei", "circa", "subito", "riposare", "firmare", "costerebbe", "meglio"],
+    "structures": ["condizionale = futuro kökü + -ei, -esti, -ebbe, -emmo, -este, -ebbero", "düzensiz kökler futuro ile aynı: sar-, avr-, far-, vorr-, potr-, dovr-, verr-, andr-", "kibar rica: potresti / potrebbe + mastar", "istek: vorrei / mi piacerebbe + mastar", "öneri: dovresti, al tuo posto + condizionale, sarebbe meglio + mastar", "duyulan bilgi / tahmini rakam: aprirebbe, costerebbe (-mış)", "futuro -emo ↔ condizionale -emmo"],
+    "opener_hint": "Chiara İtalya'da küçük bir şantiye ofisinin sekreteri: “Buongiorno Türab! Come potrei aiutarla?” Türab'dan kibarca şeyler istemesini bekler (mühendisle konuşmak, bir belge, bir kahve). Sonra kendi sorununu anlatır (çok yoruldum, şef kızgın) ve tavsiye ister: “Tu cosa faresti al mio posto?” Sonunda bir söylenti aktarır (“Il nuovo cantiere aprirebbe a maggio…”) ve Türab'ın hayalini sorar: “Dove ti piacerebbe lavorare?”",
+    "level_note": "B1: neredeyse tamamen İtalyanca, doğal ama kısa cümleler; Türkçe yalnızca Türab açıkça takılırsa tek kelime. Hataları anında değil, 3–4 mesajda bir toplu düzelt (“Piccole correzioni: …”). Condizionale'yi bol kullan; imperativo, birleşik zamirler (glielo, me lo), congiuntivo ve “se + …” varsayım cümlesi kullanma. Türab “voglio / puoi” derse kibar condizionale biçimini toplu düzeltmede göster; parleremo / parleremmo karışıklığını mutlaka düzelt."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "çekim (-are → -er-)", "q": "mangiare → tu ___ (yer miydin?)", "a": "mangeresti", "o": ["mangiaresti", "mangeresti", "mangerai"],
+      "why": {"mangiaresti": "-are'nin a'sı e olur ve -giare'de i düşer: manger-.", "mangerai": "mangerai futuro'dur: yiyeceksin."}},
+    {"t": "choice", "topic": "düzensiz kökler", "q": "“Gelirdim ama yorgunum.” ___, ma sono stanco.", "a": "Verrei", "o": ["Venirei", "Verrei", "Verrò"],
+      "why": {"Venirei": "venire'nin kökü düzensiz: verr- (futuro verrò gibi).", "Verrò": "Verrò futuro'dur: geleceğim; “ama yorgunum” ile uymaz."}},
+    {"t": "choice", "topic": "futuro (-emo) vs condizionale (-emmo)", "q": "“Şefi arardık.” Noi ___ il capo.", "a": "chiameremmo", "o": ["chiameremo", "chiameremmo"],
+      "why": {"chiameremo": "Tek m futuro'dur: arayacağız. Arardık → çift m: chiameremmo."}},
+    {"t": "choice", "topic": "öneri (dovresti)", "q": "Arkadaşına tavsiye: “Doktora gitsen iyi olur.”", "a": "Dovresti andare dal medico.", "o": ["Dovresti andare dal medico.", "Dovrei andare dal medico.", "Devi andare dal medico."],
+      "why": {"Dovrei andare dal medico.": "dovrei = io: doktora gitsem iyi olur. Arkadaşına tu: dovresti.", "Devi andare dal medico.": "devi = gitmek zorundasın; tavsiye değil zorunluluk."}},
+    {"t": "type", "topic": "duyulan bilgi (-mış)", "q": "Türkçeden çevir: “Şef hastaymış.” (duyduğuna göre; şef = il capo, hasta = malato)", "a": ["il capo sarebbe malato"], "hint": "essere'nin condizionale'si, lui."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "potere → noi ___ (yapabilirdik)", "a": "potremmo", "o": ["potremo", "potremmo", "poteremmo"],
+        "why": {"potremo": "Tek m futuro'dur: yapabileceğiz.", "poteremmo": "potere'nin kökü kısalır: potr-."},
+        "ok": "potr- + -emmo."},
+      {"t": "choice", "q": "Kafede arkadaşına: “___ un caffè?” (Bir kahve ister misin?)", "a": "Vorresti", "o": ["Vorresti", "Vorrei", "Vorrebbe"],
+        "why": {"Vorrei": "vorrei = io: ben isterdim.", "Vorrebbe": "vorrebbe = lui/lei ya da Lei; arkadaşına tu: vorresti."},
+        "ok": "tu → vorresti."},
+      {"t": "choice", "q": "“Sana yardım ederdim ama vaktim yok.”", "a": "Ti aiuterei, ma non ho tempo.", "o": ["Ti aiuterò, ma non ho tempo.", "Ti aiuterei, ma non ho tempo.", "Ti aiutavo, ma non ho tempo."],
+        "why": {"Ti aiuterò, ma non ho tempo.": "aiuterò futuro'dur: yardım edeceğim. “Ama vaktim yok” ile çelişir.", "Ti aiutavo, ma non ho tempo.": "aiutavo imperfetto'dur: yardım ediyordum (geçmiş)."},
+        "ok": "-ırdım ama… = condizionale."},
+      {"t": "type", "q": "Türkçeden çevir: “Bu akşam bizimle gelir misin?”", "a": ["verresti con noi stasera", "stasera verresti con noi", "verresti stasera con noi", "verresti con noi questa sera", "questa sera verresti con noi"], "hint": "venire → verr- + -esti.", "ok": "Verresti con noi stasera?"},
+      {"t": "type", "q": "Türkçeden çevir: “Erken başlamak daha iyi olur.” (cominciare, presto)", "a": ["sarebbe meglio cominciare presto", "sarebbe meglio iniziare presto"], "hint": "sarebbe meglio + mastar.", "ok": "Sarebbe meglio cominciare presto."},
+      {"t": "order", "q": "Sırala: “Müdürle konuşmak isterdik.”", "words": ["vorremmo", "il", "parlare", "direttore", "con"], "a": "vorremmo parlare con il direttore", "ok": "Vorremmo parlare con il direttore."}
+    ],
+    "konus_prompt": "Chiara bir otel resepsiyonisti. Ondan kibarca en az 3 şey iste (vorrei, potrebbe…?), sonra Chiara'nın şantiyedeki bir sorununa 2 tavsiye ver (dovresti, al tuo posto…, sarebbe meglio…). En az bir cümlede çift m'li noi biçimi kullan (vorremmo, potremmo)."
+  }
+}

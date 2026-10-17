@@ -1,0 +1,475 @@
+{
+ "id": "final",
+ "kind": "exam",
+ "lang": "it",
+ "level": "A1",
+ "title": "Final · A1 sınav simülasyonu",
+ "minutes": 35,
+ "lead": "20 dersin hepsinden, kolaydan zora 30 soru; son 5 soru cümle kurma. Geçmek için en az 21 doğru.",
+ "scope": [
+  "it01",
+  "it02",
+  "it03",
+  "it04",
+  "it05",
+  "it06",
+  "it07",
+  "it08",
+  "it09",
+  "it10",
+  "it11",
+  "it12",
+  "it13",
+  "it14",
+  "it15",
+  "it16",
+  "it17",
+  "it18",
+  "it19",
+  "it20"
+ ],
+ "items": [
+  {
+   "t": "choice",
+   "topic": "z okunuşu",
+   "from": "it01",
+   "q": "“attenzione” kelimesindeki z nasıl okunur?",
+   "a": "ts",
+   "o": [
+    "ts",
+    "dz",
+    "s"
+   ],
+   "why": {
+    "dz": "dz zona, zero gibi kelimelerde. attenzione, sicurezza, pizza: ts.",
+    "s": "z hiçbir zaman düz s okunmaz: ts ya da dz."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "tu mu, Lei mi",
+   "from": "it02",
+   "q": "Hangisine “tu” ile hitap edersin?",
+   "a": "Ekipteki yaşıtın Murat",
+   "o": [
+    "Ekipteki yaşıtın Murat",
+    "Firmanın müdürü",
+    "Tanımadığın yaşlı bir hanım"
+   ],
+   "why": {
+    "Firmanın müdürü": "İşverene ve müdüre Lei denir.",
+    "Tanımadığın yaşlı bir hanım": "Tanımadığın ve yaşça büyük birine Lei denir."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "düzensiz çoğul",
+   "from": "it03",
+   "q": "Çoğulu: problema → ?",
+   "a": "problemi",
+   "o": [
+    "probleme",
+    "problemi",
+    "problema"
+   ],
+   "why": {
+    "probleme": "problema eril; -a → -e kuralı dişiller içindir. Eril çoğul -i: problemi.",
+    "problema": "Bu tekil biçim; çoğulda değişir."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "uno (belirsiz)",
+   "from": "it04",
+   "q": "Belirsiz artikelle yaz: “bir sırt çantası”",
+   "a": [
+    "uno zaino"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "essere: loro",
+   "from": "it05",
+   "q": "Loro non ___ in cantiere oggi.",
+   "a": "sono",
+   "o": [
+    "è",
+    "sono",
+    "siete"
+   ],
+   "why": {
+    "è": "è tekil (lui, lei). loro → sono.",
+    "siete": "siete voi (siz) biçimi."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "avere kalıpları + non",
+   "from": "it06",
+   "q": "Türkçeden çevir: “Uykum yok.”",
+   "a": [
+    "non ho sonno",
+    "io non ho sonno"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "renk uyumu",
+   "from": "it07",
+   "q": "“i fili ___” (sarı teller)",
+   "a": "gialli",
+   "o": [
+    "gialli",
+    "giallo",
+    "gialle"
+   ],
+   "why": {
+    "giallo": "giallo tekil. filo → fili çoğul: gialli.",
+    "gialle": "gialle dişil çoğul; filo eril."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "saat",
+   "from": "it08",
+   "q": "Sırala: “Saat biri çeyrek geçiyor.”",
+   "words": [
+    "l'una",
+    "un",
+    "e",
+    "quarto",
+    "è"
+   ],
+   "a": "è l'una e un quarto"
+  },
+  {
+   "t": "choice",
+   "topic": "-are çekimi: tu",
+   "from": "it09",
+   "q": "tu ___ a Bodrum? (abitare)",
+   "a": "abiti",
+   "o": [
+    "abiti",
+    "abita",
+    "abito"
+   ],
+   "why": {
+    "abita": "abita lui/lei ya da kibar Lei biçimi.",
+    "abito": "abito io (ben) biçimi."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "olumsuz -are",
+   "from": "it09",
+   "q": "Sırala: “Bugün Bodrum'da çalışmıyoruz.”",
+   "words": [
+    "Bodrum",
+    "oggi",
+    "non",
+    "lavoriamo",
+    "a"
+   ],
+   "a": "oggi non lavoriamo a Bodrum",
+   "alt": [
+    "non lavoriamo a Bodrum oggi"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "-ire çekimi (normal)",
+   "from": "it10",
+   "q": "noi ___ alle sei. (partire)",
+   "a": "partiamo",
+   "o": [
+    "partiamo",
+    "partisciamo",
+    "partono"
+   ],
+   "why": {
+    "partisciamo": "partire -isc- almaz; noi'de -isc- zaten hiç gelmez.",
+    "partono": "partono loro (onlar) biçimi."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "venire",
+   "from": "it11",
+   "q": "Türkçeden çevir: “Elif bizimle geliyor.”",
+   "a": [
+    "elif viene con noi"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "dove",
+   "from": "it12",
+   "q": "Ekibe: “Neredesiniz?”",
+   "a": "Dove siete?",
+   "o": [
+    "Dove siete?",
+    "Dove sono?",
+    "Quando siete?"
+   ],
+   "why": {
+    "Dove sono?": "Dove sono? “Neredeyim?” ya da “Neredeler?” demek.",
+    "Quando siete?": "quando = ne zaman. Yer için dove."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "quanti + ci sono",
+   "from": "it12",
+   "q": "Sırala: “Şantiyede kaç işçi var?”",
+   "words": [
+    "quanti",
+    "ci",
+    "sono",
+    "cantiere",
+    "operai",
+    "in"
+   ],
+   "a": "quanti operai ci sono in cantiere"
+  },
+  {
+   "t": "type",
+   "topic": "ülke: in",
+   "from": "it13",
+   "q": "Türkçeden çevir: “Türkiye'de çalışıyoruz.”",
+   "a": [
+    "lavoriamo in turchia",
+    "noi lavoriamo in turchia"
+   ]
+  },
+  {
+   "t": "choice",
+   "topic": "a + l'",
+   "from": "it14",
+   "q": "Do il casco ___ ingegnere.",
+   "a": "all'",
+   "o": [
+    "al",
+    "all'",
+    "allo"
+   ],
+   "why": {
+    "al": "al = a + il. ingegnere ünlüyle başlar: all'.",
+    "allo": "allo = a + lo (z, s+ünsüz ile başlayanlar)."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "su + la = sulla",
+   "from": "it14",
+   "q": "Sırala: “Baret merdivenin üstünde.”",
+   "words": [
+    "è",
+    "sulla",
+    "il",
+    "scala",
+    "casco"
+   ],
+   "a": "il casco è sulla scala"
+  },
+  {
+   "t": "choice",
+   "topic": "dönüşlü: noi",
+   "from": "it15",
+   "q": "“Ellerimizi yıkıyoruz.”",
+   "a": "Ci laviamo le mani.",
+   "o": [
+    "Ci laviamo le mani.",
+    "Si laviamo le mani.",
+    "Ci lavate le mani."
+   ],
+   "why": {
+    "Si laviamo le mani.": "si lui/lei/loro içindir. noi → ci.",
+    "Ci lavate le mani.": "lavate voi biçimi; noi ile laviamo gelir."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "potere: Lei",
+   "from": "it16",
+   "q": "Müşteriye kibarca: “Panoyu açabilir misiniz?” Lei ___ aprire il quadro?",
+   "a": "può",
+   "o": [
+    "può",
+    "puoi",
+    "posso"
+   ],
+   "why": {
+    "puoi": "puoi samimi tu içindir. Kibar Lei “o” gibi çekilir: può.",
+    "posso": "posso io (ben) biçimi."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "partitivo: dello",
+   "from": "it17",
+   "q": "Vorrei ___ zucchero. (biraz şeker)",
+   "a": "dello",
+   "o": [
+    "del",
+    "dello",
+    "della"
+   ],
+   "why": {
+    "del": "zucchero z ile başlar: artikeli lo, partitivo dello.",
+    "della": "della dişil içindir; zucchero eril."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "miktar + di",
+   "from": "it17",
+   "q": "Sırala: “Bir kilo domates, lütfen.”",
+   "words": [
+    "di",
+    "per",
+    "chilo",
+    "favore",
+    "pomodori",
+    "un"
+   ],
+   "a": "un chilo di pomodori per favore"
+  },
+  {
+   "t": "choice",
+   "topic": "piacciono",
+   "from": "it18",
+   "q": "“Mi ___ le macchine italiane.”",
+   "a": "piacciono",
+   "o": [
+    "piace",
+    "piacciono",
+    "piaccio"
+   ],
+   "why": {
+    "piace": "Sevilen şey çoğul (le macchine): fiil de çoğul olur.",
+    "piaccio": "piaccio “ben hoşa gidiyorum” demek."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "düzensiz ortaç",
+   "from": "it19",
+   "q": "Ortacı seç: mettere → ___",
+   "a": "messo",
+   "o": [
+    "mettuto",
+    "messo",
+    "metto"
+   ],
+   "why": {
+    "mettuto": "mettere düzensizdir: messo.",
+    "metto": "metto şimdiki zaman (koyuyorum), ortaç değil."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "essere ile geçmiş",
+   "from": "it20",
+   "q": "Elif ___ uscita alle cinque.",
+   "a": "è",
+   "o": [
+    "è",
+    "ha",
+    "sono"
+   ],
+   "why": {
+    "ha": "uscire yer değiştirme fiili: essere alır.",
+    "sono": "sono io ya da loro içindir; Elif (lei) → è."
+   }
+  },
+  {
+   "t": "order",
+   "topic": "essere + ortaç",
+   "from": "it20",
+   "q": "Sırala: “Dün akşam eve geç döndüm.” (Türab)",
+   "words": [
+    "tornato",
+    "tardi",
+    "ieri",
+    "casa",
+    "sera",
+    "sono",
+    "a"
+   ],
+   "a": "ieri sera sono tornato a casa tardi",
+   "alt": [
+    "sono tornato a casa tardi ieri sera",
+    "ieri sera sono tornato tardi a casa"
+   ]
+  },
+  {
+   "t": "type",
+   "topic": "modal fiiller",
+   "from": "it16",
+   "q": "Türkçeden çevir: “Yarın gelemem, çalışmalıyım.”",
+   "a": [
+    "domani non posso venire devo lavorare",
+    "non posso venire domani devo lavorare",
+    "domani non posso venire perché devo lavorare",
+    "non posso venire domani perché devo lavorare"
+   ],
+   "soft": [
+    "domani non posso venire perche devo lavorare",
+    "non posso venire domani perche devo lavorare"
+   ],
+   "soft_note": "Doğru sayıldı. perché aksanlı yazılır."
+  },
+  {
+   "t": "type",
+   "topic": "ti piace + mastar",
+   "from": "it18",
+   "q": "Arkadaşına sor: “Bodrum'da çalışmayı sever misin?”",
+   "a": [
+    "ti piace lavorare a bodrum"
+   ]
+  },
+  {
+   "t": "type",
+   "topic": "avere ile geçmiş",
+   "from": "it19",
+   "q": "Türkçeden çevir: “Dün on saat çalıştık.”",
+   "a": [
+    "ieri abbiamo lavorato dieci ore",
+    "abbiamo lavorato dieci ore ieri",
+    "ieri abbiamo lavorato 10 ore",
+    "abbiamo lavorato 10 ore ieri",
+    "ieri abbiamo lavorato per dieci ore",
+    "abbiamo lavorato per dieci ore ieri"
+   ]
+  },
+  {
+   "t": "type",
+   "topic": "ortaç uyumu",
+   "from": "it20",
+   "q": "Türkçeden çevir: “Elif dün Bodrum'a gitti.”",
+   "a": [
+    "elif è andata a bodrum ieri",
+    "ieri elif è andata a bodrum",
+    "elif ieri è andata a bodrum"
+   ],
+   "soft": [
+    "elif e andata a bodrum ieri",
+    "ieri elif e andata a bodrum",
+    "elif ieri e andata a bodrum"
+   ],
+   "soft_note": "Doğru sayıldı. è aksanlı yazılır: Elif è andata a Bodrum ieri."
+  },
+  {
+   "t": "type",
+   "topic": "dönüşlü geçmiş",
+   "from": "it20",
+   "q": "Türkçeden çevir: “Bu sabah yedide kalktık.” (Türab ve Ahmet)",
+   "a": [
+    "stamattina ci siamo alzati alle sette",
+    "ci siamo alzati alle sette stamattina",
+    "stamattina alle sette ci siamo alzati"
+   ]
+  }
+ ],
+ "pass": 21
+}

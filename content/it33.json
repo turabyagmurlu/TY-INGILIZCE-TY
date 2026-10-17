@@ -1,0 +1,160 @@
+{
+  "id": "it33",
+  "lang": "it",
+  "level": "B1",
+  "title": "Trapassato ve zaman uyumu",
+  "lead": "“Vardığımda işçiler panoyu çoktan açmıştı” gibi -mişti cümlelerini trapassato ile kurabileceksin. Üç geçmiş zamanı tek hikâyede doğru sıraya dizecek, birinin sözünü “ha detto che era stanco” diye aktarabileceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Trapassato = -mişti: avevo / ero + ortaç",
+      "blocks": [
+        {"type": "p", "text": "Türkçede **-mişti** var: yemiştim, gitmiştim. İtalyancadaki karşılığı **trapassato prossimo**: avere ya da essere'nin **imperfetto**'su (it23) + ortaç (it19–20). Yardımcı fiil seçimi ve uyum passato prossimo ile birebir aynı; sadece yardımcı fiil imperfetto olur."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Ye", "s": "fiil kökü"}, {"t": "-miş", "s": "ortaç", "hl": true}, {"t": "-tim", "s": "geçmiş + ben", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Avevo", "s": "imperfetto: ben", "hl": true}, {"t": "mangiato", "s": "yemiş (ortaç)", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Özne", "avere + ortaç", "essere + ortaç", "Okunuş"], "x": 1,
+          "rows": [
+            ["io", "avevo mangiato", "ero andato / -a", "a-VE-vo / E-ro"],
+            ["tu", "avevi mangiato", "eri andato / -a", "a-VE-vi / E-ri"],
+            ["lui / lei / Lei", "aveva mangiato", "era andato / -a", "a-VE-va / E-ra"],
+            ["noi", "avevamo mangiato", "eravamo andati / -e", "a-ve-VA-mo / e-ra-VA-mo"],
+            ["voi", "avevate mangiato", "eravate andati / -e", "a-ve-VA-te / e-ra-VA-te"],
+            ["loro", "avevano mangiato", "erano andati / -e", "a-VE-va-no / E-ra-no"]
+          ],
+          "say": ["io avevo mangiato", "tu avevi mangiato", "lui aveva mangiato", "noi avevamo mangiato", "voi avevate mangiato", "loro avevano mangiato"]},
+        {"type": "note", "warn": true, "text": "Uyum aynen geçerli: Elif **era partita**, gli operai **erano usciti**. Dönüşlü yine essere: **mi ero alzato** (kalkmıştım). **Avevo andato** ya da **mi avevo alzato** yanlış."}
+      ]
+    },
+    {
+      "title": "“Daha önce olmuş”: già, quando, non… ancora",
+      "blocks": [
+        {"type": "p", "text": "Trapassato tek başına pek durmaz; hep **geçmişteki başka bir ana göre daha önce** olanı gösterir. O an çoğu zaman **quando** + passato prossimo ile verilir. Yardımcı kelimeler: **già** (CA) = çoktan, zaten; **non… ancora** (an-KO-ra) = henüz …mamıştı; **mai** = hiç."},
+        {"type": "table", "head": ["İtalyanca", "Sıra", "Türkçesi"], "x": 0,
+          "rows": [
+            ["Quando sono arrivato, Ahmet è uscito.", "önce ben geldim, sonra o çıktı", "Ben gelince Ahmet çıktı."],
+            ["Quando sono arrivato, Ahmet era già uscito.", "önce o çıktı, sonra ben geldim", "Geldiğimde Ahmet çoktan çıkmıştı."]
+          ]},
+        {"type": "examples", "items": [
+          {"x": "Avevo già mangiato quando mi hai chiamato.", "tr": "Sen aradığında çoktan yemiştim.", "ph": "a-VE-vo CA man-CA-to KUAN-do mi AY kya-MA-to"},
+          {"x": "Non avevamo ancora finito.", "tr": "Henüz bitirmemiştik.", "ph": "non a-ve-VA-mo an-KO-ra fi-Nİ-to"},
+          {"x": "Non avevo mai visto un quadro così grande.", "tr": "Hiç bu kadar büyük bir pano görmemiştim.", "ph": "non a-VE-vo MAY VİS-to un KUA-dro ko-Sİ GRAN-de"}
+        ]},
+        {"type": "note", "warn": true, "text": "Tipik hata: -mişti'yi atlayıp passato prossimo demek. Önce kafanda sor: **hangi olay daha önce?** Önceki olay trapassato, sonraki passato prossimo. Türkçede -mişti diyorsan neredeyse her zaman trapassato."}
+      ]
+    },
+    {
+      "title": "Zaman çizelgesi: üç geçmiş zaman tek hikâyede",
+      "blocks": [
+        {"type": "p", "text": "Bir olayı anlatırken üç zaman birlikte çalışır. Her birinin ayrı bir görevi var; çizgiyi en eskiden şimdiye doğru düşün."},
+        {"type": "table", "head": ["Zaman", "Görevi", "Örnek"], "x": 2,
+          "rows": [
+            ["trapassato", "asıl olaydan önce olmuş", "Qualcuno aveva lasciato il quadro aperto."],
+            ["imperfetto", "arka plan: durum, hava, süreç", "Era lunedì e faceva freddo."],
+            ["passato prossimo", "asıl olay: bir kez oldu, bitti", "Sono arrivato alle sette."]
+          ]},
+        {"type": "examples", "items": [
+          {"x": "Era lunedì e faceva freddo.", "tr": "Pazartesiydi, hava soğuktu.", "ph": "E-ra lu-ne-Dİ e fa-ÇE-va FRED-do"},
+          {"x": "Sono arrivato in cantiere alle sette.", "tr": "Şantiyeye yedide vardım.", "ph": "SO-no ar-ri-VA-to in kan-TYE-re AL-le SET-te"},
+          {"x": "Qualcuno aveva lasciato il quadro aperto.", "tr": "Biri panoyu açık bırakmıştı.", "ph": "kual-KU-no a-VE-va la-ŞA-to il KUA-dro a-PER-to"}
+        ]},
+        {"type": "note", "text": "Kaba eşleşme: **-yordu / -dı** (durum) = imperfetto, **-dı** (olay) = passato prossimo, **-mişti** = trapassato. Yeni kelimeler: qualcuno = biri, lasciare = bırakmak, il capo = şef."}
+      ]
+    },
+    {
+      "title": "Dolaylı anlatım: ha detto che… (zaman bir adım geri)",
+      "blocks": [
+        {"type": "p", "text": "Birinin sözünü geçmişte aktarırken (**ha detto che**, **ha scritto che**) fiil bir adım **geri** kayar. Kişi de değişir: Ahmet'in “ben”i senin cümlende “o” olur. Türkçede bunu -dığını ile yaparsın: yorgun olduğunu söyledi."},
+        {"type": "table", "head": ["Ahmet dedi ki", "Sen aktarırsın", "Kayma"],
+          "rows": [
+            ["“Sono stanco.”", "Ha detto che era stanco.", "presente → imperfetto"],
+            ["“Ho finito.”", "Ha detto che aveva finito.", "passato prossimo → trapassato"],
+            ["“Sono arrivato.”", "Ha detto che era arrivato.", "passato prossimo → trapassato"],
+            ["“Ero stanco.”", "Ha detto che era stanco.", "imperfetto → değişmez"]
+          ]},
+        {"type": "note", "text": "Aktaran fiil şimdiki zamandaysa kayma yok: **Ahmet dice che è stanco.** Konuşmada, söz hâlâ geçerliyse **ha detto che è stanco** da duyulur; yazıda kaydırmak güvenli yol."},
+        {"type": "note", "warn": true, "text": "**dire che** + normal fiil. Congiuntivo (it32) düşünce ve istek içindir: penso che **sia**, ama ha detto che **era**. İyelik de değişir: “il mio quadro” → **il suo quadro**."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Quando sono arrivato in cantiere, gli operai avevano già aperto il quadro.", "tr": "Şantiyeye vardığımda işçiler panoyu çoktan açmıştı.", "ph": "KUAN-do SO-no ar-ri-VA-to in kan-TYE-re lyi o-pe-RA-i a-VE-va-no CA a-PER-to il KUA-dro"},
+    {"x": "Avevo già mangiato quando mi hai chiamato.", "tr": "Sen aradığında çoktan yemiştim.", "ph": "a-VE-vo CA man-CA-to KUAN-do mi AY kya-MA-to"},
+    {"x": "Elif era già partita quando sono tornato.", "tr": "Ben döndüğümde Elif çoktan gitmişti.", "ph": "Elif E-ra CA par-Tİ-ta KUAN-do SO-no tor-NA-to"},
+    {"x": "Non avevo mai visto un quadro così grande.", "tr": "Hiç bu kadar büyük bir pano görmemiştim.", "ph": "non a-VE-vo MAY VİS-to un KUA-dro ko-Sİ GRAN-de"},
+    {"x": "Ero stanco perché avevo lavorato dieci ore.", "tr": "Yorgundum, çünkü on saat çalışmıştım.", "ph": "E-ro STAN-ko per-KE a-VE-vo la-vo-RA-to DYE-çi O-re"},
+    {"x": "Qualcuno aveva lasciato il quadro aperto.", "tr": "Biri panoyu açık bırakmıştı.", "ph": "kual-KU-no a-VE-va la-ŞA-to il KUA-dro a-PER-to"},
+    {"x": "Non avevamo ancora finito quando è arrivato il capo.", "tr": "Şef geldiğinde henüz bitirmemiştik.", "ph": "non a-ve-VA-mo an-KO-ra fi-Nİ-to KUAN-do E ar-ri-VA-to il KA-po"},
+    {"x": "Ahmet ha detto che era stanco.", "tr": "Ahmet yorgun olduğunu söyledi.", "ph": "Ahmet A DET-to ke E-ra STAN-ko"},
+    {"x": "Elif ha detto che aveva finito il rapporto.", "tr": "Elif raporu bitirdiğini söyledi.", "ph": "Elif A DET-to ke a-VE-va fi-Nİ-to il rap-POR-to"},
+    {"x": "Mi ha scritto che era arrivata a Roma.", "tr": "Bana Roma'ya vardığını yazdı.", "ph": "mi A SKRİT-to ke E-ra ar-ri-VA-ta a RO-ma"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "“Yemiştim.” = ___", "a": "Avevo mangiato.", "o": ["Ho mangiato.", "Avevo mangiato.", "Ero mangiato."],
+      "why": {"Ho mangiato.": "Ho mangiato = yedim. -mişti için yardımcı fiil imperfetto olur: avevo.", "Ero mangiato.": "mangiare nesne alır (neyi?), avere ile kurulur: avevo mangiato."},
+      "ok": "avere'nin imperfetto'su + ortaç = trapassato."},
+    {"t": "choice", "q": "Quando sono arrivato, gli operai ___ già aperto il quadro.", "a": "avevano", "o": ["avevano", "erano", "hanno"],
+      "why": {"erano": "aprire nesne alır (panoyu): avere ile kurulur.", "hanno": "Açma işi senin gelişinden ÖNCE oldu (già): trapassato → avevano."},
+      "ok": "Önceki olay → trapassato: avevano aperto."},
+    {"t": "choice", "q": "Quando sono tornato, Elif ___ già partita.", "a": "era", "o": ["era", "aveva", "è"],
+      "why": {"aveva": "partire yer değiştirme fiili: essere alır (it20).", "è": "Gitme, senin dönüşünden önce oldu: trapassato → era partita."},
+      "ok": "partire → essere: era partita."},
+    {"t": "choice", "q": "Quando ho chiamato, Ayşe ed Elif erano già ___.", "a": "uscite", "o": ["usciti", "uscite", "uscita"],
+      "why": {"usciti": "-i erkek ya da karışık grup içindir; ikisi de kadın: uscite.", "uscita": "-a tek kadın içindir; iki kişi var: uscite."},
+      "ok": "essere ile uyum: kadın çoğul → -e."},
+    {"t": "choice", "q": "Durum: şantiyeye vardığında Ahmet çoktan çıkmıştı, onu göremedin. Bunu nasıl anlatırsın?", "a": "Quando sono arrivato, Ahmet era già uscito.", "o": ["Quando sono arrivato, Ahmet è uscito.", "Quando sono arrivato, Ahmet era già uscito."],
+      "why": {"Quando sono arrivato, Ahmet è uscito.": "Bu “ben gelince Ahmet çıktı” demek: önce sen geldin, sonra o çıktı. Onu görmüş olursun."},
+      "ok": "Önce olan → trapassato."},
+    {"t": "choice", "q": "“Kalkmıştım.” (Türab)", "a": "Mi ero alzato.", "o": ["Mi avevo alzato.", "Mi ero alzato.", "Mi sono alzato."],
+      "why": {"Mi avevo alzato.": "Dönüşlü fiiller her zaman essere alır: mi ero alzato.", "Mi sono alzato.": "Mi sono alzato = kalktım. -mişti için essere'nin imperfetto'su: ero."},
+      "ok": "Dönüşlü → essere: mi ero alzato."},
+    {"t": "choice", "q": "Ahmet: “Sono stanco.” → Ahmet ha detto che ___ stanco.", "a": "era", "o": ["era", "sono", "sia"],
+      "why": {"sono": "sono = ben. Aktarırken Ahmet “o” olur ve zaman geri kayar: era.", "sia": "dire che normal fiil (indicativo) ister; congiuntivo düşünce ve istek içindir."},
+      "ok": "presente → imperfetto: era stanco."},
+    {"t": "choice", "q": "Elif: “Ho finito il lavoro.” → Elif ha detto che ___ finito il lavoro.", "a": "aveva", "o": ["aveva", "avevo", "era"],
+      "why": {"avevo": "avevo = ben. Elif'ten bahsediyorsun: aveva.", "era": "finire burada nesne alıyor (işi): avere ile kurulur."},
+      "ok": "passato prossimo → trapassato: aveva finito."},
+    {"t": "type", "q": "Türkçeden çevir: “Çoktan yemiştim.”", "a": ["avevo già mangiato", "io avevo già mangiato"], "soft": ["avevo gia mangiato", "io avevo gia mangiato"], "soft_note": "Doğru sayıldı. già aksanla yazılır: Avevo già mangiato.", "hint": "avere'nin imperfetto'su + già + ortaç.", "ok": "Avevo già mangiato."},
+    {"t": "type", "q": "Türkçeden çevir: “Ahmet yorgun olduğunu söyledi.”", "a": ["ahmet ha detto che era stanco", "ahmet ha detto di essere stanco"], "hint": "ha detto che + essere'nin imperfetto'su.", "ok": "Ahmet ha detto che era stanco."},
+    {"t": "order", "q": "Sırala: “Sen aradığında çoktan yemiştim.”", "words": ["chiamato", "già", "quando", "avevo", "hai", "mangiato", "mi"], "a": "avevo già mangiato quando mi hai chiamato", "alt": ["quando mi hai chiamato avevo già mangiato"], "ok": "Avevo già mangiato quando mi hai chiamato."},
+    {"t": "order", "q": "Sırala: “Elif raporu bitirdiğini söyledi.”", "words": ["il", "che", "finito", "Elif", "rapporto", "detto", "aveva", "ha"], "a": "Elif ha detto che aveva finito il rapporto", "ok": "Elif ha detto che aveva finito il rapporto."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Şantiyede kötü geçen bir günü anlatmak: arka planı imperfetto, olayları passato prossimo, daha önce olanları trapassato ile vermek; birinin ne dediğini “ha detto che…” ile aktarmak.",
+    "vocab": ["già", "non… ancora", "mai", "quando", "prima", "dopo", "perché", "qualcuno", "lasciare", "il capo", "il rapporto", "il quadro", "aperto", "chiuso", "stanco", "finito", "successo", "ha detto che", "ha scritto che"],
+    "structures": ["trapassato: avevo/avevi/aveva… + ortaç; ero/eri/era… + ortaç (uyumlu)", "quando + passato prossimo, … già + trapassato", "non avevo mai / non avevo ancora + ortaç", "imperfetto (arka plan) + passato prossimo (olay) + trapassato (daha önce)", "ha detto che + imperfetto / trapassato (zaman kayması, kişi değişimi)"],
+    "opener_hint": "Chiara şöyle açsın: “Ciao Türab! Ieri ti ho chiamato alle otto, ma non hai risposto. Cos'era successo?” Sonra sırayla sorsun: com'era la giornata (arka plan), cosa è successo quando sei arrivato in cantiere, cosa avevano già fatto gli operai, cosa non avevate ancora finito. En az iki kez “E cosa ti ha detto Ahmet / il capo?” diye sorup dolaylı anlatım istesin.",
+    "level_note": "B1: neredeyse tamamen İtalyanca, doğal ama net cümleler; Türkçeye sadece Türab açıkça takılırsa tek kelimeyle geç. Hataları anında düzeltme; her 4–5 mesajda bir kısa toplu liste ver (yanlış → doğru, tek satır gerekçe). Özellikle izle: -mişti yerine passato prossimo, avere/essere seçimi ve uyum (era partita), ha detto che'den sonra zaman kayması. Passato remoto, congiuntivo imperfetto ve condizionale passato kullanma."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "trapassato kuruluşu", "q": "“Panoyu kontrol etmiştik.”", "a": "Avevamo controllato il quadro.", "o": ["Abbiamo controllato il quadro.", "Avevamo controllato il quadro.", "Eravamo controllati il quadro."],
+      "why": {"Abbiamo controllato il quadro.": "Bu “kontrol ettik” demek. -mişti için avere'nin imperfetto'su: avevamo.", "Eravamo controllati il quadro.": "controllare nesne alır (panoyu): avere ile kurulur."}},
+    {"t": "choice", "topic": "trapassato ve uyum (essere)", "q": "Türab ve Elif: “Quando ci hai chiamato, eravamo già ___ a casa.”", "a": "tornati", "o": ["tornati", "tornate", "tornato"],
+      "why": {"tornate": "-e sadece hepsi kadınsa. Karışık grup → -i.", "tornato": "Özne noi (iki kişi): çoğul -i."}},
+    {"t": "choice", "topic": "zaman sırası", "q": "“İstasyona vardığımda tren çoktan kalkmıştı.” Quando sono arrivato in stazione, il treno ___ già partito.", "a": "era", "o": ["era", "aveva", "è"],
+      "why": {"aveva": "partire essere alır: era partito.", "è": "Tren senin varışından ÖNCE kalktı: trapassato → era partito."}},
+    {"t": "choice", "topic": "dolaylı anlatım (trapassato)", "q": "Türab: “Ho lavorato dieci ore.” → Türab ha detto che ___ dieci ore.", "a": "aveva lavorato", "o": ["aveva lavorato", "avevo lavorato", "era lavorato"],
+      "why": {"avevo lavorato": "Türab'ın sözünü sen aktarıyorsun: “ben” → “o”: aveva.", "era lavorato": "lavorare avere alır (it20): aveva lavorato."}},
+    {"t": "type", "topic": "dolaylı anlatım (imperfetto)", "q": "Elif: “Sono pronta.” → Elif ha detto che ___ pronta. (boşluğa tek kelime)", "a": ["era", "elif ha detto che era pronta"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Ero stanco perché ___ male. (dormire)", "a": "avevo dormito", "o": ["avevo dormito", "ero dormito", "avevo dormita"],
+        "why": {"ero dormito": "dormire avere alır (it20): avevo dormito.", "avevo dormita": "avere ile ortaç özneye uymaz: dormito."},
+        "ok": "Önce kötü uyudun, sonra yorgundun: avevo dormito."},
+      {"t": "choice", "q": "“Roma'yı hiç görmemiştim.” Non avevo mai ___ Roma.", "a": "visto", "o": ["visto", "vedito", "vista"],
+        "why": {"vedito": "vedere düzensiz: visto (it19).", "vista": "avere ile ortaç özneye ya da arkadaki isme uymaz: visto."},
+        "ok": "Non avevo mai visto Roma."},
+      {"t": "choice", "q": "Ahmet: “Siamo pronti.” → Ahmet ha detto che ___ pronti.", "a": "erano", "o": ["erano", "eravamo", "siano"],
+        "why": {"eravamo": "eravamo = biz. Ahmet'in “biz”i senin cümlende “onlar” olur: erano.", "siano": "dire che normal fiil ister, congiuntivo değil."},
+        "ok": "siamo → erano: zaman da kişi de değişti."},
+      {"t": "type", "q": "Türkçeden çevir: “Vardığımda işçiler çoktan çıkmıştı.”", "a": ["quando sono arrivato gli operai erano già usciti", "gli operai erano già usciti quando sono arrivato"], "soft": ["quando sono arrivato gli operai erano gia usciti", "gli operai erano gia usciti quando sono arrivato"], "soft_note": "Doğru sayıldı. già aksanla yazılır.", "hint": "quando + passato prossimo; uscire → essere, çoğul -i.", "ok": "Quando sono arrivato, gli operai erano già usciti."},
+      {"t": "type", "q": "Türkçeden çevir: “Elif bitirdiğini söyledi.”", "a": ["elif ha detto che aveva finito", "elif ha detto di aver finito", "elif ha detto di avere finito"], "hint": "ha detto che + avere'nin imperfetto'su + finito.", "ok": "Elif ha detto che aveva finito."},
+      {"t": "order", "q": "Sırala: “Yorgundum, çünkü on saat çalışmıştım.”", "words": ["lavorato", "ero", "dieci", "perché", "ore", "stanco", "avevo"], "a": "ero stanco perché avevo lavorato dieci ore", "ok": "Ero stanco perché avevo lavorato dieci ore."}
+    ],
+    "konus_prompt": "Chiara geçen haftaki zor bir iş gününü soracak. En az 5 cümle kur: 1 arka plan (imperfetto), 2 olay (passato prossimo), en az 2 trapassato (già / non… ancora / mai ile) ve bir kişinin sözünü “ha detto che…” ile aktar."
+  }
+}

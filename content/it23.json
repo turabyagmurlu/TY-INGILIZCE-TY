@@ -1,0 +1,165 @@
+{
+  "id": "it23",
+  "lang": "it",
+  "level": "A2",
+  "title": "Imperfetto",
+  "lead": "“Bodrum'da çalışıyordum”, “Çocukken futbol oynardım”, “Hava sıcaktı, saat yediydi” cümlelerini imperfetto ile kurabileceksin. Türkçedeki -erdi ve -iyordu'nun İtalyancada tek bir zamana düştüğünü göreceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Çekim: -are/-ere/-ire → -avo/-evo/-ivo",
+      "blocks": [
+        {"type": "p", "text": "Imperfetto en düzenli zamandır. Mastardan **-re**'yi at, kalan ünlüyü koru, ekleri tak: **-vo, -vi, -va, -vamo, -vate, -vano**. Üç grup aynı ekleri kullanır; sadece önündeki ünlü değişir: lavor**a**vo, av**e**vo, dorm**i**vo."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Çalış", "s": "kök"}, {"t": "-ıyor-du", "s": "süreklilik + geçmiş", "hl": true}, {"t": "-m", "s": "ben", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Lavora", "s": "lavorare - re"}, {"t": "-v-", "s": "imperfetto işareti", "hl": true}, {"t": "-o", "s": "ben", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Özne", "lavorare", "avere", "dormire"], "x": 1,
+          "rows": [
+            ["io", "lavoravo", "avevo", "dormivo"],
+            ["tu", "lavoravi", "avevi", "dormivi"],
+            ["lui / lei / Lei", "lavorava", "aveva", "dormiva"],
+            ["noi", "lavoravamo", "avevamo", "dormivamo"],
+            ["voi", "lavoravate", "avevate", "dormivate"],
+            ["loro", "lavoravano", "avevano", "dormivano"]
+          ],
+          "say": ["io lavoravo", "tu lavoravi", "lui lavorava", "noi lavoravamo", "voi lavoravate", "loro lavoravano"]},
+        {"type": "note", "warn": true, "text": "Vurgu: la-vo-**RA**-vo, la-vo-ra-**VA**-mo, ama loro'da geri kayar: la-vo-**RA**-va-no (lavora**VA**no değil). **andare, stare, venire** burada düzenli: andavo, stavo, venivo. Dönüşlüde zamir yerinde kalır: **mi alzavo** (kalkardım)."}
+      ]
+    },
+    {
+      "title": "Dört düzensiz: ero, facevo, dicevo, bevevo",
+      "blocks": [
+        {"type": "p", "text": "Gerçek düzensiz tek fiil **essere**. Onu ayrı ezberle; ekler yine tanıdık (-o, -i, -a…)."},
+        {"type": "table", "head": ["Özne", "essere", "Okunuş", "Türkçesi"], "x": 1,
+          "rows": [
+            ["io", "ero", "E-ro", "idim"],
+            ["tu", "eri", "E-ri", "idin"],
+            ["lui / lei / Lei", "era", "E-ra", "idi"],
+            ["noi", "eravamo", "e-ra-VA-mo", "idik"],
+            ["voi", "eravate", "e-ra-VA-te", "idiniz"],
+            ["loro", "erano", "E-ra-no", "idiler"]
+          ],
+          "say": ["io ero", "tu eri", "lui era", "noi eravamo", "voi eravate", "loro erano"]},
+        {"type": "p", "text": "**fare, dire, bere** kısalmış fiillerdir; imperfetto eski uzun kökü geri getirir (Latince facere, dicere, bibere). Ekler tamamen düzenli."},
+        {"type": "table", "head": ["Mastar", "io", "loro", "Okunuş (io)"], "x": 1,
+          "rows": [
+            ["fare (yapmak)", "facevo", "facevano", "fa-ÇE-vo"],
+            ["dire (söylemek)", "dicevo", "dicevano", "di-ÇE-vo"],
+            ["bere (içmek)", "bevevo", "bevevano", "be-VE-vo"]
+          ],
+          "say": ["facevo", "dicevo", "bevevo"]},
+        {"type": "note", "warn": true, "text": "Tipik hata: farevo, direvo, berevo. Mastardan değil, uzun kökten: fac-, dic-, bev-. İpucu: şimdiki zamandaki **dico** (derim) ve **bevo** (içerim) kökü aynı."}
+      ]
+    },
+    {
+      "title": "Ne zaman kullanılır? Alışkanlık, arka plan, süren an",
+      "blocks": [
+        {"type": "p", "text": "Imperfetto geçmişte bir şeyin **başını ve sonunu göstermez**; içinden bakar. Bitmiş, tek seferlik olay için passato prossimo kalır (ho lavorato). Imperfetto üç işte kullanılır:"},
+        {"type": "rules", "items": [
+          {"title": "Geçmiş alışkanlık (-erdi)", "text": "Tekrar eden şey: di solito, ogni giorno, sempre, da bambino (çocukken).", "ex": {"x": "Da bambino giocavo a calcio ogni giorno.", "tr": "Çocukken her gün futbol oynardım."}},
+          {"title": "Arka plan, tasvir", "text": "Yer, insan, durum nasıldı: era, c'era, c'erano, aveva.", "ex": {"x": "Il cantiere era grande e c'erano trenta operai.", "tr": "Şantiye büyüktü ve otuz işçi vardı."}},
+          {"title": "O an süren eylem (-iyordu)", "text": "Belli bir saatte ne yapıyordun?", "ex": {"x": "Alle otto lavoravo nel quadro.", "tr": "Saat sekizde panoda çalışıyordum."}}
+        ]},
+        {"type": "note", "text": "Yeni kelimeler: **prima** = eskiden, **adesso** = şimdi, **giocare a calcio** = futbol oynamak. **Prima abitavo a Bodrum, adesso abito a Kırıkkale.**"}
+      ]
+    },
+    {
+      "title": "Yaş, hava, saat + Türkçe -erdi / -iyordu",
+      "blocks": [
+        {"type": "p", "text": "Türkçe iki ayrı ek kullanır: **giderdim** (alışkanlık) ve **gidiyordum** (o an). İtalyanca ikisini tek biçimde toplar: **andavo**. Türkçe **-di** ile söylediğin tasvirler de (yorgundum, hava sıcaktı) imperfetto olur."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Gid-er-dim", "s": "alışkanlık", "hl": true}, {"t": "Gid-iyor-dum", "s": "o an", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Andavo", "s": "ikisi de", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Türkçe", "İtalyanca", "Okunuş"], "x": 1,
+          "rows": [
+            ["Yirmi yaşındaydım.", "Avevo vent'anni.", "a-VE-vo ven-TAN-ni"],
+            ["Hava sıcaktı.", "Faceva caldo.", "fa-ÇE-va KAL-do"],
+            ["Yağmur yağıyordu.", "Pioveva.", "pyo-VE-va"],
+            ["Saat yediydi.", "Erano le sette.", "E-ra-no le SET-te"],
+            ["Saat birdi.", "Era l'una.", "E-ra LU-na"],
+            ["Yorgundum.", "Ero stanco.", "E-ro STAN-ko"]
+          ]},
+        {"type": "note", "warn": true, "text": "Şimdiki zamandaki kurallar aynen geçer: yaş **avere** ile (Avevo, Ero değil), hava **fare** ile (Faceva caldo), saat **essere** ile ve çoğul (**Erano** le sette, tek istisna **Era** l'una). **piovere** = yağmur yağmak."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Prima abitavo a Bodrum, adesso abito a Kırıkkale.", "tr": "Eskiden Bodrum'da otururdum, şimdi Kırıkkale'de oturuyorum.", "ph": "PRİ-ma a-bi-TA-vo a Bodrum, a-DES-so A-bi-to a Kırıkkale"},
+    {"x": "A Bodrum lavoravo dieci ore al giorno.", "tr": "Bodrum'da günde on saat çalışırdım.", "ph": "a Bodrum la-vo-RA-vo DYE-çi O-re al COR-no"},
+    {"x": "Di solito mi alzavo alle sei.", "tr": "Genelde altıda kalkardım.", "ph": "di SO-li-to mi al-TSA-vo AL-le SEY"},
+    {"x": "Da bambino giocavo a calcio ogni giorno.", "tr": "Çocukken her gün futbol oynardım.", "ph": "da bam-Bİ-no co-KA-vo a KAL-ço O-nyi COR-no"},
+    {"x": "A vent'anni facevo il manovale.", "tr": "Yirmi yaşında düz işçilik yapıyordum.", "ph": "a ven-TAN-ni fa-ÇE-vo il ma-no-VA-le"},
+    {"x": "Faceva molto caldo in cantiere.", "tr": "Şantiyede hava çok sıcaktı.", "ph": "fa-ÇE-va MOL-to KAL-do in kan-TYE-re"},
+    {"x": "Erano le sette e pioveva.", "tr": "Saat yediydi ve yağmur yağıyordu.", "ph": "E-ra-no le SET-te e pyo-VE-va"},
+    {"x": "Il cantiere era grande e c'erano trenta operai.", "tr": "Şantiye büyüktü ve otuz işçi vardı.", "ph": "il kan-TYE-re E-ra GRAN-de e ÇE-ra-no TREN-ta o-pe-RA-i"},
+    {"x": "Che cosa facevi a Bodrum?", "tr": "Bodrum'da ne yapıyordun?", "ph": "ke KO-sa fa-ÇE-vi a Bodrum"},
+    {"x": "La sera bevevamo un tè al bar.", "tr": "Akşamları kafede bir çay içerdik.", "ph": "la SE-ra be-ve-VA-mo un TE al BAR"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "lavorare → io ___ (imperfetto)", "a": "lavoravo", "o": ["lavoravo", "lavorevo", "ho lavorato"],
+      "why": {"lavorevo": "-are fiili a ünlüsünü korur: lavor-a-vo.", "ho lavorato": "Bu passato prossimo (çalıştım). Imperfetto: lavoravo (çalışırdım / çalışıyordum)."},
+      "ok": "-are → -avo."},
+    {"t": "choice", "q": "avere → noi ___", "a": "avevamo", "o": ["avevamo", "avavamo", "avevano"],
+      "why": {"avavamo": "-ere fiili e ünlüsünü korur: av-e-vamo.", "avevano": "-vano = loro. noi → -vamo."},
+      "ok": "noi → -vamo: avevamo."},
+    {"t": "choice", "q": "fare → io ___", "a": "facevo", "o": ["facevo", "favo", "farevo"],
+      "why": {"favo": "fare kısalmış bir fiil; imperfetto uzun kökü (fac-) geri getirir: facevo.", "farevo": "Mastardan değil, eski kökten: fac- + -evo = facevo."},
+      "ok": "fare → facevo."},
+    {"t": "choice", "q": "Türab: “Quando ___ bambino, abitavo a Kırıkkale.”", "a": "ero", "o": ["ero", "era", "avevo"],
+      "why": {"era": "era = lui/lei. Türab kendinden bahsediyor: ero.", "avevo": "“Çocuktum” bir durum, essere ile: ero bambino."},
+      "ok": "essere → ero. bambino = çocuk."},
+    {"t": "choice", "q": "“Saat yediydi.”", "a": "Erano le sette.", "o": ["Era le sette.", "Erano le sette.", "Avevo le sette."],
+      "why": {"Era le sette.": "le sette çoğul: erano. Tekil sadece l'una: Era l'una.", "Avevo le sette.": "Saat essere ile söylenir (Sono le sette → Erano le sette)."},
+      "ok": "Sono le sette → Erano le sette."},
+    {"t": "choice", "q": "“O zaman 22 yaşındaydım.”", "a": "Allora avevo ventidue anni.", "o": ["Allora ero ventidue anni.", "Allora avevo ventidue anni.", "Allora ho avuto ventidue anni."],
+      "why": {"Allora ero ventidue anni.": "Yaş her zamanda avere ile: avevo.", "Allora ho avuto ventidue anni.": "Geçmişteki yaş süren bir durum, olay değil: imperfetto avevo."},
+      "ok": "allora = o zaman. Yaş → avevo."},
+    {"t": "choice", "q": "Gli operai ___ sempre: “Va bene, capo!”", "a": "dicevano", "o": ["dicevano", "direvano", "dicevamo"],
+      "why": {"direvano": "dire'nin imperfetto kökü dic-: dicevano.", "dicevamo": "-vamo = noi. Gli operai = loro → dicevano."},
+      "ok": "dire → dicevano. sempre + alışkanlık → imperfetto."},
+    {"t": "order", "q": "Sırala: “Saat yediydi ve yağmur yağıyordu.”", "words": ["pioveva", "le", "erano", "e", "sette"], "a": "erano le sette e pioveva", "ok": "Erano le sette e pioveva. İki tasvir yan yana."},
+    {"t": "type", "q": "Türkçeden çevir: “Hava çok sıcaktı.”", "a": ["faceva molto caldo", "faceva tanto caldo"], "hint": "Hava fare ile (it11): fa caldo → fac-eva caldo.", "ok": "Faceva molto caldo."},
+    {"t": "type", "q": "Türkçeden çevir: “Bodrum'da çalışıyordum.”", "a": ["lavoravo a bodrum", "a bodrum lavoravo", "io lavoravo a bodrum", "a bodrum io lavoravo"], "hint": "lavorare → io lavor-avo.", "ok": "Lavoravo a Bodrum."},
+    {"t": "order", "q": "Sırala: “Çocukken her gün futbol oynardım.”", "words": ["calcio", "bambino", "ogni", "giocavo", "da", "a", "giorno"], "a": "da bambino giocavo a calcio ogni giorno", "alt": ["da bambino ogni giorno giocavo a calcio", "ogni giorno da bambino giocavo a calcio"], "ok": "Da bambino giocavo a calcio ogni giorno."},
+    {"t": "type", "q": "Türkçeden çevir: “Akşamları çay içerdik.” (la sera = akşamları)", "a": ["la sera bevevamo il tè", "la sera bevevamo tè", "la sera bevevamo un tè", "bevevamo il tè la sera", "bevevamo tè la sera", "bevevamo un tè la sera", "la sera noi bevevamo il tè"], "soft": ["la sera bevevamo il te", "la sera bevevamo te", "la sera bevevamo un te", "bevevamo il te la sera", "bevevamo te la sera", "bevevamo un te la sera"], "soft_note": "Doğru sayıldı. Çay aksanla yazılır: tè (te = seni).", "hint": "bere → bev-evamo.", "ok": "La sera bevevamo il tè."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Bodrum dönemini ve çocukluğunu imperfetto ile anlatmak: nerede otururdun, günde kaç saat çalışırdın, kaçta kalkardın, hava nasıldı, şantiye nasıldı, kaç yaşındaydın.",
+    "vocab": ["prima", "adesso", "di solito", "ogni giorno", "sempre", "da bambino", "giocare a calcio", "allora", "pioveva", "faceva caldo", "faceva freddo", "c'era", "c'erano", "il manovale", "al giorno", "la sera", "il tè", "stanco"],
+    "structures": ["imperfetto çekimi: -avo / -evo / -ivo, -vamo, -vate, -vano", "essere: ero, eri, era, eravamo, eravate, erano", "fare → facevo, dire → dicevo, bere → bevevo", "geçmiş alışkanlık: di solito / ogni giorno + imperfetto", "tasvir: era, c'era, c'erano, faceva caldo, pioveva", "yaş ve saat: avevo vent'anni, erano le sette, era l'una"],
+    "opener_hint": "Chiara merakla soruyor: “Ciao Türab! Prima abitavi a Bodrum, vero? Com'era la tua vita lì? Cosa facevi di solito?” Sonra kaçta kalkardın, günde kaç saat çalışırdın, hava nasıldı, şantiye büyük müydü, kaç işçi vardı, çocukken ne yapardın diye sorsun.",
+    "level_note": "A2: her mesajda 2–3 kısa İtalyanca cümle; Türkçeyi sadece Türab takılırsa ya da yeni bir kelimede parantez içinde ver. Imperfetto, şimdiki zaman ve passato prossimo kullanabilirsin; futuro, condizionale ve congiuntivo kullanma. Türab alışkanlık ya da tasvirde passato prossimo kullanırsa (ho lavorato ogni giorno), yaşta essere derse (ero vent'anni) ya da farevo/direvo derse doğru biçimi tekrar ederek tek cümleyle düzelt."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "imperfetto çekimi (-ire)", "q": "dormire → loro ___", "a": "dormivano", "o": ["dormivano", "dormevano", "dormivamo"],
+      "why": {"dormevano": "-ire fiili i ünlüsünü korur: dorm-i-vano.", "dormivamo": "-vamo = noi. loro → -vano."}},
+    {"t": "choice", "topic": "düzensiz: bere", "q": "“Her sabah kahve içerdim.” Ogni mattina ___ un caffè.", "a": "bevevo", "o": ["bevevo", "berevo", "bevavo"],
+      "why": {"berevo": "bere mastarından değil, uzun kökten: bev- + -evo.", "bevavo": "Kök bev-, ünlü e: bev-e-vo."}},
+    {"t": "choice", "topic": "essere imperfetto", "q": "“Yorgunduk.” (Türab ve Ahmet)", "a": "Eravamo stanchi.", "o": ["Eravamo stanchi.", "Erano stanchi.", "Avevamo stanchi."],
+      "why": {"Erano stanchi.": "erano = loro (onlar yorgundu). Biz → eravamo.", "Avevamo stanchi.": "stanco bir sıfat; sıfatla essere gelir: eravamo stanchi."}},
+    {"t": "choice", "topic": "-erdi = alışkanlık", "q": "“Akşamları eve geç dönerdim.” La sera ___ a casa tardi.", "a": "tornavo", "o": ["tornavo", "sono tornato", "torno"],
+      "why": {"sono tornato": "Bu tek seferlik olay (döndüm). -erdi tekrar eden alışkanlık: tornavo.", "torno": "Bu şimdiki zaman (dönerim). Geçmiş alışkanlık: tornavo."}},
+    {"t": "type", "topic": "saat: era l'una", "q": "Türkçeden çevir: “Saat birdi.”", "a": ["era l'una", "era luna"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "“Saat sekizde çalışıyordum.” Alle otto ___.", "a": "lavoravo", "o": ["lavoravo", "ho lavorato", "lavoro"],
+        "why": {"ho lavorato": "O saatte süren eylem (-iyordu) imperfetto ister: lavoravo.", "lavoro": "Bu şimdiki zaman. Geçmişte süren eylem: lavoravo."},
+        "ok": "-iyordu → imperfetto."},
+      {"t": "choice", "q": "“Uykum vardı.”", "a": "Avevo sonno.", "o": ["Ero sonno.", "Avevo sonno.", "Avevo sonni."],
+        "why": {"Ero sonno.": "Ho sonno kalıbı avere ile kurulur; geçmişte: avevo sonno.", "Avevo sonni.": "Bu kalıpta isim değişmez: sonno."},
+        "ok": "Ho sonno → Avevo sonno."},
+      {"t": "choice", "q": "“Hep ‘tamam’ derdim.” ___ sempre “va bene”.", "a": "Dicevo", "o": ["Dicevo", "Direvo", "Dicevi"],
+        "why": {"Direvo": "dire'nin kökü dic-: dicevo.", "Dicevi": "dicevi = tu (derdin). Ben → dicevo."},
+        "ok": "dire → dicevo."},
+      {"t": "type", "q": "Türkçeden çevir: “Yağmur yağıyordu.”", "a": ["pioveva"], "hint": "piovere → piov-eva.", "ok": "Pioveva. Özne yok, tek kelime yeter."},
+      {"t": "type", "q": "Türkçeden çevir: “20 yaşındaydım.”", "a": ["avevo vent'anni", "avevo venti anni", "avevo 20 anni", "io avevo vent'anni", "io avevo venti anni"], "hint": "Yaş avere ile.", "ok": "Avevo vent'anni (venti + anni birleşip kısalır)."},
+      {"t": "order", "q": "Sırala: “Şantiye büyüktü ve otuz işçi vardı.”", "words": ["cantiere", "c'erano", "il", "grande", "era", "e", "operai", "trenta"], "a": "il cantiere era grande e c'erano trenta operai", "ok": "C'è → c'era, ci sono → c'erano."}
+    ],
+    "konus_prompt": "Chiara Bodrum'daki sıradan bir iş gününü soracak. En az 5 cümle kur, hepsi imperfetto: kaçta kalkardın, günde kaç saat çalışırdın, hava nasıldı (faceva caldo), şantiye nasıldı (era, c'erano), akşamları ne yapardın. En az birinde essere (ero/era), birinde fare (facevo/faceva) olsun."
+  }
+}

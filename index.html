@@ -4174,13 +4174,14 @@ var LX={index:null,idxP:null,docs:{},prog:{},modP:null,hero:null,progOk:null};
 const lxProgP=new Promise(r=>{LX.progOk=r;});
 function lxNormIndex(j){const list=Array.isArray(j)?j:(j&&(j.lessons||j.items))||[];
   return list.map(e=>typeof e==="string"?{id:e}:e).filter(e=>e&&typeof e.id==="string"&&/^[a-z0-9_-]{2,40}$/i.test(e.id)).map(e=>{
-    const t=topicById(e.id); return {id:e.id,lang:e.lang==="en"||e.lang==="it"?e.lang:/^en/.test(e.id)?"en":"it",level:e.level||(t?t[0]:""),title:e.title||(t?t[2]:e.id),minutes:+e.minutes||0,
+    const t=topicById(e.id); return {id:e.id,kind:e.kind==="exam"?"exam":"lesson",q:+e.q||0,pass:+e.pass||0,lang:e.lang==="en"||e.lang==="it"?e.lang:/^en/.test(e.id)?"en":"it",level:e.level||(t?t[0]:""),title:e.title||(t?t[2]:e.id),minutes:+e.minutes||0,
       file:"content/"+(typeof e.file==="string"&&/^[\w./-]+\.json$/.test(e.file)&&!/\.\./.test(e.file)?e.file.replace(/^content\//,""):e.id+".json")};});}
 function lxIndex(){if(LX.idxP)return LX.idxP;
   LX.idxP=fetch("content/index.json").then(r=>r.ok?r.json():null).then(j=>{LX.index=j?lxNormIndex(j):[];}).catch(()=>{LX.index=[];}).then(()=>{lxPaint();return LX.index;});
   return LX.idxP;}
 const lxHas=id=>!!(id&&LX.index&&LX.index.some(x=>x.id===id));
 const lxMeta=id=>(LX.index||[]).find(x=>x.id===id)||null;
+const lxLessons=()=>(LX.index||[]).filter(m=>m.kind!=="exam");
 function lxGet(id){const m=lxMeta(id); if(!m)return Promise.reject(new Error("Ders bulunamadı"));
   if(!LX.docs[id])LX.docs[id]=fetch(m.file).then(r=>{if(!r.ok)throw new Error("Ders dosyası açılamadı ("+r.status+")"); return r.json();}).catch(e=>{delete LX.docs[id]; throw e;});
   return LX.docs[id];}
@@ -4191,28 +4192,36 @@ function lxPaint(){try{renderDayPlan(); renderPlan();}catch(e){} try{lxRenderMin
 function lxFin(lang,kinds){try{fLoad(); planFor().forEach(b=>{if(b.l===lang&&(!kinds||kinds.includes(b.k)))F.fin.add(b.l+"-"+b.k);}); fSave(); daysSave(); renderLive();}catch(e){}}
 function lxSteps(){
   if(!LX.index||!LX.index.length)return null;
-  const mode=dayMode(), t=today(), sun=weekday()===0, x=itToday(), itId=x.t&&x.mode!=="review"?x.t[1]:null, e=enToday(), enId=e.t?e.t[1]:null;
+  const LL=lxLessons(), mode=dayMode(), t=today(), sun=weekday()===0, x=itToday(), itId=x.t&&x.mode!=="review"?x.t[1]:null, e=enToday(), enId=e.t?e.t[1]:null;
   const due=dueCards("it").length+dueCards("en").length, revToday=S.cards.some(c=>c.last===t);
-  const pkOf=lang=>LX.index.filter(m=>m.lang===lang&&lxPassed(m.id)&&(lxP(m.id).passedAt||"")<t&&lxP(m.id).pk!==t&&!(lxP(m.id).pk>lxP(m.id).passedAt)).sort((a,b)=>(lxP(b.id).passedAt||"").localeCompare(lxP(a.id).passedAt||""))[0]||null;
+  const pkOf=lang=>LL.filter(m=>m.lang===lang&&lxPassed(m.id)&&(lxP(m.id).passedAt||"")<t&&lxP(m.id).pk!==t&&!(lxP(m.id).pk>lxP(m.id).passedAt)).sort((a,b)=>(lxP(b.id).passedAt||"").localeCompare(lxP(a.id).passedAt||""))[0]||null;
   const konusDone=lang=>S.sessions.some(s=>s.date===t&&s.lang===lang&&(s.src==="konus"||(lang==="en"&&(+(s.mins||{}).speaking||0)>=7)));
-  const passedToday=lang=>(LX.index.filter(m=>m.lang===lang&&lxP(m.id).passed&&lxP(m.id).passedAt===t).sort((a,b)=>String(lxP(b.id).updated||"").localeCompare(String(lxP(a.id).updated||"")))[0]||{}).id||null;
+  const passedToday=lang=>(LL.filter(m=>m.lang===lang&&lxP(m.id).passed&&lxP(m.id).passedAt===t).sort((a,b)=>String(lxP(b.id).updated||"").localeCompare(String(lxP(a.id).updated||"")))[0]||{}).id||null;
   const out=[]; let usesContent=false;
   const cards=()=>{if(due>0||revToday)out.push({k:"cards",t:"Kart tekrarı",s:due?due+" kart · yaklaşık "+cardMin(due)+" dk":"Bugünlük kartlar bitti",done:!due});};
   const lessonStep=(id,lang)=>{const m=lxMeta(id), p=lxP(id); out.push({k:"lesson",id,lang,t:m.title,s:(lang==="it"?"İtalyanca":"İngilizce")+" ders"+(m.minutes?" · "+m.minutes+" dk":"")+" · 5 adım",done:!!p.passed&&p.passedAt===t});};
   const pkStep=m=>out.push({k:"pekistir",id:m.id,lang:m.lang,t:"Pekiştir: "+m.title,s:"6 kısa soru + kısa konuşma",done:lxP(m.id).pk===t});
   const konusStep=(coach,lesson)=>out.push(coach==="it"?{k:"konus",coach:"it",lang:"it",t:"Chiara ile konuş",s:"5–8 dk sesli konuşma",done:konusDone("it")}:{k:"konus",coach:"en",lang:"en",lesson,t:"Oliver ile konuş",s:(mode==="en"?"25":"15")+" dk sesli konuşma",done:konusDone("en")});
-  let extra=null;
-  if(sun){const sk=sundayKind(); if(sk.kind!=="normal")return null;                                  /* sınav günleri eski akış */
-    const p=progInfo(); let ids=p&&p.week>=1&&p.week<=PROG_WEEKS?ROADMAP[p.week-1].it.filter(id=>lxHas(id)&&lxPassed(id)):[];
-    if(!ids.length)ids=LX.index.filter(m=>lxPassed(m.id)).sort((a,b)=>(lxP(b.id).passedAt||"").localeCompare(lxP(a.id).passedAt||"")).slice(0,2).map(m=>m.id);
-    if(!ids.length)return null;
+  let extra=null, ids=[];
+  if(sun&&sundayKind().kind!=="normal"){const sk=sundayKind(), cp=sk.cp, m=lxMeta(cp.id); if(!m||m.kind!=="exam")return null;     /* sınav Pazarı: kartlar → sınav → Konuş */
+    const q=m.q||cp.q; cards(); out.push({k:"exam",id:cp.id,lang:"it",t:m.title,s:q+" soru · geçme "+(m.pass||Math.ceil(q*0.7)),done:!!examFor(sk.p.week,cp.tur)});
+    konusStep(mode==="it"?"it":"en",lxHas(enId)?enId:null); usesContent=true;}
+  else if(sun&&(()=>{const p=progInfo(); ids=p&&p.week>=1&&p.week<=PROG_WEEKS?ROADMAP[p.week-1].it.filter(id=>lxHas(id)&&lxPassed(id)):[];
+    if(!ids.length)ids=LL.filter(m=>lxPassed(m.id)).sort((a,b)=>(lxP(b.id).passedAt||"").localeCompare(lxP(a.id).passedAt||"")).slice(0,2).map(m=>m.id);
+    return ids.length;})()){                                                                   /* geçilmiş ders yoksa Pazar da hafta içi gibi */
     cards(); out.push({k:"pkweek",ids,lang:lxMeta(ids[0]).lang,t:"Haftanın Pekiştir'i",s:ids.map(id=>lxMeta(id).title).join(" + "),done:ids.every(id=>lxP(id).pk===t)});
     konusStep(mode==="it"?"it":"en",lxHas(enId)?enId:null); usesContent=true;}
   else{
   if(mode!=="en"){
-    const pk=pkOf("it"), nextIt=lxHas(itId)&&!lxPassed(itId)?itId:null, lid=passedToday("it")||nextIt, lessonNow=!!lid;
+    const firstIt=(LL.find(m=>m.lang==="it"&&!lxPassed(m.id))||{}).id||null, lid0=passedToday("it");
+    let pk=pkOf("it"), nextIt=x.mode==="free"||x.mode==="done"?firstIt:lxHas(itId)&&!lxPassed(itId)&&lxMeta(itId).kind!=="exam"?itId:null, rv=null;
+    if(!lid0&&!nextIt&&x.mode==="review"){const set=(x.set||[]).filter(id=>lxHas(id)&&lxMeta(id).kind!=="exam"), ps=set.filter(lxPassed); rv=ps.length?ps:set.length?set:null;}
+    if(!lid0&&!nextIt&&!rv&&!pk){if(firstIt)nextIt=firstIt; else pk=LL.filter(m=>m.lang==="it"&&lxPassed(m.id)).sort((a,b)=>String(lxP(b.id).pk||"").localeCompare(String(lxP(a.id).pk||"")))[0]||null;}
+    const lid=lid0||nextIt, lessonNow=!!lid;
     if(lid&&lid!==nextIt&&nextIt)extra=nextIt;
-    if(lessonNow||pk){usesContent=true; cards(); if(lessonNow)lessonStep(lid,"it"); if(pk&&(!lessonNow||mode==="it"))pkStep(pk);}
+    if(lessonNow||pk||rv){usesContent=true; cards(); if(lessonNow)lessonStep(lid,"it");
+      if(rv){const fin=x.p&&x.p.week===12&&!examFor(12,"final"); out.push({k:"pkweek",ids:rv,lang:"it",t:"Tekrar günü: Pekiştir",s:rv.map(id=>lxMeta(id).title).join(" + ")+(fin?" · Final'e hazırlık":""),done:rv.every(id=>lxP(id).pk===t)});}
+      else if(pk&&(!lessonNow||mode==="it"))pkStep(pk);}
     else out.push({k:"ders",lang:"it",t:"İtalyanca · Chiara ile ders",s:"Koç bloğu bloğu yürütür",done:dayBlocks().filter(b=>b.l==="it").every(b=>b.st==="done")});
     if(mode==="it"&&usesContent)konusStep("it");}
   if(mode!=="it"){
@@ -4224,7 +4233,7 @@ function lxSteps(){
   const n=out.find(s=>!s.done); if(n)n.next=true;
   if(!n&&extra)out.extra={k:"lesson",id:extra,lang:lxMeta(extra).lang,t:lxMeta(extra).title};
   return out;}
-const lxLabel=n=>n.k==="cards"?"önce kart tekrarı":n.k==="lesson"?(lxP(n.id).step?"derse devam et":"bugünkü ders"):n.k==="pekistir"||n.k==="pkweek"?"Pekiştir":n.k==="konus"?(n.coach==="it"?"Chiara":"Oliver")+" ile konuş":"ders";
+const lxLabel=n=>n.k==="cards"?"önce kart tekrarı":n.k==="lesson"?(lxP(n.id).step?"derse devam et":"bugünkü ders"):n.k==="pekistir"||n.k==="pkweek"?"Pekiştir":n.k==="exam"?"sınav":n.k==="konus"?(n.coach==="it"?"Chiara":"Oliver")+" ile konuş":"ders";
 function lxNext(skip){if(!LX||!LX.index)return null; renderDayPlan(); const st=LX.hero; if(!st)return null; const n=st.find(s=>!s.done&&s.k!==skip); return n?{label:n.k==="cards"?"Kart tekrarı":n.k==="lesson"?n.t:n.k==="konus"?(n.coach==="it"?"Chiara":"Oliver")+" ile konuş":n.t,step:n}:null;}
 function lxStreakTxt(){const st=streak(), m=minsByDay()[today()]||0; return m>=STREAK_MIN?"Yarın devam edersen seri "+(st+1)+" gün olur.":"Seriye saymak için bugün "+(STREAK_MIN-m)+" dk daha çalış: Kartlar ya da Konuş yeter.";}
 function renderDayPlan(){const el=$("#dayPlan"); if(!el||!LX)return; let st=null; try{st=lxSteps();}catch(e){st=null;} LX.hero=st;
@@ -4238,19 +4247,20 @@ function renderDayPlan(){const el=$("#dayPlan"); if(!el||!LX)return; let st=null
   const me=$("#meter"); if(me)me.innerHTML=mt;
   const hero=$("#hero"); if(hero)hero.classList.toggle("isDone",all);
   const ms=$("#modeSeg"); if(ms&&all)ms.hidden=true;
-  {const ls=st.find(s=>s.k==="lesson"||s.k==="pekistir"||s.k==="pkweek"), nn=st.find(s=>s.next);
+  {const ls=st.find(s=>s.k==="lesson"||s.k==="pekistir"||s.k==="pkweek"||s.k==="exam"), nn=st.find(s=>s.next);
     if(!all&&ls){$("#heroTitle").textContent=ls.t; if(ls.done&&nn)$("#heroKicker").innerHTML=ICON("check")+esc("Ders tamam · sırada: "+nn.t);}}
   if(all){$("#heroKicker").innerHTML=ICON("check")+"Bugünün planı tamam"; const okM=mins>=STREAK_MIN; $("#heroTitle").textContent=okM?"Bugün tamam.":"Plan tamam."; if(sub){sub.hidden=false; sub.textContent=okM?lxStreakTxt():"Seri için "+(STREAK_MIN-mins)+" dk daha: Kartlar ya da Konuş (isteğe bağlı).";}}
   const g=$("#btnGo"); if(!g)return; const n=st.find(s=>s.next);
   if(n){g.innerHTML=ICON("play")+`<span>${esc(n.k==="lesson"&&!lxP(n.id).step?"Bugünkü dersi başlat":n.k==="lesson"?"Derse devam et":"Başla · "+lxLabel(n))}</span>`; g.className="btn btn-big goBtn btn-primary";}
   else{g.innerHTML=ICON(st.extra?"plus":"chat")+`<span>${esc(st.extra?"Bir ders daha · "+st.extra.t:"Koçla serbest konuş")}</span>`; g.className="btn btn-big goBtn btn-soft";}}
-function lxPlanDetails(){const st=LX&&LX.hero; if(!st)return false; const lbl={done:ICON("check")+"Tamam",next:"Sırada",wait:"Bekliyor"}, ico={cards:"repeat",lesson:"okuma",pekistir:"repeat",pkweek:"repeat",konus:"speaking",ders:"chat"};
+function lxPlanDetails(){const st=LX&&LX.hero; if(!st)return false; const lbl={done:ICON("check")+"Tamam",next:"Sırada",wait:"Bekliyor"}, ico={cards:"repeat",lesson:"okuma",pekistir:"repeat",pkweek:"repeat",exam:"target",konus:"speaking",ders:"chat"};
   $("#todayTitle").textContent="Bugünün adımları"; $("#todaySide").textContent=st.filter(s=>s.done).length+" / "+st.length+" adım tamam";
   $("#plan").innerHTML=st.map(s=>{const k=s.done?"done":s.next?"next":"wait"; return `<div class="row ${s.lang||"it"} ${k}"><span class="bi">${ICON(s.done?"check":ico[s.k]||"play")}</span><div><h3>${s.lang?FLAG(s.lang):""}${esc(s.t)}</h3><p>${esc(s.s)}</p></div><span class="st ${k}">${lbl[k]}</span></div>`;}).join("");
   return true;}
 function lxGo(){if(!LX)return false; const st=LX.hero; if(!st)return false; const n=st.find(s=>s.next);
   if(!n){if(st.extra){lxOpen(st.extra.id,{}); return true;} openTab("konus"); return true;}
   if(n.k==="cards"){lxCards(); return true;}
+  if(n.k==="exam"){lxOpen(n.id,{}); return true;}
   if(n.k==="lesson"||n.k==="pekistir"){lxOpen(n.id,{pk:n.k==="pekistir"});return true;}
   if(n.k==="pkweek"){lxOpen(n.ids[0],{pk:true,week:n.ids});return true;}
   if(n.k==="konus"){openTab("konus"); lxMod().then(M=>M.konus.call({coach:n.coach,lesson:n.lesson||null})).catch(lxModErr); return true;}
@@ -4258,7 +4268,7 @@ function lxGo(){if(!LX)return false; const st=LX.hero; if(!st)return false; cons
   return false;}
 function lxCards(){const l=dueCards(reviewLang).length?reviewLang:dueCards("it").length?"it":dueCards("en").length?"en":reviewLang; if(l!==reviewLang){reviewLang=l;} buildQueue(); openTab("cards");}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-plan-next]"); if(b){renderDayPlan(); lxGo();}});
-function lxRenderMine(){const el=$("#myLessons"); if(!el||!LX)return; const L=LX.index||[]; el.hidden=!L.length; if(!L.length)return;
+function lxRenderMine(){const el=$("#myLessons"); if(!el||!LX)return; const L=lxLessons(); el.hidden=!L.length; if(!L.length)return;
   const x=itToday(), cur=new Set([x.t&&x.t[1],(enToday().t||[])[1]].filter(Boolean)), STEP=["Anlat","Dinle","Uygula","Konuş","Yokla"];
   const html=`<div class="chead"><div><h2 id="myLT">Benim derslerim</h2><p class="lead">Adım adım dersler: Anlat · Dinle · Uygula · Konuş · Yokla. İstediğini aç.</p></div></div>
    <ol class="myList">${L.map(m=>{const p=lxP(m.id), chip=p.passed?`<span class="lst ok">${ICON("check")}Geçti</span>`:p.step||(p.done||[]).some(Boolean)?`<span class="lst go">Devam · ${STEP[p.step||0]}</span>`:cur.has(m.id)?`<span class="lst go">Bugün</span>`:`<span class="lst">Yeni</span>`;
