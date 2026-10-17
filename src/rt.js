@@ -34,7 +34,10 @@ const validKey=k=>{k=String(k||"").trim(); return KEY_RE.test(k)&&k.length>=KEY_
 let keyStatus="", keyErr=null;
 function setKeyStatus(st,err){keyStatus=st; keyErr=err||null; fire("tydil:key",{has:!!getKey(),status:st,error:err?{code:err.code,message:err.message}:null});}
 /* setKey(k,{verify:true}) → kaydeder, durumu pending yapar ve bağlantı testini başlatır (sonuç tydil:key ile duyurulur) */
-function setKey(k,opt){k=String(k||"").trim(); if(k&&!KEY_RE.test(k)){const e=new Error("Anahtar sk-ant- ile başlamalı"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_KEY,k); else lsDel(LS_KEY);
+/* Yedek: anahtar IndexedDB'de de tutulur ("tydil-k"). localStorage boşalırsa (tarayıcı temizliği/iOS) açılışta geri yüklenir. */
+function kIdb(fn){try{const r=indexedDB.open("tydil-k",1); r.onupgradeneeded=()=>{try{r.result.createObjectStore("k");}catch(e){}}; r.onsuccess=()=>{try{const d=r.result, t=d.transaction("k",fn?"readwrite":"readonly"), st=t.objectStore("k"); if(fn)fn(st); else{const g=st.get("key"); g.onsuccess=()=>{const v=g.result; if(v&&!getKey()&&KEY_RE.test(v)){lsSet(LS_KEY,v); setKeyStatus("ok");}};} t.oncomplete=()=>d.close();}catch(e){}};}catch(e){}}
+function keyBackup(k){kIdb(st=>{k?st.put(k,"key"):st.delete("key");});}
+function setKey(k,opt){k=String(k||"").trim(); if(k&&!KEY_RE.test(k)){const e=new Error("Anahtar sk-ant- ile başlamalı"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_KEY,k); else lsDel(LS_KEY); keyBackup(k);
   if(!k){setKeyStatus("none"); return false;}
   if(!(opt&&opt.verify)){setKeyStatus("ok"); return true;}
   setKeyStatus("pending"); const mine=k;
@@ -301,6 +304,9 @@ const userApi=()=>({name:(getSettings().name||"").trim()||"Türab"});
 window.claude={ async use(name){ if(name==="db"){await load(); return dbApi;} if(name==="sample")return sample; if(name==="user")return userApi(); return null; } };
 window.TYRT={MODELS,DEFAULT_MODEL,getKey,setKey,validKey,KEY_MIN,keyStatus:()=>keyStatus||(getKey()?"ok":"none"),keyError:()=>keyErr,hasKey:()=>!!getKey(),getSettings,setSettings,testKey,export:rtExport,import:rtImport,db:dbApi,get mode(){return mode;},ready:load,sync:syncApi};
 window.rtExport=rtExport; window.rtImport=rtImport;
+/* Kalıcı depolama iste (tarayıcı yer açarken verileri silmesin) + anahtar yedeği: yoksa geri yükle, varsa yedeğe yaz */
+try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persisted().then(p=>{if(!p)navigator.storage.persist().catch(()=>{});}).catch(()=>{});}catch(e){}
+try{if(typeof indexedDB!=="undefined"){if(getKey())keyBackup(getKey()); else kIdb();}}catch(e){}
 /* ===== QR ile aktarım: adres "#k=sk-ant-…" (yalnızca anahtar) ya da "#k=…&s=<GitHub token>&g=<gist kimliği>" (anahtar + senkron) ile açılırsa
    değerler kaydedilir, adres hemen temizlenir. Parça (#…) sunucuya gitmez; uygulama kodu adresi okumadan önce temizlenir.
    Sonuç: window.TYKEYIMPORT = "ok" | "bad" · window.TYSYNCIMPORT = "ok" (senkron bilgisi de geldiyse). */

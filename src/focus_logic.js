@@ -127,13 +127,14 @@ ccDers.afterInit=()=>{if(F.open&&F.pendingStart){const d=F.pendingStart; F.pendi
 ccDers.done=()=>F.open&&F.phase==="done";
 /* Anahtar kapısı: koç yokken Ders modu açılmaz; kapakta anahtar kartı (Ayarlar → Anahtar) ve anahtarsız seçenekler */
 const noKey=()=>typeof CC!=="undefined"&&(typeof ccKeyLock==="function"?ccKeyLock(CC.locked):CC.locked===CC_NOKEY)||!(window.TYRT&&TYRT.hasKey&&TYRT.hasKey());
+const iosTab=()=>{try{return /iP(hone|ad|od)|Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1&&!(navigator.standalone===true||matchMedia("(display-mode: standalone)").matches);}catch(e){return false;}};
 function renderKeyGate(show){const el=$("#keyGate"); if(!el)return; const on=!!show&&!chatReady()&&noKey(); el.hidden=!on; const hh=$("#heroHint"); if(hh) hh.hidden=on;   /* kart varken ipucu yok (çift metin olmasın) */
   if(!on){el.innerHTML="";el.dataset.sig="";return;}
   const ks=window.TYRT&&TYRT.keyStatus?TYRT.keyStatus():"none", pend=ks==="pending", bad=ks==="bad";
   const why=bad?(CC.locked||"").replace(CC_KEYBAD,""):"";
   const html=`<div class="kgHd"><span class="kgIco" aria-hidden="true">${ICON("setup")}</span><div><h3 id="keyGateT" tabindex="-1">${pend?"Anahtar doğrulanıyor…":bad?"Anahtar doğrulanamadı":"Koçlar için API anahtarı gerekli"}</h3><p>${pend?"Bağlantı test ediliyor; birkaç saniye sürer.":bad?esc(why):"Chiara ve Oliver senin Anthropic API anahtarınla çalışır. Anahtar yalnızca bu cihazda saklanır."}</p></div></div>
     ${pend?"":`<div class="kgAct">${(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)?`<button type="button" class="btn btn-primary" data-go="scan">${ICON("target")}QR okut</button><button type="button" class="btn btn-soft" data-go="key">${ICON("setup")}Anahtarı gir</button>`:`<button type="button" class="btn btn-primary" data-go="key">${ICON("setup")}Anahtarı gir</button>`}<button type="button" class="btn btn-ghost" id="keyGateUnits">${ICON("deck")}Dersler'e geç</button></div>
-    <p class="kgNote"><b>Anahtarsız devam:</b> sadece Dersler (üniteler) ve kelime kartları çalışır; koçlu günlük ders ve kayıt anahtar ister.</p>`}`;
+    ${iosTab()?`<p class="kgNote"><b>Ana ekrana kurduysan:</b> TY Dil'i ana ekrandaki simgesinden aç. Anahtarın orada kayıtlı; bu tarayıcı sekmesinin deposu ayrı.</p>`:""}<p class="kgNote"><b>Anahtarsız devam:</b> sadece Dersler (üniteler) ve kelime kartları çalışır; koçlu günlük ders ve kayıt anahtar ister.</p>`}`;
   if(el.dataset.sig===html)return; const first=!el.dataset.sig; el.dataset.sig=html; el.innerHTML=html;
   if(first){const h=$("#keyGateT"); if(h) h.focus({preventScroll:true}); requestAnimationFrame(()=>{try{el.scrollIntoView({block:"nearest",behavior:"smooth"});}catch(e){}});}}
 function dersGate(){ if(chatReady()) return true; if(noKey()){openTab("learn"); renderKeyGate(true); return false;} openTab("key",true); return false; }
