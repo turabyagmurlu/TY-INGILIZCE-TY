@@ -1,0 +1,715 @@
+{
+  "id": "en05",
+  "lang": "en",
+  "level": "B1",
+  "title": "Koşul cümleleri: 0, 1 ve 2",
+  "lead": "“Kablo ıslanırsa…”, “Peşin öderseniz…”, “Vincim olsa…” cümlelerini doğru kalıpla kuracaksın; unless, as long as ve provided that ile şart koyup fiyat pazarlığı yapabileceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Gerçek mi, hayal mi? Üç tip tek tabloda",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe hepsini “-se/-sa” ile halleder. İngilizce önce sorar: **bu gerçekten olabilir mi?** Her zaman doğruysa → **0. tip**. Gerçekten olabilecek bir gelecekse → **1. tip**. Hayal, varsayım ya da şu anki gerçeğin tersiyse → **2. tip**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tip",
+            "If kısmı",
+            "Ana cümle",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "0: genel gerçek",
+              "present",
+              "present",
+              "If you overload a circuit, the breaker trips."
+            ],
+            [
+              "1: olası gelecek",
+              "present",
+              "will + fiil",
+              "If it rains, we'll stop the work."
+            ],
+            [
+              "2: hayal, varsayım",
+              "past",
+              "would + fiil",
+              "If I had a bigger crew, I'd finish faster."
+            ]
+          ],
+          "x": 3
+        },
+        {
+          "type": "note",
+          "text": "If kısmı başa da sona da gelebilir. Başa gelirse virgül koy, sona gelirse virgül yok: **We'll stop the work if it rains.**",
+          "warn": false
+        },
+        {
+          "type": "note",
+          "text": "0. tipte if yerine **when** de olur, anlam değişmez: When you overload a circuit, the breaker trips. (Her seferinde olur.)",
+          "warn": false
+        }
+      ]
+    },
+    {
+      "title": "1. tip: if'ten sonra will yok",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Olası, gerçekçi gelecek. Gelecek anlamı **ana cümledeki will**'den gelir; if kısmı **present** kalır. Türkçe “gelirse” der, gelecek eki koymaz: “gelecekse” demezsin. İngilizce de aynısını yapar."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Malzeme yarın gelirse,",
+                  "s": "-se",
+                  "hl": true
+                },
+                {
+                  "t": "bağlantıyı bitiririz.",
+                  "s": "sonuç"
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "If the material arrives tomorrow,",
+                  "s": "if + present",
+                  "hl": true
+                },
+                {
+                  "t": "we'll finish the connection.",
+                  "s": "will + fiil"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "If you pay 30% in advance, we'll start on Monday.",
+              "tr": "%30 peşin öderseniz pazartesi başlarız."
+            },
+            {
+              "x": "If the test fails, we'll call you immediately.",
+              "tr": "Test başarısız olursa sizi hemen ararız."
+            },
+            {
+              "x": "If you sign today, I can give you a 5% discount.",
+              "tr": "Bugün imzalarsanız size %5 indirim yapabilirim."
+            },
+            {
+              "x": "If you need anything, call me.",
+              "tr": "Bir şey lazım olursa beni ara."
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Sık hata: “If you will pay today, we will start.” → **If you pay today, we'll start.** Ana cümlede will yerine can, may ya da emir de gelebilir (son iki örnek).",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "2. tip: past biçim, ama anlam şimdi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "2. tipte if kısmı **past** (had, were, won), ana cümle **would + fiil**. Ama anlam geçmiş değil: **şimdi ya da gelecek, gerçek dışı ya da düşük ihtimal**. Türkçedeki “olsa … -ırdı” mantığı."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Vincim olsa,",
+                  "s": "-sa (yok aslında)",
+                  "hl": true
+                },
+                {
+                  "t": "bugün bitirirdim.",
+                  "s": "-ırdı",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "If I had a crane,",
+                  "s": "if + past",
+                  "hl": true
+                },
+                {
+                  "t": "I'd finish today.",
+                  "s": "would + fiil",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Gerçeğin tersi",
+              "text": "Şu an öyle değil.",
+              "ex": {
+                "x": "If I had more time, I'd learn Italian faster.",
+                "tr": "Daha çok vaktim olsa İtalyancayı daha hızlı öğrenirdim."
+              }
+            },
+            {
+              "title": "Düşük ihtimal",
+              "text": "Olabilir ama pek beklemiyorsun.",
+              "ex": {
+                "x": "If we won the tender, we'd hire ten people.",
+                "tr": "İhaleyi kazansak on kişi alırdık."
+              }
+            },
+            {
+              "title": "Tavsiye: If I were you",
+              "text": "Bütün kişilerde were (konuşmada was da duyulur).",
+              "ex": {
+                "x": "If I were you, I'd check the earthing first.",
+                "tr": "Yerinde olsam önce topraklamaya bakardım."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "1. tip mi 2. tip mi senin ihtimal hissine bağlı: “If we **win** the tender, we**'ll** hire…” (gerçekçi) / “If we **won**…, we**'d** hire…” (pek beklemiyorum).",
+          "warn": false
+        }
+      ]
+    },
+    {
+      "title": "Şart koymak: unless, as long as, provided that",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pazarlığın dili bu üç kelime. Üçünde de kural aynı: **arkalarından present gelir, will gelmez.**"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kelime",
+            "Anlamı",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "unless",
+              "-mezse, … olmadıkça (= if … not)",
+              "We won't start unless you pay the deposit."
+            ],
+            [
+              "as long as",
+              "… olduğu sürece, yeter ki",
+              "We can finish by Friday as long as the materials arrive on time."
+            ],
+            [
+              "provided (that)",
+              "… şartıyla (resmi, sözleşme dili)",
+              "The price is fixed provided that you confirm the order this week."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "text": "unless zaten olumsuz: “unless you **don't** pay” yanlış → **unless you pay** (= if you don't pay). Bir de: “as long as the materials **will** arrive” → **as long as the materials arrive**.",
+          "warn": true
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "If you overload the circuit, the breaker trips.",
+      "tr": "Devreye fazla yük bindirirsen sigorta atar."
+    },
+    {
+      "x": "If you pay 30% in advance, we'll start next Monday.",
+      "tr": "%30 peşin öderseniz gelecek pazartesi başlarız."
+    },
+    {
+      "x": "If the materials arrive late, we won't finish on time.",
+      "tr": "Malzemeler geç gelirse zamanında bitiremeyiz."
+    },
+    {
+      "x": "We won't start unless we get the signed contract.",
+      "tr": "İmzalı sözleşmeyi almadıkça başlamayız."
+    },
+    {
+      "x": "As long as the site is ready, my crew can work on Saturday.",
+      "tr": "Saha hazır olduğu sürece ekibim cumartesi çalışabilir."
+    },
+    {
+      "x": "We can keep this price provided that you confirm the order this week.",
+      "tr": "Siparişi bu hafta onaylamanız şartıyla bu fiyatı koruyabiliriz."
+    },
+    {
+      "x": "If I had two more electricians, I'd finish the job in a week.",
+      "tr": "İki elektrikçim daha olsa işi bir haftada bitirirdim."
+    },
+    {
+      "x": "If I were you, I'd check the earthing first.",
+      "tr": "Yerinde olsam önce topraklamaya bakardım."
+    },
+    {
+      "x": "What would you do if the client didn't pay?",
+      "tr": "Müşteri ödemese ne yapardın?"
+    },
+    {
+      "x": "If you need anything, just call me.",
+      "tr": "Bir şey lazım olursa beni araman yeter."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "Genel gerçek: “If water gets into a socket, it ___ a short circuit.”",
+      "a": "causes",
+      "o": [
+        "causes",
+        "caused",
+        "would cause"
+      ],
+      "why": {
+        "caused": "Her zaman olan bir gerçek → 0. tip: present.",
+        "would cause": "would hayal ve varsayım içindir; bu her seferinde olan bir şey."
+      },
+      "ok": "0. tip: present + present."
+    },
+    {
+      "t": "choice",
+      "q": "If it ___ tomorrow, we'll stop the outdoor work.",
+      "a": "rains",
+      "o": [
+        "rains",
+        "will rain",
+        "rained"
+      ],
+      "why": {
+        "will rain": "if kısmında will yok: If it rains.",
+        "rained": "Ana cümle we'll → 1. tip → if + present."
+      },
+      "ok": "if + present, ana cümle will."
+    },
+    {
+      "t": "choice",
+      "q": "If you pay in advance, we ___ you a 5% discount.",
+      "a": "will give",
+      "o": [
+        "will give",
+        "would give",
+        "gave"
+      ],
+      "why": {
+        "would give": "if kısmı present (pay) → 1. tip → will. would, if + past ile eşleşir.",
+        "gave": "Sonuç gelecekte: will give."
+      },
+      "ok": "1. tip: will + fiil."
+    },
+    {
+      "t": "choice",
+      "q": "If I ___ a bigger van, I'd carry all the cable drums at once.",
+      "a": "had",
+      "o": [
+        "had",
+        "have",
+        "would have"
+      ],
+      "why": {
+        "have": "Ana cümle I'd (would) → 2. tip → if + past: had.",
+        "would have": "if kısmına would gelmez."
+      },
+      "ok": "2. tip: if + past."
+    },
+    {
+      "t": "choice",
+      "q": "If I were you, I ___ the earthing first.",
+      "a": "would check",
+      "o": [
+        "would check",
+        "will check",
+        "checked"
+      ],
+      "why": {
+        "will check": "If I were you gerçek dışı → would.",
+        "checked": "Ana cümlede would + yalın fiil gerekir."
+      },
+      "ok": "If I were you, I'd…"
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Kablolar geç gelirse zamanında bitiremeyiz.”",
+      "words": [
+        "finish",
+        "the",
+        "we",
+        "if",
+        "won't",
+        "cables",
+        "late",
+        "arrive",
+        "on",
+        "time"
+      ],
+      "a": "if the cables arrive late we won't finish on time",
+      "alt": [
+        "we won't finish on time if the cables arrive late"
+      ],
+      "ok": "If the cables arrive late, we won't finish on time."
+    },
+    {
+      "t": "choice",
+      "q": "We won't start ___ you sign the contract.",
+      "a": "unless",
+      "o": [
+        "unless",
+        "if",
+        "as long as"
+      ],
+      "why": {
+        "if": "if ile anlam ters döner: “imzalarsan başlamayız”. İmzalamazsan = unless.",
+        "as long as": "as long as = imzaladığın sürece başlamayız; anlamsız. Burada unless."
+      },
+      "ok": "unless = if … not."
+    },
+    {
+      "t": "choice",
+      "q": "Unless you ___ the deposit, we can't order the panels.",
+      "a": "pay",
+      "o": [
+        "pay",
+        "don't pay",
+        "will pay"
+      ],
+      "why": {
+        "don't pay": "unless zaten olumsuz; don't eklersen çift olumsuz olur.",
+        "will pay": "unless'tan sonra will gelmez."
+      },
+      "ok": "unless + olumlu present."
+    },
+    {
+      "t": "choice",
+      "q": "Sözleşme dili: “The price is fixed ___ the order is confirmed by Friday.”",
+      "a": "provided that",
+      "o": [
+        "provided that",
+        "unless",
+        "even"
+      ],
+      "why": {
+        "unless": "unless = -mezse; anlam ters döner.",
+        "even": "even tek başına şart bildirmez."
+      },
+      "ok": "provided that = … şartıyla."
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “If you will send the drawings today, we will start tomorrow.”",
+      "a": [
+        "if you send the drawings today we'll start tomorrow",
+        "if you send the drawings today we will start tomorrow",
+        "we'll start tomorrow if you send the drawings today",
+        "we will start tomorrow if you send the drawings today"
+      ],
+      "hint": "if kısmında will yok.",
+      "ok": "If you send the drawings today, we'll start tomorrow."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Daha büyük bir ekibim olsa işi bir haftada bitirirdim.”",
+      "a": [
+        "if i had a bigger crew i'd finish the job in a week",
+        "if i had a bigger crew i'd finish the job in one week",
+        "if i had a bigger crew i would finish the job in a week",
+        "if i had a bigger crew i would finish the job in one week",
+        "if i had a bigger team i'd finish the job in a week",
+        "if i had a bigger team i'd finish the job in one week",
+        "if i had a bigger team i would finish the job in a week",
+        "if i had a bigger team i would finish the job in one week",
+        "i'd finish the job in a week if i had a bigger crew",
+        "i'd finish the job in a week if i had a bigger team",
+        "i'd finish the job in one week if i had a bigger crew",
+        "i'd finish the job in one week if i had a bigger team",
+        "i would finish the job in a week if i had a bigger crew",
+        "i would finish the job in a week if i had a bigger team",
+        "i would finish the job in one week if i had a bigger crew",
+        "i would finish the job in one week if i had a bigger team",
+        "if i had a bigger crew i'd finish the work in a week",
+        "if i had a bigger crew i'd finish the work in one week",
+        "if i had a bigger crew i would finish the work in a week",
+        "if i had a bigger crew i would finish the work in one week",
+        "if i had a bigger team i'd finish the work in a week",
+        "if i had a bigger team i'd finish the work in one week",
+        "if i had a bigger team i would finish the work in a week",
+        "if i had a bigger team i would finish the work in one week",
+        "i'd finish the work in a week if i had a bigger crew",
+        "i'd finish the work in a week if i had a bigger team",
+        "i'd finish the work in one week if i had a bigger crew",
+        "i'd finish the work in one week if i had a bigger team",
+        "i would finish the work in a week if i had a bigger crew",
+        "i would finish the work in a week if i had a bigger team",
+        "i would finish the work in one week if i had a bigger crew",
+        "i would finish the work in one week if i had a bigger team"
+      ],
+      "hint": "Gerçek dışı → if + past, would.",
+      "ok": "If I had a bigger crew, I'd finish the job in a week."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Malzemeler zamanında geldiği sürece cumaya kadar bitiririz.”",
+      "a": [
+        "we'll finish by friday as long as the materials arrive on time",
+        "we will finish by friday as long as the materials arrive on time",
+        "we can finish by friday as long as the materials arrive on time",
+        "as long as the materials arrive on time we'll finish by friday",
+        "as long as the materials arrive on time we will finish by friday",
+        "as long as the materials arrive on time we can finish by friday"
+      ],
+      "hint": "as long as + present (will yok).",
+      "ok": "We'll finish by Friday as long as the materials arrive on time."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Fiyat ve şart pazarlığı yapmak: If you…, we will… ile teklif ve karşı teklif sunmak; unless, as long as, provided that ile şart koymak; 2. tip ile varsayımsal öneri yapmak (If you ordered…, we would…).",
+    "vocab": [
+      "quote",
+      "price",
+      "discount",
+      "deposit",
+      "in advance",
+      "payment terms",
+      "invoice",
+      "deadline",
+      "scope of work",
+      "extra work",
+      "materials",
+      "labour",
+      "unless",
+      "as long as",
+      "provided that"
+    ],
+    "structures": [
+      "If you…, we'll… (1. tip teklif)",
+      "We won't… unless you…",
+      "as long as / provided that + present",
+      "If you ordered…, we'd… (2. tip, düşük ihtimal / yumuşak öneri)",
+      "If I were you, I'd…"
+    ],
+    "opener_hint": "Oliver bir otel projesinde yabancı müşterinin satın alma müdürü; Türab'ın aydınlatma montajı teklifini pahalı buluyor: “Your quote is too high. Can you do it for 10% less?” Türab şartlı cevap verince “What if we paid half in advance?” diye 2. tipe çeksin.",
+    "level_note": "B1+: gerçekçi pazarlık tonu, 1-3 cümle. “If you will…” ya da “unless you don't…” hatasını görünce hemen kısa düzelt (dersin hedefi); diğer hataları 3 turda bir “You said … → Better: …” diye topla."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "0. tip: genel gerçek",
+      "q": "If you touch a live wire, you ___ a shock.",
+      "a": "get",
+      "o": [
+        "get",
+        "would get",
+        "got"
+      ],
+      "why": {
+        "would get": "Her seferinde olan gerçek → 0. tip: present.",
+        "got": "Genel gerçek present ile anlatılır."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "1. tip: if + present",
+      "q": "If the inspector ___ on Monday, we'll be ready.",
+      "a": "comes",
+      "o": [
+        "comes",
+        "will come",
+        "came"
+      ],
+      "why": {
+        "will come": "if kısmında will yok.",
+        "came": "Ana cümle will → 1. tip → present: comes."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "2. tip: if + past, would",
+      "q": "Pek ihtimal vermiyorsun: “If we ___ the tender, we would hire ten more people.”",
+      "a": "won",
+      "o": [
+        "won",
+        "win",
+        "would win"
+      ],
+      "why": {
+        "win": "Ana cümle would → 2. tip → if + past: won.",
+        "would win": "if kısmına would gelmez."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "unless",
+      "q": "unless ile çevir: “Depozitoyu ödemezseniz başlamayız.”",
+      "a": [
+        "we won't start unless you pay the deposit",
+        "we will not start unless you pay the deposit",
+        "unless you pay the deposit we won't start",
+        "unless you pay the deposit we will not start"
+      ],
+      "soft": [
+        "we won't start if you don't pay the deposit",
+        "we won't start if you do not pay the deposit",
+        "we will not start if you don't pay the deposit",
+        "we will not start if you do not pay the deposit",
+        "if you don't pay the deposit we won't start",
+        "if you don't pay the deposit we will not start",
+        "if you do not pay the deposit we won't start",
+        "if you do not pay the deposit we will not start"
+      ],
+      "soft_note": "Doğru sayıldı, ama soru unless istiyordu: We won't start unless you pay the deposit."
+    },
+    {
+      "t": "choice",
+      "topic": "as long as / provided that",
+      "q": "We'll finish on time ___ the materials arrive this week.",
+      "a": "as long as",
+      "o": [
+        "as long as",
+        "unless",
+        "even"
+      ],
+      "why": {
+        "unless": "unless = -mezse; “gelmezse zamanında biteriz” anlamsız.",
+        "even": "even tek başına şart bildirmez."
+      }
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "If the client ___ more lights, we'll need more cable.",
+        "a": "wants",
+        "o": [
+          "wants",
+          "will want",
+          "wanted"
+        ],
+        "why": {
+          "will want": "if kısmında will yok.",
+          "wanted": "Ana cümle will → present: wants."
+        },
+        "ok": "1. tip: if + present."
+      },
+      {
+        "t": "choice",
+        "q": "What would you do if the client ___ pay?",
+        "a": "didn't",
+        "o": [
+          "didn't",
+          "doesn't",
+          "won't"
+        ],
+        "why": {
+          "doesn't": "Ana cümle would → 2. tip → if + past: didn't.",
+          "won't": "if kısmında will yok."
+        },
+        "ok": "2. tip: if + past."
+      },
+      {
+        "t": "choice",
+        "q": "If I ___ you, I'd ask for a written confirmation.",
+        "a": "were",
+        "o": [
+          "were",
+          "am",
+          "will be"
+        ],
+        "why": {
+          "am": "Gerçek dışı (sen değilim) → If I were you.",
+          "will be": "if kısmında will yok."
+        },
+        "ok": "If I were you…"
+      },
+      {
+        "t": "choice",
+        "q": "You can use our scaffolding ___ you return it by Friday.",
+        "a": "as long as",
+        "o": [
+          "as long as",
+          "unless"
+        ],
+        "why": {
+          "unless": "unless = getirmezsen; anlam ters döner."
+        },
+        "ok": "as long as = yeter ki."
+      },
+      {
+        "t": "type",
+        "q": "Düzelt: “Unless you don't confirm today, the price will change.”",
+        "a": [
+          "unless you confirm today the price will change",
+          "the price will change unless you confirm today",
+          "if you don't confirm today the price will change",
+          "if you do not confirm today the price will change",
+          "the price will change if you don't confirm today",
+          "the price will change if you do not confirm today"
+        ],
+        "hint": "unless zaten olumsuz.",
+        "ok": "Unless you confirm today, the price will change."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Yerinde olsam önce şalteri kapatırdım.” (breaker)",
+        "a": [
+          "if i were you i'd switch off the breaker first",
+          "if i were you i'd turn off the breaker first",
+          "if i were you i'd switch the breaker off first",
+          "if i were you i'd turn the breaker off first",
+          "if i were you i would switch off the breaker first",
+          "if i were you i would turn off the breaker first",
+          "if i were you i would switch the breaker off first",
+          "if i were you i would turn the breaker off first",
+          "if i were you i'd first switch off the breaker",
+          "if i were you i would first switch off the breaker",
+          "if i were you i'd first turn off the breaker",
+          "if i were you i would first turn off the breaker"
+        ],
+        "soft": [
+          "if i was you i'd switch off the breaker first",
+          "if i was you i'd turn off the breaker first",
+          "if i was you i would switch off the breaker first",
+          "if i was you i would turn off the breaker first"
+        ],
+        "soft_note": "Konuşmada duyulur, ama doğrusu: If I were you…",
+        "hint": "If I were you, I'd…",
+        "ok": "If I were you, I'd switch off the breaker first."
+      }
+    ],
+    "konus_prompt": "Oliver'la kısa pazarlık: bir iş için fiyat ver, en az iki şart koy (If you…, we'll…; unless; as long as) ve bir 2. tip cümleyle varsayımsal bir teklif yap (If you ordered…, we'd…)."
+  }
+}

@@ -1,0 +1,821 @@
+{
+ "id": "it08",
+ "lang": "it",
+ "level": "A1",
+ "title": "Sayılar, saat ve tarih",
+ "lead": "0'dan 100'e kadar sayıları, “Saat kaç?” sorusunu ve cevabını, günleri, ayları ve tarihi söyleyeceksin. Toplantı saati, metraj, şantiyenin kapalı olduğu gün: hepsi bu derste.",
+ "minutes": 35,
+ "anlat": [
+  {
+   "title": "0–20: ezberlenecek tek kısım",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "0–10 düz ezber. 11–19 ise tek bir mantıkla kurulur; onu kavrayınca 20'ye kadar her şey yerine oturur."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Sayı",
+      "İtalyanca",
+      "Okunuş"
+     ],
+     "x": 1,
+     "rows": [
+      [
+       "0",
+       "zero",
+       "DZE-ro"
+      ],
+      [
+       "1",
+       "uno",
+       "U-no"
+      ],
+      [
+       "2",
+       "due",
+       "DU-e"
+      ],
+      [
+       "3",
+       "tre",
+       "TRE"
+      ],
+      [
+       "4",
+       "quattro",
+       "KUAT-tro"
+      ],
+      [
+       "5",
+       "cinque",
+       "ÇİN-kue"
+      ],
+      [
+       "6",
+       "sei",
+       "SEY"
+      ],
+      [
+       "7",
+       "sette",
+       "SET-te"
+      ],
+      [
+       "8",
+       "otto",
+       "OT-to"
+      ],
+      [
+       "9",
+       "nove",
+       "NO-ve"
+      ],
+      [
+       "10",
+       "dieci",
+       "DYE-çi"
+      ]
+     ]
+    },
+    {
+     "type": "rules",
+     "items": [
+      {
+       "title": "11–16: önce birlik, sonda -dici",
+       "text": "undici, dodici, tredici, quattordici, quindici, sedici.",
+       "ex": {
+        "x": "sedici",
+        "tr": "16"
+       }
+      },
+      {
+       "title": "17–19: önce dici-, sonra birlik",
+       "text": "diciassette, diciotto, diciannove. Sıra döner; Türkçedeki “on yedi” gibi: önce on, sonra yedi.",
+       "ex": {
+        "x": "diciotto",
+        "tr": "18"
+       }
+      },
+      {
+       "title": "20 = venti",
+       "text": "Buradan sonrası 2. karttaki kurala bağlanır.",
+       "ex": {
+        "x": "venti",
+        "tr": "20"
+       }
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "warn": true,
+     "text": "Tipik karışıklık: **sei** hem “altı” hem “sen -sin” (tu sei) demek. Bağlam ayırır. **sedici** (16) ile **sessanta** (60) da çok karışır."
+    }
+   ]
+  },
+  {
+   "title": "20–100: onluk + birlik, Türkçe gibi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "İyi haber: sıra Türkçeyle aynı. yirmi + iki = **venti + due = ventidue**. Hepsi bitişik yazılır."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Sayı",
+      "İtalyanca",
+      "Okunuş"
+     ],
+     "x": 1,
+     "rows": [
+      [
+       "20",
+       "venti",
+       "VEN-ti"
+      ],
+      [
+       "30",
+       "trenta",
+       "TREN-ta"
+      ],
+      [
+       "40",
+       "quaranta",
+       "kua-RAN-ta"
+      ],
+      [
+       "50",
+       "cinquanta",
+       "çin-KUAN-ta"
+      ],
+      [
+       "60",
+       "sessanta",
+       "ses-SAN-ta"
+      ],
+      [
+       "70",
+       "settanta",
+       "set-TAN-ta"
+      ],
+      [
+       "80",
+       "ottanta",
+       "ot-TAN-ta"
+      ],
+      [
+       "90",
+       "novanta",
+       "no-VAN-ta"
+      ],
+      [
+       "100",
+       "cento",
+       "ÇEN-to"
+      ]
+     ]
+    },
+    {
+     "type": "rules",
+     "items": [
+      {
+       "title": "uno ve otto gelince onluğun son harfi düşer",
+       "text": "İki ünlü yan yana gelmesin diye: venti + uno → ventuno, trenta + otto → trentotto.",
+       "ex": {
+        "x": "ventotto",
+        "tr": "28"
+       }
+      },
+      {
+       "title": "Sondaki tre aksan alır",
+       "text": "Vurgu sona kayar ve yazıda gösterilir: ventitré, trentatré.",
+       "ex": {
+        "x": "trentatré",
+        "tr": "33"
+       }
+      }
+     ]
+    },
+    {
+     "type": "examples",
+     "items": [
+      {
+       "x": "Ho ventiquattro anni.",
+       "tr": "24 yaşındayım.",
+       "ph": "O ven-ti-KUAT-tro AN-ni"
+      },
+      {
+       "x": "Abbiamo trentotto prese.",
+       "tr": "38 prizimiz var.",
+       "ph": "ab-BYA-mo tren-TOT-to PRE-se"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Saat: “Sono le tre” neden çoğul?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Türkçede “Saat üç”: fiil yok. İtalyanca **essere** ister, hem de **çoğul**: **Sono le tre.** Çünkü gizli bir isim var: le (ore) tre. Özne çoğul → loro biçimi: **sono**."
+    },
+    {
+     "type": "compare",
+     "rows": [
+      {
+       "label": "Türkçe",
+       "items": [
+        {
+         "t": "Saat",
+         "s": "isim"
+        },
+        {
+         "t": "üç",
+         "s": "sayı"
+        }
+       ]
+      },
+      {
+       "label": "İtalyanca",
+       "items": [
+        {
+         "t": "Sono",
+         "s": "essere, çoğul",
+         "hl": true
+        },
+        {
+         "t": "le",
+         "s": "artikel (le ore)",
+         "hl": true
+        },
+        {
+         "t": "tre",
+         "s": "sayı"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "head": [
+      "Saat",
+      "İtalyanca",
+      "Okunuş"
+     ],
+     "x": 1,
+     "rows": [
+      [
+       "1:00",
+       "È l'una.",
+       "E LU-na"
+      ],
+      [
+       "3:00",
+       "Sono le tre.",
+       "SO-no le TRE"
+      ],
+      [
+       "8:15",
+       "Sono le otto e un quarto.",
+       "SO-no le OT-to e un KUAR-to"
+      ],
+      [
+       "8:30",
+       "Sono le otto e mezza.",
+       "SO-no le OT-to e MED-dza"
+      ],
+      [
+       "8:45",
+       "Sono le nove meno un quarto.",
+       "SO-no le NO-ve ME-no un KUAR-to"
+      ],
+      [
+       "12:00",
+       "È mezzogiorno.",
+       "E med-dzo-COR-no"
+      ]
+     ]
+    },
+    {
+     "type": "note",
+     "text": "Tekil **è** sadece üç yerde: **È l'una**, **È mezzogiorno** (öğlen), **È mezzanotte** (gece yarısı). Gerisi **sono le**. **e** = geçiyor, **meno** = var."
+    },
+    {
+     "type": "note",
+     "warn": true,
+     "text": "**Che ore sono?** ve **Che ora è?** ikisi de doğru. Cevap sorudan değil saatten gelir: Sono le tre. Hazır kalıp: **A che ora?** (Saat kaçta?) → **Alle otto.** (Sekizde.)"
+    }
+   ]
+  },
+  {
+   "title": "Günler, aylar, tarih",
+   "blocks": [
+    {
+     "type": "table",
+     "head": [
+      "İtalyanca",
+      "Okunuş",
+      "Türkçe"
+     ],
+     "x": 0,
+     "rows": [
+      [
+       "lunedì",
+       "lu-ne-Dİ",
+       "pazartesi"
+      ],
+      [
+       "martedì",
+       "mar-te-Dİ",
+       "salı"
+      ],
+      [
+       "mercoledì",
+       "mer-ko-le-Dİ",
+       "çarşamba"
+      ],
+      [
+       "giovedì",
+       "co-ve-Dİ",
+       "perşembe"
+      ],
+      [
+       "venerdì",
+       "ve-ner-Dİ",
+       "cuma"
+      ],
+      [
+       "sabato",
+       "SA-ba-to",
+       "cumartesi"
+      ],
+      [
+       "domenica",
+       "do-ME-ni-ka",
+       "pazar"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Aylar: **gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre.** Günler ve aylar **küçük harfle** yazılır."
+    },
+    {
+     "type": "rules",
+     "items": [
+      {
+       "title": "Tarih = il + düz sayı",
+       "text": "Türkçedeki gibi düz sayı: il cinque giugno (5 Haziran). Tek istisna ayın 1'i: il primo (birinci).",
+       "ex": {
+        "x": "Oggi è il diciassette ottobre.",
+        "tr": "Bugün 17 Ekim."
+       }
+      },
+      {
+       "title": "Günün önünde edat yok",
+       "text": "“Pazartesi(-de)” için ek ya da edat gerekmez. Artikelsiz gün = o tek gün; il / la ile = her hafta o gün.",
+       "ex": {
+        "x": "Il sabato il cantiere è chiuso.",
+        "tr": "Cumartesileri şantiye kapalı."
+       }
+      }
+     ]
+    },
+    {
+     "type": "examples",
+     "items": [
+      {
+       "x": "Lunedì sono in cantiere.",
+       "tr": "Pazartesi şantiyedeyim. (bu pazartesi)",
+       "ph": "lu-ne-Dİ SO-no in kan-TYE-re"
+      },
+      {
+       "x": "Il primo maggio",
+       "tr": "1 Mayıs",
+       "ph": "il PRİ-mo MAD-co"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "dinle": [
+  {
+   "x": "Che ore sono? Sono le otto.",
+   "tr": "Saat kaç? Saat sekiz.",
+   "ph": "ke O-re SO-no? SO-no le OT-to"
+  },
+  {
+   "x": "È l'una e mezza.",
+   "tr": "Saat bir buçuk.",
+   "ph": "E LU-na e MED-dza"
+  },
+  {
+   "x": "Sono le nove meno un quarto.",
+   "tr": "Saat dokuza çeyrek var.",
+   "ph": "SO-no le NO-ve ME-no un KUAR-to"
+  },
+  {
+   "x": "A che ora è la riunione? Alle sette.",
+   "tr": "Toplantı saat kaçta? Yedide.",
+   "ph": "a ke O-ra E la ri-u-NYO-ne? AL-le SET-te"
+  },
+  {
+   "x": "È mezzanotte, siamo stanchi.",
+   "tr": "Gece yarısı, yorgunuz.",
+   "ph": "E med-dza-NOT-te, SYA-mo STAN-ki"
+  },
+  {
+   "x": "Oggi è lunedì.",
+   "tr": "Bugün pazartesi.",
+   "ph": "OD-ci E lu-ne-Dİ"
+  },
+  {
+   "x": "Oggi è il diciassette ottobre.",
+   "tr": "Bugün 17 Ekim.",
+   "ph": "OD-ci E il di-ças-SET-te ot-TO-bre"
+  },
+  {
+   "x": "La domenica non sono in cantiere.",
+   "tr": "Pazarları şantiyede değilim.",
+   "ph": "la do-ME-ni-ka non SO-no in kan-TYE-re"
+  },
+  {
+   "x": "Abbiamo trenta cavi e dodici prese.",
+   "tr": "30 kablomuz ve 12 prizimiz var.",
+   "ph": "ab-BYA-mo TREN-ta KA-vi e DO-di-çi PRE-se"
+  },
+  {
+   "x": "Il primo maggio il cantiere è chiuso.",
+   "tr": "1 Mayıs'ta şantiye kapalı.",
+   "ph": "il PRİ-mo MAD-co il kan-TYE-re E KYU-so"
+  }
+ ],
+ "uygula": [
+  {
+   "t": "choice",
+   "q": "17 hangisi?",
+   "a": "diciassette",
+   "o": [
+    "settedici",
+    "diciassette",
+    "settanta"
+   ],
+   "why": {
+    "settedici": "17–19'da sıra döner: önce dici-, sonra birlik: diciassette.",
+    "settanta": "settanta = 70."
+   },
+   "ok": "17 = diciassette."
+  },
+  {
+   "t": "choice",
+   "q": "21 nasıl yazılır?",
+   "a": "ventuno",
+   "o": [
+    "ventiuno",
+    "ventuno",
+    "venti uno"
+   ],
+   "why": {
+    "ventiuno": "uno gelince onluğun son ünlüsü düşer: ventuno.",
+    "venti uno": "Sayılar bitişik yazılır ve venti'nin i'si düşer: ventuno."
+   },
+   "ok": "venti + uno → ventuno."
+  },
+  {
+   "t": "choice",
+   "q": "Saat 3:00. “___ le tre.”",
+   "a": "Sono",
+   "o": [
+    "È",
+    "Sono",
+    "Ha"
+   ],
+   "why": {
+    "È": "le tre çoğul (le ore tre). Çoğul özne → sono. è sadece l'una, mezzogiorno, mezzanotte ile.",
+    "Ha": "Saat avere ile değil, essere ile söylenir."
+   },
+   "ok": "Sono le tre: gizli özne le ore, çoğul."
+  },
+  {
+   "t": "choice",
+   "q": "Saat 1:00.",
+   "a": "È l'una.",
+   "o": [
+    "Sono le una.",
+    "È l'una.",
+    "Sono l'una."
+   ],
+   "why": {
+    "Sono le una.": "1 tek saat, tekil: è. Ve una ünlüyle başlar: l'una.",
+    "Sono l'una.": "l'una tekil; fiil de tekil olmalı: è."
+   },
+   "ok": "Saat 1 → È l'una."
+  },
+  {
+   "t": "choice",
+   "q": "Saat 8:45.",
+   "a": "Sono le nove meno un quarto.",
+   "o": [
+    "Sono le otto meno un quarto.",
+    "Sono le nove meno un quarto.",
+    "Sono le nove e un quarto."
+   ],
+   "why": {
+    "Sono le otto meno un quarto.": "Bu 7:45 (sekize çeyrek var).",
+    "Sono le nove e un quarto.": "e = geçiyor: bu 9:15."
+   },
+   "ok": "Dokuza çeyrek var = le nove meno un quarto."
+  },
+  {
+   "t": "choice",
+   "q": "“Her pazartesi şantiye kapalı.”",
+   "a": "Il lunedì il cantiere è chiuso.",
+   "o": [
+    "Lunedì il cantiere è chiuso.",
+    "Il lunedì il cantiere è chiuso."
+   ],
+   "why": {
+    "Lunedì il cantiere è chiuso.": "Artikelsiz lunedì = bu pazartesi (tek sefer). Her hafta için artikel: il lunedì."
+   },
+   "ok": "il lunedì = pazartesileri."
+  },
+  {
+   "t": "choice",
+   "q": "“trentatré” kaç?",
+   "a": "33",
+   "o": [
+    "13",
+    "33",
+    "30"
+   ],
+   "why": {
+    "13": "13 = tredici.",
+    "30": "30 = trenta. trenta + tre → trentatré."
+   },
+   "ok": "trentatré = 33. Sondaki tre aksan alır."
+  },
+  {
+   "t": "type",
+   "q": "Yazıyla yaz: 35",
+   "a": [
+    "trentacinque"
+   ],
+   "hint": "trenta + cinque, bitişik.",
+   "ok": "Trentacinque."
+  },
+  {
+   "t": "type",
+   "q": "Türkçeden çevir: “Saat yedi.”",
+   "a": [
+    "sono le sette"
+   ],
+   "hint": "Saat 1 değilse fiil çoğul: sono le …",
+   "ok": "Sono le sette."
+  },
+  {
+   "t": "type",
+   "q": "Türkçeden çevir: “Bugün 5 Haziran.”",
+   "a": [
+    "oggi è il cinque giugno",
+    "oggi è il 5 giugno",
+    "è il cinque giugno",
+    "è il 5 giugno"
+   ],
+   "soft": [
+    "oggi e il cinque giugno",
+    "oggi e il 5 giugno",
+    "e il cinque giugno",
+    "e il 5 giugno"
+   ],
+   "soft_note": "è aksanlı yazılır: Oggi è il cinque giugno.",
+   "hint": "bugün = oggi. Tarih: il + düz sayı + ay (küçük harf).",
+   "ok": "Oggi è il cinque giugno."
+  },
+  {
+   "t": "order",
+   "q": "Sırala: “Toplantı saat sekizde.”",
+   "words": [
+    "è",
+    "alle",
+    "otto",
+    "riunione",
+    "la"
+   ],
+   "a": "la riunione è alle otto",
+   "ok": "La riunione è alle otto. alle = saat …-de (hazır kalıp)."
+  },
+  {
+   "t": "order",
+   "q": "Sırala: “Saat dokuza çeyrek var.”",
+   "words": [
+    "quarto",
+    "nove",
+    "sono",
+    "un",
+    "le",
+    "meno"
+   ],
+   "a": "sono le nove meno un quarto",
+   "ok": "Sono le nove meno un quarto."
+  }
+ ],
+ "konus": {
+  "coach": "chiara",
+  "goal": "Saat sormak ve söylemek (sono le / è l'una), toplantı saatini söylemek (alle …), gün ve tarih söylemek, sayılarla yaş ve malzeme miktarı vermek.",
+  "vocab": [
+   "zero",
+   "uno … venti",
+   "trenta … cento",
+   "Che ore sono?",
+   "Che ora è?",
+   "e un quarto",
+   "e mezza",
+   "meno un quarto",
+   "mezzogiorno",
+   "mezzanotte",
+   "A che ora?",
+   "alle",
+   "la riunione",
+   "oggi",
+   "lunedì",
+   "martedì",
+   "mercoledì",
+   "giovedì",
+   "venerdì",
+   "sabato",
+   "domenica",
+   "gennaio … dicembre",
+   "il primo",
+   "chiuso",
+   "anni"
+  ],
+  "structures": [
+   "Sono le + sayı / È l'una / È mezzogiorno",
+   "e (geçiyor) / meno (var)",
+   "A che ora è …? — Alle …",
+   "Oggi è + gün / Oggi è il + sayı + ay",
+   "il lunedì (her pazartesi) vs lunedì (bu pazartesi)",
+   "avere + sayı (Ho 24 anni, Abbiamo 30 cavi)"
+  ],
+  "opener_hint": "Chiara şantiye ofisinde planlama yapan bir İtalyan gibi açsın: “Ciao Türab! Che ore sono?” (Türkçesi parantezde). Sonra sırayla: toplantı saat kaçta, bugün hangi gün, bugünün tarihi, cumartesi şantiye açık mı, kaç kablo/priz var, kaç yaşında. En az bir kez saati 1:00 ya da 12:00 sorsun (è gereksin).",
+  "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece essere ve avere; başka fiil kullanma (alle … hazır kalıp). Türab “È le tre” derse “Quasi! → Sono le tre” ve kısa neden: le ore çoğul. 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+ },
+ "yokla": [
+  {
+   "t": "choice",
+   "topic": "sayılar 11–19",
+   "q": "“diciotto” kaç?",
+   "a": "18",
+   "o": [
+    "8",
+    "18",
+    "80"
+   ],
+   "why": {
+    "8": "8 = otto. dici- önde: 18.",
+    "80": "80 = ottanta."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "saat: sono / è",
+   "q": "“Che ore sono?” Saat 12:00 (öğlen).",
+   "a": "È mezzogiorno.",
+   "o": [
+    "Sono le mezzogiorno.",
+    "È mezzogiorno.",
+    "Sono mezzogiorno."
+   ],
+   "why": {
+    "Sono le mezzogiorno.": "mezzogiorno tekil ve artikelsiz: È mezzogiorno.",
+    "Sono mezzogiorno.": "Öğlen tek bir an, tekil: è."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "e / meno, mezza / quarto",
+   "q": "Saat 4:30.",
+   "a": "Sono le quattro e mezza.",
+   "o": [
+    "Sono le quattro e un quarto.",
+    "Sono le quattro e mezza.",
+    "Sono le cinque meno un quarto."
+   ],
+   "why": {
+    "Sono le quattro e un quarto.": "un quarto = çeyrek: bu 4:15.",
+    "Sono le cinque meno un quarto.": "Bu 4:45 (beşe çeyrek var)."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "tarih",
+   "q": "Türkçeden çevir: “1 Mayıs”",
+   "a": [
+    "il primo maggio",
+    "primo maggio",
+    "il 1 maggio",
+    "1 maggio",
+    "il 1° maggio",
+    "1° maggio"
+   ]
+  },
+  {
+   "t": "type",
+   "topic": "sayılar 20–100",
+   "q": "Yazıyla yaz: 48",
+   "a": [
+    "quarantotto"
+   ]
+  }
+ ],
+ "pass": 4,
+ "pekistir": {
+  "items": [
+   {
+    "t": "choice",
+    "q": "“Che ora è?” Saat 3:00.",
+    "a": "Sono le tre.",
+    "o": [
+     "È le tre.",
+     "Sono le tre."
+    ],
+    "why": {
+     "È le tre.": "Soru tekil olsa da cevap saate bakar: le tre çoğul → sono."
+    },
+    "ok": "Cevap saatten gelir: Sono le tre."
+   },
+   {
+    "t": "choice",
+    "q": "63 hangisi?",
+    "a": "sessantatré",
+    "o": [
+     "sedicitré",
+     "sessantatré",
+     "settantatré"
+    ],
+    "why": {
+     "sedicitré": "sedici = 16. 60 = sessanta.",
+     "settantatré": "settanta = 70. Bu 73."
+    },
+    "ok": "sessanta + tre → sessantatré."
+   },
+   {
+    "t": "choice",
+    "q": "“giovedì” hangi gün?",
+    "a": "Perşembe",
+    "o": [
+     "Salı",
+     "Perşembe",
+     "Cuma"
+    ],
+    "why": {
+     "Salı": "Salı = martedì.",
+     "Cuma": "Cuma = venerdì."
+    },
+    "ok": "giovedì = perşembe."
+   },
+   {
+    "t": "type",
+    "q": "Türkçeden çevir: “Saat ikiyi çeyrek geçiyor.”",
+    "a": [
+     "sono le due e un quarto",
+     "sono le due e quindici"
+    ],
+    "hint": "geçiyor = e, çeyrek = un quarto.",
+    "ok": "Sono le due e un quarto."
+   },
+   {
+    "t": "type",
+    "q": "Yazıyla yaz: 71",
+    "a": [
+     "settantuno"
+    ],
+    "hint": "uno gelince onluğun son ünlüsü düşer.",
+    "ok": "Settantuno."
+   },
+   {
+    "t": "order",
+    "q": "Sırala: “Cumartesi şantiye kapalı.”",
+    "words": [
+     "chiuso",
+     "sabato",
+     "è",
+     "il",
+     "cantiere"
+    ],
+    "a": "sabato il cantiere è chiuso",
+    "alt": [
+     "il cantiere è chiuso sabato"
+    ],
+    "ok": "Sabato il cantiere è chiuso. Günün önünde edat yok."
+   }
+  ],
+  "konus_prompt": "Chiara'ya yarınki şantiye programını anlat: bugün hangi gün ve tarih, toplantı saat kaçta, iş saat kaçta (Il lavoro è alle …), kaç kablo ve priz var (Abbiamo …). Saati en az bir kez “sono le … e mezza” ile söyle."
+ }
+}

@@ -1,0 +1,718 @@
+{
+  "id": "en07",
+  "lang": "en",
+  "level": "B1",
+  "title": "Çıkarım: must be, might be, can't be",
+  "lead": "Bir arızaya ya da duruma bakıp ne kadar emin olduğunu tek kelimeyle söyleyebileceksin: must (eminim), might/may/could (olabilir), can't (olamaz). Geçmiş için must have been kalıbını da tanıyacaksın.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Emin olma ölçeği",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sahada sürekli tahmin yürütürsün: “Sigorta atmış olmalı”, “Nem olabilir”, “Kablo olamaz, yeni çektik.” İngilizce bu tahmini **modal + fiil yalın hâli** ile kurar. Modal ne kadar emin olduğunu söyler; kanıtın varsa güçlü modal, yoksa zayıf modal."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Ne kadar eminsin?",
+            "Modal",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "~%95 evet (kanıt var)",
+              "must",
+              "It must be the breaker."
+            ],
+            [
+              "%30–50 belki",
+              "might / may / could",
+              "It might be moisture."
+            ],
+            [
+              "~%95 hayır (kanıt var)",
+              "can't / couldn't",
+              "It can't be the cable."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Nem",
+                  "s": "özne"
+                },
+                {
+                  "t": "olabilir",
+                  "s": "ihtimal",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "It",
+                  "s": "özne"
+                },
+                {
+                  "t": "might be",
+                  "s": "modal + be",
+                  "hl": true
+                },
+                {
+                  "t": "moisture",
+                  "s": "isim"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "**might, may, could** bu anlamda neredeyse eş. Konuşmada en sık **might**; **may** biraz daha resmî. Modal'dan sonra **to** gelmez: “It must to be” yanlış."
+        }
+      ]
+    },
+    {
+      "title": "Olumsuz: can't, mustn't değil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe “olmamalı” hem yasak hem tahmin olabilir; İngilizce ayırır. **mustn't = yasak** (önceki ders). Tahminin olumsuzu **can't**'tir: imkânsız."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Kaçak akım",
+                  "s": "özne"
+                },
+                {
+                  "t": "olamaz",
+                  "s": "imkânsız",
+                  "hl": true
+                },
+                {
+                  "t": "— hat boşta",
+                  "s": "kanıt"
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "It",
+                  "s": "özne"
+                },
+                {
+                  "t": "can't be",
+                  "s": "imkânsız",
+                  "hl": true
+                },
+                {
+                  "t": "an earth leakage",
+                  "s": "isim"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "can't be = imkânsız",
+              "text": "Kanıtın var, cevap kesin hayır.",
+              "ex": {
+                "x": "He can't be on site. His van is here at the depot.",
+                "tr": "Sahada olamaz. Kamyoneti burada, depoda."
+              }
+            },
+            {
+              "title": "might not / may not be = belki değil",
+              "text": "Emin değilsin, ihtimal açık. Kısaltması mightn't nadirdir; açık yaz.",
+              "ex": {
+                "x": "The supplier might not have the cable in stock.",
+                "tr": "Tedarikçide o kablo stokta olmayabilir."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Tipik Türk hatası: “It mustn't be the breaker.” → **It can't be the breaker.** Ayrıca genel bir doğru için **can** (“Water **can** be dangerous.”), şu anki tek bir durum için **could/might** (“It **could** be water.”) kullan. “It can be the breaker” yanlış."
+        }
+      ]
+    },
+    {
+      "title": "Şu an ne oluyor: üç kalıp",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Modal'dan sonra üç şey gelebilir. Hepsinde mantık aynı: modal emin olma derecesini verir, arkasındaki kısım ne düşündüğünü."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kalıp",
+            "Ne için",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "modal + be + sıfat/isim",
+              "durum",
+              "The panel must be overloaded."
+            ],
+            [
+              "modal + be + -ing",
+              "şu an süren iş",
+              "They might be working in Block C."
+            ],
+            [
+              "modal + fiil",
+              "bilgi, sahiplik, his",
+              "Ahmet must know the password."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Nobody's answering. They must be having lunch.",
+              "tr": "Kimse açmıyor. Öğle yemeğinde olmalılar."
+            },
+            {
+              "x": "You've been on site since six. You must be tired.",
+              "tr": "Altıdan beri sahadasın. Yorgun olmalısın."
+            },
+            {
+              "x": "That can't be right. We ordered 300 metres, not 30.",
+              "tr": "Bu doğru olamaz. 30 değil, 300 metre sipariş ettik."
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": false,
+          "text": "**must be tired** Türkçedeki “yorulmuşsundur” hissini verir: karşındakinin durumunu tahmin ediyorsun, ona emir vermiyorsun."
+        }
+      ]
+    },
+    {
+      "title": "Geçmiş: must have been (giriş)",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Geçmiş hakkında tahmin için **modal + have + V3** kullanılır. Türkçedeki “-mış olmalı / -mış olabilir / -mış olamaz” karşılığıdır. Bu yapıyı şimdilik tanı; ayrıntısı ileride."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Dün geceki yağmur",
+                  "s": "özne"
+                },
+                {
+                  "t": "olmalı",
+                  "s": "geçmişe tahmin",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "It",
+                  "s": "özne"
+                },
+                {
+                  "t": "must have been",
+                  "s": "must + have + V3",
+                  "hl": true
+                },
+                {
+                  "t": "last night's rain",
+                  "s": "isim"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Someone must have switched it off.",
+              "tr": "Biri kapatmış olmalı."
+            },
+            {
+              "x": "The new guy might have forgotten to lock the panel.",
+              "tr": "Yeni gelen eleman panoyu kilitlemeyi unutmuş olabilir."
+            },
+            {
+              "x": "He can't have seen the drawing. He's only just arrived.",
+              "tr": "Çizimi görmüş olamaz. Daha yeni geldi."
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Konuşmada **must've, might've, could've** diye kısalır ve “must of” gibi duyulur. Yazarken her zaman **have**: “must of” yanlış."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "The RCD keeps tripping. There must be an earth leakage somewhere.",
+      "tr": "Kaçak akım rölesi sürekli atıyor. Bir yerde kaçak olmalı."
+    },
+    {
+      "x": "It can't be an overload. Nothing is switched on.",
+      "tr": "Aşırı yük olamaz. Hiçbir şey açık değil."
+    },
+    {
+      "x": "It might be moisture in the junction box.",
+      "tr": "Buat içinde nem olabilir."
+    },
+    {
+      "x": "It could be a faulty socket on the second floor.",
+      "tr": "İkinci kattaki arızalı bir priz olabilir."
+    },
+    {
+      "x": "That can't be right. Let me measure it again.",
+      "tr": "Bu doğru olamaz. Bir daha ölçeyim."
+    },
+    {
+      "x": "They must be working in Block C. Their van is over there.",
+      "tr": "C Blok'ta çalışıyor olmalılar. Kamyonetleri orada."
+    },
+    {
+      "x": "The supplier may not have this cable in stock.",
+      "tr": "Tedarikçide bu kablo stokta olmayabilir."
+    },
+    {
+      "x": "You must be tired. You've been here since six.",
+      "tr": "Yorgun olmalısın. Altıdan beri buradasın."
+    },
+    {
+      "x": "Someone must have left the panel door open.",
+      "tr": "Biri pano kapağını açık bırakmış olmalı."
+    },
+    {
+      "x": "It must have been last night's rain.",
+      "tr": "Dün geceki yağmur olmalı."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "Kamyoneti otoparkta, montu masada. “He ___ on site.” (Eminsin.)",
+      "a": "must be",
+      "o": [
+        "must be",
+        "might be",
+        "can't be"
+      ],
+      "why": {
+        "might be": "Kanıtın güçlü (kamyonet, mont): %50 değil, neredeyse eminsin → must be.",
+        "can't be": "can't be = olamaz. Kanıtlar tersini söylüyor."
+      },
+      "ok": "Güçlü kanıt → must be."
+    },
+    {
+      "t": "choice",
+      "q": "Hat boşta, hiçbir yük bağlı değil. “It ___ an overload.”",
+      "a": "can't be",
+      "o": [
+        "can't be",
+        "mustn't be",
+        "might be"
+      ],
+      "why": {
+        "mustn't be": "mustn't = yasak (önceki ders). Tahminin olumsuzu can't.",
+        "might be": "Yük yoksa aşırı yük ihtimali de yok: imkânsız → can't be."
+      },
+      "ok": "İmkânsız → can't be."
+    },
+    {
+      "t": "choice",
+      "q": "Emin değilsin: “It ___ moisture in the junction box.”",
+      "a": "might be",
+      "o": [
+        "might be",
+        "must be",
+        "can be"
+      ],
+      "why": {
+        "must be": "must = eminim. Burada emin değilsin.",
+        "can be": "can genel doğrular içindir (Water can be dangerous). Şu anki tek bir durum için might/could."
+      },
+      "ok": "Belki → might be."
+    },
+    {
+      "t": "choice",
+      "q": "Panoları Ahmet kurdu. “He ___ the password.”",
+      "a": "must know",
+      "o": [
+        "must know",
+        "must to know",
+        "must knows"
+      ],
+      "why": {
+        "must to know": "Modal'dan sonra to gelmez.",
+        "must knows": "Modal'dan sonra fiil yalın hâlde kalır, -s almaz."
+      },
+      "ok": "Modal + yalın fiil."
+    },
+    {
+      "t": "choice",
+      "q": "Kimse telefonu açmıyor, saat 12:30. “They ___ lunch.”",
+      "a": "must be having",
+      "o": [
+        "must be having",
+        "must have",
+        "must having"
+      ],
+      "why": {
+        "must have": "must have şu anki eylemi değil, sahipliği ya da geçmişi anlatır. Şu an süren iş için must be + -ing.",
+        "must having": "Modal'dan sonra be gerekir: must be having."
+      },
+      "ok": "Şu an süren → must be + -ing."
+    },
+    {
+      "t": "choice",
+      "q": "Tedarikçiyi aramadan önce: “They ___ have this cable in stock.” (Belki yok.)",
+      "a": "might not",
+      "o": [
+        "might not",
+        "can't",
+        "mustn't"
+      ],
+      "why": {
+        "can't": "can't = kesinlikle yok. Sadece ihtimal diyorsan might not.",
+        "mustn't": "mustn't yasak bildirir; tahmin için kullanılmaz."
+      },
+      "ok": "Belki değil → might not."
+    },
+    {
+      "t": "choice",
+      "q": "Dün akşam her şey çalışıyordu, bu sabah pano kapalı. “Someone ___ it off.”",
+      "a": "must have switched",
+      "o": [
+        "must have switched",
+        "must switched",
+        "must have switch"
+      ],
+      "why": {
+        "must switched": "Geçmiş tahmin: must + have + V3.",
+        "must have switch": "have'den sonra V3 gelir: switched."
+      },
+      "ok": "Geçmişe tahmin → must have + V3."
+    },
+    {
+      "t": "choice",
+      "q": "Yeni gelen işçi hakkında: “He ___ the drawing. He's only just arrived.”",
+      "a": "can't have seen",
+      "o": [
+        "can't have seen",
+        "mustn't have seen",
+        "can't see"
+      ],
+      "why": {
+        "mustn't have seen": "Geçmişe olumsuz kesin tahmin can't have + V3 ile yapılır.",
+        "can't see": "can't see şu an göremiyor demek; geçmiş için can't have seen."
+      },
+      "ok": "Geçmişte imkânsız → can't have + V3."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Bu doğru olamaz.”",
+      "a": [
+        "that can't be right",
+        "that cannot be right",
+        "this can't be right",
+        "this cannot be right",
+        "that can't be true",
+        "that cannot be true",
+        "this can't be true",
+        "this cannot be true",
+        "that can not be right",
+        "this can not be right"
+      ],
+      "hint": "olamaz = can't be. doğru = right.",
+      "ok": "That can't be right."
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “It mustn't be the cable, we installed it yesterday.”",
+      "a": [
+        "it can't be the cable we installed it yesterday",
+        "it cannot be the cable we installed it yesterday",
+        "it can not be the cable we installed it yesterday",
+        "it couldn't be the cable we installed it yesterday",
+        "it could not be the cable we installed it yesterday",
+        "it can't be the cable because we installed it yesterday",
+        "it cannot be the cable because we installed it yesterday",
+        "it can not be the cable because we installed it yesterday",
+        "it couldn't be the cable because we installed it yesterday",
+        "it could not be the cable because we installed it yesterday",
+        "it can't be the cable as we installed it yesterday",
+        "it cannot be the cable as we installed it yesterday",
+        "it can not be the cable as we installed it yesterday",
+        "it couldn't be the cable as we installed it yesterday",
+        "it could not be the cable as we installed it yesterday"
+      ],
+      "hint": "Tahminin olumsuzu mustn't değil.",
+      "ok": "It can't be the cable, we installed it yesterday."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “C Blok'ta çalışıyor olabilirler.”",
+      "words": [
+        "Block",
+        "be",
+        "might",
+        "in",
+        "They",
+        "working",
+        "C"
+      ],
+      "a": "They might be working in Block C",
+      "ok": "They might be working in Block C."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Dün geceki yağmur olmalı.”",
+      "words": [
+        "been",
+        "rain",
+        "It",
+        "have",
+        "night's",
+        "must",
+        "last"
+      ],
+      "a": "It must have been last night's rain",
+      "ok": "It must have been last night's rain."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Arıza teşhisi: pano neden atıyor? must be / might be / can't be ile olası sebepleri sıralamak, kanıtla gerekçelendirmek, imkânsız olanı elemek; sebebi geçmişe bağlarken must have been / might have + V3 kullanmak.",
+    "vocab": [
+      "trip",
+      "breaker",
+      "RCD",
+      "earth leakage",
+      "overload",
+      "short circuit",
+      "moisture",
+      "junction box",
+      "faulty socket",
+      "loose connection",
+      "insulation",
+      "measure",
+      "reading",
+      "switch off",
+      "panel door",
+      "clue"
+    ],
+    "structures": [
+      "must be / must + fiil (eminim)",
+      "might / may / could be (olabilir)",
+      "can't be (olamaz), might not be (olmayabilir)",
+      "must be + -ing (şu an süren iş)",
+      "must have been / might have + V3 (geçmişe tahmin)"
+    ],
+    "opener_hint": "Oliver bir otel projesinde İngiliz bakım müdürü. Telefonda açsın: “Hi Türab, the RCD in the kitchen panel keeps tripping every morning. What do you think it is?” Türab sebep önerdikçe kanıt sorsun (“Why do you think so?”), sonra ipucu versin (“It only happens after it rains.”) ve Türab'ı must/can't ile karar vermeye zorlasın.",
+    "level_note": "B1+: doğal iş telefonu tonu, 1-3 cümle. Türab'ın mustn't'ı tahmin için kullandığı ya da modal'dan sonra to eklediği her yerde hemen ve kısa düzelt; diğer hataları 3 turda bir “You said … → Better: …” diye topla. Teknik terimi bilmiyorsa basit açıklamayla devam etsin."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "geçmişe tahmin: must have + V3",
+      "q": "Pano kapağı açık, kilit kırık. “Someone ___ it.”",
+      "a": "must have opened",
+      "o": [
+        "must have opened",
+        "must open",
+        "can't have opened"
+      ],
+      "why": {
+        "must open": "must open şu ana ya da kurala dair; geçmiş tahmin için must have + V3.",
+        "can't have opened": "Kanıt (kırık kilit) açıldığını gösteriyor; can't have = açmış olamaz."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "olumsuz tahmin: can't",
+      "q": "Pazar günü, şantiye kapalı. “The crane operator ___ here today.”",
+      "a": "can't be",
+      "o": [
+        "can't be",
+        "mustn't be",
+        "may be"
+      ],
+      "why": {
+        "mustn't be": "mustn't = yasak. Burada imkânsızlık var → can't be.",
+        "may be": "Şantiye kapalıysa belki değil, neredeyse kesin hayır."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "could vs can",
+      "q": "Hangisi “Kablo hasarlı olabilir” demektir?",
+      "a": "The cable could be damaged.",
+      "o": [
+        "The cable could be damaged.",
+        "The cable can be damaged.",
+        "The cable must be damaged."
+      ],
+      "why": {
+        "The cable can be damaged.": "can be genel bir ihtimali anlatır (kablo hasar görebilir). Şu anki duruma tahmin için could/might.",
+        "The cable must be damaged.": "must = eminim; “olabilir” değil."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "must be + sıfat",
+      "q": "Çevir: “Yorgun olmalısın.”",
+      "a": [
+        "you must be tired",
+        "you must be exhausted"
+      ]
+    },
+    {
+      "t": "order",
+      "topic": "might not",
+      "q": "Sırala: “Tedarikçide o kablo stokta olmayabilir.”",
+      "words": [
+        "have",
+        "supplier",
+        "not",
+        "cable",
+        "The",
+        "might",
+        "that",
+        "in",
+        "stock"
+      ],
+      "a": "The supplier might not have that cable in stock"
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "Ölçüm 0 volt gösteriyor ama lamba yanıyor. “The meter ___ broken.”",
+        "a": "must be",
+        "o": [
+          "must be",
+          "can't be",
+          "mustn't be"
+        ],
+        "why": {
+          "can't be": "Lamba yanıyorsa voltaj var; o zaman sorun ölçü aletinde → must be.",
+          "mustn't be": "mustn't tahmin için kullanılmaz."
+        },
+        "ok": "Güçlü kanıt → must be."
+      },
+      {
+        "t": "choice",
+        "q": "“It ___ rain tomorrow, so let's cover the panels.”",
+        "a": "might",
+        "o": [
+          "might",
+          "must",
+          "can't"
+        ],
+        "why": {
+          "must": "Yarının havası için kanıtın yok; sadece ihtimal.",
+          "can't": "can't = kesinlikle yağmaz; o zaman örtmeye gerek kalmazdı."
+        },
+        "ok": "İhtimal → might."
+      },
+      {
+        "t": "choice",
+        "q": "“She ___ in the office. Her laptop and her coat are gone.”",
+        "a": "can't be",
+        "o": [
+          "can't be",
+          "must be",
+          "might to be"
+        ],
+        "why": {
+          "must be": "Laptop da mont da yoksa ofiste olmadığına dair güçlü kanıt var.",
+          "might to be": "Modal'dan sonra to gelmez."
+        },
+        "ok": "Olamaz → can't be."
+      },
+      {
+        "t": "choice",
+        "q": "Doğru olan hangisi?",
+        "a": "He might have forgotten.",
+        "o": [
+          "He might have forgotten.",
+          "He might forgot.",
+          "He might has forgotten."
+        ],
+        "why": {
+          "He might forgot.": "Modal'dan sonra geçmiş biçim gelmez; geçmiş için might have + V3.",
+          "He might has forgotten.": "Modal'dan sonra have hep yalın: has olmaz."
+        },
+        "ok": "might have + V3."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Biri kapatmış olmalı.”",
+        "a": [
+          "someone must have switched it off",
+          "someone must have turned it off",
+          "somebody must have switched it off",
+          "somebody must have turned it off",
+          "someone must've switched it off",
+          "someone must've turned it off",
+          "somebody must've switched it off",
+          "somebody must've turned it off"
+        ],
+        "hint": "must + have + V3; kapatmak = switch off / turn off.",
+        "ok": "Someone must have switched it off."
+      },
+      {
+        "t": "type",
+        "q": "Düzelt: “They must working on the roof.”",
+        "a": [
+          "they must be working on the roof"
+        ],
+        "hint": "Şu an süren iş: must + be + -ing.",
+        "ok": "They must be working on the roof."
+      }
+    ],
+    "konus_prompt": "Oliver'a bir arıza anlat (ör. sigorta her yağmurdan sonra atıyor). Üç olası sebep say: biri must be, biri might be, biri can't be ile; her birine bir kanıt ekle. Sonunda “It must have been …” diye geçmişe bağla."
+  }
+}

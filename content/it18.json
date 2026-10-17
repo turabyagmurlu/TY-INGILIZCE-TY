@@ -1,0 +1,661 @@
+{
+  "id": "it18",
+  "lang": "it",
+  "level": "A1",
+  "title": "Mi piace / mi piacciono: sevmek ters kurulur",
+  "lead": "Neyi sevip neyi sevmediğini söyleyebilir, başkasına sorabilir ve “ben de / ben de sevmem” diye kısa cevap verebilirsin. İşin sırrı tek bir şey: İtalyancada özne sen değilsin, sevdiğin şey.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Ters yapı: kahve senin hoşuna gider",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "“Kahveyi severim” cümlesinde özne **ben**im. İtalyanca bunu başka kurar: “Kahve **bana** hoş gelir.” Özne **kahve**dir; sen sadece “bana” (**mi**) olursun. Türkçede buna en yakın kalıp “hoşuma gitmek”tir. İtalyancayı “hoşuma gidiyor” diye düşünürsen hiç şaşırmazsın."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Kahve",
+                  "s": "özne",
+                  "hl": true
+                },
+                {
+                  "t": "hoşuma",
+                  "s": "bana"
+                },
+                {
+                  "t": "gidiyor",
+                  "s": "fiil"
+                }
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {
+                  "t": "Mi",
+                  "s": "bana"
+                },
+                {
+                  "t": "piace",
+                  "s": "hoşa gidiyor"
+                },
+                {
+                  "t": "il caffè",
+                  "s": "özne",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Tipik Türk hatası: “Io piaccio il caffè.” **piaccio** = “ben hoşa gidiyorum”; cümle “Ben kahvenin hoşuna gidiyorum” gibi saçma bir anlama kayar. Doğrusu: **Mi piace il caffè.** Genel olarak sevdiğin şey artikel alır: il caffè, la pizza (“Mi piace caffè” eksik)."
+        }
+      ]
+    },
+    {
+      "title": "piace mi, piacciono mu? Özneye bak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Fiil, sevilen şeye uyar. Sevilen şey tekse **piace**, çoğulsa **piacciono**. Bir fiil (mastar) seviyorsan yine **piace**: iki mastar olsa bile. Olumsuzda **non** en başa, mi'nin önüne gelir."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Sevilen",
+            "İtalyanca",
+            "Anlamı"
+          ],
+          "x": 1,
+          "rows": [
+            [
+              "tekil isim",
+              "Mi piace il caffè.",
+              "Kahveyi severim."
+            ],
+            [
+              "çoğul isim",
+              "Mi piacciono i cornetti.",
+              "Kruvasanları severim."
+            ],
+            [
+              "mastar",
+              "Mi piace lavorare in squadra.",
+              "Ekipte çalışmayı severim."
+            ],
+            [
+              "iki mastar",
+              "Mi piace leggere e cucinare.",
+              "Okumayı ve yemek yapmayı severim."
+            ],
+            [
+              "olumsuz",
+              "Non mi piace il freddo.",
+              "Soğuğu sevmem."
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Türkçede fiil hep tekil kalır (“kruvasanlar hoşuma gidiyor”); İtalyancada isim çoğulsa fiil de **çoğul olmak zorunda**. Kural: artikel **i / gli / le** ise fiil **piacciono** (okunuşu PYAT-ço-no, vurgu başta). **Mi piace molto** = çok severim."
+        }
+      ]
+    },
+    {
+      "title": "Kimin hoşuna? mi, ti, gli, le",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Seven kişi değişince sadece baştaki küçük kelime değişir; piace / piacciono aynı kalır. Bu kelimeleri 22. derste geniş göreceksin; şimdilik yalnız piacere ile."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kimin?",
+            "Kısa",
+            "Örnek",
+            "Anlamı"
+          ],
+          "x": 2,
+          "rows": [
+            [
+              "bana",
+              "mi",
+              "Mi piace Bodrum.",
+              "Bodrum'u severim."
+            ],
+            [
+              "sana",
+              "ti",
+              "Ti piace Bodrum?",
+              "Bodrum'u sever misin?"
+            ],
+            [
+              "ona (erkek)",
+              "gli",
+              "Gli piace il calcio.",
+              "Futbolu sever."
+            ],
+            [
+              "ona (kadın)",
+              "le",
+              "Le piace la pizza.",
+              "Pizzayı sever."
+            ],
+            [
+              "size (kibar)",
+              "Le",
+              "Le piace la pizza?",
+              "Pizzayı sever misiniz?"
+            ],
+            [
+              "bize / size",
+              "ci / vi",
+              "Ci piace. / Vi piace?",
+              "Severiz. / Sever misiniz?"
+            ],
+            [
+              "onlara",
+              "gli",
+              "Gli piacciono le macchine.",
+              "Arabaları severler."
+            ]
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "İsimle: a + isim",
+              "text": "Kişinin adını söylüyorsan kısa kelime yerine a + isim gelir.",
+              "ex": {
+                "x": "A Marco piace il calcio.",
+                "tr": "Marco futbolu sever."
+              }
+            },
+            {
+              "title": "İkisi birden olmaz",
+              "text": "“A me mi piace” konuşmada duyulur ama yanlış sayılır. Ya Mi piace ya A me piace (vurgulu)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Anche a me, neanche a me: kısa cevaplar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Biri “Mi piace…” dediğinde “ben de” cevabı da aynı ters yapıyla kurulur: “bana da”. Bu yüzden **anche io** değil, **anche a me** dersin. Uzun biçim **a me**, karşılaştırma ve vurgu içindir."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Arkadaşın der",
+            "Sen de öyleysen",
+            "Sen tersiysen"
+          ],
+          "rows": [
+            [
+              "Mi piace il mare.",
+              "Anche a me. (Ben de.)",
+              "A me no. (Ben sevmem.)"
+            ],
+            [
+              "Non mi piace il freddo.",
+              "Neanche a me. (Ben de sevmem.)",
+              "A me sì. (Ben severim.)"
+            ]
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Anche a me!",
+              "tr": "Ben de!",
+              "ph": "AN-ke a ME"
+            },
+            {
+              "x": "Neanche a me.",
+              "tr": "Ben de sevmem.",
+              "ph": "ne-AN-ke a ME"
+            },
+            {
+              "x": "A me sì.",
+              "tr": "Ben severim.",
+              "ph": "a ME Sİ"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Olumsuz cümleye “anche a me” deme: “Non mi piace il freddo.” → **Neanche a me.** (Türkçede de “ben de” değil, “ben de sevmem” dersin.) **nemmeno a me** da aynı anlama gelir."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "Mi piace il caffè.",
+      "tr": "Kahveyi severim.",
+      "ph": "mi PYA-çe il kaf-FE"
+    },
+    {
+      "x": "Mi piacciono i cornetti.",
+      "tr": "Kruvasanları severim.",
+      "ph": "mi PYAT-ço-no i kor-NET-ti"
+    },
+    {
+      "x": "Ti piace Bodrum?",
+      "tr": "Bodrum'u sever misin?",
+      "ph": "ti PYA-çe Bodrum"
+    },
+    {
+      "x": "Sì, mi piace molto.",
+      "tr": "Evet, çok severim.",
+      "ph": "Sİ, mi PYA-çe MOL-to"
+    },
+    {
+      "x": "Non mi piace il freddo.",
+      "tr": "Soğuğu sevmem.",
+      "ph": "non mi PYA-çe il FRED-do"
+    },
+    {
+      "x": "Neanche a me.",
+      "tr": "Ben de sevmem.",
+      "ph": "ne-AN-ke a ME"
+    },
+    {
+      "x": "Mi piace lavorare in squadra.",
+      "tr": "Ekipte çalışmayı severim.",
+      "ph": "mi PYA-çe la-vo-RA-re in SKUA-dra"
+    },
+    {
+      "x": "A Marco piace il calcio.",
+      "tr": "Marco futbolu sever.",
+      "ph": "a MAR-ko PYA-çe il KAL-ço"
+    },
+    {
+      "x": "Le piace la pizza, signora?",
+      "tr": "Pizzayı sever misiniz, hanımefendi?",
+      "ph": "le PYA-çe la PİT-tsa, si-NYO-ra"
+    },
+    {
+      "x": "Gli piacciono le macchine.",
+      "tr": "Arabaları sever. (gli: ona ya da onlara)",
+      "ph": "lyi PYAT-ço-no le MAK-ki-ne"
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "“Mi ___ il caffè.”",
+      "a": "piace",
+      "o": [
+        "piace",
+        "piacciono",
+        "piaccio"
+      ],
+      "why": {
+        "piacciono": "piacciono çoğul özne içindir. il caffè tekil: piace.",
+        "piaccio": "piaccio = “ben hoşa gidiyorum”. Özne kahve, yani “o”: piace."
+      },
+      "ok": "Tekil özne (il caffè) → piace."
+    },
+    {
+      "t": "choice",
+      "q": "“Mi ___ i cornetti.”",
+      "a": "piacciono",
+      "o": [
+        "piace",
+        "piacciono"
+      ],
+      "why": {
+        "piace": "i cornetti çoğul; fiil sevilen şeye uyar: piacciono."
+      },
+      "ok": "Çoğul özne (i cornetti) → piacciono."
+    },
+    {
+      "t": "choice",
+      "q": "“Mi ___ lavorare in cantiere.”",
+      "a": "piace",
+      "o": [
+        "piace",
+        "piacciono"
+      ],
+      "why": {
+        "piacciono": "Sevilen şey bir mastar (lavorare). Mastar her zaman tekil sayılır: piace."
+      },
+      "ok": "Mastar → piace."
+    },
+    {
+      "t": "choice",
+      "q": "“Futbolu severim.” hangisi?",
+      "a": "Mi piace il calcio.",
+      "o": [
+        "Mi piace il calcio.",
+        "Io piaccio il calcio.",
+        "Mi piace calcio."
+      ],
+      "why": {
+        "Io piaccio il calcio.": "Bu “ben hoşa gidiyorum” demek. Özne futbol olmalı: Mi piace il calcio.",
+        "Mi piace calcio.": "Genel olarak sevdiğin şey artikel alır: il calcio."
+      },
+      "ok": "Mi piace il calcio. Özne il calcio, sen “mi” (bana)."
+    },
+    {
+      "t": "choice",
+      "q": "Marco hakkında: “___ piace la pizza.” (Pizzayı sever.)",
+      "a": "Gli",
+      "o": [
+        "Gli",
+        "Le",
+        "Ti"
+      ],
+      "why": {
+        "Le": "le kadın için “ona”dır (ya da kibar Le = size). Marco erkek: gli.",
+        "Ti": "ti = sana. Marco'dan bahsediyorsun: gli."
+      },
+      "ok": "a lui → gli. Ya da isimle: A Marco piace la pizza."
+    },
+    {
+      "t": "choice",
+      "q": "Anna hakkında: “___ piacciono i gatti.” (Kedileri sever.)",
+      "a": "Le",
+      "o": [
+        "Gli",
+        "Le",
+        "Mi"
+      ],
+      "why": {
+        "Gli": "gli erkek için “ona”dır. Anna kadın: le.",
+        "Mi": "mi = bana. Anna'dan bahsediyorsun: le."
+      },
+      "ok": "a lei → le. Çoğul özne (i gatti) → piacciono."
+    },
+    {
+      "t": "choice",
+      "q": "Arkadaşın: “Mi piace il mare.” Sen de seviyorsun. Ne dersin?",
+      "a": "Anche a me.",
+      "o": [
+        "Anche a me.",
+        "Anche io.",
+        "Neanche a me."
+      ],
+      "why": {
+        "Anche io.": "piacere'de özne sen değilsin; “bana da” demelisin: anche a me.",
+        "Neanche a me.": "neanche a me olumsuz cümleye cevaptır (ben de sevmem)."
+      },
+      "ok": "Olumlu cümleye katılmak → Anche a me."
+    },
+    {
+      "t": "choice",
+      "q": "Arkadaşın: “Mi piace il caldo.” Sen sıcağı sevmiyorsun. Ne dersin?",
+      "a": "A me no.",
+      "o": [
+        "A me no.",
+        "Neanche a me.",
+        "Anche a me."
+      ],
+      "why": {
+        "Neanche a me.": "neanche a me olumsuz cümleye katılmaktır. Arkadaşın “severim” dedi; sen karşı çıkıyorsun: A me no.",
+        "Anche a me.": "Bu “ben de severim” demek. Sen sevmiyorsun."
+      },
+      "ok": "Olumluya karşı çıkmak → A me no."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Kahveyi severim.”",
+      "a": [
+        "mi piace il caffè",
+        "a me piace il caffè",
+        "il caffè mi piace"
+      ],
+      "soft": [
+        "mi piace il caffe",
+        "a me piace il caffe",
+        "il caffe mi piace"
+      ],
+      "soft_note": "caffè sonu aksanlı yazılır: Mi piace il caffè.",
+      "hint": "Özne kahve. bana = mi. Artikeli unutma.",
+      "ok": "Mi piace il caffè."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Domatesleri sevmem.” (domates = il pomodoro)",
+      "a": [
+        "non mi piacciono i pomodori",
+        "a me non piacciono i pomodori",
+        "i pomodori non mi piacciono"
+      ],
+      "hint": "non en başa. Özne çoğul: i pomodori.",
+      "ok": "Non mi piacciono i pomodori. non + mi + piacciono."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Ekipte çalışmayı severim.”",
+      "words": [
+        "squadra",
+        "piace",
+        "in",
+        "mi",
+        "lavorare"
+      ],
+      "a": "mi piace lavorare in squadra",
+      "ok": "Mi piace lavorare in squadra. Mastar → piace."
+    },
+    {
+      "t": "type",
+      "q": "Kibarca sor (karşında tanımadığın bir hanım): “Bodrum'u seviyor musunuz?”",
+      "a": [
+        "le piace bodrum",
+        "a lei piace bodrum"
+      ],
+      "hint": "Kibar “size” = Le. Şehir adları artikel almaz. Soru eki yok.",
+      "ok": "Le piace Bodrum? Kibar Le, “ona (kadın)” le ile aynı biçim."
+    }
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Sevdiğin ve sevmediğin şeyleri söylemek (mi piace / mi piacciono / mi piace + mastar), karşındakine sormak (ti piace? Le piace?) ve kısa cevap vermek (anche a me, neanche a me, a me sì, a me no).",
+    "vocab": [
+      "mi piace",
+      "mi piacciono",
+      "ti piace",
+      "gli piace",
+      "le piace",
+      "Le piace",
+      "a me",
+      "anche a me",
+      "neanche a me",
+      "a me sì",
+      "a me no",
+      "molto",
+      "il caffè",
+      "il tè",
+      "la pizza",
+      "i cornetti",
+      "il calcio",
+      "il mare",
+      "il freddo",
+      "il caldo",
+      "le macchine",
+      "lavorare",
+      "cucinare",
+      "leggere",
+      "Bodrum",
+      "Kırıkkale"
+    ],
+    "structures": [
+      "mi/ti/gli/le/Le + piace + tekil isim / mastar",
+      "mi/ti/gli/le/Le + piacciono + çoğul isim",
+      "non + mi + piace",
+      "a + isim + piace",
+      "anche a me / neanche a me / a me sì / a me no"
+    ],
+    "opener_hint": "Chiara kendi zevkiyle açsın: “Mi piace il caffè. E a te? Ti piace il caffè?” Sonra sırayla yemek (pizza, cornetti), yer (Bodrum mu Kırıkkale mi), hava (il caldo / il freddo), iş (lavorare in squadra) sorsun. Bilerek bir olumlu ve bir olumsuz cümle kursun ki Türab anche a me / neanche a me ile cevap versin.",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca cümle/soru, alt satırda parantez içinde Türkçesi. Dolaylı zamirleri sadece piacere ile kullan (mi, ti, gli, le, Le); geçmiş zaman (mi è piaciuto) kullanma. “Anche io” derse nazikçe “Quasi! → Anche a me” diye düzelt. Hata olursa “Quasi! → doğru hali” ve kısa Türkçe neden. 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "piacciono (çoğul özne)",
+      "q": "“A Türab ___ le macchine italiane.”",
+      "a": "piacciono",
+      "o": [
+        "piace",
+        "piacciono"
+      ],
+      "why": {
+        "piace": "Özne Türab değil, le macchine (çoğul). Fiil sevilen şeye uyar: piacciono."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "a me sì / a me no",
+      "q": "Arkadaşın: “Non mi piace il tè.” Sen çayı seviyorsun. Ne dersin?",
+      "a": "A me sì.",
+      "o": [
+        "A me sì.",
+        "A me no.",
+        "Neanche a me."
+      ],
+      "why": {
+        "A me no.": "A me no, olumlu cümleye karşı çıkmaktır. Arkadaşın “sevmem” dedi; sen seviyorsan: A me sì.",
+        "Neanche a me.": "Bu “ben de sevmem” demek. Sen seviyorsun."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "gli / le / Le",
+      "q": "Tanımadığın bir beye kibarca: “___ piace il caffè?” (Kahveyi sever misiniz?)",
+      "a": "Le",
+      "o": [
+        "Le",
+        "Gli",
+        "Ti"
+      ],
+      "why": {
+        "Gli": "gli, bahsettiğin bir erkek için “ona”dır. Kibar “size” her zaman Le, karşındaki erkek de olsa.",
+        "Ti": "ti samimi “sana”dır. Tanımadığın kişiye kibar Le."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "piace + mastar",
+      "q": "Türkçeden çevir: “Okumayı ve yemek yapmayı severim.” (okumak = leggere, yemek yapmak = cucinare)",
+      "a": [
+        "mi piace leggere e cucinare",
+        "a me piace leggere e cucinare"
+      ]
+    },
+    {
+      "t": "type",
+      "topic": "neanche a me",
+      "q": "Arkadaşın: “Non mi piace il caldo.” Sen de sevmiyorsun. Kısaca cevap yaz.",
+      "a": [
+        "neanche a me",
+        "nemmeno a me",
+        "neppure a me"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "“Ci ___ Bodrum.” (Bodrum'u severiz.)",
+        "a": "piace",
+        "o": [
+          "piace",
+          "piacciono",
+          "piacciamo"
+        ],
+        "why": {
+          "piacciono": "Özne Bodrum, tek bir şehir: piace. ci (bize) fiili değiştirmez.",
+          "piacciamo": "piacciamo = “biz hoşa gidiyoruz”. Özne biz değil, Bodrum."
+        },
+        "ok": "Ci piace Bodrum. Kim severse sevsin, fiil sevilen şeye bakar."
+      },
+      {
+        "t": "choice",
+        "q": "Ekibe: “Ragazzi, vi ___ le pizze?”",
+        "a": "piacciono",
+        "o": [
+          "piace",
+          "piacciono",
+          "piacete"
+        ],
+        "why": {
+          "piace": "le pizze çoğul: piacciono.",
+          "piacete": "piacete = “siz hoşa gidiyorsunuz”. Özne siz değil, pizzalar."
+        },
+        "ok": "vi piacciono le pizze? = Pizzaları sever misiniz?"
+      },
+      {
+        "t": "choice",
+        "q": "Hangisi doğru?",
+        "a": "A me piace il tè.",
+        "o": [
+          "A me piace il tè.",
+          "A me mi piace il tè.",
+          "Io piace il tè."
+        ],
+        "why": {
+          "A me mi piace il tè.": "a me ve mi ikisi birden “bana” der; standart dilde yanlış sayılır. Birini seç.",
+          "Io piace il tè.": "io özne olamaz; “bana” lazım: mi ya da a me."
+        },
+        "ok": "A me piace il tè. Vurgu için a me, sade hali Mi piace il tè."
+      },
+      {
+        "t": "type",
+        "q": "Arkadaşına sor: “Futbolu sever misin?”",
+        "a": [
+          "ti piace il calcio",
+          "a te piace il calcio",
+          "il calcio ti piace"
+        ],
+        "hint": "sana = ti. futbol = il calcio.",
+        "ok": "Ti piace il calcio?"
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Marco kedileri sevmez.” (kedi = il gatto)",
+        "a": [
+          "a marco non piacciono i gatti",
+          "i gatti non piacciono a marco"
+        ],
+        "hint": "a + isim, sonra non. Özne çoğul: i gatti.",
+        "ok": "A Marco non piacciono i gatti."
+      },
+      {
+        "t": "order",
+        "q": "Sırala: “Bodrum'u çok severim.”",
+        "words": [
+          "molto",
+          "Bodrum",
+          "piace",
+          "mi"
+        ],
+        "a": "mi piace molto Bodrum",
+        "alt": [
+          "Bodrum mi piace molto"
+        ],
+        "ok": "Mi piace molto Bodrum. molto = çok."
+      }
+    ],
+    "konus_prompt": "Chiara'ya 4 şey söyle: sevdiğin bir yiyecek (tekil), sevdiğin bir şey (çoğul, piacciono), sevdiğin bir iş (piace + mastar) ve sevmediğin bir şey (non mi piace). Sonra ona bir kez “E a te?” diye sor ve cevabına anche a me / neanche a me / a me no ile karşılık ver."
+  }
+}

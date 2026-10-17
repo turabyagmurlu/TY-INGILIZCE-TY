@@ -1,0 +1,169 @@
+{
+  "id": "it20",
+  "lang": "it",
+  "level": "A2",
+  "title": "Passato prossimo (essere)",
+  "lead": "“Şantiyeye gittim”, “Elif geldi”, “Altıda kalktım” cümlelerini essere ile kurabileceksin. Ortacı özneye uydurmayı ve her fiilde avere mi essere mi geleceğine karar vermeyi öğreneceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "essere + ortaç: ortaç sıfat gibi uyar",
+      "blocks": [
+        {"type": "p", "text": "Bazı fiiller geçmişte **essere** alır: **sono andato** (gittim). Tek fark: ortaç bir **sıfat gibi** özneye uyar: -o / -a / -i / -e (it07)."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Git", "s": "fiil kökü"}, {"t": "-ti", "s": "geçmiş", "hl": true}, {"t": "-m", "s": "ben", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Sono", "s": "ben (essere)", "hl": true}, {"t": "andato", "s": "gitmiş (erkek, tekil)", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Özne", "Erkek", "Kadın", "Okunuş"], "x": 1,
+          "rows": [
+            ["io", "sono andato", "sono andata", "SO-no an-DA-to / -ta"],
+            ["tu", "sei andato", "sei andata", "SEY an-DA-to / -ta"],
+            ["lui / lei / Lei", "è andato", "è andata", "E an-DA-to / -ta"],
+            ["noi", "siamo andati", "siamo andate", "SYA-mo an-DA-ti / -te"],
+            ["voi", "siete andati", "siete andate", "SYE-te an-DA-ti / -te"],
+            ["loro", "sono andati", "sono andate", "SO-no an-DA-ti / -te"]
+          ],
+          "say": ["io sono andato", "tu sei andato", "lui è andato", "noi siamo andati", "voi siete andati", "loro sono andati"]},
+        {"type": "note", "text": "Türab: **sono andato**. Elif: **sono andata**. Karışık ekip (içinde tek bir erkek olsa bile): **siamo andati**. Kibar **Lei**'de karşındakinin cinsiyeti belirler: Lei è arrivato / arrivata."},
+        {"type": "note", "warn": true, "text": "Uyum sadece essere'de: Elif **ha lavorato** ama Elif **è andata**. Türkçede olmadığı için en sık unutulan şey bu."}
+      ]
+    },
+    {
+      "title": "Hangi fiiller essere alır? Gitmek, gelmek, kalmak, doğmak",
+      "blocks": [
+        {"type": "p", "text": "essere alanlar genelde **nesnesi olmayan** ve öznenin **yerini ya da durumunu değiştiren** fiillerdir: bir yere gitmek, gelmek, çıkmak, kalmak, doğmak. Liste kısa; ezberle."},
+        {"type": "table", "head": ["Mastar", "Ortaç", "Okunuş", "Türkçesi"], "x": 1,
+          "rows": [
+            ["andare", "andato", "an-DA-to", "gitmek"],
+            ["venire", "venuto", "ve-NU-to", "gelmek"],
+            ["arrivare", "arrivato", "ar-ri-VA-to", "varmak, gelmek"],
+            ["partire", "partito", "par-Tİ-to", "yola çıkmak, ayrılmak"],
+            ["uscire", "uscito", "u-Şİ-to", "dışarı çıkmak"],
+            ["entrare", "entrato", "en-TRA-to", "girmek"],
+            ["tornare", "tornato", "tor-NA-to", "dönmek"],
+            ["restare", "restato", "res-TA-to", "kalmak"],
+            ["stare / essere", "stato", "STA-to", "durmak, bulunmak / olmak"],
+            ["nascere", "nato", "NA-to", "doğmak"]
+          ],
+          "say": ["andato", "venuto", "arrivato", "partito", "uscito", "entrato", "tornato", "restato", "stato", "nato"]},
+        {"type": "note", "warn": true, "text": "Üç düzensiz: **venire → venuto** (venito değil), **essere ve stare → stato**, **nascere → nato**. **Sono stato a Bodrum** = Bodrum'da bulundum. **Sei mai stato…?** = Hiç … bulundun mu? (mai = hiç)."}
+      ]
+    },
+    {
+      "title": "Dönüşlü fiiller hep essere alır",
+      "blocks": [
+        {"type": "p", "text": "it15'teki dönüşlü fiiller (mi alzo, mi lavo) geçmişte **her zaman essere** alır. Zamir (mi, ti, si…) yerinde kalır, araya essere girer, ortaç özneye uyar."},
+        {"type": "compare", "rows": [
+          {"label": "Şimdiki", "items": [{"t": "Mi", "s": "kendimi", "hl": true}, {"t": "alzo", "s": "kaldırırım"}]},
+          {"label": "Geçmiş", "items": [{"t": "Mi", "s": "kendimi", "hl": true}, {"t": "sono", "s": "essere", "hl": true}, {"t": "alzato", "s": "kalktım (erkek)"}]}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "Stamattina mi sono alzato alle sei.", "tr": "Bu sabah altıda kalktım.", "ph": "sta-mat-Tİ-na mi SO-no al-TSA-to AL-le SEY"},
+          {"x": "Elif si è svegliata tardi.", "tr": "Elif geç uyandı.", "ph": "Elif si E zve-LYA-ta TAR-di"},
+          {"x": "Ci siamo lavati le mani.", "tr": "Ellerimizi yıkadık.", "ph": "çi SYA-mo la-VA-ti le MA-ni"}
+        ]},
+        {"type": "note", "warn": true, "text": "**Mi ho alzato** yanlış. Türk kulağı “ho = ben” diye düşünür; ama dönüşlüde ben'i **mi** taşır, yardımcı fiil hep essere: mi **sono**. Yeni kelime: tardi = geç, presto = erken."}
+      ]
+    },
+    {
+      "title": "Karar kuralı: avere mi, essere mi?",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "“Neyi? Kimi?” sorusunun cevabı varsa: avere", "text": "Fiil bir nesneye dokunuyor: ho fatto il lavoro, ho visto Ahmet, ho chiuso la porta.", "ex": {"x": "Ho aperto il quadro.", "tr": "Panoyu açtım."}},
+          {"title": "Yer değiştirme, kalma, doğma: essere", "text": "andare, venire, arrivare, partire, uscire, entrare, tornare, restare, stare, essere, nascere.", "ex": {"x": "Sono tornato a casa.", "tr": "Eve döndüm."}},
+          {"title": "Dönüşlü (mi, ti, si, ci, vi): essere", "text": "mi sono alzato, ci siamo svegliati.", "ex": {"x": "Mi sono lavato.", "tr": "Yıkandım."}},
+          {"title": "Emin değilsen: avere", "text": "Nesnesiz ama avere alan sık fiiller: lavorare, dormire, parlare, camminare (yürümek).", "ex": {"x": "Ho dormito bene.", "tr": "İyi uyudum."}}
+        ]},
+        {"type": "table", "head": ["Türkçe", "İtalyanca", "Fiil"], "x": 1,
+          "rows": [
+            ["Dün çalıştım.", "Ieri ho lavorato.", "avere"],
+            ["Dün şantiyeye gittim.", "Ieri sono andato in cantiere.", "essere"],
+            ["Kapıyı açtık.", "Abbiamo aperto la porta.", "avere"],
+            ["İçeri girdik.", "Siamo entrati.", "essere"],
+            ["Erken kalktım.", "Mi sono alzato presto.", "essere"]
+          ]}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Ieri sono andato in cantiere alle sette.", "tr": "Dün saat yedide şantiyeye gittim.", "ph": "YE-ri SO-no an-DA-to in kan-TYE-re AL-le SET-te"},
+    {"x": "Elif è arrivata ieri sera.", "tr": "Elif dün akşam geldi.", "ph": "Elif E ar-ri-VA-ta YE-ri SE-ra"},
+    {"x": "Siamo partiti da Bodrum la settimana scorsa.", "tr": "Geçen hafta Bodrum'dan ayrıldık.", "ph": "SYA-mo par-Tİ-ti da Bodrum la set-ti-MA-na SKOR-sa"},
+    {"x": "A che ora sei tornato?", "tr": "Saat kaçta döndün?", "ph": "a ke O-ra SEY tor-NA-to"},
+    {"x": "Stamattina mi sono alzato alle sei.", "tr": "Bu sabah altıda kalktım.", "ph": "sta-mat-Tİ-na mi SO-no al-TSA-to AL-le SEY"},
+    {"x": "Gli operai sono usciti alle cinque.", "tr": "İşçiler beşte çıktı.", "ph": "lyi o-pe-RA-i SO-no u-Şİ-ti AL-le ÇİN-kue"},
+    {"x": "Sei mai stato in Italia?", "tr": "Hiç İtalya'da bulundun mu?", "ph": "SEY MAY STA-to in i-TA-lya"},
+    {"x": "Sono restato in cantiere fino alle otto.", "tr": "Sekize kadar şantiyede kaldım.", "ph": "SO-no res-TA-to in kan-TYE-re Fİ-no AL-le OT-to"},
+    {"x": "Ho lavorato e poi sono tornato a casa.", "tr": "Çalıştım, sonra eve döndüm.", "ph": "O la-vo-RA-to e POY SO-no tor-NA-to a KA-sa"},
+    {"x": "Ci siamo svegliati presto.", "tr": "Erken uyandık.", "ph": "çi SYA-mo zve-LYA-ti PRES-to"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Türab: “Io ___ andato in cantiere.”", "a": "sono", "o": ["sono", "ho", "è"],
+      "why": {"ho": "andare hareket fiilidir; geçmişte essere alır: sono andato.", "è": "è = lui/lei. io → sono."},
+      "ok": "andare → essere: sono andato."},
+    {"t": "choice", "q": "Elif è ___ ieri.", "a": "arrivata", "o": ["arrivato", "arrivata", "arrivati"],
+      "why": {"arrivato": "Elif kadın; essere ile ortaç özneye uyar: arrivata.", "arrivati": "-i çoğul içindir; Elif tek kişi: arrivata."},
+      "ok": "Kadın, tekil → -a."},
+    {"t": "choice", "q": "Türab e Ahmet sono ___ alle sei.", "a": "partiti", "o": ["partito", "partiti", "partite"],
+      "why": {"partito": "İki kişi var; çoğul: partiti.", "partite": "-e sadece hepsi kadınsa. Erkek ya da karışık grup → -i."},
+      "ok": "Erkek çoğul → -i."},
+    {"t": "choice", "q": "“Dün eve döndüm.”", "a": "Ieri sono tornato a casa.", "o": ["Ieri ho tornato a casa.", "Ieri sono tornato a casa."],
+      "why": {"Ieri ho tornato a casa.": "tornare (dönmek) yer değiştirme fiilidir: essere alır."},
+      "ok": "tornare → sono tornato."},
+    {"t": "choice", "q": "Ortacı seç: venire → ___", "a": "venuto", "o": ["venito", "venuto", "venato"],
+      "why": {"venito": "-ire fiili ama düzensiz: venuto.", "venato": "-ato sadece -are fiillerinde. venire → venuto."},
+      "ok": "venire → venuto (düzensiz)."},
+    {"t": "choice", "q": "“Bodrum'da bir buçuk yıl kaldım.”", "a": "Sono restato a Bodrum un anno e mezzo.", "o": ["Ho restato a Bodrum un anno e mezzo.", "Sono restato a Bodrum un anno e mezzo."],
+      "why": {"Ho restato a Bodrum un anno e mezzo.": "restare (kalmak) essere listesinde: sono restato."},
+      "ok": "Kalmak da essere alır. un anno e mezzo = bir buçuk yıl. Konuşmada rimanere → sono rimasto (kaldım) da çok sık duyulur."},
+    {"t": "choice", "q": "“Bodrum'da bulundum.”", "a": "Sono stato a Bodrum.", "o": ["Ho stato a Bodrum.", "Sono stato a Bodrum.", "Sono essuto a Bodrum."],
+      "why": {"Ho stato a Bodrum.": "essere'nin geçmişi yine essere ile kurulur: sono stato.", "Sono essuto a Bodrum.": "essere'nin ortacı düzensizdir: stato."},
+      "ok": "essere → sono stato."},
+    {"t": "choice", "q": "“Bu sabah altıda kalktım.”", "a": "Stamattina mi sono alzato alle sei.", "o": ["Stamattina mi sono alzato alle sei.", "Stamattina mi ho alzato alle sei."],
+      "why": {"Stamattina mi ho alzato alle sei.": "Dönüşlü fiiller her zaman essere alır: mi sono alzato."},
+      "ok": "Dönüşlü → essere."},
+    {"t": "choice", "q": "“Panoyu kontrol ettik.”", "a": "Abbiamo controllato il quadro.", "o": ["Siamo controllati il quadro.", "Abbiamo controllato il quadro."],
+      "why": {"Siamo controllati il quadro.": "“Neyi?” → panoyu. Nesne varsa avere: abbiamo controllato."},
+      "ok": "Nesne var → avere."},
+    {"t": "type", "q": "Türkçeden çevir: “Gittik.” (Türab ve Elif)", "a": ["siamo andati", "noi siamo andati"], "hint": "Karışık grup → -i.", "ok": "Siamo andati."},
+    {"t": "type", "q": "Türkçeden çevir: “Elif dün geldi.”", "a": ["elif è venuta ieri", "ieri elif è venuta", "elif è arrivata ieri", "ieri elif è arrivata"], "soft": ["elif e venuta ieri", "ieri elif e venuta", "elif e arrivata ieri", "ieri elif e arrivata"], "soft_note": "Doğru sayıldı. essere'nin è'si aksanla yazılır (e = ve): Elif è venuta ieri.", "hint": "venire → venuto; Elif kadın → -a.", "ok": "Elif è venuta ieri."},
+    {"t": "order", "q": "Sırala: “Saat beşte çıktılar.”", "words": ["usciti", "cinque", "sono", "alle"], "a": "sono usciti alle cinque", "alt": ["alle cinque sono usciti"], "ok": "Sono usciti alle cinque."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Dünkü günü avere ve essere ile anlatmak: kaçta kalktın, şantiyeye ne zaman gittin, ne yaptın, kaçta döndün. Ortacı özneye uydurmak ve dönüşlü fiillerde essere kullanmak.",
+    "vocab": ["andato", "venuto", "arrivato", "partito", "uscito", "entrato", "tornato", "restato", "stato", "nato", "mi sono alzato", "mi sono svegliato", "presto", "tardi", "mai", "fino alle", "poi", "a casa", "in cantiere", "un anno e mezzo"],
+    "structures": ["essere (sono, sei, è, siamo, siete, sono) + ortaç", "ortaç özneye uyar: -o / -a / -i / -e", "essere alan fiiller: andare, venire, arrivare, partire, uscire, entrare, tornare, restare, stare, essere, nascere", "dönüşlü: mi sono alzato, ci siamo svegliati", "nesne varsa avere, yer değiştirme / kalma / dönüşlü → essere"],
+    "opener_hint": "Chiara sabah kahvesinde soruyor: “Ciao Türab! A che ora ti sei alzato stamattina?” (Türkçesi parantezde). Sonra kaçta şantiyeye gittin, ne yaptın (avere), kaçta döndün, hiç İtalya'da bulundun mu, nerede doğdun diye sorsun; bir soruda da kadın özneli cevap gerektirsin (ör. Elif ne zaman geldi?).",
+    "level_note": "A1–A2: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece passato prossimo ve şimdiki zaman kullan; nesne zamirleri (l'ho, lo) ve imperfetto kullanma. Türab yanlış yardımcı fiil seçerse (ho andato, mi ho alzato) ya da uyumu kaçırırsa kuralı tek cümleyle hatırlat."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "özneyle uyum", "q": "Elif e Ayşe sono ___ alle otto.", "a": "partite", "o": ["partiti", "partite", "partita"],
+      "why": {"partiti": "-i erkek ya da karışık grup içindir; ikisi de kadın: partite.", "partita": "-a tek kadın içindir; iki kişi: partite."}},
+    {"t": "choice", "topic": "essere alan fiiller", "q": "“Dün geç döndüm.” Ieri ___ tornato tardi.", "a": "sono", "o": ["ho", "sono"],
+      "why": {"ho": "tornare yer değiştirme fiilidir: essere alır."}},
+    {"t": "choice", "topic": "dönüşlü fiiller", "q": "“Erken uyandık.” Ci ___ svegliati presto.", "a": "siamo", "o": ["abbiamo", "siamo", "sono"],
+      "why": {"abbiamo": "Dönüşlü fiiller essere alır, avere değil.", "sono": "sono = io ya da loro. ci → noi → siamo."}},
+    {"t": "choice", "topic": "avere mi essere mi", "q": "“Dün gece iyi uyudum.”", "a": "Ho dormito bene.", "o": ["Sono dormito bene.", "Ho dormito bene."],
+      "why": {"Sono dormito bene.": "dormire nesnesiz ama yer ya da durum değiştirmiyor: avere alır. Kararsızsan avere."}},
+    {"t": "type", "topic": "düzensiz ortaç (nato)", "q": "Türkçeden çevir: “Kırıkkale'de doğdum.” (Türab)", "a": ["sono nato a kırıkkale", "io sono nato a kırıkkale"], "soft": ["sono nato a kirikkale", "io sono nato a kirikkale"], "soft_note": "Doğru sayıldı. Şehir adı Türkçe yazımıyla: Kırıkkale."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Kadın bir müşteriye kibarca: “Quando è ___?” (Ne zaman geldiniz?)", "a": "arrivata", "o": ["arrivato", "arrivata", "arrivati"],
+        "why": {"arrivato": "Lei kibar hitapta karşındakinin cinsiyeti belirler; kadın → arrivata.", "arrivati": "Tek kişiye konuşuyorsun: arrivata."},
+        "ok": "Lei + kadın → arrivata."},
+      {"t": "choice", "q": "“Raporu yazdım, sonra eve döndüm.”", "a": "Ho scritto il rapporto e poi sono tornato a casa.", "o": ["Ho scritto il rapporto e poi ho tornato a casa.", "Sono scritto il rapporto e poi sono tornato a casa.", "Ho scritto il rapporto e poi sono tornato a casa."],
+        "why": {"Ho scritto il rapporto e poi ho tornato a casa.": "tornare essere alır: sono tornato.", "Sono scritto il rapporto e poi sono tornato a casa.": "scrivere nesne alır (raporu): ho scritto."},
+        "ok": "Aynı cümlede iki yardımcı fiil olabilir."},
+      {"t": "choice", "q": "Ogni giorno mi alzo alle sei, ma ieri ___ alle otto.", "a": "mi sono alzato", "o": ["mi alzo", "mi sono alzato", "mi ho alzato"],
+        "why": {"mi alzo": "ieri (dün) geçmiş ister: mi sono alzato.", "mi ho alzato": "Dönüşlü → essere: mi sono alzato."},
+        "ok": "Şimdiki: mi alzo. Geçmiş: mi sono alzato."},
+      {"t": "type", "q": "Türkçeden çevir: “Nereye gittin?” (bir erkeğe)", "a": ["dove sei andato", "tu dove sei andato", "dove sei andato tu"], "hint": "dove (it12) + sei + andato.", "ok": "Dove sei andato?"},
+      {"t": "type", "q": "Türkçeden çevir: “Hiç İtalya'da bulundun mu?” (bir erkeğe)", "a": ["sei mai stato in italia", "tu sei mai stato in italia", "sei mai stato in italia tu"], "hint": "mai = hiç; essere → stato; ülke önünde in.", "ok": "Sei mai stato in Italia?"},
+      {"t": "order", "q": "Sırala: “Geçen hafta Bodrum'dan ayrıldık.”", "words": ["Bodrum", "partiti", "settimana", "da", "siamo", "scorsa", "la"], "a": "siamo partiti da Bodrum la settimana scorsa", "alt": ["la settimana scorsa siamo partiti da Bodrum"], "ok": "Siamo partiti da Bodrum la settimana scorsa."}
+    ],
+    "konus_prompt": "Chiara dünkü gününü baştan sona soracak: kaçta kalktın, kaçta çıktın, şantiyede ne yaptın, kaçta döndün. En az 5 cümle kur: en az 2'si essere (andato, tornato, uscito…), biri dönüşlü (mi sono alzato), en az 2'si avere (ho lavorato, ho fatto…)."
+  }
+}

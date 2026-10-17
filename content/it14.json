@@ -1,0 +1,182 @@
+{
+  "id": "it14",
+  "lang": "it",
+  "level": "A1",
+  "title": "Birleşik edatlar: al, nel, del, sul, dal…",
+  "lead": "“Tornavida masanın üstünde”, “Anahtarlar kamyonette”, “Şantiyeden geliyorum” gibi cümlelerde edatla artikeli tek kelimede birleştirebileceksin. Ders bitince 35 biçimlik tabloyu ezberlemeden, iki kuralla kurabileceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Edat + artikel = tek kelime",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "13. derste **sul tavolo**'yu hazır kalıp diye gördün. Sırrı şu: beş edat (**di, a, da, in, su**) arkasından gelen belirli artikelle (il, la, i…) **zorunlu olarak** tek kelime olur. Seçmeli değil; “su il tavolo” yanlıştır. Türkçede de “masa + -da” ayrı yazılmaz; burada da edat artikele yapışır."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Ayrı (yanlış)",
+              "items": [
+                {"t": "su", "s": "üstünde"},
+                {"t": "il", "s": "artikel"},
+                {"t": "tavolo", "s": "masa"}
+              ]
+            },
+            {
+              "label": "Birleşik (doğru)",
+              "items": [
+                {"t": "sul", "s": "su + il", "hl": true},
+                {"t": "tavolo", "s": "masa"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {"x": "Il cacciavite è sul tavolo.", "tr": "Tornavida masanın üstünde.", "ph": "il kat-ça-Vİ-te E sul TA-vo-lo"},
+            {"x": "Vado al bar.", "tr": "Bara gidiyorum. (a + il)", "ph": "VA-do al BAR"},
+            {"x": "Le chiavi sono nel furgone.", "tr": "Anahtarlar kamyonette. (in + il)", "ph": "le KYA-vi SO-no nel fur-GO-ne"}
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**Birleşmeyenler:** sotto, dietro, tra/fra, per ve genelde con. Ayrı yazılır: sotto il tavolo, con la squadra."
+        }
+      ]
+    },
+    {
+      "title": "Tam tablo ve iki kural",
+      "blocks": [
+        {
+          "type": "table",
+          "head": ["+", "il", "lo", "l'", "la", "i", "gli", "le"],
+          "rows": [
+            ["di", "del", "dello", "dell'", "della", "dei", "degli", "delle"],
+            ["a", "al", "allo", "all'", "alla", "ai", "agli", "alle"],
+            ["da", "dal", "dallo", "dall'", "dalla", "dai", "dagli", "dalle"],
+            ["in", "nel", "nello", "nell'", "nella", "nei", "negli", "nelle"],
+            ["su", "sul", "sullo", "sull'", "sulla", "sui", "sugli", "sulle"]
+          ],
+          "say": ["del, dello, dell', della, dei, degli, delle", "al, allo, all', alla, ai, agli, alle", "dal, dallo, dall', dalla, dai, dagli, dalle", "nel, nello, nell', nella, nei, negli, nelle", "sul, sullo, sull', sulla, sui, sugli, sulle"]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {"title": "Kök: di → de-, in → ne-", "text": "a, da, su olduğu gibi kalır.", "ex": {"x": "della porta, nella scatola", "tr": "kapının, kutunun içinde"}},
+            {"title": "l çiftlenir; il, i ve gli hariç", "text": "lo, l', la, le önüne edat gelince l iki olur: a + la = alla. il sadece -l bırakır (al), i sadece -i ekler (ai), gli olduğu gibi eklenir (agli).", "ex": {"x": "allo, all', alla, alle", "tr": "ama: al, ai, agli"}}
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Tabloyu ezberleme; sütun başındaki artikeli bil (4. ders), kökü bil, kuralı uygula. 35 biçim kendiliğinden çıkar."
+        }
+      ]
+    },
+    {
+      "title": "Önce artikeli bul, sonra birleştir",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hata çoğu zaman edatta değil, artikelde yapılır. Sıra hep aynı: **isim → artikel (4. ders) → edat + artikel**."
+        },
+        {
+          "type": "table",
+          "head": ["İsim", "Artikel", "Edat", "Sonuç", "Türkçesi"],
+          "x": 3,
+          "rows": [
+            ["magazzino", "il", "in", "nel magazzino", "depoda"],
+            ["zaino", "lo (z)", "in", "nello zaino", "çantada"],
+            ["ufficio", "l' (ünlü)", "di", "dell'ufficio", "ofisin"],
+            ["scala", "la", "su", "sulla scala", "merdivenin üstünde"],
+            ["cavi", "i", "di", "dei cavi", "kabloların"],
+            ["operai", "gli (ünlü)", "a", "agli operai", "işçilere"]
+          ],
+          "say": ["nel magazzino", "nello zaino", "dell'ufficio", "sulla scala", "dei cavi", "agli operai"]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Tipik hatalar: **nel ufficio** ✗ → nell'ufficio (ünlü → l'). **al zaino** ✗ → allo zaino (z → lo). **ai operai** ✗ → agli operai (ünlüyle başlayan eril çoğul → gli)."
+        }
+      ]
+    },
+    {
+      "title": "Beş edatın anlamı ve artikelsiz kalıplar",
+      "blocks": [
+        {
+          "type": "rules",
+          "items": [
+            {"title": "di = -ın / -in (kimin, neyin)", "text": "Türkçedeki iyelik zinciri ters döner: deponun kapısı = kapı + di + depo.", "ex": {"x": "la porta del magazzino, il colore dei cavi", "tr": "deponun kapısı, kabloların rengi"}},
+            {"title": "a = -e / -de", "text": "Gidilen ve bulunulan yer; ayrıca “kime”.", "ex": {"x": "Sono al bar. Do i guanti agli operai.", "tr": "Bardayım. Eldivenleri işçilere veriyorum."}},
+            {"title": "da = -den; kişiyle: birinin yanına", "text": "Nereden geldiğin ya da kimin yanına gittiğin.", "ex": {"x": "Vengo dal cantiere. Vado dal medico.", "tr": "Şantiyeden geliyorum. Doktora gidiyorum."}},
+            {"title": "in = içinde; su = üstünde", "text": "13. dersteki anlamlar aynı, sadece artikelle birleşir.", "ex": {"x": "nel furgone, sulla sedia", "tr": "kamyonette, sandalyenin üstünde"}}
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**Artikel yoksa birleşme yok.** 13. dersteki kalıplar aynen kalır: a Bodrum, in Italia, in cantiere, in ufficio, a casa. Yer belli bir şeyse artikel gelir ve birleşir: **nell'ufficio di Ahmet** (Ahmet'in ofisinde)."
+        },
+        {
+          "type": "note",
+          "text": "a ile biten edatlar da birleşir: **davanti alla porta, vicino al bar, accanto all'ufficio**."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Il cacciavite è sul tavolo.", "tr": "Tornavida masanın üstünde.", "ph": "il kat-ça-Vİ-te E sul TA-vo-lo"},
+    {"x": "Le chiavi sono nel furgone.", "tr": "Anahtarlar kamyonette.", "ph": "le KYA-vi SO-no nel fur-GO-ne"},
+    {"x": "Il casco è nello zaino.", "tr": "Baret çantada.", "ph": "il KAS-ko E NEL-lo DZAY-no"},
+    {"x": "Vado al bar con la squadra.", "tr": "Ekiple bara gidiyorum.", "ph": "VA-do al BAR kon la SKUA-dra"},
+    {"x": "Vengo dal cantiere.", "tr": "Şantiyeden geliyorum.", "ph": "VEN-go dal kan-TYE-re"},
+    {"x": "La porta del magazzino è chiusa.", "tr": "Deponun kapısı kapalı.", "ph": "la POR-ta del ma-gad-DZİ-no E KYU-sa"},
+    {"x": "Do i guanti agli operai.", "tr": "Eldivenleri işçilere veriyorum.", "ph": "DO i GUAN-ti A-lyi o-pe-RA-i"},
+    {"x": "Il quadro è accanto all'ufficio.", "tr": "Pano ofisin yanında.", "ph": "il KUA-dro E ak-KAN-to al-luf-Fİ-ço"},
+    {"x": "Il furgone è davanti alla porta.", "tr": "Kamyonet kapının önünde.", "ph": "il fur-GO-ne E da-VAN-ti AL-la POR-ta"},
+    {"x": "Domani vado dal medico.", "tr": "Yarın doktora gidiyorum.", "ph": "do-MA-ni VA-do dal ME-di-ko"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "su + il = ?", "a": "sul", "o": ["sul", "sullo", "su il"], "why": {"sullo": "sullo, lo içindir (sullo zaino). il → sul.", "su il": "Birleşme zorunlu; ayrı yazılmaz."}, "ok": "su + il = sul."},
+    {"t": "choice", "q": "in + la = ?", "a": "nella", "o": ["nella", "in la", "nela"], "why": {"in la": "in belirli artikelle mutlaka birleşir ve ne- olur.", "nela": "la önüne edat gelince l çiftlenir: nella."}, "ok": "in → ne-, la → -lla: nella."},
+    {"t": "choice", "q": "Vado ___ bar.", "a": "al", "o": ["al", "a il", "allo"], "why": {"a il": "a + il birleşir: al.", "allo": "allo, lo alan isimler içindir (z, s+ünsüz). bar → il bar → al bar."}, "ok": "il bar → al bar."},
+    {"t": "choice", "q": "Il casco è ___ zaino.", "a": "nello", "o": ["nel", "nello", "nell'"], "why": {"nel": "nel, il içindir. zaino z ile başlar → lo zaino → nello.", "nell'": "nell', ünlüyle başlayan isimler içindir (nell'ufficio)."}, "ok": "lo zaino → nello zaino."},
+    {"t": "choice", "q": "Ofisin anahtarları: le chiavi ___ ufficio", "a": "dell'", "o": ["del", "dell'", "della"], "why": {"del": "ufficio ünlüyle başlar → l'ufficio → dell'.", "della": "della, kadınsı la içindir. ufficio eril ve ünlüyle başlar: dell'."}, "ok": "l'ufficio → dell'ufficio."},
+    {"t": "choice", "q": "Do i guanti ___ operai.", "a": "agli", "o": ["ai", "agli", "alle"], "why": {"ai": "ai, i içindir. operai ünlüyle başlar → gli operai → agli.", "alle": "alle, kadınsı çoğul le içindir."}, "ok": "gli operai → agli operai."},
+    {"t": "choice", "q": "“Şantiyeden geliyorum.” → Vengo ___ cantiere.", "a": "dal", "o": ["dal", "del", "nel"], "why": {"del": "di (del) = -ın/-in. Nereden geldiğin için da: dal.", "nel": "nel = içinde. -den için da: dal."}, "ok": "da + il = dal. “-den”."},
+    {"t": "type", "q": "Birleştir: di + le", "a": ["delle"], "hint": "di → de-, le önünde l çiftlenir.", "ok": "delle."},
+    {"t": "type", "q": "Türkçeden çevir: “Deponun kapısı.” (depo = magazzino)", "a": ["la porta del magazzino"], "hint": "kapı + di + depo. il magazzino → del.", "ok": "La porta del magazzino. Türkçe sıranın tersi."},
+    {"t": "type", "q": "Türkçeden çevir: “Tornavida masanın üstünde.”", "a": ["il cacciavite è sul tavolo", "il cacciavite sta sul tavolo"], "soft": ["il cacciavite e sul tavolo"], "soft_note": "è aksanlı yazılır: Il cacciavite è sul tavolo.", "hint": "su + il tavolo.", "ok": "Il cacciavite è sul tavolo."},
+    {"t": "order", "q": "Sırala: “Anahtarlar kamyonetin içinde.”", "words": ["furgone", "chiavi", "nel", "sono", "le"], "a": "le chiavi sono nel furgone", "ok": "Le chiavi sono nel furgone."},
+    {"t": "order", "q": "Sırala: “Ekiple bara gidiyorum.”", "words": ["squadra", "al", "con", "vado", "la", "bar"], "a": "vado al bar con la squadra", "alt": ["con la squadra vado al bar"], "ok": "Vado al bar con la squadra. al birleşik, con la ayrı."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Eşyaların yerini ve kimin/neyin olduğunu birleşik edatlarla söylemek: sul, nel, al, dal, del ve diğer biçimler.",
+    "vocab": ["del / della / dei", "al / alla / agli", "dal / dalla", "nel / nello / nell'", "sul / sulla", "il tavolo", "il furgone", "lo zaino", "l'ufficio", "il magazzino", "la scala", "le chiavi", "il casco", "i guanti", "il medico", "il bar", "il colore", "chiuso/chiusa"],
+    "structures": ["di/a/da/in/su + il/lo/l'/la/i/gli/le", "di → de-, in → ne-; il → -l, i → -i, gli → -gli, lo/l'/la/le önünde l çift", "artikelsiz kalıplar birleşmez: a Bodrum, in cantiere", "davanti al / vicino al / accanto all'"],
+    "opener_hint": "Chiara bir sabah şantiyede eşyalarını arıyor: “Türab, dove sono le chiavi del furgone?” (Türkçesi parantezde). Sonra baretin, eldivenlerin, tornavidanın yerini sorsun; bir soruda “Da dove vieni?” ile -den sorsun.",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece önceki derslerin yapıları. Türab “su il / in lo / a il” derse “Quasi! → sul / nello / al” ve tek cümleyle neden (artikeli bul, birleştir). 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+  },
+  "yokla": [
+    {"t": "choice", "topic": "a + artikel", "q": "Il furgone è davanti ___ porta.", "a": "alla", "o": ["alla", "a la", "al"], "why": {"a la": "a + la birleşir ve l çiftlenir: alla.", "al": "al, eril il içindir. la porta kadınsı → alla."}},
+    {"t": "choice", "topic": "lo / l' ile birleşme", "q": "Il manuale è ___ armadio. (kılavuz dolabın içinde)", "a": "nell'", "o": ["nel", "nell'", "nello"], "why": {"nel": "armadio ünlüyle başlar → l'armadio → nell'.", "nello": "nello, lo içindir (z, s+ünsüz). Ünlü → nell'."}},
+    {"t": "choice", "topic": "artikelsiz kalıp", "q": "Abito ___ Bodrum.", "a": "a", "o": ["a", "al", "nel"], "why": {"al": "Şehir adında artikel yok; birleşecek bir şey yok: a Bodrum.", "nel": "Şehir için a; ayrıca artikel olmadığı için birleşme yok."}},
+    {"t": "type", "topic": "di + artikel", "q": "Türkçeden çevir: “Kabloların rengi.” (renk = il colore)", "a": ["il colore dei cavi"]},
+    {"t": "type", "topic": "tablo: da + gli", "q": "Birleştir: da + gli", "a": ["dagli"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Ahmet merdivenin üstünde: Ahmet è ___ scala.", "a": "sulla", "o": ["sulla", "sula", "sul"], "why": {"sula": "la önünde l çiftlenir: sulla.", "sul": "sul, eril il içindir. la scala → sulla."}, "ok": "su + la = sulla."},
+      {"t": "choice", "q": "“Kapıların rengi.” → il colore ___ porte", "a": "delle", "o": ["dei", "delle", "degli"], "why": {"dei": "dei, eril çoğul i içindir. le porte → delle.", "degli": "degli, eril çoğul gli içindir. le porte → delle."}, "ok": "le porte → delle porte."},
+      {"t": "choice", "q": "“Hastaneye gidiyorum.” → Vado ___ ospedale.", "a": "all'", "o": ["al", "all'", "alla"], "why": {"al": "ospedale ünlüyle başlar → l'ospedale → all'.", "alla": "alla, kadınsı la içindir. ospedale eril, ünlüyle başlar."}, "ok": "l'ospedale → all'ospedale."},
+      {"t": "type", "q": "Birleştir: in + gli", "a": ["negli"], "hint": "in → ne-, gli olduğu gibi eklenir (l çiftlenmez).", "ok": "negli."},
+      {"t": "type", "q": "Türkçeden çevir: “Doktora gidiyorum.” (doktor = il medico)", "a": ["vado dal medico", "io vado dal medico", "vado dal dottore", "io vado dal dottore"], "hint": "Birinin yanına gitmek: da + il.", "ok": "Vado dal medico. Kişinin yanına: da."},
+      {"t": "order", "q": "Sırala: “Pano ofisin yanında.”", "words": ["all'ufficio", "quadro", "accanto", "è", "il"], "a": "il quadro è accanto all'ufficio", "ok": "Il quadro è accanto all'ufficio."}
+    ],
+    "konus_prompt": "Chiara'ya şantiye kamyonetini ve deponu anlat: 4 eşyanın yerini birleşik edatla söyle (sul, nel, nello, sulla, accanto al…), bir şeyin kime ait olduğunu di ile söyle (le chiavi del furgone) ve bugün nereden geldiğini da ile söyle."
+  }
+}

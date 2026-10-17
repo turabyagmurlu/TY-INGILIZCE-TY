@@ -1,0 +1,717 @@
+{
+  "id": "en06",
+  "lang": "en",
+  "level": "B1",
+  "title": "Zorunluluk ve tavsiye: must, have to, should",
+  "lead": "İş güvenliği kurallarını, zorunlulukları ve tavsiyeleri doğru tonla söyleyeceksin. “Gerek yok” (don't have to, needn't) ile “yasak” (mustn't) arasındaki tehlikeli farkı karıştırmayacaksın.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "must mı, have to mu?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "İkisi de “zorunda olmak, -meli” demek. Fark **kuralın kaynağında**: **must** = konuşanın kendi gördüğü gereklilik ya da yazılı kural (tabela, talimat, sözleşme). **have to** = dışarıdan gelen zorunluluk: yönetmelik, müşteri, patron, durum. Günlük konuşmada have to daha yaygın."
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "must",
+            "have to"
+          ],
+          "rows": [
+            [
+              "Kaynak",
+              "konuşanın kendisi, yazılı kural",
+              "dış kural, durum"
+            ],
+            [
+              "Ton",
+              "güçlü, kişisel",
+              "nötr, günlük"
+            ],
+            [
+              "Örnek",
+              "I must call the supplier today.",
+              "We have to wear harnesses above two metres."
+            ],
+            [
+              "Tabela",
+              "Visitors must report to the site office.",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "must + yalın fiil",
+              "text": "Arkasından to gelmez, çekimlenmez.",
+              "ex": {
+                "x": "He must wait here.",
+                "tr": "Burada beklemeli."
+              }
+            },
+            {
+              "title": "have to çekimlenir",
+              "text": "he/she/it → has to; olumsuz ve soru do/does ile.",
+              "ex": {
+                "x": "She has to sign the permit. Does she have to sign it today?",
+                "tr": "İzni imzalaması gerek. Bugün imzalaması gerekiyor mu?"
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Sık hata: “I must to go.” / “He have to work.” → **I must go.** / **He has to work.**",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "Tehlikeli fark: mustn't ≠ don't have to",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Olumluda must ile have to yakın; **olumsuzda anlamları tamamen ayrılır**. Türkçede “zorunda değilsin” ile “yapmamalısın / yasak” ayrı ifadeler; İngilizcede de ayrı ama kelimeler benzediği için Türkler sık karıştırır."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Eldiven takmak",
+                  "s": "iş"
+                },
+                {
+                  "t": "zorunda değilsin.",
+                  "s": "istersen tak",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "You",
+                  "s": "özne"
+                },
+                {
+                  "t": "don't have to",
+                  "s": "gerek yok",
+                  "hl": true
+                },
+                {
+                  "t": "wear gloves.",
+                  "s": "iş"
+                }
+              ]
+            },
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Enerjiliyken panoyu",
+                  "s": "durum"
+                },
+                {
+                  "t": "açmamalısın.",
+                  "s": "yasak",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "You",
+                  "s": "özne"
+                },
+                {
+                  "t": "mustn't",
+                  "s": "yasak",
+                  "hl": true
+                },
+                {
+                  "t": "open the panel while it's live.",
+                  "s": "iş"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Biçim",
+            "Anlamı",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "mustn't",
+              "yasak, yapma",
+              "You mustn't smoke near the fuel tank."
+            ],
+            [
+              "don't have to",
+              "gerek yok, seçim senin",
+              "You don't have to come on Saturday."
+            ],
+            [
+              "needn't",
+              "gerek yok (İngiliz İngilizcesi)",
+              "You needn't bring your tools. We have them."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "text": "Yeni işçiye “You don't have to touch that cable” dersen “dokunmasan da olur” demiş olursun, yasaklamamış olursun! Yasak: **You mustn't touch that cable.**",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "Tavsiye: should ve ought to",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Zorunluluk değil, “**doğrusu bu, bence yap**”: should. ought to aynı anlamda, biraz daha resmi ve daha seyrek. Türkçedeki “-meli” hem kural hem tavsiye olabilir; İngilizcede tonu sen seçersin: kural mı (must, have to), tavsiye mi (should)?"
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "should + yalın fiil",
+              "text": "to yok.",
+              "ex": {
+                "x": "You should check the voltage before you start.",
+                "tr": "Başlamadan önce gerilimi kontrol etmelisin."
+              }
+            },
+            {
+              "title": "shouldn't",
+              "text": "Tavsiye edilmeyen şey; yasak kadar sert değil.",
+              "ex": {
+                "x": "You shouldn't work alone on a ladder.",
+                "tr": "Merdivende tek başına çalışmamalısın."
+              }
+            },
+            {
+              "title": "ought to (+ to!)",
+              "text": "should ile aynı anlam; to unutulmaz.",
+              "ex": {
+                "x": "We ought to order the cable this week.",
+                "tr": "Kabloyu bu hafta sipariş etmeliyiz."
+              }
+            },
+            {
+              "title": "Should I…?",
+              "text": "Türkçedeki “-eyim mi?” sorusu.",
+              "ex": {
+                "x": "Should I switch off the main breaker?",
+                "tr": "Ana şalteri kapatayım mı?"
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Ton: müşteriye “You must sign this today” sert duyulur. Yumuşak: **You should sign this by Friday** ya da **Could you sign this by Friday?**",
+          "warn": false
+        }
+      ]
+    },
+    {
+      "title": "Geçmiş ve gelecek: hep have to",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "must'ın geçmiş biçimi yok. Zamanı değiştirmen gerekince **have to**'yu çekimlersin: “zorunda kaldık” = had to, “zorunda kalacaksın” = will have to."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zaman",
+            "Biçim",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Şimdi",
+              "have to / has to",
+              "She has to sign the timesheet."
+            ],
+            [
+              "Geçmiş",
+              "had to",
+              "We had to replace the whole cable."
+            ],
+            [
+              "Geçmiş olumsuz",
+              "didn't have to",
+              "We didn't have to pay for the delivery."
+            ],
+            [
+              "Gelecek",
+              "will have to",
+              "You'll have to wait for the inspector."
+            ],
+            [
+              "Soru",
+              "Do … have to? / Did … have to?",
+              "Do we have to work on Sunday?"
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "text": "İki modal yan yana gelmez: “will must” yanlış → **will have to**. Geçmişte “gerek yoktu” için en güvenlisi **didn't have to / didn't need to**; needn't'i şimdi ve gelecek için kullan.",
+          "warn": true
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "You have to wear a helmet and safety boots at all times.",
+      "tr": "Her zaman baret ve iş ayakkabısı giymek zorundasın."
+    },
+    {
+      "x": "You mustn't open the panel while it's live.",
+      "tr": "Enerjiliyken panoyu açmamalısın."
+    },
+    {
+      "x": "You don't have to come on Saturday. We've finished the cabling.",
+      "tr": "Cumartesi gelmene gerek yok. Kablolamayı bitirdik."
+    },
+    {
+      "x": "You should always check the voltage before you touch anything.",
+      "tr": "Bir şeye dokunmadan önce her zaman gerilimi kontrol etmelisin."
+    },
+    {
+      "x": "Should I switch off the main breaker?",
+      "tr": "Ana şalteri kapatayım mı?"
+    },
+    {
+      "x": "We had to replace the whole cable after the test.",
+      "tr": "Testten sonra bütün kabloyu değiştirmek zorunda kaldık."
+    },
+    {
+      "x": "You needn't bring your own tools. We have everything here.",
+      "tr": "Kendi aletlerini getirmene gerek yok. Burada her şey var."
+    },
+    {
+      "x": "We ought to order the cable this week. Prices are going up.",
+      "tr": "Kabloyu bu hafta sipariş etmeliyiz. Fiyatlar artıyor."
+    },
+    {
+      "x": "Does the client have to approve the drawings first?",
+      "tr": "Müşterinin önce çizimleri onaylaması gerekiyor mu?"
+    },
+    {
+      "x": "You'll have to wait until the area is safe.",
+      "tr": "Alan güvenli olana kadar beklemek zorunda kalacaksın."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "She ___ wear a harness above two metres.",
+      "a": "has to",
+      "o": [
+        "has to",
+        "have to",
+        "must to"
+      ],
+      "why": {
+        "have to": "she → has to.",
+        "must to": "must'tan sonra to gelmez: she must wear."
+      },
+      "ok": "she/he/it → has to."
+    },
+    {
+      "t": "choice",
+      "q": "Tabela: “All visitors ___ report to the site office.”",
+      "a": "must",
+      "o": [
+        "must",
+        "should",
+        "don't have to"
+      ],
+      "why": {
+        "should": "Tabela kural koyar; should sadece tavsiye.",
+        "don't have to": "Bu “gerek yok” demek; anlam ters."
+      },
+      "ok": "Yazılı kural → must."
+    },
+    {
+      "t": "choice",
+      "q": "Yeni işçiyi uyarıyorsun: “You ___ touch that cable. It's live!”",
+      "a": "mustn't",
+      "o": [
+        "mustn't",
+        "don't have to",
+        "needn't"
+      ],
+      "why": {
+        "don't have to": "“Dokunmana gerek yok” olur; yasak değil.",
+        "needn't": "needn't de “gerek yok” demek; yasak için mustn't."
+      },
+      "ok": "Yasak → mustn't."
+    },
+    {
+      "t": "choice",
+      "q": "The work is finished. Tomorrow is Saturday, so you ___ come.",
+      "a": "don't have to",
+      "o": [
+        "don't have to",
+        "mustn't"
+      ],
+      "why": {
+        "mustn't": "mustn't = gelmen yasak. Burada gelmene gerek yok: don't have to."
+      },
+      "ok": "Gerek yok → don't have to."
+    },
+    {
+      "t": "choice",
+      "q": "Bence: “You ___ check the earthing before you start.”",
+      "a": "should",
+      "o": [
+        "should",
+        "should to",
+        "ought"
+      ],
+      "why": {
+        "should to": "should'dan sonra to gelmez.",
+        "ought": "ought'tan sonra to gerekir: ought to check."
+      },
+      "ok": "Tavsiye → should."
+    },
+    {
+      "t": "choice",
+      "q": "Yesterday we ___ work until 9 pm.",
+      "a": "had to",
+      "o": [
+        "had to",
+        "must",
+        "musted"
+      ],
+      "why": {
+        "must": "must'ın geçmiş biçimi yok; geçmiş zorunluluk: had to.",
+        "musted": "Böyle bir biçim yok."
+      },
+      "ok": "Geçmiş → had to."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Pano enerjiliyken açmamalısın.”",
+      "words": [
+        "open",
+        "mustn't",
+        "panel",
+        "the",
+        "You",
+        "while",
+        "it's",
+        "live"
+      ],
+      "a": "You mustn't open the panel while it's live",
+      "ok": "You mustn't open the panel while it's live."
+    },
+    {
+      "t": "choice",
+      "q": "___ we have to finish the cabling by Friday?",
+      "a": "Do",
+      "o": [
+        "Do",
+        "Must",
+        "Have"
+      ],
+      "why": {
+        "Must": "must ile have to birlikte kullanılmaz.",
+        "Have": "have to sorusu do ile kurulur: Do we have to…?"
+      },
+      "ok": "Do … have to?"
+    },
+    {
+      "t": "choice",
+      "q": "We have spare gloves. You ___ bring yours.",
+      "a": "needn't",
+      "o": [
+        "needn't",
+        "mustn't",
+        "needn't to"
+      ],
+      "why": {
+        "mustn't": "Getirmek yasak değil; sadece gerek yok.",
+        "needn't to": "Modal needn't'tan sonra to gelmez (don't need to ile karıştırma)."
+      },
+      "ok": "Gerek yok → needn't."
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “He don't have to work on Sunday.”",
+      "a": [
+        "he doesn't have to work on sunday",
+        "he does not have to work on sunday"
+      ],
+      "hint": "he → doesn't.",
+      "ok": "He doesn't have to work on Sunday."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Geçen hafta bütün kabloyu değiştirmek zorunda kaldık.”",
+      "a": [
+        "last week we had to replace the whole cable",
+        "last week we had to replace all the cable",
+        "last week we had to replace all the cables",
+        "last week we had to replace all of the cable",
+        "we had to replace the whole cable last week",
+        "we had to replace all the cable last week",
+        "we had to replace all the cables last week",
+        "we had to replace all of the cable last week",
+        "we had to change the whole cable last week",
+        "we had to change all the cable last week",
+        "we had to change all the cables last week",
+        "last week we had to change the whole cable",
+        "last week we had to change all the cable",
+        "last week we had to change all the cables"
+      ],
+      "hint": "zorunda kaldık → had to.",
+      "ok": "We had to replace the whole cable last week."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Mühendisi arayayım mı?”",
+      "a": [
+        "should i call the engineer",
+        "should i phone the engineer",
+        "should i ring the engineer",
+        "shall i call the engineer",
+        "shall i phone the engineer",
+        "shall i ring the engineer"
+      ],
+      "hint": "-eyim mi? → Should I…?",
+      "ok": "Should I call the engineer?"
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Yeni gelen işçiye iş güvenliği kurallarını anlatmak: zorunlulukları (must, have to), yasakları (mustn't), gerek olmayan şeyleri (don't have to, needn't) ve tavsiyeleri (should, ought to) doğru tonla söylemek.",
+    "vocab": [
+      "helmet",
+      "safety boots",
+      "harness",
+      "gloves",
+      "safety glasses",
+      "live",
+      "isolate",
+      "lock out",
+      "permit to work",
+      "main breaker",
+      "voltage tester",
+      "ladder",
+      "scaffolding",
+      "site office",
+      "first aid"
+    ],
+    "structures": [
+      "You have to… / You must… (zorunluluk)",
+      "You mustn't… (yasak)",
+      "You don't have to… / You needn't… (gerek yok)",
+      "You should… / You ought to… (tavsiye)",
+      "Do I have to…? / Should I…?",
+      "had to / will have to"
+    ],
+    "opener_hint": "Oliver ilk gününde sahaya gelen İngiliz bir elektrikçi: “Hi, I'm Oliver, it's my first day. What do I need to know before I start? Do I have to wear a harness all the time?” Sonra “Can I use my own tools?” ve “What should I do if I see a problem?” diye sorsun.",
+    "level_note": "B1+: doğal saha konuşması, 1-3 cümle. mustn't / don't have to karışırsa hemen kısa düzelt (güvenlik açısından kritik, dersin hedefi); diğer hataları 3 turda bir “You said … → Better: …” diye topla."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "mustn't = yasak",
+      "q": "You ___ smoke near the fuel tank.",
+      "a": "mustn't",
+      "o": [
+        "mustn't",
+        "don't have to"
+      ],
+      "why": {
+        "don't have to": "“Sigara içmene gerek yok” olur; burada yasak: mustn't."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "don't have to = gerek yok",
+      "q": "The client is paying for the delivery, so we ___ pay for it.",
+      "a": "don't have to",
+      "o": [
+        "don't have to",
+        "mustn't",
+        "haven't to"
+      ],
+      "why": {
+        "mustn't": "Ödemek yasak değil; sadece gerek yok.",
+        "haven't to": "have to'nun olumsuzu do ile: don't have to."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "should = tavsiye",
+      "q": "You look exhausted. You ___ take a break.",
+      "a": "should",
+      "o": [
+        "should",
+        "should to",
+        "mustn't"
+      ],
+      "why": {
+        "should to": "should'dan sonra to gelmez.",
+        "mustn't": "Mola vermek yasak değil; tavsiye: should."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "had to (geçmiş)",
+      "q": "Çevir: “Pazar günü çalışmak zorunda kaldık.”",
+      "a": [
+        "we had to work on sunday",
+        "on sunday we had to work",
+        "we had to work sunday"
+      ]
+    },
+    {
+      "t": "choice",
+      "topic": "Does … have to?",
+      "q": "___ the electrician have to sign the permit?",
+      "a": "Does",
+      "o": [
+        "Does",
+        "Do",
+        "Has"
+      ],
+      "why": {
+        "Do": "electrician tekil → Does.",
+        "Has": "have to sorusu do/does ile kurulur."
+      }
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "You ___ wear gloves for this job; it's up to you.",
+        "a": "don't have to",
+        "o": [
+          "don't have to",
+          "mustn't",
+          "have to"
+        ],
+        "why": {
+          "mustn't": "Eldiven yasak değil; seçim senin.",
+          "have to": "“it's up to you” = karar senin; zorunluluk yok."
+        },
+        "ok": "Seçim senin → don't have to."
+      },
+      {
+        "t": "choice",
+        "q": "Prices are going up. We ___ order the cable soon.",
+        "a": "ought to",
+        "o": [
+          "ought to",
+          "ought",
+          "must to"
+        ],
+        "why": {
+          "ought": "ought'tan sonra to gerekir.",
+          "must to": "must'tan sonra to gelmez."
+        },
+        "ok": "ought to + fiil."
+      },
+      {
+        "t": "choice",
+        "q": "Workers ___ enter the substation without permission.",
+        "a": "mustn't",
+        "o": [
+          "mustn't",
+          "don't have to",
+          "needn't"
+        ],
+        "why": {
+          "don't have to": "Bu “gerek yok” demek; burada yasak.",
+          "needn't": "needn't de “gerek yok”; yasak için mustn't."
+        },
+        "ok": "Yasak → mustn't."
+      },
+      {
+        "t": "choice",
+        "q": "Tomorrow you ___ wait for the inspector before you start.",
+        "a": "will have to",
+        "o": [
+          "will have to",
+          "will must",
+          "must to"
+        ],
+        "why": {
+          "will must": "İki modal yan yana gelmez; gelecek: will have to.",
+          "must to": "must'tan sonra to gelmez."
+        },
+        "ok": "Gelecek → will have to."
+      },
+      {
+        "t": "type",
+        "q": "Düzelt: “You must to wear a helmet.”",
+        "a": [
+          "you must wear a helmet"
+        ],
+        "soft": [
+          "you have to wear a helmet"
+        ],
+        "soft_note": "Doğru ve doğal; ama düzeltme must ile beklendi: You must wear a helmet.",
+        "hint": "must + yalın fiil.",
+        "ok": "You must wear a helmet."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Müşteriye bugün cevap vermek zorunda değiliz.”",
+        "a": [
+          "we don't have to answer the client today",
+          "we don't have to reply to the client today",
+          "we don't have to respond to the client today",
+          "we don't have to give the client an answer today",
+          "we do not have to answer the client today",
+          "we do not have to reply to the client today",
+          "we do not have to respond to the client today",
+          "we do not have to give the client an answer today",
+          "we don't need to answer the client today",
+          "we don't need to reply to the client today",
+          "we don't need to respond to the client today",
+          "we don't need to give the client an answer today",
+          "we do not need to answer the client today",
+          "we do not need to reply to the client today",
+          "we do not need to respond to the client today",
+          "we do not need to give the client an answer today",
+          "we needn't answer the client today",
+          "we needn't reply to the client today",
+          "we needn't respond to the client today",
+          "we needn't give the client an answer today"
+        ],
+        "hint": "zorunda değiliz → don't have to.",
+        "ok": "We don't have to answer the client today."
+      }
+    ],
+    "konus_prompt": "Oliver yeni gelen İngiliz bir işçi; ona şantiyenin ilk gün kurallarını anlat: en az iki zorunluluk (have to / must), iki yasak (mustn't), bir “gerek yok” (don't have to / needn't) ve iki tavsiye (should)."
+  }
+}

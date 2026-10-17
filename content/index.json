@@ -42,6 +42,104 @@
     "minutes": 35
   },
   {
+    "id": "it07",
+    "lang": "it",
+    "level": "A1",
+    "title": "Sıfatlar ve uyum",
+    "minutes": 35
+  },
+  {
+    "id": "it08",
+    "lang": "it",
+    "level": "A1",
+    "title": "Sayılar, saat ve tarih",
+    "minutes": 35
+  },
+  {
+    "id": "it09",
+    "lang": "it",
+    "level": "A1",
+    "title": "Şimdiki zaman: -are fiilleri",
+    "minutes": 35
+  },
+  {
+    "id": "it10",
+    "lang": "it",
+    "level": "A1",
+    "title": "Şimdiki zaman: -ere / -ire",
+    "minutes": 35
+  },
+  {
+    "id": "it11",
+    "lang": "it",
+    "level": "A1",
+    "title": "Düzensiz fiiller 1: fare, andare, venire, stare, dare",
+    "minutes": 35
+  },
+  {
+    "id": "it12",
+    "lang": "it",
+    "level": "A1",
+    "title": "Soru kelimeleri: chi, dove, quando…",
+    "minutes": 30
+  },
+  {
+    "id": "it13",
+    "lang": "it",
+    "level": "A1",
+    "title": "c'è / ci sono ve yer edatları",
+    "minutes": 35
+  },
+  {
+    "id": "it14",
+    "lang": "it",
+    "level": "A1",
+    "title": "Birleşik edatlar: al, nel, del, sul, dal…",
+    "minutes": 35
+  },
+  {
+    "id": "it15",
+    "lang": "it",
+    "level": "A1",
+    "title": "Günlük rutin ve dönüşlü fiiller",
+    "minutes": 35
+  },
+  {
+    "id": "it16",
+    "lang": "it",
+    "level": "A1",
+    "title": "Modal fiiller: potere, volere, dovere",
+    "minutes": 35
+  },
+  {
+    "id": "it17",
+    "lang": "it",
+    "level": "A1",
+    "title": "Kafe ve market: vorrei, quanto costa, il conto",
+    "minutes": 35
+  },
+  {
+    "id": "it18",
+    "lang": "it",
+    "level": "A1",
+    "title": "Mi piace / mi piacciono: sevmek ters kurulur",
+    "minutes": 35
+  },
+  {
+    "id": "it19",
+    "lang": "it",
+    "level": "A2",
+    "title": "Passato prossimo (avere)",
+    "minutes": 35
+  },
+  {
+    "id": "it20",
+    "lang": "it",
+    "level": "A2",
+    "title": "Passato prossimo (essere)",
+    "minutes": 35
+  },
+  {
     "id": "en01",
     "lang": "en",
     "level": "B1",
@@ -61,5 +159,68 @@
     "level": "B1",
     "title": "Present perfect continuous",
     "minutes": 30
+  },
+  {
+    "id": "en04",
+    "lang": "en",
+    "level": "B1",
+    "title": "Gelecek: will, going to, -iyor, will be -ing",
+    "minutes": 35
+  },
+  {
+    "id": "en05",
+    "lang": "en",
+    "level": "B1",
+    "title": "Koşul cümleleri: 0, 1 ve 2",
+    "minutes": 35
+  },
+  {
+    "id": "en06",
+    "lang": "en",
+    "level": "B1",
+    "title": "Zorunluluk ve tavsiye: must, have to, should",
+    "minutes": 35
+  },
+  {
+    "id": "en07",
+    "lang": "en",
+    "level": "B1",
+    "title": "Çıkarım: must be, might be, can't be",
+    "minutes": 35
+  },
+  {
+    "id": "en08",
+    "lang": "en",
+    "level": "B1",
+    "title": "Edilgen yapı: is done, was done, has been done",
+    "minutes": 35
+  },
+  {
+    "id": "en09",
+    "lang": "en",
+    "level": "B1",
+    "title": "Relative clauses: who, which, that, whose, where",
+    "minutes": 35
+  },
+  {
+    "id": "en10",
+    "lang": "en",
+    "level": "B1",
+    "title": "Gerund mı, infinitive mi? (-ing / to)",
+    "minutes": 35
+  },
+  {
+    "id": "en11",
+    "lang": "en",
+    "level": "B2",
+    "title": "Third ve mixed conditional",
+    "minutes": 35
+  },
+  {
+    "id": "en12",
+    "lang": "en",
+    "level": "B2",
+    "title": "Wish, if only, I'd rather",
+    "minutes": 35
   }
 ]

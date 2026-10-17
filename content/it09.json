@@ -1,0 +1,749 @@
+{
+ "id": "it09",
+ "lang": "it",
+ "level": "A1",
+ "title": "Şimdiki zaman: -are fiilleri",
+ "lead": "İlk gerçek fiil çekimin: “Şantiyede çalışıyorum”, “Kırıkkale'de oturuyorum”, “Kabloları bağlıyoruz” cümlelerini kurabileceksin. Tek bir kalıbı öğrenince yüzlerce -are fiilini çekebilirsin.",
+ "minutes": 35,
+ "anlat": [
+  {
+   "title": "Fiil = kök + kişi eki (Türkçedeki gibi)",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sözlükte fiil mastar hâlindedir: **parlare** (konuşmak), **lavorare** (çalışmak), **abitare** (oturmak, ikamet etmek). Türkçede -mek'i atıp kişi eki eklersin; İtalyancada da **-are**'yi atıp köke kişi eki eklersin."
+    },
+    {
+     "type": "compare",
+     "rows": [
+      {
+       "label": "Türkçe",
+       "items": [
+        {
+         "t": "konuş",
+         "s": "kök"
+        },
+        {
+         "t": "-uyor",
+         "s": "zaman"
+        },
+        {
+         "t": "-um",
+         "s": "ben",
+         "hl": true
+        }
+       ]
+      },
+      {
+       "label": "İtalyanca",
+       "items": [
+        {
+         "t": "parl",
+         "s": "kök (parl-are)"
+        },
+        {
+         "t": "-o",
+         "s": "ben + şimdi",
+         "hl": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ek hem kişiyi hem zamanı taşır. Bu yüzden essere'deki gibi özneyi atabilirsin: **Parlo** = (Ben) konuşuyorum."
+    },
+    {
+     "type": "table",
+     "head": [
+      "İtalyanca",
+      "Okunuş",
+      "Türkçesi"
+     ],
+     "x": 0,
+     "rows": [
+      [
+       "Lavoro in cantiere.",
+       "la-VO-ro in kan-TYE-re",
+       "Şantiyede çalışıyorum. / Şantiyede çalışırım."
+      ],
+      [
+       "Lavoro anche domani.",
+       "la-VO-ro AN-ke do-MA-ni",
+       "Yarın da çalışıyorum."
+      ]
+     ]
+    },
+    {
+     "type": "note",
+     "text": "İtalyancada tek bir şimdiki zaman var. Türkçedeki **-iyor** (şu an), **-ir** (her zaman) ve yakın gelecek (yarın) için aynı biçim kullanılır. Yeni kelimeler: **anche** = de/da, **domani** = yarın."
+    }
+   ]
+  },
+  {
+   "title": "Altı ek: -o, -i, -a, -iamo, -ate, -ano",
+   "blocks": [
+    {
+     "type": "table",
+     "head": [
+      "Özne",
+      "Ek",
+      "parlare",
+      "Okunuş",
+      "Anlamı"
+     ],
+     "x": 2,
+     "rows": [
+      [
+       "io",
+       "-o",
+       "parlo",
+       "PAR-lo",
+       "konuşuyorum"
+      ],
+      [
+       "tu",
+       "-i",
+       "parli",
+       "PAR-li",
+       "konuşuyorsun"
+      ],
+      [
+       "lui / lei / Lei",
+       "-a",
+       "parla",
+       "PAR-la",
+       "konuşuyor / konuşuyorsunuz (kibar)"
+      ],
+      [
+       "noi",
+       "-iamo",
+       "parliamo",
+       "par-LYA-mo",
+       "konuşuyoruz"
+      ],
+      [
+       "voi",
+       "-ate",
+       "parlate",
+       "par-LA-te",
+       "konuşuyorsunuz (çok kişi)"
+      ],
+      [
+       "loro",
+       "-ano",
+       "parlano",
+       "PAR-la-no",
+       "konuşuyorlar"
+      ]
+     ],
+     "say": [
+      "io parlo",
+      "tu parli",
+      "lui parla",
+      "noi parliamo",
+      "voi parlate",
+      "loro parlano"
+     ]
+    },
+    {
+     "type": "note",
+     "warn": true,
+     "text": "Tipik Türk hatası: **loro** biçiminde vurguyu sona kaydırmak. Doğrusu **PAR-la-no**, yanlışı par-la-NO. Vurgu io, tu, lui ve loro'da aynı hecede kalır; sadece noi ve voi'de sona kayar: par-LYA-mo, par-LA-te."
+    },
+    {
+     "type": "note",
+     "text": "Kibar **Lei**, essere ve avere'deki gibi “o” biçimini alır: **Lei parla inglese?** = İngilizce konuşuyor musunuz? Olumsuz ve soru da aynı: **Non parlo inglese.**"
+    }
+   ]
+  },
+  {
+   "title": "lavorare, abitare ve sahada işine yarayan -are fiilleri",
+   "blocks": [
+    {
+     "type": "table",
+     "head": [
+      "io",
+      "Okunuş",
+      "tu",
+      "noi",
+      "loro"
+     ],
+     "x": 0,
+     "rows": [
+      [
+       "lavoro",
+       "la-VO-ro",
+       "lavori",
+       "lavoriamo",
+       "lavorano (la-VO-ra-no)"
+      ],
+      [
+       "abito",
+       "A-bi-to",
+       "abiti",
+       "abitiamo",
+       "abitano (A-bi-ta-no)"
+      ]
+     ],
+     "say": [
+      "lavoro, lavori, lavoriamo, lavorano",
+      "abito, abiti, abitiamo, abitano"
+     ]
+    },
+    {
+     "type": "note",
+     "warn": true,
+     "text": "**abito** vurgusu ilk hecede: **A-bi-to**, a-Bİ-to değil. Mastar a-bi-TA-re olsa da çekimde vurgu başa gelir. Yeri “hazır kalıp” olarak söyle: **Abito a Kırıkkale.** (a = -de; edatlar 13. derste.)"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Mastar",
+      "Okunuş (io)",
+      "Anlamı",
+      "Örnek"
+     ],
+     "x": 0,
+     "rows": [
+      [
+       "controllare",
+       "kon-TROL-lo",
+       "kontrol etmek",
+       "Controllo il quadro."
+      ],
+      [
+       "installare",
+       "in-STAL-lo",
+       "kurmak, montaj yapmak",
+       "Installo le lampade."
+      ],
+      [
+       "chiamare",
+       "KYA-mo",
+       "aramak (telefonla), çağırmak",
+       "Chiamo l'ingegnere."
+      ],
+      [
+       "aspettare",
+       "as-PET-to",
+       "beklemek",
+       "Aspetto il materiale."
+      ],
+      [
+       "arrivare",
+       "ar-Rİ-vo",
+       "varmak, gelmek",
+       "Il camion arriva."
+      ],
+      [
+       "studiare",
+       "STU-dyo",
+       "çalışmak (ders)",
+       "Studio italiano."
+      ]
+     ]
+    },
+    {
+     "type": "note",
+     "text": "Dikkat: **lavorare** iş için çalışmak, **studiare** ders çalışmak. Studio italiano = İtalyanca çalışıyorum."
+    }
+   ]
+  },
+  {
+   "title": "Yazım notu: -care/-gare ve -iare",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Fiil çekilirken kökün **sesi korunur**; gerekirse yazı değişir. 1. dersten hatırla: c ve g, i/e önünde yumuşar (ç, c olur). Sert kalsın diye araya **h** girer."
+    },
+    {
+     "type": "compare",
+     "rows": [
+      {
+       "label": "cercare (aramak)",
+       "items": [
+        {
+         "t": "cerco",
+         "s": "ÇER-ko"
+        },
+        {
+         "t": "cerchi",
+         "s": "ÇER-ki",
+         "hl": true
+        },
+        {
+         "t": "cerchiamo",
+         "s": "çer-KYA-mo",
+         "hl": true
+        }
+       ]
+      },
+      {
+       "label": "collegare (bağlamak)",
+       "items": [
+        {
+         "t": "collego",
+         "s": "kol-LE-go"
+        },
+        {
+         "t": "colleghi",
+         "s": "kol-LE-gi",
+         "hl": true
+        },
+        {
+         "t": "colleghiamo",
+         "s": "kol-le-GYA-mo",
+         "hl": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "warn": true,
+     "text": "h'yi unutursan **cerci** “ÇER-çi” okunur, **collegi** “kol-LE-ci” (o da “kolejler” demek). Aynısı **pagare** (ödemek): paghi, paghiamo."
+    },
+    {
+     "type": "rules",
+     "items": [
+      {
+       "title": "-iare: i iki kere yazılmaz",
+       "text": "mangiare (yemek yemek), cominciare (başlamak), studiare: kökte zaten i var. tu ve noi eklerindeki i onunla birleşir.",
+       "ex": {
+        "x": "Tu mangi, noi mangiamo.",
+        "tr": "Sen yiyorsun, biz yiyoruz."
+       }
+      },
+      {
+       "title": "Yanlış: mangii, mangiiamo",
+       "text": "Kural: tu biçimi tek i ile biter (studi, cominci). Vurgu i'nin üstündeyse iki i kalır (inviare: invio, invii), ama A1'de nadirdir.",
+       "ex": {
+        "x": "Cominci adesso?",
+        "tr": "Şimdi mi başlıyorsun? (adesso = şimdi)"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "dinle": [
+  {
+   "x": "Parlo un po' di italiano.",
+   "tr": "Biraz İtalyanca konuşuyorum. (un po' di = biraz)",
+   "ph": "PAR-lo un PO di i-ta-LYA-no"
+  },
+  {
+   "x": "Lavoro in cantiere.",
+   "tr": "Şantiyede çalışıyorum.",
+   "ph": "la-VO-ro in kan-TYE-re"
+  },
+  {
+   "x": "Abito a Kırıkkale.",
+   "tr": "Kırıkkale'de oturuyorum.",
+   "ph": "A-bi-to a Kırıkkale"
+  },
+  {
+   "x": "Abiti a Bodrum?",
+   "tr": "Bodrum'da mı oturuyorsun?",
+   "ph": "A-bi-ti a Bodrum"
+  },
+  {
+   "x": "Controllo il quadro.",
+   "tr": "Panoyu kontrol ediyorum.",
+   "ph": "kon-TROL-lo il KUA-dro"
+  },
+  {
+   "x": "Colleghiamo i cavi.",
+   "tr": "Kabloları bağlıyoruz.",
+   "ph": "kol-le-GYA-mo i KA-vi"
+  },
+  {
+   "x": "Cerchi il cacciavite?",
+   "tr": "Tornavidayı mı arıyorsun?",
+   "ph": "ÇER-ki il kat-ça-Vİ-te"
+  },
+  {
+   "x": "Lei parla inglese?",
+   "tr": "İngilizce konuşuyor musunuz?",
+   "ph": "LEY PAR-la in-GLE-se"
+  },
+  {
+   "x": "Gli operai mangiano adesso.",
+   "tr": "İşçiler şimdi yemek yiyor.",
+   "ph": "lyi o-pe-RA-i MAN-ca-no a-DES-so"
+  },
+  {
+   "x": "Oggi non lavoriamo.",
+   "tr": "Bugün çalışmıyoruz.",
+   "ph": "OD-ci non la-vo-RYA-mo"
+  }
+ ],
+ "uygula": [
+  {
+   "t": "choice",
+   "q": "io ___ in cantiere. (lavorare)",
+   "a": "lavoro",
+   "o": [
+    "lavoro",
+    "lavori",
+    "lavora"
+   ],
+   "why": {
+    "lavori": "-i eki tu (sen) içindir.",
+    "lavora": "-a eki lui/lei/Lei içindir."
+   },
+   "ok": "io → -o: lavoro."
+  },
+  {
+   "t": "choice",
+   "q": "noi ___ italiano. (parlare)",
+   "a": "parliamo",
+   "o": [
+    "parliamo",
+    "parlate",
+    "parlano"
+   ],
+   "why": {
+    "parlate": "-ate eki voi (siz, çok kişi) içindir.",
+    "parlano": "-ano eki loro (onlar) içindir."
+   },
+   "ok": "noi → -iamo: parliamo."
+  },
+  {
+   "t": "choice",
+   "q": "Ahmet e Ali ___ a Bodrum. (abitare)",
+   "a": "abitano",
+   "o": [
+    "abitano",
+    "abitate",
+    "abita"
+   ],
+   "why": {
+    "abitate": "abitate = voi (siz). Ahmet ve Ali = loro (onlar).",
+    "abita": "abita tek kişi için; burada iki kişi var."
+   },
+   "ok": "İki kişi = loro → abitano."
+  },
+  {
+   "t": "choice",
+   "q": "Müşteriye kibarca: “Lei ___ inglese?”",
+   "a": "parla",
+   "o": [
+    "parli",
+    "parla",
+    "parlate"
+   ],
+   "why": {
+    "parli": "parli samimi tu içindir. Kibar Lei “o” gibi çekilir.",
+    "parlate": "parlate birden çok kişiye sorarken."
+   },
+   "ok": "Lei → parla."
+  },
+  {
+   "t": "choice",
+   "q": "Hangisi “parlano” kelimesinin doğru okunuşu?",
+   "a": "PAR-la-no",
+   "o": [
+    "PAR-la-no",
+    "par-LA-no",
+    "par-la-NO"
+   ],
+   "why": {
+    "par-LA-no": "Vurgu loro'da io'daki heceyle aynı: PAR-lo → PAR-la-no.",
+    "par-la-NO": "Bu çekimde vurgu hiçbir kişide son heceye gelmez. Doğrusu PAR-la-no."
+   },
+   "ok": "PAR-la-no: vurgu baştaki hecede kalır."
+  },
+  {
+   "t": "choice",
+   "q": "tu ___ il cacciavite? (cercare)",
+   "a": "cerchi",
+   "o": [
+    "cerchi",
+    "cerci",
+    "cercii"
+   ],
+   "why": {
+    "cerci": "Bu “ÇER-çi” okunur. k sesini korumak için h gerekir: cerchi.",
+    "cercii": "Ek sadece -i; h olmadan c yumuşar. Doğrusu cerchi."
+   },
+   "ok": "cerchi = ÇER-ki."
+  },
+  {
+   "t": "choice",
+   "q": "tu ___ i cavi. (collegare)",
+   "a": "colleghi",
+   "o": [
+    "colleghi",
+    "collegi",
+    "colleggi"
+   ],
+   "why": {
+    "collegi": "Bu “kol-LE-ci” okunur (ve “kolejler” demek). Sert g için h: colleghi.",
+    "colleggi": "Çift g olmaz ve hâlâ yumuşak okunur. Doğrusu colleghi."
+   },
+   "ok": "colleghi = kol-LE-gi."
+  },
+  {
+   "t": "choice",
+   "q": "noi ___ adesso. (mangiare)",
+   "a": "mangiamo",
+   "o": [
+    "mangiamo",
+    "mangiiamo",
+    "mangiano"
+   ],
+   "why": {
+    "mangiiamo": "Kökteki i ile ekteki i birleşir; iki i yazılmaz.",
+    "mangiano": "mangiano = loro (onlar)."
+   },
+   "ok": "mangi- + -amo = mangiamo."
+  },
+  {
+   "t": "type",
+   "q": "Türkçeden çevir: “Kırıkkale'de oturuyorum.”",
+   "a": [
+    "abito a kırıkkale",
+    "io abito a kırıkkale",
+    "abito a kirikkale",
+    "io abito a kirikkale"
+   ],
+   "hint": "abitare, io biçimi; yer için hazır kalıp: a + şehir.",
+   "ok": "Abito a Kırıkkale. Vurgu: A-bi-to."
+  },
+  {
+   "t": "type",
+   "q": "Türkçeden çevir: “İtalyanca konuşuyor musun?”",
+   "a": [
+    "parli italiano",
+    "tu parli italiano",
+    "parli italiano tu",
+    "parli litaliano",
+    "tu parli litaliano"
+   ],
+   "hint": "tu → -i. Soru eki yok; sadece soru işareti.",
+   "ok": "Parli italiano?"
+  },
+  {
+   "t": "type",
+   "q": "Olumsuz yap: “Oggi lavoriamo.”",
+   "a": [
+    "oggi non lavoriamo",
+    "non lavoriamo oggi",
+    "noi oggi non lavoriamo",
+    "oggi noi non lavoriamo"
+   ],
+   "hint": "non fiilin hemen önüne.",
+   "ok": "Oggi non lavoriamo."
+  },
+  {
+   "t": "order",
+   "q": "Sırala: “Ekip panoyu kontrol ediyor.” (squadra = ekip)",
+   "words": [
+    "controlla",
+    "il",
+    "squadra",
+    "quadro",
+    "la"
+   ],
+   "a": "la squadra controlla il quadro",
+   "ok": "La squadra controlla il quadro. Ekip tek bir grup: lui/lei biçimi → controlla."
+  }
+ ],
+ "konus": {
+  "coach": "chiara",
+  "goal": "-are fiilleriyle kendini ve işini anlatmak: nerede oturduğun, nerede çalıştığın, hangi dili konuştuğun, şantiyede ne yaptığın.",
+  "vocab": [
+   "parlare",
+   "lavorare",
+   "abitare",
+   "controllare",
+   "installare",
+   "collegare",
+   "cercare",
+   "chiamare",
+   "aspettare",
+   "mangiare",
+   "studiare",
+   "il quadro",
+   "i cavi",
+   "le lampade",
+   "la squadra",
+   "oggi",
+   "domani",
+   "adesso",
+   "anche",
+   "un po' di"
+  ],
+  "structures": [
+   "io -o, tu -i, lui/lei/Lei -a, noi -iamo, voi -ate, loro -ano",
+   "Abito a … / Lavoro in cantiere (hazır kalıp)",
+   "non + fiil",
+   "cerchi/colleghi (h ile), mangi/mangiamo (tek i)",
+   "Lei + -a (kibar soru)"
+  ],
+  "opener_hint": "Chiara yeni tanışıyormuş gibi başlasın: “Ciao Türab! Abiti a Kırıkkale?” (Türkçesi parantezde). Sonra sırayla sorsun: “Lavori in cantiere?”, “Parli inglese?”, “Studi italiano?”, “Oggi controlli il quadro?”. En az bir soruda noi biçimi gereksin (ör. “Tu e la squadra lavorate domani?”).",
+  "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece essere, avere ve düzenli -are fiilleri kullan; fare, andare, stare gibi düzensiz fiilleri ve -ere/-ire fiillerini kullanma. Türab yanlış ek kullanırsa doğru biçimi tek satırda ver (ör. “noi → lavoriamo”); vurgu hatası için PAR-la-no gibi heceli yaz."
+ },
+ "yokla": [
+  {
+   "t": "choice",
+   "topic": "-are çekimi",
+   "q": "Ekibe soruyorsun: “Ragazzi, ___ domani?” (lavorare)",
+   "a": "lavorate",
+   "o": [
+    "lavorate",
+    "lavoriamo",
+    "lavorano"
+   ],
+   "why": {
+    "lavoriamo": "lavoriamo = biz. Karşındakilere soruyorsun: voi → lavorate.",
+    "lavorano": "lavorano = onlar; kendilerine değil, onlardan bahsederken."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "-care/-gare yazımı",
+   "q": "noi ___ il problema. (cercare)",
+   "a": "cerchiamo",
+   "o": [
+    "cerchiamo",
+    "cerciamo",
+    "cercamo"
+   ],
+   "why": {
+    "cerciamo": "h olmadan “çer-ÇA-mo” okunur. Sert k için: cerchiamo.",
+    "cercamo": "noi eki -iamo'dur; i düşmez."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "-iare yazımı",
+   "q": "tu ___ adesso? (cominciare)",
+   "a": "cominci",
+   "o": [
+    "cominci",
+    "comincii",
+    "cominchi"
+   ],
+   "why": {
+    "comincii": "Kökteki i ile ek -i birleşir; tek i yazılır.",
+    "cominchi": "Burada ç sesi korunmalı (ko-MİN-çi). h eklersen “ko-MİN-ki” olur."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "vurgu",
+   "q": "“abito” (oturuyorum) nasıl okunur?",
+   "a": "A-bi-to",
+   "o": [
+    "A-bi-to",
+    "a-Bİ-to"
+   ],
+   "why": {
+    "a-Bİ-to": "Bu fiilde vurgu ilk hecede: A-bi-to, A-bi-ta-no."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "-are çekimi",
+   "q": "Türkçeden çevir: “Mühendisi arıyorum.” (telefonla)",
+   "a": [
+    "chiamo l'ingegnere",
+    "chiamo lingegnere",
+    "io chiamo l'ingegnere",
+    "io chiamo lingegnere"
+   ]
+  }
+ ],
+ "pass": 4,
+ "pekistir": {
+  "items": [
+   {
+    "t": "choice",
+    "q": "lei (Ayşe) ___ in ufficio. (lavorare; in ufficio = ofiste)",
+    "a": "lavora",
+    "o": [
+     "lavora",
+     "lavoro",
+     "lavorano"
+    ],
+    "why": {
+     "lavoro": "lavoro = ben çalışıyorum.",
+     "lavorano": "lavorano = onlar; Ayşe tek kişi."
+    },
+    "ok": "lei → lavora."
+   },
+   {
+    "t": "choice",
+    "q": "voi ___ il materiale? (aspettare)",
+    "a": "aspettate",
+    "o": [
+     "aspettate",
+     "aspettiamo",
+     "aspetti"
+    ],
+    "why": {
+     "aspettiamo": "aspettiamo = biz.",
+     "aspetti": "aspetti = sen (tek kişi)."
+    },
+    "ok": "voi → -ate: aspettate."
+   },
+   {
+    "t": "choice",
+    "q": "tu ___ il conto. (pagare)",
+    "a": "paghi",
+    "o": [
+     "paghi",
+     "pagi",
+     "pagii"
+    ],
+    "why": {
+     "pagi": "h olmadan “PA-ci” okunur. Sert g için: paghi.",
+     "pagii": "Ek tek -i; sert g için h lazım: paghi."
+    },
+    "ok": "paghi = PA-gi. (il conto = hesap)"
+   },
+   {
+    "t": "type",
+    "q": "Türkçeden çevir: “Lambaları kuruyoruz.” (le lampade)",
+    "a": [
+     "installiamo le lampade",
+     "noi installiamo le lampade"
+    ],
+    "hint": "installare, noi → -iamo.",
+    "ok": "Installiamo le lampade."
+   },
+   {
+    "t": "type",
+    "q": "Türkçeden çevir: “İtalyanca çalışıyorum.” (ders)",
+    "a": [
+     "studio italiano",
+     "io studio italiano",
+     "studio litaliano",
+     "io studio litaliano"
+    ],
+    "hint": "Ders çalışmak = studiare, io → studio.",
+    "ok": "Studio italiano. (STU-dyo)"
+   },
+   {
+    "t": "order",
+    "q": "Sırala: “İşçiler kabloları bağlıyor.”",
+    "words": [
+     "i",
+     "collegano",
+     "operai",
+     "gli",
+     "cavi"
+    ],
+    "a": "gli operai collegano i cavi",
+    "ok": "Gli operai collegano i cavi. loro → -ano, h yok çünkü a önünde g zaten sert."
+   }
+  ],
+  "konus_prompt": "Chiara sana günlük işini soracak: nerede oturuyorsun, nerede çalışıyorsun, bugün ne kontrol ediyorsun, ekip ne bağlıyor, kimi arıyorsun. -are fiilleriyle cevap ver; en az bir cümlede noi biçimi (lavoriamo, colleghiamo) kullan."
+ }
+}

@@ -1,0 +1,739 @@
+{
+  "id": "en11",
+  "lang": "en",
+  "level": "B2",
+  "title": "Third ve mixed conditional",
+  "lead": "Geçmişte olmamış bir şeyi ve sonucunu (If I had…, I would have…) anlatacaksın; geçmişteki bir kararın bugüne etkisini mixed conditional ile söyleyeceksin. Pişmanlığı ve eleştiriyi doğru tonla kuracaksın.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Third conditional: olmadı, ama olsaydı…",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Geçmişte **olmamış** bir şeyi ve onun **olmamış** sonucunu hayal ediyorsun. Türkçe bunu **-seydi … -ırdı** ile söyler. İngilizce iki parçayı da geçmişe çeker: **If + had + V3, would have + V3**."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Teklifi zamanında verseydik",
+                  "s": "-seydik (geçmiş koşul)",
+                  "hl": true
+                },
+                {
+                  "t": "işi alırdık",
+                  "s": "-ırdık"
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "If we had submitted the bid on time,",
+                  "s": "had + V3",
+                  "hl": true
+                },
+                {
+                  "t": "we would have won the job",
+                  "s": "would have + V3",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Parça",
+            "Yapı",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "If kısmı",
+              "had (not) + V3",
+              "If we had checked the drawings,"
+            ],
+            [
+              "Sonuç",
+              "would (not) have + V3",
+              "we wouldn't have lost two days."
+            ],
+            [
+              "Kısa biçim",
+              "If I'd + V3, I'd have + V3",
+              "If I'd known, I'd have called you."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "text": "Sık hata: “If I would have known…” → **If I had known…** If kısmında would olmaz. Kısaltmada ilk 'd = **had**, ikinci 'd = **would**.",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "Pişmanlık ve eleştiri: would / could / might have",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Third conditional en çok iki iş görür: kendi hatana **pişmanlık** ve başkasına **eleştiri**. Sonuç kısmında would yerine **could** ya da **might** da gelebilir; anlam incelir."
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "would have = kesin sonuç",
+              "text": "Öyle olsaydı, şu kesin olurdu.",
+              "ex": {
+                "x": "If I had checked the cables, the panel wouldn't have tripped.",
+                "tr": "Kabloları kontrol etseydim pano atmazdı."
+              }
+            },
+            {
+              "title": "could have = imkân olurdu",
+              "text": "Yapabilirdim, fırsatım olurdu.",
+              "ex": {
+                "x": "If you had told me earlier, I could have ordered the cables.",
+                "tr": "Bana daha önce söyleseydin kabloları sipariş edebilirdim."
+              }
+            },
+            {
+              "title": "might have = belki olurdu",
+              "text": "Emin değilsin; ihtimal.",
+              "ex": {
+                "x": "If we had offered a lower price, we might have won the tender.",
+                "tr": "Daha düşük fiyat verseydik ihaleyi belki alırdık."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "“If you had told me…” eleştiri gibi duyulur. Toplantıda özneyi **we** yap: “If we had planned better, we wouldn't have lost a week.” Suçlu aramadan ders çıkarırsın."
+        }
+      ]
+    },
+    {
+      "title": "Mixed conditional: geçmişteki sebep, bugünkü sonuç",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Koşul **geçmişte**, sonuç **şimdi**. If kısmı third conditional gibi kurulur (had + V3), sonuç kısmı second conditional gibi (**would + yalın fiil**)."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Okulda İngilizce çalışsaydım",
+                  "s": "geçmiş"
+                },
+                {
+                  "t": "şimdi toplantılarda daha rahat olurdum",
+                  "s": "şimdi",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "If I had studied English at school,",
+                  "s": "had + V3"
+                },
+                {
+                  "t": "I would be more confident in meetings now",
+                  "s": "would + fiil",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Koşul",
+            "Sonuç",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "geçmiş (had + V3)",
+              "şimdi (would + fiil)",
+              "If we hadn't won that tender, we wouldn't be this busy now."
+            ],
+            [
+              "şimdi / genel (If + past)",
+              "geçmiş (would have + V3)",
+              "If I were more organised, I wouldn't have missed the deadline."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "text": "Ölçü sonuç kısmının zamanı: **now, today, still** varsa ya da sonuç hâlâ sürüyorsa → **would + fiil**. Sonuç da geçmişte kaldıysa → **would have + V3**."
+        }
+      ]
+    },
+    {
+      "title": "Hangisi? Türkçeye değil zamana bak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede “Bilseydim söylerdim” bağlama göre hem şimdiyi hem geçmişi anlatabilir. İngilizce zamanı açıkça seçer; önce kendine sor: **ne zaman?**"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Ne zaman?",
+            "Yapı",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Şimdi / genel (second)",
+              "If + past, would + fiil",
+              "If I knew the answer, I would tell you."
+            ],
+            [
+              "Geçmiş (third)",
+              "If + had V3, would have V3",
+              "If I had known, I would have told you."
+            ],
+            [
+              "Geçmiş → şimdi (mixed)",
+              "If + had V3, would + fiil",
+              "If I had taken that job, I would be in Istanbul now."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "text": "Tipik Türk hatası: geçmiş için second conditional. “Dün aramasaydın gelmezdim” → “If you didn't call…” değil, **If you hadn't called yesterday, I wouldn't have come.**",
+          "warn": true
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "If we had submitted the bid on time, we would have won the contract.",
+      "tr": "Teklifi zamanında verseydik sözleşmeyi alırdık."
+    },
+    {
+      "x": "If I'd known about the inspection, I'd have prepared the test reports.",
+      "tr": "Denetimden haberim olsaydı test raporlarını hazırlardım."
+    },
+    {
+      "x": "If you had told me earlier, I could have ordered the cables.",
+      "tr": "Bana daha önce söyleseydin kabloları sipariş edebilirdim."
+    },
+    {
+      "x": "If we had checked the drawings, we wouldn't have lost two days.",
+      "tr": "Çizimleri kontrol etseydik iki gün kaybetmezdik."
+    },
+    {
+      "x": "We might have won the tender if our price had been a bit lower.",
+      "tr": "Fiyatımız biraz daha düşük olsaydı ihaleyi belki alırdık."
+    },
+    {
+      "x": "If I had learned English at school, I'd be more confident in meetings now.",
+      "tr": "Okulda İngilizce öğrenseydim şimdi toplantılarda daha rahat olurdum."
+    },
+    {
+      "x": "If we hadn't taken the airport job, we wouldn't have so many references today.",
+      "tr": "Havalimanı işini almasaydık bugün bu kadar referansımız olmazdı."
+    },
+    {
+      "x": "If we had planned better, we wouldn't be working this weekend.",
+      "tr": "Daha iyi planlasaydık bu hafta sonu çalışıyor olmazdık."
+    },
+    {
+      "x": "If I hadn't started my own company, I would be working for someone else now.",
+      "tr": "Kendi şirketimi kurmasaydım şimdi başkası için çalışıyor olurdum."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "If we ___ the drawings, we wouldn't have made that mistake.",
+      "a": "had checked",
+      "o": [
+        "had checked",
+        "checked",
+        "would have checked"
+      ],
+      "why": {
+        "checked": "Hata geçmişte; If kısmı had + V3 ister. checked ile cümle second conditional olur (şimdi/genel).",
+        "would have checked": "If kısmında would olmaz."
+      },
+      "ok": "If + had + V3."
+    },
+    {
+      "t": "choice",
+      "q": "If I had left earlier, I ___ the meeting.",
+      "a": "wouldn't have missed",
+      "o": [
+        "wouldn't have missed",
+        "wouldn't miss",
+        "didn't miss"
+      ],
+      "why": {
+        "wouldn't miss": "Toplantı geçmişte kaldı; sonuç da geçmiş → wouldn't have missed.",
+        "didn't miss": "Sonuç hayal edilen bir durum; would (have) ister."
+      },
+      "ok": "Sonuç: would have + V3."
+    },
+    {
+      "t": "choice",
+      "q": "“If I'd known, I'd have called you.” İlk 'd neyin kısaltması?",
+      "a": "had",
+      "o": [
+        "had",
+        "would"
+      ],
+      "why": {
+        "would": "If kısmında would olmaz. İlk 'd = had, ikinci 'd = would."
+      },
+      "ok": "If I'd known = If I had known."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Daha erken başlasaydık zamanında bitirirdik.”",
+      "words": [
+        "finished",
+        "if",
+        "had",
+        "we",
+        "earlier",
+        "started",
+        "we",
+        "would",
+        "have",
+        "on",
+        "time"
+      ],
+      "a": "if we had started earlier we would have finished on time",
+      "alt": [
+        "we would have finished on time if we had started earlier"
+      ],
+      "ok": "If we had started earlier, we would have finished on time."
+    },
+    {
+      "t": "choice",
+      "q": "If you had told me earlier, I ___ the cables yesterday.",
+      "a": "could have ordered",
+      "o": [
+        "could have ordered",
+        "can order",
+        "could order"
+      ],
+      "why": {
+        "can order": "Şimdiki zaman; burada geçmişte kaçan bir imkân var.",
+        "could order": "yesterday geçmiş; imkân da geçmişte → could have ordered."
+      },
+      "ok": "Kaçan imkân → could have + V3."
+    },
+    {
+      "t": "choice",
+      "q": "If our price had been lower, we ___ the tender. (belki)",
+      "a": "might have won",
+      "o": [
+        "might have won",
+        "might win",
+        "may win"
+      ],
+      "why": {
+        "might win": "İhale geçmişte bitti; might have + V3 gerekir.",
+        "may win": "Gelecek ihtimali anlatır; burada geçmişte olmamış bir sonuç var."
+      },
+      "ok": "Belki olurdu → might have + V3."
+    },
+    {
+      "t": "choice",
+      "q": "If I had learned English at school, I ___ more confident in meetings now.",
+      "a": "would be",
+      "o": [
+        "would be",
+        "would have been",
+        "will be"
+      ],
+      "why": {
+        "would have been": "now var: sonuç şimdi → mixed: would be.",
+        "will be": "Gerçek bir gelecek değil, hayal edilen şimdi → would be."
+      },
+      "ok": "Geçmiş sebep, şimdiki sonuç → would + fiil."
+    },
+    {
+      "t": "choice",
+      "q": "If we hadn't won the airport project, we ___ so many references today.",
+      "a": "wouldn't have",
+      "o": [
+        "wouldn't have",
+        "wouldn't have had",
+        "won't have"
+      ],
+      "why": {
+        "wouldn't have had": "today var: sonuç şimdi → mixed. Burada have “sahip olmak”: wouldn't + have.",
+        "won't have": "Gerçek bir gelecek değil, hayal edilen şimdi → wouldn't have."
+      },
+      "ok": "Mixed: wouldn't + have (sahip olmak)."
+    },
+    {
+      "t": "choice",
+      "q": "Doğru çeviri hangisi: “Geçen hafta sorsaydın yardım ederdim.”",
+      "a": "If you had asked me last week, I would have helped you.",
+      "o": [
+        "If you had asked me last week, I would have helped you.",
+        "If you asked me last week, I would help you.",
+        "If you would have asked me last week, I would have helped you."
+      ],
+      "why": {
+        "If you asked me last week, I would help you.": "Geçen hafta = geçmiş. Second conditional geçmiş için kullanılmaz.",
+        "If you would have asked me last week, I would have helped you.": "If kısmında would olmaz: If you had asked."
+      },
+      "ok": "Geçmiş → third conditional."
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “If we would have checked the cables, the panel wouldn't have tripped.”",
+      "a": [
+        "if we had checked the cables the panel wouldn't have tripped",
+        "if we had checked the cables the panel would not have tripped",
+        "if we'd checked the cables the panel wouldn't have tripped",
+        "if we'd checked the cables the panel would not have tripped"
+      ],
+      "hint": "If kısmında would olmaz.",
+      "ok": "If we had checked the cables, the panel wouldn't have tripped."
+    },
+    {
+      "t": "type",
+      "q": "Çevir (geçmiş): “Bilseydim seni arardım.”",
+      "a": [
+        "if i had known i would have called you",
+        "if i had known i would have phoned you",
+        "if i had known i'd have called you",
+        "if i had known i'd have phoned you",
+        "if i'd known i would have called you",
+        "if i'd known i would have phoned you",
+        "if i'd known i'd have called you",
+        "if i'd known i'd have phoned you",
+        "i would have called you if i had known",
+        "i would have called you if i'd known",
+        "i would have phoned you if i had known",
+        "i would have phoned you if i'd known",
+        "i'd have called you if i had known",
+        "i'd have called you if i'd known",
+        "i'd have phoned you if i had known",
+        "i'd have phoned you if i'd known"
+      ],
+      "hint": "bilmek = know (V3: known); aramak = call.",
+      "ok": "If I'd known, I'd have called you."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Dün gece iyi uyusaydım şimdi yorgun olmazdım.”",
+      "a": [
+        "if i had slept well last night i wouldn't be tired now",
+        "if i had slept well last night i would not be tired now",
+        "if i'd slept well last night i wouldn't be tired now",
+        "if i'd slept well last night i would not be tired now",
+        "if i had slept well last night i wouldn't feel tired now",
+        "if i had slept well last night i would not feel tired now",
+        "if i'd slept well last night i wouldn't feel tired now",
+        "if i'd slept well last night i would not feel tired now",
+        "i wouldn't be tired now if i had slept well last night",
+        "i would not be tired now if i had slept well last night",
+        "i wouldn't be tired now if i'd slept well last night",
+        "i would not be tired now if i'd slept well last night"
+      ],
+      "hint": "Sebep geçmiş (had + V3), sonuç şimdi (would + fiil).",
+      "ok": "If I'd slept well last night, I wouldn't be tired now."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Geçmişteki bir iş kararı: if I had…, I would have… Oliver'a aldığın ya da kaçırdığın bir işi, verdiğin bir teklifi anlatmak; sonucunu third conditional ile, bugüne etkisini mixed conditional ile söylemek.",
+    "vocab": [
+      "tender",
+      "bid",
+      "submit",
+      "contract",
+      "deadline",
+      "drawings",
+      "inspection",
+      "test reports",
+      "references",
+      "turn down",
+      "miss an opportunity",
+      "in hindsight",
+      "regret"
+    ],
+    "structures": [
+      "If + had + V3, would have + V3",
+      "could have / might have + V3",
+      "mixed: If + had + V3, would + fiil (now)",
+      "If I'd known…, I'd have…"
+    ],
+    "opener_hint": "Oliver deneyimli bir İngiliz proje müdürü gibi açsın: “Tell me about a business decision you regret, or one you're glad you made.” Sonra “What would have happened if you hadn't…?” ve “How would your company be different today?” sorularıyla third ve mixed conditional'ı zorlasın.",
+    "level_note": "B2: doğal konuşma, 1-3 cümle. “If I would have…” ve geçmiş için second conditional (“If I knew yesterday…”) hatalarını hemen ve kısa düzelt (bu dersin hedefi); diğer hataları 3 turda bir topla."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "If kısmı: had + V3",
+      "q": "If the supplier ___ the cables on time, we would have finished last week.",
+      "a": "had delivered",
+      "o": [
+        "had delivered",
+        "delivered",
+        "would deliver"
+      ],
+      "why": {
+        "delivered": "Geçmişte olmamış koşul → had + V3.",
+        "would deliver": "If kısmında would olmaz."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "sonuç: would have + V3",
+      "q": "We lost the tender. If our price had been lower, we ___ it.",
+      "a": "would have won",
+      "o": [
+        "would have won",
+        "would win",
+        "had won"
+      ],
+      "why": {
+        "would win": "İhale geçmişte kaybedildi; sonuç da geçmiş → would have won.",
+        "had won": "Sonuç kısmı would have + V3 ister."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "could have (kaçan imkân)",
+      "q": "If you'd sent me the photos, I ___ you what was wrong. (yapabilirdim)",
+      "a": "could have told",
+      "o": [
+        "could have told",
+        "will be able to tell",
+        "can tell"
+      ],
+      "why": {
+        "will be able to tell": "Gerçek bir gelecek değil; geçmişte kaçan bir imkân.",
+        "can tell": "Şimdiki zaman; geçmişte kaçan imkân için could have + V3."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "mixed: geçmiş → şimdi",
+      "q": "If I hadn't started my own company, I ___ for someone else now.",
+      "a": "would be working",
+      "o": [
+        "would be working",
+        "would have worked",
+        "will work"
+      ],
+      "why": {
+        "would have worked": "now var: sonuç şimdi → mixed: would be working.",
+        "will work": "Gerçek gelecek değil, hayal edilen şimdi."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "If kısmında would yok",
+      "q": "Düzelt: “If I would have seen the email, I would have replied.”",
+      "a": [
+        "if i had seen the email i would have replied",
+        "if i had seen the email i'd have replied",
+        "if i'd seen the email i would have replied",
+        "if i'd seen the email i'd have replied"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "If the electrician ___ the breaker off, he wouldn't have got a shock.",
+        "a": "had switched",
+        "o": [
+          "had switched",
+          "switched",
+          "has switched"
+        ],
+        "why": {
+          "switched": "Geçmişte olmamış koşul → had + V3.",
+          "has switched": "Present perfect koşul kısmında kullanılmaz; had switched."
+        },
+        "ok": "If + had + V3."
+      },
+      {
+        "t": "choice",
+        "q": "If we hadn't hired a second crew, we ___ the deadline.",
+        "a": "would have missed",
+        "o": [
+          "would have missed",
+          "would miss",
+          "missed"
+        ],
+        "why": {
+          "would miss": "Teslim tarihi geçmişte kaldı → would have missed.",
+          "missed": "Hayal edilen sonuç would have + V3 ister."
+        },
+        "ok": "Sonuç: would have + V3."
+      },
+      {
+        "t": "choice",
+        "q": "If I had saved more money last year, I ___ a new van now.",
+        "a": "could buy",
+        "o": [
+          "could buy",
+          "could have bought",
+          "can buy"
+        ],
+        "why": {
+          "could have bought": "now var: imkân şimdi → mixed: could buy.",
+          "can buy": "Gerçek durum değil, hayal; could buy."
+        },
+        "ok": "Mixed: geçmiş sebep, şimdiki imkân."
+      },
+      {
+        "t": "choice",
+        "q": "If you ___ me, I would have helped you.",
+        "a": "had asked",
+        "o": [
+          "had asked",
+          "asked",
+          "would ask"
+        ],
+        "why": {
+          "asked": "Sonuç would have helped (geçmiş); koşul da had + V3.",
+          "would ask": "If kısmında would olmaz."
+        },
+        "ok": "If + had + V3."
+      },
+      {
+        "t": "type",
+        "q": "Çevir (geçmiş): “Teklifi zamanında gönderseydik işi alırdık.”",
+        "a": [
+          "if we had sent the bid on time we would have won the job",
+          "if we had sent the bid on time we would have got the job",
+          "if we had sent the bid on time we'd have won the job",
+          "if we had sent the bid on time we'd have got the job",
+          "if we had sent our bid on time we would have won the job",
+          "if we had sent our bid on time we would have got the job",
+          "if we had sent our bid on time we'd have won the job",
+          "if we had sent our bid on time we'd have got the job",
+          "if we had sent the offer on time we would have won the job",
+          "if we had sent the offer on time we would have got the job",
+          "if we had sent the offer on time we'd have won the job",
+          "if we had sent the offer on time we'd have got the job",
+          "if we had sent the tender on time we would have won the job",
+          "if we had sent the tender on time we would have got the job",
+          "if we had sent the tender on time we'd have won the job",
+          "if we had sent the tender on time we'd have got the job",
+          "if we had submitted the bid on time we would have won the job",
+          "if we had submitted the bid on time we would have got the job",
+          "if we had submitted the bid on time we'd have won the job",
+          "if we had submitted the bid on time we'd have got the job",
+          "if we had submitted our bid on time we would have won the job",
+          "if we had submitted our bid on time we would have got the job",
+          "if we had submitted our bid on time we'd have won the job",
+          "if we had submitted our bid on time we'd have got the job",
+          "if we had submitted the offer on time we would have won the job",
+          "if we had submitted the offer on time we would have got the job",
+          "if we had submitted the offer on time we'd have won the job",
+          "if we had submitted the offer on time we'd have got the job",
+          "if we had submitted the tender on time we would have won the job",
+          "if we had submitted the tender on time we would have got the job",
+          "if we had submitted the tender on time we'd have won the job",
+          "if we had submitted the tender on time we'd have got the job",
+          "if we'd sent the bid on time we would have won the job",
+          "if we'd sent the bid on time we would have got the job",
+          "if we'd sent the bid on time we'd have won the job",
+          "if we'd sent the bid on time we'd have got the job",
+          "if we'd sent our bid on time we would have won the job",
+          "if we'd sent our bid on time we would have got the job",
+          "if we'd sent our bid on time we'd have won the job",
+          "if we'd sent our bid on time we'd have got the job",
+          "if we'd sent the offer on time we would have won the job",
+          "if we'd sent the offer on time we would have got the job",
+          "if we'd sent the offer on time we'd have won the job",
+          "if we'd sent the offer on time we'd have got the job",
+          "if we'd sent the tender on time we would have won the job",
+          "if we'd sent the tender on time we would have got the job",
+          "if we'd sent the tender on time we'd have won the job",
+          "if we'd sent the tender on time we'd have got the job",
+          "if we'd submitted the bid on time we would have won the job",
+          "if we'd submitted the bid on time we would have got the job",
+          "if we'd submitted the bid on time we'd have won the job",
+          "if we'd submitted the bid on time we'd have got the job",
+          "if we'd submitted our bid on time we would have won the job",
+          "if we'd submitted our bid on time we would have got the job",
+          "if we'd submitted our bid on time we'd have won the job",
+          "if we'd submitted our bid on time we'd have got the job",
+          "if we'd submitted the offer on time we would have won the job",
+          "if we'd submitted the offer on time we would have got the job",
+          "if we'd submitted the offer on time we'd have won the job",
+          "if we'd submitted the offer on time we'd have got the job",
+          "if we'd submitted the tender on time we would have won the job",
+          "if we'd submitted the tender on time we would have got the job",
+          "if we'd submitted the tender on time we'd have won the job",
+          "if we'd submitted the tender on time we'd have got the job"
+        ],
+        "hint": "teklif = the bid; işi almak = win the job.",
+        "ok": "If we had sent the bid on time, we would have won the job."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “O işi almasaydık şimdi bu kadar meşgul olmazdık.”",
+        "a": [
+          "if we hadn't taken that job we wouldn't be so busy now",
+          "if we hadn't taken that job we wouldn't be this busy now",
+          "if we hadn't taken that job we would not be so busy now",
+          "if we hadn't taken that job we would not be this busy now",
+          "if we hadn't got that job we wouldn't be so busy now",
+          "if we hadn't got that job we wouldn't be this busy now",
+          "if we hadn't got that job we would not be so busy now",
+          "if we hadn't got that job we would not be this busy now",
+          "if we had not taken that job we wouldn't be so busy now",
+          "if we had not taken that job we wouldn't be this busy now",
+          "if we had not taken that job we would not be so busy now",
+          "if we had not taken that job we would not be this busy now",
+          "if we had not got that job we wouldn't be so busy now",
+          "if we had not got that job we wouldn't be this busy now",
+          "if we had not got that job we would not be so busy now",
+          "if we had not got that job we would not be this busy now",
+          "if we hadn't taken that job we wouldn't be as busy now",
+          "if we hadn't taken that job we would not be as busy now",
+          "if we hadn't got that job we wouldn't be as busy now",
+          "if we hadn't got that job we would not be as busy now",
+          "if we had not taken that job we wouldn't be as busy now",
+          "if we had not taken that job we would not be as busy now",
+          "if we had not got that job we wouldn't be as busy now",
+          "if we had not got that job we would not be as busy now"
+        ],
+        "hint": "Sebep geçmiş, sonuç şimdi → mixed.",
+        "ok": "If we hadn't taken that job, we wouldn't be so busy now."
+      }
+    ],
+    "konus_prompt": "Oliver'a geçmişte verdiğin bir iş kararını anlat: başka türlü yapsaydın ne olurdu (would have), neyi yapabilirdin (could have) ve bugün neyin farklı olurdu (mixed: would be)."
+  }
+}

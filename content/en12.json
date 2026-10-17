@@ -1,0 +1,635 @@
+{
+  "id": "en12",
+  "lang": "en",
+  "level": "B2",
+  "title": "Wish, if only, I'd rather",
+  "lead": "“Keşke daha iyi İngilizce konuşsam”, “Keşke o sözleşmeyi imzalamasaydım”, “Faturayı bugün göndermeni tercih ederim” cümlelerini doğru zamanla kuracaksın.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "wish + past simple: keşke şimdi farklı olsa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe **keşke + -se** der. İngilizce wish'ten sonra zamanı **bir adım geri** atar: şimdiki durum için **past simple**. Biçim geçmiş ama anlam **şimdi**; geçmiş biçim “bu gerçek değil” sinyalidir."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Keşke",
+                  "s": "dilek"
+                },
+                {
+                  "t": "daha iyi İngilizce konuşsam",
+                  "s": "-sam (şimdi)",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I wish",
+                  "s": "dilek"
+                },
+                {
+                  "t": "I spoke better English",
+                  "s": "past simple (şimdi)",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "I wish we had more electricians.",
+              "tr": "Keşke daha çok elektrikçimiz olsa."
+            },
+            {
+              "x": "I wish I could come, but I'm on site.",
+              "tr": "Keşke gelebilsem ama şantiyedeyim."
+            },
+            {
+              "x": "I wish the office were closer to the site.",
+              "tr": "Keşke ofis şantiyeye daha yakın olsa."
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Sık hata: “I wish I speak…” → **I wish I spoke…** Yapabilmek için **could**. be için **were** (resmî) ya da **was** (günlük) ikisi de olur. **If only** aynı yapıyı alır, daha güçlüdür: If only I had more time!",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "wish + past perfect: geçmişe pişmanlık",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Olmuş bitmiş bir şeye pişmansan, wish'ten sonra **had + V3** gelir. Third conditional'daki If kısmının aynısı. Türkçede **keşke + -seydim**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Ne zaman?",
+            "wish + …",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Şimdi",
+              "past simple",
+              "I wish I knew the answer."
+            ],
+            [
+              "Geçmiş",
+              "had + V3",
+              "I wish I had learned English earlier."
+            ],
+            [
+              "Geçmiş (olumsuz)",
+              "hadn't + V3",
+              "I wish I hadn't signed that contract."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "If only we had checked the drawings!",
+              "tr": "Keşke çizimleri kontrol etseydik!"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Sık hata: “I wish I would have known.” → **I wish I had known.** Türkçedeki -seydim = **had + V3**.",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "wish + would: başkasının davranışından şikâyet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Başka birinin (ya da havanın) davranışı seni rahatsız ediyor ve değişmesini istiyorsun: **wish + kişi + would + yalın fiil**. Ton şikâyet ve sabırsızlıktır."
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Başkasının davranışı",
+              "text": "Değişmesini istediğin bir alışkanlık.",
+              "ex": {
+                "x": "I wish the client would answer my emails.",
+                "tr": "Keşke müşteri e-postalarıma cevap verse."
+              }
+            },
+            {
+              "title": "Olumsuz: wouldn't",
+              "text": "Yapmasını istemediğin şey.",
+              "ex": {
+                "x": "I wish you wouldn't smoke near the panel.",
+                "tr": "Keşke panonun yanında sigara içmesen."
+              }
+            },
+            {
+              "title": "Hava ve durumlar",
+              "text": "Elinde olmayan, değişmesini beklediğin şey.",
+              "ex": {
+                "x": "I wish it would stop raining.",
+                "tr": "Keşke yağmur dursa."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Kendin için would kullanılmaz: “I wish I would…” yanlış → **I wish I could…** Durum fiilleriyle de olmaz: “I wish he would have a car” yanlış → **I wish he had a car.**",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "I'd rather: tercihini söylemek",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**I'd rather = I would rather** = tercih ederim. İki kalıbı var ve ikisi farklı biçim ister: kendin için **yalın fiil**, başkası için **past simple**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kalıp",
+            "Yapı",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Kendi tercihin",
+              "I'd rather + yalın fiil",
+              "I'd rather work on site than sit in an office."
+            ],
+            [
+              "Olumsuz",
+              "I'd rather not + yalın fiil",
+              "I'd rather not discuss prices on the phone."
+            ],
+            [
+              "Başkası için",
+              "I'd rather you + past simple",
+              "I'd rather you sent the invoice today."
+            ],
+            [
+              "Başkası, olumsuz",
+              "I'd rather you didn't + fiil",
+              "I'd rather you didn't tell the client yet."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "text": "Sık hatalar: “I'd rather to work” → **I'd rather work.** “I'd rather you send” → **I'd rather you sent.** Anlam şimdi ya da gelecek, biçim geçmiş; wish'teki mantık. Karşılaştırma için **than**: I'd rather call than write.",
+          "warn": true
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "I wish I spoke better English.",
+      "tr": "Keşke daha iyi İngilizce konuşsam."
+    },
+    {
+      "x": "I wish we had a bigger crew right now.",
+      "tr": "Keşke şu an daha büyük bir ekibimiz olsa."
+    },
+    {
+      "x": "I wish I could come to the meeting, but I'm on site all day.",
+      "tr": "Keşke toplantıya gelebilsem ama bütün gün şantiyedeyim."
+    },
+    {
+      "x": "I wish I had learned English earlier.",
+      "tr": "Keşke İngilizceyi daha önce öğrenseydim."
+    },
+    {
+      "x": "If only we had checked the drawings before we started!",
+      "tr": "Keşke başlamadan önce çizimleri kontrol etseydik!"
+    },
+    {
+      "x": "I wish the supplier would answer the phone.",
+      "tr": "Keşke tedarikçi telefonu açsa."
+    },
+    {
+      "x": "I wish you wouldn't leave tools on the floor.",
+      "tr": "Keşke aletleri yerde bırakmasan."
+    },
+    {
+      "x": "I'd rather discuss the price face to face.",
+      "tr": "Fiyatı yüz yüze konuşmayı tercih ederim."
+    },
+    {
+      "x": "I'd rather you sent me the drawings today.",
+      "tr": "Çizimleri bana bugün göndermeni tercih ederim."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "I wish I ___ better English. Meetings would be easier.",
+      "a": "spoke",
+      "o": [
+        "spoke",
+        "speak",
+        "had spoken"
+      ],
+      "why": {
+        "speak": "wish'ten sonra şimdiki durum bir adım geri gider: spoke.",
+        "had spoken": "had + V3 geçmişe pişmanlıktır; burada şimdiki durum var."
+      },
+      "ok": "Şimdi → wish + past simple."
+    },
+    {
+      "t": "choice",
+      "q": "I wish we ___ more electricians right now.",
+      "a": "had",
+      "o": [
+        "had",
+        "have",
+        "would have"
+      ],
+      "why": {
+        "have": "wish'ten sonra şimdi için past simple: had.",
+        "would have": "wish + would başkasının davranışı içindir; sahip olmak bir durumdur → had."
+      },
+      "ok": "Durum → wish + past simple."
+    },
+    {
+      "t": "choice",
+      "q": "I wish I ___ come to the meeting, but I'm on site all day.",
+      "a": "could",
+      "o": [
+        "could",
+        "can",
+        "would"
+      ],
+      "why": {
+        "can": "wish'ten sonra can bir adım geri gider: could.",
+        "would": "Kendin için wish + would kullanılmaz."
+      },
+      "ok": "Yapabilmek → I wish I could."
+    },
+    {
+      "t": "choice",
+      "q": "I wish I ___ the contract more carefully before I signed it.",
+      "a": "had read",
+      "o": [
+        "had read",
+        "have read",
+        "would read"
+      ],
+      "why": {
+        "have read": "Present perfect wish'ten sonra gelmez. Geçmiş pişmanlık → had read.",
+        "would read": "Geçmişe pişmanlık için would değil, had + V3."
+      },
+      "ok": "Geçmiş → wish + had + V3."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Faturayı bugün göndermeni tercih ederim.”",
+      "words": [
+        "you",
+        "the",
+        "I'd",
+        "sent",
+        "today",
+        "rather",
+        "invoice"
+      ],
+      "a": "i'd rather you sent the invoice today",
+      "ok": "I'd rather you sent the invoice today."
+    },
+    {
+      "t": "choice",
+      "q": "If only I ___ about the fault yesterday!",
+      "a": "had known",
+      "o": [
+        "had known",
+        "knew",
+        "would know"
+      ],
+      "why": {
+        "knew": "yesterday geçmiş; geçmişe pişmanlık → had known.",
+        "would know": "If only + would bilgi gibi durumlar için kullanılmaz."
+      },
+      "ok": "If only + had + V3."
+    },
+    {
+      "t": "choice",
+      "q": "I wish the supplier ___ the phone. I've called him ten times today.",
+      "a": "would answer",
+      "o": [
+        "would answer",
+        "answers",
+        "will answer"
+      ],
+      "why": {
+        "answers": "wish'ten sonra şimdiki zaman gelmez.",
+        "will answer": "wish'ten sonra will gelmez; başkasından şikâyet → would."
+      },
+      "ok": "Başkasından şikâyet → wish + would."
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “I wish I would have checked the cables.”",
+      "a": [
+        "i wish i had checked the cables",
+        "i wish i'd checked the cables"
+      ],
+      "hint": "Geçmiş pişmanlık → had + V3.",
+      "ok": "I wish I had checked the cables."
+    },
+    {
+      "t": "choice",
+      "q": "I'd rather ___ on site than in the office.",
+      "a": "work",
+      "o": [
+        "work",
+        "to work",
+        "working"
+      ],
+      "why": {
+        "to work": "I'd rather'dan sonra to gelmez; yalın fiil.",
+        "working": "I'd rather + yalın fiil: work."
+      },
+      "ok": "I'd rather + yalın fiil."
+    },
+    {
+      "t": "choice",
+      "q": "I'd rather you ___ the client about the delay yet.",
+      "a": "didn't tell",
+      "o": [
+        "didn't tell",
+        "don't tell",
+        "not tell"
+      ],
+      "why": {
+        "don't tell": "I'd rather you + past simple: didn't tell.",
+        "not tell": "Başkası için past simple: didn't tell. (I'd rather not tell = kendi tercihin.)"
+      },
+      "ok": "I'd rather you + past simple."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Keşke daha büyük bir ekibim olsa.”",
+      "a": [
+        "i wish i had a bigger crew",
+        "i wish i had a bigger team",
+        "i wish i had a larger crew",
+        "i wish i had a larger team",
+        "if only i had a bigger crew",
+        "if only i had a bigger team",
+        "if only i had a larger crew",
+        "if only i had a larger team"
+      ],
+      "hint": "Şimdiki durum → wish + past simple.",
+      "ok": "I wish I had a bigger crew."
+    },
+    {
+      "t": "type",
+      "q": "Çevir (şikâyet): “Keşke şantiyede sigara içmeseler.”",
+      "a": [
+        "i wish they wouldn't smoke on site",
+        "i wish they wouldn't smoke on the site",
+        "i wish they wouldn't smoke at the site",
+        "i wish they would not smoke on site",
+        "i wish they would not smoke on the site",
+        "i wish they would not smoke at the site"
+      ],
+      "hint": "Başkasının davranışı → wish + would.",
+      "ok": "I wish they wouldn't smoke on site.",
+      "soft": [
+        "i wish they didn't smoke on site",
+        "i wish they didn't smoke on the site",
+        "i wish they didn't smoke at the site",
+        "i wish they did not smoke on site",
+        "i wish they did not smoke on the site",
+        "i wish they did not smoke at the site"
+      ],
+      "soft_note": "Doğru sayıldı. Ama şikâyet tonu için wish + would daha güçlü: I wish they wouldn't smoke on site."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Pişmanlık ve dilekler: I wish…, if only…, I'd rather… Oliver'a işinde şu an değişmesini istediklerini (wish + past), geçmişte farklı yapmak istediklerini (wish + had V3), başkalarından şikâyetlerini (wish + would) ve tercihlerini (I'd rather) anlatmak.",
+    "vocab": [
+      "I wish",
+      "if only",
+      "I'd rather",
+      "regret",
+      "supplier",
+      "invoice",
+      "face to face",
+      "on site",
+      "crew",
+      "drawings",
+      "paperwork",
+      "reply",
+      "on time"
+    ],
+    "structures": [
+      "wish / if only + past simple (şimdi)",
+      "wish / if only + had + V3 (geçmiş)",
+      "wish + kişi + would (şikâyet)",
+      "I'd rather + yalın fiil / I'd rather you + past simple"
+    ],
+    "opener_hint": "Oliver yorgun bir günün sonunda kafede sohbet eden İngiliz bir meslektaş gibi açsın: “Long day? If you could change one thing about your job right now, what would it be?” Sonra “Is there anything you wish you had done differently?”, “What do you wish your clients would do?” ve “Would you rather work on site or in an office?” sorularını sorsun.",
+    "level_note": "B2: doğal konuşma, 1-3 cümle. “I wish I would…”, “I wish I have…”, “I'd rather to…” ve “I'd rather you send…” hatalarını hemen ve kısa düzelt (bu dersin hedefi); diğer hataları 3 turda bir topla."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "wish + past (şimdi)",
+      "q": "I wish my office ___ closer to the site.",
+      "a": "were",
+      "o": [
+        "were",
+        "is",
+        "will be"
+      ],
+      "why": {
+        "is": "wish'ten sonra şimdiki zaman gelmez: were (ya da was).",
+        "will be": "wish'ten sonra will gelmez."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "wish + had V3 (geçmiş)",
+      "q": "We lost the client. I wish I ___ so rude to him.",
+      "a": "hadn't been",
+      "o": [
+        "hadn't been",
+        "wasn't",
+        "wouldn't be"
+      ],
+      "why": {
+        "wasn't": "Kaba davranış geçmişte kaldı; pişmanlık → hadn't been.",
+        "wouldn't be": "Kendin için wish + would kullanılmaz."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "wish + would (şikâyet)",
+      "q": "I wish the crew ___ on time. They're late every morning.",
+      "a": "would arrive",
+      "o": [
+        "would arrive",
+        "arrive",
+        "will arrive"
+      ],
+      "why": {
+        "arrive": "wish'ten sonra şimdiki zaman gelmez.",
+        "will arrive": "wish'ten sonra will gelmez; şikâyet → would arrive."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "I'd rather + yalın fiil",
+      "q": "I'd rather ___ prices by email than on the phone.",
+      "a": "discuss",
+      "o": [
+        "discuss",
+        "to discuss",
+        "discussing"
+      ],
+      "why": {
+        "to discuss": "I'd rather + yalın fiil; to yok.",
+        "discussing": "I'd rather + yalın fiil: discuss."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "I'd rather you + past",
+      "q": "Çevir: “Yarın gelmeni tercih ederim.” (I'd rather ile)",
+      "a": [
+        "i'd rather you came tomorrow",
+        "i would rather you came tomorrow",
+        "i'd rather that you came tomorrow",
+        "i would rather that you came tomorrow"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "I wish I ___ Italian. Our new client is from Milan.",
+        "a": "knew",
+        "o": [
+          "knew",
+          "know",
+          "would know"
+        ],
+        "why": {
+          "know": "wish'ten sonra şimdi için past simple: knew.",
+          "would know": "Bilmek bir durum; wish + would olmaz."
+        },
+        "ok": "Şimdi → wish + past simple."
+      },
+      {
+        "t": "choice",
+        "q": "If only we ___ that cheap cable! Now we have to replace it all.",
+        "a": "hadn't bought",
+        "o": [
+          "hadn't bought",
+          "didn't buy",
+          "wouldn't buy"
+        ],
+        "why": {
+          "didn't buy": "Satın alma geçmişte oldu; pişmanlık → hadn't bought.",
+          "wouldn't buy": "Geçmiş pişmanlık için would değil, had + V3."
+        },
+        "ok": "If only + had + V3."
+      },
+      {
+        "t": "choice",
+        "q": "I wish you ___ interrupting me in meetings.",
+        "a": "would stop",
+        "o": [
+          "would stop",
+          "stop",
+          "will stop"
+        ],
+        "why": {
+          "stop": "wish'ten sonra şimdiki zaman gelmez.",
+          "will stop": "wish'ten sonra will gelmez; şikâyet → would stop."
+        },
+        "ok": "Başkasından şikâyet → would."
+      },
+      {
+        "t": "choice",
+        "q": "I'd rather ___ tonight. I'm exhausted.",
+        "a": "not work",
+        "o": [
+          "not work",
+          "don't work",
+          "not to work"
+        ],
+        "why": {
+          "don't work": "Olumsuz: I'd rather not + yalın fiil.",
+          "not to work": "I'd rather'dan sonra to gelmez."
+        },
+        "ok": "I'd rather not + yalın fiil."
+      },
+      {
+        "t": "type",
+        "q": "Düzelt: “I'd rather you send me the drawings today.”",
+        "a": [
+          "i'd rather you sent me the drawings today",
+          "i would rather you sent me the drawings today"
+        ],
+        "hint": "Başkası için → past simple.",
+        "ok": "I'd rather you sent me the drawings today."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Keşke o teklifi kabul etseydim.”",
+        "a": [
+          "i wish i had accepted that offer",
+          "i wish i'd accepted that offer",
+          "if only i had accepted that offer",
+          "if only i'd accepted that offer",
+          "i wish i had accepted the offer",
+          "i wish i had taken that offer",
+          "i wish i had taken the offer",
+          "i wish i'd accepted the offer",
+          "i wish i'd taken that offer",
+          "i wish i'd taken the offer",
+          "if only i had accepted the offer",
+          "if only i had taken that offer",
+          "if only i had taken the offer",
+          "if only i'd accepted the offer",
+          "if only i'd taken that offer",
+          "if only i'd taken the offer"
+        ],
+        "hint": "teklif = offer; geçmiş pişmanlık → had + V3.",
+        "ok": "I wish I had accepted that offer."
+      }
+    ],
+    "konus_prompt": "Oliver'a işinle ilgili üç şey söyle: şu an değişmesini istediğin bir şey (I wish + past), geçmişte farklı yapmak istediğin bir karar (I wish I had…) ve ekibinden ya da müşteriden bir tercihin (I'd rather you…)."
+  }
+}

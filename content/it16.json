@@ -1,0 +1,160 @@
+{
+  "id": "it16",
+  "lang": "it",
+  "level": "A1",
+  "title": "Modal fiiller: potere, volere, dovere",
+  "lead": "“Girebilir miyim?”, “Bugün bitirmeliyiz”, “Eve gitmek istiyorlar”, “Tekrar eder misiniz?” cümlelerini kurabileceksin. Üç fiil, tek kural: arkasından mastar gelir.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Türkçede ek, İtalyancada iki fiil",
+      "blocks": [
+        {"type": "p", "text": "Türkçe “-ebilmek, -meli” işini fiile **ek** olarak yapar: çalış**abil**irim, çalış**malı**yım. İtalyanca iki fiil yan yana koyar: önce **modal fiil (çekimli)**, sonra asıl fiil **mastar** halinde (-are, -ere, -ire)."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Çalış", "s": "fiil"}, {"t": "-abil-", "s": "imkân", "hl": true}, {"t": "-irim", "s": "ben"}]},
+          {"label": "İtalyanca", "items": [{"t": "Posso", "s": "-ebilirim (çekimli)", "hl": true}, {"t": "lavorare", "s": "çalışmak (mastar)"}]}
+        ]},
+        {"type": "table", "head": ["Mastar", "Okunuş", "Anlamı", "Örnek"], "x": 0,
+          "rows": [
+            ["potere", "po-TE-re", "-ebilmek (imkân, izin)", "Posso venire."],
+            ["volere", "vo-LE-re", "istemek", "Voglio finire."],
+            ["dovere", "do-VE-re", "-meli, zorunda olmak", "Devo lavorare."]
+          ],
+          "say": ["potere. Posso venire.", "volere. Voglio finire.", "dovere. Devo lavorare."]},
+        {"type": "note", "warn": true, "text": "Tipik hata: ikinci fiili de çekmek. **Posso lavoro** yanlış, **Posso lavorare** doğru. Çekim yükünü sadece modal taşır; arkadaki fiil hep mastardır."}
+      ]
+    },
+    {
+      "title": "Üçü de düzensiz: çekim tablosu",
+      "blocks": [
+        {"type": "table", "head": ["Özne", "potere", "volere", "dovere"], "x": 1,
+          "rows": [
+            ["io", "posso", "voglio", "devo"],
+            ["tu", "puoi", "vuoi", "devi"],
+            ["lui / lei / Lei", "può", "vuole", "deve"],
+            ["noi", "possiamo", "vogliamo", "dobbiamo"],
+            ["voi", "potete", "volete", "dovete"],
+            ["loro", "possono", "vogliono", "devono"]
+          ],
+          "say": ["io posso, voglio, devo", "tu puoi, vuoi, devi", "lui può, vuole, deve", "noi possiamo, vogliamo, dobbiamo", "voi potete, volete, dovete", "loro possono, vogliono, devono"]},
+        {"type": "examples", "items": [
+          {"x": "posso, puoi, può", "tr": "-ebilirim, -ebilirsin, -ebilir", "ph": "POS-so, PUOY, PUO"},
+          {"x": "voglio, vuoi, vuole", "tr": "istiyorum, istiyorsun, istiyor", "ph": "VO-lyo, VUOY, VUO-le"},
+          {"x": "devo, dobbiamo", "tr": "-meliyim, -meliyiz", "ph": "DE-vo, dob-BYA-mo"}
+        ]},
+        {"type": "note", "text": "Kısayol: **voi** biçimleri düzenli (mastarın -re'si → -te: pote-re → potete). **noi** hep -iamo ile biter. Ezberlenecek asıl kısım io, tu, lui ve loro."},
+        {"type": "note", "warn": true, "text": "**può** aksanlıdır (u-o tek hece, vurgu o'da). **gli** = ly: voglio VO-lyo, “vog-lio” okunmaz."}
+      ]
+    },
+    {
+      "title": "Olumsuz, soru ve dönüşlü fiille",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "Olumsuz: non modalın önüne", "text": "Mastara dokunulmaz.", "ex": {"x": "Non posso venire domani.", "tr": "Yarın gelemem."}},
+          {"title": "Soru: sadece ses tonu", "text": "Sıra aynı, sonda ses yükselir.", "ex": {"x": "Puoi venire domani?", "tr": "Yarın gelebilir misin?"}},
+          {"title": "Dönüşlü fiil: zamir mastara yapışır ya da başa geçer", "text": "İkisi de doğru; zamir yine özneye uyar.", "ex": {"x": "Devo alzarmi alle sei. / Mi devo alzare alle sei.", "tr": "Altıda kalkmalıyım."}}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "Non dovete toccare il quadro!", "tr": "Panoya dokunmamalısınız!", "ph": "non do-VE-te tok-KA-re il KUA-dro"},
+          {"x": "Dobbiamo prepararci.", "tr": "Hazırlanmalıyız.", "ph": "dob-BYA-mo pre-pa-RAR-çi"}
+        ]},
+        {"type": "note", "text": "Yapışınca mastarın sonundaki e düşer: alzare + mi → alzar**mi**, preparare + ci → preparar**ci**. **non devo** bağlama göre “-memeliyim” ya da “zorunda değilim” olur: Domani non devo lavorare = Yarın çalışmam gerekmiyor."}
+      ]
+    },
+    {
+      "title": "Posso…? kibar rica; voglio dikkat ister",
+      "blocks": [
+        {"type": "p", "text": "Şantiyede, ofiste, kafede izin istemenin en kolay yolu **Posso + mastar?** Türkçedeki “-ebilir miyim?” ile birebir aynı. Karşındakinden bir şey isterken **Puoi…?** (sen) ya da **Può…?** (siz, kibar)."},
+        {"type": "examples", "items": [
+          {"x": "Posso entrare?", "tr": "Girebilir miyim?", "ph": "POS-so en-TRA-re"},
+          {"x": "Posso prendere il trapano?", "tr": "Matkabı alabilir miyim?", "ph": "POS-so PREN-de-re il TRA-pa-no"},
+          {"x": "Può ripetere, per favore?", "tr": "Tekrar eder misiniz, lütfen?", "ph": "PUO ri-PE-te-re, per fa-VO-re"},
+          {"x": "Puoi venire qui?", "tr": "Buraya gelebilir misin?", "ph": "PUOY ve-Nİ-re KUİ"}
+        ]},
+        {"type": "note", "warn": true, "text": "**voglio** = istiyorum; doğrudan ve sert. Garsona **Voglio un caffè** demek “Kahve istiyorum!” gibi emir tonunda durur. Kibarı **Vorrei un caffè** (isterdim): şimdilik hazır kalıp, 17. derste açılıyor."},
+        {"type": "note", "text": "volere arkasına isim de alır: **Vuoi un caffè?** = Kahve ister misin? Teklif ederken kaba değil."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Posso entrare?", "tr": "Girebilir miyim?", "ph": "POS-so en-TRA-re"},
+    {"x": "Oggi devo lavorare fino alle sei.", "tr": "Bugün altıya kadar çalışmam lazım. (fino a = -e kadar)", "ph": "OD-ci DE-vo la-vo-RA-re Fİ-no AL-le SEY"},
+    {"x": "Non posso venire domani.", "tr": "Yarın gelemem.", "ph": "non POS-so ve-Nİ-re do-MA-ni"},
+    {"x": "Vuoi un caffè?", "tr": "Kahve ister misin?", "ph": "VUOY un kaf-FE"},
+    {"x": "Dobbiamo finire il quadro oggi.", "tr": "Panoyu bugün bitirmeliyiz.", "ph": "dob-BYA-mo fi-Nİ-re il KUA-dro OD-ci"},
+    {"x": "Può ripetere, per favore?", "tr": "Tekrar eder misiniz, lütfen?", "ph": "PUO ri-PE-te-re, per fa-VO-re"},
+    {"x": "I ragazzi vogliono andare a casa.", "tr": "Çocuklar (ekip) eve gitmek istiyor.", "ph": "i ra-GAT-tsi VO-lyo-no an-DA-re a KA-sa"},
+    {"x": "Devo alzarmi alle sei.", "tr": "Altıda kalkmam lazım.", "ph": "DE-vo al-TSAR-mi AL-le SEY"},
+    {"x": "Posso prendere il trapano?", "tr": "Matkabı alabilir miyim? (prendere = almak)", "ph": "POS-so PREN-de-re il TRA-pa-no"},
+    {"x": "Non dovete toccare il quadro!", "tr": "Panoya dokunmamalısınız!", "ph": "non do-VE-te tok-KA-re il KUA-dro"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "io ___ venire domani.", "a": "posso", "o": ["posso", "puoi", "può"],
+      "why": {"puoi": "puoi, tu (sen) içindir.", "può": "può, lui/lei/Lei içindir."},
+      "ok": "io → posso."},
+    {"t": "choice", "q": "noi ___ finire oggi. (dovere)", "a": "dobbiamo", "o": ["dobbiamo", "dovete", "devono"],
+      "why": {"dovete": "dovete = voi (siz).", "devono": "devono = loro (onlar)."},
+      "ok": "noi → dobbiamo."},
+    {"t": "choice", "q": "loro ___ un caffè. (volere)", "a": "vogliono", "o": ["vogliono", "vuole", "volete"],
+      "why": {"vuole": "vuole tek kişi (lui/lei). loro çoğul.", "volete": "volete = voi (siz)."},
+      "ok": "loro → vogliono. Okunuşu: VO-lyo-no."},
+    {"t": "choice", "q": "Şefe kibarca: “Lei ___ ripetere, per favore?”", "a": "può", "o": ["può", "puoi", "posso"],
+      "why": {"puoi": "puoi samimi tu içindir. Kibar Lei “o” gibi çekilir: può.", "posso": "posso = ben -ebilirim. Şefin tekrar etmesini istiyorsun."},
+      "ok": "Lei → può."},
+    {"t": "choice", "q": "“Çalışabilirim.”", "a": "Posso lavorare.", "o": ["Posso lavoro.", "Posso lavorare.", "Lavorare posso."],
+      "why": {"Posso lavoro.": "İkinci fiil çekilmez, mastar kalır: lavorare.", "Lavorare posso.": "Sıra Türkçe gibi olmaz: önce modal, sonra mastar."},
+      "ok": "Modal çekimli + mastar."},
+    {"t": "choice", "q": "Ofis kapısındasın: “Girebilir miyim?”", "a": "Posso entrare?", "o": ["Posso entrare?", "Puoi entrare?", "Voglio entrare?"],
+      "why": {"Puoi entrare?": "Bu “girebilir misin?” demek; karşındakine soruyorsun.", "Voglio entrare?": "voglio = istiyorum. İzin istemek için posso."},
+      "ok": "İzin istemek = Posso…?"},
+    {"t": "choice", "q": "“Yarın gelemem.”", "a": "Non posso venire domani.", "o": ["Non posso venire domani.", "Posso non venire domani.", "Non posso vengo domani."],
+      "why": {"Posso non venire domani.": "Bu “yarın gelmeyebilirim / gelmemem mümkün” demek. Olumsuzda non modalın önüne.", "Non posso vengo domani.": "vengo çekimli; modal arkasında mastar olmalı: venire."},
+      "ok": "non + posso + venire."},
+    {"t": "choice", "q": "Ekibe uyarı: “Panoya dokunmamalısınız!”", "a": "Non dovete toccare il quadro!", "o": ["Non dovete toccare il quadro!", "Non volete toccare il quadro!", "Non dovete toccate il quadro!"],
+      "why": {"Non volete toccare il quadro!": "volere = istemek: “dokunmak istemiyorsunuz” olur. Yasak için dovere.", "Non dovete toccate il quadro!": "toccate çekimli; modal arkasında mastar: toccare."},
+      "ok": "Yasak → non dovete + mastar."},
+    {"t": "type", "q": "Türkçeden çevir: “Çalışmalıyım.”", "a": ["devo lavorare", "io devo lavorare"], "hint": "dovere: io → devo. Arkadan mastar.", "ok": "Devo lavorare."},
+    {"t": "type", "q": "Türkçeden çevir: “Kahve ister misin?”", "a": ["vuoi un caffè", "tu vuoi un caffè"], "soft": ["vuoi un caffe", "tu vuoi un caffe"], "soft_note": "Doğru sayıldı. caffè aksanlı yazılır: un caffè.", "hint": "volere: tu → vuoi. Soru eki yok, sadece ton.", "ok": "Vuoi un caffè?"},
+    {"t": "order", "q": "Sırala: “Altıda kalkmam lazım.”", "words": ["sei", "alzarmi", "alle", "devo"], "a": "devo alzarmi alle sei", "alt": ["alle sei devo alzarmi"], "ok": "Devo alzarmi alle sei."},
+    {"t": "type", "q": "Türkçeden çevir: “Bugün gelemiyoruz.”", "a": ["oggi non possiamo venire", "non possiamo venire oggi", "noi oggi non possiamo venire", "oggi noi non possiamo venire", "noi non possiamo venire oggi"], "hint": "potere: noi → possiamo. non modalın önüne. Gelmek = venire.", "ok": "Oggi non possiamo venire."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "potere, volere, dovere + mastar ile iş planı konuşmak: ne yapmalısın, ne yapabilirsin, ne istiyorsun; Posso…? ile izin istemek.",
+    "vocab": ["potere", "volere", "dovere", "lavorare", "finire", "venire", "entrare", "prendere", "toccare", "ripetere", "andare a casa", "il quadro", "il trapano", "oggi", "domani", "fino a", "per favore", "un caffè"],
+    "structures": ["posso/puoi/può/possiamo/potete/possono + mastar", "voglio/vuoi/vuole/vogliamo/volete/vogliono + mastar ya da isim", "devo/devi/deve/dobbiamo/dovete/devono + mastar", "non + modal + mastar", "Posso …? / Può ripetere, per favore?", "Devo alzarmi / Mi devo alzare"],
+    "opener_hint": "Chiara şantiyede sabah planlaması yapan bir mühendis gibi başlasın: “Ciao Türab! Oggi che cosa dovete fare?” (Türkçesi parantezde). Sonra sorsun: panoyu bugün bitirebilir misiniz, ekip kaçta eve gitmek istiyor, yarın gelebilir misin. Bir yerde bilerek hızlı konuşup Türab'ın “Può ripetere, per favore?” demesini beklesin.",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece şimdiki zaman ve modal + mastar; vorrei'yi sadece kalıp olarak kullanabilirsin. Türab modaldan sonraki fiili çekerse (posso lavoro) ya da non'u yanlış yere koyarsa doğrusunu tek cümleyle göster."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "potere çekimi", "q": "tu ___ venire domani?", "a": "puoi", "o": ["puoi", "può", "posso"],
+      "why": {"può": "può, lui/lei/Lei içindir. tu → puoi.", "posso": "posso, io içindir."}},
+    {"t": "choice", "topic": "volere çekimi", "q": "I ragazzi ___ andare a casa.", "a": "vogliono", "o": ["vogliono", "vuole", "vogliamo"],
+      "why": {"vuole": "vuole tek kişi. I ragazzi = loro → vogliono.", "vogliamo": "vogliamo = noi (biz)."}},
+    {"t": "choice", "topic": "modal + mastar", "q": "“Bitirmeliyiz.”", "a": "Dobbiamo finire.", "o": ["Dobbiamo finire.", "Dobbiamo finiamo.", "Finire dobbiamo."],
+      "why": {"Dobbiamo finiamo.": "İkinci fiil çekilmez: mastar finire.", "Finire dobbiamo.": "Önce modal, sonra mastar: dobbiamo finire."}},
+    {"t": "choice", "topic": "kibar rica", "q": "Şefin söylediğini anlamadın. Kibarca ne dersin?", "a": "Può ripetere, per favore?", "o": ["Può ripetere, per favore?", "Voglio ripetere.", "Devi ripetere!"],
+      "why": {"Voglio ripetere.": "Bu “tekrar etmek istiyorum” demek; tekrar edecek olan sen olursun.", "Devi ripetere!": "Bu “tekrar etmelisin!” demek: emir gibi ve samimi tu. Şefe kibar Lei: Può…?"}},
+    {"t": "type", "topic": "dovere + dönüşlü", "q": "Türkçeden çevir: “Erken kalkmalıyım.”", "a": ["devo alzarmi presto", "mi devo alzare presto", "io devo alzarmi presto", "io mi devo alzare presto"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Ahmet ___ lavorare sabato. (dovere)", "a": "deve", "o": ["deve", "devo", "devono"],
+        "why": {"devo": "devo, io içindir.", "devono": "devono çoğul (loro). Ahmet tek kişi: deve."},
+        "ok": "lui → deve."},
+      {"t": "choice", "q": "Ekibe: “Voi ___ entrare.” (potere)", "a": "potete", "o": ["potete", "possiamo", "possono"],
+        "why": {"possiamo": "possiamo = noi (biz).", "possono": "possono = loro (onlar)."},
+        "ok": "voi → potete. voi biçimi düzenli."},
+      {"t": "choice", "q": "Kafede garsona hangisi daha kibar?", "a": "Vorrei un caffè.", "o": ["Vorrei un caffè.", "Voglio un caffè."],
+        "why": {"Voglio un caffè.": "Dilbilgisi doğru ama emir tonunda: “Kahve istiyorum!” Kibarı vorrei (hazır kalıp, 17. ders)."},
+        "ok": "Vorrei = isterdim. Kibar sipariş."},
+      {"t": "choice", "q": "“Matkabı alabilir miyim?”", "a": "Posso prendere il trapano?", "o": ["Posso prendere il trapano?", "Posso prendo il trapano?", "Puoi prendere il trapano?"],
+        "why": {"Posso prendo il trapano?": "Modaldan sonra mastar: prendere.", "Puoi prendere il trapano?": "Bu “matkabı alabilir misin?”: karşındakine soruyorsun."},
+        "ok": "Posso + mastar? = -ebilir miyim?"},
+      {"t": "type", "q": "Türkçeden çevir: “Ne yapmak istiyorsun?”", "a": ["che cosa vuoi fare", "cosa vuoi fare", "che vuoi fare", "tu che cosa vuoi fare", "che cosa vuoi fare tu"], "hint": "che cosa (12. ders) + vuoi + fare.", "ok": "Che cosa vuoi fare?"},
+      {"t": "order", "q": "Sırala: “Bugün çalışamam.”", "words": ["lavorare", "non", "oggi", "posso"], "a": "oggi non posso lavorare", "alt": ["non posso lavorare oggi"], "ok": "Oggi non posso lavorare."}
+    ],
+    "konus_prompt": "Chiara yarınki iş planını soracak: ne yapmalısınız, neyi bugün bitirebilirsiniz, ekip ne istiyor, kaçta kalkman lazım. potere, volere, dovere ile cevap ver; en az bir kez Posso…? ile izin iste, bir kez de olumsuz cümle kur."
+  }
+}

@@ -1,0 +1,647 @@
+{
+  "id": "en10",
+  "lang": "en",
+  "level": "B1",
+  "title": "Gerund mı, infinitive mi? (-ing / to)",
+  "lead": "“Ofis açmayı düşünüyoruz”, “Eleman almaya karar verdik” derken ikinci fiilin -ing mi to mu alacağını bileceksin. stop, remember, forget ve try'ın iki biçimdeki anlam farkını ayırt edeceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "İkinci fiilin biçimini ilk fiil seçer",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede iki fiil yan yana gelince ikincisi hep **-mek / -meyi / -meye** alır. İngilizcede ikinci fiilin biçimini **ilk fiil** belirler: bazı fiiller **-ing** ister, bazıları **to + fiil**. Bunun tam bir kuralı yok; en sık fiilleri ezberlemek gerekiyor."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Yeni bir ofis açmayı",
+                  "s": "-meyi",
+                  "hl": true
+                },
+                {
+                  "t": "düşünüyoruz",
+                  "s": ""
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "We're considering",
+                  "s": "consider +"
+                },
+                {
+                  "t": "opening a new office",
+                  "s": "-ing",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "İkinci bir ekip kurmaya",
+                  "s": "-meye",
+                  "hl": true
+                },
+                {
+                  "t": "karar verdik",
+                  "s": ""
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "We decided",
+                  "s": "decide +"
+                },
+                {
+                  "t": "to set up a second crew",
+                  "s": "to + fiil",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "+ -ing",
+            "+ to + fiil"
+          ],
+          "rows": [
+            [
+              "enjoy, avoid, consider",
+              "decide, plan, agree"
+            ],
+            [
+              "finish, keep, mind",
+              "hope, promise, refuse"
+            ],
+            [
+              "suggest, postpone, risk",
+              "manage, afford, offer"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Sık hata: “We are considering to open…” → **We are considering opening…** “I suggest to call him” → **I suggest calling him.**",
+          "warn": true
+        },
+        {
+          "type": "note",
+          "text": "Hafıza kancası: **to** çoğu zaman ileriye, henüz olmamış işe bakar (decide, plan, hope). **-ing** işin kendisini anlatır (enjoy, avoid, finish). Kesin kural değil, ezberi kolaylaştırır."
+        }
+      ]
+    },
+    {
+      "title": "Edattan sonra hep -ing; amaç için to",
+      "blocks": [
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Edat + -ing",
+              "text": "in, at, about, before, after, without, instead of: arkasından fiil gelirse fiil -ing alır.",
+              "ex": {
+                "x": "We're interested in expanding to Ankara.",
+                "tr": "Ankara'ya açılmakla ilgileniyoruz."
+              }
+            },
+            {
+              "title": "look forward to + -ing",
+              "text": "Buradaki to bir edat, mastar değil. Bu yüzden arkasından -ing gelir.",
+              "ex": {
+                "x": "I look forward to working with you.",
+                "tr": "Sizinle çalışmayı dört gözle bekliyorum."
+              }
+            },
+            {
+              "title": "Fiil cümlenin öznesiyse -ing",
+              "text": "Türkçedeki “Ekip yönetmek zor” gibi.",
+              "ex": {
+                "x": "Managing a crew is not easy.",
+                "tr": "Ekip yönetmek kolay değil."
+              }
+            },
+            {
+              "title": "Amaç (-mek için) → to",
+              "text": "Türkçedeki “için” kelimesini çevirme; to tek başına yeter.",
+              "ex": {
+                "x": "I called the client to confirm the date.",
+                "tr": "Tarihi teyit etmek için müşteriyi aradım."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Tipik Türk hatası: “I look forward to meet you.” → **I look forward to meeting you.** Bir de “for confirm” değil, sadece **to confirm**.",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "stop, remember, forget: biçim değişince anlam değişir",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bu fiiller iki biçimi de alır ama anlam değişir. Ölçü zaman sırası: **-ing** = eylem önce oldu. **to** = eylem sonra olacak."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Fiil",
+            "+ -ing (eylem önce)",
+            "+ to (eylem sonra)"
+          ],
+          "rows": [
+            [
+              "stop",
+              "I stopped smoking. (sigarayı bıraktım)",
+              "I stopped to smoke. (sigara içmek için durdum)"
+            ],
+            [
+              "remember",
+              "I remember locking the panel. (kilitlediğimi hatırlıyorum)",
+              "Remember to lock the panel. (kilitlemeyi unutma)"
+            ],
+            [
+              "forget",
+              "I'll never forget meeting him. (tanıştığımızı hiç unutmam)",
+              "I forgot to call him. (aramayı unuttum)"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Türkçede “hatırlamak” tek anlamlı görünür; İngilizcede iki ayrı iş var. Sahada en çok lazım olan: **Remember to switch off the main breaker.** = Ana şalteri kapatmayı unutma.",
+          "warn": true
+        },
+        {
+          "type": "note",
+          "text": "forget + -ing neredeyse sadece **I'll never forget …ing** kalıbında geçer. Günlük işte hep **forget to** kullanırsın."
+        }
+      ]
+    },
+    {
+      "title": "try: uğraşmak mı, çözüm denemek mi?",
+      "blocks": [
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "try to + fiil = uğraşmak, çabalamak",
+              "text": "Zor bir şeyi başarmaya çalışırsın; belki başaramazsın.",
+              "ex": {
+                "x": "I tried to lift the cable drum, but it was too heavy.",
+                "tr": "Kablo makarasını kaldırmaya çalıştım ama çok ağırdı."
+              }
+            },
+            {
+              "title": "try + -ing = çözüm olarak denemek",
+              "text": "Yapması kolay; asıl soru: işe yarayacak mı?",
+              "ex": {
+                "x": "The breaker keeps tripping. Try replacing the RCD.",
+                "tr": "Sigorta atıp duruyor. Kaçak akım rölesini değiştirmeyi dene."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Anlamı neredeyse değişmeyenler: **start, begin, continue, like, love, hate** iki biçimi de alır: It started raining / It started to rain. **would like** ise hep to ister: I'd like to meet the director."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "We're considering opening an office in Ankara.",
+      "tr": "Ankara'da ofis açmayı düşünüyoruz."
+    },
+    {
+      "x": "We've decided to hire two more electricians.",
+      "tr": "İki elektrikçi daha almaya karar verdik."
+    },
+    {
+      "x": "I enjoy working with international clients.",
+      "tr": "Yabancı müşterilerle çalışmaktan keyif alıyorum."
+    },
+    {
+      "x": "We should avoid making promises we can't keep.",
+      "tr": "Tutamayacağımız sözler vermekten kaçınmalıyız."
+    },
+    {
+      "x": "The client agreed to extend the deadline by a week.",
+      "tr": "Müşteri teslim tarihini bir hafta uzatmayı kabul etti."
+    },
+    {
+      "x": "Remember to switch off the main breaker before you start.",
+      "tr": "Başlamadan önce ana şalteri kapatmayı unutma."
+    },
+    {
+      "x": "I remember sending the invoice last Monday.",
+      "tr": "Faturayı geçen pazartesi gönderdiğimi hatırlıyorum."
+    },
+    {
+      "x": "If the breaker keeps tripping, try replacing the RCD.",
+      "tr": "Sigorta atmaya devam ederse kaçak akım rölesini değiştirmeyi dene."
+    },
+    {
+      "x": "I look forward to working with you.",
+      "tr": "Sizinle çalışmayı dört gözle bekliyorum."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "I enjoy ___ with international clients.",
+      "a": "working",
+      "o": [
+        "working",
+        "to work",
+        "work"
+      ],
+      "why": {
+        "to work": "enjoy her zaman -ing ister: enjoy working.",
+        "work": "enjoy'dan sonra yalın fiil gelmez: enjoy working."
+      },
+      "ok": "enjoy + -ing."
+    },
+    {
+      "t": "choice",
+      "q": "We've decided ___ two more electricians.",
+      "a": "to hire",
+      "o": [
+        "hiring",
+        "to hire"
+      ],
+      "why": {
+        "hiring": "decide to ister: decided to hire. Karar ileriye dönük bir iştir."
+      },
+      "ok": "decide + to."
+    },
+    {
+      "t": "choice",
+      "q": "We're considering ___ an office in Ankara.",
+      "a": "opening",
+      "o": [
+        "to open",
+        "opening"
+      ],
+      "why": {
+        "to open": "consider -ing ister. “considering to open” Türklerin en sık hatası."
+      },
+      "ok": "consider + -ing."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “İki elektrikçi daha almayı düşünüyoruz.”",
+      "words": [
+        "hiring",
+        "are",
+        "two",
+        "considering",
+        "we",
+        "electricians",
+        "more"
+      ],
+      "a": "we are considering hiring two more electricians",
+      "ok": "We are considering hiring two more electricians."
+    },
+    {
+      "t": "choice",
+      "q": "Wear gloves and avoid ___ the busbars.",
+      "a": "touching",
+      "o": [
+        "touching",
+        "to touch",
+        "touch"
+      ],
+      "why": {
+        "to touch": "avoid -ing ister: avoid touching.",
+        "touch": "avoid'den sonra yalın fiil gelmez."
+      },
+      "ok": "avoid + -ing. (busbar = bara)"
+    },
+    {
+      "t": "choice",
+      "q": "Are you interested ___ with us on the metro project?",
+      "a": "in working",
+      "o": [
+        "in working",
+        "to work",
+        "in work"
+      ],
+      "why": {
+        "to work": "Kalıp interested in; edattan sonra fiil -ing alır.",
+        "in work": "Edattan sonra fiil -ing alır: in working."
+      },
+      "ok": "Edat + -ing."
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “I'm looking forward to meet you.”",
+      "a": [
+        "i'm looking forward to meeting you",
+        "i am looking forward to meeting you",
+        "i look forward to meeting you"
+      ],
+      "hint": "look forward to: buradaki to bir edat.",
+      "ok": "I'm looking forward to meeting you."
+    },
+    {
+      "t": "choice",
+      "q": "“Did you lock the panel?” — “Yes, I remember ___ it.”",
+      "a": "locking",
+      "o": [
+        "locking",
+        "to lock"
+      ],
+      "why": {
+        "to lock": "remember to = yapmayı unutmamak (bir görev). Sen kilitledin ve o anı hatırlıyorsun → remember locking."
+      },
+      "ok": "Önce eylem, sonra hatırlama → -ing."
+    },
+    {
+      "t": "choice",
+      "q": "Don't forget ___ the main breaker before you leave.",
+      "a": "to switch off",
+      "o": [
+        "to switch off",
+        "switching off"
+      ],
+      "why": {
+        "switching off": "forget + -ing yaşanmış bir anıyı unutmaktır. Yapılacak görev için forget to."
+      },
+      "ok": "Görev → forget to."
+    },
+    {
+      "t": "choice",
+      "q": "On the way to the site, we stopped ___ coffee.",
+      "a": "to get",
+      "o": [
+        "to get",
+        "getting"
+      ],
+      "why": {
+        "getting": "stopped getting = kahve almayı bıraktık (artık almıyoruz). Burada amaç var: kahve almak için durduk."
+      },
+      "ok": "stop to = … için durmak."
+    },
+    {
+      "t": "choice",
+      "q": "I tried ___ the cable drum, but it was too heavy.",
+      "a": "to lift",
+      "o": [
+        "to lift",
+        "lifting"
+      ],
+      "why": {
+        "lifting": "Zor bir iş ve başaramadın → try to. try + -ing kolay bir çözümü denemektir."
+      },
+      "ok": "Çaba → try to."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Fiyatı düşürmeyi reddetti.”",
+      "a": [
+        "he refused to lower the price",
+        "he refused to reduce the price",
+        "he refused to cut the price",
+        "she refused to lower the price",
+        "she refused to reduce the price",
+        "she refused to cut the price",
+        "they refused to lower the price",
+        "they refused to reduce the price",
+        "they refused to cut the price",
+        "he refused to drop the price",
+        "she refused to drop the price",
+        "they refused to drop the price"
+      ],
+      "hint": "reddetmek = refuse. refuse -ing mi, to mu?",
+      "ok": "He refused to lower the price."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Şirketin 5 yıllık hedefi: plan to, consider doing, avoid… Oliver'a şirketinin 5 yıl sonra nerede olacağını anlatmak; her fiilden sonra doğru biçimi (-ing ya da to) seçmek.",
+    "vocab": [
+      "consider",
+      "plan",
+      "avoid",
+      "decide",
+      "afford",
+      "expand",
+      "hire",
+      "bid for",
+      "tender",
+      "set up",
+      "crew",
+      "look forward to",
+      "main breaker",
+      "RCD"
+    ],
+    "structures": [
+      "verb + -ing (enjoy, avoid, consider, finish, suggest)",
+      "verb + to (decide, plan, agree, hope, afford, refuse)",
+      "edat + -ing (interested in, look forward to)",
+      "stop / remember / forget / try + -ing vs to"
+    ],
+    "opener_hint": "Oliver büyük bir yabancı yüklenicinin proje müdürü gibi açsın: “So, where do you see your company in five years?” Sonra “What are you planning to do first?”, “What are you considering doing to find good electricians?” ve “What do you want to avoid doing?” sorularıyla -ing / to seçimini zorlasın.",
+    "level_note": "B1+ → B2: doğal konuşma, 1-3 cümle. “consider to / suggest to / look forward to meet” tipi hataları her gördüğünde hemen ve kısa düzelt (bu dersin hedefi); diğer hataları 3 turda bir topla."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "finish + -ing",
+      "q": "Have you finished ___ the new panel?",
+      "a": "testing",
+      "o": [
+        "testing",
+        "to test",
+        "test"
+      ],
+      "why": {
+        "to test": "finish -ing ister: finished testing.",
+        "test": "finish'ten sonra yalın fiil gelmez."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "afford + to",
+      "q": "We can't afford ___ another mistake on this project.",
+      "a": "to make",
+      "o": [
+        "to make",
+        "making"
+      ],
+      "why": {
+        "making": "afford to ister: can't afford to make."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "remember to (görev)",
+      "q": "Please remember ___ the main switch before you leave.",
+      "a": "to turn off",
+      "o": [
+        "turning off",
+        "to turn off"
+      ],
+      "why": {
+        "turning off": "Bu bir görev, henüz yapılmadı → remember to."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "stop + -ing (bırakmak)",
+      "q": "He stopped ___ two years ago, and he feels much better now.",
+      "a": "smoking",
+      "o": [
+        "smoking",
+        "to smoke"
+      ],
+      "why": {
+        "to smoke": "stopped to smoke = sigara içmek için durdu. Burada sigarayı bıraktı → stopped smoking."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "edat + -ing",
+      "q": "Çevir: “Şirketimizi büyütmekle ilgileniyoruz.”",
+      "a": [
+        "we are interested in growing our company",
+        "we are interested in growing our business",
+        "we are interested in expanding our company",
+        "we are interested in expanding our business",
+        "we're interested in growing our company",
+        "we're interested in growing our business",
+        "we're interested in expanding our company",
+        "we're interested in expanding our business",
+        "we are interested in growing our firm",
+        "we are interested in expanding our firm",
+        "we're interested in growing our firm",
+        "we're interested in expanding our firm"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "Would you mind ___ the drawings again?",
+        "a": "sending",
+        "o": [
+          "sending",
+          "to send"
+        ],
+        "why": {
+          "to send": "mind -ing ister: Would you mind sending…?"
+        },
+        "ok": "mind + -ing: kibar rica."
+      },
+      {
+        "t": "choice",
+        "q": "The supplier promised ___ the cables by Friday.",
+        "a": "to deliver",
+        "o": [
+          "to deliver",
+          "delivering"
+        ],
+        "why": {
+          "delivering": "promise to ister: promised to deliver."
+        },
+        "ok": "promise + to."
+      },
+      {
+        "t": "choice",
+        "q": "I'll never forget ___ my first panel on my own.",
+        "a": "commissioning",
+        "o": [
+          "commissioning",
+          "to commission"
+        ],
+        "why": {
+          "to commission": "forget to = yapmayı unutmak. Burada yaşanmış bir anı var → never forget commissioning."
+        },
+        "ok": "Yaşanmış anı → -ing."
+      },
+      {
+        "t": "choice",
+        "q": "On the way to Ankara, we stopped ___ fuel.",
+        "a": "to buy",
+        "o": [
+          "to buy",
+          "buying"
+        ],
+        "why": {
+          "buying": "stopped buying = yakıt almayı bıraktık. Burada amaç: almak için durduk."
+        },
+        "ok": "stop to = … için durmak."
+      },
+      {
+        "t": "type",
+        "q": "Düzelt: “We are considering to bid for the airport project.”",
+        "a": [
+          "we are considering bidding for the airport project",
+          "we are considering bidding on the airport project",
+          "we're considering bidding for the airport project",
+          "we're considering bidding on the airport project"
+        ],
+        "hint": "consider + -ing.",
+        "ok": "We're considering bidding for the airport project."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Ekibe iki elektrikçi daha almaya karar verdik.”",
+        "a": [
+          "we decided to hire two more electricians",
+          "we decided to hire two more electricians for the team",
+          "we decided to hire two more electricians for the crew",
+          "we decided to take on two more electricians",
+          "we decided to take on two more electricians for the team",
+          "we decided to take on two more electricians for the crew",
+          "we decided to employ two more electricians",
+          "we decided to employ two more electricians for the team",
+          "we decided to employ two more electricians for the crew",
+          "we've decided to hire two more electricians",
+          "we've decided to hire two more electricians for the team",
+          "we've decided to hire two more electricians for the crew",
+          "we've decided to take on two more electricians",
+          "we've decided to take on two more electricians for the team",
+          "we've decided to take on two more electricians for the crew",
+          "we've decided to employ two more electricians",
+          "we've decided to employ two more electricians for the team",
+          "we've decided to employ two more electricians for the crew",
+          "we have decided to hire two more electricians",
+          "we have decided to hire two more electricians for the team",
+          "we have decided to hire two more electricians for the crew",
+          "we have decided to take on two more electricians",
+          "we have decided to take on two more electricians for the team",
+          "we have decided to take on two more electricians for the crew",
+          "we have decided to employ two more electricians",
+          "we have decided to employ two more electricians for the team",
+          "we have decided to employ two more electricians for the crew"
+        ],
+        "hint": "karar vermek = decide; eleman almak = hire.",
+        "ok": "We've decided to hire two more electricians."
+      }
+    ],
+    "konus_prompt": "Oliver'a önümüzdeki yıl için planını anlat: ne yapmaya karar verdin (decide to), neyi yapmayı düşünüyorsun (consider -ing), neyi yapmaktan kaçınacaksın (avoid -ing) ve ekibine her sabah neyi unutmamasını söylersin (remember to)."
+  }
+}

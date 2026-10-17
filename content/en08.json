@@ -1,0 +1,662 @@
+{
+  "id": "en08",
+  "lang": "en",
+  "level": "B1",
+  "title": "Edilgen yapı: is done, was done, has been done",
+  "lead": "İşi kimin yaptığı değil, işin kendisi önemli olduğunda edilgen cümle kurabileceksin: pano test edildi, kablolar yarın çekilecek. Her zamanda be + V3 kalıbını ve “It is said that…” gibi resmî kalıpları kullanacaksın.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Edilgen: odak işte",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Teknik raporda “Ahmet panoyu test etti” yerine çoğu zaman “Pano test edildi” dersin: kim yaptığı önemsiz, iş önemli. Türkçe bunu fiile **-il / -in** ekleyerek yapar. İngilizce **be + V3** (past participle) kullanır; zamanı **be** taşır, ana fiil hep V3 kalır."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Ahmet",
+                  "s": "yapan"
+                },
+                {
+                  "t": "panoyu",
+                  "s": "nesne"
+                },
+                {
+                  "t": "test etti",
+                  "s": "etken",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "Ahmet",
+                  "s": "yapan"
+                },
+                {
+                  "t": "tested",
+                  "s": "etken",
+                  "hl": true
+                },
+                {
+                  "t": "the panel",
+                  "s": "nesne"
+                }
+              ]
+            },
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Pano",
+                  "s": "özne oldu"
+                },
+                {
+                  "t": "test edildi",
+                  "s": "-il",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "The panel",
+                  "s": "özne oldu"
+                },
+                {
+                  "t": "was tested",
+                  "s": "be + V3",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Edilgen sadece **nesne alan** fiillerle kurulur. happen, arrive, die, occur nesne almaz: “The accident was happened.” yanlış → **The accident happened.** Türkçe “kaza oldu”yu edilgen sanma."
+        }
+      ]
+    },
+    {
+      "title": "Her zamanda tek mantık: be + V3",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Etken cümlenin zamanı ne ise **be** o zamana girer. Gerisi değişmez: **V3**. Zaman tablosunu ezberleme; sadece be'nin biçimini değiştir."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zaman",
+            "Kalıp",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Present simple",
+              "am/is/are + V3",
+              "The cables are tested every month."
+            ],
+            [
+              "Present continuous",
+              "am/is/are being + V3",
+              "The panel is being installed now."
+            ],
+            [
+              "Past simple",
+              "was/were + V3",
+              "The lights were installed last week."
+            ],
+            [
+              "Present perfect",
+              "has/have been + V3",
+              "The power has been switched off."
+            ],
+            [
+              "Future (will)",
+              "will be + V3",
+              "The site will be inspected tomorrow."
+            ],
+            [
+              "Modal",
+              "can/must/should be + V3",
+              "The door must be locked."
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Tipik hata: be'yi unutmak ya da V3'ü atlamak. “The panel tested yesterday” → **was tested**; “The cables are test” → **are tested**. “is testing” etkendir (test ediyor), “is being tested” edilgendir (test ediliyor)."
+        }
+      ]
+    },
+    {
+      "title": "by: ne zaman söylenir?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Edilgen cümlelerin çoğunda yapanı hiç söylemezsin. **by + yapan** sadece yapan kişi yeni ya da önemli bilgiyse eklenir."
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Yapan belli değil ya da önemsiz → by yok",
+              "text": "“by someone, by people, by workers” ekleme; gereksiz.",
+              "ex": {
+                "x": "The cable was damaged during the night.",
+                "tr": "Kablo gece hasar görmüş."
+              }
+            },
+            {
+              "title": "Yapan önemli ya da şaşırtıcı → by + yapan",
+              "text": "Sorumluluk, uzmanlık ya da haber değeri varsa.",
+              "ex": {
+                "x": "The panel was tested by an independent engineer.",
+                "tr": "Pano bağımsız bir mühendis tarafından test edildi."
+              }
+            },
+            {
+              "title": "Yapan sensen → etken kur",
+              "text": "“The lights were installed by us” doğal değil.",
+              "ex": {
+                "x": "We installed the lights.",
+                "tr": "Armatürleri biz taktık."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Türkçe “tarafından” = **by**. “from” değil: “The panel was approved from the client” yanlış → **by the client**."
+        }
+      ]
+    },
+    {
+      "title": "It is said that… (söylentiler, beklentiler)",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe “diyorlar, söyleniyor, bekleniyor” der. Resmî İngilizcede **It + is + V3 + that** kalıbı kullanılır: say, expect, believe, report, think. Kaynak belirsizdir ya da bilerek söylenmez."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "It is said that the client wants to add two more floors.",
+              "tr": "İşverenin iki kat daha eklemek istediği söyleniyor."
+            },
+            {
+              "x": "It is expected that the work will be finished in May.",
+              "tr": "İşin mayısta bitmesi bekleniyor."
+            },
+            {
+              "x": "The new contractor is said to be very strict.",
+              "tr": "Yeni yüklenicinin çok katı olduğu söyleniyor."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kalıp",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "It is said that + cümle",
+              "It is said that he is leaving."
+            ],
+            [
+              "Özne + is said + to + fiil",
+              "He is said to be leaving."
+            ]
+          ],
+          "x": 1
+        },
+        {
+          "type": "note",
+          "warn": false,
+          "text": "Bu kalıplar yazışma ve rapor dilidir. Sahada konuşurken **They say…** ya da **I heard that…** daha doğal."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "The main panel was installed last week.",
+      "tr": "Ana pano geçen hafta kuruldu."
+    },
+    {
+      "x": "All the circuits are tested before handover.",
+      "tr": "Bütün devreler teslimden önce test edilir."
+    },
+    {
+      "x": "The cables are being pulled right now.",
+      "tr": "Kablolar şu anda çekiliyor."
+    },
+    {
+      "x": "The power has been switched off on the second floor.",
+      "tr": "İkinci katta elektrik kesildi."
+    },
+    {
+      "x": "The panel will be energised tomorrow morning.",
+      "tr": "Panoya yarın sabah enerji verilecek."
+    },
+    {
+      "x": "The earthing must be checked before we connect anything.",
+      "tr": "Bir şey bağlamadan önce topraklama kontrol edilmeli."
+    },
+    {
+      "x": "The drawings were approved by the consultant.",
+      "tr": "Çizimler müşavir tarafından onaylandı."
+    },
+    {
+      "x": "Nothing can be connected until the test report is signed.",
+      "tr": "Test raporu imzalanana kadar hiçbir şey bağlanamaz."
+    },
+    {
+      "x": "It is expected that the site will be handed over in May.",
+      "tr": "Sahanın mayısta teslim edilmesi bekleniyor."
+    },
+    {
+      "x": "The new contractor is said to be very strict.",
+      "tr": "Yeni yüklenicinin çok katı olduğu söyleniyor."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "The lights ___ last week.",
+      "a": "were installed",
+      "o": [
+        "were installed",
+        "installed",
+        "are installed"
+      ],
+      "why": {
+        "installed": "Işıklar kendini kurmaz; edilgen: were + V3.",
+        "are installed": "last week geçmiş: be de geçmişe girer → were."
+      },
+      "ok": "Geçmiş edilgen → was/were + V3."
+    },
+    {
+      "t": "choice",
+      "q": "All circuits ___ before handover. (Her zaman böyle.)",
+      "a": "are tested",
+      "o": [
+        "are tested",
+        "are testing",
+        "tested"
+      ],
+      "why": {
+        "are testing": "are testing = test ediyorlar (etken). Devreler test etmez, test edilir.",
+        "tested": "Genel kural için present simple edilgen: are + V3."
+      },
+      "ok": "Genel kural → am/is/are + V3."
+    },
+    {
+      "t": "choice",
+      "q": "Şu anda kablolar çekiliyor: “The cables ___ right now.”",
+      "a": "are being pulled",
+      "o": [
+        "are being pulled",
+        "are pulled",
+        "are pulling"
+      ],
+      "why": {
+        "are pulled": "are pulled genel ya da sonuç anlatır; şu an süren iş için being: are being pulled.",
+        "are pulling": "are pulling etken: kablolar bir şeyi çekiyor gibi olur."
+      },
+      "ok": "Şu an süren → is/are being + V3."
+    },
+    {
+      "t": "choice",
+      "q": "Elektrik kesildi, artık güvenle çalışabilirsiniz: “The power ___ off.”",
+      "a": "has been switched",
+      "o": [
+        "has been switched",
+        "has switched",
+        "is been switched"
+      ],
+      "why": {
+        "has switched": "Elektrik kendini kapatmaz; edilgen present perfect: has been + V3.",
+        "is been switched": "be'nin biçimleri karışmaz; present perfect edilgen: has been + V3."
+      },
+      "ok": "Present perfect edilgen → has/have been + V3."
+    },
+    {
+      "t": "choice",
+      "q": "The site ___ tomorrow.",
+      "a": "will be inspected",
+      "o": [
+        "will be inspected",
+        "will inspected",
+        "will be inspect"
+      ],
+      "why": {
+        "will inspected": "will'den sonra be gerekir: will be + V3.",
+        "will be inspect": "be'den sonra V3: inspected."
+      },
+      "ok": "Gelecek edilgen → will be + V3."
+    },
+    {
+      "t": "choice",
+      "q": "Dün gece bir kaza oldu.",
+      "a": "An accident happened last night.",
+      "o": [
+        "An accident happened last night.",
+        "An accident was happened last night."
+      ],
+      "why": {
+        "An accident was happened last night.": "happen nesne almaz, edilgen olmaz. Türkçe “oldu”yu edilgen sanma."
+      },
+      "ok": "happen, arrive, occur → edilgen yok."
+    },
+    {
+      "t": "choice",
+      "q": "Doğal olan hangisi?",
+      "a": "The cable was stolen during the night.",
+      "o": [
+        "The cable was stolen during the night.",
+        "The cable was stolen by someone during the night.",
+        "Someone stole by the cable during the night."
+      ],
+      "why": {
+        "The cable was stolen by someone during the night.": "by someone bilgi taşımaz; yapan belirsizse by'ı tamamen at.",
+        "Someone stole by the cable during the night.": "Etken cümlede by kullanılmaz; ayrıca anlamsız."
+      },
+      "ok": "Yapan belirsiz → by yok."
+    },
+    {
+      "t": "choice",
+      "q": "The drawings were approved ___ the consultant.",
+      "a": "by",
+      "o": [
+        "by",
+        "from",
+        "with"
+      ],
+      "why": {
+        "from": "Türkçe “tarafından” = by. from yanlış.",
+        "with": "with araç bildirir (with a screwdriver); yapan kişi için by."
+      },
+      "ok": "Yapan → by."
+    },
+    {
+      "t": "type",
+      "q": "Edilgen yap: “They check the earthing every month.”",
+      "a": [
+        "the earthing is checked every month",
+        "earthing is checked every month",
+        "the earthing gets checked every month",
+        "the earthing is checked monthly",
+        "earthing is checked monthly",
+        "every month the earthing is checked"
+      ],
+      "hint": "Nesne özne olur; present simple: is + V3.",
+      "ok": "The earthing is checked every month."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Pano yarın test edilecek.”",
+      "a": [
+        "the panel will be tested tomorrow",
+        "the board will be tested tomorrow",
+        "the switchboard will be tested tomorrow",
+        "tomorrow the panel will be tested",
+        "the panel is going to be tested tomorrow",
+        "the board is going to be tested tomorrow",
+        "the distribution board will be tested tomorrow",
+        "the switchboard is going to be tested tomorrow",
+        "tomorrow the board will be tested"
+      ],
+      "hint": "will be + V3. pano = panel.",
+      "ok": "The panel will be tested tomorrow."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Kablolar zaten çekildi.”",
+      "words": [
+        "already",
+        "The",
+        "been",
+        "have",
+        "pulled",
+        "cables"
+      ],
+      "a": "The cables have already been pulled",
+      "ok": "The cables have already been pulled."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “İşin mayısta bitirilmesi bekleniyor.”",
+      "words": [
+        "the",
+        "It",
+        "in",
+        "work",
+        "finished",
+        "expected",
+        "be",
+        "is",
+        "that",
+        "May",
+        "will"
+      ],
+      "a": "It is expected that the work will be finished in May",
+      "ok": "It is expected that the work will be finished in May."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Teknik süreç: bir pano nasıl devreye alınır, adım adım edilgen yapıyla anlatmak (is checked, is connected, is tested, is energised); ne yapıldı / ne yapılıyor / ne yapılacak ayrımını was / is being / has been / will be ile vermek; gerekirse by ile sorumluyu söylemek.",
+    "vocab": [
+      "commissioning",
+      "energise",
+      "isolate",
+      "lock out",
+      "earthing",
+      "insulation resistance test",
+      "torque",
+      "terminals",
+      "busbar",
+      "label",
+      "test report",
+      "sign off",
+      "handover",
+      "as-built drawings",
+      "consultant",
+      "snag list"
+    ],
+    "structures": [
+      "is/are + V3 (genel adımlar)",
+      "was/were + V3 (yapıldı)",
+      "is/are being + V3 (şu an yapılıyor)",
+      "has/have been + V3 (yapıldı, hazır)",
+      "will be / must be + V3 (yapılacak / yapılmalı)",
+      "by + yapan (sadece önemliyse)",
+      "It is expected that…"
+    ],
+    "opener_hint": "Oliver bir İngiliz danışman mühendis; devreye alma öncesi toplantıda. “So, walk me through it. What happens before this panel is energised?” ile açsın. Türab adımları sayarken “Has the insulation test been done yet?” ve “Who will it be signed off by?” gibi edilgen sorularla zamanlar arasında geçiş yaptırsın.",
+    "level_note": "B1+ → B2: profesyonel ama sade toplantı İngilizcesi, 1-3 cümle. Eksik be ya da yanlış V3 (“the panel tested”, “is test”) ve “by” yerine “from” hatasını hemen düzelt; diğerlerini 3 turda bir topla. Türab etken cümle kursa da doğruysa kabul et, sonra edilgen biçimini de göster."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "past simple edilgen",
+      "q": "“The cable ___ during the night.” (Hasar görmüş, kim yaptı bilinmiyor.)",
+      "a": "was damaged",
+      "o": [
+        "was damaged",
+        "damaged",
+        "was damage"
+      ],
+      "why": {
+        "damaged": "Kablo kendini bozmaz; edilgen: was + V3.",
+        "was damage": "be'den sonra V3: damaged."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "present continuous edilgen",
+      "q": "Şu an ana pano kuruluyor: “The main panel ___.”",
+      "a": "is being installed",
+      "o": [
+        "is being installed",
+        "is installing",
+        "has installed"
+      ],
+      "why": {
+        "is installing": "is installing etken: pano bir şey kuruyor. Edilgen süren iş: is being + V3.",
+        "has installed": "has installed etken ve present perfect; şu an süren edilgen için is being installed."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "present perfect edilgen",
+      "q": "Rapor hazır: “The test report ___ by the consultant.”",
+      "a": "has been signed",
+      "o": [
+        "has been signed",
+        "has signed",
+        "have been signed"
+      ],
+      "why": {
+        "has signed": "Rapor imzalamaz; edilgen: has been + V3.",
+        "have been signed": "report tekil: has."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "by-agent",
+      "q": "Düzelt: “The panel was approved from the client.”",
+      "a": [
+        "the panel was approved by the client",
+        "the board was approved by the client",
+        "the switchboard was approved by the client"
+      ]
+    },
+    {
+      "t": "choice",
+      "topic": "it is said that / is said to",
+      "q": "“Yeni yüklenicinin çok katı olduğu söyleniyor.” Hangisi doğru?",
+      "a": "The new contractor is said to be very strict.",
+      "o": [
+        "The new contractor is said to be very strict.",
+        "The new contractor is said that he is very strict.",
+        "It is said the new contractor to be very strict."
+      ],
+      "why": {
+        "The new contractor is said that he is very strict.": "Özneyle başlarsan that değil to + fiil: is said to be.",
+        "It is said the new contractor to be very strict.": "It ile başlarsan that + tam cümle: It is said that the new contractor is very strict."
+      }
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "Bu bina 2019'da yapıldı: “This building ___ in 2019.”",
+        "a": "was built",
+        "o": [
+          "was built",
+          "built",
+          "has been built"
+        ],
+        "why": {
+          "built": "Bina kendini yapmaz: edilgen.",
+          "has been built": "in 2019 bitmiş zaman → past simple: was built."
+        },
+        "ok": "Bitmiş zaman → was/were + V3."
+      },
+      {
+        "t": "choice",
+        "q": "“Nothing ___ until the report is signed.”",
+        "a": "can be connected",
+        "o": [
+          "can be connected",
+          "can connected",
+          "can be connect"
+        ],
+        "why": {
+          "can connected": "Modal edilgen: can + be + V3.",
+          "can be connect": "be'den sonra V3: connected."
+        },
+        "ok": "Modal edilgen → modal + be + V3."
+      },
+      {
+        "t": "choice",
+        "q": "Hangisi doğru?",
+        "a": "The inspector arrived at nine.",
+        "o": [
+          "The inspector arrived at nine.",
+          "The inspector was arrived at nine."
+        ],
+        "why": {
+          "The inspector was arrived at nine.": "arrive nesne almaz, edilgen olmaz."
+        },
+        "ok": "arrive → edilgen yok."
+      },
+      {
+        "t": "choice",
+        "q": "Hangisi daha doğal?",
+        "a": "We finished the cable tray yesterday.",
+        "o": [
+          "We finished the cable tray yesterday.",
+          "The cable tray was finished by us yesterday."
+        ],
+        "why": {
+          "The cable tray was finished by us yesterday.": "Yapan sizseniz ve bunu söylemek istiyorsanız etken cümle daha doğal."
+        },
+        "ok": "Yapan sensen → etken."
+      },
+      {
+        "t": "type",
+        "q": "Edilgen yap: “They have switched off the power.”",
+        "a": [
+          "the power has been switched off",
+          "the power has been turned off",
+          "power has been switched off",
+          "power has been turned off"
+        ],
+        "hint": "has been + V3.",
+        "ok": "The power has been switched off."
+      },
+      {
+        "t": "type",
+        "q": "Çevir: “Topraklama kontrol edilmeli.”",
+        "a": [
+          "the earthing must be checked",
+          "the earthing should be checked",
+          "the earthing has to be checked",
+          "earthing must be checked",
+          "the grounding must be checked",
+          "the grounding should be checked",
+          "the earthing needs to be checked",
+          "earthing should be checked",
+          "the grounding has to be checked"
+        ],
+        "hint": "must be + V3. topraklama = earthing.",
+        "ok": "The earthing must be checked."
+      }
+    ],
+    "konus_prompt": "Oliver'a bir panonun devreye alınmasını 5 adımda anlat; her adımda edilgen kullan (is checked, is connected, is tested…). Sonra bugünkü durumu söyle: neler yapıldı (has been), ne yapılıyor (is being), ne yapılacak (will be)."
+  }
+}

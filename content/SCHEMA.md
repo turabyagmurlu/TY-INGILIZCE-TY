@@ -12,7 +12,7 @@ Metin alanlarında tek satır içi biçim **`**kalın**`**'dır. Başka markdown
 |---|---|---|
 | `id` | string | `it05`, `en02` … |
 | `lang` | `"it"` \| `"en"` | TTS dili ve koç seçimi için |
-| `level` | `"A1"` \| `"B1"` | İngilizce dersler B1+ → B2 hedefli, `"B1"` olarak işaretli |
+| `level` | `"A1"` \| `"A2"` \| `"B1"` \| `"B2"` | İngilizce dersler B1+ → B2 hedefli, `"B1"` olarak işaretli |
 | `title` | string | Ders başlığı |
 | `lead` | string | 1–2 cümle: ders bitince ne yapabileceği |
 | `minutes` | number | Tahmini süre |

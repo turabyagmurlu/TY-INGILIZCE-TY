@@ -1,0 +1,167 @@
+{
+  "id": "it15",
+  "lang": "it",
+  "level": "A1",
+  "title": "Günlük rutin ve dönüşlü fiiller",
+  "lead": "“Altıda kalkarım, yıkanırım, giyinirim, yedide şantiyedeyim” diye gününü sırayla anlatabileceksin. 2. dersten beri ezberinde duran **mi chiamo**'nun nasıl çalıştığını da sonunda göreceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Dönüşlü fiil: iş kendine döner",
+      "blocks": [
+        {"type": "p", "text": "Türkçede “kendini yıkamak” için fiile **-n-** eklersin: yıka**n**mak, giy**in**mek, hazırla**n**mak. İtalyanca ek kullanmaz; fiilin önüne küçük bir **zamir** koyar: **mi** = kendimi."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Yıka", "s": "fiil"}, {"t": "-n-", "s": "kendini", "hl": true}, {"t": "-ıyorum", "s": "ben"}]},
+          {"label": "İtalyanca", "items": [{"t": "Mi", "s": "kendimi", "hl": true}, {"t": "lavo", "s": "yıkıyorum"}]}
+        ]},
+        {"type": "table", "head": ["Başkasına", "Kendine", "Fark"], "x": 1,
+          "rows": [
+            ["Lavo il furgone.", "Mi lavo.", "kamyoneti yıkıyorum / yıkanıyorum"],
+            ["Sveglio la squadra.", "Mi sveglio.", "ekibi uyandırıyorum / uyanıyorum"],
+            ["Chiamo il capo.", "Mi chiamo Türab.", "şefi arıyorum / adım Türab"]
+          ],
+          "say": ["Mi lavo.", "Mi sveglio.", "Mi chiamo Türab."]},
+        {"type": "note", "text": "**Mi chiamo'nun sırrı:** chiamare = çağırmak, ad vermek. **Mi chiamo Türab** kelimesi kelimesine “kendime Türab diyorum”. 2. dersteki **Come si chiama?** da aynı yapı: “kendinize ne diyorsunuz?”"},
+        {"type": "note", "warn": true, "text": "Sözlükte dönüşlü fiil **-si** ile biter: lavar**si**, alzar**si**, vestir**si**. Mastarın sonundaki e düşer, si yapışır: lavare → lavarsi."}
+      ]
+    },
+    {
+      "title": "Altı kişi, altı zamir",
+      "blocks": [
+        {"type": "p", "text": "Fiil normal -are / -ire çekimini yapar (9. ve 10. ders). Tek yenilik öndeki zamir; o da özneye göre değişir. Zamir kişiyi zaten gösterdiği için io, tu çoğu zaman düşer."},
+        {"type": "table", "head": ["Özne", "Zamir", "alzarsi (kalkmak)", "vestirsi (giyinmek)"], "x": 2,
+          "rows": [
+            ["io", "mi", "mi alzo", "mi vesto"],
+            ["tu", "ti", "ti alzi", "ti vesti"],
+            ["lui / lei / Lei", "si", "si alza", "si veste"],
+            ["noi", "ci", "ci alziamo", "ci vestiamo"],
+            ["voi", "vi", "vi alzate", "vi vestite"],
+            ["loro", "si", "si alzano", "si vestono"]
+          ],
+          "say": ["mi alzo, mi vesto", "ti alzi, ti vesti", "si alza, si veste", "ci alziamo, ci vestiamo", "vi alzate, vi vestite", "si alzano, si vestono"]},
+        {"type": "note", "text": "Okunuş: mi alzo = mi AL-tso, ci alziamo = çi al-TSYA-mo (ci = çi). **si** üç kişide ortak: lui, lei, Lei ve loro. Hangisi olduğunu fiilin sonu söyler: si alz**a** / si alz**ano**."},
+        {"type": "examples", "items": [
+          {"x": "Mi sveglio alle sei.", "tr": "Altıda uyanırım.", "ph": "mi ZVE-lyo AL-le SEY"},
+          {"x": "Gli operai si preparano.", "tr": "İşçiler hazırlanıyor.", "ph": "lyi o-pe-RA-i si pre-PA-ra-no"}
+        ]}
+      ]
+    },
+    {
+      "title": "Zamir nereye girer? Tipik Türk hataları",
+      "blocks": [
+        {"type": "rules", "items": [
+          {"title": "Zamir çekimli fiilin hemen önünde", "text": "Arkaya konmaz.", "ex": {"x": "Mi alzo presto.", "tr": "Erken kalkarım."}},
+          {"title": "Olumsuz: non + zamir + fiil", "text": "non en başa, zamir fiile yapışık kalır.", "ex": {"x": "Non mi alzo presto.", "tr": "Erken kalkmam."}},
+          {"title": "Soru: sadece ses tonu", "text": "Sıra değişmez, sonda ses yükselir.", "ex": {"x": "Ti alzi presto?", "tr": "Erken kalkar mısın?"}}
+        ]},
+        {"type": "table", "head": ["Hatalı / doğal değil", "Doğru", "Neden"], "x": 1,
+          "rows": [
+            ["Alzo alle sei.", "Mi alzo alle sei.", "mi yoksa “kaldırıyorum” olur: neyi?"],
+            ["Mi non alzo.", "Non mi alzo.", "non zamirin önüne"],
+            ["Io si alzo.", "Io mi alzo.", "si sadece lui/lei/Lei/loro"],
+            ["Lavo le mie mani.", "Mi lavo le mani.", "doğal değil: vücutta mi + artikel"]
+          ]},
+        {"type": "note", "text": "Dikkat: Türkçede **kalkmak, uyanmak** dönüşlü değil, İtalyancada **alzarsi, svegliarsi** dönüşlü. Türkçeye bakarak tahmin etme; fiili -si'siyle birlikte ezberle."}
+      ]
+    },
+    {
+      "title": "Günü sıraya dizmek: di solito, prima, poi, dopo",
+      "blocks": [
+        {"type": "p", "text": "Rutin anlatırken şimdiki zaman yeter: İtalyancada **mi alzo** hem “kalkıyorum” hem “kalkarım”. Sırayı bu küçük kelimeler kurar."},
+        {"type": "table", "head": ["İtalyanca", "Okunuş", "Anlamı", "Örnek"], "x": 0,
+          "rows": [
+            ["di solito", "di SO-li-to", "genelde", "Di solito mi alzo alle sei."],
+            ["prima", "PRİ-ma", "önce, ilk olarak", "Prima mi lavo."],
+            ["poi", "POY", "sonra, ardından", "Poi mi vesto."],
+            ["dopo", "DO-po", "sonra / …den sonra", "Dopo il lavoro mi riposo."],
+            ["subito", "SU-bi-to", "hemen", "Mi alzo subito."],
+            ["presto / tardi", "PRES-to / TAR-di", "erken / geç", "La domenica mi alzo tardi."]
+          ],
+          "say": ["di solito", "prima", "poi", "dopo", "subito", "presto, tardi"]},
+        {"type": "note", "text": "**poi** sıralamada bir sonraki adım (önce şu, poi bu). **dopo** isimle de gelir: dopo il lavoro (işten sonra), dopo pranzo (öğle yemeğinden sonra; öğünlerde artikel düşebilir)."},
+        {"type": "note", "text": "**la mattina** = sabahları, **la sera** = akşamları, **la domenica** = pazarları. Artikelli gün “her pazar” demek."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Di solito mi sveglio alle sei.", "tr": "Genelde altıda uyanırım.", "ph": "di SO-li-to mi ZVE-lyo AL-le SEY"},
+    {"x": "Mi alzo subito e mi lavo.", "tr": "Hemen kalkar, yıkanırım.", "ph": "mi AL-tso SU-bi-to e mi LA-vo"},
+    {"x": "Prima faccio colazione, poi mi vesto.", "tr": "Önce kahvaltı yaparım, sonra giyinirim.", "ph": "PRİ-ma FAT-ço ko-la-TSYO-ne, POY mi VES-to"},
+    {"x": "Alle sette sono in cantiere.", "tr": "Yedide şantiyedeyim.", "ph": "AL-le SET-te SO-no in kan-TYE-re"},
+    {"x": "A che ora ti alzi?", "tr": "Saat kaçta kalkıyorsun?", "ph": "a ke O-ra ti AL-tsi"},
+    {"x": "Gli operai si preparano.", "tr": "İşçiler hazırlanıyor.", "ph": "lyi o-pe-RA-i si pre-PA-ra-no"},
+    {"x": "Dopo pranzo ci riposiamo un po'.", "tr": "Öğle yemeğinden sonra biraz dinleniriz.", "ph": "DO-po PRAN-dzo çi ri-po-SYA-mo un PO"},
+    {"x": "La sera faccio la doccia e vado a letto alle undici.", "tr": "Akşam duş alırım ve on birde yatarım.", "ph": "la SE-ra FAT-ço la DOT-ça e VA-do a LET-to AL-le UN-di-çi"},
+    {"x": "La domenica non mi alzo presto.", "tr": "Pazarları erken kalkmam.", "ph": "la do-ME-ni-ka non mi AL-tso PRES-to"},
+    {"x": "Come ti chiami? Mi chiamo Türab.", "tr": "Adın ne? Adım Türab.", "ph": "KO-me ti KYA-mi. mi KYA-mo Türab"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "io ___ alzo alle sei.", "a": "mi", "o": ["mi", "ti", "si"],
+      "why": {"ti": "ti, tu (sen) içindir: ti alzi.", "si": "si, lui/lei/Lei ve loro içindir."},
+      "ok": "io → mi alzo."},
+    {"t": "choice", "q": "noi ___ vestiamo.", "a": "ci", "o": ["ci", "vi", "si"],
+      "why": {"vi": "vi = voi (siz): vi vestite.", "si": "si = lui/lei/loro. noi'nin zamiri ci."},
+      "ok": "noi → ci vestiamo. Okunuşu: çi."},
+    {"t": "choice", "q": "Gli operai ___ preparano.", "a": "si", "o": ["si", "ci", "vi"],
+      "why": {"ci": "ci = noi (biz). İşçiler loro: si.", "vi": "vi = voi (siz). İşçiler loro: si."},
+      "ok": "loro → si preparano."},
+    {"t": "choice", "q": "Müşteriye kibarca: “Come ___ chiama?”", "a": "si", "o": ["ti", "si", "mi"],
+      "why": {"ti": "ti samimi tu içindir: Come ti chiami? Kibar Lei “o” gibi çekilir: si chiama.", "mi": "mi = kendimi. Karşındakine soruyorsun."},
+      "ok": "Lei → si chiama. 2. dersteki kalıbın sırrı."},
+    {"t": "choice", "q": "“Hemen kalkarım.”", "a": "Mi alzo subito.", "o": ["Alzo subito.", "Mi alzo subito.", "Mi alza subito."],
+      "why": {"Alzo subito.": "Zamir yoksa “hemen kaldırırım” olur: neyi? Kalkmak = alzarsi: mi alzo.", "Mi alza subito.": "alza, lui/lei biçimi. io ile fiil -o ile biter: mi alzo."},
+      "ok": "Mi alzo subito."},
+    {"t": "choice", "q": "“Ekibi uyandırıyorum.”", "a": "Sveglio la squadra.", "o": ["Sveglio la squadra.", "Mi sveglio."],
+      "why": {"Mi sveglio.": "Mi sveglio = (kendim) uyanıyorum. Başkasını uyandırınca zamir yok: sveglio la squadra."},
+      "ok": "Başkasına → zamirsiz. Kendine → mi."},
+    {"t": "choice", "q": "“Pazarları erken kalkmam.”", "a": "La domenica non mi alzo presto.", "o": ["La domenica mi non alzo presto.", "La domenica non mi alzo presto.", "La domenica non alzo mi presto."],
+      "why": {"La domenica mi non alzo presto.": "non zamirin önüne gelir: non mi alzo.", "La domenica non alzo mi presto.": "Zamir fiilin arkasına değil, önüne: non mi alzo."},
+      "ok": "non + mi + alzo."},
+    {"t": "choice", "q": "“Prima faccio colazione, ___ mi vesto.”", "a": "poi", "o": ["poi", "prima", "di solito"],
+      "why": {"prima": "prima = önce. Cümlede zaten var; ikinci adım için “sonra” lazım: poi.", "di solito": "di solito = genelde. Sıralama değil, alışkanlık bildirir."},
+      "ok": "Önce… poi… = önce… sonra…"},
+    {"t": "type", "q": "Türkçeden çevir: “Yıkanıyorum.”", "a": ["mi lavo", "io mi lavo"], "hint": "lavarsi. io → mi + lavo.", "ok": "Mi lavo."},
+    {"t": "type", "q": "Türkçeden çevir: “Erken mi uyanıyorsun?”", "a": ["ti svegli presto", "tu ti svegli presto"], "hint": "svegliarsi. tu → ti + svegli. Erken = presto.", "ok": "Ti svegli presto?"},
+    {"t": "order", "q": "Sırala: “Genelde altıda kalkarım.”", "words": ["alle", "mi", "solito", "sei", "di", "alzo"], "a": "di solito mi alzo alle sei", "alt": ["mi alzo alle sei di solito"], "ok": "Di solito mi alzo alle sei."},
+    {"t": "type", "q": "Türkçeden çevir: “Öğle yemeğinden sonra dinleniyoruz.”", "a": ["dopo pranzo ci riposiamo", "ci riposiamo dopo pranzo", "dopo il pranzo ci riposiamo", "ci riposiamo dopo il pranzo", "noi ci riposiamo dopo pranzo", "dopo pranzo noi ci riposiamo"], "hint": "riposarsi. noi → ci riposiamo. Öğle yemeği = pranzo.", "ok": "Dopo pranzo ci riposiamo."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Günlük rutini sırayla anlatmak: dönüşlü fiillerle (mi alzo, mi lavo, mi vesto) ve di solito / prima / poi / dopo ile; saat söylemek.",
+    "vocab": ["svegliarsi", "alzarsi", "lavarsi", "vestirsi", "prepararsi", "riposarsi", "chiamarsi", "fare colazione", "fare la doccia", "andare a letto", "di solito", "prima", "poi", "dopo", "subito", "presto", "tardi", "la mattina", "la sera", "pranzo", "il cantiere"],
+    "structures": ["mi/ti/si/ci/vi/si + çekimli fiil", "non + zamir + fiil", "A che ora ti alzi? — Mi alzo alle …", "Prima …, poi …", "dopo il lavoro / dopo pranzo"],
+    "opener_hint": "Chiara “Ciao Türab! A che ora ti alzi di solito?” diye başlasın (Türkçesi parantezde). Sonra sırayla sorsun: yıkanma/duş, kahvaltı, şantiyeye kaçta varış, öğle arası, akşam, pazar günü. En az bir soruda Türab'ın olumsuz cevap vermesi gereksin (ör. “Ti alzi presto la domenica?”).",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece şimdiki zaman; geçmiş zaman ve modal fiil kullanma. Türab zamiri unutursa ya da yanlış koyarsa (Alzo / Mi non alzo / Io si alzo) doğrusunu tek cümleyle göster."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "dönüşlü zamirler", "q": "Ekibe: “Voi ___ alzate presto?”", "a": "vi", "o": ["vi", "ci", "si"],
+      "why": {"ci": "ci = noi (biz). Karşındakilere soruyorsun: voi → vi.", "si": "si = lui/lei/loro. voi'nin zamiri vi."}},
+    {"t": "choice", "topic": "mi chiamo'nun sırrı", "q": "“Mi chiamo Türab” kelimesi kelimesine ne demek?", "a": "Kendime Türab diyorum.", "o": ["Beni Türab arıyor.", "Kendime Türab diyorum.", "Türab'ı arıyorum."],
+      "why": {"Beni Türab arıyor.": "Özne Türab değil, sensin (io). mi = kendimi.", "Türab'ı arıyorum.": "Bu Chiamo Türab olurdu (zamirsiz). mi chiamo = kendime ad veriyorum."}},
+    {"t": "choice", "topic": "vücut + dönüşlü", "q": "“Ellerimi yıkıyorum.” (doğal biçim)", "a": "Mi lavo le mani.", "o": ["Lavo le mani mi.", "Mi lavo le mani.", "Si lavo le mani."],
+      "why": {"Lavo le mani mi.": "Zamir fiilin önüne gelir: mi lavo.", "Si lavo le mani.": "si, lui/lei/loro içindir. io → mi."}},
+    {"t": "choice", "topic": "zaman ifadeleri", "q": "“Genelde” hangisi?", "a": "di solito", "o": ["di solito", "subito", "dopo"],
+      "why": {"subito": "subito = hemen.", "dopo": "dopo = sonra / …den sonra."}},
+    {"t": "type", "topic": "olumsuz dönüşlü", "q": "Türkçeden çevir: “Cumartesileri erken uyanmam.”", "a": ["il sabato non mi sveglio presto", "non mi sveglio presto il sabato", "il sabato io non mi sveglio presto", "io il sabato non mi sveglio presto", "io non mi sveglio presto il sabato"], "soft": ["sabato non mi sveglio presto", "non mi sveglio presto sabato"], "soft_note": "Doğru sayıldı, ama artikelsiz sabato “bu cumartesi” demek. Her cumartesi: il sabato non mi sveglio presto."}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "tu ___ vesti.", "a": "ti", "o": ["ti", "si", "mi"],
+        "why": {"si": "si, lui/lei/Lei ve loro içindir.", "mi": "mi, io içindir."},
+        "ok": "tu → ti vesti."},
+      {"t": "choice", "q": "Loro ___ svegliano tardi.", "a": "si", "o": ["si", "vi", "ci"],
+        "why": {"vi": "vi = voi. loro → si.", "ci": "ci = noi. loro → si."},
+        "ok": "loro → si svegliano."},
+      {"t": "choice", "q": "Yeni gelen işçiye samimi: “Adın ne?”", "a": "Come ti chiami?", "o": ["Come ti chiami?", "Come si chiama?", "Come mi chiamo?"],
+        "why": {"Come si chiama?": "Bu kibar Lei biçimi (adınız ne?). İşçiyle samimisin: tu → ti chiami.", "Come mi chiamo?": "Bu “benim adım ne?” demek."},
+        "ok": "tu → Come ti chiami?"},
+      {"t": "choice", "q": "“İşten sonra eve giderim.”", "a": "Dopo il lavoro vado a casa.", "o": ["Prima il lavoro vado a casa.", "Dopo il lavoro vado a casa."],
+        "why": {"Prima il lavoro vado a casa.": "prima = önce. “…den sonra” için dopo + isim: dopo il lavoro."},
+        "ok": "dopo il lavoro = işten sonra."},
+      {"t": "type", "q": "Türkçeden çevir: “Giyiniyoruz.”", "a": ["ci vestiamo", "noi ci vestiamo"], "hint": "vestirsi. noi → ci + vestiamo.", "ok": "Ci vestiamo."},
+      {"t": "order", "q": "Sırala: “Önce duş alırım, sonra giyinirim.”", "words": ["poi", "doccia", "prima", "vesto", "faccio", "mi", "la"], "a": "prima faccio la doccia poi mi vesto", "ok": "Prima faccio la doccia, poi mi vesto."}
+    ],
+    "konus_prompt": "Chiara sıradan bir iş gününü soracak: kaçta uyanıyorsun, kalkınca ne yapıyorsun, kaçta şantiyedesin, öğleden sonra ne var, akşam ne yapıyorsun. Dönüşlü fiillerle cevap ver; en az bir kez prima… poi… ve bir kez de pazar günü için olumsuz cümle kur."
+  }
+}

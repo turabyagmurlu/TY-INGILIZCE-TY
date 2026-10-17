@@ -1,0 +1,802 @@
+{
+ "id": "it10",
+ "lang": "it",
+ "level": "A1",
+ "title": "Şimdiki zaman: -ere / -ire",
+ "lead": "“Projeyi okuyorum”, “Panoyu açıyoruz”, “Anlamıyorum” cümlelerini kurabileceksin. -are'deki kalıbın üç küçük farkla aynısı; artı -isc- alan fiiller (capisco, finisco, preferisco).",
+ "minutes": 35,
+ "anlat": [
+  {
+   "title": "Üç grup, tek kalıp: sadece üç yer farklı",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "İtalyanca fiiller mastar ekine göre üç gruptur: **-are** (parlare), **-ere** (leggere = okumak), **-ire** (dormire = uyumak). Ekleri yan yana koyunca çoğunun aynı olduğunu görürsün."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Özne",
+      "-are: parlare",
+      "-ere: leggere",
+      "-ire: dormire"
+     ],
+     "rows": [
+      [
+       "io",
+       "parl**o**",
+       "legg**o**",
+       "dorm**o**"
+      ],
+      [
+       "tu",
+       "parl**i**",
+       "legg**i**",
+       "dorm**i**"
+      ],
+      [
+       "lui / lei / Lei",
+       "parl**a**",
+       "legg**e**",
+       "dorm**e**"
+      ],
+      [
+       "noi",
+       "parl**iamo**",
+       "legg**iamo**",
+       "dorm**iamo**"
+      ],
+      [
+       "voi",
+       "parl**ate**",
+       "legg**ete**",
+       "dorm**ite**"
+      ],
+      [
+       "loro",
+       "parl**ano**",
+       "legg**ono**",
+       "dorm**ono**"
+      ]
+     ]
+    },
+    {
+     "type": "rules",
+     "items": [
+      {
+       "title": "lui/lei: -are'de -a, diğerlerinde -e",
+       "text": "Tipik hata: -are alışkanlığıyla “lui dorma” demek. Doğrusu dorme.",
+       "ex": {
+        "x": "Il capo dorme.",
+        "tr": "Şef uyuyor."
+       }
+      },
+      {
+       "title": "voi: mastarın ünlüsü kalır",
+       "text": "parl-a-re → parl-a-te, legg-e-re → legg-e-te, dorm-i-re → dorm-i-te.",
+       "ex": {
+        "x": "Ragazzi, dormite?",
+        "tr": "Arkadaşlar, uyuyor musunuz?"
+       }
+      },
+      {
+       "title": "loro: -ere ve -ire'de -ono",
+       "text": "Vurgu yine io'daki hecede: DOR-mo → DOR-mo-no, LEG-go → LEG-go-no.",
+       "ex": {
+        "x": "Gli operai dormono.",
+        "tr": "İşçiler uyuyor."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "leggere ve dormire: yazı aynı, ses değişebilir",
+   "blocks": [
+    {
+     "type": "table",
+     "head": [
+      "Özne",
+      "leggere",
+      "Okunuş",
+      "dormire",
+      "Okunuş"
+     ],
+     "x": 1,
+     "rows": [
+      [
+       "io",
+       "leggo",
+       "LEG-go",
+       "dormo",
+       "DOR-mo"
+      ],
+      [
+       "tu",
+       "leggi",
+       "LED-ci",
+       "dormi",
+       "DOR-mi"
+      ],
+      [
+       "lui / lei / Lei",
+       "legge",
+       "LED-ce",
+       "dorme",
+       "DOR-me"
+      ],
+      [
+       "noi",
+       "leggiamo",
+       "led-CA-mo",
+       "dormiamo",
+       "dor-MYA-mo"
+      ],
+      [
+       "voi",
+       "leggete",
+       "led-CE-te",
+       "dormite",
+       "dor-Mİ-te"
+      ],
+      [
+       "loro",
+       "leggono",
+       "LEG-go-no",
+       "dormono",
+       "DOR-mo-no"
+      ]
+     ],
+     "say": [
+      "leggo, dormo",
+      "leggi, dormi",
+      "legge, dorme",
+      "leggiamo, dormiamo",
+      "leggete, dormite",
+      "leggono, dormono"
+     ]
+    },
+    {
+     "type": "compare",
+     "rows": [
+      {
+       "label": "cercare (-are)",
+       "items": [
+        {
+         "t": "cerco / cerchi",
+         "s": "ÇER-ko / ÇER-ki"
+        },
+        {
+         "t": "yazı değişir",
+         "s": "h eklenir, ses sert kalır",
+         "hl": true
+        }
+       ]
+      },
+      {
+       "label": "leggere (-ere)",
+       "items": [
+        {
+         "t": "leggo / leggi",
+         "s": "LEG-go / LED-ci"
+        },
+        {
+         "t": "ses değişir",
+         "s": "yazı aynı kalır",
+         "hl": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "text": "-ere fiillerinde kökün yazısına dokunulmaz; g/c, o önünde sert, i/e önünde yumuşak okunur (1. ders). Aynısı **conoscere** (tanımak): conosco ko-NOS-ko, conosci ko-NO-şi."
+    },
+    {
+     "type": "note",
+     "warn": true,
+     "text": "-ere mastarlarının çoğunda vurgu kökte, sondan üçüncü hecededir: **LED-ce-re**, PREN-de-re, at-ÇEN-de-re; birkaçında -ere'nin üstündedir: ve-DE-re. Çekim ekleri ikisinde de aynı."
+    }
+   ]
+  },
+  {
+   "title": "-isc- fiilleri: capisco, finisco, preferisco",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bazı -ire fiilleri kökle ek arasına **-isc-** sokar. Bu ek sadece vurgunun köke düşeceği dört kişide gelir: io, tu, lui/lei, loro. noi ve voi normaldir."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Özne",
+      "capire (anlamak)",
+      "Okunuş",
+      "Anlamı"
+     ],
+     "x": 1,
+     "rows": [
+      [
+       "io",
+       "cap**isc**o",
+       "ka-PİS-ko",
+       "anlıyorum"
+      ],
+      [
+       "tu",
+       "cap**isc**i",
+       "ka-Pİ-şi",
+       "anlıyorsun"
+      ],
+      [
+       "lui / lei / Lei",
+       "cap**isc**e",
+       "ka-Pİ-şe",
+       "anlıyor / anlıyorsunuz (kibar)"
+      ],
+      [
+       "noi",
+       "capiamo",
+       "ka-PYA-mo",
+       "anlıyoruz"
+      ],
+      [
+       "voi",
+       "capite",
+       "ka-Pİ-te",
+       "anlıyorsunuz (çok kişi)"
+      ],
+      [
+       "loro",
+       "cap**isc**ono",
+       "ka-PİS-ko-no",
+       "anlıyorlar"
+      ]
+     ],
+     "say": [
+      "io capisco",
+      "tu capisci",
+      "lui capisce",
+      "noi capiamo",
+      "voi capite",
+      "loro capiscono"
+     ]
+    },
+    {
+     "type": "note",
+     "text": "Okunuş 1. dersteki sc kuralı: **sco** = sko, **sci / sce** = şi / şe. Yani capisco “ka-PİS-ko”, capisci “ka-Pİ-şi”."
+    },
+    {
+     "type": "note",
+     "warn": true,
+     "text": "Tipik hata: **finisciamo**. noi ve voi'de -isc- yok: **finiamo, finite**. Bir de “capo” deme: capo = şef. Anlıyorum = **capisco**."
+    }
+   ]
+  },
+  {
+   "title": "Hangi -ire fiili -isc- alır? Kısa ezber listesi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Mastara bakarak anlaşılmaz; sözlük (io biçimi) söyler. İyi haber: -ire fiillerinin çoğu -isc- alır, normal olanlar az ve sık kullanılır."
+    },
+    {
+     "type": "table",
+     "head": [
+      "io biçimi",
+      "Mastar",
+      "Anlamı",
+      "Grup"
+     ],
+     "x": 0,
+     "rows": [
+      [
+       "dormo",
+       "dormire",
+       "uyumak",
+       "normal"
+      ],
+      [
+       "apro",
+       "aprire",
+       "açmak",
+       "normal"
+      ],
+      [
+       "sento",
+       "sentire",
+       "duymak, hissetmek",
+       "normal"
+      ],
+      [
+       "parto",
+       "partire",
+       "yola çıkmak",
+       "normal"
+      ],
+      [
+       "capisco",
+       "capire",
+       "anlamak",
+       "-isc-"
+      ],
+      [
+       "finisco",
+       "finire",
+       "bitirmek",
+       "-isc-"
+      ],
+      [
+       "preferisco",
+       "preferire",
+       "tercih etmek",
+       "-isc-"
+      ],
+      [
+       "pulisco",
+       "pulire",
+       "temizlemek",
+       "-isc-"
+      ],
+      [
+       "sostituisco",
+       "sostituire",
+       "değiştirmek (parçayı)",
+       "-isc-"
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "head": [
+      "Sahada -ere",
+      "Okunuş (io)",
+      "Anlamı"
+     ],
+     "x": 0,
+     "rows": [
+      [
+       "accendere",
+       "at-ÇEN-do",
+       "(ışığı, makineyi) açmak, yakmak"
+      ],
+      [
+       "chiudere",
+       "KYU-do",
+       "kapatmak"
+      ],
+      [
+       "prendere",
+       "PREN-do",
+       "almak"
+      ],
+      [
+       "scrivere",
+       "SKRİ-vo",
+       "yazmak"
+      ],
+      [
+       "mettere",
+       "MET-to",
+       "koymak"
+      ]
+     ]
+    },
+    {
+     "type": "note",
+     "text": "Panoyu açmak **aprire** (kapağı açmak), ışığı açmak **accendere**. Türkçede ikisi de “açmak”."
+    }
+   ]
+  }
+ ],
+ "dinle": [
+  {
+   "x": "Non capisco. Scusi!",
+   "tr": "Anlamıyorum. Kusura bakmayın!",
+   "ph": "non ka-PİS-ko. SKU-zi"
+  },
+  {
+   "x": "Capisce?",
+   "tr": "Anlıyor musunuz? (kibar)",
+   "ph": "ka-Pİ-şe"
+  },
+  {
+   "x": "Leggo il progetto.",
+   "tr": "Projeyi okuyorum. (il progetto = proje, çizim)",
+   "ph": "LEG-go il pro-CET-to"
+  },
+  {
+   "x": "Apro il quadro.",
+   "tr": "Panoyu açıyorum.",
+   "ph": "A-pro il KUA-dro"
+  },
+  {
+   "x": "Accendo la luce.",
+   "tr": "Işığı açıyorum.",
+   "ph": "at-ÇEN-do la LU-çe"
+  },
+  {
+   "x": "Sostituisco l'interruttore.",
+   "tr": "Anahtarı (şalteri) değiştiriyorum.",
+   "ph": "sos-ti-tu-İS-ko lin-ter-rut-TO-re"
+  },
+  {
+   "x": "Chiudiamo il quadro.",
+   "tr": "Panoyu kapatıyoruz.",
+   "ph": "kyu-DYA-mo il KUA-dro"
+  },
+  {
+   "x": "Oggi finiamo.",
+   "tr": "Bugün bitiriyoruz.",
+   "ph": "OD-ci fi-NYA-mo"
+  },
+  {
+   "x": "Preferisco il caffè.",
+   "tr": "Kahveyi tercih ederim.",
+   "ph": "pre-fe-RİS-ko il kaf-FE"
+  },
+  {
+   "x": "Dormo poco, lavoro molto.",
+   "tr": "Az uyuyorum, çok çalışıyorum. (poco = az, molto = çok)",
+   "ph": "DOR-mo PO-ko, la-VO-ro MOL-to"
+  }
+ ],
+ "uygula": [
+  {
+   "t": "choice",
+   "q": "io ___ il progetto. (leggere)",
+   "a": "leggo",
+   "o": [
+    "leggo",
+    "leggi",
+    "legge"
+   ],
+   "why": {
+    "leggi": "leggi = sen okuyorsun (tu).",
+    "legge": "legge = o okuyor (lui/lei)."
+   },
+   "ok": "io → -o: leggo (LEG-go)."
+  },
+  {
+   "t": "choice",
+   "q": "Il capo ___. (dormire)",
+   "a": "dorme",
+   "o": [
+    "dorme",
+    "dorma",
+    "dormi"
+   ],
+   "why": {
+    "dorma": "-a eki -are fiillerinin. dormire -ire → lui/lei -e.",
+    "dormi": "dormi = sen (tu)."
+   },
+   "ok": "lui → dorme."
+  },
+  {
+   "t": "choice",
+   "q": "voi ___ il messaggio. (scrivere)",
+   "a": "scrivete",
+   "o": [
+    "scrivete",
+    "scrivate",
+    "scrivite"
+   ],
+   "why": {
+    "scrivate": "voi'de mastarın ünlüsü kalır: scriv-e-re → scriv-e-te.",
+    "scrivite": "-ite, -ire fiilleri için. scrivere -ere: scrivete."
+   },
+   "ok": "scrivere → voi scrivete."
+  },
+  {
+   "t": "choice",
+   "q": "voi ___ il quadro. (aprire)",
+   "a": "aprite",
+   "o": [
+    "aprite",
+    "aprete",
+    "aprate"
+   ],
+   "why": {
+    "aprete": "aprire -ire fiili: voi → -ite.",
+    "aprate": "-ate sadece -are fiillerinde."
+   },
+   "ok": "apr-i-re → apr-i-te."
+  },
+  {
+   "t": "choice",
+   "q": "loro ___ il materiale. (prendere)",
+   "a": "prendono",
+   "o": [
+    "prendono",
+    "prendano",
+    "prendeno"
+   ],
+   "why": {
+    "prendano": "-ano, -are fiillerinin loro eki. -ere → -ono.",
+    "prendeno": "Böyle bir ek yok. -ere fiillerinde loro → -ono."
+   },
+   "ok": "loro → prendono (PREN-do-no)."
+  },
+  {
+   "t": "choice",
+   "q": "“leggi” (okuyorsun) nasıl okunur?",
+   "a": "LED-ci",
+   "o": [
+    "LED-ci",
+    "LEG-gi"
+   ],
+   "why": {
+    "LEG-gi": "gg, i önünde yumuşar: LED-ci. Sert okumak için “ghi” yazmak gerekirdi; -ere fiillerinde yazı değişmez."
+   },
+   "ok": "leggo LEG-go ama leggi LED-ci."
+  },
+  {
+   "t": "choice",
+   "q": "io ___. (capire)",
+   "a": "capisco",
+   "o": [
+    "capisco",
+    "capo",
+    "capiso"
+   ],
+   "why": {
+    "capo": "capire -isc- fiilidir. Üstelik capo = şef!",
+    "capiso": "Ek -isc-: cap-isc-o. Okunuşu ka-PİS-ko."
+   },
+   "ok": "capisco = ka-PİS-ko."
+  },
+  {
+   "t": "choice",
+   "q": "noi ___ oggi. (finire)",
+   "a": "finiamo",
+   "o": [
+    "finiamo",
+    "finisciamo",
+    "finiscono"
+   ],
+   "why": {
+    "finisciamo": "noi ve voi'de -isc- yok: finiamo.",
+    "finiscono": "finiscono = loro (onlar)."
+   },
+   "ok": "noi → finiamo."
+  },
+  {
+   "t": "choice",
+   "q": "loro ___ l'italiano. (capire)",
+   "a": "capiscono",
+   "o": [
+    "capiscono",
+    "capiono",
+    "capiamo"
+   ],
+   "why": {
+    "capiono": "loro'da -isc- gelir: cap-isc-ono.",
+    "capiamo": "capiamo = noi (biz)."
+   },
+   "ok": "loro → capiscono (ka-PİS-ko-no)."
+  },
+  {
+   "t": "type",
+   "q": "Türkçeden çevir: “Anlamıyorum.”",
+   "a": [
+    "non capisco",
+    "io non capisco"
+   ],
+   "hint": "non + capire'nin io biçimi (-isc-).",
+   "ok": "Non capisco."
+  },
+  {
+   "t": "type",
+   "q": "Türkçeden çevir: “Işığı açıyoruz.” (la luce)",
+   "a": [
+    "accendiamo la luce",
+    "noi accendiamo la luce"
+   ],
+   "hint": "Işık için accendere; noi → -iamo.",
+   "ok": "Accendiamo la luce."
+  },
+  {
+   "t": "order",
+   "q": "Sırala: “Ekip şantiyeyi temizliyor.”",
+   "words": [
+    "cantiere",
+    "pulisce",
+    "squadra",
+    "il",
+    "la"
+   ],
+   "a": "la squadra pulisce il cantiere",
+   "ok": "La squadra pulisce il cantiere. pulire -isc- fiili; okunuşu pu-Lİ-şe."
+  }
+ ],
+ "konus": {
+  "coach": "chiara",
+  "goal": "-ere ve -ire fiilleriyle (normal ve -isc-) şantiyedeki işleri ve günlük alışkanlıkları anlatmak; anlamadığında “Non capisco” diyebilmek.",
+  "vocab": [
+   "leggere",
+   "scrivere",
+   "prendere",
+   "chiudere",
+   "accendere",
+   "mettere",
+   "dormire",
+   "aprire",
+   "sentire",
+   "capire",
+   "finire",
+   "preferire",
+   "pulire",
+   "sostituire",
+   "il progetto",
+   "la luce",
+   "l'interruttore",
+   "il messaggio",
+   "poco",
+   "molto"
+  ],
+  "structures": [
+   "-ere: -o, -i, -e, -iamo, -ete, -ono",
+   "-ire: -o, -i, -e, -iamo, -ite, -ono",
+   "-isc-: capisco, capisci, capisce, capiamo, capite, capiscono",
+   "Non capisco. / Capisce?",
+   "aprire (kapak) vs accendere (ışık)"
+  ],
+  "opener_hint": "Chiara iş sonu sohbeti gibi başlasın: “Ciao Türab! Finisci adesso?” (Türkçesi parantezde). Sonra sırayla sorsun: “Leggi il progetto?”, “Apri il quadro o accendi la luce?”, “Dormi molto?”, “Preferisci il caffè?”. En az bir soru noi ya da voi biçimiyle cevap gerektirsin (ör. “Tu e la squadra finite oggi?”). Bir kere bilerek zor bir cümle kurup Türab'ın “Non capisco” demesini teşvik etsin.",
+  "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece essere, avere ve düzenli -are/-ere/-ire fiilleri kullan; fare, andare, venire, stare, dovere, potere, volere, uscire, bere, dire gibi düzensiz fiilleri kullanma. Türab -isc-'yi noi/voi'ye koyarsa ya da lui biçiminde -a kullanırsa doğru biçimi tek satırda ver."
+ },
+ "yokla": [
+  {
+   "t": "choice",
+   "topic": "-ere / -ire ekleri",
+   "q": "lei ___ la luce. (accendere)",
+   "a": "accende",
+   "o": [
+    "accende",
+    "accenda",
+    "accendi"
+   ],
+   "why": {
+    "accenda": "-a, -are fiillerinin lui/lei eki. -ere → -e.",
+    "accendi": "accendi = sen (tu)."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "-isc- fiilleri",
+   "q": "tu ___ il caffè? (preferire)",
+   "a": "preferisci",
+   "o": [
+    "preferisci",
+    "preferi",
+    "preferisce"
+   ],
+   "why": {
+    "preferi": "preferire -isc- fiili; tu biçiminde de -isc- gelir: preferisci.",
+    "preferisce": "preferisce = lui/lei/Lei."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "-isc- noi/voi",
+   "q": "Ekibe: “Ragazzi, ___ oggi?” (finire)",
+   "a": "finite",
+   "o": [
+    "finite",
+    "finiscete",
+    "finiscite"
+   ],
+   "why": {
+    "finiscete": "voi'de -isc- yok; ek de -ire fiilinin eki: -ite.",
+    "finiscite": "voi'de -isc- gelmez: finite."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "okunuş (sc)",
+   "q": "“capisci” nasıl okunur?",
+   "a": "ka-Pİ-şi",
+   "o": [
+    "ka-Pİ-şi",
+    "ka-PİS-ki"
+   ],
+   "why": {
+    "ka-PİS-ki": "sc + i = ş (1. ders). sk sesi sadece sco, sca, scu'da."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "-ere çekimi",
+   "q": "Türkçeden çevir: “Panoyu kapatıyoruz.” (il quadro)",
+   "a": [
+    "chiudiamo il quadro",
+    "noi chiudiamo il quadro"
+   ]
+  }
+ ],
+ "pass": 4,
+ "pekistir": {
+  "items": [
+   {
+    "t": "choice",
+    "q": "tu ___ poco? (dormire)",
+    "a": "dormi",
+    "o": [
+     "dormi",
+     "dorme",
+     "dormo"
+    ],
+    "why": {
+     "dorme": "dorme = o (lui/lei).",
+     "dormo": "dormo = ben."
+    },
+    "ok": "tu → dormi."
+   },
+   {
+    "t": "choice",
+    "q": "loro ___ il progetto. (leggere)",
+    "a": "leggono",
+    "o": [
+     "leggono",
+     "leggano",
+     "leggeno"
+    ],
+    "why": {
+     "leggano": "-ano -are içindir; -ere → -ono.",
+     "leggeno": "Böyle bir ek yok: leggono."
+    },
+    "ok": "leggono = LEG-go-no."
+   },
+   {
+    "t": "choice",
+    "q": "io ___ l'interruttore. (sostituire)",
+    "a": "sostituisco",
+    "o": [
+     "sostituisco",
+     "sostituo",
+     "sostituiso"
+    ],
+    "why": {
+     "sostituo": "sostituire -isc- fiili: sostitu-isc-o.",
+     "sostituiso": "Ek -isc-: sostituisco (sos-ti-tu-İS-ko)."
+    },
+    "ok": "sostituisco."
+   },
+   {
+    "t": "type",
+    "q": "Türkçeden çevir: “Bir mesaj yazıyorum.” (un messaggio)",
+    "a": [
+     "scrivo un messaggio",
+     "io scrivo un messaggio"
+    ],
+    "hint": "scrivere, io → -o.",
+    "ok": "Scrivo un messaggio."
+   },
+   {
+    "t": "type",
+    "q": "Türkçeden çevir: “Anlıyoruz.”",
+    "a": [
+     "capiamo",
+     "noi capiamo"
+    ],
+    "hint": "noi'de -isc- yok.",
+    "ok": "Capiamo. (ka-PYA-mo)"
+   },
+   {
+    "t": "order",
+    "q": "Sırala: “İşçiler panoyu açıyor.”",
+    "words": [
+     "il",
+     "aprono",
+     "gli",
+     "quadro",
+     "operai"
+    ],
+    "a": "gli operai aprono il quadro",
+    "ok": "Gli operai aprono il quadro. aprire normal -ire: loro → -ono."
+   }
+  ],
+  "konus_prompt": "Chiara sana iş gününü soracak: projeyi okuyor musun, panoyu açıyor musun, ışığı yakıyor musun, ekip bugün bitiriyor mu, az mı uyuyorsun, kahve mi tercih edersin. -ere ve -ire fiilleriyle cevap ver; en az bir -isc- fiili (capisco, finisco, preferisco) ve bir noi biçimi kullan."
+ }
+}

@@ -25,3 +25,10 @@ Her dosya şema kurallarına göre otomatik denetlendi: JSON geçerli, sayılar 
 - `alt` (order): kabul edilen diğer kelime sıraları (en01'de 2 soruda var).
 - `x` (table) artık opsiyonel: en02 ve en03'teki iki sütunlu karşılaştırma tablolarında yok.
 - Ayrıntılar `SCHEMA.md` dosyasında.
+
+## it07–it20 / en04–en12 turu (Ekim 2026)
+- **fase** `FA-ze`: sözlükteki standart z sesi; ünlüler arası s kuralının bilinçli istisnası (scusi gibi).
+- **a lavoro / al lavoro**: it11 konuşma dilindeki "a lavoro"yu öğretir, "al lavoro" da kabul edilir (birleşik edat it14'te).
+- **restare / rimanere**: it20 restare öğretir; rimasto'nun daha sık olduğu notta anılır.
+- **Seviye**: it19–it20 "A2", en11–en12 "B2" (müfredat SYL ile aynı).
+- Denetim puanları (düzeltmeden sonra): it07–it20 90–95, en04–en12 92–94.

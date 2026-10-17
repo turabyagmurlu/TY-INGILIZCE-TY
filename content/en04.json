@@ -1,0 +1,791 @@
+{
+  "id": "en04",
+  "lang": "en",
+  "level": "B1",
+  "title": "Gelecek: will, going to, -iyor, will be -ing",
+  "lead": "Türkçedeki tek “-ecek”i İngilizcede dört biçime ayıracaksın: anlık karar ve teklif (will), önceden verilmiş karar (going to), takvime girmiş randevu (present continuous) ve o saatte sürüyor olacak iş (future continuous).",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Karar ne zaman verildi? will ve going to",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe “Panoyu bağlayacağım” der, kararın ne zaman verildiğini söylemez. İngilizce söyler. Tek soru: **karar şu an mı verildi, önceden mi?** Konuşurken karar verdiysen, teklif ya da söz veriyorsan → **will**. Önceden düşünüp karar verdiysen → **be going to**."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Telefon çalıyor.",
+                  "s": "durum"
+                },
+                {
+                  "t": "Ben bakarım.",
+                  "s": "şu an karar",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "The phone's ringing.",
+                  "s": "durum"
+                },
+                {
+                  "t": "I'll get it.",
+                  "s": "will",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Yarın panoyu",
+                  "s": "zaman"
+                },
+                {
+                  "t": "bağlayacağım.",
+                  "s": "dün karar verdim",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I'm going to connect",
+                  "s": "going to",
+                  "hl": true
+                },
+                {
+                  "t": "the panel tomorrow.",
+                  "s": "zaman"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "will",
+            "be going to"
+          ],
+          "rows": [
+            [
+              "anlık karar: OK, I'll take the red cable.",
+              "niyet: We're going to hire two more electricians."
+            ],
+            [
+              "teklif: I'll help you with the boxes.",
+              "plan: I'm going to ask for a site meeting."
+            ],
+            [
+              "söz: I'll send the drawings tonight.",
+              "kararlı hedef: We're going to finish by Friday."
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Sık hata: anlık teklifte present: “I help you!” → **I'll help you.** **won't** bazen “yanaşmıyor, olmuyor” demektir: The breaker won't reset.",
+          "warn": true
+        }
+      ]
+    },
+    {
+      "title": "Tahmin: fikir mi, kanıt mı?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tahminde de iki yol var. Kendi görüşün, tecrüben, hissin → **will** (çoğu zaman I think, I'm sure, probably ile). Şu an gözünün önünde bir **kanıt** varsa → **going to**: olay başlamak üzere, işaretleri belli."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Görüş → will",
+            "Kanıt → going to"
+          ],
+          "rows": [
+            [
+              "I think the client will accept the offer.",
+              "Look at those clouds. It's going to rain."
+            ],
+            [
+              "I'm sure the test will go well.",
+              "The truck is stuck. The cables are going to be late."
+            ],
+            [
+              "The cables will probably arrive on Friday.",
+              "That cable is too thin. It's going to overheat."
+            ]
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "probably yeri",
+              "text": "Olumluda will'den sonra, olumsuzda won't'tan önce gelir.",
+              "ex": {
+                "x": "It will probably rain. / It probably won't rain.",
+                "tr": "Muhtemelen yağmur yağacak. / Muhtemelen yağmayacak."
+              }
+            },
+            {
+              "title": "I don't think … will",
+              "text": "Türkçe “bence gelmeyecek” der; İngilizce olumsuzu think'e koyar.",
+              "ex": {
+                "x": "I don't think he'll come.",
+                "tr": "Bence gelmeyecek."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Emin değilsen will güvenli; kanıt ortadayken going to daha doğal.",
+          "warn": false
+        }
+      ]
+    },
+    {
+      "title": "Randevu: Türkçe gibi -iyor",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Başka biriyle **saati, yeri ayarlanmış** bir plan (toplantı, teslimat, uçuş, denetim) için İngilizce de Türkçe gibi şimdiki zamanı kullanır: **present continuous + gelecek zaman ifadesi**. Burada Türkçe sana yardım ediyor: “Yarın müşteriyle görüşüyorum.”"
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Yarın saat 10'da",
+                  "s": "zaman"
+                },
+                {
+                  "t": "müşteriyle",
+                  "s": "kiminle"
+                },
+                {
+                  "t": "görüşüyorum.",
+                  "s": "-iyor",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "I'm meeting",
+                  "s": "present continuous",
+                  "hl": true
+                },
+                {
+                  "t": "the client",
+                  "s": "kiminle"
+                },
+                {
+                  "t": "at 10 tomorrow.",
+                  "s": "zaman"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "We're delivering the panels on Thursday.",
+              "tr": "Panoları perşembe teslim ediyoruz."
+            },
+            {
+              "x": "The engineer is coming to the site next Monday.",
+              "tr": "Mühendis gelecek pazartesi sahaya geliyor."
+            },
+            {
+              "x": "What are you doing this weekend?",
+              "tr": "Bu hafta sonu ne yapıyorsun?"
+            },
+            {
+              "x": "I'm flying to Bodrum on the 3rd.",
+              "tr": "Ayın 3'ünde Bodrum'a uçuyorum."
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "İnce fark: going to = kafandaki karar; present continuous = ayarlandı, karşı taraf da biliyor. Takvimdeki randevu için ikisi de olur ama “I will meet the client tomorrow” daha az doğal, anlık karar gibi duyulur. Tarifeler (otobüs, uçuş saati) için present simple: The flight leaves at 7.",
+          "warn": false
+        }
+      ]
+    },
+    {
+      "title": "O saatte ortasında olacağım: will be + -ing",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Gelecekte belli bir anda **sürüyor olacak** iş: **will be + fiil-ing**. Türkçe birebir aynı mantık: “-iyor olacağım”. Ayrıca kibar soru için çok kullanılır: rica etmeden önce karşının **planını** sorarsın."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Yarın saat 10'da",
+                  "s": "an"
+                },
+                {
+                  "t": "kablo çekiyor olacağız.",
+                  "s": "-iyor olacak",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "At 10 tomorrow",
+                  "s": "an"
+                },
+                {
+                  "t": "we'll be pulling",
+                  "s": "will be + -ing",
+                  "hl": true
+                },
+                {
+                  "t": "cable.",
+                  "s": "nesne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Don't call me at 3. I'll be testing the panel.",
+              "tr": "Saat 3'te arama. Panoyu test ediyor olacağım."
+            },
+            {
+              "x": "This time next week we'll be working in Bodrum.",
+              "tr": "Haftaya bu saatte Bodrum'da çalışıyor olacağız."
+            },
+            {
+              "x": "Will you be using the crane this afternoon?",
+              "tr": "Bu öğleden sonra vinci kullanıyor olacak mısınız? (kibar)"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Zaman bağlaçları: **when, as soon as, before, after, until** ile gelecekten söz ederken bu kelimelerden sonra **will gelmez**, present gelir. “When I will finish, I'll call you.” → **When I finish, I'll call you.** Türkçedeki “bitirince” gibi düşün.",
+          "warn": true
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "I'm meeting the client's engineer at nine tomorrow.",
+      "tr": "Yarın dokuzda müşterinin mühendisiyle görüşüyorum."
+    },
+    {
+      "x": "We're going to finish the cable tray by Friday.",
+      "tr": "Kablo tavasını cumaya kadar bitireceğiz."
+    },
+    {
+      "x": "Don't worry, I'll send you the drawings tonight.",
+      "tr": "Merak etme, çizimleri sana bu akşam gönderirim."
+    },
+    {
+      "x": "The truck is stuck in traffic. The cables are going to be late.",
+      "tr": "Kamyon trafikte kaldı. Kablolar gecikecek."
+    },
+    {
+      "x": "I think the inspection will go well.",
+      "tr": "Bence denetim iyi geçecek."
+    },
+    {
+      "x": "At ten tomorrow we'll be testing the main panel.",
+      "tr": "Yarın saat onda ana panoyu test ediyor olacağız."
+    },
+    {
+      "x": "Could we move the meeting to Thursday? I'm flying to Ankara on Wednesday.",
+      "tr": "Toplantıyı perşembeye alabilir miyiz? Çarşamba Ankara'ya uçuyorum."
+    },
+    {
+      "x": "I'll call you as soon as the materials arrive.",
+      "tr": "Malzemeler gelir gelmez seni ararım."
+    },
+    {
+      "x": "Will you be using the crane this afternoon?",
+      "tr": "Bu öğleden sonra vinci kullanıyor olacak mısınız?"
+    },
+    {
+      "x": "The supplier won't give us a discount.",
+      "tr": "Tedarikçi bize indirim yapmaya yanaşmıyor."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "Telefon çalıyor, sen o an karar veriyorsun: “OK, I ___ it.”",
+      "a": "will get",
+      "o": [
+        "will get",
+        "am going to get",
+        "get"
+      ],
+      "why": {
+        "am going to get": "going to önceden verilmiş karar içindir; burada karar şu an verildi.",
+        "get": "Present simple ile anlık karar ya da teklif kurulmaz: I'll get it."
+      },
+      "ok": "Anlık karar → will (I'll get it)."
+    },
+    {
+      "t": "choice",
+      "q": "Dün akşam düşündüm, karar verdim: “I ___ ask the client for a site meeting.”",
+      "a": "am going to",
+      "o": [
+        "am going to",
+        "will"
+      ],
+      "why": {
+        "will": "Karar önceden verildi → going to. will burada “şimdi aklıma geldi” gibi duyulur."
+      },
+      "ok": "Önceden karar → going to."
+    },
+    {
+      "t": "choice",
+      "q": "Look at that cable! It's too hot. It ___ melt.",
+      "a": "is going to",
+      "o": [
+        "is going to",
+        "will",
+        "melts"
+      ],
+      "why": {
+        "will": "Gözünün önünde kanıt var (kablo ısınmış) → going to.",
+        "melts": "Present simple genel gerçek anlatır; bu bir tahmin."
+      },
+      "ok": "Kanıt → going to."
+    },
+    {
+      "t": "choice",
+      "q": "I think the client ___ the new price.",
+      "a": "will accept",
+      "o": [
+        "will accept",
+        "is accepting",
+        "accepts"
+      ],
+      "why": {
+        "is accepting": "Present continuous ayarlanmış plan içindir, görüş için değil.",
+        "accepts": "Gelecek tahmininde present simple olmaz: I think + will."
+      },
+      "ok": "Görüş → will."
+    },
+    {
+      "t": "choice",
+      "q": "Takvimde yazıyor: “___ the engineer at 10 tomorrow.”",
+      "a": "I'm meeting",
+      "o": [
+        "I'm meeting",
+        "I meet",
+        "I'll meet"
+      ],
+      "why": {
+        "I meet": "Present simple gelecekte sadece tarifeler için (The train leaves at 8). Kişisel randevu: I'm meeting.",
+        "I'll meet": "Takvimdeki randevu için will doğal değil; anlık karar gibi duyulur."
+      },
+      "ok": "Ayarlanmış randevu → present continuous."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Yarın saat 10'da kablo çekiyor olacağız.”",
+      "words": [
+        "be",
+        "cable",
+        "we'll",
+        "pulling",
+        "at",
+        "10",
+        "tomorrow"
+      ],
+      "a": "we'll be pulling cable at 10 tomorrow",
+      "alt": [
+        "at 10 tomorrow we'll be pulling cable",
+        "we'll be pulling cable tomorrow at 10",
+        "tomorrow at 10 we'll be pulling cable"
+      ],
+      "ok": "We'll be pulling cable at 10 tomorrow."
+    },
+    {
+      "t": "choice",
+      "q": "It ___ rain tomorrow, so we can work outside.",
+      "a": "probably won't",
+      "o": [
+        "probably won't",
+        "won't probably",
+        "will not probably"
+      ],
+      "why": {
+        "won't probably": "Olumsuzda probably, won't'tan önce gelir.",
+        "will not probably": "Olumsuzda probably, will not'tan önce gelir: probably will not."
+      },
+      "ok": "It probably won't rain."
+    },
+    {
+      "t": "choice",
+      "q": "I'll call you when the cables ___.",
+      "a": "arrive",
+      "o": [
+        "arrive",
+        "will arrive",
+        "are going to arrive"
+      ],
+      "why": {
+        "will arrive": "when'den sonra gelecek anlamında will gelmez: when the cables arrive.",
+        "are going to arrive": "when'den sonra going to da gelmez; present yeter."
+      },
+      "ok": "when + present."
+    },
+    {
+      "t": "choice",
+      "q": "Don't call me at 3. I ___ the panel then.",
+      "a": "will be testing",
+      "o": [
+        "will be testing",
+        "will test",
+        "test"
+      ],
+      "why": {
+        "will test": "will test = saat 3'te teste başlayacağım. “O saatte işin ortasında olacağım” için: will be testing.",
+        "test": "Present simple burada gelecek anlatmaz."
+      },
+      "ok": "O anda sürüyor olacak → will be + -ing."
+    },
+    {
+      "t": "type",
+      "q": "Düzelt: “When I will finish the report, I'll send it to you.”",
+      "a": [
+        "when i finish the report i'll send it to you",
+        "when i finish the report i will send it to you",
+        "when i've finished the report i'll send it to you",
+        "when i've finished the report i will send it to you",
+        "when i have finished the report i'll send it to you",
+        "when i have finished the report i will send it to you",
+        "i'll send it to you when i finish the report",
+        "i'll send it to you when i've finished the report",
+        "i'll send it to you when i have finished the report",
+        "i will send it to you when i finish the report",
+        "i will send it to you when i've finished the report",
+        "i will send it to you when i have finished the report"
+      ],
+      "hint": "when'den sonra will yok.",
+      "ok": "When I finish the report, I'll send it to you."
+    },
+    {
+      "t": "type",
+      "q": "Çevir (takvimde kesin): “Perşembe tedarikçiyle görüşüyorum.”",
+      "a": [
+        "i'm meeting the supplier on thursday",
+        "i'm meeting the supplier thursday",
+        "i'm seeing the supplier on thursday",
+        "i'm seeing the supplier thursday",
+        "i am meeting the supplier on thursday",
+        "i am meeting the supplier thursday",
+        "i am seeing the supplier on thursday",
+        "i am seeing the supplier thursday",
+        "on thursday i'm meeting the supplier",
+        "on thursday i'm seeing the supplier",
+        "on thursday i am meeting the supplier",
+        "on thursday i am seeing the supplier",
+        "i'm meeting with the supplier on thursday",
+        "i'm meeting with the supplier thursday",
+        "i am meeting with the supplier on thursday",
+        "i am meeting with the supplier thursday",
+        "on thursday i'm meeting with the supplier",
+        "on thursday i am meeting with the supplier"
+      ],
+      "soft": [
+        "i'm going to meet the supplier on thursday",
+        "i'm going to see the supplier on thursday",
+        "i am going to meet the supplier on thursday",
+        "i am going to see the supplier on thursday",
+        "i'm going to meet with the supplier on thursday",
+        "i am going to meet with the supplier on thursday"
+      ],
+      "soft_note": "Doğru sayıldı. Takvime girmiş randevu için en doğal biçim: I'm meeting the supplier on Thursday.",
+      "hint": "Randevu → am + -ing.",
+      "ok": "I'm meeting the supplier on Thursday."
+    },
+    {
+      "t": "type",
+      "q": "Çevir (o an teklif ediyorsun): “Tamam, raporu yarın sabah gönderirim.”",
+      "a": [
+        "ok i'll send the report tomorrow morning",
+        "ok i'll send you the report tomorrow morning",
+        "ok i'll send the report to you tomorrow morning",
+        "ok i will send the report tomorrow morning",
+        "ok i will send you the report tomorrow morning",
+        "ok i will send the report to you tomorrow morning",
+        "okay i'll send the report tomorrow morning",
+        "okay i'll send you the report tomorrow morning",
+        "okay i'll send the report to you tomorrow morning",
+        "okay i will send the report tomorrow morning",
+        "okay i will send you the report tomorrow morning",
+        "okay i will send the report to you tomorrow morning",
+        "i'll send the report tomorrow morning",
+        "i'll send you the report tomorrow morning",
+        "i'll send the report to you tomorrow morning",
+        "i will send the report tomorrow morning",
+        "i will send you the report tomorrow morning",
+        "i will send the report to you tomorrow morning"
+      ],
+      "hint": "Teklif/söz → will.",
+      "ok": "OK, I'll send the report tomorrow morning."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Gelecek hafta ve ay planını anlatmak: randevuları (present continuous), niyetleri (going to), anlık kararları ve teklifleri (will), o saatte ne yapıyor olacağını (will be -ing) söylemek; telefonda bir toplantının ya da teslimin tarihini değiştirmek.",
+    "vocab": [
+      "site meeting",
+      "delivery",
+      "deadline",
+      "handover",
+      "inspection",
+      "commissioning",
+      "supplier",
+      "drawings",
+      "reschedule",
+      "postpone",
+      "move the meeting to",
+      "available",
+      "calendar",
+      "as soon as",
+      "this time next week"
+    ],
+    "structures": [
+      "I'm meeting… / We're delivering… on Thursday (randevu)",
+      "I'm going to… (niyet) vs I'll… (anlık karar, teklif)",
+      "I think… will / It's going to… (görüş vs kanıt)",
+      "At 10 I'll be …-ing / Will you be …-ing?",
+      "when / as soon as / before + present"
+    ],
+    "opener_hint": "Oliver yabancı müşterinin proje mühendisi, telefonda arıyor: “Hi Türab, I'm planning next week. When are you delivering the lighting panels?” Sonra salı toplantısını kaydırmak istesin: “Can we move Tuesday's meeting? What are you doing on Wednesday morning?”",
+    "level_note": "B1+: doğal telefon konuşması, 1-3 cümle. “I will meet…” (randevu) ya da “when I will…” hatasını görünce hemen kısa düzelt (dersin hedefi); diğer hataları 3 turda bir “You said … → Better: …” diye topla."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "kanıt → going to",
+      "q": "The ladder is broken. Someone ___ fall.",
+      "a": "is going to",
+      "o": [
+        "is going to",
+        "will"
+      ],
+      "why": {
+        "will": "Kanıt gözünün önünde (kırık merdiven) → going to."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "anlık teklif → will",
+      "q": "These boxes are heavy. — Wait, I ___ you.",
+      "a": "will help",
+      "o": [
+        "will help",
+        "am going to help",
+        "help"
+      ],
+      "why": {
+        "am going to help": "Teklif o an doğdu → will (I'll help you).",
+        "help": "Anlık teklif present simple ile kurulmaz."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "randevu → present continuous",
+      "q": "The truck is booked. We ___ the panels to the site on Monday.",
+      "a": "are delivering",
+      "o": [
+        "are delivering",
+        "deliver",
+        "delivering"
+      ],
+      "why": {
+        "deliver": "Ayarlanmış plan için present simple değil, present continuous.",
+        "delivering": "are eksik: we are delivering."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "zaman bağlacı + present",
+      "q": "As soon as the inspector ___, we'll start the test.",
+      "a": "arrives",
+      "o": [
+        "arrives",
+        "will arrive",
+        "arrive"
+      ],
+      "why": {
+        "will arrive": "as soon as'ten sonra will gelmez.",
+        "arrive": "inspector tekil (he) → arrives."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "future continuous",
+      "q": "Çevir: “Yarın bu saatte Bodrum'a uçuyor olacağım.”",
+      "a": [
+        "this time tomorrow i'll be flying to bodrum",
+        "this time tomorrow i will be flying to bodrum",
+        "i'll be flying to bodrum this time tomorrow",
+        "i will be flying to bodrum this time tomorrow",
+        "at this time tomorrow i'll be flying to bodrum",
+        "at this time tomorrow i will be flying to bodrum",
+        "i'll be flying to bodrum at this time tomorrow",
+        "i will be flying to bodrum at this time tomorrow",
+        "tomorrow at this time i'll be flying to bodrum",
+        "tomorrow at this time i will be flying to bodrum",
+        "i'll be flying to bodrum tomorrow at this time",
+        "i will be flying to bodrum tomorrow at this time"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "We've decided. We ___ hire two more electricians next month.",
+        "a": "are going to",
+        "o": [
+          "are going to",
+          "will"
+        ],
+        "why": {
+          "will": "“We've decided”: karar önceden verildi → going to."
+        },
+        "ok": "Önceden karar → going to."
+      },
+      {
+        "t": "choice",
+        "q": "What ___ this weekend? — I'm visiting my family in Kırıkkale.",
+        "a": "are you doing",
+        "o": [
+          "are you doing",
+          "do you do",
+          "will you do"
+        ],
+        "why": {
+          "do you do": "Bu genel alışkanlığı sorar (hafta sonları ne yaparsın). Plan: are you doing?",
+          "will you do": "Plan sorarken doğal değil; cevap da present continuous."
+        },
+        "ok": "Plan sorusu → What are you doing…?"
+      },
+      {
+        "t": "choice",
+        "q": "I'm sure the test ___ fine.",
+        "a": "will go",
+        "o": [
+          "will go",
+          "is going",
+          "goes"
+        ],
+        "why": {
+          "is going": "is going fine = şu an iyi gidiyor; gelecek tahmini değil.",
+          "goes": "Gelecek tahmini present simple ile yapılmaz."
+        },
+        "ok": "I'm sure + will."
+      },
+      {
+        "t": "choice",
+        "q": "This time next week we ___ the lighting at the hotel.",
+        "a": "will be installing",
+        "o": [
+          "will be installing",
+          "will installing",
+          "are install"
+        ],
+        "why": {
+          "will installing": "will'den sonra be gerekir: will be installing.",
+          "are install": "are + yalın fiil olmaz."
+        },
+        "ok": "will be + -ing."
+      },
+      {
+        "t": "type",
+        "q": "Düzelt: “I call you after I will check the panel.”",
+        "a": [
+          "i'll call you after i check the panel",
+          "i'll call you after i've checked the panel",
+          "i'll call you after i have checked the panel",
+          "i will call you after i check the panel",
+          "i will call you after i've checked the panel",
+          "i will call you after i have checked the panel",
+          "after i check the panel i'll call you",
+          "after i check the panel i will call you",
+          "after i've checked the panel i'll call you",
+          "after i have checked the panel i will call you"
+        ],
+        "hint": "Ana cümlede will, after'dan sonra present.",
+        "ok": "I'll call you after I check the panel."
+      },
+      {
+        "t": "type",
+        "q": "Hava kararıyor, kanıt ortada. Çevir: “Bugün bitiremeyeceğiz.” (finish)",
+        "a": [
+          "we aren't going to finish today",
+          "we aren't going to finish it today",
+          "we aren't going to finish the job today",
+          "we're not going to finish today",
+          "we're not going to finish it today",
+          "we're not going to finish the job today",
+          "we are not going to finish today",
+          "we are not going to finish it today",
+          "we are not going to finish the job today",
+          "we aren't going to finish this today",
+          "we're not going to finish this today",
+          "we are not going to finish this today"
+        ],
+        "soft": [
+          "we won't finish today",
+          "we won't finish it today",
+          "we won't finish the job today",
+          "we will not finish today",
+          "we will not finish it today",
+          "we will not finish the job today",
+          "we won't finish this today",
+          "we will not finish this today"
+        ],
+        "soft_note": "Doğru sayıldı. Kanıt ortadayken daha doğal: We aren't going to finish today.",
+        "hint": "Kanıt → going to.",
+        "ok": "We aren't going to finish today."
+      }
+    ],
+    "konus_prompt": "Oliver'la telefonda gelecek haftanı planla: hangi gün kimle görüşüyorsun (present continuous), neyi bitirmeye niyetlisin (going to), bir randevuyu başka güne al ve o saatte neden müsait olmadığını söyle (I'll be …-ing)."
+  }
+}

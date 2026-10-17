@@ -1,0 +1,385 @@
+{
+  "id": "it17",
+  "lang": "it",
+  "level": "A1",
+  "title": "Kafe ve market: vorrei, quanto costa, il conto",
+  "lead": "Barda kahve ve kruvasan söyleyebilir, fiyat sorup euro cinsinden cevabı anlayabilir, hesabı isteyebilir ve markette “biraz ekmek, bir kilo elma” diyebilirsin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "vorrei: kibar “istiyorum”",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "16. derste **voglio** (istiyorum) gördün. Dilbilgisi olarak doğru, ama barmene “Voglio un caffè” demek Türkçedeki “Kahve istiyorum!” gibi sert duyulur. Sipariş verirken İtalyan **vorrei** der: “isterdim, alabilir miyim”. Şimdilik **hazır kalıp** olarak ezberle; bu kipin (condizionale) çekimini B1'de göreceksin."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                { "t": "Bir kahve", "s": "ne" },
+                { "t": "alabilir miyim?", "s": "kibar istek", "hl": true }
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                { "t": "Vorrei", "s": "isterdim (kibar)", "hl": true },
+                { "t": "un caffè,", "s": "ne" },
+                { "t": "per favore.", "s": "lütfen" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            { "title": "vorrei + isim", "text": "Ne istediğini artikeliyle söyle.", "ex": { "x": "Vorrei un cornetto.", "tr": "Bir kruvasan alabilir miyim?" } },
+            { "title": "vorrei + mastar", "text": "Ne yapmak istediğini söyle; fiil çekilmez, mastar kalır.", "ex": { "x": "Vorrei pagare.", "tr": "Ödemek istiyorum." } },
+            { "title": "Daha kısası: prendo", "text": "Barda en doğal ikinci yol: prendere (almak) fiili. “Ben … alıyorum.”", "ex": { "x": "Prendo un cappuccino.", "tr": "Ben bir kapuçino alayım." } }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Quanto costa? Quanto costano? Euro nasıl okunur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Fiyat sorusu **costare** (tutmak, fiyatı olmak) fiiliyle kurulur. Bu düzenli bir -are fiili ve öznesi **ürün**dür. Türkçede “kaç para?” hep aynı kalır; İtalyancada ürün tekse **costa**, çoğulsa **costano**."
+        },
+        {
+          "type": "table",
+          "head": ["Ürün", "Soru", "Anlamı"],
+          "x": 1,
+          "rows": [
+            ["tekil", "Quanto costa il cornetto?", "Kruvasan ne kadar?"],
+            ["çoğul", "Quanto costano le mele?", "Elmalar ne kadar?"],
+            ["cevap", "Sono due euro. / Fanno due euro.", "İki euro (tutuyor)."]
+          ],
+          "say": ["Quanto costa il cornetto?", "Quanto costano le mele?", "Sono due euro."]
+        },
+        {
+          "type": "table",
+          "head": ["Yazılan", "Söylenen", "Okunuş"],
+          "x": 1,
+          "rows": [
+            ["1,00 €", "un euro", "un EU-ro"],
+            ["1,20 €", "un euro e venti", "un EU-ro e VEN-ti"],
+            ["2,50 €", "due euro e cinquanta", "DU-e EU-ro e çin-KUAN-ta"],
+            ["0,80 €", "ottanta centesimi", "ot-TAN-ta çen-TE-si-mi"]
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "**euro** çoğulda değişmez: due euro, dieci euro (“due euri” yanlış). Bir euro **un euro**'dur, “uno euro” değil. Virgül yerine **e** (ve) denir: euro **e** cent."
+        }
+      ]
+    },
+    {
+      "title": "Barda: sipariş, ödeme, hesap",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "İtalyan barında **un caffè** demek bir espresso demektir; büyük bir fincan filtre kahve bekleme. Ayakta, tezgâhta içmek (**al banco**) masada oturmaktan (**al tavolo**) ucuzdur. Çoğu barda önce kasada ödeyip fişi (**lo scontrino**) tezgâha verirsin."
+        },
+        {
+          "type": "examples",
+          "items": [
+            { "x": "Due caffè, per favore.", "tr": "İki kahve, lütfen.", "ph": "DU-e kaf-FE, per fa-VO-re" },
+            { "x": "Un bicchiere d'acqua, per favore.", "tr": "Bir bardak su, lütfen.", "ph": "un bik-KYE-re DAK-kua, per fa-VO-re" },
+            { "x": "Posso pagare con la carta?", "tr": "Kartla ödeyebilir miyim?", "ph": "POS-so pa-GA-re kon la KAR-ta" },
+            { "x": "Il conto, per favore.", "tr": "Hesap, lütfen.", "ph": "il KON-to, per fa-VO-re" }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**caffè** sonu aksanlıdır, vurgu sondadır: kaf-FE. Çoğulu da aynı: due caffè. **il conto** restoranda masada istenir; barda genelde hesap sorulmaz, kasaya gidilir."
+        }
+      ]
+    },
+    {
+      "title": "del pane, della frutta: “biraz” ve “birkaç”",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede “ekmek alıyorum” dersin, miktar söylemezsin. İtalyanca bu boşluğu **di + artikel** ile doldurur: 14. dersteki del, della, dei… Burada anlamı “biraz / birkaç”tır (partitivo). Biçimi, ismin artikeline göre seçersin."
+        },
+        {
+          "type": "table",
+          "head": ["Artikel", "Partitivo", "Örnek", "Anlamı"],
+          "x": 2,
+          "rows": [
+            ["il", "del", "del pane", "biraz ekmek"],
+            ["lo", "dello", "dello zucchero", "biraz şeker"],
+            ["la", "della", "della frutta", "biraz meyve"],
+            ["l'", "dell'", "dell'acqua", "biraz su"],
+            ["i", "dei", "dei pomodori", "birkaç domates"],
+            ["gli", "degli", "degli spaghetti", "biraz spagetti"],
+            ["le", "delle", "delle mele", "birkaç elma"]
+          ],
+          "say": ["del pane", "dello zucchero", "della frutta", "dell'acqua", "dei pomodori", "degli spaghetti", "delle mele"]
+        },
+        {
+          "type": "rules",
+          "items": [
+            { "title": "Miktar belli değil → partitivo", "text": "“Biraz, birkaç” anlamı.", "ex": { "x": "Vorrei del formaggio.", "tr": "Biraz peynir istiyorum." } },
+            { "title": "Miktar belli → sadece di", "text": "Kilo, etto (100 gram), bardak sayılınca artikel gelmez.", "ex": { "x": "Un chilo di mele, per favore.", "tr": "Bir kilo elma, lütfen." } }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Tipik Türk hatası: “un chilo **delle** mele”. Miktar söylediysen artikel yok: un chilo **di** mele, un etto **di** prosciutto."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    { "x": "Buongiorno! Vorrei un caffè, per favore.", "tr": "Günaydın! Bir kahve alabilir miyim, lütfen?", "ph": "buon-COR-no! vor-REY un kaf-FE, per fa-VO-re" },
+    { "x": "Prendo un cappuccino e un cornetto.", "tr": "Bir kapuçino ve bir kruvasan alayım.", "ph": "PREN-do un kap-put-Çİ-no e un kor-NET-to" },
+    { "x": "Quanto costa il cornetto?", "tr": "Kruvasan ne kadar?", "ph": "KUAN-to KOS-ta il kor-NET-to" },
+    { "x": "Sono due euro e cinquanta.", "tr": "İki euro elli.", "ph": "SO-no DU-e EU-ro e çin-KUAN-ta" },
+    { "x": "Un bicchiere d'acqua, per favore.", "tr": "Bir bardak su, lütfen.", "ph": "un bik-KYE-re DAK-kua, per fa-VO-re" },
+    { "x": "Posso pagare con la carta?", "tr": "Kartla ödeyebilir miyim?", "ph": "POS-so pa-GA-re kon la KAR-ta" },
+    { "x": "Il conto, per favore.", "tr": "Hesap, lütfen.", "ph": "il KON-to, per fa-VO-re" },
+    { "x": "Vorrei del pane e dei pomodori.", "tr": "Biraz ekmek ve birkaç domates istiyorum.", "ph": "vor-REY del PA-ne e dey po-mo-DO-ri" },
+    { "x": "Quanto costano le mele?", "tr": "Elmalar ne kadar?", "ph": "KUAN-to KOS-ta-no le ME-le" },
+    { "x": "Un chilo di mele e un etto di prosciutto.", "tr": "Bir kilo elma ve 100 gram jambon.", "ph": "un Kİ-lo di ME-le e u-NET-to di pro-ŞUT-to" }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "Barmene kibarca: “___ un caffè, per favore.”",
+      "a": "Vorrei",
+      "o": ["Vorrei", "Voglio", "Vuoi"],
+      "why": {
+        "Voglio": "Voglio dilbilgisi olarak doğru ama siparişte sert duyulur (“Kahve istiyorum!”). Kibar kalıp: Vorrei.",
+        "Vuoi": "Vuoi = sen istiyorsun / ister misin? Barmene kahve isteyip istemediğini sormuş olursun."
+      },
+      "ok": "Vorrei = kibar “istiyorum”. Siparişin anahtar kelimesi."
+    },
+    {
+      "t": "choice",
+      "q": "“Quanto ___ il cornetto?”",
+      "a": "costa",
+      "o": ["costa", "costano", "costi"],
+      "why": {
+        "costano": "costano çoğul ürün içindir. il cornetto tekil: costa.",
+        "costi": "costi = sen tutuyorsun (tu). Öznen ürün, yani “o”: costa."
+      },
+      "ok": "Tek ürün → costa."
+    },
+    {
+      "t": "choice",
+      "q": "“Quanto ___ i pomodori?”",
+      "a": "costano",
+      "o": ["costa", "costano", "costate"],
+      "why": {
+        "costa": "costa tekil içindir. i pomodori çoğul: costano.",
+        "costate": "costate = siz tutuyorsunuz (voi). Özne domatesler, yani “onlar”: costano."
+      },
+      "ok": "Çoğul ürün → costano. Fiilin öznesi ürün."
+    },
+    {
+      "t": "choice",
+      "q": "Fişte 2,50 € yazıyor. Kasiyer ne der?",
+      "a": "due euro e cinquanta",
+      "o": ["due euro e cinquanta", "due euri e cinquanta", "due euro virgola cinquanta centesimi"],
+      "why": {
+        "due euri e cinquanta": "euro çoğulda değişmez: due euro, “euri” denmez.",
+        "due euro virgola cinquanta centesimi": "Fiyat söylerken virgül yerine e (ve) denir ve sonuna centesimi eklenmez: due euro e cinquanta."
+      },
+      "ok": "due euro e cinquanta. euro hiç değişmez, arada e (ve)."
+    },
+    {
+      "t": "choice",
+      "q": "Markette: “Vorrei ___ pane.” (biraz ekmek)",
+      "a": "del",
+      "o": ["del", "della", "dei"],
+      "why": {
+        "della": "della dişil tekil içindir (la frutta). il pane eril tekil: del.",
+        "dei": "dei çoğul içindir (i pomodori). pane tekil: del."
+      },
+      "ok": "il pane → del pane. Partitivo, artikeli takip eder."
+    },
+    {
+      "t": "choice",
+      "q": "“Vorrei ___ acqua.” (biraz su)",
+      "a": "dell'",
+      "o": ["della", "dell'", "del"],
+      "why": {
+        "della": "acqua ünlüyle başlar, artikeli l' olur (l'acqua). Bu yüzden partitivo da dell': dell'acqua.",
+        "del": "del eril ve ünsüzle başlayan isim içindir. l'acqua → dell'acqua."
+      },
+      "ok": "l'acqua → dell'acqua."
+    },
+    {
+      "t": "choice",
+      "q": "“Un chilo ___ mele, per favore.”",
+      "a": "di",
+      "o": ["di", "delle", "dei"],
+      "why": {
+        "delle": "Miktar söyledin (un chilo); artikel gelmez. Sadece di: un chilo di mele.",
+        "dei": "Hem miktar var hem de mele dişil. Doğrusu artikelsiz di."
+      },
+      "ok": "Miktar belli → sadece di."
+    },
+    {
+      "t": "type",
+      "q": "Restoranda garsona: “Hesap, lütfen.”",
+      "a": ["il conto per favore", "il conto per piacere"],
+      "hint": "hesap = il conto. lütfen = per favore.",
+      "ok": "Il conto, per favore."
+    },
+    {
+      "t": "type",
+      "q": "Kibarca söyle: “Bir kahve istiyorum.”",
+      "a": ["vorrei un caffè", "vorrei un caffè per favore", "io vorrei un caffè"],
+      "soft": ["vorrei un caffe", "vorrei un caffe per favore", "io vorrei un caffe"],
+      "soft_note": "caffè sonu aksanlı yazılır (vurgu sonda): Vorrei un caffè.",
+      "hint": "Kibar kalıp + belirsiz artikel + caffè.",
+      "ok": "Vorrei un caffè."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Kartla ödeyebilir miyim?”",
+      "a": ["posso pagare con la carta", "posso pagare con carta", "posso pagare con la carta di credito", "posso pagare con carta di credito"],
+      "hint": "potere (16. ders) + mastar. ödemek = pagare, kart = la carta.",
+      "ok": "Posso pagare con la carta? potere + mastar, 16. dersteki gibi."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Biraz ekmek ve birkaç domates istiyorum.”",
+      "words": ["pomodori", "del", "e", "vorrei", "dei", "pane"],
+      "a": "vorrei del pane e dei pomodori",
+      "alt": ["vorrei dei pomodori e del pane"],
+      "ok": "Vorrei del pane e dei pomodori. del = biraz, dei = birkaç."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Elmalar ne kadar?”",
+      "a": ["quanto costano le mele", "le mele quanto costano"],
+      "hint": "elmalar = le mele (çoğul). Fiil ürüne uyar.",
+      "ok": "Quanto costano le mele? Çoğul ürün → costano."
+    }
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Barda ve markette alışveriş: vorrei / prendo ile sipariş vermek, quanto costa / costano ile fiyat sormak, euro fiyatlarını anlamak, il conto istemek, del/della ile “biraz” demek.",
+    "vocab": ["vorrei", "prendo", "un caffè", "un cappuccino", "un cornetto", "un bicchiere d'acqua", "il conto", "per favore", "grazie", "quanto costa", "quanto costano", "euro", "centesimi", "la carta", "pagare", "il pane", "le mele", "i pomodori", "il formaggio", "il prosciutto", "un chilo", "un etto", "al banco", "lo scontrino"],
+    "structures": ["vorrei + isim / mastar (hazır kalıp)", "prendo + isim", "quanto costa + tekil / quanto costano + çoğul", "sono / fanno … euro", "partitivo: del, della, dell', dei, delle", "un chilo / un etto di + isim (artikelsiz)", "posso pagare con la carta?"],
+    "opener_hint": "Chiara bir barda barista: “Buongiorno! Cosa prende?” (Ne alırsınız?) diye açsın. Sipariş, fiyat sorusu ve ödeme sonrası rolü markette satıcıya çevirsin: “E adesso al mercato! Cosa desidera?” Türab ekmek, elma, peynir istesin; Chiara bir kez çoğul ürün fiyatı söyletsin (costano).",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca cümle/soru, alt satırda parantez içinde Türkçesi. vorrei'yi hazır kalıp olarak kullan, condizionale'nin başka biçimlerini (vorremmo, potrei) kullanma. Fiyatları tam ve küçük sayılarla söyle (ör. 1,20 €, 3,50 €). Hata olursa “Quasi! → doğru hali” ve kısa Türkçe neden. 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "vorrei + mastar",
+      "q": "Garsona kibarca: “Sipariş vermek istiyorum.”",
+      "a": "Vorrei ordinare.",
+      "o": ["Vorrei ordinare.", "Voglio ordinare.", "Vuoi ordinare?"],
+      "why": {
+        "Voglio ordinare.": "Yanlış değil ama garsona sert duyulur. Kibar kalıp: Vorrei + mastar.",
+        "Vuoi ordinare?": "Bu, garsona “sen sipariş vermek ister misin?” diye sormak olur."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "costa / costano",
+      "q": "“Quanto ___ gli spaghetti?”",
+      "a": "costano",
+      "o": ["costa", "costano"],
+      "why": {
+        "costa": "gli spaghetti çoğuldur (artikel gli de bunu söylüyor). Çoğul ürün: costano."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "euro fiyatları",
+      "q": "Kahve 0,80 €. Barista ne der?",
+      "a": "Ottanta centesimi.",
+      "o": ["Ottanta centesimi.", "Otto euro.", "Ottanta euro."],
+      "why": {
+        "Otto euro.": "otto = 8. 8 € bir espresso için fazla pahalı olurdu; 0,80 € = 80 cent.",
+        "Ottanta euro.": "ottanta euro = 80 €. Bir euronun altındaki fiyat centesimi ile söylenir."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "partitivo (biraz)",
+      "q": "Türkçeden çevir: “Biraz peynir istiyorum.” (kibarca)",
+      "a": ["vorrei del formaggio", "vorrei del formaggio per favore", "io vorrei del formaggio"]
+    },
+    {
+      "t": "type",
+      "topic": "miktar + di",
+      "q": "Şarküteride: “100 gram jambon, lütfen.” (100 gram = un etto)",
+      "a": ["un etto di prosciutto per favore", "un etto di prosciutto", "vorrei un etto di prosciutto", "vorrei un etto di prosciutto per favore"]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "Bakkalda: “Avete ___ latte?” (Süt var mı?)",
+        "a": "del",
+        "o": ["del", "della", "dello"],
+        "why": {
+          "della": "latte -e ile biter ama erildir: il latte. Bu yüzden del.",
+          "dello": "dello, lo alan isimler içindir (lo zucchero). il latte → del latte."
+        },
+        "ok": "il latte → del latte. avete = sizde var mı (avere, voi)."
+      },
+      {
+        "t": "choice",
+        "q": "“Vorrei ___ uova.” (birkaç yumurta)",
+        "a": "delle",
+        "o": ["dei", "degli", "delle"],
+        "why": {
+          "dei": "uovo düzensizdir: tekili l'uovo (eril), çoğulu le uova (dişil). le → delle.",
+          "degli": "Tekil l'uovo'ya bakıp degli dersin, ama çoğul le uova dişildir: delle."
+        },
+        "ok": "le uova → delle uova. 3. dersteki düzensiz çoğul."
+      },
+      {
+        "t": "choice",
+        "q": "Kasiyer: “Due caffè e un cornetto: ___ quattro euro.”",
+        "a": "fanno",
+        "o": ["fanno", "fa", "fate"],
+        "why": {
+          "fa": "Toplam birden çok şey, fiil çoğul olur: fanno. (Tek ürün olsa: fa / costa.)",
+          "fate": "fate = siz yapıyorsunuz (voi). Toplam için fanno."
+        },
+        "ok": "Fanno quattro euro. = Dört euro tutuyor. (fare, 11. ders)"
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Bir bardak su, lütfen.”",
+        "a": ["un bicchiere d'acqua per favore", "un bicchiere d'acqua", "vorrei un bicchiere d'acqua", "vorrei un bicchiere d'acqua per favore", "un bicchiere di acqua per favore", "un bicchiere di acqua"],
+        "hint": "bardak = il bicchiere. Miktar var, artikelsiz di: di + acqua → d'acqua.",
+        "ok": "Un bicchiere d'acqua, per favore."
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Kruvasan ne kadar?”",
+        "a": ["quanto costa il cornetto", "il cornetto quanto costa", "quanto costa un cornetto"],
+        "hint": "Tek ürün → costa. kruvasan = il cornetto.",
+        "ok": "Quanto costa il cornetto?"
+      },
+      {
+        "t": "order",
+        "q": "Sırala: “Bir kahve ve bir kruvasan istiyorum.”",
+        "words": ["cornetto", "un", "vorrei", "caffè", "e", "un"],
+        "a": "vorrei un caffè e un cornetto",
+        "alt": ["vorrei un cornetto e un caffè"],
+        "ok": "Vorrei un caffè e un cornetto."
+      }
+    ],
+    "konus_prompt": "Chiara barista ve sonra manav. Barda iki şey sipariş et (vorrei / prendo), birinin fiyatını sor, kartla ödeyip ödeyemeyeceğini sor. Markette bir şeyi partitivo ile (del pane, delle mele), bir şeyi miktarla (un chilo di…) iste."
+  }
+}

@@ -1,0 +1,715 @@
+{
+ "id": "it07",
+ "lang": "it",
+ "level": "A1",
+ "title": "Sıfatlar ve uyum",
+ "lead": "“Yeni kablo”, “Kahverengi tel faz”, “Ekip yorgun”, “Kolay gelsin!” cümlelerini doğru kuracaksın. Kural iki tane: sıfat isimden sonra gelir ve ismine uyar.",
+ "minutes": 35,
+ "anlat": [
+  {
+   "title": "Sıra ters: önce isim, sonra sıfat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Türkçede sıfat hep önde durur: **yeni kablo**. İtalyancada sıra tersine döner: önce isim, sonra sıfat: **il cavo nuovo**. Artikel yine en başta kalır; o, bütün gruba aittir."
+    },
+    {
+     "type": "compare",
+     "rows": [
+      {
+       "label": "Türkçe",
+       "items": [
+        {
+         "t": "yeni",
+         "s": "sıfat",
+         "hl": true
+        },
+        {
+         "t": "kablo",
+         "s": "isim"
+        }
+       ]
+      },
+      {
+       "label": "İtalyanca",
+       "items": [
+        {
+         "t": "il",
+         "s": "artikel"
+        },
+        {
+         "t": "cavo",
+         "s": "isim"
+        },
+        {
+         "t": "nuovo",
+         "s": "sıfat",
+         "hl": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "examples",
+     "items": [
+      {
+       "x": "un cavo nuovo",
+       "tr": "yeni bir kablo",
+       "ph": "un KA-vo NUO-vo"
+      },
+      {
+       "x": "il quadro elettrico",
+       "tr": "elektrik panosu (kelimesi kelimesine: elektrikli pano)",
+       "ph": "il KUA-dro e-LET-tri-ko"
+      },
+      {
+       "x": "una squadra turca",
+       "tr": "bir Türk ekibi",
+       "ph": "U-na SKUA-dra TUR-ka"
+      },
+      {
+       "x": "il caffè caldo",
+       "tr": "sıcak kahve",
+       "ph": "il kaf-FE KAL-do"
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "warn": true,
+     "text": "Türk beyni sıfatı öne atar. **Renk, milliyet ve tür** bildiren sıfatlar (nero, turco, elettrico) her zaman sonra gelir: il cavo nero doğru, “il nero cavo” yanlış. Birkaç kısa sıfat (bello, buono, grande, nuovo) önde de görülür; bu ince bir üslup farkı. Şimdilik kural: **sonra koy, yanılmazsın.** bello ve buono 4. kartta."
+    }
+   ]
+  },
+  {
+   "title": "Sıfat, isminin kılığına girer",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Türkçede sıfat hiç değişmez: yeni kablo, yeni kablolar. İtalyancada sıfat ismine **cinsiyet ve sayıda uyar**. Sonu -o olan sıfatın 4 biçimi, sonu -e olanın 2 biçimi var (3. dersteki isim çoğullarıyla aynı mantık)."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Kim için?",
+      "nuovo (4 biçim)",
+      "grande (2 biçim)"
+     ],
+     "x": 1,
+     "rows": [
+      [
+       "erkek tekil",
+       "il cavo nuovo",
+       "il cantiere grande"
+      ],
+      [
+       "kadın tekil",
+       "la presa nuova",
+       "la scala grande"
+      ],
+      [
+       "erkek çoğul",
+       "i cavi nuovi",
+       "i cantieri grandi"
+      ],
+      [
+       "kadın çoğul",
+       "le prese nuove",
+       "le scale grandi"
+      ]
+     ],
+     "say": [
+      "il cavo nuovo, il cantiere grande",
+      "la presa nuova, la scala grande",
+      "i cavi nuovi, i cantieri grandi",
+      "le prese nuove, le scale grandi"
+     ]
+    },
+    {
+     "type": "rules",
+     "items": [
+      {
+       "title": "Uyum harfe değil, cinsiyete göre",
+       "text": "chiave (anahtar) -e ile biter ama dişildir (la chiave). Sıfat dişil -a alır.",
+       "ex": {
+        "x": "La chiave è nuova.",
+        "tr": "Anahtar yeni."
+       }
+      },
+      {
+       "title": "Karışık grup → eril çoğul",
+       "text": "Bir erkek, bir dişil isim yan yanaysa sıfat -i alır.",
+       "ex": {
+        "x": "Il cavo e la presa sono nuovi.",
+        "tr": "Kablo ve priz yeni."
+       }
+      },
+      {
+       "title": "essere'den sonra da uyum özneyle",
+       "text": "squadra dişildir; ekipte herkes erkek olsa bile sıfat -a alır.",
+       "ex": {
+        "x": "La squadra è stanca.",
+        "tr": "Ekip yorgun."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Renkler: kablo rengini İtalyanca söyle",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Renkler de sıfattır: isimden sonra gelir ve uyar. Ama üç gruba ayrılır:"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Grup",
+      "Renkler",
+      "Örnek"
+     ],
+     "x": 2,
+     "rows": [
+      [
+       "-o: 4 biçim",
+       "rosso, nero, bianco, giallo",
+       "le prese bianche"
+      ],
+      [
+       "-e: 2 biçim",
+       "verde, marrone",
+       "i fili marroni"
+      ],
+      [
+       "hiç değişmez",
+       "blu, rosa, viola",
+       "i fili blu"
+      ]
+     ],
+     "say": [
+      "rosso, nero, bianco, giallo. Le prese bianche.",
+      "verde, marrone. I fili marroni.",
+      "blu, rosa, viola. I fili blu."
+     ]
+    },
+    {
+     "type": "note",
+     "text": "bianco → bianchi / bianche: k sesi korunsun diye h girer (casco → caschi). rosso kırmızı, nero siyah, bianco beyaz, giallo sarı, verde yeşil, marrone kahverengi, blu mavi, rosa pembe, viola mor."
+    },
+    {
+     "type": "examples",
+     "items": [
+      {
+       "x": "Il filo marrone è la fase.",
+       "tr": "Kahverengi tel faz.",
+       "ph": "il Fİ-lo mar-RO-ne E la FA-ze"
+      },
+      {
+       "x": "Il filo blu è il neutro.",
+       "tr": "Mavi tel nötr.",
+       "ph": "il Fİ-lo BLU E il NEU-tro"
+      },
+      {
+       "x": "Il filo giallo-verde è la terra.",
+       "tr": "Sarı-yeşil tel toprak.",
+       "ph": "il Fİ-lo CAL-lo-VER-de E la TER-ra"
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "text": "**il filo** = tel (iletken), **il cavo** = kablo (içinde birkaç tel). Renk kodu Türkiye'dekiyle aynı; sahada İtalyanca konuşurken en çok bu üç cümle lazım."
+    }
+   ]
+  },
+  {
+   "title": "bello ve buono: önde gelince kısalır",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**buono** (iyi, lezzetli) ve **bello** (güzel) isimden önce gelince sonları değişir. buono, belirsiz artikel gibi davranır (un → **buon**); bello, belirli artikel gibi (il → **bel**). Bunu zaten biliyorsun: **buon**giorno, **buona**sera."
+    },
+    {
+     "type": "table",
+     "head": [
+      "İsim alırsa",
+      "bello",
+      "buono",
+      "Örnek"
+     ],
+     "x": 3,
+     "rows": [
+      [
+       "il / un",
+       "bel",
+       "buon",
+       "un bel lavoro"
+      ],
+      [
+       "lo / uno",
+       "bello",
+       "buono",
+       "un bello zaino"
+      ],
+      [
+       "l' (erkek)",
+       "bell'",
+       "buon",
+       "un buon ingegnere"
+      ],
+      [
+       "la / una",
+       "bella",
+       "buona",
+       "una bella giornata"
+      ]
+     ],
+     "say": [
+      "un bel lavoro",
+      "un bello zaino",
+      "un buon ingegnere",
+      "una bella giornata"
+     ]
+    },
+    {
+     "type": "note",
+     "text": "Çoğulda bello yine artikeli izler: **bei** (i), **begli** (gli), **belle** (le). buono: buoni, buone. İsimden sonra ya da è'den sonra ikisi de normal sıfattır: Il caffè è **buono**. Il lavoro è **bello**."
+    },
+    {
+     "type": "examples",
+     "items": [
+      {
+       "x": "Buon lavoro!",
+       "tr": "Kolay gelsin! (çalışan birine; kelimesi kelimesine “iyi iş”)",
+       "ph": "BUON la-VO-ro"
+      },
+      {
+       "x": "Bel lavoro, ragazzi!",
+       "tr": "Güzel iş, arkadaşlar! (iş bitince övgü)",
+       "ph": "BEL la-VO-ro, ra-GAT-tsi"
+      },
+      {
+       "x": "Buona giornata!",
+       "tr": "İyi günler!",
+       "ph": "BUO-na cor-NA-ta"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "dinle": [
+  {
+   "x": "Il cavo nuovo è qui.",
+   "tr": "Yeni kablo burada.",
+   "ph": "il KA-vo NUO-vo E KUİ"
+  },
+  {
+   "x": "Le prese nuove sono pronte.",
+   "tr": "Yeni prizler hazır.",
+   "ph": "le PRE-se NUO-ve SO-no PRON-te"
+  },
+  {
+   "x": "Il filo marrone è la fase.",
+   "tr": "Kahverengi tel faz.",
+   "ph": "il Fİ-lo mar-RO-ne E la FA-ze"
+  },
+  {
+   "x": "Il filo blu è il neutro.",
+   "tr": "Mavi tel nötr.",
+   "ph": "il Fİ-lo BLU E il NEU-tro"
+  },
+  {
+   "x": "Il filo giallo-verde è la terra.",
+   "tr": "Sarı-yeşil tel toprak.",
+   "ph": "il Fİ-lo CAL-lo-VER-de E la TER-ra"
+  },
+  {
+   "x": "La squadra è brava.",
+   "tr": "Ekip becerikli. (bravo = işini iyi yapan)",
+   "ph": "la SKUA-dra E BRA-va"
+  },
+  {
+   "x": "Buon lavoro, ragazzi!",
+   "tr": "Kolay gelsin, arkadaşlar!",
+   "ph": "BUON la-VO-ro, ra-GAT-tsi"
+  },
+  {
+   "x": "È un bel lavoro.",
+   "tr": "Güzel bir iş.",
+   "ph": "E un BEL la-VO-ro"
+  },
+  {
+   "x": "Il caffè italiano è buono.",
+   "tr": "İtalyan kahvesi güzel (lezzetli).",
+   "ph": "il kaf-FE i-ta-LYA-no E BUO-no"
+  },
+  {
+   "x": "Gli operai sono turchi e italiani.",
+   "tr": "İşçiler Türk ve İtalyan.",
+   "ph": "lyi o-pe-RA-i SO-no TUR-ki e i-ta-LYA-ni"
+  }
+ ],
+ "uygula": [
+  {
+   "t": "choice",
+   "q": "“Siyah kablo” hangisi?",
+   "a": "il cavo nero",
+   "o": [
+    "il nero cavo",
+    "il cavo nero",
+    "il cavo nera"
+   ],
+   "why": {
+    "il nero cavo": "Renk her zaman isimden sonra gelir. Türkçe sırayı kopyalama.",
+    "il cavo nera": "cavo eril (il cavo); sıfat da eril: nero."
+   },
+   "ok": "İsim + renk: il cavo nero."
+  },
+  {
+   "t": "choice",
+   "q": "la presa ___ (yeni)",
+   "a": "nuova",
+   "o": [
+    "nuovo",
+    "nuova",
+    "nuove"
+   ],
+   "why": {
+    "nuovo": "nuovo eril tekildir. presa dişil (la presa): nuova.",
+    "nuove": "nuove dişil çoğuldur. Tek priz: nuova."
+   },
+   "ok": "Dişil tekil → -a: la presa nuova."
+  },
+  {
+   "t": "choice",
+   "q": "i cavi ___ (yeni)",
+   "a": "nuovi",
+   "o": [
+    "nuovo",
+    "nuovi",
+    "nuove"
+   ],
+   "why": {
+    "nuovo": "Sıfat da çoğul olmalı: kablolar → nuovi.",
+    "nuove": "nuove dişil çoğul. cavi eril: nuovi."
+   },
+   "ok": "Eril çoğul → -i: i cavi nuovi."
+  },
+  {
+   "t": "choice",
+   "q": "“La chiave è ___.” (Anahtar yeni.)",
+   "a": "nuova",
+   "o": [
+    "nuovo",
+    "nuova",
+    "nuove"
+   ],
+   "why": {
+    "nuovo": "chiave -e ile bitse de dişildir (la chiave). Uyum harfe değil cinsiyete göre: nuova.",
+    "nuove": "nuove çoğul. Tek anahtar: nuova."
+   },
+   "ok": "la chiave dişil → nuova."
+  },
+  {
+   "t": "choice",
+   "q": "“La squadra è ___.” (Ekip yorgun; ekipte herkes erkek.)",
+   "a": "stanca",
+   "o": [
+    "stanchi",
+    "stanca",
+    "stanco"
+   ],
+   "why": {
+    "stanchi": "Özne kişiler değil, la squadra (tekil, dişil). Sıfat özneye uyar: stanca.",
+    "stanco": "squadra dişil bir isim; ekibin erkek olması değiştirmez: stanca."
+   },
+   "ok": "Uyum isme göre: la squadra → stanca."
+  },
+  {
+   "t": "choice",
+   "q": "“Il cavo e la presa sono ___.” (Kablo ve priz yeni.)",
+   "a": "nuovi",
+   "o": [
+    "nuove",
+    "nuovi",
+    "nuova"
+   ],
+   "why": {
+    "nuove": "Grupta bir eril isim (il cavo) var. Karışık grup eril çoğul alır: nuovi.",
+    "nuova": "İki şey var, çoğul olmalı. Karışık grup: nuovi."
+   },
+   "ok": "Karışık grup → eril çoğul: nuovi."
+  },
+  {
+   "t": "choice",
+   "q": "Çalışan ekibin yanından geçiyorsun: “Kolay gelsin!”",
+   "a": "Buon lavoro!",
+   "o": [
+    "Buono lavoro!",
+    "Buon lavoro!",
+    "Bel lavoro!"
+   ],
+   "why": {
+    "Buono lavoro!": "buono, ünsüzle başlayan eril ismin önünde kısalır: buon (un lavoro gibi).",
+    "Bel lavoro!": "Bel lavoro = “Güzel iş!”, iş bitince övgüdür. “Kolay gelsin” buon lavoro."
+   },
+   "ok": "Buon lavoro! Sahadaki “kolay gelsin”."
+  },
+  {
+   "t": "type",
+   "q": "Çoğul yap: “la presa bianca”",
+   "a": [
+    "le prese bianche"
+   ],
+   "hint": "Artikel, isim ve sıfat birlikte değişir. bianca → k sesi korunur: h ekle.",
+   "ok": "Le prese bianche."
+  },
+  {
+   "t": "type",
+   "q": "Türkçeden çevir: “Kablolar yeni.”",
+   "a": [
+    "i cavi sono nuovi"
+   ],
+   "hint": "Kablolar = i cavi. Çoğul özne → sono. Sıfat da çoğul.",
+   "ok": "I cavi sono nuovi."
+  },
+  {
+   "t": "type",
+   "q": "Türkçeden çevir: “Kahverengi tel faz.”",
+   "a": [
+    "il filo marrone è la fase"
+   ],
+   "soft": [
+    "il filo marrone e la fase"
+   ],
+   "soft_note": "è aksanlı yazılır; aksansız e “ve” demektir: Il filo marrone è la fase.",
+   "hint": "tel = il filo, kahverengi = marrone, faz = la fase.",
+   "ok": "Il filo marrone è la fase."
+  },
+  {
+   "t": "order",
+   "q": "Sırala: “Beyaz kask yeni değil.”",
+   "words": [
+    "nuovo",
+    "casco",
+    "non",
+    "il",
+    "bianco",
+    "è"
+   ],
+   "a": "il casco bianco non è nuovo",
+   "ok": "Il casco bianco non è nuovo. Renk isimden hemen sonra."
+  },
+  {
+   "t": "order",
+   "q": "Sırala: “Sarı-yeşil tel toprak.”",
+   "words": [
+    "terra",
+    "il",
+    "è",
+    "giallo-verde",
+    "la",
+    "filo"
+   ],
+   "a": "il filo giallo-verde è la terra",
+   "ok": "Il filo giallo-verde è la terra."
+  }
+ ],
+ "konus": {
+  "coach": "chiara",
+  "goal": "Şantiyedeki malzemeleri ve ekibi sıfatlarla anlatmak: isim + sıfat sırası, cinsiyet/sayı uyumu, kablo renkleri ve buon lavoro / bel lavoro kalıpları.",
+  "vocab": [
+   "nuovo/nuova/nuovi/nuove",
+   "vecchio",
+   "grande",
+   "piccolo",
+   "bravo/brava",
+   "stanco/stanca",
+   "pronto/pronta",
+   "italiano/italiana",
+   "turco/turca/turchi",
+   "rosso",
+   "nero",
+   "bianco",
+   "giallo",
+   "verde",
+   "marrone",
+   "blu",
+   "il filo",
+   "il cavo",
+   "la presa",
+   "la fase",
+   "il neutro",
+   "la terra",
+   "la squadra",
+   "la chiave",
+   "Buon lavoro!",
+   "Bel lavoro!"
+  ],
+  "structures": [
+   "isim + sıfat (il cavo nuovo)",
+   "-o sıfat 4 biçim, -e sıfat 2 biçim",
+   "karışık grup → eril çoğul",
+   "essere + uyumlu sıfat (La squadra è stanca)",
+   "bello / buono isimden önce: bel, buon, bella, buona"
+  ],
+  "opener_hint": "Chiara şantiyeye gelmiş bir İtalyan mühendis gibi açsın: “Buon lavoro, Türab! Il cantiere è grande?” (Türkçesi parantezde). Sonra sırayla: kablolar yeni mi, priz ne renk, kahverengi tel ne, ekip nasıl (bravo, stanco), ekip Türk mü İtalyan mı. Sonda Türab'ın işini övsün: “Bel lavoro!”",
+  "level_note": "A1: her mesajda 1 kısa İtalyanca cümle/soru, alt satırda parantez içinde Türkçesi. Sadece essere ve avere; başka fiil kullanma. Sıfat sırası ya da uyum hatası olursa “Quasi! → doğru hali” ve tek cümlelik Türkçe neden (ör. “squadra dişil → stanca”). 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+ },
+ "yokla": [
+  {
+   "t": "choice",
+   "topic": "sıfatın yeri",
+   "q": "“Sıcak kahve” hangisi?",
+   "a": "il caffè caldo",
+   "o": [
+    "il caldo caffè",
+    "il caffè caldo",
+    "il caffè calda"
+   ],
+   "why": {
+    "il caldo caffè": "Sıfat isimden sonra gelir: il caffè caldo.",
+    "il caffè calda": "caffè eril (il caffè): caldo."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "cinsiyet / sayı uyumu",
+   "q": "“Gli operai sono ___.” (İşçiler İtalyan.)",
+   "a": "italiani",
+   "o": [
+    "italiane",
+    "italiani",
+    "italiano"
+   ],
+   "why": {
+    "italiane": "italiane sadece kadınlardan oluşan grup için. operai eril çoğul: italiani.",
+    "italiano": "Özne çoğul; sıfat da çoğul olmalı: italiani."
+   }
+  },
+  {
+   "t": "choice",
+   "topic": "bello / buono",
+   "q": "“Güzel bir gün” hangisi?",
+   "a": "una bella giornata",
+   "o": [
+    "una bel giornata",
+    "una bella giornata",
+    "una bello giornata"
+   ],
+   "why": {
+    "una bel giornata": "bel sadece eril isimlerin önünde (un bel lavoro). giornata dişil: bella.",
+    "una bello giornata": "bello eril; s+ünsüz ya da z ile başlayan isimde kullanılır. Dişil isim: bella."
+   }
+  },
+  {
+   "t": "type",
+   "topic": "renkler",
+   "q": "Türkçeden çevir: “Mavi tel nötr.”",
+   "a": [
+    "il filo blu è il neutro"
+   ],
+   "soft": [
+    "il filo blu e il neutro"
+   ],
+   "soft_note": "è aksanlı yazılır: Il filo blu è il neutro."
+  },
+  {
+   "t": "type",
+   "topic": "karışık grup uyumu",
+   "q": "Türkçeden çevir: “Kablo ve priz beyaz.”",
+   "a": [
+    "il cavo e la presa sono bianchi",
+    "la presa e il cavo sono bianchi"
+   ]
+  }
+ ],
+ "pass": 4,
+ "pekistir": {
+  "items": [
+   {
+    "t": "choice",
+    "q": "“una squadra ___” (bir Türk ekibi)",
+    "a": "turca",
+    "o": [
+     "turco",
+     "turca",
+     "turche"
+    ],
+    "why": {
+     "turco": "squadra dişil: turca.",
+     "turche": "turche dişil çoğul. Tek ekip: turca."
+    },
+    "ok": "Milliyet de sıfattır, isimden sonra ve uyumlu: una squadra turca."
+   },
+   {
+    "t": "choice",
+    "q": "“i fili ___” (kahverengi teller)",
+    "a": "marroni",
+    "o": [
+     "marrone",
+     "marroni",
+     "marrona"
+    ],
+    "why": {
+     "marrone": "Teller çoğul. -e sıfatın çoğulu -i: marroni.",
+     "marrona": "-e ile biten sıfatın dişil -a biçimi yoktur."
+    },
+    "ok": "-e sıfat 2 biçim: marrone / marroni."
+   },
+   {
+    "t": "choice",
+    "q": "“Bel lavoro!” ne zaman söylenir?",
+    "a": "İş bitince, övgü olarak",
+    "o": [
+     "İşe başlarken, kolay gelsin diye",
+     "İş bitince, övgü olarak",
+     "Vedalaşırken"
+    ],
+    "why": {
+     "İşe başlarken, kolay gelsin diye": "O Buon lavoro! Bel lavoro = “Güzel iş!”",
+     "Vedalaşırken": "Vedada Buona giornata! ya da Ciao denir."
+    },
+    "ok": "Bel lavoro = güzel iş, aferin."
+   },
+   {
+    "t": "type",
+    "q": "Türkçeden çevir: “Ekip hazır.”",
+    "a": [
+     "la squadra è pronta"
+    ],
+    "soft": [
+     "la squadra e pronta"
+    ],
+    "soft_note": "è aksanlı yazılır: La squadra è pronta.",
+    "hint": "squadra dişil: sıfat -a alır.",
+    "ok": "La squadra è pronta."
+   },
+   {
+    "t": "type",
+    "q": "Çoğul yap: “il casco nero”",
+    "a": [
+     "i caschi neri"
+    ],
+    "hint": "casco → k sesi korunur. nero → -i.",
+    "ok": "I caschi neri."
+   },
+   {
+    "t": "order",
+    "q": "Sırala: “İyi bir mühendis.”",
+    "words": [
+     "ingegnere",
+     "un",
+     "buon"
+    ],
+    "a": "un buon ingegnere",
+    "ok": "Un buon ingegnere. buono önde → buon."
+   }
+  ],
+  "konus_prompt": "Chiara'ya şantiyendeki 4 şeyi sıfatla anlat: bir kablo, bir pano, ekibin ve kahverengi/mavi/sarı-yeşil teller. Her cümlede sıfatı isimden sonra koy ve uyumuna dikkat et."
+ }
+}

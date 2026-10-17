@@ -1,0 +1,234 @@
+{
+  "id": "it13",
+  "lang": "it",
+  "level": "A1",
+  "title": "c'è / ci sono ve yer edatları",
+  "lead": "“Şantiyede üç işçi var”, “Pano kapının arkasında”, “Bodrum'da oturuyorum, İtalya'ya gidiyorum” cümlelerini kurabileceksin. Bir yerde ne olduğunu söyleyecek, bir şeyin yerini tarif edeceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "“Var / yok” = c'è / ci sono",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede **var** hiç değişmez. İtalyancada sayıya bakılır: tekil için **c'è** (ci + è), çoğul için **ci sono**. Fiil yine essere; **ci** “orada” gibi küçük bir kelimedir, ayrıca çevrilmez."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {"t": "Şantiyede", "s": "yer (-de)"},
+                {"t": "üç işçi", "s": "ne var"},
+                {"t": "var", "s": "varlık", "hl": true}
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {"t": "Ci sono", "s": "var (çoğul)", "hl": true},
+                {"t": "tre operai", "s": "ne var"},
+                {"t": "in cantiere", "s": "yer"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": ["Biçim", "Örnek", "Okunuş", "Türkçesi"],
+          "x": 1,
+          "rows": [
+            ["c'è", "C'è un problema.", "ÇE un pro-BLE-ma", "Bir sorun var."],
+            ["ci sono", "Ci sono due problemi.", "çi SO-no DU-e pro-BLE-mi", "İki sorun var."],
+            ["non c'è", "Non c'è acqua.", "non ÇE AK-kua", "Su yok."],
+            ["non ci sono", "Non ci sono cavi.", "non çi SO-no KA-vi", "Kablo yok."],
+            ["c'è…?", "C'è un bagno?", "ÇE un BA-nyo", "Tuvalet var mı?"]
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Tipik Türk hatası: **c'è tre operai**. Türkçede “var” hiç değişmediği için sayıya bakmayı unutursun. Çoğul isim → **ci sono**. Yazarken de “ci è” yazılmaz, birleşir: **c'è**."
+        }
+      ]
+    },
+    {
+      "title": "c'è mi, è mi? Yeni şey mi, bilinen şey mi?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede de iki farklı cümle kurarsın: “Depoda **bir** merdiven var” (merdivenden ilk kez bahsediyorsun) ve “Merdiven depoda” (hangi merdiven olduğu belli, yerini söylüyorsun). İtalyanca bu ayrımı fiille yapar."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {"t": "Depoda", "s": "yer"},
+                {"t": "bir merdiven", "s": "yeni şey"},
+                {"t": "var", "s": "varlık", "hl": true}
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {"t": "C'è", "s": "var", "hl": true},
+                {"t": "una scala", "s": "un / una / sayı"},
+                {"t": "in magazzino", "s": "yer"}
+              ]
+            },
+            {
+              "label": "Türkçe",
+              "items": [
+                {"t": "Merdiven", "s": "bilinen şey"},
+                {"t": "depoda", "s": "yer"},
+                {"t": "(-dır)", "s": "olmak", "hl": true}
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {"t": "La scala", "s": "il / la"},
+                {"t": "è", "s": "essere", "hl": true},
+                {"t": "in magazzino", "s": "yer"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {"title": "Var mı? → c'è / ci sono", "text": "Ne olduğunu soruyorsun, genelde un/una ya da sayıyla.", "ex": {"x": "C'è una scala?", "tr": "Merdiven var mı?"}},
+            {"title": "Nerede? → dov'è / dove sono", "text": "Belli bir şeyin yerini soruyorsun: dove (12. ders) + è kısalır: dov'è.", "ex": {"x": "Dov'è la scala?", "tr": "Merdiven nerede?"}}
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Telefonda sık duyarsın: **C'è Ahmet?** = Ahmet orada mı? Kişi adıyla c'è “burada / orada mı” demektir."
+        }
+      ]
+    },
+    {
+      "title": "Yer edatları: edat önce gelir",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede yer bilgisi isimden **sonra** gelir: kapı**nın arkasında**. İtalyancada edat ismin **önüne** geçer: **dietro** la porta."
+        },
+        {
+          "type": "table",
+          "head": ["Edat", "Okunuş", "Anlamı", "Örnek"],
+          "x": 0,
+          "rows": [
+            ["in", "in", "-de, içinde", "in cantiere"],
+            ["a", "a", "-de (şehir, ev)", "a casa, a Bodrum"],
+            ["su", "su", "üstünde", "su una sedia"],
+            ["sotto", "SOT-to", "altında", "sotto il tavolo"],
+            ["vicino a", "vi-Çİ-no a", "yakınında", "vicino a Bodrum"],
+            ["davanti a", "da-VAN-ti a", "önünde", "davanti a un bar"],
+            ["dietro", "DYE-tro", "arkasında", "dietro la porta"],
+            ["accanto a", "ak-KAN-to a", "yanında", "accanto a Murat"],
+            ["tra / fra", "TRA / FRA", "arasında", "tra la porta e la finestra"]
+          ],
+          "say": ["in cantiere", "a casa, a Bodrum", "su una sedia", "sotto il tavolo", "vicino a Bodrum", "davanti a un bar", "dietro la porta", "accanto a Murat", "tra la porta e la finestra"]
+        },
+        {
+          "type": "note",
+          "text": "**vicino a, davanti a, accanto a**: sondaki **a** edatın parçasıdır, atlama. **tra = fra**, ikisi de olur."
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Artikel tuzağı: **in, a, su** (ve a ile biten edatlar) il/la gibi belirli artikelle tek kelime olur: su + il = **sul**. Bunu 14. derste açıyoruz. Bu derste sul tavolo'yu **hazır kalıp** gör. **sotto, dietro, tra** birleşmez: sotto il tavolo."
+        }
+      ]
+    },
+    {
+      "title": "Şehre a, ülkeye in: “-de” ve “-e” aynı edat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe “Bodrum'**da**” ile “Bodrum'**a**”yı ayırır. İtalyanca ayırmaz: bulunduğun yer de gittiğin yer de aynı edatla söylenir. Gidiş mi bulunma mı, bunu fiil söyler (sono / vado); edatı seçen yerin türüdür."
+        },
+        {
+          "type": "rules",
+          "items": [
+            {"title": "Şehir, kasaba: a", "text": "Hem -de hem -e.", "ex": {"x": "Abito a Bodrum. Vado a Milano.", "tr": "Bodrum'da oturuyorum. Milano'ya gidiyorum."}},
+            {"title": "Ülke, bölge: in", "text": "Hem -de hem -e.", "ex": {"x": "Sono in Turchia. Vado in Italia.", "tr": "Türkiye'deyim. İtalya'ya gidiyorum."}},
+            {"title": "a ile başlayan yerden önce: ad", "text": "İki a yan yana gelmesin diye araya d girer.", "ex": {"x": "Kırıkkale è vicino ad Ankara.", "tr": "Kırıkkale Ankara'ya yakın."}}
+          ]
+        },
+        {
+          "type": "table",
+          "head": ["Türkçe", "İtalyanca"],
+          "x": 1,
+          "rows": [
+            ["Kırıkkale'deyim.", "Sono a Kırıkkale."],
+            ["Kırıkkale'ye gidiyorum.", "Vado a Kırıkkale."],
+            ["İtalya'da çalışıyorum.", "Lavoro in Italia."],
+            ["İtalya'ya geliyorum.", "Vengo in Italia."]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Şehir adında artikel yoktur: **a Bodrum**. Ülke adı artikel alır (**l'Italia** è bella) ama **in**'den sonra düşer: **in Italia**, in Turchia. Bu yüzden birleşme yok. Aynı şekilde artikelsiz kalıplar: **in cantiere, in ufficio, in magazzino, a casa**."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "C'è un problema in cantiere.", "tr": "Şantiyede bir sorun var.", "ph": "ÇE un pro-BLE-ma in kan-TYE-re"},
+    {"x": "Ci sono tre operai in magazzino.", "tr": "Depoda üç işçi var.", "ph": "çi SO-no TRE o-pe-RA-i in ma-gad-DZİ-no"},
+    {"x": "Non c'è corrente.", "tr": "Elektrik yok.", "ph": "non ÇE kor-REN-te"},
+    {"x": "Scusi, c'è un bagno qui?", "tr": "Afedersiniz, burada tuvalet var mı?", "ph": "SKU-zi, ÇE un BA-nyo KUİ"},
+    {"x": "Quanti operai ci sono oggi?", "tr": "Bugün kaç işçi var?", "ph": "KUAN-ti o-pe-RA-i çi SO-no OD-ci"},
+    {"x": "Dov'è il quadro? È dietro la porta.", "tr": "Pano nerede? Kapının arkasında.", "ph": "do-VE il KUA-dro? E DYE-tro la POR-ta"},
+    {"x": "Il quadro è tra la porta e la finestra.", "tr": "Pano kapıyla pencerenin arasında.", "ph": "il KUA-dro E TRA la POR-ta e la fi-NE-stra"},
+    {"x": "Il cacciavite è sul tavolo.", "tr": "Tornavida masanın üstünde. (sul = su + il, hazır kalıp; 14. ders)", "ph": "il kat-ça-Vİ-te E sul TA-vo-lo"},
+    {"x": "Abito a Kırıkkale, vicino ad Ankara.", "tr": "Kırıkkale'de oturuyorum, Ankara'nın yakınında.", "ph": "A-bi-to a Kırıkkale, vi-Çİ-no ad Ankara"},
+    {"x": "Chiara vive in Italia, a Milano.", "tr": "Chiara İtalya'da, Milano'da yaşıyor.", "ph": "KYA-ra Vİ-ve in i-TA-lya, a mi-LA-no"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "___ un problema.", "a": "c'è", "o": ["c'è", "ci sono", "è"], "why": {"ci sono": "ci sono çoğul içindir. un problema tekil: c'è.", "è": "Tek başına è “-dır” demektir. “Var” için ci gerekir: c'è."}, "ok": "Tekil → c'è. “Bir sorun var.”"},
+    {"t": "choice", "q": "___ tre operai in cantiere.", "a": "ci sono", "o": ["c'è", "ci sono"], "why": {"c'è": "tre operai çoğul. Türkçedeki “var” değişmez ama burada çoğul biçim gerekir: ci sono."}, "ok": "Çoğul → ci sono. “Şantiyede üç işçi var.”"},
+    {"t": "choice", "q": "“Bodrum'dayım.” → Sono ___ Bodrum.", "a": "a", "o": ["a", "in"], "why": {"in": "in ülke ve bölge içindir. Şehir için a."}, "ok": "Şehir → a."},
+    {"t": "choice", "q": "“İtalya'ya gidiyorum.” → Vado ___ Italia.", "a": "in", "o": ["a", "in"], "why": {"a": "a şehir içindir. İtalya ülke: in."}, "ok": "Ülke → in. İtalya'da da İtalya'ya da: in Italia."},
+    {"t": "choice", "q": "Pano kapının arkasında: Il quadro è ___ la porta.", "a": "dietro", "o": ["dietro", "davanti a", "sotto"], "why": {"davanti a": "davanti a = önünde. Arkasında: dietro.", "sotto": "sotto = altında. Arkasında: dietro."}, "ok": "dietro = arkasında. Edat ismin önünde."},
+    {"t": "choice", "q": "Tornavida masanın altında: Il cacciavite è ___ il tavolo.", "a": "sotto", "o": ["su", "sotto", "tra"], "why": {"su": "su = üstünde. Ayrıca su + il birleşip sul olur (14. ders).", "tra": "tra = arasında; iki şey gerekir (tra la porta e la finestra)."}, "ok": "sotto = altında. sotto artikelle birleşmez: sotto il tavolo."},
+    {"t": "choice", "q": "“Depoda bir merdiven var.” (merdivenden ilk kez bahsediyorsun)", "a": "C'è una scala in magazzino.", "o": ["C'è una scala in magazzino.", "La scala è in magazzino.", "Ci sono una scala in magazzino."], "why": {"La scala è in magazzino.": "Bu “Merdiven depoda” demek: belli bir merdivenin yeri. Varlık için c'è + una.", "Ci sono una scala in magazzino.": "una scala tekil; ci sono çoğul içindir. Tekil: c'è."}, "ok": "Yeni şey + var → c'è una scala."},
+    {"t": "type", "q": "Türkçeden çevir: “Su yok.” (su = acqua)", "a": ["non c'è acqua", "non c'è l'acqua"], "soft": ["non ce acqua", "non ce lacqua"], "soft_note": "c'è aksanlı yazılır: Non c'è acqua.", "hint": "Olumsuz için non, c'è'nin önüne gelir.", "ok": "Non c'è acqua."},
+    {"t": "order", "q": "Sırala: “Ekip Türkiye'de değil.”", "words": ["Turchia", "non", "la", "in", "è", "squadra"], "a": "la squadra non è in Turchia", "ok": "La squadra non è in Turchia. Ülke → in."},
+    {"t": "type", "q": "Türkçeden çevir: “Pano nerede?” (bilinen pano)", "a": ["dov'è il quadro", "dove è il quadro", "il quadro dov'è"], "soft": ["dov'e il quadro", "dove e il quadro", "il quadro dov'e"], "soft_note": "è aksanlı yazılır: Dov'è il quadro?", "hint": "Belli bir şeyin yeri: dove + è = dov'è.", "ok": "Dov'è il quadro? Belli bir şeyin yerini essere ile sorarsın."},
+    {"t": "type", "q": "Türkçeden çevir: “Bodrum'da oturuyorum.” (abitare)", "a": ["abito a bodrum", "io abito a bodrum", "vivo a bodrum", "io vivo a bodrum"], "hint": "Şehir için hangi edat?", "ok": "Abito a Bodrum."},
+    {"t": "order", "q": "Sırala: “Masanın altında bir kutu var.” (kutu = scatola)", "words": ["tavolo", "una", "sotto", "c'è", "il", "scatola"], "a": "c'è una scatola sotto il tavolo", "alt": ["sotto il tavolo c'è una scatola"], "ok": "C'è una scatola sotto il tavolo. Yer başa da gelebilir: Sotto il tavolo c'è una scatola."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "c'è / ci sono ile bir yerde ne olduğunu söylemek; edatlarla bir şeyin yerini tarif etmek; şehir için a, ülke için in kullanmak.",
+    "vocab": ["c'è", "ci sono", "non c'è", "dov'è", "in", "a", "ad", "su", "sotto", "vicino a", "davanti a", "dietro", "accanto a", "tra / fra", "il cantiere", "il magazzino", "l'ufficio", "la porta", "la finestra", "il tavolo", "la sedia", "la scala", "la scatola", "il bagno", "la corrente", "l'acqua", "Italia", "Turchia"],
+    "structures": ["c'è + tekil, ci sono + çoğul", "non c'è / non ci sono", "c'è (varlık) vs il/la … è (bilinen şeyin yeri)", "edat + isim: sotto il tavolo, dietro la porta, tra … e …", "şehir: a (a Bodrum, ad Ankara); ülke: in (in Italia)"],
+    "opener_hint": "Chiara şantiyeyi soruyor: “Ciao Türab! Cosa c'è in cantiere oggi?” (Türkçesi parantezde). Sonra kaç işçi olduğu, depoda ne olduğu, panonun nerede olduğu, nerede oturduğu ve İtalya'ya gidip gitmeyeceği.",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece önceki derslerin yapıları. Birleşik edat (sul, nel, al…) kullanma; Türab “su il tavolo” derse kabul et ve “sul tavolo (14. ders)” diye kısa not düş. c'è/ci sono karışırsa tek cümleyle açıkla (tekil → c'è, çoğul → ci sono). 8 turda ya da “bitir” denince Türkçe özet: doğru kurduğu 2 cümle, düzeltilecek en fazla 2 cümle, “Konuşma tamam.”"
+  },
+  "yokla": [
+    {"t": "choice", "topic": "c'è / ci sono", "q": "Bugün kaç işçi var? → Quanti operai ___ oggi?", "a": "ci sono", "o": ["c'è", "ci sono", "sono"], "why": {"c'è": "operai çoğul; çoğul için ci sono.", "sono": "Tek başına sono “-dır / -ler” demek. “Var” için ci gerekir: ci sono."}},
+    {"t": "choice", "topic": "şehir a / ülke in", "q": "Lavoro ___ Turchia, ___ Kırıkkale.", "a": "in / a", "o": ["in / a", "a / in", "in / in"], "why": {"a / in": "Tersi: ülke (Turchia) → in, şehir (Kırıkkale) → a.", "in / in": "Kırıkkale şehir: a Kırıkkale."}},
+    {"t": "choice", "topic": "c'è vs essere", "q": "“Kablolar depoda.” (bilinen kablolar)", "a": "I cavi sono in magazzino.", "o": ["I cavi sono in magazzino.", "C'è i cavi in magazzino."], "why": {"C'è i cavi in magazzino.": "İki hata: c'è tekil içindir ve belli kabloların yerini essere ile söylersin: I cavi sono…"}},
+    {"t": "type", "topic": "yer edatları", "q": "Türkçeden çevir: “Merdiven pencerenin altında.”", "a": ["la scala è sotto la finestra", "la scala sta sotto la finestra"], "soft": ["la scala e sotto la finestra"], "soft_note": "è aksanlı yazılır: La scala è sotto la finestra."},
+    {"t": "choice", "topic": "yer edatları", "q": "Kamyonet bir barın önünde: Il furgone è ___ un bar.", "a": "davanti a", "o": ["davanti a", "dietro", "accanto a"], "why": {"dietro": "dietro = arkasında.", "accanto a": "accanto a = yanında."}}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "In magazzino ___ due scale.", "a": "ci sono", "o": ["c'è", "ci sono"], "why": {"c'è": "due scale çoğul (iki merdiven): ci sono."}, "ok": "Çoğul → ci sono."},
+      {"t": "choice", "q": "Pano kapıyla pencere arasında: Il quadro è ___ la porta e la finestra.", "a": "tra", "o": ["tra", "su", "accanto a"], "why": {"su": "su = üstünde.", "accanto a": "accanto a = yanında; tek bir şeyin yanı."}, "ok": "tra … e … = … ile … arasında."},
+      {"t": "choice", "q": "“Bodrum'a gidiyorum.” → Vado ___ Bodrum.", "a": "a", "o": ["a", "in", "ad"], "why": {"in": "in ülke içindir; Bodrum şehir.", "ad": "ad sadece a ile başlayan yerden önce gelir (ad Ankara). Bodrum b ile başlıyor."}, "ok": "Şehir → a. Gidiş de bulunma da aynı edat."},
+      {"t": "type", "q": "Türkçeden çevir: “Tuvalet var mı?” (tuvalet = bagno)", "a": ["c'è un bagno", "c'è il bagno"], "soft": ["ce un bagno", "ce il bagno"], "soft_note": "c'è aksanlı yazılır: C'è un bagno?", "hint": "Soru eki yok; cümle aynı, ses sonda yükselir.", "ok": "C'è un bagno?"},
+      {"t": "type", "q": "Türkçeden çevir: “Türkiye'de yaşıyorum.”", "a": ["vivo in turchia", "abito in turchia", "io vivo in turchia", "io abito in turchia"], "hint": "Ülke için hangi edat? Türkiye = Turchia.", "ok": "Vivo in Turchia."},
+      {"t": "order", "q": "Sırala: “Kapının arkasında bir pano var.”", "words": ["porta", "un", "dietro", "c'è", "la", "quadro"], "a": "c'è un quadro dietro la porta", "alt": ["dietro la porta c'è un quadro"], "ok": "C'è un quadro dietro la porta."}
+    ],
+    "konus_prompt": "Chiara'ya çalıştığın yeri anlat: şantiyede ve depoda neler var, neler yok (c'è / ci sono / non c'è), üç eşyanın yerini edatla söyle (sotto, dietro, tra, vicino a), sonra nerede oturduğunu ve yakında hangi şehre ya da ülkeye gittiğini söyle (vado a … / vado in …)."
+  }
+}

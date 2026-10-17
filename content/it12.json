@@ -1,0 +1,701 @@
+{
+  "id": "it12",
+  "lang": "it",
+  "level": "A1",
+  "title": "Soru kelimeleri: chi, dove, quando…",
+  "lead": "Kim, ne, nerede, ne zaman, neden, nasıl, kaç, hangi: sekiz kelimeyle her soruyu sorabileceksin. Ders bitince şantiyede ve kafede bilgi isteyebilir, soru cümlesini doğru sırayla kurabileceksin.",
+  "minutes": 30,
+  "anlat": [
+    {
+      "title": "Sekiz soru kelimesi",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede soru kelimeleri genelde fiilden hemen önce durur: Ahmet **nerede** çalışıyor? İtalyancada **cümlenin başına** geçer. Önce kelimelerin kendisi:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Türkçe",
+            "İtalyanca",
+            "Okunuş",
+            "Örnek"
+          ],
+          "x": 1,
+          "rows": [
+            [
+              "Kim?",
+              "chi",
+              "KI",
+              "Chi è? (Kim o?)"
+            ],
+            [
+              "Ne?",
+              "che cosa / cosa",
+              "ke KO-sa / KO-sa",
+              "Cosa fai? (Ne yapıyorsun?)"
+            ],
+            [
+              "Nerede? Nereye?",
+              "dove",
+              "DO-ve",
+              "Dove vai? (Nereye gidiyorsun?)"
+            ],
+            [
+              "Ne zaman?",
+              "quando",
+              "KUAN-do",
+              "Quando vieni? (Ne zaman geliyorsun?)"
+            ],
+            [
+              "Neden?",
+              "perché",
+              "per-KE",
+              "Perché? (Neden?)"
+            ],
+            [
+              "Nasıl?",
+              "come",
+              "KO-me",
+              "Come stai? (Nasılsın?)"
+            ],
+            [
+              "Ne kadar? Kaç?",
+              "quanto",
+              "KUAN-to",
+              "Quanto costa? (Ne kadar?)"
+            ],
+            [
+              "Hangi(si)?",
+              "quale",
+              "KUA-le",
+              "Quale cavo? (Hangi kablo?)"
+            ]
+          ],
+          "say": [
+            "chi",
+            "che cosa, cosa",
+            "dove",
+            "quando",
+            "perché",
+            "come",
+            "quanto",
+            "quale"
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "**chi** = KI, “çi” değil (ch = k, 1. ders). **dove** hem “nerede” hem “nereye”: Dove sei? (Neredesin?) Dove vai? (Nereye gidiyorsun?)"
+        },
+        {
+          "type": "note",
+          "text": "**perché** hem “neden” hem “çünkü”: Perché sei qui? **Perché** lavoro qui. (Neden buradasın? Çünkü burada çalışıyorum.)"
+        }
+      ]
+    },
+    {
+      "title": "Sıra: soru kelimesi + fiil + özne",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçede özne başta, fiil sonda. İtalyancada soru kelimesi başa, fiil **hemen arkasına** gelir; özne en sona kayar ya da hiç söylenmez. “mı” eki yoktur; soru kelimesi zaten soruyu taşır."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Ahmet",
+                  "s": "özne"
+                },
+                {
+                  "t": "nerede",
+                  "s": "soru",
+                  "hl": true
+                },
+                {
+                  "t": "çalışıyor?",
+                  "s": "fiil"
+                }
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {
+                  "t": "Dove",
+                  "s": "soru",
+                  "hl": true
+                },
+                {
+                  "t": "lavora",
+                  "s": "fiil"
+                },
+                {
+                  "t": "Ahmet?",
+                  "s": "özne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Soru kelimesi ile fiil arasına bir şey girmez",
+              "text": "“Dove Ahmet lavora?” yanlış. Konuşmada özneyi en başa alabilirsin: Ahmet, dove lavora? Tek istisna **perché**: Perché Ahmet non viene? de doğru.",
+              "ex": {
+                "x": "Quando viene l'ingegnere?",
+                "tr": "Mühendis ne zaman geliyor?"
+              }
+            },
+            {
+              "title": "Edat soru kelimesinin önüne gelir",
+              "text": "Türkçede ek sonda (kim**le**, nere**li**); İtalyancada edat başta: **con** chi, **di** dove.",
+              "ex": {
+                "x": "Con chi lavori?",
+                "tr": "Kiminle çalışıyorsun?"
+              }
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Di dove sei?",
+              "tr": "Nerelisin? (Sono di Kırıkkale'nin sorusu)",
+              "ph": "di DO-ve SEY"
+            },
+            {
+              "x": "Di chi è il cacciavite?",
+              "tr": "Tornavida kimin?",
+              "ph": "di KI E il kat-ça-Vİ-te"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "quanto: arkasındaki isme uyar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "quanto bir sıfat gibi davranır: arkasındaki ismin cinsiyetine ve sayısına göre sonu değişir (7. dersteki uyum). Tek başına ya da fiille gelince değişmez: **Quanto costa?**"
+        },
+        {
+          "type": "table",
+          "head": [
+            "İsim",
+            "İtalyanca",
+            "Okunuş",
+            "Türkçesi"
+          ],
+          "x": 1,
+          "rows": [
+            [
+              "eril tekil",
+              "Quanto tempo?",
+              "KUAN-to TEM-po",
+              "Ne kadar zaman?"
+            ],
+            [
+              "dişil tekil",
+              "Quanta acqua?",
+              "KUAN-ta AK-kua",
+              "Ne kadar su?"
+            ],
+            [
+              "eril çoğul",
+              "Quanti cavi?",
+              "KUAN-ti KA-vi",
+              "Kaç kablo?"
+            ],
+            [
+              "dişil çoğul",
+              "Quante ore?",
+              "KUAN-te O-re",
+              "Kaç saat?"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Türkçede “kaç”tan sonra isim tekil kalır: kaç **kablo**. İtalyancada çoğul olur: quanti **cavi**. “Quanti cavo” yanlış. 6. dersteki **Quanti anni hai?** de bu yüzden çoğul."
+        }
+      ]
+    },
+    {
+      "title": "quale ve che: “hangi” ile “ne”",
+      "blocks": [
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "che cosa = cosa = che: hepsi “ne”",
+              "text": "Üçü de doğru; konuşmada en sık **cosa**. che cosa biraz daha özenli.",
+              "ex": {
+                "x": "Cosa fai?",
+                "tr": "Ne yapıyorsun?"
+              }
+            },
+            {
+              "title": "che + isim = hangi / ne",
+              "text": "che bir ismin önüne de gelebilir ve değişmez.",
+              "ex": {
+                "x": "Che lavoro fai?",
+                "tr": "Ne iş yapıyorsun?"
+              }
+            },
+            {
+              "title": "quale: seçenekler arasından “hangisi”",
+              "text": "Çoğulu **quali**. è'den önce **qual è** olur.",
+              "ex": {
+                "x": "Qual è il problema?",
+                "tr": "Sorun ne?"
+              }
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Quali cavi?",
+              "tr": "Hangi kablolar?",
+              "ph": "KUA-li KA-vi"
+            },
+            {
+              "x": "Qual è il quadro?",
+              "tr": "Pano hangisi?",
+              "ph": "kua-LE il KUA-dro"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "**qual è** apostrofsuz yazılır; “qual'è” İtalyanların da sık yaptığı bir yazım hatasıdır. Bonus hazır kalıp: **Come si dice … in italiano?** = İtalyancada … nasıl denir?"
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "Chi è il capo?",
+      "tr": "Şef kim?",
+      "ph": "KI E il KA-po"
+    },
+    {
+      "x": "Di dove sei? Sono di Kırıkkale.",
+      "tr": "Nerelisin? Kırıkkaleliyim.",
+      "ph": "di DO-ve SEY? SO-no di Kırıkkale"
+    },
+    {
+      "x": "Dove lavori?",
+      "tr": "Nerede çalışıyorsun?",
+      "ph": "DO-ve la-VO-ri"
+    },
+    {
+      "x": "Quando viene l'ingegnere?",
+      "tr": "Mühendis ne zaman geliyor?",
+      "ph": "KUAN-do VYE-ne lin-ce-NYE-re"
+    },
+    {
+      "x": "Perché sei stanco? Perché lavoro molto.",
+      "tr": "Neden yorgunsun? Çünkü çok çalışıyorum.",
+      "ph": "per-KE SEY STAN-ko? per-KE la-VO-ro MOL-to"
+    },
+    {
+      "x": "Che lavoro fai?",
+      "tr": "Ne iş yapıyorsun?",
+      "ph": "ke la-VO-ro FAY"
+    },
+    {
+      "x": "Quanti cavi abbiamo?",
+      "tr": "Kaç kablomuz var?",
+      "ph": "KUAN-ti KA-vi ab-BYA-mo"
+    },
+    {
+      "x": "Quante ore lavori oggi?",
+      "tr": "Bugün kaç saat çalışıyorsun?",
+      "ph": "KUAN-te O-re la-VO-ri OD-ci"
+    },
+    {
+      "x": "Qual è il problema?",
+      "tr": "Sorun ne?",
+      "ph": "kua-LE il pro-BLE-ma"
+    },
+    {
+      "x": "Quanto costa un caffè?",
+      "tr": "Bir kahve ne kadar?",
+      "ph": "KUAN-to KOS-ta un kaf-FE"
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "“Şef kim?” ___ è il capo?",
+      "a": "Chi",
+      "o": [
+        "Chi",
+        "Che",
+        "Come"
+      ],
+      "why": {
+        "Che": "che = ne. Kişi için chi.",
+        "Come": "come = nasıl."
+      },
+      "ok": "Chi = kim. Okunuşu: KI."
+    },
+    {
+      "t": "choice",
+      "q": "___ abiti? — A Kırıkkale.",
+      "a": "Dove",
+      "o": [
+        "Dove",
+        "Quando",
+        "Come"
+      ],
+      "why": {
+        "Quando": "quando = ne zaman. Cevap bir yer: dove.",
+        "Come": "come = nasıl."
+      },
+      "ok": "Dove = nerede."
+    },
+    {
+      "t": "choice",
+      "q": "___ vieni? — Domani. (domani = yarın)",
+      "a": "Quando",
+      "o": [
+        "Quando",
+        "Dove",
+        "Perché"
+      ],
+      "why": {
+        "Dove": "dove = nerede/nereye. Cevap bir zaman: quando.",
+        "Perché": "perché = neden."
+      },
+      "ok": "Quando = ne zaman."
+    },
+    {
+      "t": "choice",
+      "q": "Perché sei qui? — ___ lavoro qui.",
+      "a": "Perché",
+      "o": [
+        "Perché",
+        "Quando",
+        "Come"
+      ],
+      "why": {
+        "Quando": "Cevapta “çünkü” lazım; quando “ne zaman / -dığında” demek.",
+        "Come": "come = nasıl."
+      },
+      "ok": "perché = neden ve çünkü."
+    },
+    {
+      "t": "choice",
+      "q": "___ cavi abbiamo?",
+      "a": "Quanti",
+      "o": [
+        "Quanti",
+        "Quanto",
+        "Quante"
+      ],
+      "why": {
+        "Quanto": "quanto eril tekil isimle gelir. cavi eril çoğul: quanti.",
+        "Quante": "quante dişil çoğul içindir (quante ore). cavo erildir."
+      },
+      "ok": "cavi eril çoğul → quanti."
+    },
+    {
+      "t": "choice",
+      "q": "___ ore lavori oggi?",
+      "a": "Quante",
+      "o": [
+        "Quante",
+        "Quanti",
+        "Quanta"
+      ],
+      "why": {
+        "Quanti": "quanti eril çoğul içindir. ora (saat) dişil: quante ore.",
+        "Quanta": "quanta dişil tekil içindir. ore çoğul."
+      },
+      "ok": "ore dişil çoğul → quante."
+    },
+    {
+      "t": "choice",
+      "q": "Doğru yazım hangisi? “Sorun ne?”",
+      "a": "Qual è il problema?",
+      "o": [
+        "Qual è il problema?",
+        "Qual'è il problema?"
+      ],
+      "why": {
+        "Qual'è il problema?": "qual è apostrofsuz yazılır. Çok yaygın bir hata."
+      },
+      "ok": "Qual è, apostrof yok."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Nerelisin?”",
+      "a": [
+        "di dove sei",
+        "di dove sei tu",
+        "tu di dove sei"
+      ],
+      "hint": "Edat başa: di + dove + essere.",
+      "ok": "Di dove sei?"
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Ne yapıyorsun?”",
+      "a": [
+        "cosa fai",
+        "che cosa fai",
+        "che fai",
+        "tu cosa fai",
+        "tu che cosa fai",
+        "cosa fai tu",
+        "che cosa fai tu"
+      ],
+      "hint": "ne = cosa; yapmak = fare (tu).",
+      "ok": "Cosa fai? (Che cosa fai? da doğru.)"
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Kiminle çalışıyorsun?”",
+      "a": [
+        "con chi lavori",
+        "con chi lavori tu",
+        "tu con chi lavori"
+      ],
+      "hint": "Edat başa: con chi…",
+      "ok": "Con chi lavori?"
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Neden yorgunsun?”",
+      "a": [
+        "perché sei stanco",
+        "perché sei stanca"
+      ],
+      "soft": [
+        "perche sei stanco",
+        "perche sei stanca",
+        "perchè sei stanco",
+        "perchè sei stanca"
+      ],
+      "soft_note": "Doğru sayıldı. perché sondaki é ile yazılır: perché sei stanco?",
+      "hint": "perché + essere + stanco.",
+      "ok": "Perché sei stanco?"
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Ahmet nerede çalışıyor?”",
+      "words": [
+        "lavora",
+        "Ahmet",
+        "dove"
+      ],
+      "a": "dove lavora Ahmet",
+      "alt": [
+        "Ahmet dove lavora"
+      ],
+      "ok": "Dove lavora Ahmet? Soru kelimesi + fiil yan yana."
+    }
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Soru kelimeleriyle bilgi istemek ve gelen sorulara cevap vermek; Türab da Chiara'ya en az üç soru sorsun.",
+    "vocab": [
+      "chi",
+      "che cosa",
+      "cosa",
+      "dove",
+      "quando",
+      "perché",
+      "come",
+      "quanto",
+      "quanta",
+      "quanti",
+      "quante",
+      "quale",
+      "qual è",
+      "domani",
+      "il capo",
+      "l'ingegnere",
+      "il problema",
+      "molto",
+      "costa"
+    ],
+    "structures": [
+      "soru kelimesi + fiil + (özne): Dove lavora Ahmet?",
+      "edat + soru kelimesi: di dove, con chi, di chi",
+      "quanto/quanta/quanti/quante + isim",
+      "qual è…? / quali…?",
+      "Perché…? — Perché…",
+      "Che lavoro fai?"
+    ],
+    "opener_hint": "Chiara yeni tanıştığı bir meslektaş gibi sorsun: “Ciao! Come ti chiami? Di dove sei?” (Türkçesi parantezde). Sonra Che lavoro fai?, Dove lavori?, Quante ore lavori? sorsun ve sonra Türab'dan ona soru sormasını istesin: “Adesso tu: una domanda per me!” (Şimdi sen: bana bir soru!).",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca soru ya da cevap, alt satırda parantez içinde Türkçesi. Fiil olarak essere, avere, -are/-ere/-ire fiilleri ve fare/andare/venire/stare/dare kullan. Türab soru kelimesiyle fiil arasına özne koyarsa ya da quanti/quante uyumunu kaçırırsa doğru sırayı tek cümleyle göster."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "chi",
+      "q": "“Tornavida kimin?” Di ___ è il cacciavite?",
+      "a": "chi",
+      "o": [
+        "chi",
+        "che",
+        "cosa"
+      ],
+      "why": {
+        "che": "che = ne. Sahibi bir kişi: di chi.",
+        "cosa": "cosa = ne. Kişi için chi."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "dove",
+      "q": "“Nereye gidiyorsun?”",
+      "a": "Dove vai?",
+      "o": [
+        "Dove vai?",
+        "Dove sei?",
+        "Quando vai?"
+      ],
+      "why": {
+        "Dove sei?": "Bu “neredesin?” demek. Gitmek = andare: dove vai.",
+        "Quando vai?": "quando = ne zaman."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "quanto uyumu",
+      "q": "“Bugün kaç işçi çalışıyor?” ___ operai lavorano oggi?",
+      "a": "Quanti",
+      "o": [
+        "Quanti",
+        "Quanto",
+        "Quante"
+      ],
+      "why": {
+        "Quanto": "operai çoğul; quanto tekil isimle gelir.",
+        "Quante": "quante dişil çoğul içindir; operaio erildir."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "soru sırası",
+      "q": "“Mühendis ne zaman geliyor?”",
+      "a": "Quando viene l'ingegnere?",
+      "o": [
+        "Quando viene l'ingegnere?",
+        "Quando l'ingegnere viene?"
+      ],
+      "why": {
+        "Quando l'ingegnere viene?": "Soru kelimesi ile fiil arasına özne girmez. Özne sona: Quando viene l'ingegnere?"
+      }
+    },
+    {
+      "t": "type",
+      "topic": "quale",
+      "q": "Türkçeden çevir: “Hangi kablo?”",
+      "a": [
+        "quale cavo",
+        "che cavo"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "Kafede: “Ne kadar?” ___ costa?",
+        "a": "Quanto",
+        "o": [
+          "Quanto",
+          "Quanti",
+          "Come"
+        ],
+        "why": {
+          "Quanti": "quanti çoğul bir isimle gelir (quanti cavi). Fiille tek başına: quanto.",
+          "Come": "come = nasıl."
+        },
+        "ok": "Quanto costa? Değişmez."
+      },
+      {
+        "t": "choice",
+        "q": "“Ne kadar suyun var?” ___ acqua hai?",
+        "a": "Quanta",
+        "o": [
+          "Quanta",
+          "Quanto",
+          "Quante"
+        ],
+        "why": {
+          "Quanto": "acqua dişildir: quanta.",
+          "Quante": "quante çoğul içindir; acqua burada tekil."
+        },
+        "ok": "acqua dişil tekil → quanta."
+      },
+      {
+        "t": "choice",
+        "q": "“Ne iş yapıyorsun?”",
+        "a": "Che lavoro fai?",
+        "o": [
+          "Che lavoro fai?",
+          "Chi lavoro fai?",
+          "Come lavoro fai?"
+        ],
+        "why": {
+          "Chi lavoro fai?": "chi = kim. İsmin önünde “ne/hangi”: che.",
+          "Come lavoro fai?": "come = nasıl; isimden önce gelmez."
+        },
+        "ok": "che + isim = ne / hangi."
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Neredesin?”",
+        "a": [
+          "dove sei",
+          "dove sei tu",
+          "tu dove sei"
+        ],
+        "hint": "dove + essere (tu).",
+        "ok": "Dove sei?"
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Ne zaman geliyorsun?”",
+        "a": [
+          "quando vieni",
+          "quando vieni tu",
+          "tu quando vieni"
+        ],
+        "hint": "venire, tu biçimi: vieni.",
+        "ok": "Quando vieni?"
+      },
+      {
+        "t": "order",
+        "q": "Sırala: “Neden üşüyorsun?”",
+        "words": [
+          "freddo",
+          "perché",
+          "hai"
+        ],
+        "a": "perché hai freddo",
+        "ok": "Perché hai freddo?"
+      }
+    ],
+    "konus_prompt": "Chiara seninle yeni tanışmış gibi konuşacak. Önce onun sorularını cevapla (nerelisin, ne iş yapıyorsun, nerede çalışıyorsun), sonra sen ona en az üç soru sor: chi, dove, quando, perché ya da quanto ile."
+  }
+}

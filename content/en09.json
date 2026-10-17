@@ -1,0 +1,685 @@
+{
+  "id": "en09",
+  "lang": "en",
+  "level": "B1",
+  "title": "Relative clauses: who, which, that, whose, where",
+  "lead": "Ekibini, tedarikçilerini ve çalıştığın yerleri tek cümlede tanıtabileceksin: the guy who…, the cable we ordered, the site where… Virgüllü ve virgülsüz yan cümle farkını ve that'in nerede kullanılamadığını bileceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Türkçe öne koyar, İngilizce arkaya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Türkçe ismi tanımlayan kısmı **öne** koyar: “Panoyu **kuran** usta”. İngilizce önce ismi söyler, açıklamayı **arkasına** bir zamirle ekler: “the electrician **who** installed the panel”. Zamir, ismin kişi mi şey mi yer mi olduğuna göre seçilir."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Panoyu kuran",
+                  "s": "açıklama önde",
+                  "hl": true
+                },
+                {
+                  "t": "usta",
+                  "s": "isim"
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "the electrician",
+                  "s": "isim"
+                },
+                {
+                  "t": "who installed the panel",
+                  "s": "açıklama arkada",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zamir",
+            "Ne için",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "who",
+              "kişi",
+              "the foreman who runs the night shift"
+            ],
+            [
+              "which",
+              "şey, kurum",
+              "the cable which failed the test"
+            ],
+            [
+              "that",
+              "kişi ya da şey (virgülsüz)",
+              "the van that we bought last year"
+            ],
+            [
+              "whose",
+              "sahiplik: -in …-ı",
+              "the supplier whose prices went up"
+            ],
+            [
+              "where",
+              "yer",
+              "the site where I work"
+            ]
+          ],
+          "x": 2
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Tipik Türk hatası: zamirden sonra ismi bir daha söylemek. “the cable which we ordered **it**” → **the cable which we ordered**. Zamir zaten o ismin yerini tutuyor."
+        }
+      ]
+    },
+    {
+      "title": "Zamir ne zaman düşer?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Zamir yan cümlede **özne** ise düşmez; **nesne** ise düşebilir. Kolay test: zamirden hemen sonra yeni bir özne (I, we, he, the client…) geliyorsa zamiri atabilirsin. Konuşmada genelde atılır."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Beni arayan",
+                  "s": "o arıyor",
+                  "hl": true
+                },
+                {
+                  "t": "adam",
+                  "s": "isim"
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "the man",
+                  "s": "isim"
+                },
+                {
+                  "t": "who called me",
+                  "s": "who = özne, düşmez",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Benim aradığım",
+                  "s": "ben arıyorum",
+                  "hl": true
+                },
+                {
+                  "t": "adam",
+                  "s": "isim"
+                }
+              ]
+            },
+            {
+              "label": "English",
+              "items": [
+                {
+                  "t": "the man",
+                  "s": "isim"
+                },
+                {
+                  "t": "(who) I called",
+                  "s": "who = nesne, düşebilir",
+                  "hl": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "The cable we ordered last week hasn't arrived.",
+              "tr": "Geçen hafta sipariş ettiğimiz kablo gelmedi."
+            },
+            {
+              "x": "He's the guy I told you about.",
+              "tr": "Sana bahsettiğim adam bu."
+            },
+            {
+              "x": "That's the company we worked for in Bodrum.",
+              "tr": "Bodrum'da çalıştığımız firma o."
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Edat cümlenin sonunda kalır: “the company we worked **for**”, “the guy I told you **about**”. Türkçede böyle bir şey olmadığı için edatı unutma."
+        }
+      ]
+    },
+    {
+      "title": "Virgüllü mü, virgülsüz mü?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**Virgülsüz (defining)** yan cümle “hangisi?” sorusunu cevaplar; atarsan anlam eksik kalır. **Virgüllü (non-defining)** yan cümle sadece ek bilgi verir; atarsan cümle yine tamamdır. Konuşmada virgül küçük bir duraksamadır."
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "The electrician who lives in Kırıkkale is coming tomorrow.",
+              "tr": "(Birkaç elektrikçi var.) Kırıkkale'de oturan elektrikçi yarın geliyor."
+            },
+            {
+              "x": "My brother, who lives in Kırıkkale, is an electrician.",
+              "tr": "(Tek kardeşim var.) Kardeşim (Kırıkkale'de oturuyor) elektrikçi."
+            }
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Virgüllüde that yok",
+              "text": "Sadece who / which / whose / where.",
+              "ex": {
+                "x": "Our main supplier, which is based in Ankara, delivers twice a week.",
+                "tr": "Ankara'daki ana tedarikçimiz haftada iki kez teslim ediyor."
+              }
+            },
+            {
+              "title": "Virgüllüde zamir düşmez",
+              "text": "Nesne olsa bile zamir kalır.",
+              "ex": {
+                "x": "This van, which we bought in 2022, never breaks down.",
+                "tr": "2022'de aldığımız bu kamyonet hiç arıza yapmaz."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": false,
+          "text": "Anlam farkı: “The workers **who had boots** went in.” = sadece botu olanlar girdi. “The workers, **who had boots**, went in.” = herkesin botu vardı, hepsi girdi."
+        }
+      ]
+    },
+    {
+      "title": "that ve where: üç tuzak",
+      "blocks": [
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Virgülden sonra that olmaz",
+              "text": "“Ahmet, that is our foreman, …” yanlış.",
+              "ex": {
+                "x": "Ahmet, who is our foreman, will meet you at the gate.",
+                "tr": "Ustabaşımız Ahmet seni kapıda karşılayacak."
+              }
+            },
+            {
+              "title": "Edattan sonra that olmaz",
+              "text": "Resmî: in which, for whom. Konuşmada edatı sona at, zamiri düşür.",
+              "ex": {
+                "x": "the room in which the panels are kept = the room the panels are kept in",
+                "tr": "panoların durduğu oda"
+              }
+            },
+            {
+              "title": "Bütün cümleye atıf: , which",
+              "text": "Önceki cümlenin tamamını anlatıyorsa sadece which, virgülle.",
+              "ex": {
+                "x": "The panel passed the test, which was great news.",
+                "tr": "Pano testi geçti, ki bu harika bir haberdi."
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "**where** = “orada”: “We work **there**.” → “the site **where** we work”. Fiil yeri doğrudan nesne alıyorsa (visit **the site**) which/that ya da zamirsiz: “the site (that) we visited”. “the site where we visited” yanlış."
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "Ahmet is the foreman who runs the night shift.",
+      "tr": "Ahmet gece vardiyasını yöneten ustabaşı."
+    },
+    {
+      "x": "This is the supplier whose cables we use on every job.",
+      "tr": "Her işte kablolarını kullandığımız tedarikçi bu."
+    },
+    {
+      "x": "The site where we work now is near the airport.",
+      "tr": "Şu an çalıştığımız şantiye havalimanının yakınında."
+    },
+    {
+      "x": "The cable we ordered last week hasn't arrived yet.",
+      "tr": "Geçen hafta sipariş ettiğimiz kablo hâlâ gelmedi."
+    },
+    {
+      "x": "We need someone who can read single-line diagrams.",
+      "tr": "Tek hat şemasını okuyabilen birine ihtiyacımız var."
+    },
+    {
+      "x": "Our main supplier, which is based in Ankara, delivers twice a week.",
+      "tr": "Ankara'daki ana tedarikçimiz haftada iki kez teslim ediyor."
+    },
+    {
+      "x": "Serkan, who has been with us for ten years, is our best cable puller.",
+      "tr": "On yıldır bizimle olan Serkan en iyi kablo çekicimiz."
+    },
+    {
+      "x": "He's the guy I told you about.",
+      "tr": "Sana bahsettiğim adam bu."
+    },
+    {
+      "x": "That's the company we worked for in Bodrum.",
+      "tr": "Bodrum'da çalıştığımız firma o."
+    },
+    {
+      "x": "The panel passed the test, which was great news.",
+      "tr": "Pano testi geçti, ki bu harika bir haberdi."
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "Ahmet is the foreman ___ runs the night shift.",
+      "a": "who",
+      "o": [
+        "who",
+        "which",
+        "where"
+      ],
+      "why": {
+        "which": "which şeyler içindir; Ahmet bir kişi.",
+        "where": "where yer içindir."
+      },
+      "ok": "Kişi → who."
+    },
+    {
+      "t": "choice",
+      "q": "This is the cable ___ failed the insulation test.",
+      "a": "which",
+      "o": [
+        "which",
+        "who",
+        "whose"
+      ],
+      "why": {
+        "who": "who kişiler içindir; kablo bir şey.",
+        "whose": "whose sahiplik bildirir (kimin …'ı); burada sahiplik yok."
+      },
+      "ok": "Şey → which / that."
+    },
+    {
+      "t": "choice",
+      "q": "That's the site ___ I worked last year.",
+      "a": "where",
+      "o": [
+        "where",
+        "which",
+        "who"
+      ],
+      "why": {
+        "which": "work nesne almaz; “orada çalıştım” anlamı için where (ya da which … at).",
+        "who": "who kişiler içindir."
+      },
+      "ok": "Yer, orada → where."
+    },
+    {
+      "t": "choice",
+      "q": "He's the subcontractor ___ crew finished two days early.",
+      "a": "whose",
+      "o": [
+        "whose",
+        "who's",
+        "who"
+      ],
+      "why": {
+        "who's": "who's = who is. Sahiplik için whose.",
+        "who": "“kimin ekibi” sahipliği için whose gerekir."
+      },
+      "ok": "Sahiplik → whose."
+    },
+    {
+      "t": "choice",
+      "q": "Hangisinde zamir atılabilir?",
+      "a": "the man who I called",
+      "o": [
+        "the man who I called",
+        "the man who called me"
+      ],
+      "why": {
+        "the man who called me": "Burada who özne (o arıyor); özne olan zamir düşmez."
+      },
+      "ok": "Arkasından yeni özne geliyorsa → düşebilir."
+    },
+    {
+      "t": "choice",
+      "q": "Düzgün olan hangisi?",
+      "a": "the cable which we ordered",
+      "o": [
+        "the cable which we ordered",
+        "the cable which we ordered it"
+      ],
+      "why": {
+        "the cable which we ordered it": "which zaten kablonun yerini tutuyor; it fazla."
+      },
+      "ok": "Zamirden sonra ismi tekrarlama."
+    },
+    {
+      "t": "choice",
+      "q": "My brother, ___ lives in Kırıkkale, is an electrician.",
+      "a": "who",
+      "o": [
+        "who",
+        "that",
+        "(zamir yok)"
+      ],
+      "why": {
+        "that": "Virgüllü (ek bilgi) yan cümlede that kullanılmaz.",
+        "(zamir yok)": "Zamiri atarsan “My brother, lives in Kırıkkale, …” olur: yan cümlenin öznesi kalmaz. Virgüllü yan cümlede zamir hiç düşmez."
+      },
+      "ok": "Virgüllü → who / which, that yok."
+    },
+    {
+      "t": "choice",
+      "q": "The panel passed the test, ___ was great news.",
+      "a": "which",
+      "o": [
+        "which",
+        "that",
+        "what"
+      ],
+      "why": {
+        "that": "Bütün cümleye atıf yaparken that olmaz; sadece , which.",
+        "what": "what bu şekilde önceki cümleye bağlanmaz."
+      },
+      "ok": "Bütün cümle → , which."
+    },
+    {
+      "t": "choice",
+      "q": "Bu bizim geçen ay ziyaret ettiğimiz şantiye: “This is the site ___ we visited last month.”",
+      "a": "that",
+      "o": [
+        "that",
+        "where",
+        "in which"
+      ],
+      "why": {
+        "where": "visit nesne alır (visit the site): which/that ya da zamirsiz. where yanlış.",
+        "in which": "in which = içinde; visit doğrudan nesne alır (visit the site), edat gerekmez."
+      },
+      "ok": "Fiil yeri nesne alıyorsa → which / that."
+    },
+    {
+      "t": "type",
+      "q": "Birleştir: “This is the van. We bought it last year.” (it düşer; zamiri de atabilirsin.)",
+      "a": [
+        "this is the van we bought last year",
+        "this is the van that we bought last year",
+        "this is the van which we bought last year"
+      ],
+      "hint": "it düşer; that nesne olduğu için atılabilir: the van we bought…",
+      "ok": "This is the van we bought last year."
+    },
+    {
+      "t": "type",
+      "q": "Çevir: “Tek hat şemasını okuyabilen birine ihtiyacımız var.”",
+      "a": [
+        "we need someone who can read single-line diagrams",
+        "we need someone who can read single line diagrams",
+        "we need someone that can read single-line diagrams",
+        "we need someone that can read single line diagrams",
+        "we need somebody who can read single-line diagrams",
+        "we need somebody who can read single line diagrams",
+        "we need someone who can read a single-line diagram",
+        "we need someone who can read a single line diagram"
+      ],
+      "hint": "someone who can… (who özne, düşmez).",
+      "ok": "We need someone who can read single-line diagrams."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Bodrum'da çalıştığımız firma o.”",
+      "words": [
+        "worked",
+        "the",
+        "That's",
+        "Bodrum",
+        "we",
+        "company",
+        "in",
+        "for"
+      ],
+      "a": "That's the company we worked for in Bodrum",
+      "ok": "That's the company we worked for in Bodrum."
+    }
+  ],
+  "konus": {
+    "coach": "oliver",
+    "goal": "Ekibini ve tedarikçilerini tanıt: kişileri who / that, malzeme ve firmaları which / that, sahipliği whose, yerleri where ile tek cümlede tanımlamak; nesne zamirini atmak (the cable we ordered); ek bilgiyi virgüllü yan cümleyle vermek.",
+    "vocab": [
+      "foreman",
+      "crew",
+      "night shift",
+      "cable puller",
+      "apprentice",
+      "supplier",
+      "wholesaler",
+      "delivery",
+      "lead time",
+      "single-line diagram",
+      "cable tray",
+      "switchgear",
+      "based in",
+      "reliable",
+      "in charge of",
+      "the guy who…"
+    ],
+    "structures": [
+      "the guy who… / someone who can…",
+      "the supplier whose…",
+      "the site where… / the site (that) we visited",
+      "zamirsiz: the cable we ordered, the guy I told you about",
+      "virgüllü: X, who / which …, …",
+      "…, which was great news"
+    ],
+    "opener_hint": "Oliver yeni ana yüklenicinin saha müdürü; ilk gün tanışma. “So, who's who on your team? And who supplies your cable?” ile açsın. Türab tanıttıkça “Is that the guy who…?” / “Which supplier is that, the one whose…?” diye relative clause'lu sorularla takip etsin, en sonunda “Where did you work before this site?” ile where'e geçsin.",
+    "level_note": "B1+: samimi ama profesyonel tanışma, 1-3 cümle. Zamirden sonra ismi tekrarlama (“which we ordered it”) ve virgüllü cümlede that hatasını hemen düzelt; diğerlerini 3 turda bir “You said … → Better: …” diye topla. Türab gerçek isim vermek zorunda değil; uydurma isimler yeterli."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "who vs which",
+      "q": "The engineer ___ approved the drawings is on holiday.",
+      "a": "who",
+      "o": [
+        "who",
+        "which",
+        "whose"
+      ],
+      "why": {
+        "which": "which şeyler içindir; mühendis kişi.",
+        "whose": "whose sahiplik bildirir; burada sahiplik yok."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "whose",
+      "q": "We work with a wholesaler ___ delivery times are very short.",
+      "a": "whose",
+      "o": [
+        "whose",
+        "which",
+        "who"
+      ],
+      "why": {
+        "which": "“teslim süreleri onun olan” sahiplik ilişkisi: whose.",
+        "who": "Sahiplik için who değil whose."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "where + virgüllü",
+      "q": "Ankara, ___ our main supplier is based, is two hours away.",
+      "a": "where",
+      "o": [
+        "where",
+        "that",
+        "which"
+      ],
+      "why": {
+        "that": "Virgüllü yan cümlede that olmaz.",
+        "which": "is based nesne almaz; yer anlamı için where (ya da which … in)."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "kişi → who / that",
+      "q": "Düzelt: “The electrician which installed the panel is my cousin.”",
+      "a": [
+        "the electrician who installed the panel is my cousin",
+        "the electrician that installed the panel is my cousin"
+      ]
+    },
+    {
+      "t": "order",
+      "topic": "zamirin düşmesi + sonda edat",
+      "q": "Sırala (zamirsiz): “Sana bahsettiğim adam bu.”",
+      "words": [
+        "you",
+        "He's",
+        "told",
+        "guy",
+        "about",
+        "the",
+        "I"
+      ],
+      "a": "He's the guy I told you about"
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "I know a supplier ___ sells cable trays at a good price.",
+        "a": "who",
+        "o": [
+          "who",
+          "whose",
+          "where"
+        ],
+        "why": {
+          "whose": "whose sahiplik ister (whose prices…). Burada tedarikçi kendisi satıyor: who / that.",
+          "where": "where yer içindir."
+        },
+        "ok": "Kişi/firma özne → who / that."
+      },
+      {
+        "t": "choice",
+        "q": "The warehouse ___ we keep the cables is in Kırıkkale.",
+        "a": "where",
+        "o": [
+          "where",
+          "which",
+          "whose"
+        ],
+        "why": {
+          "which": "keep zaten nesnesini almış (the cables); yer için where.",
+          "whose": "whose sahiplik bildirir."
+        },
+        "ok": "Yer, orada → where."
+      },
+      {
+        "t": "choice",
+        "q": "Hangisi doğru?",
+        "a": "Our van, which we bought in 2022, never breaks down.",
+        "o": [
+          "Our van, which we bought in 2022, never breaks down.",
+          "Our van, that we bought in 2022, never breaks down.",
+          "Our van, we bought in 2022, never breaks down."
+        ],
+        "why": {
+          "Our van, that we bought in 2022, never breaks down.": "Virgüllü yan cümlede that kullanılmaz.",
+          "Our van, we bought in 2022, never breaks down.": "Virgüllü yan cümlede zamir düşmez."
+        },
+        "ok": "Virgüllü → which, düşmez."
+      },
+      {
+        "t": "choice",
+        "q": "“The workers who had boots went in.” ne demek?",
+        "a": "Sadece botu olanlar girdi.",
+        "o": [
+          "Sadece botu olanlar girdi.",
+          "Herkesin botu vardı, hepsi girdi."
+        ],
+        "why": {
+          "Herkesin botu vardı, hepsi girdi.": "Bu anlam virgüllü yan cümleyle verilir: The workers, who had boots, went in."
+        },
+        "ok": "Virgülsüz → hangileri olduğunu seçer."
+      },
+      {
+        "t": "type",
+        "q": "Birleştir: “Serkan is our best cable puller. He has been with us for ten years.” (virgüllü)",
+        "a": [
+          "serkan who has been with us for ten years is our best cable puller",
+          "serkan whos been with us for ten years is our best cable puller"
+        ],
+        "hint": "Serkan, who…, is…",
+        "ok": "Serkan, who has been with us for ten years, is our best cable puller."
+      },
+      {
+        "t": "type",
+        "q": "Çevir (zamirsiz): “Geçen hafta sipariş ettiğimiz kablo gelmedi.”",
+        "a": [
+          "the cable we ordered last week hasn't arrived",
+          "the cable we ordered last week has not arrived",
+          "the cable we ordered last week didn't arrive",
+          "the cable we ordered last week did not arrive",
+          "the cable we ordered last week hasn't arrived yet",
+          "the cable we ordered last week has not arrived yet",
+          "the cable we ordered last week hasn't come",
+          "the cable we ordered last week has not come",
+          "the cable we ordered last week still hasn't arrived",
+          "the cable we ordered last week still has not arrived"
+        ],
+        "hint": "the cable + we ordered…; zamir nesne olduğu için düşer.",
+        "ok": "The cable we ordered last week hasn't arrived."
+      }
+    ],
+    "konus_prompt": "Oliver'a ekibinden iki kişiyi ve bir tedarikçini tanıt. En az bir who, bir whose, bir where kullan; bir cümlede zamiri at (the cable we…), bir cümlede virgüllü ek bilgi ver."
+  }
+}

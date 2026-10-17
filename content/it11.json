@@ -1,0 +1,754 @@
+{
+  "id": "it11",
+  "lang": "it",
+  "level": "A1",
+  "title": "Düzensiz fiiller: fare, andare, venire, stare, dare",
+  "lead": "Günün en sık beş fiilini çekeceksin: yapmak, gitmek, gelmek, durmak/olmak, vermek. Ders bitince “Kahvaltı yapıyorum, işe gidiyorum, iyiyim, hava soğuk” gibi günlük cümleleri rahatça kurabileceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Dört fiil, tek iskelet: fare, andare, stare, dare",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bu dört fiil günde yüz kez geçer ve düzensizdir: -are kalıbına (parlo, parli, parla) uymaz. İyi haber: dördü aynı iskeleti paylaşır. Tabloyu satır satır değil, **deseni** ezberle."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Özne",
+            "fare (yapmak)",
+            "andare (gitmek)",
+            "stare (durmak, olmak)",
+            "dare (vermek)"
+          ],
+          "rows": [
+            [
+              "io",
+              "faccio",
+              "vado",
+              "sto",
+              "do"
+            ],
+            [
+              "tu",
+              "fai",
+              "vai",
+              "stai",
+              "dai"
+            ],
+            [
+              "lui / lei / Lei",
+              "fa",
+              "va",
+              "sta",
+              "dà"
+            ],
+            [
+              "noi",
+              "facciamo",
+              "andiamo",
+              "stiamo",
+              "diamo"
+            ],
+            [
+              "voi",
+              "fate",
+              "andate",
+              "state",
+              "date"
+            ],
+            [
+              "loro",
+              "fanno",
+              "vanno",
+              "stanno",
+              "danno"
+            ]
+          ],
+          "say": [
+            "io faccio, vado, sto, do",
+            "tu fai, vai, stai, dai",
+            "lui fa, va, sta, dà",
+            "noi facciamo, andiamo, stiamo, diamo",
+            "voi fate, andate, state, date",
+            "loro fanno, vanno, stanno, danno"
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "tu → -ai",
+              "text": "fai, vai, stai, dai. Hepsi tek hece: FAY, VAY, STAY, DAY."
+            },
+            {
+              "title": "loro → -nno",
+              "text": "fanno, vanno, stanno, danno. Çift n'yi duyur: FAN-no, VAN-no."
+            },
+            {
+              "title": "noi → -iamo, voi → -te",
+              "text": "facciamo, andiamo, stiamo, diamo; fate, andate, state, date. Burası diğer fiillere en çok benzeyen kısım."
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "**dà** (verir) aksanlıdır; **da** (-den) ayrı bir kelimedir. Okunuş: **faccio** FAT-ço, **facciamo** fat-ÇA-mo."
+        }
+      ]
+    },
+    {
+      "title": "fare: yapmak, etmek ve hava durumu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "fare, Türkçedeki “yapmak/etmek” gibi her işe koşulur. Çoğu kalıp aynı mantıkla kurulur: kahvaltı **yapmak** = **fare** colazione."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "Kahvaltı",
+                  "s": "isim"
+                },
+                {
+                  "t": "yapıyorum",
+                  "s": "fiil",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {
+                  "t": "Faccio",
+                  "s": "yapıyorum (fare)",
+                  "hl": true
+                },
+                {
+                  "t": "colazione",
+                  "s": "kahvaltı"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Facciamo una pausa.",
+              "tr": "Mola veriyoruz. (Türkçede “vermek”, İtalyancada “yapmak”.)",
+              "ph": "fat-ÇA-mo U-na PAU-sa"
+            },
+            {
+              "x": "Faccio la doccia.",
+              "tr": "Duş alıyorum.",
+              "ph": "FAT-ço la DOT-ça"
+            },
+            {
+              "x": "Faccio l'elettricista.",
+              "tr": "Elektrikçilik yapıyorum. (fare ile meslekte artikel var: l'.)",
+              "ph": "FAT-ço le-let-tri-ÇİS-ta"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Türkçe",
+            "İtalyanca",
+            "Fiil"
+          ],
+          "x": 1,
+          "rows": [
+            [
+              "Hava sıcak.",
+              "Fa caldo.",
+              "fare (hava)"
+            ],
+            [
+              "Sıcakladım.",
+              "Ho caldo.",
+              "avere (vücut)"
+            ],
+            [
+              "Kahve sıcak.",
+              "Il caffè è caldo.",
+              "essere (şey)"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "Hava için özne yok: **Fa freddo** = hava soğuk. **Ho freddo** dersen kendi üşüdüğünü söylersin."
+        }
+      ]
+    },
+    {
+      "title": "andare ve venire: gitmek, gelmek",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "andare'yi 1. kartta gördün. venire kendi yolunu izler: io ve loro'da araya **-g-** girer, tu ve lui'de e harfi **ie** olur."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Özne",
+            "venire",
+            "Okunuş"
+          ],
+          "x": 1,
+          "rows": [
+            [
+              "io",
+              "vengo",
+              "VEN-go"
+            ],
+            [
+              "tu",
+              "vieni",
+              "VYE-ni"
+            ],
+            [
+              "lui / lei / Lei",
+              "viene",
+              "VYE-ne"
+            ],
+            [
+              "noi",
+              "veniamo",
+              "ve-NYA-mo"
+            ],
+            [
+              "voi",
+              "venite",
+              "ve-Nİ-te"
+            ],
+            [
+              "loro",
+              "vengono",
+              "VEN-go-no"
+            ]
+          ],
+          "say": [
+            "io vengo",
+            "tu vieni",
+            "lui viene",
+            "noi veniamo",
+            "voi venite",
+            "loro vengono"
+          ]
+        },
+        {
+          "type": "rules",
+          "items": [
+            {
+              "title": "Gittiğin yer: andare + a",
+              "text": "**a** = -e. Şimdilik hazır kalıp: a lavoro, a casa, a Bodrum (edatlar 13–14. derste; “al lavoro” da denir).",
+              "ex": {
+                "x": "Vado a lavoro.",
+                "tr": "İşe gidiyorum."
+              }
+            },
+            {
+              "title": "Konuşanın yanına: venire",
+              "text": "Türkçedeki gibi: biri “Gel!” derse “Geliyorum!” dersin: **Vengo!** “Vado” dersen başka yere gidiyorsun.",
+              "ex": {
+                "x": "Vieni con me?",
+                "tr": "Benimle geliyor musun?"
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "**Andiamo!** = Hadi gidelim! Vurgu sondan ikinci hecede: an-DYA-mo. **vengono** ise üçüncüde: VEN-go-no."
+        }
+      ]
+    },
+    {
+      "title": "stare: “Nasılsın? İyiyim.” ve dare",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "2. dersteki **Come stai?** kalıbının fiili stare'dir. İtalyanca sağlığı ve hali essere ile değil **stare** ile söyler."
+        },
+        {
+          "type": "compare",
+          "rows": [
+            {
+              "label": "Türkçe",
+              "items": [
+                {
+                  "t": "İyi",
+                  "s": "hal"
+                },
+                {
+                  "t": "-yim",
+                  "s": "olmak (ek)",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "label": "İtalyanca",
+              "items": [
+                {
+                  "t": "Sto",
+                  "s": "stare",
+                  "hl": true
+                },
+                {
+                  "t": "bene",
+                  "s": "iyi (zarf)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "items": [
+            {
+              "x": "Come stai? Sto bene.",
+              "tr": "Nasılsın? İyiyim.",
+              "ph": "KO-me STAY? STO BE-ne"
+            },
+            {
+              "x": "Sto male.",
+              "tr": "Kötüyüm. / İyi değilim.",
+              "ph": "STO MA-le"
+            },
+            {
+              "x": "Oggi sto a casa.",
+              "tr": "Bugün evde kalıyorum. (a casa = evde; hazır kalıp)",
+              "ph": "OD-ci STO a KA-sa"
+            },
+            {
+              "x": "Il capo dà le istruzioni.",
+              "tr": "Şef talimatları veriyor. (dare = vermek)",
+              "ph": "il KA-po DA le is-tru-TSYO-ni"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "warn": true,
+          "text": "**Sono bene** yanlış. bene bir zarftır; essere sıfat ister (sono stanco), hal ise stare ile söylenir: **Sto bene**. Bonus: konuşmada **Dai!** = Hadi! / Haydi be!"
+        }
+      ]
+    }
+  ],
+  "dinle": [
+    {
+      "x": "Faccio colazione e vado a lavoro.",
+      "tr": "Kahvaltı yapıyorum ve işe gidiyorum.",
+      "ph": "FAT-ço ko-la-TSYO-ne e VA-do a la-VO-ro"
+    },
+    {
+      "x": "Come stai? Sto bene, grazie.",
+      "tr": "Nasılsın? İyiyim, teşekkürler.",
+      "ph": "KO-me STAY? STO BE-ne, GRA-tsye"
+    },
+    {
+      "x": "Oggi fa freddo in cantiere.",
+      "tr": "Bugün şantiyede hava soğuk.",
+      "ph": "OD-ci FA FRED-do in kan-TYE-re"
+    },
+    {
+      "x": "Facciamo una pausa?",
+      "tr": "Mola verelim mi?",
+      "ph": "fat-ÇA-mo U-na PAU-sa"
+    },
+    {
+      "x": "Vieni con me? Sì, vengo!",
+      "tr": "Benimle geliyor musun? Evet, geliyorum!",
+      "ph": "VYE-ni kon ME? Sİ, VEN-go"
+    },
+    {
+      "x": "Andiamo, ragazzi!",
+      "tr": "Hadi gidelim, çocuklar!",
+      "ph": "an-DYA-mo, ra-GAT-tsi"
+    },
+    {
+      "x": "Faccio l'elettricista.",
+      "tr": "Elektrikçilik yapıyorum.",
+      "ph": "FAT-ço le-let-tri-ÇİS-ta"
+    },
+    {
+      "x": "Gli operai vanno a casa.",
+      "tr": "İşçiler eve gidiyor.",
+      "ph": "lyi o-pe-RA-i VAN-no a KA-sa"
+    },
+    {
+      "x": "Il capo dà le istruzioni.",
+      "tr": "Şef talimatları veriyor.",
+      "ph": "il KA-po DA le is-tru-TSYO-ni"
+    },
+    {
+      "x": "Dai, andiamo a lavoro!",
+      "tr": "Hadi, işe gidelim!",
+      "ph": "DAY, an-DYA-mo a la-VO-ro"
+    }
+  ],
+  "uygula": [
+    {
+      "t": "choice",
+      "q": "io ___ colazione.",
+      "a": "faccio",
+      "o": [
+        "faccio",
+        "fai",
+        "fa"
+      ],
+      "why": {
+        "fai": "fai, tu (sen) içindir.",
+        "fa": "fa, lui/lei/Lei içindir."
+      },
+      "ok": "io → faccio. Okunuşu: FAT-ço."
+    },
+    {
+      "t": "choice",
+      "q": "tu ___ con me?",
+      "a": "vieni",
+      "o": [
+        "vieni",
+        "viene",
+        "vengo"
+      ],
+      "why": {
+        "viene": "viene, lui/lei/Lei içindir.",
+        "vengo": "vengo, io (ben) içindir."
+      },
+      "ok": "tu → vieni. e burada ie olur."
+    },
+    {
+      "t": "choice",
+      "q": "loro ___ a casa.",
+      "a": "vanno",
+      "o": [
+        "vanno",
+        "vadono",
+        "va"
+      ],
+      "why": {
+        "vadono": "Böyle bir biçim yok. Dört fiilin loro biçimi hep -nno: vanno.",
+        "va": "va tek kişi içindir; loro çoğul."
+      },
+      "ok": "loro → vanno (fanno, stanno, danno gibi)."
+    },
+    {
+      "t": "choice",
+      "q": "noi ___ una pausa.",
+      "a": "facciamo",
+      "o": [
+        "facciamo",
+        "fate",
+        "fanno"
+      ],
+      "why": {
+        "fate": "fate = voi (siz).",
+        "fanno": "fanno = loro (onlar)."
+      },
+      "ok": "noi → facciamo. Mola “yapılır”."
+    },
+    {
+      "t": "choice",
+      "q": "Şef talimat veriyor: “Il capo ___ le istruzioni.”",
+      "a": "dà",
+      "o": [
+        "dà",
+        "da",
+        "do"
+      ],
+      "why": {
+        "da": "Aksansız da bir edattır (-den). Fiil aksanlı yazılır: dà.",
+        "do": "do, io (ben) içindir."
+      },
+      "ok": "lui → dà. Aksanı unutma."
+    },
+    {
+      "t": "choice",
+      "q": "“Come stai?” sorusuna cevap:",
+      "a": "Sto bene.",
+      "o": [
+        "Sto bene.",
+        "Sono bene.",
+        "Ho bene."
+      ],
+      "why": {
+        "Sono bene.": "bene zarftır; hal stare ile söylenir.",
+        "Ho bene.": "avere sahiplik ve bedensel his içindir (ho fame). Hal: sto bene."
+      },
+      "ok": "Sto bene."
+    },
+    {
+      "t": "choice",
+      "q": "“Bugün hava soğuk.”",
+      "a": "Oggi fa freddo.",
+      "o": [
+        "Oggi fa freddo.",
+        "Oggi ho freddo."
+      ],
+      "why": {
+        "Oggi ho freddo.": "Bu “bugün üşüyorum” demek. Hava fare ile: fa freddo."
+      },
+      "ok": "Hava → fare."
+    },
+    {
+      "t": "choice",
+      "q": "Usta seslendi: “Türab, vieni!” Ne dersin?",
+      "a": "Sì, vengo!",
+      "o": [
+        "Sì, vengo!",
+        "Sì, vado!"
+      ],
+      "why": {
+        "Sì, vado!": "Konuşanın yanına gidiyorsun; Türkçedeki “geliyorum!” gibi venire: vengo."
+      },
+      "ok": "Konuşana doğru → venire."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Kahvaltı yapıyorum.”",
+      "a": [
+        "faccio colazione",
+        "io faccio colazione"
+      ],
+      "hint": "fare + colazione.",
+      "ok": "Faccio colazione."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “İşe gidiyoruz.” (a lavoro kalıbıyla)",
+      "a": [
+        "andiamo a lavoro",
+        "noi andiamo a lavoro",
+        "andiamo al lavoro",
+        "noi andiamo al lavoro"
+      ],
+      "hint": "noi → andiamo.",
+      "ok": "Andiamo a lavoro."
+    },
+    {
+      "t": "type",
+      "q": "Türkçeden çevir: “Geliyorlar.”",
+      "a": [
+        "vengono",
+        "loro vengono"
+      ],
+      "hint": "loro'da araya -g- girer.",
+      "ok": "Vengono. Vurgu: VEN-go-no."
+    },
+    {
+      "t": "order",
+      "q": "Sırala: “Ekip işe gidiyor.” (squadra = ekip)",
+      "words": [
+        "va",
+        "squadra",
+        "lavoro",
+        "la",
+        "a"
+      ],
+      "a": "la squadra va a lavoro",
+      "ok": "La squadra va a lavoro."
+    }
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "fare, andare, venire, stare, dare ile günlük rutini anlatmak: kahvaltı, işe gitme, mola, hal hatır, hava.",
+    "vocab": [
+      "colazione",
+      "una pausa",
+      "la doccia",
+      "lavoro",
+      "casa",
+      "bene",
+      "male",
+      "oggi",
+      "freddo",
+      "caldo",
+      "la squadra",
+      "il capo",
+      "le istruzioni",
+      "con me",
+      "andiamo",
+      "dai",
+      "ragazzi"
+    ],
+    "structures": [
+      "faccio, fai, fa, facciamo, fate, fanno",
+      "vado, vai, va, andiamo, andate, vanno",
+      "vengo, vieni, viene, veniamo, venite, vengono",
+      "sto, stai, sta, stiamo, state, stanno",
+      "do, dai, dà, diamo, date, danno",
+      "fa caldo / fa freddo (hava)",
+      "andare a lavoro / a casa (hazır kalıp)",
+      "Come stai? — Sto bene / male"
+    ],
+    "opener_hint": "Chiara sabah halini sorsun: “Ciao Türab! Come stai?” (Türkçesi parantezde). Sonra sırayla sorsun: kahvaltı yapıyor musun (Fai colazione?), işe gidiyor musun (Vai a lavoro?), bugün hava soğuk mu (Fa freddo oggi?), ekip geliyor mu (La squadra viene?).",
+    "level_note": "A1: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Sadece bu dersin beş fiili, essere, avere ve -are/-ere/-ire fiillerini kullan. Soru kelimelerinden yalnızca come kullan (it12 henüz yok). Türab çekimde hata yaparsa doğru biçimi ve deseni tek cümleyle göster (ör. loro hep -nno: vanno)."
+  },
+  "yokla": [
+    {
+      "t": "choice",
+      "topic": "fare çekimi",
+      "q": "Ekibe: “Voi ___ una pausa?”",
+      "a": "fate",
+      "o": [
+        "fate",
+        "fanno",
+        "facciamo"
+      ],
+      "why": {
+        "fanno": "fanno = loro (onlar). Karşındakilere soruyorsun: voi fate.",
+        "facciamo": "facciamo = noi (biz)."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "stare (kibar)",
+      "q": "Mühendise kibarca: “Nasılsınız?”",
+      "a": "Come sta?",
+      "o": [
+        "Come sta?",
+        "Come stai?"
+      ],
+      "why": {
+        "Come stai?": "stai samimi tu içindir. Kibar Lei “o” gibi çekilir: sta."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "fare / avere / essere",
+      "q": "“Hava sıcak ve ben sıcakladım.”",
+      "a": "Fa caldo e ho caldo.",
+      "o": [
+        "Fa caldo e ho caldo.",
+        "Ho caldo e sono caldo.",
+        "È caldo e faccio caldo."
+      ],
+      "why": {
+        "Ho caldo e sono caldo.": "Hava için fare gerekir (fa caldo); “sono caldo” da bir hissi anlatmaz.",
+        "È caldo e faccio caldo.": "“faccio caldo” olmaz: kendi sıcaklaman avere ile, ho caldo."
+      }
+    },
+    {
+      "t": "choice",
+      "topic": "andare çekimi",
+      "q": "“Bodrum'a gidiyorsun.”",
+      "a": "Vai a Bodrum.",
+      "o": [
+        "Vai a Bodrum.",
+        "Vadi a Bodrum.",
+        "Va a Bodrum."
+      ],
+      "why": {
+        "Vadi a Bodrum.": "Böyle bir biçim yok. tu biçimi hep -ai: vai.",
+        "Va a Bodrum.": "va, lui/lei/Lei içindir; “gidiyor / gidiyorsunuz (kibar)”."
+      }
+    },
+    {
+      "t": "type",
+      "topic": "stare çekimi",
+      "q": "Türkçeden çevir: “İyiyiz.”",
+      "a": [
+        "stiamo bene",
+        "noi stiamo bene"
+      ]
+    }
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {
+        "t": "choice",
+        "q": "“Murat'a yardım ediyorum.” (dare una mano a = birine el vermek, yardım etmek) Io ___ una mano a Murat.",
+        "a": "do",
+        "o": [
+          "do",
+          "dà",
+          "dai"
+        ],
+        "why": {
+          "dà": "dà, lui/lei/Lei içindir.",
+          "dai": "dai, tu (sen) içindir."
+        },
+        "ok": "io → do. Tek hece, aksansız."
+      },
+      {
+        "t": "choice",
+        "q": "Ekibe: “Voi ___ con noi?” (bizimle geliyor musunuz?)",
+        "a": "venite",
+        "o": [
+          "venite",
+          "vengono",
+          "veniamo"
+        ],
+        "why": {
+          "vengono": "vengono = loro (onlar).",
+          "veniamo": "veniamo = noi (biz)."
+        },
+        "ok": "voi → venite."
+      },
+      {
+        "t": "choice",
+        "q": "“Duş alıyorum.”",
+        "a": "Faccio la doccia.",
+        "o": [
+          "Faccio la doccia.",
+          "Do la doccia."
+        ],
+        "why": {
+          "Do la doccia.": "do = veriyorum. İtalyanca duşu “yapar”: faccio la doccia."
+        },
+        "ok": "Faccio la doccia."
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Nasılsın?”",
+        "a": [
+          "come stai",
+          "tu come stai",
+          "come stai tu"
+        ],
+        "hint": "stare, tu biçimi.",
+        "ok": "Come stai?"
+      },
+      {
+        "t": "type",
+        "q": "Türkçeden çevir: “Onlar iyi değil.” (hal olarak)",
+        "a": [
+          "stanno male",
+          "loro stanno male",
+          "non stanno bene",
+          "loro non stanno bene"
+        ],
+        "hint": "stare + male; loro hep -nno.",
+        "ok": "Stanno male. (Non stanno bene da doğru.)"
+      },
+      {
+        "t": "order",
+        "q": "Sırala: “Ahmet işe geliyor.”",
+        "words": [
+          "lavoro",
+          "viene",
+          "Ahmet",
+          "a"
+        ],
+        "a": "Ahmet viene a lavoro",
+        "ok": "Ahmet viene a lavoro."
+      }
+    ],
+    "konus_prompt": "Chiara sana sabah rutinini soracak: nasılsın, kahvaltı yapıyor musun, işe nasıl gidiyorsun, hava nasıl, ekip geliyor mu. En az dört farklı fiil kullan (fare, andare, venire, stare)."
+  }
+}

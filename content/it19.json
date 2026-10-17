@@ -1,0 +1,170 @@
+{
+  "id": "it19",
+  "lang": "it",
+  "level": "A2",
+  "title": "Passato prossimo (avere)",
+  "lead": "“Dün 10 saat çalıştım”, “Raporu yazdım”, “Henüz yemedim” cümlelerini kurabileceksin. Geçmiş zamanın formülünü (avere + ortaç), düzenli ortaçları ve en sık 9 düzensiz ortacı öğreneceksin.",
+  "minutes": 35,
+  "anlat": [
+    {
+      "title": "Formül: avere + ortaç",
+      "blocks": [
+        {"type": "p", "text": "Türkçede geçmişi tek bir ekle yaparsın: çalış**tım**. İtalyanca iki parçayla kurar: **avere**'nin şimdiki hali (ho, hai, ha…) + fiilin **ortacı** (lavorato). Kişiyi avere taşır, ortaç hiç değişmez."},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Çalış", "s": "fiil kökü"}, {"t": "-tı", "s": "geçmiş", "hl": true}, {"t": "-m", "s": "ben", "hl": true}]},
+          {"label": "İtalyanca", "items": [{"t": "Ho", "s": "ben (avere)", "hl": true}, {"t": "lavorato", "s": "çalışmış (ortaç)", "hl": true}]}
+        ]},
+        {"type": "table", "head": ["Özne", "Passato prossimo", "Okunuş", "Türkçesi"], "x": 1,
+          "rows": [
+            ["io", "ho lavorato", "O la-vo-RA-to", "çalıştım"],
+            ["tu", "hai lavorato", "AY la-vo-RA-to", "çalıştın"],
+            ["lui / lei / Lei", "ha lavorato", "A la-vo-RA-to", "çalıştı / çalıştınız (kibar)"],
+            ["noi", "abbiamo lavorato", "ab-BYA-mo la-vo-RA-to", "çalıştık"],
+            ["voi", "avete lavorato", "a-VE-te la-vo-RA-to", "çalıştınız"],
+            ["loro", "hanno lavorato", "AN-no la-vo-RA-to", "çalıştılar"]
+          ],
+          "say": ["io ho lavorato", "tu hai lavorato", "lui ha lavorato", "noi abbiamo lavorato", "voi avete lavorato", "loro hanno lavorato"]},
+        {"type": "note", "text": "Tek biçim, iki Türkçe anlam: **Ho mangiato** hem “yedim” hem “yemişim / yedim bile” demek. Türkçedeki -dı / -mış ayrımı burada yok."},
+        {"type": "note", "warn": true, "text": "Tipik Türk hatası avere'yi atmak: **Io lavorato** yanlış. Türkçede yardımcı fiil yok diye kulak onu aramıyor; İtalyancada o olmadan cümle kurulmaz."}
+      ]
+    },
+    {
+      "title": "Düzenli ortaç: -are → -ato, -ere → -uto, -ire → -ito",
+      "blocks": [
+        {"type": "p", "text": "Ortaç yapmak için mastar ekini at, yerine kalıbı koy. Ünlü korunur: **a → ato, e → uto, i → ito**. Sadece e grubunda ünlü u'ya döner."},
+        {"type": "rules", "items": [
+          {"title": "-are → -ato", "text": "lavorare → lavorato, parlare → parlato, mangiare → mangiato, comprare → comprato, controllare → controllato", "ex": {"x": "Ho controllato il quadro.", "tr": "Panoyu kontrol ettim."}},
+          {"title": "-ere → -uto", "text": "avere → avuto, vendere → venduto, ricevere → ricevuto", "ex": {"x": "Ho ricevuto il messaggio.", "tr": "Mesajı aldım."}},
+          {"title": "-ire → -ito", "text": "dormire → dormito, finire → finito, capire → capito, sentire → sentito", "ex": {"x": "Abbiamo finito il lavoro.", "tr": "İşi bitirdik."}}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "Ho parlato con il capo.", "tr": "Şefle konuştum.", "ph": "O par-LA-to kon il KA-po"},
+          {"x": "Non ho capito.", "tr": "Anlamadım.", "ph": "non O ka-Pİ-to"},
+          {"x": "Hai dormito bene?", "tr": "İyi uyudun mu?", "ph": "AY dor-Mİ-to BE-ne"}
+        ]},
+        {"type": "note", "warn": true, "text": "-isc- fiilleri (capisco, finisco) ortaçta -isc- almaz: **capito, finito**. “Capiscito” diye bir şey yok."}
+      ]
+    },
+    {
+      "title": "Sık düzensiz ortaçlar: ezberlenecek 9 kelime",
+      "blocks": [
+        {"type": "p", "text": "En çok kullanılan fiillerin ortacı kurala uymaz; özellikle -ere fiillerinin çoğu düzensizdir. Ses gruplarıyla ezberlemek kolay: **-tto, -sto, -so, -erto**."},
+        {"type": "table", "head": ["Mastar", "Ortaç", "Okunuş", "Örnek"], "x": 1,
+          "rows": [
+            ["fare (yapmak)", "fatto", "FAT-to", "Ho fatto il lavoro."],
+            ["dire (söylemek)", "detto", "DET-to", "Ho detto di no."],
+            ["leggere (okumak)", "letto", "LET-to", "Ho letto il messaggio."],
+            ["scrivere (yazmak)", "scritto", "SKRİT-to", "Ho scritto il rapporto."],
+            ["vedere (görmek)", "visto", "VİS-to", "Ho visto Ahmet."],
+            ["prendere (almak)", "preso", "PRE-so", "Ho preso il caffè."],
+            ["mettere (koymak)", "messo", "MES-so", "Ho messo i cavi nel furgone."],
+            ["aprire (açmak)", "aperto", "a-PER-to", "Ho aperto il quadro."],
+            ["chiudere (kapatmak)", "chiuso", "KYU-so", "Ho chiuso la porta."]
+          ],
+          "say": ["fatto", "detto", "letto", "scritto", "visto", "preso", "messo", "aperto", "chiuso"]},
+        {"type": "note", "warn": true, "text": "Kuralı bunlara uygulama: **vedato, prenduto, metuto, aprito** yok. Yeni kelime: il furgone = kamyonet, il rapporto = rapor, la porta = kapı."}
+      ]
+    },
+    {
+      "title": "Zaman ifadeleri, già ve non … ancora",
+      "blocks": [
+        {"type": "table", "head": ["İtalyanca", "Okunuş", "Türkçesi"], "x": 0,
+          "rows": [
+            ["ieri", "YE-ri", "dün"],
+            ["ieri sera", "YE-ri SE-ra", "dün akşam"],
+            ["stamattina", "sta-mat-Tİ-na", "bu sabah"],
+            ["la settimana scorsa", "la set-ti-MA-na SKOR-sa", "geçen hafta"],
+            ["il mese scorso", "il ME-se SKOR-so", "geçen ay"],
+            ["due giorni fa", "DU-e COR-ni FA", "iki gün önce"]
+          ]},
+        {"type": "compare", "rows": [
+          {"label": "Türkçe", "items": [{"t": "Henüz", "s": "zarf", "hl": true}, {"t": "ye", "s": "fiil"}, {"t": "-me-di-m", "s": "olumsuz + geçmiş"}]},
+          {"label": "İtalyanca", "items": [{"t": "Non", "s": "olumsuz"}, {"t": "ho", "s": "avere"}, {"t": "ancora", "s": "henüz", "hl": true}, {"t": "mangiato", "s": "ortaç"}]}
+        ]},
+        {"type": "examples", "items": [
+          {"x": "Hai già mangiato?", "tr": "Yemek yedin mi? (çoktan)", "ph": "AY CA man-CA-to"},
+          {"x": "Sì, ho già mangiato.", "tr": "Evet, yedim bile.", "ph": "Sİ, O CA man-CA-to"},
+          {"x": "No, non ho ancora mangiato.", "tr": "Hayır, henüz yemedim.", "ph": "no, non O an-KO-ra man-CA-to"}
+        ]},
+        {"type": "note", "text": "**già** ve **ancora**, avere ile ortacın arasına girer. Konuşmada **Ancora non ho mangiato** da duyarsın; ikisi de doğru. Zaman ifadesi (ieri, fa) başa ya da sona gelir. Vurguya dikkat: an-**KO**-ra = henüz; **AN**-ko-ra = çapa."}
+      ]
+    }
+  ],
+  "dinle": [
+    {"x": "Ieri ho lavorato dieci ore.", "tr": "Dün on saat çalıştım.", "ph": "YE-ri O la-vo-RA-to DYE-çi O-re"},
+    {"x": "Hai già mangiato?", "tr": "Yemek yedin mi?", "ph": "AY CA man-CA-to"},
+    {"x": "No, non ho ancora mangiato.", "tr": "Hayır, henüz yemedim.", "ph": "no, non O an-KO-ra man-CA-to"},
+    {"x": "Abbiamo finito il quadro.", "tr": "Panoyu bitirdik.", "ph": "ab-BYA-mo fi-Nİ-to il KUA-dro"},
+    {"x": "Chi ha chiuso il cantiere?", "tr": "Şantiyeyi kim kapattı?", "ph": "Kİ A KYU-so il kan-TYE-re"},
+    {"x": "Ho messo i cavi nel furgone.", "tr": "Kabloları kamyonete koydum.", "ph": "O MES-so i KA-vi nel fur-GO-ne"},
+    {"x": "Hai letto il messaggio?", "tr": "Mesajı okudun mu?", "ph": "AY LET-to il mes-SAD-co"},
+    {"x": "Ho scritto il rapporto ieri sera.", "tr": "Raporu dün akşam yazdım.", "ph": "O SKRİT-to il rap-POR-to YE-ri SE-ra"},
+    {"x": "La settimana scorsa ho visto Ahmet a Bodrum.", "tr": "Geçen hafta Ahmet'i Bodrum'da gördüm.", "ph": "la set-ti-MA-na SKOR-sa O VİS-to Ahmet a Bodrum"},
+    {"x": "Non ho capito. Può ripetere?", "tr": "Anlamadım. Tekrar edebilir misiniz?", "ph": "non O ka-Pİ-to. PUO ri-PE-te-re"}
+  ],
+  "uygula": [
+    {"t": "choice", "q": "Ortacı seç: lavorare → ___", "a": "lavorato", "o": ["lavorato", "lavoruto", "lavorito"],
+      "why": {"lavoruto": "-uto, -ere fiilleri içindir. -are → -ato.", "lavorito": "-ito, -ire fiilleri içindir. -are → -ato."},
+      "ok": "-are → -ato: lavorato."},
+    {"t": "choice", "q": "Ortacı seç: dormire → ___", "a": "dormito", "o": ["dormato", "dormuto", "dormito"],
+      "why": {"dormato": "-ato, -are fiilleri içindir. -ire → -ito.", "dormuto": "-uto, -ere fiilleri içindir. -ire → -ito."},
+      "ok": "-ire → -ito: dormito."},
+    {"t": "choice", "q": "noi ___ finito il lavoro.", "a": "abbiamo", "o": ["abbiamo", "hanno", "ho"],
+      "why": {"hanno": "hanno = loro (onlar). noi → abbiamo.", "ho": "ho = io (ben). noi → abbiamo."},
+      "ok": "Kişiyi avere taşır: noi abbiamo finito."},
+    {"t": "choice", "q": "“Dün çalıştım.”", "a": "Ieri ho lavorato.", "o": ["Ieri lavorato.", "Ieri ho lavorato.", "Ieri ho lavoro."],
+      "why": {"Ieri lavorato.": "avere eksik. Geçmiş zaman iki parçalı: ho + lavorato.", "Ieri ho lavoro.": "lavoro = (ben) çalışırım / iş. Ortaç gerek: lavorato."},
+      "ok": "Ieri ho lavorato."},
+    {"t": "choice", "q": "Ortacı seç: vedere → ___", "a": "visto", "o": ["vedito", "visto", "vedato"],
+      "why": {"vedito": "-ito, -ire fiilleri içindir. vedere bir -ere fiili ve düzensiz: visto.", "vedato": "-ato sadece -are fiillerinde. vedere düzensiz: visto."},
+      "ok": "vedere → visto."},
+    {"t": "choice", "q": "“Panoyu açtım.” Ho ___ il quadro.", "a": "aperto", "o": ["aprito", "aperto", "aputo"],
+      "why": {"aprito": "aprire düzensizdir; -ito almaz: aperto.", "aputo": "Böyle bir biçim yok. aprire → aperto."},
+      "ok": "aprire → aperto."},
+    {"t": "choice", "q": "“Henüz bitirmedim.”", "a": "Non ho ancora finito.", "o": ["Non ho già finito.", "Non ho ancora finito.", "Ho non ancora finito."],
+      "why": {"Non ho già finito.": "già = çoktan / bile. “Henüz” = ancora.", "Ho non ancora finito.": "non her zaman avere'nin önüne gelir: non ho."},
+      "ok": "Non ho ancora finito."},
+    {"t": "type", "q": "Ortacını yaz: fare → ___", "a": ["fatto"], "hint": "Çift t: -tto grubu.", "ok": "fare → fatto."},
+    {"t": "type", "q": "Türkçeden çevir: “Mesajı okudum.”", "a": ["ho letto il messaggio", "io ho letto il messaggio"], "hint": "leggere → letto. mesaj = il messaggio.", "ok": "Ho letto il messaggio."},
+    {"t": "type", "q": "Türkçeden çevir: “Yemek yedin mi?” (çoktan)", "a": ["hai già mangiato", "tu hai già mangiato", "hai mangiato"], "soft": ["hai gia mangiato", "tu hai gia mangiato"], "soft_note": "Doğru sayıldı. già aksanla yazılır: Hai già mangiato?", "hint": "già, hai ile mangiato arasına girer.", "ok": "Hai già mangiato?"},
+    {"t": "order", "q": "Sırala: “Kabloları kamyonete koyduk.”", "words": ["furgone", "messo", "i", "abbiamo", "nel", "cavi"], "a": "abbiamo messo i cavi nel furgone", "ok": "Abbiamo messo i cavi nel furgone."},
+    {"t": "order", "q": "Sırala: “Geçen hafta raporu yazdım.”", "words": ["rapporto", "scorsa", "ho", "settimana", "il", "la", "scritto"], "a": "la settimana scorsa ho scritto il rapporto", "alt": ["ho scritto il rapporto la settimana scorsa"], "ok": "La settimana scorsa ho scritto il rapporto."}
+  ],
+  "konus": {
+    "coach": "chiara",
+    "goal": "Dün ve geçen hafta yaptıklarını avere + ortaç ile anlatmak; düzensiz ortaçları (fatto, scritto, visto, preso, messo…) doğru kullanmak; già / non … ancora ile cevap vermek.",
+    "vocab": ["ieri", "ieri sera", "stamattina", "la settimana scorsa", "fa", "già", "ancora", "lavorato", "mangiato", "finito", "capito", "fatto", "detto", "letto", "scritto", "visto", "preso", "messo", "aperto", "chiuso", "il rapporto", "il furgone", "il messaggio", "la porta", "i cavi"],
+    "structures": ["avere (ho, hai, ha, abbiamo, avete, hanno) + ortaç", "-are → -ato, -ere → -uto, -ire → -ito", "düzensiz ortaçlar: fatto, detto, letto, scritto, visto, preso, messo, aperto, chiuso", "già ve non … ancora: avere ile ortaç arasında", "zaman ifadesi başta ya da sonda"],
+    "opener_hint": "Chiara akşam iş çıkışı soruyor: “Ciao Türab! Che cosa hai fatto oggi in cantiere?” (Türkçesi parantezde). Sonra rapor yazdın mı, mesajı okudun mu, öğle yemeği yedin mi (già / ancora), geçen hafta ne yaptın diye sorsun.",
+    "level_note": "A1–A2: her mesajda 1 kısa İtalyanca soru, alt satırda parantez içinde Türkçesi. Geçmiş zamanda sadece avere alan fiilleri kullan (andare, venire, uscire gibi essere alan fiilleri sorma; gelecek dersin konusu). Türab avere'yi atarsa ya da düzensiz ortacı kurala göre yaparsa (vedato, prenduto) doğrusunu tek cümleyle göster."
+  },
+  "yokla": [
+    {"t": "choice", "topic": "avere + ortaç", "q": "loro ___ parlato con il capo.", "a": "hanno", "o": ["ha", "hanno", "avete"],
+      "why": {"ha": "ha tek kişi içindir; loro çoğul: hanno.", "avete": "avete = voi (siz). loro → hanno."}},
+    {"t": "choice", "topic": "düzenli ortaç", "q": "Ortacı seç: ricevere → ___", "a": "ricevuto", "o": ["ricevato", "ricevuto", "ricevito"],
+      "why": {"ricevato": "-ato, -are fiilleri içindir. -ere → -uto.", "ricevito": "-ito, -ire fiilleri içindir. -ere → -uto."}},
+    {"t": "choice", "topic": "düzensiz ortaçlar", "q": "“Kahveyi aldım.” Ho ___ il caffè.", "a": "preso", "o": ["prenduto", "preso", "prendato"],
+      "why": {"prenduto": "prendere düzensizdir: preso.", "prendato": "-ato sadece -are fiillerinde. prendere → preso."}},
+    {"t": "choice", "topic": "già / ancora", "q": "Ustaya: “Panoyu bitirdin mi?” — “Evet, bitirdim bile.”", "a": "Sì, ho già finito.", "o": ["Sì, ho già finito.", "Sì, non ho ancora finito.", "Sì, ho ancora finito."],
+      "why": {"Sì, non ho ancora finito.": "Bu “henüz bitirmedim” demek; “evet” ile çelişiyor.", "Sì, ho ancora finito.": "ancora olumlu cümlede “henüz” anlamı vermez (“hâlâ / yine” olur). “Bitirdim bile” = ho già finito."}},
+    {"t": "type", "topic": "düzensiz ortaçlar", "q": "Türkçeden çevir: “Kapıyı kapattık.”", "a": ["abbiamo chiuso la porta", "noi abbiamo chiuso la porta"]}
+  ],
+  "pass": 4,
+  "pekistir": {
+    "items": [
+      {"t": "choice", "q": "Ortacı seç: scrivere → ___", "a": "scritto", "o": ["scrivuto", "scritto", "scrivato"],
+        "why": {"scrivuto": "scrivere düzensizdir: scritto.", "scrivato": "-ato sadece -are fiillerinde. scrivere → scritto."},
+        "ok": "scrivere → scritto (-tto grubu)."},
+      {"t": "choice", "q": "“İki gün önce Elif'i gördüm.”", "a": "Due giorni fa ho visto Elif.", "o": ["Fa due giorni ho visto Elif.", "Due giorni fa ho visto Elif."],
+        "why": {"Fa due giorni ho visto Elif.": "fa, süreden sonra gelir: due giorni fa (Türkçedeki “iki gün önce” sırasıyla aynı)."},
+        "ok": "Süre + fa = … önce."},
+      {"t": "choice", "q": "Geçmiş zamana çevir: “Mangio un panino.”", "a": "Ho mangiato un panino.", "o": ["Ho mangiato un panino.", "Ho mangio un panino.", "Mangiato un panino."],
+        "why": {"Ho mangio un panino.": "ho'dan sonra ortaç gelir: mangiato.", "Mangiato un panino.": "avere eksik: ho mangiato."},
+        "ok": "Ho mangiato un panino."},
+      {"t": "type", "q": "Türkçeden çevir: “Ne dedin?”", "a": ["che cosa hai detto", "cosa hai detto", "che hai detto", "che cosa hai detto tu"], "hint": "dire → detto. ne = che cosa (it12).", "ok": "Che cosa hai detto?"},
+      {"t": "type", "q": "Olumsuz yap ve “henüz” ekle: “Ho visto il messaggio.”", "a": ["non ho ancora visto il messaggio", "ancora non ho visto il messaggio"], "hint": "non avere'nin önüne, ancora avere ile ortacın arasına.", "ok": "Non ho ancora visto il messaggio."},
+      {"t": "order", "q": "Sırala: “Bu sabah kamyoneti açtılar.”", "words": ["il", "aperto", "stamattina", "furgone", "hanno"], "a": "stamattina hanno aperto il furgone", "alt": ["hanno aperto il furgone stamattina"], "ok": "Stamattina hanno aperto il furgone."}
+    ],
+    "konus_prompt": "Chiara dünkü iş gününü soracak: ne yaptın, kiminle konuştun, raporu yazdın mı, öğle yemeği yedin mi. En az 4 cümle avere + ortaç kur; en az 2 düzensiz ortaç (fatto, scritto, visto, preso…) ve bir kez già ya da non … ancora kullan."
+  }
+}
