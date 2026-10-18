@@ -320,6 +320,7 @@ function kPaint(){const el=K.el; if(!el)return; const tp=kTopics(K.coach); if(K.
     <h3 id="kTopL">Konu</h3><div class="kchips" role="radiogroup" aria-labelledby="kTopL">${tp.map((t,i)=>`<button type="button" class="kchip" role="radio" aria-checked="${i===K.topic}" data-kt="${i}">${esc(t.t)}</button>`).join("")}</div>
     ${tp[K.topic]&&tp[K.topic].sub?`<p class="hint" style="margin:0">${esc(tp[K.topic].sub)}</p>`:""}
     ${lk?`<p class="msg info" style="margin:0">${esc(lk)} <button type="button" class="btn btn-soft btn-sm" data-go="key">Ayarlar'a git</button></p>`:""}
+    ${kRtOn()?`<p class="msg ok" style="margin:0">Canlı ses açık: gerçek zamanlı görüşme, istediğin an sözünü kes.</p>`:`<p class="hint" style="margin:0">Duraksamasız, gerçek zamanlı ses için: <button type="button" class="btn btn-soft btn-sm" data-go="setup">Ayarlar › Canlı ses</button></p>`}
     <div class="btnRow"><button type="button" class="btn btn-primary btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Canlı konuşmayı başlat</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div>${kTip()}</article></div>`;}
 document.addEventListener("click",e=>{const b=e.target.closest("#konusMount button"); if(!b)return;
   if(b.dataset.kco){K.coach=b.dataset.kco; K.topic=0; kPaint(); return;}
@@ -340,7 +341,7 @@ function kCall(o){if(K.call)kEnd(true); const why=coachReady(); if(why){C.fNotic
   K.call={o,coach,lang:coach,turns:[],last:"",you:"",st:"thinking",paused:false,t0:Date.now(),pausedMs:0,pauseAt:0,timer:0,rec:null,srOff:!C.srOk(),retry:0,ctl:null,gen:0,caps:true,ended:false,userTurns:0};
   el.className="kc "+coach; el.hidden=false; document.documentElement.classList.add("kc-on"); C.ccStop(); ttsStop();
   try{/* iOS: ilk okuma dokunuşla açılır */if(ttsOk()){const u=new SpeechSynthesisUtterance(" "); u.volume=0; window.speechSynthesis.speak(u);}}catch(e){}
-  kPaintCall(); K.call.timer=setInterval(kTime,1000); kSend(null);}
+  kPaintCall(); K.call.timer=setInterval(kTime,1000); if(kRtOn()){K.call.rtWanted=true; K.call.srOff=false; const f=document.getElementById("kcType"); if(f)f.hidden=true; kRtStart(K.call); return;} kSend(null);}
 function kPaintCall(){const c=K.call, el=kEl(), co=COACH[c.coach], o=c.o;
   el.innerHTML=`<header class="kcTop"><div><b id="kcWho">${co.name}</b><span>${esc(LN[c.lang])}${o.topic?" · "+esc(o.topic):" · serbest"}</span></div><span class="kcTime mono" id="kcTime" role="timer">00:00</span></header>
    <div class="kcMid" id="kcMid"><button type="button" class="kcOrb" id="kcOrb" data-st="${c.st}" aria-label="Küre: koçu kes ya da konuşmanı bitir"><span class="kcRing"></span><span class="kcCore">${co.mono}</span></button>
@@ -406,9 +407,9 @@ function kStopListen(){const c=K.call; if(!c||!c.rec)return; const s=c.rec; s.do
 function kNoSR(){const c=K.call; if(!c)return; c.srOff=true; c.rec=null; const f=document.getElementById("kcType"); if(f)f.hidden=false; kState("listening"); const i=document.getElementById("kcIn"); if(i)i.focus({preventScroll:true});}
 function kHint(t){const h=document.getElementById("kcHint"); if(!h)return; h.textContent=t||""; h.hidden=!t;}
 async function kClick(e){const b=e.target.closest("button"); if(!b)return; const c=K.call;
-  if(b.id==="kcOrb"&&c&&!c.ended){if(c.st==="speaking"||c.st==="thinking"){if(c.st==="speaking"){c.cutGen=c.gen; kCut(c);} c.interrupted=false; c.gen++; ttsStop(); c.paused=false; kState("listening"); kListen();} else if(c.st==="listening"&&c.rec){kTurnEnd();} else if(c.st==="idle"){kResume();} return;}
-  if(b.id==="kcMic"&&c){if(c.paused)kResume(); else{c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");} return;}
-  if(b.id==="kcRep"&&c&&c.last){c.gen++; c.said=c.last; if(c.rec)clearTimeout(c.rec.silT); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
+  if(b.id==="kcOrb"&&c&&!c.ended){if(c.rt){kRtOrb(c); return;} if(c.rtWanted&&c.st==="idle"){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c); return;} if(c.st==="speaking"||c.st==="thinking"){if(c.st==="speaking"){c.cutGen=c.gen; kCut(c);} c.interrupted=false; c.gen++; ttsStop(); c.paused=false; kState("listening"); kListen();} else if(c.st==="listening"&&c.rec){kTurnEnd();} else if(c.st==="idle"){kResume();} return;}
+  if(b.id==="kcMic"&&c){if(c.rtWanted){if(!c.rt){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c);} else kRtPause(c,!c.paused); return;} if(c.paused)kResume(); else{c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");} return;}
+  if(b.id==="kcRep"&&c&&c.last){if(c.rt){kRtRepeat(c); return;} c.gen++; c.said=c.last; if(c.rec)clearTimeout(c.rec.silT); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
   if(b.id==="kcTr"&&c&&c.last){kHint("Türkçesi hazırlanıyor…"); try{const r=await C.sample()([{role:"user",content:"Aşağıdaki "+LN[c.lang]+" cümle(ler)in Türkçesini TEK satırda yaz. Başka hiçbir şey yazma, açıklama ekleme.\n\n"+spoken(c.last)}],{}); if(K.call===c)kHint("Türkçesi: "+String(r.text||"").replace(/\s+/g," ").trim());}catch(x){if(K.call===c)kHint(coachErr(x)||"Çeviri gelmedi.");} return;}
   if(b.id==="kcCapT"&&c){c.caps=!c.caps; b.setAttribute("aria-pressed",String(c.caps)); kCaps(); return;}
   if(b.id==="kcEnd"){kFinish(); return;}
@@ -416,8 +417,8 @@ async function kClick(e){const b=e.target.closest("button"); if(!b)return; const
   if(b.dataset.kadd!==undefined){kAddCard(+b.dataset.kadd,b); return;}
   if(b.id==="kcClose"){kClose(); return;}}
 function kResume(){const c=K.call; if(!c)return; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} c.paused=false; kHint(""); kListen();}
-function kSubmit(e){e.preventDefault(); const c=K.call; if(!c||c.ended)return; const i=document.getElementById("kcIn"), v=(i.value||"").trim(); if(!v)return; i.value=""; c.gen++; ttsStop(); kSend(v);}
-async function kFinish(){const c=K.call; if(!c||c.ended)return; c.ended=true; c.endAt=Date.now(); if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} c.gen++; clearInterval(c.timer); kStopListen(); ttsStop();
+function kSubmit(e){e.preventDefault(); const c=K.call; if(!c||c.ended)return; const i=document.getElementById("kcIn"), v=(i.value||"").trim(); if(!v)return; i.value=""; if(c.rt)return kRtText(c,v); c.gen++; ttsStop(); kSend(v);}
+async function kFinish(){const c=K.call; if(!c||c.ended)return; c.ended=true; c.endAt=Date.now(); if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} c.gen++; clearInterval(c.timer); kStopListen(); ttsStop(); kRtStop(c); c.turns=c.turns.filter(t=>String(t.content||"").trim());
   const mins=Math.max(1,Math.round(kMs()/60000)); const mid=document.getElementById("kcMid"), ctl=document.querySelector("#kc .kcCtl"); if(ctl)ctl.hidden=true;
   if(!c.userTurns){kClose(); return;}
   if(mid){mid.classList.add("sum"); mid.scrollTop=0;}
@@ -445,8 +446,56 @@ async function kAddCard(i,b){const p=K.sum&&K.sum.phrases[i], db=C.db; if(!p||!d
   if(C.S.cards.some(c=>c.lang===lang&&String(c.f||"").toLowerCase()===String(p.x).toLowerCase())){b.textContent="Zaten kartlarda"; return;}
   try{await db.collection("cards").add({lang,f:String(p.x).slice(0,120),tr:String(p.tr||"").slice(0,160),ex:"",box:1,due:C.addDays(today(),1),added:new Date().toISOString()}); b.textContent="Eklendi ✓";}catch(e){b.disabled=false; b.textContent="Eklenemedi";}}
 function kClose(){const c=K.call; const r=c&&c.result; kEnd(true); if(c&&c.o.onEnd)c.o.onEnd(r||null); C.renderLive(); C.lxPaint();}
-function kEnd(quiet){const c=K.call; if(c){c.ended=true; c.gen++; clearInterval(c.timer); kStopListen();} ttsStop(); K.call=null; const el=document.getElementById("kc"); if(el){el.hidden=true; el.innerHTML="";} document.documentElement.classList.remove("kc-on");}
-document.addEventListener("visibilitychange",()=>{const c=K.call; if(document.hidden&&c&&!c.ended&&!c.paused){c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");}});
+function kEnd(quiet){const c=K.call; if(c){c.ended=true; c.gen++; clearInterval(c.timer); kStopListen(); kRtStop(c);} ttsStop(); K.call=null; const el=document.getElementById("kc"); if(el){el.hidden=true; el.innerHTML="";} document.documentElement.classList.remove("kc-on");}
+document.addEventListener("visibilitychange",()=>{const c=K.call; if(document.hidden&&c&&!c.ended&&!c.paused){if(c.rt){kRtPause(c,true); return;} c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");}});
 window.TYLESSON={open,close,validate,konus:{mount:kMount,call:kCallPlan,start:kCall},spoken,sentences,state:()=>({L,K})};
+
+const RT_API="https://api.openai.com/v1/realtime", RT_MODELS=["gpt-realtime-2.1-mini","gpt-realtime-mini","gpt-realtime"];
+const kRtOn=()=>!!(window.TYRT&&TYRT.hasOai&&TYRT.hasOai()&&window.RTCPeerConnection&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia);
+function kRtSession(c,model){const o=c.o; let sys=C.speakRules(c.lang,{topic:o.topic,goal:o.goal,vocab:o.vocab,structures:o.structures,opener:o.opener,level:o.level});
+  if(Array.isArray(sys))sys=sys.map(b=>typeof b==="string"?b:(b&&b.text)||"").join("\n");
+  sys+="\n\n"+(c.lang==="it"?"CANLI SESLİ GÖRÜŞME: doğal, sıcak bir sesle ve yavaş konuş. Görüşme başlayınca Türab'ı selamla ve ilk soruyu sor.":"LIVE VOICE CALL: speak naturally and warmly, at a relaxed pace. When the call starts, greet Türab and ask the first question.");
+  return {type:"realtime",model,instructions:sys,audio:{input:{transcription:{model:"gpt-4o-mini-transcribe",language:c.lang},turn_detection:{type:"semantic_vad",eagerness:"high"},noise_reduction:{type:"near_field"}},output:{voice:c.lang==="it"?"marin":"cedar"}}};}
+async function kRtErr(r){let m=""; try{const j=await r.json(); m=(j.error&&j.error.message)||"";}catch(e){} const e=new Error(m||("HTTP "+r.status)); e.status=r.status; return e;}
+async function kRtConnect(c,model,offer){const key=TYRT.getOai(), session=kRtSession(c,model);
+  let eph=null; try{const r=await fetch(RT_API+"/client_secrets",{method:"POST",headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},body:JSON.stringify({session})});
+    if(r.ok){const j=await r.json(); eph=j.value||(j.client_secret&&j.client_secret.value)||null;} else if(r.status===401||r.status===429)throw await kRtErr(r);}catch(e){if(e.status)throw e;}
+  let r; if(eph) r=await fetch(RT_API+"/calls",{method:"POST",headers:{"Authorization":"Bearer "+eph,"Content-Type":"application/sdp"},body:offer.sdp});
+  else{const fd=new FormData(); fd.set("sdp",offer.sdp); fd.set("session",JSON.stringify(session)); r=await fetch(RT_API+"/calls",{method:"POST",headers:{"Authorization":"Bearer "+key},body:fd});}
+  if(!r.ok)throw await kRtErr(r); return r.text();}
+async function kRtStart(c){c.rt={pc:null,dc:null,mic:null,au:null,items:{},cap:""}; const R=c.rt; kState("thinking"); kHint("");
+  try{R.mic=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});}
+  catch(e){kHint("Mikrofon izni verilmedi. Tarayıcı ayarından mikrofona izin ver."); kRtFallback(c); return;}
+  if(c.ended||K.call!==c){kRtStop(c); return;}
+  const pc=new RTCPeerConnection(); R.pc=pc; const au=document.createElement("audio"); au.autoplay=true; au.setAttribute("playsinline",""); R.au=au;
+  pc.ontrack=e=>{au.srcObject=e.streams[0]; try{au.play().catch(()=>{});}catch(_){}};
+  R.mic.getTracks().forEach(t=>pc.addTrack(t,R.mic));
+  const dc=pc.createDataChannel("oai-events"); R.dc=dc; dc.onmessage=e=>{let j; try{j=JSON.parse(e.data);}catch(_){return;} kRtEvent(c,j);};
+  dc.onopen=()=>{kRtSend(c,{type:"conversation.item.create",item:{type:"message",role:"user",content:[{type:"input_text",text:c.lang==="it"?"(Görüşme başladı. Merhaba!)":"(The call has started. Hi!)"}]}}); kRtSend(c,{type:"response.create"});};
+  pc.onconnectionstatechange=()=>{if(K.call!==c||c.ended)return; if(pc.connectionState==="failed"||pc.connectionState==="disconnected"){kHint("Canlı ses bağlantısı koptu. Mikrofona dokun, yeniden bağlanayım."); c.paused=true; c.pauseAt=Date.now(); kState("idle"); kRtStop(c,true);}};
+  const offer=await pc.createOffer(); await pc.setLocalDescription(offer);
+  let ans=null, err=null; for(const m of RT_MODELS){try{ans=await kRtConnect(c,m,offer); R.model=m; break;}catch(e){err=e; if(e.status!==400&&e.status!==404)break;}}
+  if(!ans){kRtStop(c); const st=err&&err.status; kHint(st===401?"OpenAI anahtarı reddedildi. Ayarlar › Canlı ses'ten kontrol et.":st===429?"OpenAI kredisi bitti ya da limit doldu (platform.openai.com › Billing). Şimdilik normal görüşmeyle devam.":"Canlı sese bağlanılamadı ("+((err&&err.message)||"ağ").slice(0,80)+"). Normal görüşmeyle devam."); kRtFallback(c); return;}
+  if(c.ended||K.call!==c){kRtStop(c); return;}
+  await pc.setRemoteDescription({type:"answer",sdp:ans});}
+function kRtFallback(c){if(K.call!==c||c.ended)return; c.rt=null; c.rtWanted=false; c.srOff=!C.srOk(); const f=document.getElementById("kcType"); if(f)f.hidden=!c.srOff; kSend(null);}
+function kRtSend(c,o){try{c.rt&&c.rt.dc&&c.rt.dc.readyState==="open"&&c.rt.dc.send(JSON.stringify(o));}catch(e){}}
+function kRtEvent(c,j){if(K.call!==c||c.ended)return; const R=c.rt; if(!R)return; const t=j.type||"";
+  if(t==="input_audio_buffer.speech_started"){kState("listening"); c.you=""; kCaps(); return;}
+  if(t==="input_audio_buffer.committed"){const id=j.item_id||("u"+Date.now()); if(!R.items[id]){const it={role:"user",content:""}; R.items[id]=it; c.turns.push(it);} kState("thinking"); return;}
+  if(t==="conversation.item.input_audio_transcription.delta"){const it=R.items[j.item_id]; if(it){it.content+=j.delta||""; c.you=it.content.trim(); kCaps();} return;}
+  if(t==="conversation.item.input_audio_transcription.completed"){let it=R.items[j.item_id]; if(!it){it={role:"user",content:""}; R.items[j.item_id]=it; c.turns.push(it);} it.content=String(j.transcript||"").trim(); if(it.content){if(!it.n){it.n=1; c.userTurns++;} c.you=it.content; kCaps();} return;}
+  if(t==="response.output_audio.delta"||t==="output_audio_buffer.started"||t==="response.created"){if(c.st!=="speaking"&&t!=="response.created")kState("speaking"); return;}
+  if(t==="response.output_audio_transcript.delta"||t==="response.audio_transcript.delta"){R.cap+=j.delta||""; c.last=R.cap; if(c.st!=="speaking")kState("speaking"); kCaps(); return;}
+  if(t==="response.output_audio_transcript.done"||t==="response.audio_transcript.done"){const x=String(j.transcript||R.cap||"").trim(); R.cap=""; if(x){c.turns.push({role:"assistant",content:x}); c.last=x; kCaps();} return;}
+  if(t==="output_audio_buffer.stopped"||t==="output_audio_buffer.cleared"||t==="response.done"){if(t==="response.done"){const s=j.response&&j.response.status; if(s==="failed"){const d=j.response.status_details&&j.response.status_details.error; kHint("Canlı ses: "+((d&&d.message)||"yanıt üretilemedi"));}} if(!c.paused&&c.st==="speaking"&&t!=="response.done")kState("listening"); return;}
+  if(t==="error"){const m=(j.error&&j.error.message)||""; if(!/cancel|no active response/i.test(m))kHint("Canlı ses: "+m.slice(0,120)); return;}}
+function kRtOrb(c){if(c.st==="speaking"||c.st==="thinking"){kRtSend(c,{type:"response.cancel"}); kRtSend(c,{type:"output_audio_buffer.clear"}); kState("listening");} else if(c.st==="idle")kRtPause(c,false);}
+function kRtPause(c,on){const R=c.rt; if(!R)return kRtStart(c); c.paused=on; if(on){c.pauseAt=Date.now(); kRtSend(c,{type:"response.cancel"}); kRtSend(c,{type:"output_audio_buffer.clear"});} else if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;}
+  try{R.mic.getTracks().forEach(t=>t.enabled=!on);}catch(e){} if(R.au)R.au.muted=on; kState(on?"idle":"listening");}
+function kRtText(c,v){c.turns.push({role:"user",content:v}); c.userTurns++; c.you=v; kCaps(); kRtSend(c,{type:"conversation.item.create",item:{type:"message",role:"user",content:[{type:"input_text",text:v}]}}); kRtSend(c,{type:"response.create"});}
+function kRtRepeat(c){kRtSend(c,{type:"response.create",response:{instructions:c.lang==="it"?"Ripeti la tua ultima frase molto lentamente, parola per parola.":"Repeat your last sentence again, slowly and clearly."}});}
+function kRtStop(c,keep){const R=c&&c.rt; if(!R)return; try{R.dc&&R.dc.close();}catch(e){} try{R.pc&&R.pc.close();}catch(e){} try{R.mic&&R.mic.getTracks().forEach(t=>t.stop());}catch(e){} try{if(R.au){R.au.srcObject=null;}}catch(e){}
+  if(!keep)c.rt=null; else{R.pc=null; R.dc=null; R.mic=null; c.rt=null;}}
 
 })();

@@ -23,6 +23,7 @@ function kPaint(){const el=K.el; if(!el)return; const tp=kTopics(K.coach); if(K.
     <h3 id="kTopL">Konu</h3><div class="kchips" role="radiogroup" aria-labelledby="kTopL">${tp.map((t,i)=>`<button type="button" class="kchip" role="radio" aria-checked="${i===K.topic}" data-kt="${i}">${esc(t.t)}</button>`).join("")}</div>
     ${tp[K.topic]&&tp[K.topic].sub?`<p class="hint" style="margin:0">${esc(tp[K.topic].sub)}</p>`:""}
     ${lk?`<p class="msg info" style="margin:0">${esc(lk)} <button type="button" class="btn btn-soft btn-sm" data-go="key">Ayarlar'a git</button></p>`:""}
+    ${kRtOn()?`<p class="msg ok" style="margin:0">Canlı ses açık: gerçek zamanlı görüşme, istediğin an sözünü kes.</p>`:`<p class="hint" style="margin:0">Duraksamasız, gerçek zamanlı ses için: <button type="button" class="btn btn-soft btn-sm" data-go="setup">Ayarlar › Canlı ses</button></p>`}
     <div class="btnRow"><button type="button" class="btn btn-primary btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Canlı konuşmayı başlat</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div>${kTip()}</article></div>`;}
 document.addEventListener("click",e=>{const b=e.target.closest("#konusMount button"); if(!b)return;
   if(b.dataset.kco){K.coach=b.dataset.kco; K.topic=0; kPaint(); return;}
@@ -45,7 +46,7 @@ function kCall(o){if(K.call)kEnd(true); const why=coachReady(); if(why){C.fNotic
   K.call={o,coach,lang:coach,turns:[],last:"",you:"",st:"thinking",paused:false,t0:Date.now(),pausedMs:0,pauseAt:0,timer:0,rec:null,srOff:!C.srOk(),retry:0,ctl:null,gen:0,caps:true,ended:false,userTurns:0};
   el.className="kc "+coach; el.hidden=false; document.documentElement.classList.add("kc-on"); C.ccStop(); ttsStop();
   try{/* iOS: ilk okuma dokunuşla açılır */if(ttsOk()){const u=new SpeechSynthesisUtterance(" "); u.volume=0; window.speechSynthesis.speak(u);}}catch(e){}
-  kPaintCall(); K.call.timer=setInterval(kTime,1000); kSend(null);}
+  kPaintCall(); K.call.timer=setInterval(kTime,1000); if(kRtOn()){K.call.rtWanted=true; K.call.srOff=false; const f=document.getElementById("kcType"); if(f)f.hidden=true; kRtStart(K.call); return;} kSend(null);}
 function kPaintCall(){const c=K.call, el=kEl(), co=COACH[c.coach], o=c.o;
   el.innerHTML=`<header class="kcTop"><div><b id="kcWho">${co.name}</b><span>${esc(LN[c.lang])}${o.topic?" · "+esc(o.topic):" · serbest"}</span></div><span class="kcTime mono" id="kcTime" role="timer">00:00</span></header>
    <div class="kcMid" id="kcMid"><button type="button" class="kcOrb" id="kcOrb" data-st="${c.st}" aria-label="Küre: koçu kes ya da konuşmanı bitir"><span class="kcRing"></span><span class="kcCore">${co.mono}</span></button>
@@ -117,9 +118,9 @@ function kNoSR(){const c=K.call; if(!c)return; c.srOff=true; c.rec=null; const f
 function kHint(t){const h=document.getElementById("kcHint"); if(!h)return; h.textContent=t||""; h.hidden=!t;}
 /* ---- düğmeler ---- */
 async function kClick(e){const b=e.target.closest("button"); if(!b)return; const c=K.call;
-  if(b.id==="kcOrb"&&c&&!c.ended){if(c.st==="speaking"||c.st==="thinking"){if(c.st==="speaking"){c.cutGen=c.gen; kCut(c);} c.interrupted=false; c.gen++; ttsStop(); c.paused=false; kState("listening"); kListen();} else if(c.st==="listening"&&c.rec){kTurnEnd();} else if(c.st==="idle"){kResume();} return;}
-  if(b.id==="kcMic"&&c){if(c.paused)kResume(); else{c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");} return;}
-  if(b.id==="kcRep"&&c&&c.last){c.gen++; c.said=c.last; if(c.rec)clearTimeout(c.rec.silT); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
+  if(b.id==="kcOrb"&&c&&!c.ended){if(c.rt){kRtOrb(c); return;} if(c.rtWanted&&c.st==="idle"){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c); return;} if(c.st==="speaking"||c.st==="thinking"){if(c.st==="speaking"){c.cutGen=c.gen; kCut(c);} c.interrupted=false; c.gen++; ttsStop(); c.paused=false; kState("listening"); kListen();} else if(c.st==="listening"&&c.rec){kTurnEnd();} else if(c.st==="idle"){kResume();} return;}
+  if(b.id==="kcMic"&&c){if(c.rtWanted){if(!c.rt){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c);} else kRtPause(c,!c.paused); return;} if(c.paused)kResume(); else{c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");} return;}
+  if(b.id==="kcRep"&&c&&c.last){if(c.rt){kRtRepeat(c); return;} c.gen++; c.said=c.last; if(c.rec)clearTimeout(c.rec.silT); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
   if(b.id==="kcTr"&&c&&c.last){kHint("Türkçesi hazırlanıyor…"); try{const r=await C.sample()([{role:"user",content:"Aşağıdaki "+LN[c.lang]+" cümle(ler)in Türkçesini TEK satırda yaz. Başka hiçbir şey yazma, açıklama ekleme.\n\n"+spoken(c.last)}],{}); if(K.call===c)kHint("Türkçesi: "+String(r.text||"").replace(/\s+/g," ").trim());}catch(x){if(K.call===c)kHint(coachErr(x)||"Çeviri gelmedi.");} return;}
   if(b.id==="kcCapT"&&c){c.caps=!c.caps; b.setAttribute("aria-pressed",String(c.caps)); kCaps(); return;}
   if(b.id==="kcEnd"){kFinish(); return;}
@@ -127,9 +128,9 @@ async function kClick(e){const b=e.target.closest("button"); if(!b)return; const
   if(b.dataset.kadd!==undefined){kAddCard(+b.dataset.kadd,b); return;}
   if(b.id==="kcClose"){kClose(); return;}}
 function kResume(){const c=K.call; if(!c)return; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} c.paused=false; kHint(""); kListen();}
-function kSubmit(e){e.preventDefault(); const c=K.call; if(!c||c.ended)return; const i=document.getElementById("kcIn"), v=(i.value||"").trim(); if(!v)return; i.value=""; c.gen++; ttsStop(); kSend(v);}
+function kSubmit(e){e.preventDefault(); const c=K.call; if(!c||c.ended)return; const i=document.getElementById("kcIn"), v=(i.value||"").trim(); if(!v)return; i.value=""; if(c.rt)return kRtText(c,v); c.gen++; ttsStop(); kSend(v);}
 /* ---- bitir: özet + kayıt ---- */
-async function kFinish(){const c=K.call; if(!c||c.ended)return; c.ended=true; c.endAt=Date.now(); if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} c.gen++; clearInterval(c.timer); kStopListen(); ttsStop();
+async function kFinish(){const c=K.call; if(!c||c.ended)return; c.ended=true; c.endAt=Date.now(); if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} c.gen++; clearInterval(c.timer); kStopListen(); ttsStop(); kRtStop(c); c.turns=c.turns.filter(t=>String(t.content||"").trim());
   const mins=Math.max(1,Math.round(kMs()/60000)); const mid=document.getElementById("kcMid"), ctl=document.querySelector("#kc .kcCtl"); if(ctl)ctl.hidden=true;
   if(!c.userTurns){kClose(); return;}
   if(mid){mid.classList.add("sum"); mid.scrollTop=0;}
@@ -157,6 +158,6 @@ async function kAddCard(i,b){const p=K.sum&&K.sum.phrases[i], db=C.db; if(!p||!d
   if(C.S.cards.some(c=>c.lang===lang&&String(c.f||"").toLowerCase()===String(p.x).toLowerCase())){b.textContent="Zaten kartlarda"; return;}
   try{await db.collection("cards").add({lang,f:String(p.x).slice(0,120),tr:String(p.tr||"").slice(0,160),ex:"",box:1,due:C.addDays(today(),1),added:new Date().toISOString()}); b.textContent="Eklendi ✓";}catch(e){b.disabled=false; b.textContent="Eklenemedi";}}
 function kClose(){const c=K.call; const r=c&&c.result; kEnd(true); if(c&&c.o.onEnd)c.o.onEnd(r||null); C.renderLive(); C.lxPaint();}
-function kEnd(quiet){const c=K.call; if(c){c.ended=true; c.gen++; clearInterval(c.timer); kStopListen();} ttsStop(); K.call=null; const el=document.getElementById("kc"); if(el){el.hidden=true; el.innerHTML="";} document.documentElement.classList.remove("kc-on");}
-document.addEventListener("visibilitychange",()=>{const c=K.call; if(document.hidden&&c&&!c.ended&&!c.paused){c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");}});
+function kEnd(quiet){const c=K.call; if(c){c.ended=true; c.gen++; clearInterval(c.timer); kStopListen(); kRtStop(c);} ttsStop(); K.call=null; const el=document.getElementById("kc"); if(el){el.hidden=true; el.innerHTML="";} document.documentElement.classList.remove("kc-on");}
+document.addEventListener("visibilitychange",()=>{const c=K.call; if(document.hidden&&c&&!c.ended&&!c.paused){if(c.rt){kRtPause(c,true); return;} c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");}});
 window.TYLESSON={open,close,validate,konus:{mount:kMount,call:kCallPlan,start:kCall},spoken,sentences,state:()=>({L,K})};

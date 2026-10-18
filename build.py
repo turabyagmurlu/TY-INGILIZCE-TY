@@ -69,7 +69,7 @@ def build():
         f.write(out)
     return path, len(out.encode("utf-8"))
 
-MOD_PARTS = ["lesson.js", "konus.js"]
+MOD_PARTS = ["lesson.js", "konus.js", "rtvoice.js"]
 def write(rel, text):
     path = os.path.join(ROOT, rel); os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:

@@ -1673,6 +1673,16 @@ html:not(.tab-practice):not(.tab-units):not(.tab-progress) .pen-fab,html.lsn-on 
           <p class="hint" id="syncNote">Otomatik çalışır: açılışta, uygulamaya dönünce ve her kayıttan kısa süre sonra. Claude anahtarı ve GitHub token'ı senkrona girmez; her cihazda yerel kalır.</p>
         </div>
       </article>
+      <article class="card keyCard" id="oaiCard" aria-labelledby="oaiTitle">
+        <div class="chead"><div><h2 id="oaiTitle">Canlı ses (OpenAI)</h2><p class="lead">Konuş'ta koçla gerçek zamanlı, kesintisiz sesli görüşme: sözünü kesebilirsin, duraksama yok. Telefonda ve tablette de çalışır. Anahtar yoksa normal görüşme çalışır.</p></div><span class="keySt" id="oaiState"></span></div>
+        <div class="keyForm">
+          <label class="fl" for="oaiKey">OpenAI API anahtarı</label>
+          <div class="keyRow"><input type="password" id="oaiKey" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="sk-proj-…" aria-describedby="oaiNote"></div>
+          <div class="btnRow"><button type="button" class="btn btn-primary" id="btnOaiSave">Kaydet</button><button type="button" class="btn btn-ghost" id="btnOaiDel" hidden>Sil</button></div>
+          <div id="oaiMsg"></div>
+          <p class="hint" id="oaiNote"><b>platform.openai.com</b> → Billing'den kredi yükle (ör. 10 $) → <b>API keys</b> → Create new secret key → buraya yapıştır. Görüşme dakikası yaklaşık 1–3 sent (mini model). Diğer cihazlara QR ile birlikte geçer.</p>
+        </div>
+      </article>
       <article class="card progSetup" id="progSetup" aria-labelledby="progSetupTitle"></article>
       <article class="card instRow" id="instRow" aria-labelledby="instRowT" hidden></article>
       <article class="card" id="backupCard" aria-labelledby="bkTitle">
@@ -1745,7 +1755,7 @@ html:not(.tab-practice):not(.tab-units):not(.tab-progress) .pen-fab,html.lsn-on 
 <script>
 (function(){
 "use strict";
-const LS_KEY="tydil.apiKey", LS_SET="tydil.settings", LS_DB="tydil.db", LS_LEGACY="dilOgren_v4";
+const LS_OAI="tydil.openaiKey", LS_KEY="tydil.apiKey", LS_SET="tydil.settings", LS_DB="tydil.db", LS_LEGACY="dilOgren_v4";
 const LS_DEV="tydil.sync.dev", LS_LSMETA="tydil.sync.lsmeta", LS_STOKEN="tydil.sync.token", LS_SGIST="tydil.sync.gist";
 const SYNC_LS=["tydil-mode-last",LS_SET,LS_LEGACY], TOMB_DAYS=60;
 const COLLS=["sessions","topics","program","habits","exams","days","cards","chats","highlights","lessons"];
@@ -1765,7 +1775,12 @@ const KEY_RE=/^sk-ant-[A-Za-z0-9_-]+$/, KEY_MIN=40;
 const validKey=k=>{k=String(k||"").trim(); return KEY_RE.test(k)&&k.length>=KEY_MIN;};
 let keyStatus="", keyErr=null;
 function setKeyStatus(st,err){keyStatus=st; keyErr=err||null; fire("tydil:key",{has:!!getKey(),status:st,error:err?{code:err.code,message:err.message}:null});}
-function kIdb(fn){try{const r=indexedDB.open("tydil-k",1); r.onupgradeneeded=()=>{try{r.result.createObjectStore("k");}catch(e){}}; r.onsuccess=()=>{try{const d=r.result, t=d.transaction("k",fn?"readwrite":"readonly"), st=t.objectStore("k"); if(fn)fn(st); else{const g=st.get("key"); g.onsuccess=()=>{const v=g.result; if(v&&!getKey()&&KEY_RE.test(v)){lsSet(LS_KEY,v); setKeyStatus("ok");}};} t.oncomplete=()=>d.close();}catch(e){}};}catch(e){}}
+function kIdb(fn){try{const r=indexedDB.open("tydil-k",1); r.onupgradeneeded=()=>{try{r.result.createObjectStore("k");}catch(e){}}; r.onsuccess=()=>{try{const d=r.result, t=d.transaction("k",fn?"readwrite":"readonly"), st=t.objectStore("k"); if(fn)fn(st); else{const g=st.get("key"); g.onsuccess=()=>{const v=g.result; if(v&&!getKey()&&KEY_RE.test(v)){lsSet(LS_KEY,v); setKeyStatus("ok");}}; const o=st.get("oai"); o.onsuccess=()=>{const v=o.result; if(v&&!getOai()&&OAI_RE.test(v)){lsSet(LS_OAI,v); fire("tydil:oai",{has:true});}};} t.oncomplete=()=>d.close();}catch(e){}};}catch(e){}}
+const OAI_RE=/^sk-[A-Za-z0-9_-]{20,}$/;
+function getOai(){return (lsGet(LS_OAI)||"").trim();}
+function setOai(k){k=String(k||"").trim(); if(k&&(!OAI_RE.test(k)||/^sk-ant-/.test(k))){const e=new Error("OpenAI anahtarı sk- ile başlar (sk-proj-…)"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_OAI,k); else lsDel(LS_OAI); kIdb(st=>{k?st.put(k,"oai"):st.delete("oai");}); fire("tydil:oai",{has:!!k}); return !!k;}
+async function testOai(k){const key=String(k||getOai()).trim(); if(!key)throw rtErr("capability_disabled","Anahtar yok"); let r; try{r=await fetch("https://api.openai.com/v1/models",{headers:{"Authorization":"Bearer "+key}});}catch(e){throw rtErr("upstream_error","Ağ hatası");}
+  if(!r.ok){let t=""; try{t=await r.text();}catch(e){} throw httpErr(r.status,t);} return {ok:true};}
 function keyBackup(k){kIdb(st=>{k?st.put(k,"key"):st.delete("key");});}
 function setKey(k,opt){k=String(k||"").trim(); if(k&&!KEY_RE.test(k)){const e=new Error("Anahtar sk-ant- ile başlamalı"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_KEY,k); else lsDel(LS_KEY); keyBackup(k);
   if(!k){setKeyStatus("none"); return false;}
@@ -1992,15 +2007,16 @@ async function testKey(k){ const key=(k||getKey()).trim(); if(!key)throw rtErr("
 const userApi=()=>({name:(getSettings().name||"").trim()||"Türab"});
 
 window.claude={ async use(name){ if(name==="db"){await load(); return dbApi;} if(name==="sample")return sample; if(name==="user")return userApi(); return null; } };
-window.TYRT={MODELS,DEFAULT_MODEL,getKey,setKey,validKey,KEY_MIN,keyStatus:()=>keyStatus||(getKey()?"ok":"none"),keyError:()=>keyErr,hasKey:()=>!!getKey(),getSettings,setSettings,testKey,export:rtExport,import:rtImport,db:dbApi,get mode(){return mode;},ready:load,sync:syncApi};
+window.TYRT={MODELS,DEFAULT_MODEL,getKey,setKey,validKey,KEY_MIN,keyStatus:()=>keyStatus||(getKey()?"ok":"none"),keyError:()=>keyErr,hasKey:()=>!!getKey(),getOai,setOai,testOai,hasOai:()=>!!getOai(),getSettings,setSettings,testKey,export:rtExport,import:rtImport,db:dbApi,get mode(){return mode;},ready:load,sync:syncApi};
 window.rtExport=rtExport; window.rtImport=rtImport;
 try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persisted().then(p=>{if(!p)navigator.storage.persist().catch(()=>{});}).catch(()=>{});}catch(e){}
-try{if(typeof indexedDB!=="undefined"){if(getKey())keyBackup(getKey()); else kIdb();}}catch(e){}
+try{if(typeof indexedDB!=="undefined"){if(getKey())keyBackup(getKey()); if(!getKey()||!getOai())kIdb();}}catch(e){}
 const SYNC_TOKEN_RE=/^(github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,})$/, GIST_RE=/^[0-9a-f]{20,40}$/;
 function applyTransfer(text){ const i=String(text||"").indexOf("#k="); if(i<0) return {key:"bad",sync:false};
-  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?$/.exec(String(text).slice(i).trim());
+  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?(?:&o=(sk-[A-Za-z0-9_-]+))?$/.exec(String(text).slice(i).trim());
   if(!m||!validKey(m[1])) return {key:"bad",sync:false};
   let sync=false; if(m[2]&&SYNC_TOKEN_RE.test(m[2])&&GIST_RE.test(m[3])){ lsSet(LS_STOKEN,m[2]); lsSet(LS_SGIST,m[3]); sync=true; }
+  if(m[4]&&OAI_RE.test(m[4])){try{setOai(m[4]); window.TYOAIIMPORT="ok";}catch(e){}}
   window.TYSYNCIMPORT=sync?"ok":window.TYSYNCIMPORT; window.TYKEYIMPORT="ok";
   try{setKey(m[1],{verify:true});}catch(e){window.TYKEYIMPORT="bad"; return {key:"bad",sync};}
   return {key:"ok",sync}; }
@@ -3702,7 +3718,7 @@ const INSTR_CORE=[INSTR_STUDENT,INSTR_FIX_PAGE].join("\n\n");
 const KEY_ERR={capability_disabled:"Önce bir anahtar gir.",session_expired:"API anahtarı geçersiz; Ayarlar'dan kontrol et.",permission_denied:"Bu anahtar bu modele erişemiyor / izin yok.",rate_limited:"Anahtar çalışıyor ama limit doldu ya da sunucu yoğun. Biraz sonra tekrar dene.",prompt_too_large:"İstek çok büyük.",upstream_error:"Bağlantı kurulamadı. İnterneti ve anahtarı kontrol et."};
 const keyErrText=e=>{const c=e&&e.code; const base=KEY_ERR[c]||"Bağlantı kurulamadı."; const m=e&&e.message&&c==="upstream_error"&&!/Ağ hatası/.test(e.message)?" ("+String(e.message).slice(0,120)+")":""; return base+m;};
 function maskKey(k){k=String(k||""); if(k.length<=12)return k?"••••":""; return k.slice(0,7)+"…"+k.slice(-4);}
-function renderKey(){
+function renderKey(){try{renderOai();}catch(e){}
   const has=TYRT.hasKey(), st=$("#keyState"), inp=$("#apiKey"), del=$("#btnKeyDel");
   const ks=TYRT.keyStatus?TYRT.keyStatus():(has?"ok":"none");
   if(st){st.innerHTML=!has?"Anahtar yok":ks==="pending"?"Doğrulanıyor…":ks==="bad"?"Doğrulanamadı · "+esc(maskKey(TYRT.getKey())):ICON("check")+"Bağlı · "+esc(maskKey(TYRT.getKey())); st.className="keySt "+(has&&ks==="ok"?"on":"off");}
@@ -3732,6 +3748,15 @@ let keyDelArmed=0;
 function keyDel(){const b=$("#btnKeyDel"), el=$("#keyMsg");
   if(Date.now()-keyDelArmed>3500){keyDelArmed=Date.now(); b.textContent="Silinsin mi? Tekrar bas"; b.classList.add("warn"); setTimeout(()=>{if(Date.now()-keyDelArmed>=3400){b.textContent="Anahtarı sil";b.classList.remove("warn");}},3600); return;}
   keyDelArmed=0; b.textContent="Anahtarı sil"; b.classList.remove("warn"); TYRT.setKey(""); renderKey(); msg(el,"info","Anahtar silindi. Koçlar yeni anahtar girilince açılır.");}
+function renderOai(){const has=TYRT.hasOai&&TYRT.hasOai(), st=$("#oaiState"), inp=$("#oaiKey"), del=$("#btnOaiDel"); if(!st)return;
+  st.innerHTML=has?ICON("check")+"Açık · "+esc(maskKey(TYRT.getOai())):"Kapalı"; st.className="keySt "+(has?"on":"off"); if(del)del.hidden=!has; if(inp)inp.placeholder=has?"Kayıtlı: "+maskKey(TYRT.getOai()):"sk-proj-…";}
+async function oaiSave(){const inp=$("#oaiKey"), el=$("#oaiMsg"), v=inp.value.trim(); if(!v){msg(el,"err","Anahtarı yapıştır, sonra Kaydet."); inp.focus(); return;}
+  if(/^sk-ant-/.test(v)||!/^sk-[A-Za-z0-9_-]{20,}$/.test(v)){msg(el,"err","Bu bir OpenAI anahtarı değil. platform.openai.com → API keys (sk-proj-… ile başlar)."); return;}
+  msg(el,"info","Anahtar deneniyor…"); try{await TYRT.testOai(v);}catch(e){msg(el,"err",e.code==="session_expired"?"OpenAI anahtarı reddedildi; tamamını kopyaladığından emin ol.":keyErrText(e)); return;}
+  TYRT.setOai(v); inp.value=""; renderOai(); msg(el,"ok","✓ Canlı ses açık. Konuş'ta görüşme artık gerçek zamanlı.");}
+function oaiDel(){TYRT.setOai(""); renderOai(); msg($("#oaiMsg"),"info","OpenAI anahtarı silindi; Konuş normal görüşmeye döndü.");}
+document.addEventListener("click",e=>{const b=e.target.closest("#btnOaiSave,#btnOaiDel"); if(!b)return; b.id==="btnOaiSave"?oaiSave():oaiDel();});
+document.addEventListener("tydil:oai",()=>{try{renderOai();}catch(e){}});
 const bkName=()=>"ty-dil-yedek-"+today()+".json";
 function bkDownload(){const el=$("#bkMsg"); try{const data=JSON.stringify(TYRT.export(),null,1), blob=new Blob([data],{type:"application/json"}), url=URL.createObjectURL(blob), a=document.createElement("a");
     a.href=url; a.download=bkName(); document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),4000);
@@ -7059,7 +7084,7 @@ window.TYPEN={get state(){return PEN;},apply:penApply,create:penCreateFromSel,re
 const KX={timer:0,left:0};
 function kxUrl(){const k=TYRT.getKey(); let base=""; try{base=location.origin+location.pathname;}catch(e){base="https://turabyagmurlu.github.io/TY-INGILIZCE-TY/";}
   if(!/^https?:/.test(base)) base="https://turabyagmurlu.github.io/TY-INGILIZCE-TY/";
-  const sy=typeof syncConnected==="function"&&syncConnected(); return base+"#k="+k+(sy?"&s="+syToken()+"&g="+syGist():"");}
+  const sy=typeof syncConnected==="function"&&syncConnected(); const oa=TYRT.getOai?TYRT.getOai():""; return base+"#k="+k+(sy?"&s="+syToken()+"&g="+syGist():"")+(oa?"&o="+oa:"");}
 function kxSvg(text){const q=window.TYQR(text,text.length>200?"L":"M"), n=q.n, pad=4, N=n+pad*2; let d="";
   for(let r=0;r<n;r++) for(let c=0;c<n;c++) if(q.dark(r,c)) d+=`M${c+pad} ${r+pad}h1v1h-1z`;
   return `<svg class="kxQr" viewBox="0 0 ${N} ${N}" role="img" aria-label="Anahtar aktarım QR kodu" shape-rendering="crispEdges"><rect width="${N}" height="${N}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`;}
@@ -7085,7 +7110,7 @@ else if(window.TYKEYIMPORT==="bad") kxToast("err","QR'daki anahtar okunamadı. B
 document.addEventListener("tydil:key",e=>{const d=e&&e.detail||{}; kxRender();
   if(window.TYKEYIMPORT==="ok"&&d.status&&d.status!=="pending"){window.TYKEYIMPORT="done";
     if(d.status==="ok"&&KXS.sync){KXS.keyOk=true; KXS.syncDone?(KXS.syncOk?kxToast("ok","Bağlandı ✓ Koçlar açık · İlerleme indirildi ✓"):kxToast("err","Bağlandı ✓ Koçlar açık · ilerleme indirilemedi: "+KXS.syncText)):kxToast("pend","Bağlandı ✓ Koçlar açık · ilerleme indiriliyor…");}
-    else if(d.status==="ok") kxToast("ok","Bağlandı ✓ Koçlar bu cihazda açık.");
+    else if(d.status==="ok") kxToast("ok","Bağlandı ✓ Koçlar bu cihazda açık."+(window.TYOAIIMPORT==="ok"?" Canlı ses de açık.":""));
     else kxToast("err","Anahtar aktarıldı ama doğrulanamadı: "+(typeof keyErrText==="function"?keyErrText(d.error):"bağlantı hatası")+"");}});
 document.addEventListener("tydil:sync",e=>{const d=e&&e.detail||{}; if(!KXS.sync||KXS.syncDone) return; KXS.syncDone=true; KXS.syncOk=!!d.ok; KXS.syncText=d.text||"bağlantı hatası";
   if(!d.ok){kxToast("err","İlerleme indirilemedi: "+(d.text||"bağlantı hatası")+" Ayarlar → Cihazlar arası senkron."); return;}

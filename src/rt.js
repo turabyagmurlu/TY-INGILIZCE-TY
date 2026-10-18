@@ -8,7 +8,7 @@
    Uygulama kodundan ÖNCE yüklenir. */
 (function(){
 "use strict";
-const LS_KEY="tydil.apiKey", LS_SET="tydil.settings", LS_DB="tydil.db", LS_LEGACY="dilOgren_v4";
+const LS_OAI="tydil.openaiKey", LS_KEY="tydil.apiKey", LS_SET="tydil.settings", LS_DB="tydil.db", LS_LEGACY="dilOgren_v4";
 /* Senkron (sync.js): cihaz kimliği + belge başına {ts,dev,del?} + localStorage anahtarlarının {ts,h} kaydı. Token/gist kimliği burada okunmaz/yazılmaz (yalnızca QR içe aktarma). */
 const LS_DEV="tydil.sync.dev", LS_LSMETA="tydil.sync.lsmeta", LS_STOKEN="tydil.sync.token", LS_SGIST="tydil.sync.gist";
 const SYNC_LS=["tydil-mode-last",LS_SET,LS_LEGACY], TOMB_DAYS=60;
@@ -35,7 +35,13 @@ let keyStatus="", keyErr=null;
 function setKeyStatus(st,err){keyStatus=st; keyErr=err||null; fire("tydil:key",{has:!!getKey(),status:st,error:err?{code:err.code,message:err.message}:null});}
 /* setKey(k,{verify:true}) → kaydeder, durumu pending yapar ve bağlantı testini başlatır (sonuç tydil:key ile duyurulur) */
 /* Yedek: anahtar IndexedDB'de de tutulur ("tydil-k"). localStorage boşalırsa (tarayıcı temizliği/iOS) açılışta geri yüklenir. */
-function kIdb(fn){try{const r=indexedDB.open("tydil-k",1); r.onupgradeneeded=()=>{try{r.result.createObjectStore("k");}catch(e){}}; r.onsuccess=()=>{try{const d=r.result, t=d.transaction("k",fn?"readwrite":"readonly"), st=t.objectStore("k"); if(fn)fn(st); else{const g=st.get("key"); g.onsuccess=()=>{const v=g.result; if(v&&!getKey()&&KEY_RE.test(v)){lsSet(LS_KEY,v); setKeyStatus("ok");}};} t.oncomplete=()=>d.close();}catch(e){}};}catch(e){}}
+function kIdb(fn){try{const r=indexedDB.open("tydil-k",1); r.onupgradeneeded=()=>{try{r.result.createObjectStore("k");}catch(e){}}; r.onsuccess=()=>{try{const d=r.result, t=d.transaction("k",fn?"readwrite":"readonly"), st=t.objectStore("k"); if(fn)fn(st); else{const g=st.get("key"); g.onsuccess=()=>{const v=g.result; if(v&&!getKey()&&KEY_RE.test(v)){lsSet(LS_KEY,v); setKeyStatus("ok");}}; const o=st.get("oai"); o.onsuccess=()=>{const v=o.result; if(v&&!getOai()&&OAI_RE.test(v)){lsSet(LS_OAI,v); fire("tydil:oai",{has:true});}};} t.oncomplete=()=>d.close();}catch(e){}};}catch(e){}}
+/* OpenAI anahtarı (yalnızca canlı ses): sk-… biçimi; cihazda saklanır, yedeği IndexedDB'de */
+const OAI_RE=/^sk-[A-Za-z0-9_-]{20,}$/;
+function getOai(){return (lsGet(LS_OAI)||"").trim();}
+function setOai(k){k=String(k||"").trim(); if(k&&(!OAI_RE.test(k)||/^sk-ant-/.test(k))){const e=new Error("OpenAI anahtarı sk- ile başlar (sk-proj-…)"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_OAI,k); else lsDel(LS_OAI); kIdb(st=>{k?st.put(k,"oai"):st.delete("oai");}); fire("tydil:oai",{has:!!k}); return !!k;}
+async function testOai(k){const key=String(k||getOai()).trim(); if(!key)throw rtErr("capability_disabled","Anahtar yok"); let r; try{r=await fetch("https://api.openai.com/v1/models",{headers:{"Authorization":"Bearer "+key}});}catch(e){throw rtErr("upstream_error","Ağ hatası");}
+  if(!r.ok){let t=""; try{t=await r.text();}catch(e){} throw httpErr(r.status,t);} return {ok:true};}
 function keyBackup(k){kIdb(st=>{k?st.put(k,"key"):st.delete("key");});}
 function setKey(k,opt){k=String(k||"").trim(); if(k&&!KEY_RE.test(k)){const e=new Error("Anahtar sk-ant- ile başlamalı"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_KEY,k); else lsDel(LS_KEY); keyBackup(k);
   if(!k){setKeyStatus("none"); return false;}
@@ -302,20 +308,21 @@ const userApi=()=>({name:(getSettings().name||"").trim()||"Türab"});
 
 /* ===== window.claude ===== */
 window.claude={ async use(name){ if(name==="db"){await load(); return dbApi;} if(name==="sample")return sample; if(name==="user")return userApi(); return null; } };
-window.TYRT={MODELS,DEFAULT_MODEL,getKey,setKey,validKey,KEY_MIN,keyStatus:()=>keyStatus||(getKey()?"ok":"none"),keyError:()=>keyErr,hasKey:()=>!!getKey(),getSettings,setSettings,testKey,export:rtExport,import:rtImport,db:dbApi,get mode(){return mode;},ready:load,sync:syncApi};
+window.TYRT={MODELS,DEFAULT_MODEL,getKey,setKey,validKey,KEY_MIN,keyStatus:()=>keyStatus||(getKey()?"ok":"none"),keyError:()=>keyErr,hasKey:()=>!!getKey(),getOai,setOai,testOai,hasOai:()=>!!getOai(),getSettings,setSettings,testKey,export:rtExport,import:rtImport,db:dbApi,get mode(){return mode;},ready:load,sync:syncApi};
 window.rtExport=rtExport; window.rtImport=rtImport;
 /* Kalıcı depolama iste (tarayıcı yer açarken verileri silmesin) + anahtar yedeği: yoksa geri yükle, varsa yedeğe yaz */
 try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persisted().then(p=>{if(!p)navigator.storage.persist().catch(()=>{});}).catch(()=>{});}catch(e){}
-try{if(typeof indexedDB!=="undefined"){if(getKey())keyBackup(getKey()); else kIdb();}}catch(e){}
+try{if(typeof indexedDB!=="undefined"){if(getKey())keyBackup(getKey()); if(!getKey()||!getOai())kIdb();}}catch(e){}
 /* ===== QR ile aktarım: adres "#k=sk-ant-…" (yalnızca anahtar) ya da "#k=…&s=<GitHub token>&g=<gist kimliği>" (anahtar + senkron) ile açılırsa
    değerler kaydedilir, adres hemen temizlenir. Parça (#…) sunucuya gitmez; uygulama kodu adresi okumadan önce temizlenir.
    Sonuç: window.TYKEYIMPORT = "ok" | "bad" · window.TYSYNCIMPORT = "ok" (senkron bilgisi de geldiyse). */
 const SYNC_TOKEN_RE=/^(github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,})$/, GIST_RE=/^[0-9a-f]{20,40}$/;
 /* applyTransfer("…#k=…[&s=…&g=…]") → {key:"ok"|"bad", sync:bool}. Adres çubuğu (QR bağlantısı) ve uygulama içi kamera okuyucu ortak kullanır. */
 function applyTransfer(text){ const i=String(text||"").indexOf("#k="); if(i<0) return {key:"bad",sync:false};
-  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?$/.exec(String(text).slice(i).trim());
+  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?(?:&o=(sk-[A-Za-z0-9_-]+))?$/.exec(String(text).slice(i).trim());
   if(!m||!validKey(m[1])) return {key:"bad",sync:false};
   let sync=false; if(m[2]&&SYNC_TOKEN_RE.test(m[2])&&GIST_RE.test(m[3])){ lsSet(LS_STOKEN,m[2]); lsSet(LS_SGIST,m[3]); sync=true; }
+  if(m[4]&&OAI_RE.test(m[4])){try{setOai(m[4]); window.TYOAIIMPORT="ok";}catch(e){}}
   window.TYSYNCIMPORT=sync?"ok":window.TYSYNCIMPORT; window.TYKEYIMPORT="ok";
   try{setKey(m[1],{verify:true});}catch(e){window.TYKEYIMPORT="bad"; return {key:"bad",sync};}
   return {key:"ok",sync}; }
