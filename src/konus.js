@@ -3,7 +3,7 @@
    Küreye dokun: koçu keser ve dinlemeye geçer (dinlerken dokunmak turu hemen bitirir). Ses tanıma yok/izin yok → yazı kutusu (klavyenin mikrofonuyla dikte).
    Bitir → özet (süre, 3 düzeltme, 3 ifade + Dinle/Kartlara ekle, 1 ipucu) + seans: İngilizce "speaking", İtalyanca "sesli" (aynı gün toplanır). */
 const K={el:null,coach:"en",topic:0,call:null};
-const K_SIL=1200, K_RETRY=2;
+const K_SIL=800, K_RETRY=2, K_FAST="claude-haiku-5-5";
 const KIT_ALT=["Kendini tanıt: adın, şehrin, işin","Ailen ve memleketin","Şantiyede bir gün: ne var, ne yok"];
 function kTopics(coach){const out=[];
   if(coach==="en"){const e=C.enToday(), wk=C.SPEAK_EN, i0=Math.max(0,wk.indexOf(e.theme)); const L0=C.LX.index&&e.t?C.lxMeta(e.t[1]):null;
@@ -18,13 +18,14 @@ function kMount(el){if(!el)return; K.el=el; kPaint();}
 function kPaint(){const el=K.el; if(!el)return; const tp=kTopics(K.coach); if(K.topic>=tp.length)K.topic=0;
   const co=c=>`<button type="button" class="kco" role="radio" aria-checked="${K.coach===c}" data-kco="${c}"><span class="kav ${c}" aria-hidden="true">${COACH[c].mono}</span><span><b>${COACH[c].name}</b><small>${c==="en"?"İngilizce · B1+ → B2":"İtalyanca · A1, çok yavaş ve basit"}</small></span></button>`;
   const lk=coachReady();
-  el.innerHTML=`<div class="kpick"><div class="phead"><h2>Konuş</h2><p>Telefonla konuşur gibi: koç konuşur, sen sesli cevap verirsin. Mikrofon kendiliğinden açılır; koçu kesmek için küreye dokun.</p></div>
+  el.innerHTML=`<div class="kpick"><div class="phead"><h2>Konuş</h2><p>Koçu ve konuyu seç, <b>Claude ile canlı sesli konuş</b>'a bas: Claude uygulaması koç talimatıyla açılır, sesli modda kesintisiz konuşursun.</p></div>
    <article class="card kpick"><div class="kcoaches" role="radiogroup" aria-label="Koç">${co("en")}${co("it")}</div>
     <h3 id="kTopL">Konu</h3><div class="kchips" role="radiogroup" aria-labelledby="kTopL">${tp.map((t,i)=>`<button type="button" class="kchip" role="radio" aria-checked="${i===K.topic}" data-kt="${i}">${esc(t.t)}</button>`).join("")}</div>
     ${tp[K.topic]&&tp[K.topic].sub?`<p class="hint" style="margin:0">${esc(tp[K.topic].sub)}</p>`:""}
-    ${kTip()}
     ${lk?`<p class="msg info" style="margin:0">${esc(lk)} <button type="button" class="btn btn-soft btn-sm" data-go="key">Ayarlar'a git</button></p>`:""}
-    <div class="btnRow"><button type="button" class="btn btn-primary btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Aramayı başlat</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div></article></div>`;}
+    <div class="kcl"><a class="btn btn-primary btn-big" id="kClaude" href="${kUrl(kBrief(K.coach,tp[K.topic]||{},K.kk))}" target="_blank" rel="noopener">${ICON("speaking")}Claude ile canlı sesli konuş</a><p class="hint" style="margin:0">Claude uygulaması açılır, koç talimatı hazır gelir. Gönder'e bas, sonra ses dalgası düğmesine dokun: kesintisiz, doğal sesli konuşma.</p></div>
+    <div class="btnRow"><button type="button" class="btn btn-soft btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Uygulama içi arama</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div>${kTip()}</article></div>`;
+  kPrep(tp[K.topic]||{});}
 document.addEventListener("click",e=>{const b=e.target.closest("#konusMount button"); if(!b)return;
   if(b.dataset.kco){K.coach=b.dataset.kco; K.topic=0; kPaint(); return;}
   if(b.dataset.kt){K.topic=+b.dataset.kt; kPaint(); return;}
@@ -32,8 +33,26 @@ document.addEventListener("click",e=>{const b=e.target.closest("#konusMount butt
 function kStartFrom(coach,t){let o={coach,topic:t.free?"":t.t};
   if(t.lesson){C.lxGet(t.lesson).then(d=>{const k=d.konus||{}; kCall(Object.assign(o,{lessonId:d.id,lessonTitle:d.title,goal:k.goal,vocab:arr(k.vocab),structures:arr(k.structures),opener:k.opener_hint,level:k.level_note}));}).catch(()=>kCall(o));}
   else kCall(o);}
+/* Claude uygulamasının sesli modu: koç talimatı claude.ai/new?q= ile hazır gelir (panoya da kopyalanır) */
+function kBrief(coach,t,k){k=k||{}; const it=coach==="it", topic=t.free?"serbest":t.t;
+  const L=it?["Sen Chiara'sın, İtalyanca konuşma koçum. Seninle şimdi Claude'un sesli modunda gerçek zamanlı konuşacağız.","Seviyem A1 (yeni başlıyorum). Çok kısa ve yavaş İtalyanca cümleler kur; takılırsam tek cümleyle Türkçe açıkla, sonra İtalyancaya dön."]
+    :["Sen Oliver'sın, İngilizce konuşma koçum. Seninle şimdi Claude'un sesli modunda gerçek zamanlı konuşacağız.","Seviyem B1+, hedefim B2. Doğal ve günlük İngilizce konuş; sadece İngilizce."];
+  L.push("Konu: "+topic+"."); if(k.goal)L.push("Hedef: "+k.goal); if(k.structures&&k.structures.length)L.push("Kullanmamı istediğin yapılar: "+k.structures.join(", ")+".");
+  if(k.vocab&&k.vocab.length)L.push("Kelimeler: "+k.vocab.slice(0,12).join(", ")+".");
+  L.push("Ben elektrik taşeronuyum (şantiye, pano, kablo, ekip); örnekleri buradan seç.","Kurallar: her cevabın 1–3 kısa cümle olsun ve bir soruyla bitsin. Hatamı akışı bozmadan düzelt: doğrusunu bir kez söyle, devam et. Uzun açıklama yapma.","\"Bitir\" dediğimde Türkçe kısa özet ver: en önemli 3 hatam (yanlış → doğru) ve öğrenmem gereken 3 ifade.","Şimdi beni selamla ve ilk soruyu sor.");
+  return L.join("\n");}
+const kUrl=b=>"https://claude.ai/new?q="+encodeURIComponent(b);
+/* Bağlantı önceden hazırlanır (iOS: dokunuş anında senkron açılmalı); derse bağlı konuda dersin konuş yönergesi eklenir */
+function kPrep(t){const sig=K.coach+"|"+(t.lesson||"")+"|"+(t.t||""); if(K.kkSig===sig)return; K.kkSig=sig; K.kk=null;
+  if(t.lesson)C.lxGet(t.lesson).then(d=>{if(K.kkSig!==sig)return; K.kk=d.konus||{}; const a=document.getElementById("kClaude"); if(a)a.href=kUrl(kBrief(K.coach,t,K.kk));}).catch(()=>{});}
+/* Claude'a geçiş: talimat panoya da kopyalanır; geri dönünce geçen süre Konuş seansı olarak yazılır (en az 2, en çok 45 dk) */
+document.addEventListener("click",e=>{const a=e.target.closest("#kClaude"); if(!a)return; try{const q=decodeURIComponent(a.href.split("?q=")[1]||""); navigator.clipboard&&navigator.clipboard.writeText(q).catch(()=>{});}catch(_){}
+  const t=kTopics(K.coach)[K.topic]||{}; K.ext={t0:Date.now(),lang:K.coach,topic:t.free?"":t.t,lessonId:t.lesson||null};});
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState!=="visible"||!K.ext)return; const x=K.ext, m=Math.round((Date.now()-x.t0)/60000); if(m<2)return; K.ext=null;
+  kSave({lang:x.lang,o:{topic:x.topic,lessonId:x.lessonId}},Math.min(45,m)).then(()=>{try{C.toast&&C.toast("Claude konuşması kaydedildi · "+Math.min(45,m)+" dk");}catch(e){}});});
 /* Bugün planından: {coach, lesson} */
-function kCallPlan(o){const coach=o.coach==="it"?"it":"en"; K.coach=coach; K.topic=0; kPaint(); const t=kTopics(coach)[0]; if(o.lesson)t.lesson=o.lesson; kStartFrom(coach,t);}
+/* Plandan gelince arama kendiliğinden başlamaz: konu seçili gelir, öne çıkan "Claude ile canlı sesli konuş" (gerçek zamanlı ses). Uygulama içi arama yedek. */
+function kCallPlan(o){const coach=o.coach==="it"?"it":"en"; K.coach=coach; K.topic=0; kPaint(); const a=document.getElementById("kClaude"); if(a){try{a.focus({preventScroll:true}); a.scrollIntoView({block:"center"});}catch(e){}}}
 /* ---- arama ekranı ---- */
 function kEl(){let el=document.getElementById("kc"); if(el)return el;
   el=document.createElement("div"); el.id="kc"; el.className="kc"; el.setAttribute("role","dialog"); el.setAttribute("aria-modal","true"); el.setAttribute("aria-labelledby","kcWho"); el.lang="tr"; el.hidden=true;
@@ -73,7 +92,7 @@ async function kSend(text){const c=K.call; if(!c||c.ended)return; const gen=++c.
   const flush=final=>{let end=0; const re=/[.!?…]+["'»)*_]*\s+/g; let m; while((m=re.exec(buf)))end=m.index+m[0].length;
     if(end){sentences(buf.slice(0,end)).forEach(out); buf=buf.slice(end);} if(final&&buf.trim()){sentences(buf).forEach(out); buf="";}};
   let r=null;
-  try{r=await C.sample()(kTurns(),{onText:({text:t})=>{if(gen!==c.gen||c.ended)return; buf+=t.slice(said); said=t.length; flush(false);}});}
+  try{r=await C.sample()(kTurns(),{model:K_FAST,maxTokens:400,onText:({text:t})=>{if(gen!==c.gen||c.ended)return; buf+=t.slice(said); said=t.length; flush(false);}});}
   catch(e){if(c.ended)return; if(text&&c.turns[c.turns.length-1]&&c.turns[c.turns.length-1].content===text){c.turns.pop(); c.userTurns--;} if(gen!==c.gen)return; ttsStop(); kHint(coachErr(e)||"Yanıt gelmedi. Tekrar dene."); c.paused=true; c.pauseAt=Date.now(); kState("idle"); return;}
   if(c.ended)return;
   const full=String(r&&r.text||"").trim(); c.turns.push({role:"assistant",content:full||"…"}); c.last=full; kCaps();

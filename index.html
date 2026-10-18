@@ -1949,11 +1949,11 @@ async function streamOnce(body,key,signal,onEvent){ let resp;
 async function sample(turns,opts){ opts=opts||{}; const key=getKey(); const signal=opts.signal;
   if(!key)throw rtErr("capability_disabled","API anahtarı yok");
   const tools=(Array.isArray(opts.tools)?opts.tools:[]).filter(t=>t&&t.name), byName={}; tools.forEach(t=>byName[t.name]=t);
-  const {system,messages}=splitTurns(turns); const model=getSettings().model||DEFAULT_MODEL;
+  const {system,messages}=splitTurns(turns); const model=opts.model&&MODELS.some(m=>m.id===opts.model)?opts.model:(getSettings().model||DEFAULT_MODEL), maxTok=+opts.maxTokens>0?Math.min(+opts.maxTokens,MAX_TOKENS):MAX_TOKENS;
   let text="", truncated=false, rounds=0; const onText=typeof opts.onText==="function"?opts.onText:null;
   const push=s=>{ if(!s)return; text+=s; if(onText){try{onText({text,delta:s});}catch(e){}} };
   for(;;){ if(signal&&signal.aborted)throw rtErr("cancelled","İptal",text);
-    const body={model,max_tokens:MAX_TOKENS,messages,stream:true}; if(system&&system.length)body.system=system;
+    const body={model,max_tokens:maxTok,messages,stream:true}; if(system&&system.length)body.system=system;
     if(tools.length){body.tools=tools.map(t=>({name:t.name,description:String(t.description||""),input_schema:toolSchema(t)})); body.tools[body.tools.length-1].cache_control=CACHE;}   /* araç tanımları sabit: son araca önbellek işareti */
     const blocks=[]; let stop=null, sep=text?"\n\n":"", apiErr=null, incomplete=false;
     try{ await streamOnce(body,key,signal,j=>{

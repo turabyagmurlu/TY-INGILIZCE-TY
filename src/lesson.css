@@ -204,3 +204,5 @@ html.lsn-on .app,html.lsn-on .tabs{visibility:hidden}
 .xgrp li{background:var(--soft);border-radius:12px;padding:10px 12px}
 .xgrp li p{margin:0 0 4px}
 .xa{font-size:15px}.xa s{color:var(--bad-ink)}.xw{font-size:15px;color:var(--muted)}
+.kcl{display:grid;gap:8px;margin-top:4px}
+.kcl .btn{justify-content:center;text-decoration:none}
