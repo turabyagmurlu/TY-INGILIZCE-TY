@@ -2,7 +2,7 @@
 const H=require('./_h.js');const {ok,sleep,AT}=H;const fs=require('fs');const path=require('path');
 const MOCK=fs.readFileSync(path.join(__dirname,'voice_test.js'),'utf8').match(/const MOCK=`([\s\S]*?)`;/)[1];
 const WED=AT(2026,10,14,9);
-const SEED={program:{main:{start:'2026-09-28',weeks:12,dailyMin:60,mode:'yogun'}}};
+const SEED={program:{main:{start:'2026-09-28',weeks:12,dailyMin:60,mode:'yogun'}},sessions:{'konus-2026-10-12-en':{date:'2026-10-12',lang:'en',src:'konus',mins:{speaking:10},total:10,mistakes:['We was late → We were late'],note:'Konuş'}}};
 const SHOTS=path.join(H.ROOT,'review/shots_v9');fs.mkdirSync(SHOTS,{recursive:true});
 const OPEN='**Hi Türab!** 😀 I\'m Oliver from the site office. | How long have you # been running your crew?';
 const REPLY='Oh, you\'ve been running it since 2024, that\'s a while! What\'s the hardest part of the job right now?';
@@ -29,7 +29,7 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
          if(__rt.failModel&&/3\.1-flash/.test(m)){this.readyState=3;this.onclose&&this.onclose({code:1008,reason:'models/gemini-3.1-flash-live-preview is not found for API version v1beta'});return;}
          this.onmessage&&this.onmessage({data:JSON.stringify({setupComplete:{}})});},10);}}
      close(){this.readyState=3;this.closedByApp=true;}};
-   window.__ev=o=>{const w=__rt.ws[__rt.ws.length-1];w.onmessage({data:new Blob([JSON.stringify(o)])});};
+   window.__ev=o=>{const w=__rt.ws[__rt.ws.length-1];w.onmessage({data:__rt.blob?new Blob([JSON.stringify(o)]):JSON.stringify(o)});};
    window.__aud=()=>btoa(String.fromCharCode(...new Uint8Array(480)));};
  const mk=async(o)=>{o=o||{};const st={oai:[]};const ctx=await b.newContext({viewport:{width:390,height:844},timezoneId:'Europe/Istanbul',serviceWorkers:'block'});const p=await ctx.newPage();
    p.on('pageerror',x=>errs.push('pageerror '+x.message));p.on('dialog',d=>{errs.push('DIALOG '+d.type());d.dismiss();});
@@ -49,6 +49,9 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   ok(st.oai.some(x=>/v1beta\/models/.test(x.u)&&x.u.includes(G)),'kayıt öncesi models ile test');
   const N='AQ.Ab8RN6Lk'+'x9_Yq-Zt3W'.repeat(5);await p.click('#btnGemDel');await p.fill('#gemKey','  '+N+'\n');await p.click('#btnGemSave');await sleep(300);
   ok(await p.evaluate(()=>localStorage.getItem('tydil.geminiKey'))===N,'yeni (uzun, AIza olmayan) anahtar biçimi de kabul edilir, boşluk temizlenir');
+  await p.click('[data-tab=konus]');await p.waitForSelector('[data-kfix=akici]');await p.click('[data-kfix=akici]');
+  ok(await p.evaluate(()=>localStorage.getItem('tydil.kfix'))==='akici'&&await p.getAttribute('[data-kfix=akici]','aria-checked')==='true','Düzeltme modu: Akıcı seçildi ve hatırlanıyor');
+  await p.evaluate(()=>localStorage.removeItem('tydil.kfix'));
   await ctx.close();}
  // B) Canlı görüşme
  {const {p,ctx,st}=await mk({gem:G});
@@ -62,18 +65,37 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   ok(await p.evaluate(()=>{const a=__rt.sent.find(x=>x.realtimeInput);return a&&a.realtimeInput.audio.mimeType==='audio/pcm;rate=16000'&&a.realtimeInput.audio.data.length>100;}),'mikrofon: 16 kHz PCM parçaları gönderiliyor');
   await p.evaluate(()=>{__rt.playMs=400;__ev({serverContent:{modelTurn:{parts:[{inlineData:{mimeType:'audio/pcm;rate=24000',data:__aud()}}]},outputTranscription:{text:'Hi Türab! How long'}}});});
   ok((await kst(p))==='speaking'&&await p.evaluate(()=>__rt.played)>=1,'koç sesi çalıyor');
-  const gate=await p.evaluate(()=>{const n0=__rt.sent.length;__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.01)}});const q=__rt.sent.slice(n0).filter(x=>x.realtimeInput).pop();return q&&/^A+=*$/.test(q.realtimeInput.audio.data);});
-  ok(gate,'yankı kapısı: koç konuşurken hoparlör sesi (düşük seviye) sessizlik olarak gider, koçu kesmez');
+  const gate=await p.evaluate(()=>{const n0=__rt.sent.length;__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.01)}});return __rt.sent.slice(n0).filter(x=>x.realtimeInput).length===0;});
+  ok(gate,'yankı kapısı: koç konuşurken alçak ses (hoparlör yankısı) hiç gönderilmez, koçu kesmez');
   await p.evaluate(()=>{__ev({serverContent:{outputTranscription:{text:' have you run your crew?'}}});__ev({serverContent:{turnComplete:true}});});await sleep(600);
   ok((await kst(p))==='listening','koç bitti → dinliyor');
   await p.evaluate(()=>{__ev({serverContent:{inputTranscription:{text:'I am running it '}}});__ev({serverContent:{inputTranscription:{text:'since 2024'}}});});
   ok(/since 2024/.test(await p.textContent('#kcCap')),'konuşman altyazıda');
-  await p.evaluate(()=>{__ev({serverContent:{modelTurn:{parts:[{inlineData:{data:__aud()}}]},outputTranscription:{text:'Oh nice, so'}}});});
+  await p.evaluate(()=>{__rt.playMs=3000;__ev({serverContent:{modelTurn:{parts:[{inlineData:{data:__aud()}}]},outputTranscription:{text:'Oh nice, so'}}});});await sleep(100);
   await p.evaluate(()=>__ev({serverContent:{interrupted:true}}));
   ok((await kst(p))==='listening'&&await p.evaluate(()=>__rt.stopped)>=1,'söz kesme: koç sesi anında susar');
   await p.click('#kcMic');ok((await kst(p))==='idle','Duraklat');await p.click('#kcMic');ok((await kst(p))==='listening','Devam');
   const turns=await p.evaluate(()=>TYLESSON.state().K.call.turns.map(t=>t.role+':'+t.content));ok(/assistant:Hi Türab! How long have you run your crew\?/.test(turns.join('|'))&&/user:I am running it since 2024/.test(turns.join('|'))&&/Oh nice, so —/.test(turns.join('|')),'döküm: '+JSON.stringify(turns));
-  await p.click('#kcEnd');await sleep(800);ok(await p.evaluate(()=>__rt.ws[0].closedByApp),'Bitir: bağlantı kapandı');
+  await p.evaluate(()=>{__rt.blob=true;__ev({serverContent:{outputTranscription:{text:' BLOBTEST'}}});__rt.blob=false;});await sleep(200);
+  ok(/BLOBTEST/.test(await p.textContent('#kcCap')),'ikili (Blob) çerçeveler de çözülüyor');
+  // konuşmam bitti: dinlerken küreye dokun → audioStreamEnd
+  ok((await kst(p))==='listening','dinliyor (bitti testi öncesi)');await p.click('#kcOrb');
+  ok(await p.evaluate(()=>__rt.sent.some(x=>x.realtimeInput&&x.realtimeInput.audioStreamEnd===true))&&(await kst(p))==='thinking','"bitti" dokunuşu: audioStreamEnd gönderildi, sıra koçta');
+  // tanı: yerel ses → sunucu yanıtı → ses parçası süreleri (içerik yok)
+  await p.evaluate(()=>{__rt.playMs=30;__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.1)}});});await sleep(250);
+  await p.evaluate(()=>{__ev({serverContent:{outputTranscription:{text:'Sure.'}}});__ev({serverContent:{modelTurn:{parts:[{inlineData:{data:__aud()}}]}}});__ev({serverContent:{turnComplete:true}});});await sleep(200);
+  await p.click('#kcDiagT');const dg=await p.textContent('#kcDiag');
+  ok(/Son tur/.test(dg)&&/sesi duyma \d/.test(dg)&&!/Sure/.test(dg),'Tanı paneli: son tur süreleri, içerik yok ('+dg.replace(/\s+/g,' ').slice(0,120)+')');
+  const dj=await p.evaluate(()=>{const d=TYLESSON.state().K.call.rt.d;return {n:d.turns.length,first:d.turns[d.turns.length-1].first,aud:d.turns[d.turns.length-1].aud};});
+  ok(dj.n>=1&&dj.first>=200&&dj.aud>=dj.first,'süreler mantıklı (yanıt '+dj.first+' ms, duyma '+dj.aud+' ms)');
+  // oturum sürdürme: tanıtıcı gelir, bağlantı koparsa aynı konuşmaya yeniden bağlanır, açılış tekrar gönderilmez
+  const su0=await p.evaluate(()=>__rt.sent.find(x=>x.setup).setup);ok(su0.contextWindowCompression&&su0.contextWindowCompression.slidingWindow&&su0.sessionResumption&&!su0.sessionResumption.handle,'setup: bağlam sıkıştırma + oturum sürdürme açık');
+  await p.evaluate(()=>__ev({sessionResumptionUpdate:{newHandle:'h-123',resumable:true}}));await sleep(100);await p.evaluate(()=>{const w=__rt.ws[__rt.ws.length-1];w.readyState=3;w.onclose({code:1011,reason:''});});
+  await p.waitForFunction(()=>__rt.sent.filter(x=>x.setup).length>=2,null,{timeout:4000}).catch(async()=>console.log('DBG',JSON.stringify(await p.evaluate(()=>{const R=TYLESSON.state().K.call.rt;return {has:!!R,h:R&&R.handle,rc:R&&R.rc,ws:__rt.ws.length,same:R&&R.ws===__rt.ws[__rt.ws.length-1],hint:document.querySelector('#kcHint').textContent};}))));await sleep(150);
+  const rc=await p.evaluate(()=>{const S=__rt.sent.filter(x=>x.setup);const last=S[S.length-1].setup;const opens=__rt.sent.filter(x=>x.clientContent&&/call has started/.test(JSON.stringify(x))).length;return {h:last.sessionResumption.handle,opens,ws:__rt.ws.length};});
+  ok(rc.h==='h-123'&&rc.opens===1,'kopma → tanıtıcıyla yeniden bağlandı, açılış iki kez gönderilmedi '+JSON.stringify(rc));
+  const sys=su0.systemInstruction.parts[0].text;ok(/PARTNER RULES/.test(sys)&&/CORRECTION MODE: BALANCED/.test(sys)&&/do not give pronunciation scores/.test(sys)&&/RECURRING MISTAKES/.test(sys)&&/We was late → We were late/.test(sys),'koç talimatı: partner kuralları, Dengeli mod, telaffuz dürüstlüğü, önceki hatalar');
+  await p.click('#kcEnd');await sleep(800);ok(await p.evaluate(()=>__rt.ws[__rt.ws.length-1].closedByApp),'Bitir: bağlantı kapandı');
   await ctx.close();}
  // C) İlk model yoksa sıradakine geçer
  {const {p,ctx}=await mk({gem:G,failModel:true});await p.click('[data-tab=konus]');await p.click('#kStart');

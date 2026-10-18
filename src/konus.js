@@ -23,11 +23,13 @@ function kPaint(){const el=K.el; if(!el)return; const tp=kTopics(K.coach); if(K.
     <h3 id="kTopL">Konu</h3><div class="kchips" role="radiogroup" aria-labelledby="kTopL">${tp.map((t,i)=>`<button type="button" class="kchip" role="radio" aria-checked="${i===K.topic}" data-kt="${i}">${esc(t.t)}</button>`).join("")}</div>
     ${tp[K.topic]&&tp[K.topic].sub?`<p class="hint" style="margin:0">${esc(tp[K.topic].sub)}</p>`:""}
     ${lk?`<p class="msg info" style="margin:0">${esc(lk)} <button type="button" class="btn btn-soft btn-sm" data-go="key">Ayarlar'a git</button></p>`:""}
+    <h3 id="kFixL">Düzeltme</h3><div class="kchips" role="radiogroup" aria-labelledby="kFixL">${Object.keys(KFIX).map(k=>`<button type="button" class="kchip kf" role="radio" aria-checked="${kFix()===k}" data-kfix="${k}">${KFIX[k].t}<small style="display:block;font-weight:500;opacity:.75">${KFIX[k].s}</small></button>`).join("")}</div>
     ${kRtOn()?`<p class="msg ok" style="margin:0">Canlı ses açık: gerçek zamanlı görüşme, istediğin an sözünü kes.</p>`:`<p class="hint" style="margin:0">Duraksamasız, gerçek zamanlı ses için: <button type="button" class="btn btn-soft btn-sm" data-go="setup">Ayarlar › Canlı ses</button></p>`}
     <div class="btnRow"><button type="button" class="btn btn-primary btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Canlı konuşmayı başlat</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div>${kTip()}</article></div>`;}
 document.addEventListener("click",e=>{const b=e.target.closest("#konusMount button"); if(!b)return;
   if(b.dataset.kco){K.coach=b.dataset.kco; K.topic=0; kPaint(); return;}
   if(b.dataset.kt){K.topic=+b.dataset.kt; kPaint(); return;}
+  if(b.dataset.kfix){try{localStorage.setItem("tydil.kfix",b.dataset.kfix);}catch(e){} kPaint(); return;}
   if(b.id==="kStart"){const t=kTopics(K.coach)[K.topic]||{}; kStartFrom(K.coach,t);}});
 function kStartFrom(coach,t){let o={coach,topic:t.free?"":t.t};
   if(t.lesson){C.lxGet(t.lesson).then(d=>{const k=d.konus||{}; kCall(Object.assign(o,{lessonId:d.id,lessonTitle:d.title,goal:k.goal,vocab:arr(k.vocab),structures:arr(k.structures),opener:k.opener_hint,level:k.level_note}));}).catch(()=>kCall(o));}
@@ -48,9 +50,10 @@ function kCall(o){if(K.call)kEnd(true); const why=coachReady(); if(why){C.fNotic
   try{/* iOS: ilk okuma dokunuşla açılır */if(ttsOk()){const u=new SpeechSynthesisUtterance(" "); u.volume=0; window.speechSynthesis.speak(u);}}catch(e){}
   kPaintCall(); K.call.timer=setInterval(kTime,1000); if(kRtOn()){K.call.rtWanted=true; K.call.srOff=false; const f=document.getElementById("kcType"); if(f)f.hidden=true; kRtStart(K.call); return;} kSend(null);}
 function kPaintCall(){const c=K.call, el=kEl(), co=COACH[c.coach], o=c.o;
-  el.innerHTML=`<header class="kcTop"><div><b id="kcWho">${co.name}</b><span>${esc(LN[c.lang])}${o.topic?" · "+esc(o.topic):" · serbest"}</span></div><span class="kcTime mono" id="kcTime" role="timer">00:00</span></header>
+  el.innerHTML=`<header class="kcTop"><div><b id="kcWho">${co.name}</b><span>${esc(LN[c.lang])}${o.topic?" · "+esc(o.topic):" · serbest"}</span></div><span class="kcTopR"><button type="button" class="kcDiagT" id="kcDiagT" aria-pressed="false" aria-controls="kcDiag">Tanı</button><span class="kcTime mono" id="kcTime" role="timer">00:00</span></span></header>
+   <div class="kcDiag" id="kcDiag" hidden></div>
    <div class="kcMid" id="kcMid"><button type="button" class="kcOrb" id="kcOrb" data-st="${c.st}" aria-label="Küre: koçu kes ya da konuşmanı bitir"><span class="kcRing"></span><span class="kcCore">${co.mono}</span></button>
-    <p class="kcSt" id="kcSt" aria-live="polite">${KSTN[c.st]}</p><div class="kcHint" id="kcHint" hidden></div>
+    <p class="kcSt" id="kcSt" aria-live="polite">${KSTN[c.st]}</p>${c.rtWanted?`<p class="kcTip" id="kcTip">Bitirdiğinde beklemeden küreye dokun · koç konuşurken araya girebilirsin</p>`:""}<div class="kcHint" id="kcHint" hidden></div>
     <div class="kcCap" id="kcCap"></div>
     <form class="kcType" id="kcType" ${c.srOff?"":"hidden"}><div><label class="cc-vh" for="kcIn">Cevabın</label><textarea id="kcIn" rows="1" lang="${c.lang}" placeholder="${c.lang==="it"?"İtalyanca cevap ver…":"Answer in English…"}"></textarea><button type="submit" class="btn btn-primary">Gönder</button></div><p class="hint">Klavyedeki mikrofon tuşuyla dikte et</p></form>
 </div>
@@ -62,10 +65,27 @@ function kState(st){const c=K.call; if(!c)return; c.st=st; const o=document.getE
   const m=document.getElementById("kcMic"); if(m){m.setAttribute("aria-pressed",String(c.paused)); m.querySelector("span").textContent=c.paused?"Devam et":"Duraklat";}}
 function kCaps(){const c=K.call, el=document.getElementById("kcCap"); if(!c||!el)return; el.hidden=!c.caps;
   el.innerHTML=(c.last?`<p class="c"><span>${COACH[c.coach].name}</span>${esc(spoken(c.last))}</p>`:"")+(c.you?`<p class="u"><span>Sen</span>${esc(c.you)}</p>`:"");}
+/* ---- Konuşma partneri kuralları + düzeltme modu + önceki görüşmelerin hataları (canlı ses ve normal görüşme ortak) ---- */
+const KFIX={akici:{t:"Akıcı",s:"Konuşmayı bölmez, hatalar sonda"},dengeli:{t:"Dengeli",s:"Ara sıra kısa düzeltme"},yogun:{t:"Yoğun",s:"Hemen her hatada düzeltir"}};
+const kFix=()=>{let v=""; try{v=localStorage.getItem("tydil.kfix")||"";}catch(e){} return KFIX[v]?v:"dengeli";};
+function kPastFixes(lang){const out=[]; C.S.sessions.filter(s=>s.src==="konus"&&s.lang===lang&&Array.isArray(s.mistakes)).sort((a,b)=>String(b.date).localeCompare(String(a.date))).forEach(s=>s.mistakes.forEach(m=>{if(typeof m==="string"&&out.length<6&&!out.includes(m))out.push(m);})); return out;}
+function kCoachExtra(c,live){const it=c.lang==="it", f=kFix(), L=["","PARTNER RULES (the goal is that HE speaks, not you):",
+  "- React to what he actually said before asking anything; never fire a list of ready-made questions. Exactly one follow-up question per turn.",
+  "- Give him time to think; short pauses are fine. If he gets stuck, first give a tiny hint (the first two or three words), not the full answer.",
+  "- If he doesn't understand, rephrase in simpler "+(it?"Italian":"English")+". "+(it?"Use Turkish only for a one-line hint when he is stuck or asks.":"Use Turkish only if he explicitly asks."),
+  "- No repetitive praise (no 'Great job!', 'Excellent!' every turn). Acknowledge briefly and naturally, at most once in a while.",
+  "- Keep sentence length and vocabulary at his level ("+(it?"A1 beginner":"B1+, stretching to B2")+"). This level is an estimate, not a test result; adapt if he sounds stronger or weaker.",
+  "CORRECTION MODE: "+(f==="akici"?"FLUENT — do not interrupt to correct. Only recast silently inside your natural reply if meaning is unclear. Keep all mistakes for the end-of-call summary."
+    :f==="yogun"?"INTENSIVE — he asked for frequent feedback. After most turns with a mistake, give one short correction in this order: what he said, the more natural version, a few-word reason, then a question that makes him reuse it. Still one correction per turn, never a lecture."
+    :"BALANCED — at natural pauses, at most one short correction every two or three turns, only for errors that change meaning or keep repeating. Format: what he said, the natural version, a few-word reason, then a question that makes him reuse it. Ignore small slips that don't change meaning."),
+  live?"PRONUNCIATION: you hear his audio, but do not give pronunciation scores. Mention a word only if it was truly unintelligible, say you're not sure, and treat accent differences as normal. Never guess words you didn't hear; ask him to repeat instead."
+      :"PRONUNCIATION: you only see a speech-to-text transcript, not his audio. Do not comment on pronunciation; transcription errors are not his mistakes."];
+  const pf=kPastFixes(c.lang); if(pf.length)L.push("HIS RECURRING MISTAKES FROM EARLIER CALLS (create natural chances to practise these, don't list them): "+pf.join(" | "));
+  return L.join("\n");}
 /* ---- istek: akış gelirken tamamlanan cümle hemen okunur ---- */
 function kTurns(){const c=K.call, o=c.o; const sys=C.speakRules(c.lang,{topic:o.topic,goal:o.goal,vocab:o.vocab,structures:o.structures,opener:o.opener,level:o.level});
   const T=c.turns.slice(-24); if(!T.length||T[0].role!=="user")T.unshift({role:"user",content:c.lang==="it"?"(Görüşme başladı. Merhaba!)":"(The call has started. Hi!)"});
-  return [{role:"user",content:sys},...T];}
+  return [{role:"user",content:sys+"\n"+kCoachExtra(c,false)},...T];}
 async function kSend(text){const c=K.call; if(!c||c.ended)return; const gen=++c.gen;
   if(text){c.turns.push({role:"user",content:text}); c.you=text; c.userTurns++; kCaps();}
   kState("thinking"); c.said=""; kListen(); let said=0, buf="", started=false;
@@ -122,6 +142,8 @@ async function kClick(e){const b=e.target.closest("button"); if(!b)return; const
   if(b.id==="kcMic"&&c){if(c.rtWanted){if(!c.rt){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c);} else kRtPause(c,!c.paused); return;} if(c.paused)kResume(); else{c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");} return;}
   if(b.id==="kcRep"&&c&&c.last){if(c.rt){kRtRepeat(c); return;} c.gen++; c.said=c.last; if(c.rec)clearTimeout(c.rec.silT); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
   if(b.id==="kcTr"&&c&&c.last){kHint("Türkçesi hazırlanıyor…"); try{const r=await C.sample()([{role:"user",content:"Aşağıdaki "+LN[c.lang]+" cümle(ler)in Türkçesini TEK satırda yaz. Başka hiçbir şey yazma, açıklama ekleme.\n\n"+spoken(c.last)}],{}); if(K.call===c)kHint("Türkçesi: "+String(r.text||"").replace(/\s+/g," ").trim());}catch(x){if(K.call===c)kHint(coachErr(x)||"Çeviri gelmedi.");} return;}
+  if(b.id==="kcDiagT"&&c){const d=document.getElementById("kcDiag"); d.hidden=!d.hidden; b.setAttribute("aria-pressed",String(!d.hidden)); kDiag(); return;}
+  if(b.id==="kcDiagCopy"&&c){const x=kDiagData(c); try{await navigator.clipboard.writeText(JSON.stringify(x));b.textContent="Kopyalandı ✓";}catch(_){b.textContent="Kopyalanamadı";} return;}
   if(b.id==="kcCapT"&&c){c.caps=!c.caps; b.setAttribute("aria-pressed",String(c.caps)); kCaps(); return;}
   if(b.id==="kcEnd"){kFinish(); return;}
   if(b.dataset.kph!==undefined){const p=K.sum&&K.sum.phrases[+b.dataset.kph]; if(p)speak([p.x],K.sum.lang); return;}
@@ -141,6 +163,7 @@ async function kFinish(){const c=K.call; if(!c||c.ended)return; c.ended=true; c.
     const t=String(r.text||""), a=t.indexOf("{"), z=t.lastIndexOf("}"); if(a>=0&&z>a){const j=JSON.parse(t.slice(a,z+1)); sum={duzeltmeler:arr(j.duzeltmeler).filter(x=>x&&x.sen&&x.dogal).slice(0,3),ifadeler:arr(j.ifadeler).filter(x=>x&&x.x).slice(0,3),ipucu:String(j.ipucu||"")};}}
   catch(e){sum.ipucu=coachErr(e)?"Özet alınamadı: "+coachErr(e):"";}
   K.sum={lang:c.lang,phrases:sum.ifadeler};
+  c.fixes=sum.duzeltmeler.map(f=>String(f.sen).slice(0,80)+" → "+String(f.dogal).slice(0,80));
   await kSave(c,mins);
   const res={turns:c.userTurns,mins,fixes:sum.duzeltmeler.length,phrases:sum.ifadeler.length};
   if(mid)mid.innerHTML=`<div class="kcSum" id="kcSum"><h2>Konuşma tamam</h2><div class="kcStats"><span>${ICON("clock")} ${mins} dk</span><span>${c.userTurns} cevap</span><span>${COACH[c.coach].name}</span></div>
@@ -152,7 +175,7 @@ async function kFinish(){const c=K.call; if(!c||c.ended)return; c.ended=true; c.
   c.result=res;}
 async function kSave(c,mins){const db=C.db; if(!db)return; const t=today(), lang=c.lang, k=lang==="en"?"speaking":"sesli", id="konus-"+t+"-"+lang;
   const prev=C.S.sessions.find(s=>s.id===id), pm=prev&&prev.mins?+prev.mins[k]||0:0, m={}; m[k]=pm+mins;
-  try{await C.upsertSession(id,{date:t,lang,mins:m,total:pm+mins,topic:c.o.lessonId&&C.topicById(c.o.lessonId)?c.o.lessonId:lang==="en"&&C.enToday().t?C.enToday().t[1]:"",mistakes:[],note:"Konuş: "+(c.o.topic||"serbest"),next:"",created:new Date().toISOString(),words:0,src:"konus"});}catch(e){}
+  try{await C.upsertSession(id,{date:t,lang,mins:m,total:pm+mins,topic:c.o.lessonId&&C.topicById(c.o.lessonId)?c.o.lessonId:lang==="en"&&C.enToday().t?C.enToday().t[1]:"",mistakes:(Array.isArray(c.fixes)?c.fixes:[]).concat(prev&&Array.isArray(prev.mistakes)?prev.mistakes:[]).slice(0,6),note:"Konuş: "+(c.o.topic||"serbest"),next:"",created:new Date().toISOString(),words:0,src:"konus"});}catch(e){}
   C.lxFin(lang,[lang==="en"?"speaking":"sesli"]);}
 async function kAddCard(i,b){const p=K.sum&&K.sum.phrases[i], db=C.db; if(!p||!db)return; b.disabled=true; const lang=K.sum.lang;
   if(C.S.cards.some(c=>c.lang===lang&&String(c.f||"").toLowerCase()===String(p.x).toLowerCase())){b.textContent="Zaten kartlarda"; return;}
