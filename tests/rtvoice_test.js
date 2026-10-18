@@ -62,6 +62,8 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   ok(await p.evaluate(()=>{const a=__rt.sent.find(x=>x.realtimeInput);return a&&a.realtimeInput.audio.mimeType==='audio/pcm;rate=16000'&&a.realtimeInput.audio.data.length>100;}),'mikrofon: 16 kHz PCM parçaları gönderiliyor');
   await p.evaluate(()=>{__rt.playMs=400;__ev({serverContent:{modelTurn:{parts:[{inlineData:{mimeType:'audio/pcm;rate=24000',data:__aud()}}]},outputTranscription:{text:'Hi Türab! How long'}}});});
   ok((await kst(p))==='speaking'&&await p.evaluate(()=>__rt.played)>=1,'koç sesi çalıyor');
+  const gate=await p.evaluate(()=>{const n0=__rt.sent.length;__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.01)}});const q=__rt.sent.slice(n0).filter(x=>x.realtimeInput).pop();return q&&/^A+=*$/.test(q.realtimeInput.audio.data);});
+  ok(gate,'yankı kapısı: koç konuşurken hoparlör sesi (düşük seviye) sessizlik olarak gider, koçu kesmez');
   await p.evaluate(()=>{__ev({serverContent:{outputTranscription:{text:' have you run your crew?'}}});__ev({serverContent:{turnComplete:true}});});await sleep(600);
   ok((await kst(p))==='listening','koç bitti → dinliyor');
   await p.evaluate(()=>{__ev({serverContent:{inputTranscription:{text:'I am running it '}}});__ev({serverContent:{inputTranscription:{text:'since 2024'}}});});

@@ -407,7 +407,7 @@ function kStopListen(){const c=K.call; if(!c||!c.rec)return; const s=c.rec; s.do
 function kNoSR(){const c=K.call; if(!c)return; c.srOff=true; c.rec=null; const f=document.getElementById("kcType"); if(f)f.hidden=false; kState("listening"); const i=document.getElementById("kcIn"); if(i)i.focus({preventScroll:true});}
 function kHint(t){const h=document.getElementById("kcHint"); if(!h)return; h.textContent=t||""; h.hidden=!t;}
 async function kClick(e){const b=e.target.closest("button"); if(!b)return; const c=K.call;
-  if(b.id==="kcOrb"&&c&&!c.ended){if(c.rt){kRtOrb(c); return;} if(c.rtWanted&&c.st==="idle"){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c); return;} if(c.st==="speaking"||c.st==="thinking"){if(c.st==="speaking"){c.cutGen=c.gen; kCut(c);} c.interrupted=false; c.gen++; ttsStop(); c.paused=false; kState("listening"); kListen();} else if(c.st==="listening"&&c.rec){kTurnEnd();} else if(c.st==="idle"){kResume();} return;}
+  if(b.id==="kcOrb"&&c&&!c.ended){if(c.rt){try{c.rt.out&&c.rt.out.resume(); c.rt.ac&&c.rt.ac.resume();}catch(_){} kRtOrb(c); return;} if(c.rtWanted&&c.st==="idle"){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c); return;} if(c.st==="speaking"||c.st==="thinking"){if(c.st==="speaking"){c.cutGen=c.gen; kCut(c);} c.interrupted=false; c.gen++; ttsStop(); c.paused=false; kState("listening"); kListen();} else if(c.st==="listening"&&c.rec){kTurnEnd();} else if(c.st==="idle"){kResume();} return;}
   if(b.id==="kcMic"&&c){if(c.rtWanted){if(!c.rt){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c);} else kRtPause(c,!c.paused); return;} if(c.paused)kResume(); else{c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");} return;}
   if(b.id==="kcRep"&&c&&c.last){if(c.rt){kRtRepeat(c); return;} c.gen++; c.said=c.last; if(c.rec)clearTimeout(c.rec.silT); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
   if(b.id==="kcTr"&&c&&c.last){kHint("Türkçesi hazırlanıyor…"); try{const r=await C.sample()([{role:"user",content:"Aşağıdaki "+LN[c.lang]+" cümle(ler)in Türkçesini TEK satırda yaz. Başka hiçbir şey yazma, açıklama ekleme.\n\n"+spoken(c.last)}],{}); if(K.call===c)kHint("Türkçesi: "+String(r.text||"").replace(/\s+/g," ").trim());}catch(x){if(K.call===c)kHint(coachErr(x)||"Çeviri gelmedi.");} return;}
@@ -461,22 +461,24 @@ function kDown(f,rate){const r=rate/16000, n=Math.floor(f.length/r), o=new Int16
 function kRtOpen(c,model){return new Promise((res,rej)=>{let ws, ok=false; try{ws=new WebSocket(GM_WS+"?key="+encodeURIComponent(TYRT.getGem()));}catch(e){return rej(e);}
   const to=setTimeout(()=>{if(!ok){try{ws.close();}catch(e){} rej(Object.assign(new Error("zaman aşımı"),{code:"timeout"}));}},12000);
   ws.onopen=()=>ws.send(JSON.stringify({setup:{model:"models/"+model,generationConfig:{responseModalities:["AUDIO"],speechConfig:{voiceConfig:{prebuiltVoiceConfig:{voiceName:c.lang==="it"?"Aoede":"Puck"}}}},
-    systemInstruction:{parts:[{text:kRtSys(c)}]},inputAudioTranscription:{},outputAudioTranscription:{}}}));
+    systemInstruction:{parts:[{text:kRtSys(c)}]},inputAudioTranscription:{},outputAudioTranscription:{},
+    realtimeInputConfig:{automaticActivityDetection:{startOfSpeechSensitivity:"START_SENSITIVITY_LOW",endOfSpeechSensitivity:"END_SENSITIVITY_HIGH",prefixPaddingMs:200,silenceDurationMs:550}}}}));
   ws.onmessage=async e=>{const j=await kRtParse(e.data); if(!j)return; if(!ok&&j.setupComplete){ok=true; clearTimeout(to); res(ws); return;} if(ok)kRtEvent(c,j);};
   ws.onclose=e=>{clearTimeout(to); if(!ok){const m=String(e.reason||""); rej(Object.assign(new Error(m||("bağlantı kapandı ("+e.code+")")),{code:/not found|not supported|unsupported model/i.test(m)?"model":/API key|permission|denied|invalid/i.test(m)?"key":/quota|exhaust|rate/i.test(m)?"quota":"net"}));} else kRtClosed(c,e);};
   ws.onerror=()=>{};});}
 async function kRtParse(d){try{if(typeof d!=="string")d=d.text?await d.text():new TextDecoder().decode(d); return JSON.parse(d);}catch(e){return null;}}
 async function kRtStart(c){c.rt={ws:null,mic:null,ac:null,src:null,proc:null,out:null,next:0,srcs:[],uin:null,uout:"",model:""}; const R=c.rt; kState("thinking"); kHint("");
+  const AC0=window.AudioContext||window.webkitAudioContext; try{R.ac=new AC0(); try{R.out=new AC0({sampleRate:24000});}catch(e){R.out=new AC0();} R.ac.resume&&R.ac.resume(); R.out.resume&&R.out.resume();}catch(e){}
   try{R.mic=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true,channelCount:1}});}
   catch(e){kHint("Mikrofon izni verilmedi. Tarayıcı ayarından mikrofona izin ver."); kRtFallback(c); return;}
-  const AC=window.AudioContext||window.webkitAudioContext; try{R.ac=new AC(); R.out=new AC({sampleRate:24000});}catch(e){try{R.out=new AC();}catch(_){}}
-  try{R.ac&&R.ac.resume(); R.out&&R.out.resume();}catch(e){}
   if(c.ended||K.call!==c){kRtStop(c); return;}
   let err=null; for(const m of GM_MODELS){try{R.ws=await kRtOpen(c,m); R.model=m; break;}catch(e){err=e; if(e.code!=="model")break;}}
   if(!R.ws){kRtStop(c); const k=err&&err.code; kHint(k==="key"?"Gemini anahtarı reddedildi. Ayarlar › Canlı ses'ten kontrol et.":k==="quota"?"Gemini'nin ücretsiz günlük limiti doldu. Bugün normal görüşmeyle devam; yarın yine canlı.":"Canlı sese bağlanılamadı ("+String((err&&err.message)||"ağ").slice(0,80)+"). Normal görüşmeyle devam."); kRtFallback(c); return;}
   if(c.ended||K.call!==c){kRtStop(c); return;}
   try{R.src=R.ac.createMediaStreamSource(R.mic); R.proc=R.ac.createScriptProcessor(2048,1,1); const rate=R.ac.sampleRate; let buf=[], len=0;
-    R.proc.onaudioprocess=e=>{if(!R.ws||R.ws.readyState!==1||c.paused)return; const pcm=kDown(e.inputBuffer.getChannelData(0),rate); buf.push(pcm); len+=pcm.length;
+    R.proc.onaudioprocess=e=>{if(!R.ws||R.ws.readyState!==1||c.paused)return; const f=e.inputBuffer.getChannelData(0); let q=0; for(let i=0;i<f.length;i+=4)q+=f[i]*f[i]; const rms=Math.sqrt(q/(f.length/4));
+      const playing=R.srcs.length>0||(R.out&&R.next>R.out.currentTime); if(playing&&rms<0.06){R.gate=(R.gate||0)+1;} else R.gate=0;
+      const pcm=R.gate?new Int16Array(Math.floor(f.length/(rate/16000))):kDown(f,rate); buf.push(pcm); len+=pcm.length;
       if(len>=1600){const all=new Int16Array(len); let o=0; buf.forEach(p=>{all.set(p,o); o+=p.length;}); buf=[]; len=0; kRtSend(c,{realtimeInput:{audio:{data:b64(new Uint8Array(all.buffer)),mimeType:"audio/pcm;rate=16000"}}});}};
     const mute=R.ac.createGain(); mute.gain.value=0; R.src.connect(R.proc); R.proc.connect(mute); mute.connect(R.ac.destination);}catch(e){}
   kRtSend(c,{clientContent:{turns:[{role:"user",parts:[{text:c.lang==="it"?"(Görüşme başladı. Merhaba!)":"(The call has started. Hi!)"}]}],turnComplete:true}});}
@@ -484,7 +486,8 @@ function kRtFallback(c){if(K.call!==c||c.ended)return; c.rt=null; c.rtWanted=fal
 function kRtSend(c,o){try{const ws=c.rt&&c.rt.ws; if(ws&&ws.readyState===1)ws.send(JSON.stringify(o));}catch(e){}}
 function kRtPlay(c,data){const R=c.rt; if(!R||!R.out||c.paused)return; const u=unb64(data), n=u.length>>1, dv=new DataView(u.buffer), f=new Float32Array(n); for(let i=0;i<n;i++)f[i]=dv.getInt16(i*2,true)/0x8000;
   const b=R.out.createBuffer(1,n,24000); b.copyToChannel?b.copyToChannel(f,0):b.getChannelData(0).set(f); const s=R.out.createBufferSource(); s.buffer=b; s.connect(R.out.destination);
-  const t=Math.max(R.out.currentTime+0.02,R.next); s.start(t); R.next=t+b.duration; R.srcs.push(s); s.onended=()=>{R.srcs=R.srcs.filter(x=>x!==s); if(!R.srcs.length&&c.st==="speaking"&&R.done)kState("listening");};}
+  if(R.out.state==="suspended"){try{R.out.resume();}catch(e){}}
+  const now=R.out.currentTime, t=R.next>now?R.next:now+0.12; s.start(t);   /* yeni cümlenin başında 120 ms tampon: ağ dalgalanmasında ses kesik kesik olmaz */ R.next=t+b.duration; R.srcs.push(s); s.onended=()=>{R.srcs=R.srcs.filter(x=>x!==s); if(!R.srcs.length&&c.st==="speaking"&&R.done)kState("listening");};}
 function kRtHush(c){const R=c.rt; if(!R)return; R.srcs.forEach(s=>{try{s.stop();}catch(e){}}); R.srcs=[]; R.next=0;}
 function kRtUser(c){const R=c.rt; if(!R.uin){R.uin={role:"user",content:""}; c.turns.push(R.uin);} return R.uin;}
 function kRtEvent(c,j){if(K.call!==c||c.ended)return; const R=c.rt; if(!R)return; const sc=j.serverContent;
