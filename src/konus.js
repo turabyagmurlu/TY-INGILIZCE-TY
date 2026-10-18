@@ -48,12 +48,13 @@ function kCall(o){if(K.call)kEnd(true); const why=coachReady(); if(why){C.fNotic
   K.call={o,coach,lang:coach,turns:[],last:"",you:"",st:"thinking",paused:false,t0:Date.now(),pausedMs:0,pauseAt:0,timer:0,rec:null,srOff:!C.srOk(),retry:0,ctl:null,gen:0,caps:true,ended:false,userTurns:0};
   el.className="kc "+coach; el.hidden=false; document.documentElement.classList.add("kc-on"); C.ccStop(); ttsStop();
   try{/* iOS: ilk okuma dokunuşla açılır */if(ttsOk()){const u=new SpeechSynthesisUtterance(" "); u.volume=0; window.speechSynthesis.speak(u);}}catch(e){}
-  kPaintCall(); K.call.timer=setInterval(kTime,1000); if(kRtOn()){K.call.rtWanted=true; K.call.srOff=false; const f=document.getElementById("kcType"); if(f)f.hidden=true; kRtStart(K.call); return;} kSend(null);}
+  if(kRtOn())K.call.rtWanted=true;
+  kPaintCall(); K.call.timer=setInterval(kTime,1000); if(K.call.rtWanted){K.call.srOff=false; const f=document.getElementById("kcType"); if(f)f.hidden=true; kRtStart(K.call); return;} kSend(null);}
 function kPaintCall(){const c=K.call, el=kEl(), co=COACH[c.coach], o=c.o;
   el.innerHTML=`<header class="kcTop"><div><b id="kcWho">${co.name}</b><span>${esc(LN[c.lang])}${o.topic?" · "+esc(o.topic):" · serbest"}</span></div><span class="kcTopR"><button type="button" class="kcDiagT" id="kcDiagT" aria-pressed="false" aria-controls="kcDiag">Tanı</button><span class="kcTime mono" id="kcTime" role="timer">00:00</span></span></header>
    <div class="kcDiag" id="kcDiag" hidden></div>
    <div class="kcMid" id="kcMid"><button type="button" class="kcOrb" id="kcOrb" data-st="${c.st}" aria-label="Küre: koçu kes ya da konuşmanı bitir"><span class="kcRing"></span><span class="kcCore">${co.mono}</span></button>
-    <p class="kcSt" id="kcSt" aria-live="polite">${KSTN[c.st]}</p>${c.rtWanted?`<p class="kcTip" id="kcTip">Bitirdiğinde beklemeden küreye dokun · koç konuşurken araya girebilirsin</p>`:""}<div class="kcHint" id="kcHint" hidden></div>
+    <p class="kcSt" id="kcSt" aria-live="polite">${KSTN[c.st]}</p>${c.rtWanted?`<button type="button" class="btn btn-primary btn-big kcDone" id="kcDone">${ICON("check")}Konuşmam bitti</button><p class="kcTip" id="kcTip">Sustuğunda 1 saniyede kendisi de anlar · koç konuşurken yüksek sesle araya girebilirsin</p>`:""}<div class="kcHint" id="kcHint" hidden></div>
     <div class="kcCap" id="kcCap"></div>
     <form class="kcType" id="kcType" ${c.srOff?"":"hidden"}><div><label class="cc-vh" for="kcIn">Cevabın</label><textarea id="kcIn" rows="1" lang="${c.lang}" placeholder="${c.lang==="it"?"İtalyanca cevap ver…":"Answer in English…"}"></textarea><button type="submit" class="btn btn-primary">Gönder</button></div><p class="hint">Klavyedeki mikrofon tuşuyla dikte et</p></form>
 </div>
@@ -142,6 +143,7 @@ async function kClick(e){const b=e.target.closest("button"); if(!b)return; const
   if(b.id==="kcMic"&&c){if(c.rtWanted){if(!c.rt){c.paused=false; if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;} kRtStart(c);} else kRtPause(c,!c.paused); return;} if(c.paused)kResume(); else{c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");} return;}
   if(b.id==="kcRep"&&c&&c.last){if(c.rt){kRtRepeat(c); return;} c.gen++; c.said=c.last; if(c.rec)clearTimeout(c.rec.silT); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
   if(b.id==="kcTr"&&c&&c.last){kHint("Türkçesi hazırlanıyor…"); try{const r=await C.sample()([{role:"user",content:"Aşağıdaki "+LN[c.lang]+" cümle(ler)in Türkçesini TEK satırda yaz. Başka hiçbir şey yazma, açıklama ekleme.\n\n"+spoken(c.last)}],{}); if(K.call===c)kHint("Türkçesi: "+String(r.text||"").replace(/\s+/g," ").trim());}catch(x){if(K.call===c)kHint(coachErr(x)||"Çeviri gelmedi.");} return;}
+  if(b.id==="kcDone"&&c&&c.rt){if(c.st==="speaking"){kRtOrb(c);} else {kState("listening"); kRtEnd(c,true);} return;}
   if(b.id==="kcDiagT"&&c){const d=document.getElementById("kcDiag"); d.hidden=!d.hidden; b.setAttribute("aria-pressed",String(!d.hidden)); kDiag(); return;}
   if(b.id==="kcDiagCopy"&&c){const x=kDiagData(c); try{await navigator.clipboard.writeText(JSON.stringify(x));b.textContent="Kopyalandı ✓";}catch(_){b.textContent="Kopyalanamadı";} return;}
   if(b.id==="kcCapT"&&c){c.caps=!c.caps; b.setAttribute("aria-pressed",String(c.caps)); kCaps(); return;}

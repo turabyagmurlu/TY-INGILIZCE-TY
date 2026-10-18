@@ -212,3 +212,5 @@ html.lsn-on .app,html.lsn-on .tabs{visibility:hidden}
 .kcDiag{margin:0 16px;padding:10px 14px;border-radius:12px;background:var(--accent-bg);font-size:13.5px;line-height:1.45}
 .kcDiag p{margin:0 0 6px}
 .kcTip{margin:0;font-size:14px;opacity:.8;text-align:center;max-width:460px}
+.kcDone{margin-top:4px;min-width:220px;justify-content:center}
+#kc[data-st] .kcDone{}

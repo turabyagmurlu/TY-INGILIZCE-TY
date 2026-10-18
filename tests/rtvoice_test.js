@@ -19,7 +19,7 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
 
  const RTMOCK=()=>{window.__rt={sent:[],ws:[],played:0,stopped:0};
    navigator.mediaDevices.getUserMedia=async()=>({getTracks:()=>[{enabled:true,stop(){this.stopped=true;}}]});
-   class AC{constructor(o){this.sampleRate=(o&&o.sampleRate)||48000;this.currentTime=0;this.destination={};}resume(){}close(){this.closed=true;}
+   class AC{constructor(o){this.sampleRate=(o&&o.sampleRate)||48000;this.t0=performance.now();this.destination={};}get currentTime(){return (performance.now()-this.t0)/1000;}resume(){}close(){this.closed=true;}
      createMediaStreamSource(){return {connect(){},disconnect(){}};}createScriptProcessor(){const p={connect(){},disconnect(){}};__rt.proc=p;return p;}createGain(){return {gain:{value:1},connect(){}};}
      createBuffer(ch,n,r){const d=new Float32Array(n);return {duration:n/r,copyToChannel(f){d.set(f);},getChannelData(){return d;}};}
      createBufferSource(){const s={connect(){},start(){__rt.played++;setTimeout(()=>{s.onended&&s.onended();},__rt.playMs||30);},stop(){__rt.stopped++;}};return s;}}
@@ -61,8 +61,11 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   const su=await p.evaluate(()=>__rt.sent.find(x=>x.setup).setup);const url=await p.evaluate(()=>__rt.ws[0].url);
   ok(/BidiGenerateContent\?key=AIza/.test(url)&&/live/.test(su.model)&&su.generationConfig.responseModalities[0]==='AUDIO'&&/SPEAKING MODE/.test(su.systemInstruction.parts[0].text)&&su.inputAudioTranscription&&su.outputAudioTranscription,'setup: '+su.model+', ses yanıtı, koç talimatı, iki yönlü döküm');
   ok(!st.reqs.length,'canlı modda Anthropic isteği yok');
-  await p.evaluate(()=>__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.1)}}));
-  ok(await p.evaluate(()=>{const a=__rt.sent.find(x=>x.realtimeInput);return a&&a.realtimeInput.audio.mimeType==='audio/pcm;rate=16000'&&a.realtimeInput.audio.data.length>100;}),'mikrofon: 16 kHz PCM parçaları gönderiliyor');
+  ok(su.realtimeInputConfig.automaticActivityDetection.disabled===true,'sıra cihazda: sunucu VAD kapalı');
+  await p.evaluate(()=>{for(let k=0;k<4;k++)__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.1)}});});
+  ok(await p.evaluate(()=>{const s=__rt.sent.filter(x=>x.realtimeInput);return s.some(x=>x.realtimeInput.activityStart)&&s.some(x=>x.realtimeInput.audio&&x.realtimeInput.audio.mimeType==='audio/pcm;rate=16000');}),'konuşma başladı: activityStart + 16 kHz PCM');
+  await sleep(1000);await p.evaluate(()=>__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.002)}}));
+  ok(await p.evaluate(()=>__rt.sent.some(x=>x.realtimeInput&&x.realtimeInput.activityEnd))&&(await kst(p))==='thinking','0,9 sn sessizlik → activityEnd, sıra koçta');
   await p.evaluate(()=>{__rt.playMs=400;__ev({serverContent:{modelTurn:{parts:[{inlineData:{mimeType:'audio/pcm;rate=24000',data:__aud()}}]},outputTranscription:{text:'Hi Türab! How long'}}});});
   ok((await kst(p))==='speaking'&&await p.evaluate(()=>__rt.played)>=1,'koç sesi çalıyor');
   const gate=await p.evaluate(()=>{const n0=__rt.sent.length;__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.01)}});return __rt.sent.slice(n0).filter(x=>x.realtimeInput).length===0;});
@@ -72,22 +75,25 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   await p.evaluate(()=>{__ev({serverContent:{inputTranscription:{text:'I am running it '}}});__ev({serverContent:{inputTranscription:{text:'since 2024'}}});});
   ok(/since 2024/.test(await p.textContent('#kcCap')),'konuşman altyazıda');
   await p.evaluate(()=>{__rt.playMs=3000;__ev({serverContent:{modelTurn:{parts:[{inlineData:{data:__aud()}}]},outputTranscription:{text:'Oh nice, so'}}});});await sleep(100);
-  await p.evaluate(()=>__ev({serverContent:{interrupted:true}}));
-  ok((await kst(p))==='listening'&&await p.evaluate(()=>__rt.stopped)>=1,'söz kesme: koç sesi anında susar');
+  await p.evaluate(()=>{const n=__rt.sent.length;for(let k=0;k<3;k++)__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.25)}});window.__bi=__rt.sent.slice(n).some(x=>x.realtimeInput&&x.realtimeInput.activityStart);});
+  ok((await kst(p))==='listening'&&await p.evaluate(()=>__rt.stopped)>=1&&await p.evaluate(()=>__bi),'söz kesme: yüksek sesle girince koç anında susar, activityStart gider');
+  await sleep(1000);await p.evaluate(()=>__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.002)}}));
   await p.click('#kcMic');ok((await kst(p))==='idle','Duraklat');await p.click('#kcMic');ok((await kst(p))==='listening','Devam');
   const turns=await p.evaluate(()=>TYLESSON.state().K.call.turns.map(t=>t.role+':'+t.content));ok(/assistant:Hi Türab! How long have you run your crew\?/.test(turns.join('|'))&&/user:I am running it since 2024/.test(turns.join('|'))&&/Oh nice, so —/.test(turns.join('|')),'döküm: '+JSON.stringify(turns));
   await p.evaluate(()=>{__rt.blob=true;__ev({serverContent:{outputTranscription:{text:' BLOBTEST'}}});__rt.blob=false;});await sleep(200);
   ok(/BLOBTEST/.test(await p.textContent('#kcCap')),'ikili (Blob) çerçeveler de çözülüyor');
-  // konuşmam bitti: dinlerken küreye dokun → audioStreamEnd
-  ok((await kst(p))==='listening','dinliyor (bitti testi öncesi)');await p.click('#kcOrb');
-  ok(await p.evaluate(()=>__rt.sent.some(x=>x.realtimeInput&&x.realtimeInput.audioStreamEnd===true))&&(await kst(p))==='thinking','"bitti" dokunuşu: audioStreamEnd gönderildi, sıra koçta');
+  // konuşmam bitti düğmesi: konuşurken bas → hemen activityEnd
+  await p.evaluate(()=>__ev({serverContent:{turnComplete:true}}));await sleep(100);await p.evaluate(()=>{for(let k=0;k<4;k++)__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.1)}});});ok(await p.isVisible('#kcDone'),'"Konuşmam bitti" düğmesi görünür');const nb=await p.evaluate(()=>__rt.sent.length);await p.click('#kcDone');
+  ok(await p.evaluate(n=>__rt.sent.slice(n).some(x=>x.realtimeInput&&x.realtimeInput.activityEnd),nb)&&(await kst(p))==='thinking','"Konuşmam bitti": beklemeden activityEnd, sıra koçta');
   // tanı: yerel ses → sunucu yanıtı → ses parçası süreleri (içerik yok)
-  await p.evaluate(()=>{__rt.playMs=30;__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.1)}});});await sleep(250);
+  await p.evaluate(()=>{__rt.playMs=30;});await sleep(250);
   await p.evaluate(()=>{__ev({serverContent:{outputTranscription:{text:'Sure.'}}});__ev({serverContent:{modelTurn:{parts:[{inlineData:{data:__aud()}}]}}});__ev({serverContent:{turnComplete:true}});});await sleep(200);
   await p.click('#kcDiagT');const dg=await p.textContent('#kcDiag');
   ok(/Son tur/.test(dg)&&/sesi duyma \d/.test(dg)&&!/Sure/.test(dg),'Tanı paneli: son tur süreleri, içerik yok ('+dg.replace(/\s+/g,' ').slice(0,120)+')');
   const dj=await p.evaluate(()=>{const d=TYLESSON.state().K.call.rt.d;return {n:d.turns.length,first:d.turns[d.turns.length-1].first,aud:d.turns[d.turns.length-1].aud};});
   ok(dj.n>=1&&dj.first>=200&&dj.aud>=dj.first,'süreler mantıklı (yanıt '+dj.first+' ms, duyma '+dj.aud+' ms)');
+  await sleep(200);await p.evaluate(()=>{for(let k=0;k<20;k++)__rt.proc.onaudioprocess({inputBuffer:{getChannelData:()=>new Float32Array(4800).fill(0.01)}});});const nq=await p.evaluate(()=>__rt.sent.length);ok((await kst(p))==='listening','alçak ses algılanmadı (dinliyor)');await p.click('#kcDone');
+  ok(await p.evaluate(n=>{const s=__rt.sent.slice(n).filter(x=>x.realtimeInput);return s.length>=3&&s[0].realtimeInput.activityStart&&s[s.length-1].realtimeInput.activityEnd;},nq),'algılanmayan alçak konuşma "bitti" ile tampondan gönderilir');
   // oturum sürdürme: tanıtıcı gelir, bağlantı koparsa aynı konuşmaya yeniden bağlanır, açılış tekrar gönderilmez
   const su0=await p.evaluate(()=>__rt.sent.find(x=>x.setup).setup);ok(su0.contextWindowCompression&&su0.contextWindowCompression.slidingWindow&&su0.sessionResumption&&!su0.sessionResumption.handle,'setup: bağlam sıkıştırma + oturum sürdürme açık');
   await p.evaluate(()=>__ev({sessionResumptionUpdate:{newHandle:'h-123',resumable:true}}));await sleep(100);await p.evaluate(()=>{const w=__rt.ws[__rt.ws.length-1];w.readyState=3;w.onclose({code:1011,reason:''});});
