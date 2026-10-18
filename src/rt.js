@@ -37,9 +37,10 @@ function setKeyStatus(st,err){keyStatus=st; keyErr=err||null; fire("tydil:key",{
 /* Yedek: anahtar IndexedDB'de de tutulur ("tydil-k"). localStorage boşalırsa (tarayıcı temizliği/iOS) açılışta geri yüklenir. */
 function kIdb(fn){try{const r=indexedDB.open("tydil-k",1); r.onupgradeneeded=()=>{try{r.result.createObjectStore("k");}catch(e){}}; r.onsuccess=()=>{try{const d=r.result, t=d.transaction("k",fn?"readwrite":"readonly"), st=t.objectStore("k"); if(fn)fn(st); else{const g=st.get("key"); g.onsuccess=()=>{const v=g.result; if(v&&!getKey()&&KEY_RE.test(v)){lsSet(LS_KEY,v); setKeyStatus("ok");}}; const o=st.get("gem"); o.onsuccess=()=>{const v=o.result; if(v&&!getGem()&&GEM_RE.test(v)){lsSet(LS_GEM,v); fire("tydil:gem",{has:true});}};} t.oncomplete=()=>d.close();}catch(e){}};}catch(e){}}
 /* Gemini anahtarı (yalnızca canlı ses, Google AI Studio · ücretsiz katman): AIza… biçimi; cihazda saklanır, yedeği IndexedDB'de */
-const GEM_RE=/^AIza[0-9A-Za-z_-]{30,}$/;
+/* Google anahtar biçimi değişebilir (eski AIza…, yeni daha uzun biçimler): biçim gevşek, asıl denetim canlı test isteği */
+const GEM_RE=/^(?!sk-|ghp_|github_pat_)[A-Za-z0-9._-]{30,200}$/;
 function getGem(){return (lsGet(LS_GEM)||"").trim();}
-function setGem(k){k=String(k||"").trim(); if(k&&!GEM_RE.test(k)){const e=new Error("Gemini anahtarı AIza ile başlar"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_GEM,k); else lsDel(LS_GEM); kIdb(st=>{k?st.put(k,"gem"):st.delete("gem");}); fire("tydil:gem",{has:!!k}); return !!k;}
+function setGem(k){k=String(k||"").trim(); if(k&&!GEM_RE.test(k)){const e=new Error("Gemini anahtarı geçersiz görünüyor"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_GEM,k); else lsDel(LS_GEM); kIdb(st=>{k?st.put(k,"gem"):st.delete("gem");}); fire("tydil:gem",{has:!!k}); return !!k;}
 async function testGem(k){const key=String(k||getGem()).trim(); if(!key)throw rtErr("capability_disabled","Anahtar yok"); let r; try{r=await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=1&key="+encodeURIComponent(key));}catch(e){throw rtErr("upstream_error","Ağ hatası");}
   if(!r.ok){let t=""; try{t=await r.text();}catch(e){} throw httpErr(r.status===400||r.status===403?401:r.status,t);} return {ok:true};}
 function keyBackup(k){kIdb(st=>{k?st.put(k,"key"):st.delete("key");});}
@@ -319,7 +320,7 @@ try{if(typeof indexedDB!=="undefined"){if(getKey())keyBackup(getKey()); if(!getK
 const SYNC_TOKEN_RE=/^(github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,})$/, GIST_RE=/^[0-9a-f]{20,40}$/;
 /* applyTransfer("…#k=…[&s=…&g=…]") → {key:"ok"|"bad", sync:bool}. Adres çubuğu (QR bağlantısı) ve uygulama içi kamera okuyucu ortak kullanır. */
 function applyTransfer(text){ const i=String(text||"").indexOf("#k="); if(i<0) return {key:"bad",sync:false};
-  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?(?:&gm=(AIza[0-9A-Za-z_-]+))?$/.exec(String(text).slice(i).trim());
+  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?(?:&gm=([A-Za-z0-9._-]{30,200}))?$/.exec(String(text).slice(i).trim());
   if(!m||!validKey(m[1])) return {key:"bad",sync:false};
   let sync=false; if(m[2]&&SYNC_TOKEN_RE.test(m[2])&&GIST_RE.test(m[3])){ lsSet(LS_STOKEN,m[2]); lsSet(LS_SGIST,m[3]); sync=true; }
   if(m[4]&&GEM_RE.test(m[4])){try{setGem(m[4]); window.TYGEMIMPORT="ok";}catch(e){}}

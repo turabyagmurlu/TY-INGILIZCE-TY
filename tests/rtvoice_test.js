@@ -47,6 +47,8 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   await p.fill('#gemKey',G);await p.click('#btnGemSave');await sleep(300);
   ok(/Açık/.test(await p.textContent('#gemState'))&&await p.evaluate(()=>localStorage.getItem('tydil.geminiKey'))===G,'geçerli anahtar test edilip kaydedildi');
   ok(st.oai.some(x=>/v1beta\/models/.test(x.u)&&x.u.includes(G)),'kayıt öncesi models ile test');
+  const N='AQ.Ab8RN6Lk'+'x9_Yq-Zt3W'.repeat(5);await p.click('#btnGemDel');await p.fill('#gemKey','  '+N+'\n');await p.click('#btnGemSave');await sleep(300);
+  ok(await p.evaluate(()=>localStorage.getItem('tydil.geminiKey'))===N,'yeni (uzun, AIza olmayan) anahtar biçimi de kabul edilir, boşluk temizlenir');
   await ctx.close();}
  // B) Canlı görüşme
  {const {p,ctx,st}=await mk({gem:G});

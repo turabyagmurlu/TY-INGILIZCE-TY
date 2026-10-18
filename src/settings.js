@@ -40,9 +40,9 @@ function keyDel(){const b=$("#btnKeyDel"), el=$("#keyMsg");
 function renderGem(){const has=TYRT.hasGem&&TYRT.hasGem(), st=$("#gemState"), inp=$("#gemKey"), del=$("#btnGemDel"); if(!st)return;
   st.innerHTML=has?ICON("check")+"Açık · "+esc(maskKey(TYRT.getGem())):"Kapalı"; st.className="keySt "+(has?"on":"off"); if(del)del.hidden=!has; if(inp)inp.placeholder=has?"Kayıtlı: "+maskKey(TYRT.getGem()):"AIza…";}
 async function gemSave(){const inp=$("#gemKey"), el=$("#gemMsg"), v=inp.value.trim(); if(!v){msg(el,"err","Anahtarı yapıştır, sonra Kaydet."); inp.focus(); return;}
-  if(!/^AIza[0-9A-Za-z_-]{30,}$/.test(v)){msg(el,"err","Bu bir Gemini anahtarı değil. aistudio.google.com/apikey (AIza… ile başlar)."); return;}
-  msg(el,"info","Anahtar deneniyor…"); try{await TYRT.testGem(v);}catch(e){msg(el,"err",e.code==="session_expired"?"Gemini anahtarı reddedildi; tamamını kopyaladığından emin ol.":keyErrText(e)); return;}
-  TYRT.setGem(v); inp.value=""; renderGem(); msg(el,"ok","✓ Canlı ses açık. Konuş'ta görüşme artık gerçek zamanlı.");}
+  const k=v.replace(/\s+/g,""); if(/^(sk-|ghp_|github_pat_)/.test(k)||!/^[A-Za-z0-9._-]{30,200}$/.test(k)){msg(el,"err","Bu bir Gemini anahtarı değil. aistudio.google.com/apikey → anahtarın yanındaki kopyala simgesiyle tamamını kopyala."); return;}
+  msg(el,"info","Anahtar deneniyor…"); try{await TYRT.testGem(k);}catch(e){msg(el,"err",e.code==="session_expired"?"Gemini anahtarı reddedildi; tamamını kopyaladığından emin ol.":keyErrText(e)); return;}
+  TYRT.setGem(k); inp.value=""; renderGem(); msg(el,"ok","✓ Canlı ses açık. Konuş'ta görüşme artık gerçek zamanlı.");}
 function gemDel(){TYRT.setGem(""); renderGem(); msg($("#gemMsg"),"info","Gemini anahtarı silindi; Konuş normal görüşmeye döndü.");}
 document.addEventListener("click",e=>{const b=e.target.closest("#btnGemSave,#btnGemDel"); if(!b)return; b.id==="btnGemSave"?gemSave():gemDel();});
 document.addEventListener("tydil:gem",()=>{try{renderGem();}catch(e){}});

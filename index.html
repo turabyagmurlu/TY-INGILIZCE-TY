@@ -1776,9 +1776,9 @@ const validKey=k=>{k=String(k||"").trim(); return KEY_RE.test(k)&&k.length>=KEY_
 let keyStatus="", keyErr=null;
 function setKeyStatus(st,err){keyStatus=st; keyErr=err||null; fire("tydil:key",{has:!!getKey(),status:st,error:err?{code:err.code,message:err.message}:null});}
 function kIdb(fn){try{const r=indexedDB.open("tydil-k",1); r.onupgradeneeded=()=>{try{r.result.createObjectStore("k");}catch(e){}}; r.onsuccess=()=>{try{const d=r.result, t=d.transaction("k",fn?"readwrite":"readonly"), st=t.objectStore("k"); if(fn)fn(st); else{const g=st.get("key"); g.onsuccess=()=>{const v=g.result; if(v&&!getKey()&&KEY_RE.test(v)){lsSet(LS_KEY,v); setKeyStatus("ok");}}; const o=st.get("gem"); o.onsuccess=()=>{const v=o.result; if(v&&!getGem()&&GEM_RE.test(v)){lsSet(LS_GEM,v); fire("tydil:gem",{has:true});}};} t.oncomplete=()=>d.close();}catch(e){}};}catch(e){}}
-const GEM_RE=/^AIza[0-9A-Za-z_-]{30,}$/;
+const GEM_RE=/^(?!sk-|ghp_|github_pat_)[A-Za-z0-9._-]{30,200}$/;
 function getGem(){return (lsGet(LS_GEM)||"").trim();}
-function setGem(k){k=String(k||"").trim(); if(k&&!GEM_RE.test(k)){const e=new Error("Gemini anahtarı AIza ile başlar"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_GEM,k); else lsDel(LS_GEM); kIdb(st=>{k?st.put(k,"gem"):st.delete("gem");}); fire("tydil:gem",{has:!!k}); return !!k;}
+function setGem(k){k=String(k||"").trim(); if(k&&!GEM_RE.test(k)){const e=new Error("Gemini anahtarı geçersiz görünüyor"); e.code="invalid_key"; throw e;} if(k)lsSet(LS_GEM,k); else lsDel(LS_GEM); kIdb(st=>{k?st.put(k,"gem"):st.delete("gem");}); fire("tydil:gem",{has:!!k}); return !!k;}
 async function testGem(k){const key=String(k||getGem()).trim(); if(!key)throw rtErr("capability_disabled","Anahtar yok"); let r; try{r=await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=1&key="+encodeURIComponent(key));}catch(e){throw rtErr("upstream_error","Ağ hatası");}
   if(!r.ok){let t=""; try{t=await r.text();}catch(e){} throw httpErr(r.status===400||r.status===403?401:r.status,t);} return {ok:true};}
 function keyBackup(k){kIdb(st=>{k?st.put(k,"key"):st.delete("key");});}
@@ -2013,7 +2013,7 @@ try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persisted(
 try{if(typeof indexedDB!=="undefined"){if(getKey())keyBackup(getKey()); if(!getKey()||!getGem())kIdb();}}catch(e){}
 const SYNC_TOKEN_RE=/^(github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,})$/, GIST_RE=/^[0-9a-f]{20,40}$/;
 function applyTransfer(text){ const i=String(text||"").indexOf("#k="); if(i<0) return {key:"bad",sync:false};
-  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?(?:&gm=(AIza[0-9A-Za-z_-]+))?$/.exec(String(text).slice(i).trim());
+  const m=/^#k=(sk-ant-[A-Za-z0-9_-]+)(?:&s=([A-Za-z0-9_]+)&g=([0-9a-f]+))?(?:&gm=([A-Za-z0-9._-]{30,200}))?$/.exec(String(text).slice(i).trim());
   if(!m||!validKey(m[1])) return {key:"bad",sync:false};
   let sync=false; if(m[2]&&SYNC_TOKEN_RE.test(m[2])&&GIST_RE.test(m[3])){ lsSet(LS_STOKEN,m[2]); lsSet(LS_SGIST,m[3]); sync=true; }
   if(m[4]&&GEM_RE.test(m[4])){try{setGem(m[4]); window.TYGEMIMPORT="ok";}catch(e){}}
@@ -3751,9 +3751,9 @@ function keyDel(){const b=$("#btnKeyDel"), el=$("#keyMsg");
 function renderGem(){const has=TYRT.hasGem&&TYRT.hasGem(), st=$("#gemState"), inp=$("#gemKey"), del=$("#btnGemDel"); if(!st)return;
   st.innerHTML=has?ICON("check")+"Açık · "+esc(maskKey(TYRT.getGem())):"Kapalı"; st.className="keySt "+(has?"on":"off"); if(del)del.hidden=!has; if(inp)inp.placeholder=has?"Kayıtlı: "+maskKey(TYRT.getGem()):"AIza…";}
 async function gemSave(){const inp=$("#gemKey"), el=$("#gemMsg"), v=inp.value.trim(); if(!v){msg(el,"err","Anahtarı yapıştır, sonra Kaydet."); inp.focus(); return;}
-  if(!/^AIza[0-9A-Za-z_-]{30,}$/.test(v)){msg(el,"err","Bu bir Gemini anahtarı değil. aistudio.google.com/apikey (AIza… ile başlar)."); return;}
-  msg(el,"info","Anahtar deneniyor…"); try{await TYRT.testGem(v);}catch(e){msg(el,"err",e.code==="session_expired"?"Gemini anahtarı reddedildi; tamamını kopyaladığından emin ol.":keyErrText(e)); return;}
-  TYRT.setGem(v); inp.value=""; renderGem(); msg(el,"ok","✓ Canlı ses açık. Konuş'ta görüşme artık gerçek zamanlı.");}
+  const k=v.replace(/\s+/g,""); if(/^(sk-|ghp_|github_pat_)/.test(k)||!/^[A-Za-z0-9._-]{30,200}$/.test(k)){msg(el,"err","Bu bir Gemini anahtarı değil. aistudio.google.com/apikey → anahtarın yanındaki kopyala simgesiyle tamamını kopyala."); return;}
+  msg(el,"info","Anahtar deneniyor…"); try{await TYRT.testGem(k);}catch(e){msg(el,"err",e.code==="session_expired"?"Gemini anahtarı reddedildi; tamamını kopyaladığından emin ol.":keyErrText(e)); return;}
+  TYRT.setGem(k); inp.value=""; renderGem(); msg(el,"ok","✓ Canlı ses açık. Konuş'ta görüşme artık gerçek zamanlı.");}
 function gemDel(){TYRT.setGem(""); renderGem(); msg($("#gemMsg"),"info","Gemini anahtarı silindi; Konuş normal görüşmeye döndü.");}
 document.addEventListener("click",e=>{const b=e.target.closest("#btnGemSave,#btnGemDel"); if(!b)return; b.id==="btnGemSave"?gemSave():gemDel();});
 document.addEventListener("tydil:gem",()=>{try{renderGem();}catch(e){}});
