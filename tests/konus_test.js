@@ -38,7 +38,7 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   await p.click('#kStart');await p.waitForSelector('#kc:not([hidden])');
   ok(await p.evaluate(()=>document.documentElement.classList.contains('kc-on')),'call screen opens full screen');
   const sys=(st.reqs[0]&&H.parseReq(st.reqs[0]).system)||'';ok(/SPEAKING MODE/.test(sys)&&/exactly ONE question/.test(sys)&&/recasting/.test(sys)&&/İlerleme raporu/.test(sys)&&!st.reqs[0].tools,'speaking prompt: spoken register, ≤2 sentences + one question, recasts, topic, no tools');
-  await p.waitForFunction(()=>__sr.cur&&__sr.cur._on,null,{timeout:5000});
+  await p.waitForFunction(()=>__sr.cur&&__sr.cur._on&&document.querySelector('#kcOrb').dataset.st==='listening',null,{timeout:5000});
   const sp=await spoken(p);ok(sp.length>=2&&sp.every(t=>!/[|*#]/.test(t)&&!/\p{Extended_Pictographic}/u.test(t)),'coach opener spoken sentence by sentence, no | * # emoji: '+JSON.stringify(sp));
   ok(await p.evaluate(()=>__tts.spoken.filter(x=>x.text.trim()).every(x=>x.lang==='en-GB'&&x.voice==='g-en')),'spoken in en-GB with best voice');
   ok(sp[0]==='Hi Türab!'&&sp.length===3,'sentences intact: '+JSON.stringify(sp));
@@ -46,19 +46,19 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   ok(/Dinliyorum/.test(await p.textContent('#kcSt'))&&/Oliver/.test(await p.textContent('#kcCap')),'state label Dinliyorum + caption of coach line');
   await p.screenshot({path:path.join(SHOTS,'konus_call_390_dark.png')});
   // konuşma: ara sonuç → son sonuç → 1,2 sn sessizlik → gönder
-  await p.evaluate(()=>{__sr.cur._result('I am running it',false);});await sleep(700);
+  await p.evaluate(()=>{__sr.cur._result('I am running it',false);});await sleep(350);
   ok(!st.log.some(x=>/turn:I am/.test(x)),'no send before silence');
-  await p.evaluate(()=>{__sr.cur._result('I am running it since 2024',true);});await sleep(400);ok(!st.log.some(x=>/turn:I am/.test(x)),'still waiting (<1.2 s silence)');
+  await p.evaluate(()=>{__sr.cur._result('I am running it since 2024',true);});await sleep(300);ok(!st.log.some(x=>/turn:I am/.test(x)),'still waiting (<0.7 s silence)');
   await p.waitForFunction(()=>/hardest part/.test(document.querySelector('#kcCap').textContent),null,{timeout:5000}).catch(async e=>{console.log('DBG',JSON.stringify(st.log),await p.evaluate(()=>({cap:document.querySelector('#kcCap').textContent,st:document.querySelector('#kcOrb').dataset.st,hint:document.querySelector('#kcHint').textContent,sr:__sr.log})));});
-  ok(st.log.includes('turn:I am running it since 2024'),'turn ended after ~1.2 s silence → reply requested with your words');
+  ok(st.log.includes('turn:I am running it since 2024'),'turn ended after ~0.7 s silence → reply requested with your words');
   ok(/Sen/.test(await p.textContent('#kcCap'))&&/since 2024/.test(await p.textContent('#kcCap')),'captions: your last line shown');
   // kesme: konuşurken küreye dokun
-  await p.waitForFunction(()=>__sr.cur&&__sr.cur._on,null,{timeout:5000});
+  await p.waitForFunction(()=>__sr.cur&&__sr.cur._on&&document.querySelector('#kcOrb').dataset.st==='listening',null,{timeout:5000});
   await p.evaluate(()=>{__tts.delay=1500;});
   st.delay=0;await p.evaluate(()=>{__sr.cur._result('We was late yesterday',true);});
   await waitSt(p,'speaking',5000);const before=await p.evaluate(()=>__sr.list.length);
   await p.click('#kcOrb');await p.waitForTimeout(200);
-  ok((await kst(p))==='listening'&&await p.evaluate(()=>!__tts.speaking)&&await p.evaluate(b=>__sr.list.length>b,before),'tap orb while speaking → speech cut, listening');
+  ok((await kst(p))==='listening'&&await p.evaluate(()=>!__tts.speaking)&&await p.evaluate(()=>__sr.cur&&__sr.cur._on),'tap orb while speaking → speech cut, listening (mic stays on)');
   await p.evaluate(()=>{__tts.delay=40;});
   // Türkçesi?
   await p.click('#kcTr');await p.waitForFunction(()=>/Türkçesi: Merhaba Türab/.test(document.querySelector('#kcHint').textContent),null,{timeout:4000});
@@ -66,7 +66,7 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   // Tekrar et (yavaş)
   await p.evaluate(()=>{__tts.spoken=[];});await p.click('#kcRep');await p.waitForTimeout(400);
   const rp=await p.evaluate(()=>__tts.spoken);ok(rp.length>=1&&rp[0].rate<0.8&&/hardest part|while/.test(rp.map(x=>x.text).join(' ')),'Tekrar et → last coach line, slower ('+(rp[0]&&rp[0].rate)+')');
-  await p.waitForFunction(()=>__sr.cur&&__sr.cur._on,null,{timeout:5000});
+  await p.waitForFunction(()=>__sr.cur&&__sr.cur._on&&document.querySelector('#kcOrb').dataset.st==='listening',null,{timeout:5000});
   // altyazı kapat/aç
   await p.click('#kcCapT');ok(await p.isHidden('#kcCap'),'caption toggle hides captions');await p.click('#kcCapT');
   // duraklat
@@ -88,7 +88,7 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   await ctx.close();}
 
  // B) Sınırlı yeniden başlatma: hiç ses yok → 2 yeniden başlatma, sonra duraklat + ipucu
- {const {p,ctx}=await mk();await p.click('[data-tab=konus]');await p.click('#kStart');await p.waitForFunction(()=>__sr.cur&&__sr.cur._on,null,{timeout:5000});
+ {const {p,ctx}=await mk();await p.click('[data-tab=konus]');await p.click('#kStart');await p.waitForFunction(()=>__sr.cur&&__sr.cur._on&&document.querySelector('#kcOrb').dataset.st==='listening',null,{timeout:5000});
   const n0=await p.evaluate(()=>__sr.log.filter(x=>/^start/.test(x)).length);
   for(let i=0;i<3;i++){await p.evaluate(()=>__sr.cur._end());await p.waitForTimeout(260);}
   const n1=await p.evaluate(()=>__sr.log.filter(x=>/^start/.test(x)).length);
@@ -106,7 +106,7 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   ok(st.log.includes('turn:I am running it since 2024'),'typed answer sent as turn');
   await ctx.close();}
  // D) İzin verilmedi → yazı kutusu
- {const {p,ctx}=await mk();await p.click('[data-tab=konus]');await p.click('#kStart');await p.waitForFunction(()=>__sr.cur&&__sr.cur._on,null,{timeout:5000});
+ {const {p,ctx}=await mk();await p.click('[data-tab=konus]');await p.click('#kStart');await p.waitForFunction(()=>__sr.cur&&__sr.cur._on&&document.querySelector('#kcOrb').dataset.st==='listening',null,{timeout:5000});
   await p.evaluate(()=>{__sr.cur._error('not-allowed');__sr.cur._end();});await p.waitForTimeout(200);
   ok(await p.isVisible('#kcType')&&/yaz ya da dikte et/.test(await p.textContent('#kcSt')),'not-allowed → fallback text box');
   await ctx.close();}

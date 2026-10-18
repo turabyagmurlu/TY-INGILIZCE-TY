@@ -302,7 +302,7 @@ async function askSend(q){const log=$l("#askLog"); bubble(log,"u",q); const why=
   finally{L.askBusy=false; const s=$l("#askSend"); if(s)s.disabled=false;}}
 
 const K={el:null,coach:"en",topic:0,call:null};
-const K_SIL=800, K_RETRY=2, K_FAST="claude-haiku-5-5";
+const K_SIL=700, K_RETRY=2, K_FAST="claude-haiku-5-5";
 const KIT_ALT=["Kendini tanıt: adın, şehrin, işin","Ailen ve memleketin","Şantiyede bir gün: ne var, ne yok"];
 function kTopics(coach){const out=[];
   if(coach==="en"){const e=C.enToday(), wk=C.SPEAK_EN, i0=Math.max(0,wk.indexOf(e.theme)); const L0=C.LX.index&&e.t?C.lxMeta(e.t[1]):null;
@@ -315,14 +315,12 @@ function kMount(el){if(!el)return; K.el=el; kPaint();}
 function kPaint(){const el=K.el; if(!el)return; const tp=kTopics(K.coach); if(K.topic>=tp.length)K.topic=0;
   const co=c=>`<button type="button" class="kco" role="radio" aria-checked="${K.coach===c}" data-kco="${c}"><span class="kav ${c}" aria-hidden="true">${COACH[c].mono}</span><span><b>${COACH[c].name}</b><small>${c==="en"?"İngilizce · B1+ → B2":"İtalyanca · A1, çok yavaş ve basit"}</small></span></button>`;
   const lk=coachReady();
-  el.innerHTML=`<div class="kpick"><div class="phead"><h2>Konuş</h2><p>Koçu ve konuyu seç, <b>Claude ile canlı sesli konuş</b>'a bas: Claude uygulaması koç talimatıyla açılır, sesli modda kesintisiz konuşursun.</p></div>
+  el.innerHTML=`<div class="kpick"><div class="phead"><h2>Konuş</h2><p>Telefonla konuşur gibi, canlı: koç konuşurken sözünü kesebilirsin, konuşmaya başlaman yeter. Sustuğunda koç hemen cevap verir.</p></div>
    <article class="card kpick"><div class="kcoaches" role="radiogroup" aria-label="Koç">${co("en")}${co("it")}</div>
     <h3 id="kTopL">Konu</h3><div class="kchips" role="radiogroup" aria-labelledby="kTopL">${tp.map((t,i)=>`<button type="button" class="kchip" role="radio" aria-checked="${i===K.topic}" data-kt="${i}">${esc(t.t)}</button>`).join("")}</div>
     ${tp[K.topic]&&tp[K.topic].sub?`<p class="hint" style="margin:0">${esc(tp[K.topic].sub)}</p>`:""}
     ${lk?`<p class="msg info" style="margin:0">${esc(lk)} <button type="button" class="btn btn-soft btn-sm" data-go="key">Ayarlar'a git</button></p>`:""}
-    <div class="kcl"><a class="btn btn-primary btn-big" id="kClaude" href="${kUrl(kBrief(K.coach,tp[K.topic]||{},K.kk))}" target="_blank" rel="noopener">${ICON("speaking")}Claude ile canlı sesli konuş</a><p class="hint" style="margin:0">Claude uygulaması açılır, koç talimatı hazır gelir. Gönder'e bas, sonra ses dalgası düğmesine dokun: kesintisiz, doğal sesli konuşma.</p></div>
-    <div class="btnRow"><button type="button" class="btn btn-soft btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Uygulama içi arama</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div>${kTip()}</article></div>`;
-  kPrep(tp[K.topic]||{});}
+    <div class="btnRow"><button type="button" class="btn btn-primary btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Canlı konuşmayı başlat</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div>${kTip()}</article></div>`;}
 document.addEventListener("click",e=>{const b=e.target.closest("#konusMount button"); if(!b)return;
   if(b.dataset.kco){K.coach=b.dataset.kco; K.topic=0; kPaint(); return;}
   if(b.dataset.kt){K.topic=+b.dataset.kt; kPaint(); return;}
@@ -330,21 +328,7 @@ document.addEventListener("click",e=>{const b=e.target.closest("#konusMount butt
 function kStartFrom(coach,t){let o={coach,topic:t.free?"":t.t};
   if(t.lesson){C.lxGet(t.lesson).then(d=>{const k=d.konus||{}; kCall(Object.assign(o,{lessonId:d.id,lessonTitle:d.title,goal:k.goal,vocab:arr(k.vocab),structures:arr(k.structures),opener:k.opener_hint,level:k.level_note}));}).catch(()=>kCall(o));}
   else kCall(o);}
-function kBrief(coach,t,k){k=k||{}; const it=coach==="it", topic=t.free?"serbest":t.t;
-  const L=it?["Sen Chiara'sın, İtalyanca konuşma koçum. Seninle şimdi Claude'un sesli modunda gerçek zamanlı konuşacağız.","Seviyem A1 (yeni başlıyorum). Çok kısa ve yavaş İtalyanca cümleler kur; takılırsam tek cümleyle Türkçe açıkla, sonra İtalyancaya dön."]
-    :["Sen Oliver'sın, İngilizce konuşma koçum. Seninle şimdi Claude'un sesli modunda gerçek zamanlı konuşacağız.","Seviyem B1+, hedefim B2. Doğal ve günlük İngilizce konuş; sadece İngilizce."];
-  L.push("Konu: "+topic+"."); if(k.goal)L.push("Hedef: "+k.goal); if(k.structures&&k.structures.length)L.push("Kullanmamı istediğin yapılar: "+k.structures.join(", ")+".");
-  if(k.vocab&&k.vocab.length)L.push("Kelimeler: "+k.vocab.slice(0,12).join(", ")+".");
-  L.push("Ben elektrik taşeronuyum (şantiye, pano, kablo, ekip); örnekleri buradan seç.","Kurallar: her cevabın 1–3 kısa cümle olsun ve bir soruyla bitsin. Hatamı akışı bozmadan düzelt: doğrusunu bir kez söyle, devam et. Uzun açıklama yapma.","\"Bitir\" dediğimde Türkçe kısa özet ver: en önemli 3 hatam (yanlış → doğru) ve öğrenmem gereken 3 ifade.","Şimdi beni selamla ve ilk soruyu sor.");
-  return L.join("\n");}
-const kUrl=b=>"https://claude.ai/new?q="+encodeURIComponent(b);
-function kPrep(t){const sig=K.coach+"|"+(t.lesson||"")+"|"+(t.t||""); if(K.kkSig===sig)return; K.kkSig=sig; K.kk=null;
-  if(t.lesson)C.lxGet(t.lesson).then(d=>{if(K.kkSig!==sig)return; K.kk=d.konus||{}; const a=document.getElementById("kClaude"); if(a)a.href=kUrl(kBrief(K.coach,t,K.kk));}).catch(()=>{});}
-document.addEventListener("click",e=>{const a=e.target.closest("#kClaude"); if(!a)return; try{const q=decodeURIComponent(a.href.split("?q=")[1]||""); navigator.clipboard&&navigator.clipboard.writeText(q).catch(()=>{});}catch(_){}
-  const t=kTopics(K.coach)[K.topic]||{}; K.ext={t0:Date.now(),lang:K.coach,topic:t.free?"":t.t,lessonId:t.lesson||null};});
-document.addEventListener("visibilitychange",()=>{if(document.visibilityState!=="visible"||!K.ext)return; const x=K.ext, m=Math.round((Date.now()-x.t0)/60000); if(m<2)return; K.ext=null;
-  kSave({lang:x.lang,o:{topic:x.topic,lessonId:x.lessonId}},Math.min(45,m)).then(()=>{try{C.toast&&C.toast("Claude konuşması kaydedildi · "+Math.min(45,m)+" dk");}catch(e){}});});
-function kCallPlan(o){const coach=o.coach==="it"?"it":"en"; K.coach=coach; K.topic=0; kPaint(); const a=document.getElementById("kClaude"); if(a){try{a.focus({preventScroll:true}); a.scrollIntoView({block:"center"});}catch(e){}}}
+function kCallPlan(o){const coach=o.coach==="it"?"it":"en"; K.coach=coach; K.topic=0; kPaint(); const t=kTopics(coach)[0]; if(o.lesson)t.lesson=o.lesson; kStartFrom(coach,t);}
 function kEl(){let el=document.getElementById("kc"); if(el)return el;
   el=document.createElement("div"); el.id="kc"; el.className="kc"; el.setAttribute("role","dialog"); el.setAttribute("aria-modal","true"); el.setAttribute("aria-labelledby","kcWho"); el.lang="tr"; el.hidden=true;
   document.body.appendChild(el); el.addEventListener("click",kClick); el.addEventListener("submit",kSubmit);
@@ -377,40 +361,54 @@ function kTurns(){const c=K.call, o=c.o; const sys=C.speakRules(c.lang,{topic:o.
   return [{role:"user",content:sys},...T];}
 async function kSend(text){const c=K.call; if(!c||c.ended)return; const gen=++c.gen;
   if(text){c.turns.push({role:"user",content:text}); c.you=text; c.userTurns++; kCaps();}
-  kStopListen(); kState("thinking"); let said=0, buf="", started=false;
-  const out=x=>{if(!started){started=true; kSpeakOpen();} ttsPush(x);};
+  kState("thinking"); c.said=""; kListen(); let said=0, buf="", started=false;
+  const out=x=>{if(gen!==c.gen)return; if(!started){started=true; kSpeakOpen();} c.said+=" "+x; ttsPush(x);};
   const flush=final=>{let end=0; const re=/[.!?…]+["'»)*_]*\s+/g; let m; while((m=re.exec(buf)))end=m.index+m[0].length;
+    if(!end&&!started&&buf.length>36){const k=Math.max(buf.lastIndexOf(", "),buf.lastIndexOf("; "),buf.lastIndexOf(": ")); if(k>18)end=k+2;}   /* ilk ses: ilk yan cümlede başlar */
     if(end){sentences(buf.slice(0,end)).forEach(out); buf=buf.slice(end);} if(final&&buf.trim()){sentences(buf).forEach(out); buf="";}};
   let r=null;
   try{r=await C.sample()(kTurns(),{model:K_FAST,maxTokens:400,onText:({text:t})=>{if(gen!==c.gen||c.ended)return; buf+=t.slice(said); said=t.length; flush(false);}});}
   catch(e){if(c.ended)return; if(text&&c.turns[c.turns.length-1]&&c.turns[c.turns.length-1].content===text){c.turns.pop(); c.userTurns--;} if(gen!==c.gen)return; ttsStop(); kHint(coachErr(e)||"Yanıt gelmedi. Tekrar dene."); c.paused=true; c.pauseAt=Date.now(); kState("idle"); return;}
   if(c.ended)return;
-  const full=String(r&&r.text||"").trim(); c.turns.push({role:"assistant",content:full||"…"}); c.last=full; kCaps();
+  const full=String(r&&r.text||"").trim(); if(gen!==c.gen&&c.cutGen===gen)return;            /* sözü kesildi: yarım cümle zaten kayıtta */
+  c.turns.push({role:"assistant",content:full||"…"}); c.last=full; kCaps();
   if(gen!==c.gen)return;                                                   /* kesildi: kayda girer, okunmaz */
   if(said<full.length){buf+=full.slice(said);} flush(true);
   if(!started){kAfterSpeak();} else ttsClose();}
 function kSpeakOpen(){const c=K.call; kState("speaking"); const g=c.gen; speak([],c.lang,{open:true}).then(r=>{if(!K.call||K.call.gen!==g)return; if(r&&r.cancelled&&K.call.interrupted){K.call.interrupted=false; return;} kAfterSpeak();});}
-function kAfterSpeak(){const c=K.call; if(!c||c.ended)return; if(c.paused){kState("idle"); return;} kListen();}
-function kListen(){const c=K.call; if(!c||c.ended||c.paused)return; kStopListen();
+function kAfterSpeak(){const c=K.call; if(!c||c.ended)return; if(c.paused){kState("idle"); return;} kState("listening"); if(c.rec&&!c.rec.done){kArm(); return;} kListen();}
+const kWords=t=>String(t||"").toLowerCase().normalize("NFC").match(/[\p{L}']+/gu)||[];
+function kEcho(heard,said){const S=new Set(kWords(said)); return kWords(heard).filter(w=>!S.has(w)).length;}
+function kCut(c){const t=String(c.said||"").trim(); if(!t)return; const lt=c.turns[c.turns.length-1], v={role:"assistant",content:t+" —"}; if(lt&&lt.role==="assistant")c.turns[c.turns.length-1]=v; else c.turns.push(v); c.last=t;}
+function kArm(){const c=K.call, s=c&&c.rec; if(!s||s.done)return; clearTimeout(s.silT); const t=(s.pre+" "+s.fin.join(" ")+" "+s.interim).replace(/\s+/g," ").trim(); if(t&&c.st==="listening")s.silT=setTimeout(()=>kTurnEnd(),K_SIL);}
+function kListen(){const c=K.call; if(!c||c.ended||c.paused)return; if(c.rec&&!c.rec.done){if(c.st==="listening")kArm(); return;}
   if(c.srOff){kState("listening"); const i=document.getElementById("kcIn"); if(i)i.focus({preventScroll:true}); return;}
   const SR=C.SR(); let rec; try{rec=new SR();}catch(e){kNoSR(); return;}
-  const s={rec,fin:[],interim:"",silT:0,done:false}; c.rec=s; rec.lang=tagOf(c.lang); rec.continuous=true; rec.interimResults=true; try{rec.maxAlternatives=1;}catch(e){}
-  const text=()=>(s.fin.join(" ")+" "+s.interim).replace(/\s+/g," ").trim();
+  const s={rec,fin:[],interim:"",pre:"",silT:0,done:false}; c.rec=s; rec.lang=tagOf(c.lang); rec.continuous=true; rec.interimResults=true; try{rec.maxAlternatives=1;}catch(e){}
+  const text=()=>(s.pre+" "+s.fin.join(" ")+" "+s.interim).replace(/\s+/g," ").trim();
   rec.onresult=e=>{if(s.done||c.rec!==s)return; const R=e.results||[]; let interim=""; for(let i=e.resultIndex||0;i<R.length;i++){const r=R[i]; if(!r||!r[0])continue; if(r.isFinal)s.fin[i]=r[0].transcript; else interim+=r[0].transcript+" ";}
-    s.interim=interim.trim(); c.you=text(); kCaps(); clearTimeout(s.silT); if(c.you)s.silT=setTimeout(()=>kTurnEnd(),K_SIL);};
+    s.interim=interim.trim();
+    if(c.st==="speaking"||c.st==="thinking"){const t=text(); if(kEcho(t,c.said||c.last||"")<2){if(R.length&&R[R.length-1].isFinal){s.fin=[]; s.interim="";} return;}
+      const wasThinking=c.st==="thinking"; c.cutGen=c.gen; c.gen++; ttsStop(); c.interrupted=false;
+      if(wasThinking){const lt=c.turns[c.turns.length-1]; if(lt&&lt.role==="user"){c.turns.pop(); c.userTurns--; s.pre=lt.content;}}
+      else kCut(c);
+      kState("listening");}
+    c.you=text(); kCaps(); kArm();};
   rec.onerror=e=>{if(s.done||c.rec!==s)return; const er=e&&e.error; if(er==="not-allowed"||er==="service-not-allowed"||er==="audio-capture"||er==="language-not-supported"){s.done=true; kNoSR();}};
-  rec.onend=()=>{if(s.done||c.rec!==s)return; if(text())return kTurnEnd(); if(c.retry<K_RETRY){c.retry++; setTimeout(()=>{if(K.call===c&&c.rec===s&&!c.paused&&!c.ended)kListen();},150); return;}
-    c.retry=0; c.rec=null; c.paused=true; kState("idle"); kHint("Seni duyamadım. Devam etmek için mikrofona dokun.");};
-  try{rec.start(); kState("listening");}catch(e){kNoSR();}}
-function kTurnEnd(){const c=K.call; if(!c)return; const s=c.rec; if(!s)return; const t=(s.fin.join(" ")+" "+s.interim).replace(/\s+/g," ").trim(); s.done=true; clearTimeout(s.silT); try{s.rec.stop();}catch(e){} c.rec=null; c.retry=0;
-  if(t){kHint(""); kSend(t);} else kListen();}
+  rec.onend=()=>{if(s.done||c.rec!==s)return; c.rec=null; if(c.st!=="listening"){setTimeout(()=>{if(K.call===c&&!c.rec&&!c.paused&&!c.ended)kListen();},120); return;}
+    if(text()){c.rec=s; return kTurnEnd();} if(c.retry<K_RETRY){c.retry++; setTimeout(()=>{if(K.call===c&&!c.rec&&!c.paused&&!c.ended)kListen();},120); return;}
+    c.retry=0; c.paused=true; kState("idle"); kHint("Seni duyamadım. Devam etmek için mikrofona dokun.");};
+  try{rec.start(); if(c.st!=="speaking"&&c.st!=="thinking")kState("listening");}catch(e){c.rec=null; kNoSR();}}
+function kTurnEnd(){const c=K.call; if(!c)return; const s=c.rec; if(!s)return; const t=(s.pre+" "+s.fin.join(" ")+" "+s.interim).replace(/\s+/g," ").trim(); clearTimeout(s.silT); c.retry=0;
+  s.fin=[]; s.interim=""; s.pre=""; if(s.done){c.rec=null;}                 /* mikrofon açık kalır: koç konuşurken sözünü kesebilirsin */
+  if(t){kHint(""); c.you=t; kSend(t);} else kListen();}
 function kStopListen(){const c=K.call; if(!c||!c.rec)return; const s=c.rec; s.done=true; clearTimeout(s.silT); try{s.rec.abort();}catch(e){} c.rec=null;}
 function kNoSR(){const c=K.call; if(!c)return; c.srOff=true; c.rec=null; const f=document.getElementById("kcType"); if(f)f.hidden=false; kState("listening"); const i=document.getElementById("kcIn"); if(i)i.focus({preventScroll:true});}
 function kHint(t){const h=document.getElementById("kcHint"); if(!h)return; h.textContent=t||""; h.hidden=!t;}
 async function kClick(e){const b=e.target.closest("button"); if(!b)return; const c=K.call;
-  if(b.id==="kcOrb"&&c&&!c.ended){if(c.st==="speaking"||c.st==="thinking"){c.interrupted=c.st==="speaking"; c.gen++; ttsStop(); c.paused=false; kListen();} else if(c.st==="listening"&&c.rec){kTurnEnd();} else if(c.st==="idle"){kResume();} return;}
+  if(b.id==="kcOrb"&&c&&!c.ended){if(c.st==="speaking"||c.st==="thinking"){if(c.st==="speaking"){c.cutGen=c.gen; kCut(c);} c.interrupted=false; c.gen++; ttsStop(); c.paused=false; kState("listening"); kListen();} else if(c.st==="listening"&&c.rec){kTurnEnd();} else if(c.st==="idle"){kResume();} return;}
   if(b.id==="kcMic"&&c){if(c.paused)kResume(); else{c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");} return;}
-  if(b.id==="kcRep"&&c&&c.last){c.gen++; kStopListen(); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
+  if(b.id==="kcRep"&&c&&c.last){c.gen++; c.said=c.last; if(c.rec)clearTimeout(c.rec.silT); kState("speaking"); const g=c.gen; speak(c.last,c.lang,{rate:C.rate()*0.75}).then(()=>{if(K.call===c&&c.gen===g)kAfterSpeak();}); return;}
   if(b.id==="kcTr"&&c&&c.last){kHint("Türkçesi hazırlanıyor…"); try{const r=await C.sample()([{role:"user",content:"Aşağıdaki "+LN[c.lang]+" cümle(ler)in Türkçesini TEK satırda yaz. Başka hiçbir şey yazma, açıklama ekleme.\n\n"+spoken(c.last)}],{}); if(K.call===c)kHint("Türkçesi: "+String(r.text||"").replace(/\s+/g," ").trim());}catch(x){if(K.call===c)kHint(coachErr(x)||"Çeviri gelmedi.");} return;}
   if(b.id==="kcCapT"&&c){c.caps=!c.caps; b.setAttribute("aria-pressed",String(c.caps)); kCaps(); return;}
   if(b.id==="kcEnd"){kFinish(); return;}
