@@ -570,14 +570,14 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
           <p class="hint" id="syncNote">Otomatik çalışır: açılışta, uygulamaya dönünce ve her kayıttan kısa süre sonra. Claude anahtarı ve GitHub token'ı senkrona girmez; her cihazda yerel kalır.</p>
         </div>
       </article>
-      <article class="card keyCard" id="oaiCard" aria-labelledby="oaiTitle">
-        <div class="chead"><div><h2 id="oaiTitle">Canlı ses (OpenAI)</h2><p class="lead">Konuş'ta koçla gerçek zamanlı, kesintisiz sesli görüşme: sözünü kesebilirsin, duraksama yok. Telefonda ve tablette de çalışır. Anahtar yoksa normal görüşme çalışır.</p></div><span class="keySt" id="oaiState"></span></div>
+      <article class="card keyCard" id="gemCard" aria-labelledby="gemTitle">
+        <div class="chead"><div><h2 id="gemTitle">Canlı ses (Google Gemini · ücretsiz)</h2><p class="lead">Konuş'ta koçla gerçek zamanlı, kesintisiz sesli görüşme: sözünü kesebilirsin, duraksama yok. Telefonda ve tablette de çalışır. Ücretsiz; kart bilgisi gerekmez.</p></div><span class="keySt" id="gemState"></span></div>
         <div class="keyForm">
-          <label class="fl" for="oaiKey">OpenAI API anahtarı</label>
-          <div class="keyRow"><input type="password" id="oaiKey" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="sk-proj-…" aria-describedby="oaiNote"></div>
-          <div class="btnRow"><button type="button" class="btn btn-primary" id="btnOaiSave">Kaydet</button><button type="button" class="btn btn-ghost" id="btnOaiDel" hidden>Sil</button></div>
-          <div id="oaiMsg"></div>
-          <p class="hint" id="oaiNote"><b>platform.openai.com</b> → Billing'den kredi yükle (ör. 10 $) → <b>API keys</b> → Create new secret key → buraya yapıştır. Görüşme dakikası yaklaşık 1–3 sent (mini model). Diğer cihazlara QR ile birlikte geçer.</p>
+          <label class="fl" for="gemKey">Gemini API anahtarı</label>
+          <div class="keyRow"><input type="password" id="gemKey" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="AIza…" aria-describedby="gemNote"></div>
+          <div class="btnRow"><button type="button" class="btn btn-primary" id="btnGemSave">Kaydet</button><button type="button" class="btn btn-ghost" id="btnGemDel" hidden>Sil</button></div>
+          <div id="gemMsg"></div>
+          <p class="hint" id="gemNote"><b>aistudio.google.com/apikey</b> → Google hesabınla gir → <b>Create API key</b> → kopyala, buraya yapıştır. Ücretsiz katmanda günlük bir kullanım sınırı var; dolarsa uygulama o gün normal görüşmeye geçer. Ücretsiz katmanda Google konuşmaları ürün geliştirmek için kullanabilir. Diğer cihazlara QR ile birlikte geçer.</p>
         </div>
       </article>
       <article class="card progSetup" id="progSetup" aria-labelledby="progSetupTitle"></article>

@@ -6,7 +6,7 @@
 const KX={timer:0,left:0};
 function kxUrl(){const k=TYRT.getKey(); let base=""; try{base=location.origin+location.pathname;}catch(e){base="https://turabyagmurlu.github.io/TY-INGILIZCE-TY/";}
   if(!/^https?:/.test(base)) base="https://turabyagmurlu.github.io/TY-INGILIZCE-TY/";
-  const sy=typeof syncConnected==="function"&&syncConnected(); const oa=TYRT.getOai?TYRT.getOai():""; return base+"#k="+k+(sy?"&s="+syToken()+"&g="+syGist():"")+(oa?"&o="+oa:"");}
+  const sy=typeof syncConnected==="function"&&syncConnected(); const gm=TYRT.getGem?TYRT.getGem():""; return base+"#k="+k+(sy?"&s="+syToken()+"&g="+syGist():"")+(gm?"&gm="+gm:"");}
 /* Uzun adreste (anahtar + token) modüller küçülmesin diye hata düzeltme L */
 function kxSvg(text){const q=window.TYQR(text,text.length>200?"L":"M"), n=q.n, pad=4, N=n+pad*2; let d="";
   for(let r=0;r<n;r++) for(let c=0;c<n;c++) if(q.dark(r,c)) d+=`M${c+pad} ${r+pad}h1v1h-1z`;
@@ -35,7 +35,7 @@ else if(window.TYKEYIMPORT==="bad") kxToast("err","QR'daki anahtar okunamadı. B
 document.addEventListener("tydil:key",e=>{const d=e&&e.detail||{}; kxRender();
   if(window.TYKEYIMPORT==="ok"&&d.status&&d.status!=="pending"){window.TYKEYIMPORT="done";
     if(d.status==="ok"&&KXS.sync){KXS.keyOk=true; KXS.syncDone?(KXS.syncOk?kxToast("ok","Bağlandı ✓ Koçlar açık · İlerleme indirildi ✓"):kxToast("err","Bağlandı ✓ Koçlar açık · ilerleme indirilemedi: "+KXS.syncText)):kxToast("pend","Bağlandı ✓ Koçlar açık · ilerleme indiriliyor…");}
-    else if(d.status==="ok") kxToast("ok","Bağlandı ✓ Koçlar bu cihazda açık."+(window.TYOAIIMPORT==="ok"?" Canlı ses de açık.":""));
+    else if(d.status==="ok") kxToast("ok","Bağlandı ✓ Koçlar bu cihazda açık."+(window.TYGEMIMPORT==="ok"?" Canlı ses de açık.":""));
     else kxToast("err","Anahtar aktarıldı ama doğrulanamadı: "+(typeof keyErrText==="function"?keyErrText(d.error):"bağlantı hatası")+"");}});
 /* QR ile senkron da geldiyse: ilk senkron sonucu */
 document.addEventListener("tydil:sync",e=>{const d=e&&e.detail||{}; if(!KXS.sync||KXS.syncDone) return; KXS.syncDone=true; KXS.syncOk=!!d.ok; KXS.syncText=d.text||"bağlantı hatası";

@@ -450,52 +450,59 @@ function kEnd(quiet){const c=K.call; if(c){c.ended=true; c.gen++; clearInterval(
 document.addEventListener("visibilitychange",()=>{const c=K.call; if(document.hidden&&c&&!c.ended&&!c.paused){if(c.rt){kRtPause(c,true); return;} c.paused=true; c.pauseAt=Date.now(); c.gen++; ttsStop(); kStopListen(); kState("idle");}});
 window.TYLESSON={open,close,validate,konus:{mount:kMount,call:kCallPlan,start:kCall},spoken,sentences,state:()=>({L,K})};
 
-const RT_API="https://api.openai.com/v1/realtime", RT_MODELS=["gpt-realtime-2.1-mini","gpt-realtime-mini","gpt-realtime"];
-const kRtOn=()=>!!(window.TYRT&&TYRT.hasOai&&TYRT.hasOai()&&window.RTCPeerConnection&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia);
-function kRtSession(c,model){const o=c.o; let sys=C.speakRules(c.lang,{topic:o.topic,goal:o.goal,vocab:o.vocab,structures:o.structures,opener:o.opener,level:o.level});
+const GM_WS="wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent", GM_MODELS=["gemini-3.1-flash-live-preview","gemini-3.8-live"];
+const kRtOn=()=>!!(window.TYRT&&TYRT.hasGem&&TYRT.hasGem()&&window.WebSocket&&(window.AudioContext||window.webkitAudioContext)&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia);
+function kRtSys(c){const o=c.o; let sys=C.speakRules(c.lang,{topic:o.topic,goal:o.goal,vocab:o.vocab,structures:o.structures,opener:o.opener,level:o.level});
   if(Array.isArray(sys))sys=sys.map(b=>typeof b==="string"?b:(b&&b.text)||"").join("\n");
-  sys+="\n\n"+(c.lang==="it"?"CANLI SESLİ GÖRÜŞME: doğal, sıcak bir sesle ve yavaş konuş. Görüşme başlayınca Türab'ı selamla ve ilk soruyu sor.":"LIVE VOICE CALL: speak naturally and warmly, at a relaxed pace. When the call starts, greet Türab and ask the first question.");
-  return {type:"realtime",model,instructions:sys,audio:{input:{transcription:{model:"gpt-4o-mini-transcribe",language:c.lang},turn_detection:{type:"semantic_vad",eagerness:"high"},noise_reduction:{type:"near_field"}},output:{voice:c.lang==="it"?"marin":"cedar"}}};}
-async function kRtErr(r){let m=""; try{const j=await r.json(); m=(j.error&&j.error.message)||"";}catch(e){} const e=new Error(m||("HTTP "+r.status)); e.status=r.status; return e;}
-async function kRtConnect(c,model,offer){const key=TYRT.getOai(), session=kRtSession(c,model);
-  let eph=null; try{const r=await fetch(RT_API+"/client_secrets",{method:"POST",headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},body:JSON.stringify({session})});
-    if(r.ok){const j=await r.json(); eph=j.value||(j.client_secret&&j.client_secret.value)||null;} else if(r.status===401||r.status===429)throw await kRtErr(r);}catch(e){if(e.status)throw e;}
-  let r; if(eph) r=await fetch(RT_API+"/calls",{method:"POST",headers:{"Authorization":"Bearer "+eph,"Content-Type":"application/sdp"},body:offer.sdp});
-  else{const fd=new FormData(); fd.set("sdp",offer.sdp); fd.set("session",JSON.stringify(session)); r=await fetch(RT_API+"/calls",{method:"POST",headers:{"Authorization":"Bearer "+key},body:fd});}
-  if(!r.ok)throw await kRtErr(r); return r.text();}
-async function kRtStart(c){c.rt={pc:null,dc:null,mic:null,au:null,items:{},cap:""}; const R=c.rt; kState("thinking"); kHint("");
-  try{R.mic=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});}
+  return sys+"\n\n"+(c.lang==="it"?"CANLI SESLİ GÖRÜŞME: doğal, sıcak bir sesle ve yavaş konuş. Görüşme başlayınca Türab'ı selamla ve ilk soruyu sor.":"LIVE VOICE CALL: speak naturally and warmly, at a relaxed pace. When the call starts, greet Türab and ask the first question.");}
+const b64=u8=>{let s=""; for(let i=0;i<u8.length;i+=0x8000)s+=String.fromCharCode.apply(null,u8.subarray(i,i+0x8000)); return btoa(s);};
+const unb64=s=>{const b=atob(s), u=new Uint8Array(b.length); for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i); return u;};
+function kDown(f,rate){const r=rate/16000, n=Math.floor(f.length/r), o=new Int16Array(n); for(let i=0;i<n;i++){const v=Math.max(-1,Math.min(1,f[Math.floor(i*r)]||0)); o[i]=v<0?v*0x8000:v*0x7fff;} return o;}
+function kRtOpen(c,model){return new Promise((res,rej)=>{let ws, ok=false; try{ws=new WebSocket(GM_WS+"?key="+encodeURIComponent(TYRT.getGem()));}catch(e){return rej(e);}
+  const to=setTimeout(()=>{if(!ok){try{ws.close();}catch(e){} rej(Object.assign(new Error("zaman aşımı"),{code:"timeout"}));}},12000);
+  ws.onopen=()=>ws.send(JSON.stringify({setup:{model:"models/"+model,generationConfig:{responseModalities:["AUDIO"],speechConfig:{voiceConfig:{prebuiltVoiceConfig:{voiceName:c.lang==="it"?"Aoede":"Puck"}}}},
+    systemInstruction:{parts:[{text:kRtSys(c)}]},inputAudioTranscription:{},outputAudioTranscription:{}}}));
+  ws.onmessage=async e=>{const j=await kRtParse(e.data); if(!j)return; if(!ok&&j.setupComplete){ok=true; clearTimeout(to); res(ws); return;} if(ok)kRtEvent(c,j);};
+  ws.onclose=e=>{clearTimeout(to); if(!ok){const m=String(e.reason||""); rej(Object.assign(new Error(m||("bağlantı kapandı ("+e.code+")")),{code:/not found|not supported|unsupported model/i.test(m)?"model":/API key|permission|denied|invalid/i.test(m)?"key":/quota|exhaust|rate/i.test(m)?"quota":"net"}));} else kRtClosed(c,e);};
+  ws.onerror=()=>{};});}
+async function kRtParse(d){try{if(typeof d!=="string")d=d.text?await d.text():new TextDecoder().decode(d); return JSON.parse(d);}catch(e){return null;}}
+async function kRtStart(c){c.rt={ws:null,mic:null,ac:null,src:null,proc:null,out:null,next:0,srcs:[],uin:null,uout:"",model:""}; const R=c.rt; kState("thinking"); kHint("");
+  try{R.mic=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true,channelCount:1}});}
   catch(e){kHint("Mikrofon izni verilmedi. Tarayıcı ayarından mikrofona izin ver."); kRtFallback(c); return;}
+  const AC=window.AudioContext||window.webkitAudioContext; try{R.ac=new AC(); R.out=new AC({sampleRate:24000});}catch(e){try{R.out=new AC();}catch(_){}}
+  try{R.ac&&R.ac.resume(); R.out&&R.out.resume();}catch(e){}
   if(c.ended||K.call!==c){kRtStop(c); return;}
-  const pc=new RTCPeerConnection(); R.pc=pc; const au=document.createElement("audio"); au.autoplay=true; au.setAttribute("playsinline",""); R.au=au;
-  pc.ontrack=e=>{au.srcObject=e.streams[0]; try{au.play().catch(()=>{});}catch(_){}};
-  R.mic.getTracks().forEach(t=>pc.addTrack(t,R.mic));
-  const dc=pc.createDataChannel("oai-events"); R.dc=dc; dc.onmessage=e=>{let j; try{j=JSON.parse(e.data);}catch(_){return;} kRtEvent(c,j);};
-  dc.onopen=()=>{kRtSend(c,{type:"conversation.item.create",item:{type:"message",role:"user",content:[{type:"input_text",text:c.lang==="it"?"(Görüşme başladı. Merhaba!)":"(The call has started. Hi!)"}]}}); kRtSend(c,{type:"response.create"});};
-  pc.onconnectionstatechange=()=>{if(K.call!==c||c.ended)return; if(pc.connectionState==="failed"||pc.connectionState==="disconnected"){kHint("Canlı ses bağlantısı koptu. Mikrofona dokun, yeniden bağlanayım."); c.paused=true; c.pauseAt=Date.now(); kState("idle"); kRtStop(c,true);}};
-  const offer=await pc.createOffer(); await pc.setLocalDescription(offer);
-  let ans=null, err=null; for(const m of RT_MODELS){try{ans=await kRtConnect(c,m,offer); R.model=m; break;}catch(e){err=e; if(e.status!==400&&e.status!==404)break;}}
-  if(!ans){kRtStop(c); const st=err&&err.status; kHint(st===401?"OpenAI anahtarı reddedildi. Ayarlar › Canlı ses'ten kontrol et.":st===429?"OpenAI kredisi bitti ya da limit doldu (platform.openai.com › Billing). Şimdilik normal görüşmeyle devam.":"Canlı sese bağlanılamadı ("+((err&&err.message)||"ağ").slice(0,80)+"). Normal görüşmeyle devam."); kRtFallback(c); return;}
+  let err=null; for(const m of GM_MODELS){try{R.ws=await kRtOpen(c,m); R.model=m; break;}catch(e){err=e; if(e.code!=="model")break;}}
+  if(!R.ws){kRtStop(c); const k=err&&err.code; kHint(k==="key"?"Gemini anahtarı reddedildi. Ayarlar › Canlı ses'ten kontrol et.":k==="quota"?"Gemini'nin ücretsiz günlük limiti doldu. Bugün normal görüşmeyle devam; yarın yine canlı.":"Canlı sese bağlanılamadı ("+String((err&&err.message)||"ağ").slice(0,80)+"). Normal görüşmeyle devam."); kRtFallback(c); return;}
   if(c.ended||K.call!==c){kRtStop(c); return;}
-  await pc.setRemoteDescription({type:"answer",sdp:ans});}
+  try{R.src=R.ac.createMediaStreamSource(R.mic); R.proc=R.ac.createScriptProcessor(2048,1,1); const rate=R.ac.sampleRate; let buf=[], len=0;
+    R.proc.onaudioprocess=e=>{if(!R.ws||R.ws.readyState!==1||c.paused)return; const pcm=kDown(e.inputBuffer.getChannelData(0),rate); buf.push(pcm); len+=pcm.length;
+      if(len>=1600){const all=new Int16Array(len); let o=0; buf.forEach(p=>{all.set(p,o); o+=p.length;}); buf=[]; len=0; kRtSend(c,{realtimeInput:{audio:{data:b64(new Uint8Array(all.buffer)),mimeType:"audio/pcm;rate=16000"}}});}};
+    const mute=R.ac.createGain(); mute.gain.value=0; R.src.connect(R.proc); R.proc.connect(mute); mute.connect(R.ac.destination);}catch(e){}
+  kRtSend(c,{clientContent:{turns:[{role:"user",parts:[{text:c.lang==="it"?"(Görüşme başladı. Merhaba!)":"(The call has started. Hi!)"}]}],turnComplete:true}});}
 function kRtFallback(c){if(K.call!==c||c.ended)return; c.rt=null; c.rtWanted=false; c.srOff=!C.srOk(); const f=document.getElementById("kcType"); if(f)f.hidden=!c.srOff; kSend(null);}
-function kRtSend(c,o){try{c.rt&&c.rt.dc&&c.rt.dc.readyState==="open"&&c.rt.dc.send(JSON.stringify(o));}catch(e){}}
-function kRtEvent(c,j){if(K.call!==c||c.ended)return; const R=c.rt; if(!R)return; const t=j.type||"";
-  if(t==="input_audio_buffer.speech_started"){kState("listening"); c.you=""; kCaps(); return;}
-  if(t==="input_audio_buffer.committed"){const id=j.item_id||("u"+Date.now()); if(!R.items[id]){const it={role:"user",content:""}; R.items[id]=it; c.turns.push(it);} kState("thinking"); return;}
-  if(t==="conversation.item.input_audio_transcription.delta"){const it=R.items[j.item_id]; if(it){it.content+=j.delta||""; c.you=it.content.trim(); kCaps();} return;}
-  if(t==="conversation.item.input_audio_transcription.completed"){let it=R.items[j.item_id]; if(!it){it={role:"user",content:""}; R.items[j.item_id]=it; c.turns.push(it);} it.content=String(j.transcript||"").trim(); if(it.content){if(!it.n){it.n=1; c.userTurns++;} c.you=it.content; kCaps();} return;}
-  if(t==="response.output_audio.delta"||t==="output_audio_buffer.started"||t==="response.created"){if(c.st!=="speaking"&&t!=="response.created")kState("speaking"); return;}
-  if(t==="response.output_audio_transcript.delta"||t==="response.audio_transcript.delta"){R.cap+=j.delta||""; c.last=R.cap; if(c.st!=="speaking")kState("speaking"); kCaps(); return;}
-  if(t==="response.output_audio_transcript.done"||t==="response.audio_transcript.done"){const x=String(j.transcript||R.cap||"").trim(); R.cap=""; if(x){c.turns.push({role:"assistant",content:x}); c.last=x; kCaps();} return;}
-  if(t==="output_audio_buffer.stopped"||t==="output_audio_buffer.cleared"||t==="response.done"){if(t==="response.done"){const s=j.response&&j.response.status; if(s==="failed"){const d=j.response.status_details&&j.response.status_details.error; kHint("Canlı ses: "+((d&&d.message)||"yanıt üretilemedi"));}} if(!c.paused&&c.st==="speaking"&&t!=="response.done")kState("listening"); return;}
-  if(t==="error"){const m=(j.error&&j.error.message)||""; if(!/cancel|no active response/i.test(m))kHint("Canlı ses: "+m.slice(0,120)); return;}}
-function kRtOrb(c){if(c.st==="speaking"||c.st==="thinking"){kRtSend(c,{type:"response.cancel"}); kRtSend(c,{type:"output_audio_buffer.clear"}); kState("listening");} else if(c.st==="idle")kRtPause(c,false);}
-function kRtPause(c,on){const R=c.rt; if(!R)return kRtStart(c); c.paused=on; if(on){c.pauseAt=Date.now(); kRtSend(c,{type:"response.cancel"}); kRtSend(c,{type:"output_audio_buffer.clear"});} else if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;}
-  try{R.mic.getTracks().forEach(t=>t.enabled=!on);}catch(e){} if(R.au)R.au.muted=on; kState(on?"idle":"listening");}
-function kRtText(c,v){c.turns.push({role:"user",content:v}); c.userTurns++; c.you=v; kCaps(); kRtSend(c,{type:"conversation.item.create",item:{type:"message",role:"user",content:[{type:"input_text",text:v}]}}); kRtSend(c,{type:"response.create"});}
-function kRtRepeat(c){kRtSend(c,{type:"response.create",response:{instructions:c.lang==="it"?"Ripeti la tua ultima frase molto lentamente, parola per parola.":"Repeat your last sentence again, slowly and clearly."}});}
-function kRtStop(c,keep){const R=c&&c.rt; if(!R)return; try{R.dc&&R.dc.close();}catch(e){} try{R.pc&&R.pc.close();}catch(e){} try{R.mic&&R.mic.getTracks().forEach(t=>t.stop());}catch(e){} try{if(R.au){R.au.srcObject=null;}}catch(e){}
-  if(!keep)c.rt=null; else{R.pc=null; R.dc=null; R.mic=null; c.rt=null;}}
+function kRtSend(c,o){try{const ws=c.rt&&c.rt.ws; if(ws&&ws.readyState===1)ws.send(JSON.stringify(o));}catch(e){}}
+function kRtPlay(c,data){const R=c.rt; if(!R||!R.out||c.paused)return; const u=unb64(data), n=u.length>>1, dv=new DataView(u.buffer), f=new Float32Array(n); for(let i=0;i<n;i++)f[i]=dv.getInt16(i*2,true)/0x8000;
+  const b=R.out.createBuffer(1,n,24000); b.copyToChannel?b.copyToChannel(f,0):b.getChannelData(0).set(f); const s=R.out.createBufferSource(); s.buffer=b; s.connect(R.out.destination);
+  const t=Math.max(R.out.currentTime+0.02,R.next); s.start(t); R.next=t+b.duration; R.srcs.push(s); s.onended=()=>{R.srcs=R.srcs.filter(x=>x!==s); if(!R.srcs.length&&c.st==="speaking"&&R.done)kState("listening");};}
+function kRtHush(c){const R=c.rt; if(!R)return; R.srcs.forEach(s=>{try{s.stop();}catch(e){}}); R.srcs=[]; R.next=0;}
+function kRtUser(c){const R=c.rt; if(!R.uin){R.uin={role:"user",content:""}; c.turns.push(R.uin);} return R.uin;}
+function kRtEvent(c,j){if(K.call!==c||c.ended)return; const R=c.rt; if(!R)return; const sc=j.serverContent;
+  if(j.goAway){kHint("Canlı oturum süresi doluyor; bitince mikrofona dokunup devam edebilirsin."); return;}
+  if(!sc)return;
+  if(sc.inputTranscription&&sc.inputTranscription.text){const u=kRtUser(c); u.content+=sc.inputTranscription.text; c.you=u.content.trim(); if(c.st!=="listening")kState("listening"); kCaps();}
+  if(sc.interrupted){kRtHush(c); if(R.uout){c.turns.push({role:"assistant",content:R.uout.trim()+" —"}); c.last=R.uout.trim(); R.uout="";} kState("listening"); return;}
+  const parts=sc.modelTurn&&sc.modelTurn.parts||[]; parts.forEach(p=>{if(p.inlineData&&p.inlineData.data){if(R.uin){if(R.uin.content.trim()&&!R.uin.n){R.uin.n=1; c.userTurns++;} R.uin=null;} R.done=false; if(c.st!=="speaking")kState("speaking"); kRtPlay(c,p.inlineData.data);}});
+  if(sc.outputTranscription&&sc.outputTranscription.text){R.uout+=sc.outputTranscription.text; c.last=R.uout.trim(); kCaps();}
+  if(sc.turnComplete||sc.generationComplete){if(sc.turnComplete){if(R.uout.trim()){c.turns.push({role:"assistant",content:R.uout.trim()}); c.last=R.uout.trim();} R.uout="";} R.done=true; if(!R.srcs.length&&c.st==="speaking")kState("listening");}}
+function kRtClosed(c,e){if(K.call!==c||c.ended)return; kRtStop(c,true); c.paused=true; c.pauseAt=Date.now(); kState("idle"); kHint("Canlı oturum kapandı. Devam etmek için mikrofona dokun.");}
+function kRtOrb(c){if(c.st==="speaking"||c.st==="thinking"){kRtHush(c); kState("listening");} else if(c.st==="idle")kRtPause(c,false);}
+function kRtPause(c,on){const R=c.rt; if(!R)return; c.paused=on; if(on){c.pauseAt=Date.now(); kRtHush(c);} else if(c.pauseAt){c.pausedMs+=Date.now()-c.pauseAt; c.pauseAt=0;}
+  try{R.mic.getTracks().forEach(t=>t.enabled=!on);}catch(e){} kState(on?"idle":"listening");}
+function kRtText(c,v){c.turns.push({role:"user",content:v}); c.userTurns++; c.you=v; kCaps(); kRtSend(c,{clientContent:{turns:[{role:"user",parts:[{text:v}]}],turnComplete:true}});}
+function kRtRepeat(c){kRtHush(c); kRtSend(c,{clientContent:{turns:[{role:"user",parts:[{text:c.lang==="it"?"(Ripeti la tua ultima frase molto lentamente.)":"(Please repeat your last sentence slowly.)"}]}],turnComplete:true}});}
+function kRtStop(c){const R=c&&c.rt; if(!R)return; c.rt=null; try{R.ws&&R.ws.close();}catch(e){} try{R.proc&&R.proc.disconnect(); R.src&&R.src.disconnect();}catch(e){} kRtHushR(R);
+  try{R.mic&&R.mic.getTracks().forEach(t=>t.stop());}catch(e){} try{R.ac&&R.ac.close();}catch(e){} try{R.out&&R.out.close();}catch(e){}}
+function kRtHushR(R){(R.srcs||[]).forEach(s=>{try{s.stop();}catch(e){}}); R.srcs=[];}
 
 })();

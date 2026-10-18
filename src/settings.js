@@ -5,7 +5,7 @@
 const KEY_ERR={capability_disabled:"Önce bir anahtar gir.",session_expired:"API anahtarı geçersiz; Ayarlar'dan kontrol et.",permission_denied:"Bu anahtar bu modele erişemiyor / izin yok.",rate_limited:"Anahtar çalışıyor ama limit doldu ya da sunucu yoğun. Biraz sonra tekrar dene.",prompt_too_large:"İstek çok büyük.",upstream_error:"Bağlantı kurulamadı. İnterneti ve anahtarı kontrol et."};
 const keyErrText=e=>{const c=e&&e.code; const base=KEY_ERR[c]||"Bağlantı kurulamadı."; const m=e&&e.message&&c==="upstream_error"&&!/Ağ hatası/.test(e.message)?" ("+String(e.message).slice(0,120)+")":""; return base+m;};
 function maskKey(k){k=String(k||""); if(k.length<=12)return k?"••••":""; return k.slice(0,7)+"…"+k.slice(-4);}
-function renderKey(){try{renderOai();}catch(e){}
+function renderKey(){try{renderGem();}catch(e){}
   const has=TYRT.hasKey(), st=$("#keyState"), inp=$("#apiKey"), del=$("#btnKeyDel");
   const ks=TYRT.keyStatus?TYRT.keyStatus():(has?"ok":"none");
   if(st){st.innerHTML=!has?"Anahtar yok":ks==="pending"?"Doğrulanıyor…":ks==="bad"?"Doğrulanamadı · "+esc(maskKey(TYRT.getKey())):ICON("check")+"Bağlı · "+esc(maskKey(TYRT.getKey())); st.className="keySt "+(has&&ks==="ok"?"on":"off");}
@@ -36,16 +36,16 @@ let keyDelArmed=0;
 function keyDel(){const b=$("#btnKeyDel"), el=$("#keyMsg");
   if(Date.now()-keyDelArmed>3500){keyDelArmed=Date.now(); b.textContent="Silinsin mi? Tekrar bas"; b.classList.add("warn"); setTimeout(()=>{if(Date.now()-keyDelArmed>=3400){b.textContent="Anahtarı sil";b.classList.remove("warn");}},3600); return;}
   keyDelArmed=0; b.textContent="Anahtarı sil"; b.classList.remove("warn"); TYRT.setKey(""); renderKey(); msg(el,"info","Anahtar silindi. Koçlar yeni anahtar girilince açılır.");}
-/* ---- canlı ses: OpenAI anahtarı ---- */
-function renderOai(){const has=TYRT.hasOai&&TYRT.hasOai(), st=$("#oaiState"), inp=$("#oaiKey"), del=$("#btnOaiDel"); if(!st)return;
-  st.innerHTML=has?ICON("check")+"Açık · "+esc(maskKey(TYRT.getOai())):"Kapalı"; st.className="keySt "+(has?"on":"off"); if(del)del.hidden=!has; if(inp)inp.placeholder=has?"Kayıtlı: "+maskKey(TYRT.getOai()):"sk-proj-…";}
-async function oaiSave(){const inp=$("#oaiKey"), el=$("#oaiMsg"), v=inp.value.trim(); if(!v){msg(el,"err","Anahtarı yapıştır, sonra Kaydet."); inp.focus(); return;}
-  if(/^sk-ant-/.test(v)||!/^sk-[A-Za-z0-9_-]{20,}$/.test(v)){msg(el,"err","Bu bir OpenAI anahtarı değil. platform.openai.com → API keys (sk-proj-… ile başlar)."); return;}
-  msg(el,"info","Anahtar deneniyor…"); try{await TYRT.testOai(v);}catch(e){msg(el,"err",e.code==="session_expired"?"OpenAI anahtarı reddedildi; tamamını kopyaladığından emin ol.":keyErrText(e)); return;}
-  TYRT.setOai(v); inp.value=""; renderOai(); msg(el,"ok","✓ Canlı ses açık. Konuş'ta görüşme artık gerçek zamanlı.");}
-function oaiDel(){TYRT.setOai(""); renderOai(); msg($("#oaiMsg"),"info","OpenAI anahtarı silindi; Konuş normal görüşmeye döndü.");}
-document.addEventListener("click",e=>{const b=e.target.closest("#btnOaiSave,#btnOaiDel"); if(!b)return; b.id==="btnOaiSave"?oaiSave():oaiDel();});
-document.addEventListener("tydil:oai",()=>{try{renderOai();}catch(e){}});
+/* ---- canlı ses: Gemini anahtarı (ücretsiz) ---- */
+function renderGem(){const has=TYRT.hasGem&&TYRT.hasGem(), st=$("#gemState"), inp=$("#gemKey"), del=$("#btnGemDel"); if(!st)return;
+  st.innerHTML=has?ICON("check")+"Açık · "+esc(maskKey(TYRT.getGem())):"Kapalı"; st.className="keySt "+(has?"on":"off"); if(del)del.hidden=!has; if(inp)inp.placeholder=has?"Kayıtlı: "+maskKey(TYRT.getGem()):"AIza…";}
+async function gemSave(){const inp=$("#gemKey"), el=$("#gemMsg"), v=inp.value.trim(); if(!v){msg(el,"err","Anahtarı yapıştır, sonra Kaydet."); inp.focus(); return;}
+  if(!/^AIza[0-9A-Za-z_-]{30,}$/.test(v)){msg(el,"err","Bu bir Gemini anahtarı değil. aistudio.google.com/apikey (AIza… ile başlar)."); return;}
+  msg(el,"info","Anahtar deneniyor…"); try{await TYRT.testGem(v);}catch(e){msg(el,"err",e.code==="session_expired"?"Gemini anahtarı reddedildi; tamamını kopyaladığından emin ol.":keyErrText(e)); return;}
+  TYRT.setGem(v); inp.value=""; renderGem(); msg(el,"ok","✓ Canlı ses açık. Konuş'ta görüşme artık gerçek zamanlı.");}
+function gemDel(){TYRT.setGem(""); renderGem(); msg($("#gemMsg"),"info","Gemini anahtarı silindi; Konuş normal görüşmeye döndü.");}
+document.addEventListener("click",e=>{const b=e.target.closest("#btnGemSave,#btnGemDel"); if(!b)return; b.id==="btnGemSave"?gemSave():gemDel();});
+document.addEventListener("tydil:gem",()=>{try{renderGem();}catch(e){}});
 /* ---- yedek ---- */
 const bkName=()=>"ty-dil-yedek-"+today()+".json";
 function bkDownload(){const el=$("#bkMsg"); try{const data=JSON.stringify(TYRT.export(),null,1), blob=new Blob([data],{type:"application/json"}), url=URL.createObjectURL(blob), a=document.createElement("a");
