@@ -137,11 +137,14 @@ lxIndex();
   Promise.all([lxIndex(),lxProgP]).then(()=>{if(lxHas(m[1]))lxOpen(m[1],{pk:lxPassed(m[1])&&lxP(m[1]).passedAt!==today()});});}}
 /* ---- güncelleme bandı: yeni service worker kurulunca "Yeni sürüm hazır · Yenile"; uygulamaya dönünce güncelleme denetimi ---- */
 (function(){const sw=navigator.serviceWorker; if(!sw||!/^https?:$/.test(location.protocol))return; let had=!!sw.controller, shown=false, last=0, waitingW=null;
-  const show=()=>{if(shown)return; shown=true; const b=$("#updBar"); if(b)b.hidden=false;};
+  let backAt=0; const busy=()=>!!document.querySelector("#kc:not([hidden]),#lsn:not([hidden])")||/^(INPUT|TEXTAREA)$/.test((document.activeElement||{}).tagName||"");
+  /* telefonda/tablette eski sürümde kalmasın: açılışın ilk 20 sn'sinde ya da uygulamaya dönüşten sonraki 8 sn'de, açık ders/görüşme yoksa kendiliğinden yenilenir */
+  const auto=()=>{const t=(window.performance&&performance.now)?performance.now():99999; return !busy()&&(t<20000||Date.now()-backAt<8000);};
+  const show=()=>{if(shown)return; shown=true; if(auto()){if(waitingW){try{waitingW.postMessage({type:"SKIP_WAITING"});}catch(e){}} setTimeout(()=>location.reload(),400); return;} const b=$("#updBar"); if(b)b.hidden=false;};
   const watch=reg=>{if(!reg||reg.__ty)return; reg.__ty=1; if(reg.waiting&&sw.controller){waitingW=reg.waiting; show();}
     reg.addEventListener("updatefound",()=>{const w=reg.installing; if(!w)return; w.addEventListener("statechange",()=>{if(w.state==="installed"&&sw.controller){waitingW=reg.waiting; show();}});});};
   sw.addEventListener("controllerchange",()=>{if(had)show(); had=true;});
   sw.ready.then(watch).catch(()=>{}); sw.getRegistration().then(watch).catch(()=>{});
   const check=()=>{if(Date.now()-last<60000)return; last=Date.now(); sw.getRegistration().then(r=>{if(r){watch(r); r.update().catch(()=>{});}}).catch(()=>{});};
-  document.addEventListener("visibilitychange",()=>{if(!document.hidden)check();}); window.addEventListener("focus",check);
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden){backAt=Date.now(); check();}}); window.addEventListener("focus",check);
   $("#updGo").addEventListener("click",()=>{if(waitingW){try{waitingW.postMessage({type:"SKIP_WAITING"});}catch(e){} setTimeout(()=>location.reload(),600);} else location.reload();});})();

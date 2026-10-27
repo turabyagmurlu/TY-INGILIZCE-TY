@@ -24,6 +24,12 @@ function serve(){return new Promise(res=>{const s=http.createServer((req,r)=>{co
  await p.reload();await p.waitForTimeout(600);ok(await p.isHidden('#updBar'),'normal reload: no banner');
  // uygulamaya dönünce denetim
  const h0=swHits;await p.evaluate(()=>window.dispatchEvent(new Event('focus')));await p.waitForTimeout(800);ok(swHits>h0,'focus → registration.update() fetched sw.js ('+(swHits-h0)+')');
+ // açılıştan hemen sonra yeni sürüm → açık ders/görüşme/yazı yoksa kendiliğinden yenilenir (telefonda eski sürümde kalmasın)
+ await p.evaluate(()=>{window.__m0=1;});await H.get(srv.base+'/__ver?v=next0');
+ await Promise.all([p.waitForNavigation({timeout:15000}).catch(()=>{}),p.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();await r.update();})]);await p.waitForTimeout(800);
+ ok(await p.evaluate(()=>window.__m0===undefined)&&await p.isHidden('#updBar'),'fresh launch + new version → auto reload, no banner');
+ // kullanıcı bir şey yazarken: kendiliğinden yenilemez, band çıkar
+ await p.evaluate(()=>{document.body.insertAdjacentHTML('beforeend','<input id="__f" style="position:fixed;top:0;left:0">');document.getElementById('__f').focus();});
  // yeni sürüm yayımlandı → bekleyen/kurulan SW → band
  await H.get(srv.base+'/__ver?v=next1');
  await p.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();await r.update();});

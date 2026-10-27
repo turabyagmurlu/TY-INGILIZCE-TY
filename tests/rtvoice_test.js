@@ -52,6 +52,9 @@ function handler(req,st){const s=req.system;st.log=st.log||[];
   await p.click('[data-tab=konus]');await p.waitForSelector('[data-kfix=akici]');await p.click('[data-kfix=akici]');
   ok(await p.evaluate(()=>localStorage.getItem('tydil.kfix'))==='akici'&&await p.getAttribute('[data-kfix=akici]','aria-checked')==='true','Düzeltme modu: Akıcı seçildi ve hatırlanıyor');
   await p.evaluate(()=>localStorage.removeItem('tydil.kfix'));
+  await p.evaluate(()=>TYRT.setGem(''));await H.tab(p,'konus');await p.waitForSelector('#kGemIn');ok(await p.isVisible('#kGemIn')&&await p.isVisible('#konusMount [data-go=scan]'),'Konuş: anahtar yoksa alan + QR okut orada (telefon/tablet)');
+  await p.fill('#kGemIn',G);await p.click('#kGemSave');await p.waitForFunction(()=>/Canlı ses açık/.test(document.querySelector('#konusMount').textContent),null,{timeout:4000}).catch(()=>{});
+  ok(/Canlı ses açık/.test(await p.textContent('#konusMount'))&&await p.evaluate(()=>localStorage.getItem('tydil.geminiKey'))===G,'Konuş içinden anahtar kaydedildi → Canlı ses açık');
   await ctx.close();}
  // B) Canlı görüşme
  {const {p,ctx,st}=await mk({gem:G});

@@ -543,6 +543,16 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
           <p class="hint" id="keyNote">Anahtar yalnızca bu cihazda saklanır. Max planında aylık API kredisi dahildir; claude.ai → Ayarlar → Faturalandırma → Link organization, sonra console.anthropic.com'dan anahtar al.</p>
         </div>
       </article>
+      <article class="card keyCard" id="gemCard" aria-labelledby="gemTitle">
+        <div class="chead"><div><h2 id="gemTitle">Canlı ses (Google Gemini · ücretsiz)</h2><p class="lead">Konuş'ta koçla gerçek zamanlı, kesintisiz sesli görüşme: sözünü kesebilirsin, duraksama yok. Telefonda ve tablette de çalışır. Ücretsiz; kart bilgisi gerekmez.</p></div><span class="keySt" id="gemState"></span></div>
+        <div class="keyForm">
+          <label class="fl" for="gemKey">Gemini API anahtarı</label>
+          <div class="keyRow"><input type="password" id="gemKey" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="AIza…" aria-describedby="gemNote"></div>
+          <div class="btnRow"><button type="button" class="btn btn-primary" id="btnGemSave">Kaydet</button><button type="button" class="btn btn-ghost" id="btnGemDel" hidden>Sil</button></div>
+          <div id="gemMsg"></div>
+          <p class="hint" id="gemNote"><b>aistudio.google.com/apikey</b> → Google hesabınla gir → <b>Create API key</b> → kopyala, buraya yapıştır. Ücretsiz katmanda günlük bir kullanım sınırı var; dolarsa uygulama o gün normal görüşmeye geçer. Ücretsiz katmanda Google konuşmaları ürün geliştirmek için kullanabilir. Diğer cihazlara QR ile birlikte geçer.</p>
+        </div>
+      </article>
       <article class="card syncCard" id="syncCard" aria-labelledby="syncTitle">
         <div class="chead"><div><h2 id="syncTitle">Cihazlar arası senkron</h2><p class="lead">Bilgisayar, telefon ve tablet aynı ilerlemeyi gösterir; kayıtlar GitHub hesabındaki gizli bir Gist'te birleşir.</p></div><span class="keySt off" id="syncState">Kapalı</span></div>
         <div class="keyForm">
@@ -568,16 +578,6 @@ pre.code{white-space:pre-wrap;font-family:var(--mono);font-size:13px;line-height
           </div>
           <div id="syncMsg"></div>
           <p class="hint" id="syncNote">Otomatik çalışır: açılışta, uygulamaya dönünce ve her kayıttan kısa süre sonra. Claude anahtarı ve GitHub token'ı senkrona girmez; her cihazda yerel kalır.</p>
-        </div>
-      </article>
-      <article class="card keyCard" id="gemCard" aria-labelledby="gemTitle">
-        <div class="chead"><div><h2 id="gemTitle">Canlı ses (Google Gemini · ücretsiz)</h2><p class="lead">Konuş'ta koçla gerçek zamanlı, kesintisiz sesli görüşme: sözünü kesebilirsin, duraksama yok. Telefonda ve tablette de çalışır. Ücretsiz; kart bilgisi gerekmez.</p></div><span class="keySt" id="gemState"></span></div>
-        <div class="keyForm">
-          <label class="fl" for="gemKey">Gemini API anahtarı</label>
-          <div class="keyRow"><input type="password" id="gemKey" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="AIza…" aria-describedby="gemNote"></div>
-          <div class="btnRow"><button type="button" class="btn btn-primary" id="btnGemSave">Kaydet</button><button type="button" class="btn btn-ghost" id="btnGemDel" hidden>Sil</button></div>
-          <div id="gemMsg"></div>
-          <p class="hint" id="gemNote"><b>aistudio.google.com/apikey</b> → Google hesabınla gir → <b>Create API key</b> → kopyala, buraya yapıştır. Ücretsiz katmanda günlük bir kullanım sınırı var; dolarsa uygulama o gün normal görüşmeye geçer. Ücretsiz katmanda Google konuşmaları ürün geliştirmek için kullanabilir. Diğer cihazlara QR ile birlikte geçer.</p>
         </div>
       </article>
       <article class="card progSetup" id="progSetup" aria-labelledby="progSetupTitle"></article>

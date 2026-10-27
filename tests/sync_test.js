@@ -58,7 +58,7 @@ const remote=()=>JSON.parse(ours()[0].files[FILE].content);
   const pc=PC.p;
   await setup(pc);
   ok(await pc.isVisible('#syncCard')&&/Cihazlar arası senkron/.test(await pc.textContent('#syncTitle')),'Ayarlar: "Cihazlar arası senkron" kartı');
-  ok(await pc.evaluate(()=>{const c=document.querySelector('#syncCard'),k=document.querySelector('#keyCard');return k.nextElementSibling===c;}),'kart Claude bağlantısının hemen altında');
+  ok(await pc.evaluate(()=>{const c=document.querySelector('#syncCard'),k=document.querySelector('#keyCard');return k.nextElementSibling===c||(k.nextElementSibling&&k.nextElementSibling.id==='gemCard'&&k.nextElementSibling.nextElementSibling===c);}),'kart Claude bağlantısının (ve canlı ses kartının) hemen altında');
   ok(await pc.evaluate(()=>{const i=document.querySelector('#syncToken');return i.type==='password'&&i.autocomplete==='off';}),'token alanı: password, autocomplete off');
   ok(/Kapalı/.test(await pc.textContent('#syncState'))&&await pc.isHidden('#syncOn'),'bağlı değilken: Kapalı, durum satırı gizli');
   await pc.fill('#syncToken','ghp_kısa');await pc.click('#btnSyncConnect');

@@ -20,13 +20,25 @@ function kPaint(){const el=K.el; if(!el)return; const tp=kTopics(K.coach); if(K.
   const lk=coachReady();
   el.innerHTML=`<div class="kpick"><div class="phead"><h2>Konuş</h2><p>Telefonla konuşur gibi, canlı: koç konuşurken sözünü kesebilirsin, konuşmaya başlaman yeter. Sustuğunda koç hemen cevap verir.</p></div>
    <article class="card kpick"><div class="kcoaches" role="radiogroup" aria-label="Koç">${co("en")}${co("it")}</div>
+    ${kRtOn()?`<p class="msg ok" style="margin:0">Canlı ses açık: gerçek zamanlı görüşme, istediğin an sözünü kes.</p>`:kGemBox()}
     <h3 id="kTopL">Konu</h3><div class="kchips" role="radiogroup" aria-labelledby="kTopL">${tp.map((t,i)=>`<button type="button" class="kchip" role="radio" aria-checked="${i===K.topic}" data-kt="${i}">${esc(t.t)}</button>`).join("")}</div>
     ${tp[K.topic]&&tp[K.topic].sub?`<p class="hint" style="margin:0">${esc(tp[K.topic].sub)}</p>`:""}
     ${lk?`<p class="msg info" style="margin:0">${esc(lk)} <button type="button" class="btn btn-soft btn-sm" data-go="key">Ayarlar'a git</button></p>`:""}
     <h3 id="kFixL">Düzeltme</h3><div class="kchips" role="radiogroup" aria-labelledby="kFixL">${Object.keys(KFIX).map(k=>`<button type="button" class="kchip kf" role="radio" aria-checked="${kFix()===k}" data-kfix="${k}">${KFIX[k].t}<small style="display:block;font-weight:500;opacity:.75">${KFIX[k].s}</small></button>`).join("")}</div>
-    ${kRtOn()?`<p class="msg ok" style="margin:0">Canlı ses açık: gerçek zamanlı görüşme, istediğin an sözünü kes.</p>`:`<p class="hint" style="margin:0">Duraksamasız, gerçek zamanlı ses için: <button type="button" class="btn btn-soft btn-sm" data-go="setup">Ayarlar › Canlı ses</button></p>`}
-    <div class="btnRow"><button type="button" class="btn btn-primary btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}Canlı konuşmayı başlat</button><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div>${kTip()}</article></div>`;}
+    <div class="btnRow kStartRow"><button type="button" class="btn btn-primary btn-big" id="kStart" ${lk?"disabled":""}>${ICON("speaking")}${kRtOn()?"Canlı konuşmayı başlat":"Konuşmayı başlat"}</button></div><div class="btnRow"><button type="button" class="btn btn-ghost" data-go="coach">${ICON("chat")}Yazarak çalış</button></div>${kRtOn()?"":kTip()}</article></div>`;}
+/* Canlı ses anahtarı Konuş'un içinde: telefonda/tablette Ayarlar'a gitmeden yapıştır ya da QR okut */
+function kGemBox(){const cam=!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia);
+  return `<div class="kgem"><b>Canlı ses (ücretsiz) · Gemini anahtarı</b><p class="hint" style="margin:0">Duraksamasız gerçek zamanlı konuşma için bir kez gir. Anahtar: aistudio.google.com/apikey${cam?" · ya da bilgisayardaki QR'ı okut":""}.</p>
+   <div class="kgemRow"><input type="password" id="kGemIn" autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text" placeholder="Anahtarı yapıştır" aria-label="Gemini API anahtarı"><button type="button" class="btn btn-primary" id="kGemSave">Kaydet</button></div>
+   ${cam?`<button type="button" class="btn btn-soft" data-go="scan">QR okut (kamera)</button>`:""}<div id="kGemMsg"></div></div>`;}
+async function kGemSave(){const i=document.getElementById("kGemIn"), m=document.getElementById("kGemMsg"), v=(i&&i.value||"").replace(/\s+/g,""), say=(t,c)=>{if(m)m.innerHTML=`<p class="msg ${c}" style="margin:6px 0 0">${esc(t)}</p>`;};
+  if(!v){say("Anahtarı yapıştır, sonra Kaydet.","err"); return;}
+  if(/^(sk-|ghp_|github_pat_)/.test(v)||!/^[A-Za-z0-9._-]{30,200}$/.test(v)){say("Bu bir Gemini anahtarı değil. aistudio.google.com/apikey → kopyala simgesiyle tamamını kopyala.","err"); return;}
+  say("Anahtar deneniyor…","info"); try{await TYRT.testGem(v);}catch(e){say(e&&e.code==="session_expired"?"Gemini anahtarı reddedildi; tamamını kopyaladığından emin ol.":"Denenemedi: internet bağlantısını kontrol et.","err"); return;}
+  try{TYRT.setGem(v);}catch(e){say("Kaydedilemedi.","err"); return;} kPaint();}
+document.addEventListener("tydil:gem",()=>{if(K.el&&!K.call)kPaint();});
 document.addEventListener("click",e=>{const b=e.target.closest("#konusMount button"); if(!b)return;
+  if(b.id==="kGemSave"){kGemSave(); return;}
   if(b.dataset.kco){K.coach=b.dataset.kco; K.topic=0; kPaint(); return;}
   if(b.dataset.kt){K.topic=+b.dataset.kt; kPaint(); return;}
   if(b.dataset.kfix){try{localStorage.setItem("tydil.kfix",b.dataset.kfix);}catch(e){} kPaint(); return;}
